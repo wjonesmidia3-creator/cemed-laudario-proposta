@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grupo Opera</title>
+<meta name="description" content="Aceleradora de crescimento para clínicas, negócios locais e empresas B2B. Diagnóstico, mídia, conteúdo, site e relatório num time só. Comece pelo pré-diagnóstico.">
+<meta property="og:title" content="Grupo Opera · Mais conversas, menor custo por conversa">
+<meta property="og:description" content="Diagnóstico, mídia, conteúdo, site e relatório num time só, para clínicas, negócios locais e empresas B2B.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#00247D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300247D'/%3E%3Ctext x='13' y='46' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='36' fill='%23fff'%3EG%3C/text%3E%3Ccircle cx='48' cy='42' r='5' fill='%23E85D1B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: palco navy (hero, método, fechamento) alternando com papel branco; grade de 1200px;
+   o laranja é a batuta — só pontos, destaques e chamadas. Single-theme por escolha: identidade de marca. */
+:root{
+  --navy:#00247D; --navy-deep:#001A5C; --navy-900:#00123F; --navy-800:#0D2A80; --navy-line:#22409A;
+  --orange:#E85D1B; --orange-cta:#CC4B10; --orange-cta-h:#B4410C; --orange-ink:#C4460C; --orange-2:#F6A24E; --orange-soft:#FDEEE5;
+  --sky:#A9C3E6; --sky-dim:#7F9CCB;
+  --ink:#111C3D; --ink-soft:#47547A; --ink-mute:#677190;
+  --bg:#FFFFFF; --bg-soft:#F4F7FC; --bg-blue:#EEF3FB; --line:#E2E8F2; --line-soft:#EEF2F8;
+  --green:#1E7E34; --green-soft:#E7F5EC;
+  --f-brand:'Sora','Poppins',system-ui,sans-serif;
+  --f-disp:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --wrap:1200px; --gut:clamp(16px,5vw,56px); --r:16px; --r-sm:10px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--f-sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-disp);margin:0;letter-spacing:-.03em;line-height:1.08;text-wrap:balance}
+p,ul,ol,figure,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--orange-2);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.ico{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- tipografia de seção ---------- */
+.sec{padding-block:clamp(64px,9vw,112px)}
+.sec--soft{background:var(--bg-soft)}
+.on-navy{background:var(--navy);color:#fff}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 .75rem/1.2 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-ink)}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;border-radius:2px;flex:none}
+.on-navy .eyebrow{color:var(--orange-2)}
+.h2{font-size:clamp(2rem,4.2vw,3.25rem);font-weight:800;color:var(--navy);margin-top:16px;max-width:20ch}
+.on-navy .h2{color:#fff}
+.h2 .o{color:var(--orange)} .on-navy .h2 .o{color:var(--orange-2)}
+.h2 .s{color:var(--sky)}
+.dot-o{color:var(--orange)} .on-navy .dot-o{color:var(--orange-2)}
+.lead{font-size:clamp(1.05rem,1.35vw,1.2rem);line-height:1.6;color:var(--ink-soft);max-width:62ch;margin-top:18px}
+.on-navy .lead{color:#C9D6EE}
+.sec-head{margin-bottom:clamp(36px,5vw,56px)}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 1rem/1.1 var(--f-disp);letter-spacing:-.01em;text-decoration:none;border-radius:12px;padding:17px 24px;border:0;cursor:pointer;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease;text-align:center}
+.btn-o{background:var(--orange-cta);color:#fff;box-shadow:0 12px 28px -12px rgba(232,93,27,.75)}
+.btn-o:hover{background:var(--orange-cta-h);transform:translateY(-1px)}
+.btn-ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(169,195,230,.5)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--sky);background:rgba(255,255,255,.04)}
+.btn-line{color:var(--navy);background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--navy)}
+.btn-sm{padding:11px 16px;font-size:.875rem;border-radius:999px}
+.arrow{transition:transform .15s ease}
+.btn:hover .arrow,.link:hover .arrow{transform:translateX(3px)}
+.link{display:inline-flex;align-items:center;gap:8px;font:700 .95rem/1.2 var(--f-disp);color:var(--orange-ink);text-decoration:none}
+.link:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- topo ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.93);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{font:800 1.3rem/1 var(--f-brand);letter-spacing:-.035em;color:var(--navy);text-decoration:none;white-space:nowrap}
+.brand .d{color:var(--orange)}
+.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav a{font:600 .875rem/1 var(--f-sans);color:var(--ink-soft);text-decoration:none;padding:10px 12px;border-radius:999px;white-space:nowrap}
+.nav a:hover{color:var(--navy);background:var(--bg-blue)}
+.nav a.go-link{color:var(--navy)}
+.go-mini{font:800 .9rem/1 var(--f-brand);letter-spacing:-.03em}
+.go-mini .d{color:var(--orange)}
+.nav .btn{color:#fff;padding:11px 16px;margin-left:10px;border-radius:999px}
+.nav .btn:hover{color:#fff;background:var(--orange-cta-h)}
+.menu-btn{display:none;margin-left:auto;align-items:center;gap:8px;background:var(--bg-blue);color:var(--navy);border:0;border-radius:999px;padding:10px 14px;font:700 .875rem/1 var(--f-sans);cursor:pointer}
+.mnav{border-top:1px solid var(--line);background:#fff}
+.mnav ul{display:grid;padding-block:8px 16px}
+.mnav a{display:block;padding:14px 4px;font:600 1.05rem/1.2 var(--f-disp);color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line-soft)}
+.mnav .btn{margin-top:14px;width:100%}
+@media (max-width:1000px){.nav{display:none}.menu-btn{display:inline-flex}.top .btn-sm{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(780px 460px at 92% -8%, rgba(246,162,78,.22), transparent 62%),
+  radial-gradient(700px 520px at -10% 112%, rgba(169,195,230,.16), transparent 60%),
+  var(--navy)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(56px,8vw,104px) clamp(40px,5vw,64px)}
+.hero h1{font-size:clamp(2.5rem,5.1vw,4.15rem);font-weight:800;letter-spacing:-.04em;line-height:1.02;margin-top:22px;color:#fff}
+.hero h1 .o{color:var(--orange-2)} .hero h1 .s{color:var(--sky)}
+.hero-sub{font-size:clamp(1.05rem,1.35vw,1.2rem);color:#C9D6EE;max-width:52ch;margin-top:22px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-note{margin-top:18px;font-size:.85rem;color:var(--sky-dim)}
+
+.panel{background:#fff;color:var(--ink);border-radius:20px;padding:clamp(18px,2.4vw,28px);box-shadow:0 40px 80px -40px rgba(0,10,40,.8),0 0 0 1px rgba(255,255,255,.06)}
+.panel-h{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.panel-k{font:700 .7rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .72rem/1 var(--f-sans);padding:6px 10px;border-radius:999px;background:var(--orange-soft);color:var(--orange-ink);white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.panel-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:14px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.panel-big b{font:800 clamp(2.6rem,4.4vw,3.4rem)/1 var(--f-disp);letter-spacing:-.04em;color:var(--navy)}
+.panel-big span{font-size:.95rem;color:var(--ink-soft);max-width:26ch;line-height:1.4}
+.bars{display:grid;gap:4px;margin-top:10px}
+.bars-head,.bar-row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.3fr) auto;gap:14px;align-items:center}
+.bars-head{font:700 .66rem/1.2 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:6px 0}
+.bars-head span:last-child,.bar-cost{text-align:right}
+.bar-row{padding:10px 0;border-top:1px solid var(--line-soft)}
+.bar-name{min-width:0}
+.bar-name b{display:block;font:700 .95rem/1.25 var(--f-disp);color:var(--navy);letter-spacing:-.01em}
+.bar-name small{display:block;font-size:.76rem;color:var(--ink-mute);margin-top:2px}
+.bar-track{display:flex;align-items:center;gap:10px;min-width:0}
+.bar-fill{height:12px;border-radius:6px;background:linear-gradient(90deg,var(--navy),#2B4FB3);width:var(--v);transform-origin:left;animation:grow 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+.bar-track b{font:700 .95rem/1 var(--f-disp);color:var(--ink)}
+.bar-cost{font:700 .92rem/1 var(--f-disp);color:var(--ink);white-space:nowrap}
+.bar-cost small{display:block;font:500 .7rem/1.3 var(--f-sans);color:var(--ink-mute);margin-top:3px}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.panel figcaption{font-size:.75rem;line-height:1.5;color:var(--ink-mute);margin-top:14px}
+
+.hero-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--navy-line);margin-bottom:clamp(28px,4vw,48px)}
+.hero-strip li{padding:22px 22px 4px 0}
+.hero-strip li+li{padding-left:22px;border-left:1px solid var(--navy-line)}
+.hero-strip b{display:block;font:800 clamp(1.6rem,2.4vw,2.1rem)/1 var(--f-disp);letter-spacing:-.03em;color:#fff}
+.hero-strip b .o{color:var(--orange-2)}
+.hero-strip li>span{display:block;font-size:.88rem;line-height:1.45;color:#B9C8E6;margin-top:8px;max-width:30ch}
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-strip li:nth-child(3){padding-left:0;border-left:0}
+  .hero-strip li:nth-child(n+3){border-top:1px solid var(--navy-line)}
+}
+@media (max-width:520px){
+  .bars-head{display:none}
+  .bar-row{grid-template-columns:minmax(0,1fr) auto;row-gap:8px}
+  .bar-track{grid-column:1 / -1;grid-row:2}
+  .hero-strip{grid-template-columns:1fr}
+  .hero-strip li,.hero-strip li+li{padding-left:0;border-left:0}
+  .hero-strip li+li{border-top:1px solid var(--navy-line)}
+}
+
+/* ---------- quem confia ---------- */
+.trust{padding-block:28px;border-bottom:1px solid var(--line)}
+.trust ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 28px;align-items:center}
+.trust-k{font:700 .7rem/1.4 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);max-width:18ch}
+@media (max-width:760px){.trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.trust li{font:700 1rem/1.2 var(--f-disp);color:var(--ink-soft);letter-spacing:-.01em}
+.trust li small{display:block;font:500 .72rem/1.3 var(--f-sans);color:var(--ink-mute);letter-spacing:0;margin-top:2px}
+
+/* ---------- diagnóstico: anatomia ---------- */
+.anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
+.anat li{padding:26px 24px 28px;position:relative}
+.anat li+li{border-left:1px solid var(--line)}
+.anat .step{display:flex;align-items:center;gap:10px;font:700 .72rem/1 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink)}
+.anat .step i{font:800 1.9rem/1 var(--f-disp);font-style:normal;letter-spacing:-.04em;color:var(--line)}
+.anat h3{font-size:1.3rem;font-weight:800;color:var(--navy);margin-top:14px}
+.anat p{font-size:.95rem;color:var(--ink-soft);margin-top:8px}
+.anat li:not(:last-child)::after{content:"";position:absolute;right:-9px;top:34px;width:16px;height:16px;background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);transform:rotate(45deg);z-index:1}
+@media (max-width:900px){.anat{grid-template-columns:repeat(2,minmax(0,1fr))}.anat li:nth-child(3){border-left:0}.anat li:nth-child(n+3){border-top:1px solid var(--line)}.anat li:nth-child(2)::after{display:none}}
+@media (max-width:560px){.anat{grid-template-columns:1fr}.anat li+li{border-left:0;border-top:1px solid var(--line)}.anat li::after{display:none}}
+
+.quotes-k{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:clamp(40px,5vw,64px)}
+.quotes-k h3{font-size:1.15rem;font-weight:700;color:var(--navy)}
+.quotes-k p{font-size:.85rem;color:var(--ink-mute)}
+.quotes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:18px}
+.quote{background:var(--bg-soft);border-radius:var(--r);padding:24px 22px;display:flex;flex-direction:column;gap:18px;border:1px solid var(--line-soft)}
+.quote blockquote{margin:0;font:600 1.06rem/1.42 var(--f-disp);letter-spacing:-.015em;color:var(--ink)}
+.quote blockquote::before{content:"“";display:block;font:800 2.6rem/.7 var(--f-disp);color:var(--orange);margin-bottom:8px}
+.quote figcaption{margin-top:auto;font:700 .7rem/1.3 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+@media (max-width:1000px){.quotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.quotes{grid-template-columns:1fr}}
+
+/* ---------- pré-diagnóstico ---------- */
+.dx{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,3vw,40px);align-items:start}
+.dx-seg{border:0;padding:0;margin:0 0 20px;min-width:0}
+.dx-seg legend,.dx-q legend{font:700 1.02rem/1.35 var(--f-disp);color:var(--navy);letter-spacing:-.01em;padding:0}
+.seg-opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.seg-opt{position:relative}
+.seg-opt input,.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.seg-opt label{display:flex;flex-direction:column;gap:4px;height:100%;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px 14px;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.seg-opt label b{font:700 .95rem/1.2 var(--f-disp);color:var(--navy)}
+.seg-opt label span{font-size:.8rem;color:var(--ink-mute);line-height:1.35}
+.seg-opt input:checked+label{border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,36,125,.12)}
+.seg-opt input:focus-visible+label,.opt input:focus-visible+label{outline:3px solid var(--orange-2);outline-offset:2px}
+.dx-qs{display:grid;gap:12px;counter-reset:q}
+.dx-q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;margin:0;min-width:0;counter-increment:q}
+.dx-q legend{display:flex;gap:10px;float:left;width:100%}
+.dx-q legend::before{content:counter(q,decimal-leading-zero);font:800 .78rem/1.7 var(--f-disp);color:var(--orange-ink);flex:none}
+.dx-q .pill{clear:both;display:inline-block;font:700 .64rem/1 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin:2px 0 0 28px}
+.opts{clear:both;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;padding-left:28px}
+.opt{position:relative}
+.opt label{display:inline-flex;align-items:center;gap:8px;font:500 .875rem/1.3 var(--f-sans);color:var(--ink-soft);background:var(--bg-soft);border:1.5px solid transparent;border-radius:999px;padding:9px 14px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.opt label:hover{border-color:var(--line);color:var(--ink)}
+.opt label::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lv,#C5CDE0);flex:none}
+.opt input:checked+label{background:#fff;border-color:var(--navy);color:var(--navy);font-weight:600}
+.opt[data-v="0"]{--lv:#D9534F}.opt[data-v="1"]{--lv:#E6A23C}.opt[data-v="2"]{--lv:#2E9E5B}
+@media (max-width:560px){.opts{padding-left:0}.dx-q .pill{margin-left:0}.seg-opts{grid-template-columns:1fr}}
+
+.dx-out{position:sticky;top:96px;background:var(--navy);color:#fff;border-radius:20px;padding:clamp(20px,2.4vw,28px);box-shadow:0 30px 60px -36px rgba(0,20,70,.7)}
+.dx-out h3{font-size:1.15rem;font-weight:700;color:#fff;display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.dx-prog{font:600 .8rem/1 var(--f-sans);color:var(--sky);letter-spacing:0}
+.dx-score{display:flex;align-items:flex-end;gap:14px;margin-top:16px;padding-bottom:16px;border-bottom:1px solid var(--navy-line)}
+.dx-score b{font:800 3.6rem/.9 var(--f-disp);letter-spacing:-.05em;color:#fff}
+.dx-score b.empty{color:rgba(169,195,230,.45)}
+.dx-score b small{font-size:1.1rem;color:var(--sky);letter-spacing:0;margin-left:2px}
+.dx-score p{font-size:.88rem;line-height:1.45;color:#C9D6EE}
+.dx-score p strong{display:block;font:700 1rem/1.25 var(--f-disp);color:var(--orange-2);margin-bottom:4px}
+.meters{display:grid;gap:7px;margin-top:16px}
+.meter{display:grid;grid-template-columns:minmax(0,1fr) 84px;gap:10px;align-items:center;font-size:.8rem;color:#C9D6EE}
+.meter i{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;height:8px}
+.meter i::before,.meter i::after,.meter i span{content:"";border-radius:3px;background:rgba(169,195,230,.18)}
+.meter[data-v="0"] i::before{background:#FF8A80}
+.meter[data-v="1"] i::before,.meter[data-v="1"] i span{background:#FFD166}
+.meter[data-v="2"] i::before,.meter[data-v="2"] i span,.meter[data-v="2"] i::after{background:#6EE7A0}
+.sx{display:grid;gap:10px;margin-top:18px}
+.sx-empty{font-size:.88rem;color:var(--sky);background:rgba(255,255,255,.05);border:1px dashed var(--navy-line);border-radius:12px;padding:14px}
+.sx-card{background:rgba(255,255,255,.06);border:1px solid var(--navy-line);border-radius:12px;padding:14px 14px 13px}
+.sx-card .k{font:700 .66rem/1 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-2)}
+.sx-card h4{font-size:1rem;font-weight:700;color:#fff;margin-top:7px;letter-spacing:-.01em}
+.sx-card p{font-size:.84rem;line-height:1.45;color:#C9D6EE;margin-top:5px}
+.sx-card p.alv{color:#fff}
+.sx-card p.alv b{color:var(--orange-2);font-weight:700}
+.dx-prog-rec{margin-top:16px;font-size:.88rem;color:#C9D6EE}
+.dx-prog-rec a{color:#fff;font-weight:700}
+.dx-actions{display:grid;gap:10px;margin-top:18px}
+.dx-actions .btn{width:100%}
+.dx-reset{background:none;border:0;color:var(--sky);font:600 .85rem/1 var(--f-sans);cursor:pointer;padding:8px;text-decoration:underline;text-underline-offset:3px}
+.dx-fine{font-size:.74rem;color:var(--sky-dim);margin-top:10px;line-height:1.45}
+@media (max-width:980px){.dx{grid-template-columns:1fr}.dx-out{position:static}}
+
+/* ---------- partitura ---------- */
+.score-wrap{margin-top:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--navy-line);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}
+.score{min-width:760px;padding:22px 24px 18px;display:grid;grid-template-columns:200px minmax(0,1fr);row-gap:0}
+.sc-cols{grid-column:2;display:grid;grid-template-columns:2fr 4.33fr 4.33fr 4.34fr;border-bottom:1px solid var(--navy-line);padding-bottom:10px}
+.sc-cols span{font:700 .7rem/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--sky);padding-left:8px;border-left:1px solid var(--navy-line)}
+.sc-cols span small{display:block;font:500 .7rem/1.3 var(--f-sans);letter-spacing:0;text-transform:none;color:var(--sky-dim);margin-top:3px}
+.sc-label{grid-column:1;display:flex;flex-direction:column;justify-content:center;padding:12px 14px 12px 0;min-height:58px;border-bottom:1px solid rgba(34,64,154,.55)}
+.sc-label b{font:700 .92rem/1.2 var(--f-disp);color:#fff;letter-spacing:-.01em}
+.sc-label small{font-size:.74rem;color:var(--sky-dim);line-height:1.3;margin-top:3px}
+.sc-lane{grid-column:2;position:relative;min-height:58px;border-bottom:1px solid rgba(34,64,154,.55);
+  background:
+   linear-gradient(var(--navy-line),var(--navy-line)) 13.33% 0/1px 100% no-repeat,
+   linear-gradient(var(--navy-line),var(--navy-line)) 42.2% 0/1px 100% no-repeat,
+   linear-gradient(var(--navy-line),var(--navy-line)) 71.13% 0/1px 100% no-repeat,
+   repeating-linear-gradient(180deg,transparent 0 10px,rgba(169,195,230,.07) 10px 11px)}
+.note{position:absolute;top:50%;transform:translateY(-50%);left:calc(var(--s)/15*100%);width:calc((var(--e) - var(--s))/15*100%);height:14px;border-radius:7px;background:var(--orange);box-shadow:0 0 0 3px rgba(232,93,27,.18)}
+.note.sky{background:var(--sky);box-shadow:none;opacity:.9}
+.note.dash{background:repeating-linear-gradient(90deg,var(--orange-2) 0 8px,transparent 8px 13px);box-shadow:none}
+.note.thin{height:6px;border-radius:3px;background:rgba(169,195,230,.5);box-shadow:none}
+.note em{position:absolute;left:0;bottom:calc(100% + 5px);font:600 .68rem/1 var(--f-sans);font-style:normal;color:var(--orange-2);white-space:nowrap}
+.note.sky em,.note.thin em{color:var(--sky)}
+.tick{position:absolute;top:50%;left:calc(var(--t)/15*100%);width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:#fff}
+.tick.big{width:16px;height:16px;margin:-8px 0 0 -8px;background:var(--orange-2);border:3px solid var(--navy)}
+.tick.dia{width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:2px;transform:rotate(45deg);background:#fff}
+.sc-legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:16px;font-size:.8rem;color:var(--sky)}
+.sc-legend span{display:inline-flex;align-items:center;gap:8px}
+.sc-legend i{display:inline-block;width:22px;height:8px;border-radius:4px;background:var(--orange)}
+.sc-legend i.sky{background:var(--sky)} .sc-legend i.dash{background:repeating-linear-gradient(90deg,var(--orange-2) 0 5px,transparent 5px 8px)}
+.sc-legend i.big{width:12px;height:12px;border-radius:50%;background:var(--orange-2);box-shadow:0 0 0 2px var(--navy)}
+.sc-legend i.dot{width:9px;height:9px;border-radius:50%;background:#fff}
+.sc-legend i.dia{width:9px;height:9px;border-radius:2px;transform:rotate(45deg);background:#fff}
+.scroll-hint{display:none;font-size:.78rem;color:var(--sky-dim);margin-top:10px}
+@media (max-width:820px){.scroll-hint{display:block}}
+
+.rituals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:clamp(36px,4vw,52px)}
+.ritual{border-top:2px solid var(--orange-2);padding-top:16px}
+.ritual .k{font:700 .7rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-2)}
+.ritual h3{font-size:1.15rem;font-weight:700;color:#fff;margin-top:8px}
+.ritual p{font-size:.9rem;color:#C9D6EE;margin-top:6px}
+@media (max-width:900px){.rituals{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.rituals{grid-template-columns:1fr}}
+
+/* ---------- frentes ---------- */
+.fronts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.front{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 22px 0;transition:border-color .15s,box-shadow .2s,transform .2s}
+.front:hover{border-color:#C9D4EA;box-shadow:0 18px 40px -26px rgba(0,36,125,.45);transform:translateY(-2px)}
+.front-i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--bg-blue);color:var(--navy)}
+.front h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-top:18px;letter-spacing:-.02em}
+.front p{font-size:.94rem;color:var(--ink-soft);margin-top:8px}
+.front .deliv{margin-top:auto;padding:14px 0 16px;border-top:1px dashed var(--line);font-size:.82rem;color:var(--ink-mute);line-height:1.45}
+.front h3+p{margin-bottom:18px}
+.front .deliv b{color:var(--ink);font-weight:600}
+.front--go{background:var(--navy);border-color:var(--navy);color:#fff}
+.front--go .front-i{background:rgba(246,162,78,.16);color:var(--orange-2)}
+.front--go h3{color:#fff} .front--go p{color:#C9D6EE}
+.front--go .deliv{border-color:var(--navy-line);color:var(--sky)} .front--go .deliv b{color:#fff}
+.front--go a{color:var(--orange-2);font-weight:700}
+@media (max-width:980px){.fronts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.fronts{grid-template-columns:1fr}}
+
+/* ---------- programas ---------- */
+.progs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.prog{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;scroll-margin-top:100px}
+.prog .for{font:700 .7rem/1.3 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink)}
+.prog h3{font-size:1.65rem;font-weight:800;color:var(--navy);letter-spacing:-.035em}
+.prog h3 .d{color:var(--orange)}
+.prog>p{font-size:.98rem;color:var(--ink-soft)}
+.prog ul{display:grid;gap:9px;padding-top:16px;border-top:1px solid var(--line)}
+.prog li{display:flex;gap:10px;font-size:.92rem;color:var(--ink);line-height:1.45}
+.prog li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);margin-top:8px;flex:none}
+.prog .kpi{margin-top:auto;background:var(--bg-soft);border-radius:12px;padding:12px 14px;font-size:.85rem;color:var(--ink-soft)}
+.prog .kpi b{display:block;font:700 .66rem/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+.prog .kpi span{font:700 1rem/1.3 var(--f-disp);color:var(--navy)}
+.prog .btn{width:100%}
+.prog--feat{border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,36,125,.08)}
+.terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.term{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.term .ico{color:var(--orange-ink);margin-top:2px}
+.term b{display:block;font:700 .98rem/1.3 var(--f-disp);color:var(--navy)}
+.term span{font-size:.88rem;color:var(--ink-soft)}
+@media (max-width:980px){.progs,.terms{grid-template-columns:1fr}}
+
+/* ---------- resultados ---------- */
+.cases{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.case{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px}
+.case--wide{grid-column:span 3}
+.case-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.case-top b{display:block;font:700 1.08rem/1.25 var(--f-disp);color:var(--navy);letter-spacing:-.015em}
+.case-top small{display:block;font-size:.8rem;color:var(--ink-mute);margin-top:3px}
+.tag{font:700 .64rem/1 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--bg-blue);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.tag--g{background:var(--green-soft);color:var(--green)}
+.case-big{font:800 clamp(2.4rem,4vw,3.3rem)/1 var(--f-disp);letter-spacing:-.045em;color:var(--orange)}
+.case-big small{font-size:.42em;letter-spacing:-.01em;color:var(--navy);margin-left:6px}
+.case-head{font:700 1.06rem/1.35 var(--f-disp);color:var(--ink);letter-spacing:-.015em}
+.cmp{display:grid;gap:8px}
+.cmp-row{display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:10px;align-items:center;font-size:.8rem;color:var(--ink-mute)}
+.cmp-row i{display:block;height:10px;border-radius:5px;background:#C9D2E6;width:var(--w)}
+.cmp-row.now i{background:var(--navy)}
+.cmp-row b{font:700 .9rem/1 var(--f-disp);color:var(--ink);white-space:nowrap}
+.cmp-k{font:700 .66rem/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fact{background:var(--bg-soft);border-radius:10px;padding:10px 12px}
+.fact b{display:block;font:700 1.08rem/1.15 var(--f-disp);color:var(--navy)}
+.fact span{font-size:.76rem;line-height:1.35;color:var(--ink-soft)}
+.case .src{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-soft);font-size:.72rem;line-height:1.5;color:var(--ink-mute)}
+.case .also{font-size:.86rem;color:var(--ink-soft)}
+.case .also b{color:var(--ink)}
+@media (max-width:1000px){.cases{grid-template-columns:repeat(2,minmax(0,1fr))}.case,.case--wide{grid-column:span 1}}
+@media (max-width:640px){.cases{grid-template-columns:1fr}}
+
+.report{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,56px);align-items:center;margin-top:clamp(56px,7vw,88px)}
+.report h3{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;color:var(--navy)}
+.report-list{display:grid;gap:14px;margin-top:22px}
+.report-list li{display:flex;gap:14px}
+.report-list li b{font:800 .85rem/1.6 var(--f-disp);color:var(--orange-ink);flex:none}
+.report-list li span{color:var(--ink-soft);font-size:.96rem}
+.report-list li strong{color:var(--ink);font-weight:600}
+.upd{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(0,36,125,.55);background:#fff}
+.upd-h{background:radial-gradient(420px 200px at 100% 0,rgba(246,162,78,.22),transparent 70%),var(--navy);color:#fff;padding:22px 24px 24px}
+.upd-h .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.upd-h .brand{color:#fff;font-size:1.02rem}
+.upd-h .row small{font-size:.72rem;color:var(--sky)}
+.upd-h .eyebrow{margin-top:20px;font-size:.62rem}
+.upd-h h4{font:800 clamp(1.3rem,2.2vw,1.7rem)/1.1 var(--f-disp);letter-spacing:-.035em;margin-top:10px}
+.upd-h h4 .o{color:var(--orange-2)} .upd-h h4 .s{color:var(--sky)}
+.upd-k{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.upd-k div{padding:14px 14px 16px}
+.upd-k div+div{border-left:1px solid var(--line)}
+.upd-k b{display:block;font:800 1.3rem/1.1 var(--f-disp);letter-spacing:-.03em;color:var(--navy)}
+.upd-k span{display:block;font-size:.72rem;line-height:1.35;color:var(--ink-soft);margin-top:4px}
+.upd-k em{display:block;font-style:normal;font:700 .7rem/1.3 var(--f-sans);color:var(--green);margin-top:5px}
+.upd-b{padding:16px 24px 20px;display:grid;gap:12px}
+.upd-read{border-left:3px solid var(--orange);background:var(--orange-soft);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.84rem;color:var(--ink)}
+.upd-read b{display:block;font:700 .64rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:3px}
+.upd-next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.upd-next div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.78rem;line-height:1.4;color:var(--ink-soft)}
+.upd-next b{display:block;font:700 .62rem/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:4px}
+.upd-next strong{display:block;color:var(--navy);font:700 .86rem/1.25 var(--f-disp);margin-bottom:2px}
+.upd-src{font-size:.72rem;color:var(--ink-mute)}
+@media (max-width:980px){.report{grid-template-columns:1fr}}
+@media (max-width:560px){.upd-k{grid-template-columns:repeat(2,minmax(0,1fr))}.upd-k div:nth-child(3){border-left:0}.upd-k div:nth-child(n+3){border-top:1px solid var(--line)}.upd-next{grid-template-columns:1fr}}
+
+/* ---------- combinados ---------- */
+.deals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.deal{padding:26px 22px 28px 0;border-bottom:1px solid var(--line)}
+.deal:not(:nth-child(4n+1)){padding-left:22px;border-left:1px solid var(--line)}
+.deal .ico{color:var(--orange-ink);width:26px;height:26px}
+.deal h3{font-size:1.08rem;font-weight:700;line-height:1.25;color:var(--navy);margin-top:14px;letter-spacing:-.015em}
+.deal p{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
+@media (max-width:980px){.deals{grid-template-columns:repeat(2,minmax(0,1fr))}.deal:not(:nth-child(4n+1)){padding-left:0;border-left:0}.deal:nth-child(2n){padding-left:22px;border-left:1px solid var(--line)}}
+@media (max-width:560px){.deals{grid-template-columns:1fr}.deal:nth-child(2n){padding-left:0;border-left:0}}
+
+/* ---------- GO influ ---------- */
+.goband{background:var(--orange-cta);color:#fff;position:relative;overflow:hidden}
+.goband::after{content:"";position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 65%);pointer-events:none}
+.goband .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(56px,7vw,88px);position:relative;z-index:1}
+.goband .go-word{margin:0;max-width:none;font:800 clamp(3.2rem,8vw,6.4rem)/.9 var(--f-brand);letter-spacing:-.06em;color:#fff}
+.goband .go-word span{font-weight:700;letter-spacing:-.045em}
+.goband .go-word .d{color:var(--navy)}
+.goband .go-sub{max-width:none;font:700 .78rem/1.3 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:#FFE1CF;margin-top:16px}
+.goband h2{font-size:clamp(1.5rem,2.6vw,2.15rem);font-weight:800;line-height:1.15;color:#fff}
+.goband p{color:#FFE7DA;margin-top:14px;font-size:1.02rem;max-width:52ch}
+.goband ul{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.goband li{font:600 .82rem/1 var(--f-sans);padding:9px 12px;border-radius:999px;background:rgba(0,26,92,.22);color:#fff}
+.goband .btn{margin-top:26px;background:var(--navy);color:#fff}
+.goband .btn:hover{background:var(--navy-deep)}
+@media (max-width:860px){.goband .wrap{grid-template-columns:1fr}}
+
+/* ---------- FAQ ---------- */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(28px,5vw,72px);align-items:start}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:20px 0;font:700 1.06rem/1.35 var(--f-disp);color:var(--navy);letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:12px;height:12px;flex:none;border-right:2px solid var(--orange);border-bottom:2px solid var(--orange);transform:rotate(45deg) translate(-3px,-3px);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(225deg) translate(-3px,-3px)}
+.faq details p{padding:0 0 22px;color:var(--ink-soft);max-width:64ch}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
+
+/* ---------- fechamento e rodapé ---------- */
+.final{background:radial-gradient(700px 400px at 50% 120%,rgba(246,162,78,.2),transparent 70%),var(--navy);text-align:center}
+.final .h2{margin-inline:auto;max-width:18ch}
+.final .lead{margin-inline:auto}
+.final .hero-cta{justify-content:center}
+.foot{background:var(--navy-900);color:#B9C8E6;padding-block:56px 40px;font-size:.88rem}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:32px}
+.foot .brand{color:#fff;font-size:1.6rem}
+.foot .tagline{font:700 .66rem/1.3 var(--f-sans);letter-spacing:.3em;text-transform:uppercase;color:var(--sky);margin-top:10px}
+.foot p{margin-top:14px;max-width:36ch;line-height:1.55}
+.foot h4{font:700 .7rem/1.3 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+.foot li{margin-top:8px}
+.foot a{color:#E3EAF7;text-decoration:none}
+.foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid rgba(34,64,154,.7);font-size:.78rem;color:var(--sky-dim)}
+@media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid>div:first-child{grid-column:1 / -1}}
+@media (max-width:460px){.foot-grid{grid-template-columns:1fr}}
+
+.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:inline-flex;align-items:center;gap:8px;background:#0F7E42;color:#fff;text-decoration:none;font:700 .9rem/1 var(--f-disp);padding:14px 18px 14px 14px;border-radius:999px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
+.wa-float:hover{background:#0B6A37}
+.wa-float svg{width:22px;height:22px;fill:#fff;stroke:none}
+@media (max-width:560px){.wa-float span{display:none}.wa-float{padding:14px}}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3 10.5v3a1 1 0 0 0 1 1h2.5L12 19V5L6.5 9.5H4a1 1 0 0 0-1 1z"/><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18.5 6a8 8 0 0 1 0 12"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="m16 10.2 5-3v9.6l-5-3"/></symbol>
+  <symbol id="i-feed" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><path d="M16.8 7.2h.01"/></symbol>
+  <symbol id="i-site" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2c1.9.8 3 2.9 3 5.8"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.7-8.7M16 7l3 3"/></symbol>
+  <symbol id="i-pct" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9.5 13h6M9.5 17h6"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24"><path d="M6 3h12v18H6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2A9.7 9.7 0 0 0 3.6 16.8L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.6-.3z"/></symbol>
+</svg>
+
+<header class="top" id="topo-bar">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Grupo Opera, início">Grupo Opera<span class="d">.</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#metodo">Método</a>
+      <a href="#frentes">Frentes</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#programas">Programas</a>
+      <a class="go-link" data-goinflu href="../go-influ/"><span class="go-mini">GO influ<span class="d">.</span></span></a>
+      <a class="btn btn-o btn-sm" data-wa="Olá! Vim pelo site do Grupo Opera e quero conversar sobre um diagnóstico." href="https://wa.me/">Falar no WhatsApp</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" id="menu-btn">Menu</button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Menu" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a href="#diagnostico">Diagnóstico</a></li>
+        <li><a href="#metodo">Método</a></li>
+        <li><a href="#frentes">Frentes</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#programas">Programas</a></li>
+        <li><a data-goinflu href="../go-influ/">GO influ. · influenciadores</a></li>
+      </ul>
+      <a class="btn btn-o" data-wa="Olá! Vim pelo site do Grupo Opera e quero conversar sobre um diagnóstico." href="https://wa.me/">Falar no WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero on-navy" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Aceleradora de crescimento</span>
+      <h1>Mais conversas.<br><span class="o">Menor custo</span> <span class="s">por conversa</span><span class="o">.</span></h1>
+      <p class="hero-sub">O Grupo Opera junta diagnóstico, mídia, conteúdo, site e relatório num time só, com uma meta: o seu WhatsApp tocando com quem quer comprar. Para clínicas, negócios locais e empresas B2B.</p>
+      <div class="hero-cta">
+        <a class="btn btn-o" href="#pre-diagnostico">Fazer o pré-diagnóstico <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#resultados">Ver resultados</a>
+      </div>
+      <p class="hero-note">São 9 perguntas, leva uns 2 minutos e o resultado sai na hora.</p>
+    </div>
+
+    <figure class="panel" aria-label="Conversas iniciadas por anúncios em 90 dias, por cliente">
+      <div class="panel-h">
+        <span class="panel-k">Meta Ads · 12/07 a 09/10/2026</span>
+        <span class="chip">Dados reais</span>
+      </div>
+      <p class="panel-big"><b class="num">2.562</b><span>conversas no WhatsApp e no Direct, iniciadas pelos anúncios de 4 clínicas</span></p>
+      <div class="bars" role="table" aria-label="Conversas e custo por conversa por cliente">
+        <div class="bars-head" role="row"><span role="columnheader">Cliente</span><span role="columnheader">Conversas</span><span role="columnheader">Custo/conversa</span></div>
+        <div class="bar-row" role="row">
+          <div class="bar-name" role="cell"><b>Fiorini</b><small>Vargem Grande do Sul · SP</small></div>
+          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:62%;--d:.1s"></span><b class="num">839</b></div>
+          <div class="bar-cost num" role="cell">R$ 18,69<small>antes R$ 31,27</small></div>
+        </div>
+        <div class="bar-row" role="row">
+          <div class="bar-name" role="cell"><b>Trait Odontologia</b><small>Guarapuava · PR</small></div>
+          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:54%;--d:.2s"></span><b class="num">731</b></div>
+          <div class="bar-cost num" role="cell">R$ 16,01<small>antes R$ 29,88</small></div>
+        </div>
+        <div class="bar-row" role="row">
+          <div class="bar-name" role="cell"><b>D’Plácido Odontologia</b><small>Embu das Artes · SP</small></div>
+          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:49.1%;--d:.3s"></span><b class="num">665</b></div>
+          <div class="bar-cost num" role="cell">R$ 12,78<small>antes R$ 14,23</small></div>
+        </div>
+        <div class="bar-row" role="row">
+          <div class="bar-name" role="cell"><b>CEMED</b><small>Mirassol · SP</small></div>
+          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:24.1%;--d:.4s"></span><b class="num">327</b></div>
+          <div class="bar-cost num" role="cell">R$ 11,90<small>desde 24/07</small></div>
+        </div>
+      </div>
+      <figcaption>Fonte: Reportei (Meta Ads). “Antes” são os 90 dias anteriores (13/04 a 11/07/2026). Conversas iniciadas por mensagem, como a Meta registra.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <ul class="hero-strip">
+      <li><b class="num"><span class="o">−46%</span></b><span>no custo por conversa da Trait Odontologia, com o mesmo volume de conversas</span></li>
+      <li><b class="num"><span class="o">−40%</span></b><span>no custo por conversa da Fiorini, com 14% mais conversas</span></li>
+      <li><b class="num">0%</b><span>de taxa sobre a sua verba de mídia, que vai direto para as plataformas</span></li>
+      <li><b class="num">90 dias</b><span>para o sistema completo rodando e medido</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="trust" aria-label="Clientes">
+  <div class="wrap">
+    <ul>
+      <li class="trust-k">Quem já trabalha com a gente</li>
+      <li>Fiorini Odonto &amp; Estética<small>Vargem Grande do Sul · SP</small></li>
+      <li>Trait Odontologia<small>Guarapuava · PR</small></li>
+      <li>D’Plácido Odontologia<small>Embu das Artes · SP</small></li>
+      <li>Instituto Sanrire<small>Brasília · DF</small></li>
+      <li>EGO Odontologia<small>Goiânia · GO</small></li>
+      <li>CEMED<small>Mirassol · SP</small></li>
+      <li>Dreisson Vivo Imóveis<small>Mirassol · SP</small></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="diagnostico">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">O diagnóstico</span>
+      <h2 class="h2">Toda proposta do Grupo Opera começa por um <span class="o">diagnóstico</span><span class="dot-o">.</span></h2>
+      <p class="lead">Antes de falar de anúncio, a gente descobre onde o crescimento trava. O diagnóstico segue sempre a mesma estrutura, e é ele que decide o que entra no plano e o que fica de fora.</p>
+    </div>
+    <ol class="anat">
+      <li><span class="step"><i>01</i>Tese</span><h3>O que mudou no seu mercado</h3><p>Uma leitura de onde está a oportunidade e de quem está ocupando o espaço que deveria ser seu.</p></li>
+      <li><span class="step"><i>02</i>Sintomas</span><h3>Três problemas com nome</h3><p>Descritos do jeito que você sente no dia a dia: o lead que não chega, o post que ninguém vê, o contato que esfria.</p></li>
+      <li><span class="step"><i>03</i>Alavancas</span><h3>O que resolve cada um</h3><p>Cada alavanca tem uma frente responsável e um indicador. Nada roda sem uma hipótese e uma meta.</p></li>
+      <li><span class="step"><i>04</i>Plano</span><h3>Os primeiros 90 dias</h3><p>Fase 0, mês 1, mês 2 e mês 3. Cada mês liga uma camada nova sem parar o que já está rodando.</p></li>
+    </ol>
+
+    <div class="quotes-k">
+      <h3>Trechos de diagnósticos que já entregamos</h3>
+      <p>Clientes identificados só pelo segmento.</p>
+    </div>
+    <div class="quotes">
+      <figure class="quote"><blockquote>Autoridade sem distribuição não gera consulta. Distribuição sem autoridade não gera confiança.</blockquote><figcaption>Cardiologista · consultório</figcaption></figure>
+      <figure class="quote"><blockquote>O problema tem nome: bolha. Search captura quem já busca, remarketing reimpacta quem já visitou, rede social fala com quem já segue.</blockquote><figcaption>Empresa B2B</figcaption></figure>
+      <figure class="quote"><blockquote>Mais criativo não é mais do mesmo. É mais ângulos. Campanha com pouco ângulo cansa rápido.</blockquote><figcaption>Clínica odontológica · PR</figcaption></figure>
+      <figure class="quote"><blockquote>Dermatologia é a formação. Queda de cabelo é o posicionamento.</blockquote><figcaption>Dermatologista</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--soft" id="pre-diagnostico">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Pré-diagnóstico</span>
+      <h2 class="h2">Descubra os seus três <span class="o">sintomas</span> em dois minutos<span class="dot-o">.</span></h2>
+      <p class="lead">Nove perguntas, com o mesmo raciocínio dos diagnósticos completos. O resultado aparece ao lado enquanto você responde, e você pode mandar tudo para a gente pelo WhatsApp.</p>
+    </div>
+    <div class="dx">
+      <form class="dx-form" id="dx-form" autocomplete="off">
+        <fieldset class="dx-seg">
+          <legend>Qual é o seu negócio?</legend>
+          <div class="seg-opts">
+            <div class="seg-opt"><input type="radio" name="seg" id="seg-saude" value="saude" checked><label for="seg-saude"><b>Clínica ou consultório</b><span>Odontologia, medicina, saúde</span></label></div>
+            <div class="seg-opt"><input type="radio" name="seg" id="seg-local" value="local"><label for="seg-local"><b>Negócio local</b><span>Imobiliária, comércio, serviços</span></label></div>
+            <div class="seg-opt"><input type="radio" name="seg" id="seg-b2b" value="b2b"><label for="seg-b2b"><b>Empresa B2B</b><span>Vende para outras empresas</span></label></div>
+          </div>
+        </fieldset>
+        <div class="dx-qs" id="dx-qs"></div>
+      </form>
+
+      <aside class="dx-out" aria-live="polite" id="dx-out">
+        <h3>Seu pré-diagnóstico <span class="dx-prog" id="dx-prog">0 de 9 respondidas</span></h3>
+        <div class="dx-score">
+          <b class="num empty" id="dx-num">–</b>
+          <p id="dx-band"><strong>Responda para ver a nota</strong>A nota vai de 0 a 100 e sai quando as 9 perguntas estiverem respondidas.</p>
+        </div>
+        <div class="meters" id="dx-meters"></div>
+        <div class="sx" id="dx-sx"><p class="sx-empty">Os sintomas aparecem aqui conforme você responde. Cada um vem com a alavanca que resolve.</p></div>
+        <p class="dx-prog-rec" id="dx-rec" hidden></p>
+        <div class="dx-actions">
+          <a class="btn btn-o" id="dx-send" href="https://wa.me/" target="_blank" rel="noopener">Quero o diagnóstico completo <span class="arrow" aria-hidden="true">→</span></a>
+          <button type="button" class="dx-reset" id="dx-reset">Recomeçar</button>
+        </div>
+        <p class="dx-fine">O pré-diagnóstico é uma triagem. O diagnóstico completo olha os seus números, as suas contas de anúncio e os seus concorrentes.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-navy" id="metodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">O método</span>
+      <h2 class="h2">A partitura dos <span class="o">90 dias</span>.</h2>
+      <p class="lead">Numa ópera, cada instrumento entra no compasso certo. Aqui também: a Fase 0 organiza a casa e cada mês liga uma camada nova, sem parar o que já está rodando.</p>
+    </div>
+
+    <div class="score-wrap" role="region" aria-label="Linha do tempo dos primeiros 90 dias" tabindex="0">
+      <div class="score">
+        <div class="sc-cols" aria-hidden="true"><span>Fase 0<small>semanas 1 e 2</small></span><span>Mês 1<small>captura ligada</small></span><span>Mês 2<small>alcance ligado</small></span><span>Mês 3<small>escala e revisão</small></span></div>
+
+        <div class="sc-label"><b>Rituais</b><small>leitura, relatório, revisão</small></div>
+        <div class="sc-lane" aria-label="Leitura semanal a partir da semana 1; relatório mensal ao fim de cada mês; revisão do trimestre no fim">
+          <span class="note thin" style="--s:.5;--e:14.6"></span>
+          <span class="tick" style="--t:1"></span><span class="tick" style="--t:2"></span><span class="tick" style="--t:3"></span><span class="tick" style="--t:4"></span><span class="tick" style="--t:5"></span><span class="tick" style="--t:6"></span><span class="tick" style="--t:7"></span><span class="tick" style="--t:8"></span><span class="tick" style="--t:9"></span><span class="tick" style="--t:10"></span><span class="tick" style="--t:11"></span><span class="tick" style="--t:12"></span><span class="tick" style="--t:13"></span><span class="tick" style="--t:14"></span>
+          <span class="tick big" style="--t:6.33"></span><span class="tick big" style="--t:10.67"></span><span class="tick dia" style="--t:14.6"></span>
+        </div>
+
+        <div class="sc-label"><b>Diagnóstico e metas</b><small>imersão, posicionamento, meta do trimestre</small></div>
+        <div class="sc-lane"><span class="note" style="--s:0;--e:2"><em>plano aprovado</em></span><span class="note sky" style="--s:2;--e:15"></span></div>
+
+        <div class="sc-label"><b>Setup e painel</b><small>contas, pixel, rastreamento, BI</small></div>
+        <div class="sc-lane"><span class="note" style="--s:.4;--e:2"><em>painel no ar</em></span><span class="note sky" style="--s:2;--e:15"></span></div>
+
+        <div class="sc-label"><b>Mídia de captura</b><small>Meta de mensagem, Google Search</small></div>
+        <div class="sc-lane"><span class="note" style="--s:2;--e:15"><em>custo por conversa medido</em></span></div>
+
+        <div class="sc-label"><b>Conteúdo e gravação</b><small>uma diária por mês, roteirizada</small></div>
+        <div class="sc-lane"><span class="note" style="--s:2;--e:15"></span><span class="tick dia" style="--t:2.6"></span><span class="tick dia" style="--t:6.9"></span><span class="tick dia" style="--t:11.2"></span></div>
+
+        <div class="sc-label"><b>Mídia de alcance</b><small>YouTube, remarketing, público novo</small></div>
+        <div class="sc-lane"><span class="note" style="--s:6.33;--e:15"><em>alcance novo medido</em></span></div>
+
+        <div class="sc-label"><b>Influência</b><small>GO influ., quando entra no plano</small></div>
+        <div class="sc-lane"><span class="note dash" style="--s:.6;--e:2"><em>lista de creators</em></span><span class="note" style="--s:2;--e:15"></span></div>
+
+        <div class="sc-label"><b>Escala</b><small>verba realocada por resultado</small></div>
+        <div class="sc-lane"><span class="note" style="--s:10.67;--e:15"><em>próximo trimestre</em></span></div>
+      </div>
+    </div>
+    <div class="sc-legend" aria-hidden="true">
+      <span><i></i>camada no ar</span><span><i class="sky"></i>em acompanhamento</span><span><i class="dash"></i>preparação</span><span><i class="dot"></i>leitura semanal</span><span><i class="big"></i>update mensal</span><span><i class="dia"></i>diária de gravação · revisão</span>
+    </div>
+    <p class="scroll-hint">Arraste para o lado para ver os 90 dias.</p>
+
+    <div class="rituals">
+      <div class="ritual"><span class="k">Toda semana</span><h3>Leitura e ajuste</h3><p>O que subiu, o que caiu e o que muda. A decisão fica registrada e é executada na mesma semana.</p></div>
+      <div class="ritual"><span class="k">Todo mês</span><h3>Update e reunião</h3><p>Relatório em linguagem de gente e 30 minutos para olhar os números juntos.</p></div>
+      <div class="ritual"><span class="k">A cada 90 dias</span><h3>Revisão do plano</h3><p>Metas, canais e verba revistos com o que os dados mostraram no trimestre.</p></div>
+      <div class="ritual"><span class="k">A cada semestre</span><h3>Pesquisa com a carteira</h3><p>Todo cliente avalia o nosso trabalho. Crítica dura vale ouro e vira prioridade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="frentes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">As frentes</span>
+      <h2 class="h2">Nove frentes. Um time. <span class="o">Uma meta</span><span class="dot-o">.</span></h2>
+      <p class="lead">Cada frente tem um responsável e um indicador próprio, e todas respondem à mesma meta de negócio, definida no diagnóstico. Você contrata as frentes que o diagnóstico apontar.</p>
+    </div>
+    <div class="fronts">
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-compass"/></svg></span><h3>Diagnóstico e estratégia</h3><p>Imersão no negócio, posicionamento, público e meta do trimestre, com plano por canal.</p><p class="deliv"><b>Entrega:</b> diagnóstico escrito e plano de 90 dias.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-mega"/></svg></span><h3>Tráfego pago</h3><p>Meta Ads com campanhas de mensagem, Google Search, Performance Max e YouTube. LinkedIn e TikTok quando o público pede.</p><p class="deliv"><b>Entrega:</b> gestão diária, teste de criativos e custo por conversa no relatório.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-video"/></svg></span><h3>Conteúdo e gravação</h3><p>Roteiro, diária de gravação, edição e podcast quando faz sentido. Uma captação abastece o mês inteiro.</p><p class="deliv"><b>Entrega:</b> calendário mensal e banco de vídeos organizado.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-feed"/></svg></span><h3>Redes sociais</h3><p>Pauta, publicação e comunidade no Instagram, no YouTube e no LinkedIn, com séries que o público reconhece.</p><p class="deliv"><b>Entrega:</b> pauta mensal e comentários respondidos em horário comercial.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-site"/></svg></span><h3>Sites e landing pages</h3><p>Site institucional e uma página por serviço, prontas para anúncio, com WhatsApp e mensagem que diz de onde o contato veio.</p><p class="deliv"><b>Entrega:</b> páginas no ar com Meta Pixel, Google Ads e GA4.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-pin"/></svg></span><h3>Presença local</h3><p>Perfil da Empresa no Google com fotos, posts e avaliações, para aparecer em “perto de mim”.</p><p class="deliv"><b>Entrega:</b> perfil otimizado e post semanal.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-chat"/></svg></span><h3>Atendimento e conversão</h3><p>Roteiro de resposta rápida para a recepção ou o comercial. Quanto menor o tempo de resposta, maior a taxa de agendamento.</p><p class="deliv"><b>Entrega:</b> roteiro no onboarding e leitura das conversas.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-chart"/></svg></span><h3>BI e relatórios</h3><p>Mídia, site e comercial no mesmo painel, com os números que importam e nenhum de vaidade.</p><p class="deliv"><b>Entrega:</b> painel aberto ao cliente e update mensal.</p></article>
+      <article class="front front--go"><span class="front-i"><svg class="ico"><use href="#i-people"/></svg></span><h3>Influência</h3><p>Creators locais e especialistas, com contrato, roteiro aprovado, #publi certo e resultado medido. É a nossa unidade <a data-goinflu href="../go-influ/">GO influ.</a></p><p class="deliv"><b>Entrega:</b> casting, contrato, aprovação e relatório.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--soft" id="programas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Programas</span>
+      <h2 class="h2">Três jeitos de <span class="o">começar</span><span class="dot-o">.</span></h2>
+      <p class="lead">Os programas juntam as frentes que mais aparecem nos diagnósticos de cada tipo de negócio. O diagnóstico ajusta o escopo para o seu caso.</p>
+    </div>
+    <div class="progs">
+      <article class="prog prog--feat" id="saude-360">
+        <span class="for">Médicos, dentistas e clínicas</span>
+        <h3>Saúde 360<span class="d">.</span></h3>
+        <p>Uma operação de conteúdo e mídia num fee só, para você virar a primeira opção de quem procura a sua especialidade na região.</p>
+        <ul>
+          <li>Mídia 360: Meta, Google, YouTube e Perfil da Empresa no Google</li>
+          <li>Uma diária de gravação por mês, com roteiro e direção</li>
+          <li>Reels, cortes e carrosséis toda semana, e podcast quando faz sentido</li>
+          <li>Páginas por tratamento ou especialidade</li>
+          <li>Tudo checado com as regras do CFM e do CFO</li>
+        </ul>
+        <p class="kpi"><b>Número principal</b><span>Custo por conversa no WhatsApp</span></p>
+        <a class="btn btn-o" data-wa="Olá! Tenho uma clínica/consultório e quero saber mais sobre o Saúde 360 do Grupo Opera." href="https://wa.me/">Quero o Saúde 360</a>
+      </article>
+      <article class="prog" id="negocio-local">
+        <span class="for">Imobiliárias, comércio e serviços</span>
+        <h3>Negócio Local<span class="d">.</span></h3>
+        <p>Para ser lembrado na sua cidade e receber contato de quem já está decidindo, não de curioso.</p>
+        <ul>
+          <li>Campanhas de mensagem na sua região</li>
+          <li>Perfil da Empresa no Google com avaliações em dia</li>
+          <li>Conteúdo que mostra quem atende e como atende</li>
+          <li>Creators da sua cidade com a GO influ.</li>
+          <li>Roteiro de atendimento para o WhatsApp</li>
+        </ul>
+        <p class="kpi"><b>Número principal</b><span>Custo por conversa e conversas por semana</span></p>
+        <a class="btn btn-line" data-wa="Olá! Tenho um negócio local e quero saber mais sobre o programa Negócio Local do Grupo Opera." href="https://wa.me/">Quero o Negócio Local</a>
+      </article>
+      <article class="prog" id="aceleracao-b2b">
+        <span class="for">Empresas que vendem para empresas</span>
+        <h3>Aceleração B2B<span class="d">.</span></h3>
+        <p>Um squad dedicado em oito frentes para romper a bolha: criar demanda nova, e não só capturar a que já existe.</p>
+        <ul>
+          <li>YouTube como motor de alcance, com Search e Performance Max capturando</li>
+          <li>Influência distribuída em creators de nicho, com fee baixo</li>
+          <li>Conteúdo de autoridade: uma captação vira dez ativos</li>
+          <li>LinkedIn da empresa e dos executivos</li>
+          <li>BI com lead, oportunidade, venda e receita por canal</li>
+        </ul>
+        <p class="kpi"><b>Número principal</b><span>Busca pela marca, CPL e CAC</span></p>
+        <a class="btn btn-line" data-wa="Olá! Tenho uma empresa B2B e quero saber mais sobre a Aceleração B2B do Grupo Opera." href="https://wa.me/">Quero a Aceleração B2B</a>
+      </article>
+    </div>
+    <div class="terms">
+      <div class="term"><svg class="ico"><use href="#i-pct"/></svg><div><b>Fee mensal fixo</b><span>A verba de mídia é sua e vai direto para as plataformas, sem taxa nossa por cima.</span></div></div>
+      <div class="term"><svg class="ico"><use href="#i-sign"/></svg><div><b>Mínimo de 3 meses</b><span>Um ciclo completo de 90 dias. Depois, cancelamento com 45 dias de aviso.</span></div></div>
+      <div class="term"><svg class="ico"><use href="#i-key"/></svg><div><b>Tudo fica no seu nome</b><span>Contas de anúncio, pixel, páginas e o banco de conteúdo pertencem a você.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="resultados">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Resultados</span>
+      <h2 class="h2">Números com <span class="o">fonte e período</span><span class="dot-o">.</span></h2>
+      <p class="lead">Tudo abaixo vem do Reportei, o mesmo painel que o cliente acompanha. Conversa é a pessoa que chamou no WhatsApp ou no Direct a partir de um anúncio.</p>
+    </div>
+    <div class="cases">
+      <article class="case case--wide">
+        <div class="case-top"><div><b>Trait Odontologia</b><small>Clínica odontológica · Guarapuava, PR</small></div><span class="tag">Meta Ads</span></div>
+        <p class="case-big num">−46%<small>no custo por conversa</small></p>
+        <p class="case-head">O mesmo volume de conversas com quase metade da verba.</p>
+        <div class="cmp" role="img" aria-label="Custo por conversa: R$ 29,88 nos 90 dias anteriores e R$ 16,01 nos últimos 90 dias">
+          <span class="cmp-k">Custo por conversa</span>
+          <div class="cmp-row"><span>Antes</span><i style="--w:100%"></i><b class="num">R$ 29,88</b></div>
+          <div class="cmp-row now"><span>Depois</span><i style="--w:53.6%"></i><b class="num">R$ 16,01</b></div>
+        </div>
+        <div class="facts">
+          <div class="fact"><b class="num">731</b><span>conversas em 90 dias (antes: 729)</span></div>
+          <div class="fact"><b class="num">R$ 11,7 mil</b><span>investidos (antes: R$ 21,8 mil)</span></div>
+          <div class="fact"><b class="num">390</b><span>conversas no melhor mês, a R$ 10,65 cada</span></div>
+          <div class="fact"><b class="num">35</b><span>avaliações no Google em 90 dias, nota média 4,9</span></div>
+        </div>
+        <p class="src">12/07 a 09/10/2026 contra 13/04 a 11/07/2026. Melhor mês: 11/08 a 09/09/2026. Fonte: Reportei (Meta Ads e Perfil da Empresa no Google).</p>
+      </article>
+
+      <article class="case case--wide">
+        <div class="case-top"><div><b>Fiorini Odonto &amp; Estética</b><small>Clínica odontológica · Vargem Grande do Sul, SP</small></div><span class="tag">Meta Ads + site</span></div>
+        <p class="case-big num">−40%<small>no custo por conversa</small></p>
+        <p class="case-head">Mais conversas gastando menos, com páginas feitas para cada tratamento.</p>
+        <div class="cmp" role="img" aria-label="Custo por conversa: R$ 31,27 nos 90 dias anteriores e R$ 18,69 nos últimos 90 dias">
+          <span class="cmp-k">Custo por conversa</span>
+          <div class="cmp-row"><span>Antes</span><i style="--w:100%"></i><b class="num">R$ 31,27</b></div>
+          <div class="cmp-row now"><span>Depois</span><i style="--w:59.8%"></i><b class="num">R$ 18,69</b></div>
+        </div>
+        <div class="facts">
+          <div class="fact"><b class="num">839</b><span>conversas em 90 dias (+14%)</span></div>
+          <div class="fact"><b class="num">−32%</b><span>de investimento no mesmo período</span></div>
+          <div class="fact"><b class="num">R$ 9,18</b><span>por conversa na campanha de lentes de contato</span></div>
+          <div class="fact"><b class="num">27</b><span>ganchos gravados para o Invisalign Day</span></div>
+        </div>
+        <p class="also"><b>Também entregamos:</b> site institucional, páginas de Protocolo e Implantes e de Lentes de Contato, e a campanha do Invisalign Day.</p>
+        <p class="src">12/07 a 09/10/2026 contra 13/04 a 11/07/2026. Fonte: Reportei (Meta Ads).</p>
+      </article>
+
+      <article class="case">
+        <div class="case-top"><div><b>D’Plácido Odontologia</b><small>Embu das Artes, SP</small></div><span class="tag">Meta Ads</span></div>
+        <p class="case-big num">+84%<small>conversas</small></p>
+        <p class="case-head">Escala com custo menor: 665 conversas em 90 dias, contra 362.</p>
+        <div class="facts">
+          <div class="fact"><b class="num">R$ 12,78</b><span>por conversa (antes R$ 14,23)</span></div>
+          <div class="fact"><b class="num">R$ 8,46</b><span>por conversa na campanha de protocolo</span></div>
+        </div>
+        <p class="src">12/07 a 09/10/2026 contra 13/04 a 11/07/2026. Fonte: Reportei (Meta Ads).</p>
+      </article>
+
+      <article class="case">
+        <div class="case-top"><div><b>CEMED</b><small>Clínica médica · Mirassol, SP</small></div><span class="tag">Meta Ads</span></div>
+        <p class="case-big num">327<small>conversas</small></p>
+        <p class="case-head">Desde o primeiro anúncio, a R$ 11,90 por conversa, e caindo.</p>
+        <div class="facts">
+          <div class="fact"><b class="num">105 → 134</b><span>conversas por mês, do 1º ao último mês</span></div>
+          <div class="fact"><b class="num">R$ 14,06 → 11,16</b><span>por conversa, com a mesma verba</span></div>
+        </div>
+        <p class="src">24/07 a 09/10/2026. Primeiros 30 dias (24/07 a 22/08) contra últimos 30 (10/09 a 09/10). Fonte: Reportei (Meta Ads).</p>
+      </article>
+
+      <article class="case">
+        <div class="case-top"><div><b>Instituto Sanrire</b><small>Clínica odontológica · Brasília, DF</small></div><span class="tag tag--g">Google Ads</span></div>
+        <p class="case-big num">2×<small>conversões</small></p>
+        <p class="case-head">O dobro de conversões no Google em 30 dias, com 22% menos verba.</p>
+        <div class="facts">
+          <div class="fact"><b class="num">15 → 31</b><span>conversões registradas no Google Ads</span></div>
+          <div class="fact"><b class="num">−62%</b><span>no custo por conversão (R$ 324 → R$ 122)</span></div>
+        </div>
+        <p class="src">10/09 a 09/10/2026 contra 11/08 a 09/09/2026. Fonte: Reportei (Google Ads).</p>
+      </article>
+    </div>
+
+    <div class="report">
+      <div>
+        <span class="eyebrow">Como você acompanha</span>
+        <h3 style="margin-top:14px">Todo mês, um update que se lê em três minutos<span class="dot-o">.</span></h3>
+        <ol class="report-list">
+          <li><b>01</b><span><strong>O que aconteceu, em números.</strong> Conversas, custo por conversa, alcance e conteúdo publicado, sempre comparados com o mês anterior.</span></li>
+          <li><b>02</b><span><strong>O que funcionou e por quê.</strong> A leitura do time, em linguagem de consultório e não de plataforma.</span></li>
+          <li><b>03</b><span><strong>O que muda no mês seguinte.</strong> Três próximos passos, com responsável.</span></li>
+        </ol>
+      </div>
+      <figure class="upd" aria-label="Exemplo de update mensal: EGO Odontologia, outubro de 2026">
+        <div class="upd-h">
+          <div class="row"><span class="brand">Grupo Opera<span class="d">.</span></span><small>Update de resultados · set. e out./2026</small></div>
+          <span class="eyebrow">EGO Odontologia</span>
+          <h4>Outubro começou <span class="o">acelerado</span>. <span class="s">Mais contatos, menor custo.</span></h4>
+        </div>
+        <div class="upd-k">
+          <div><b class="num">50</b><span>conversas em 8 dias de outubro</span><em>setembro inteiro: 59</em></div>
+          <div><b class="num">R$ 37,81</b><span>custo por conversa</span><em>▼ 4,8% vs. setembro</em></div>
+          <div><b class="num">R$ 0,71</b><span>custo por clique</span><em>▼ 23% vs. setembro</em></div>
+          <div><b class="num">7</b><span>Reels novos publicados</span><em>1.825 visualizações</em></div>
+        </div>
+        <div class="upd-b">
+          <p class="upd-read"><b>Leitura</b>Conteúdo com paciente real gera conversa, e conteúdo que responde uma dúvida gera visualização. Vamos manter essa linha e usar os melhores vídeos como anúncio.</p>
+          <div class="upd-next">
+            <div><b>Próximo 01</b><strong>Mais histórias reais</strong>Novos depoimentos, com autorização dos pacientes.</div>
+            <div><b>Próximo 02</b><strong>Vídeos como anúncio</strong>Os Reels que mais performaram viram criativo.</div>
+            <div><b>Próximo 03</b><strong>Ritmo de outubro</strong>Veiculação contínua para sustentar o volume.</div>
+          </div>
+          <p class="upd-src">Trecho real do update enviado ao cliente em 10/2026 (01/09 a 08/10).</p>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--soft" id="combinados">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Os combinados</span>
+      <h2 class="h2">O que você pode cobrar da <span class="o">gente</span><span class="dot-o">.</span></h2>
+    </div>
+    <div class="deals">
+      <div class="deal"><svg class="ico"><use href="#i-pct"/></svg><h3>Sem taxa sobre a mídia</h3><p>Fee fixo. A verba sai da sua conta direto para Meta e Google.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-key"/></svg><h3>Tudo é seu</h3><p>Contas, pixel, páginas, vídeos e episódios ficam no seu nome, mesmo se um dia a gente se separar.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-people"/></svg><h3>O mesmo time do início ao fim</h3><p>Sem rodízio de analista e sem “vou verificar com o setor”. Um gerente responde pelo resultado.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-doc"/></svg><h3>Relatório que se entende</h3><p>Em linguagem de consultório, não de plataforma. E o painel fica aberto para você.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-shield"/></svg><h3>Dentro das regras</h3><p>Toda peça de saúde passa pelo filtro do CFM, do CFO e do CONAR antes de ir ao ar.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-route"/></svg><h3>Se o dado não mexer, a rota muda</h3><p>Leitura semanal e verba realocada por resultado, não por opinião.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-chat"/></svg><h3>Resposta no mesmo dia</h3><p>Grupo direto com o gerente e os especialistas, em horário comercial.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-heart"/></svg><h3>A gente pergunta como está</h3><p>Pesquisa de satisfação todo semestre, e a resposta vira prioridade no ciclo seguinte.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="goband" aria-labelledby="go-t">
+  <div class="wrap">
+    <div>
+      <p class="go-word" aria-hidden="true">GO <span>influ</span><span class="d">.</span></p>
+      <p class="go-sub">Gestão de influenciadores · por Grupo Opera</p>
+    </div>
+    <div>
+      <h2 id="go-t">Creators da sua cidade falando da sua marca, com contrato e resultado medido.</h2>
+      <p>A GO influ. é a nossa unidade de influência. Cuida do casting, do contrato, do roteiro, do #publi e da medição, e conecta cada post a conversas no WhatsApp. Em saúde, tudo dentro das regras do CFM e do CFO.</p>
+      <ul><li>Creators locais e especialistas</li><li>Anúncios de parceria</li><li>Compliance de saúde</li></ul>
+      <a class="btn" data-goinflu href="../go-influ/">Conhecer a GO influ. <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="perguntas">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="h2">Antes de você <span class="o">perguntar</span><span class="dot-o">.</span></h2>
+      <p class="lead">Não achou a sua dúvida? Manda no WhatsApp, a gente responde no mesmo dia útil.</p>
+    </div>
+    <div class="faq">
+      <details><summary>Quanto custa?</summary><p>Um fee mensal fixo, definido depois do diagnóstico conforme as frentes que entram no plano. A verba de mídia é sua e vai direto para Meta e Google, sem taxa nossa por cima. A proposta mostra separado o que é fee, o que é mídia e o que é produção.</p></details>
+      <details><summary>Tem fidelidade?</summary><p>O contrato mínimo é de 3 meses, que é um ciclo completo de 90 dias. Depois disso, o cancelamento é com 45 dias de aviso.</p></details>
+      <details><summary>Em quanto tempo aparece resultado?</summary><p>No primeiro mês você já tem o custo por conversa medido e as primeiras conversas no painel. Em 90 dias o sistema completo está rodando, e a revisão do trimestre fecha os números de alcance, conversas e custo.</p></details>
+      <details><summary>Vocês atendem a minha cidade?</summary><p>Sim. A operação é remota, com grupo direto no WhatsApp e reuniões online. Hoje atendemos clínicas e empresas em São Paulo, Paraná, Goiás e no Distrito Federal. As diárias de gravação são planejadas com você.</p></details>
+      <details><summary>Eu preciso aparecer nos vídeos?</summary><p>Ajuda muito, principalmente em saúde. Por isso a gravação é concentrada: uma diária por mês, com roteiro e direção. Você chega, grava e volta para o consultório, e o conteúdo trabalha o mês inteiro.</p></details>
+      <details><summary>Como vocês lidam com as regras do CFM e do CFO?</summary><p>Toda peça passa por um filtro antes de ir ao ar: nada de promessa de resultado, sensacionalismo ou depoimento que vire propaganda. Nome, CRM ou CRO e RQE aparecem onde a norma pede. Fotos de pacientes só com autorização assinada.</p></details>
+      <details><summary>De quem são as contas e os conteúdos?</summary><p>Seus. As contas de anúncio rodam no seu nome, o pixel é seu e todo o banco de vídeos, fotos e episódios pertence a você.</p></details>
+      <details><summary>O diagnóstico é cobrado?</summary><p>O pré-diagnóstico deste site é livre. A proposta já chega com um diagnóstico do seu cenário. Depois de fechado, a Fase 0 aprofunda tudo em até duas semanas, com acesso às suas contas e aos seus números.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec final on-navy" id="contato">
+  <div class="wrap">
+    <span class="eyebrow">Próximo passo</span>
+    <h2 class="h2">Comece pelo <span class="o">diagnóstico</span>.</h2>
+    <p class="lead">Faça o pré-diagnóstico ou chame direto no WhatsApp. Em uma conversa a gente entende o seu momento e diz, com sinceridade, se faz sentido trabalhar junto.</p>
+    <div class="hero-cta">
+      <a class="btn btn-o" href="#pre-diagnostico">Fazer o pré-diagnóstico <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" data-wa="Olá! Vim pelo site do Grupo Opera e quero conversar sobre um diagnóstico." href="https://wa.me/">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand">Grupo Opera<span class="d">.</span></span>
+        <p class="tagline">Aceleradora de crescimento</p>
+        <p>Diagnóstico, mídia, conteúdo, site e relatório num time só, para clínicas, negócios locais e empresas B2B.</p>
+      </div>
+      <div>
+        <h4>O trabalho</h4>
+        <ul><li><a href="#diagnostico">Diagnóstico</a></li><li><a href="#metodo">Método</a></li><li><a href="#frentes">Frentes</a></li><li><a href="#resultados">Resultados</a></li></ul>
+      </div>
+      <div>
+        <h4>Programas</h4>
+        <ul><li><a href="#saude-360">Saúde 360</a></li><li><a href="#negocio-local">Negócio Local</a></li><li><a href="#aceleracao-b2b">Aceleração B2B</a></li><li><a data-goinflu href="../go-influ/">GO influ.</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul><li><a data-wa="Olá! Vim pelo site do Grupo Opera." href="https://wa.me/">WhatsApp</a></li><li><a href="#pre-diagnostico">Pré-diagnóstico</a></li><li><a href="#perguntas">Perguntas frequentes</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Grupo Opera · CNPJ 52.333.703/0001-35</span>
+      <span>Resultados de clientes com fonte e período indicados. Resultados variam conforme mercado, oferta e investimento.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa="Olá! Vim pelo site do Grupo Opera." href="https://wa.me/" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+
+<script>
+(function () {
+  'use strict';
+  /* Ajuste aqui antes de publicar. whatsapp: só dígitos, com DDI e DDD (ex.: 5517999999999). */
+  var CONFIG = {
+    whatsapp: '',
+    goInfluUrl: '../go-influ/'
+  };
+
+  function waLink(msg) {
+    var n = String(CONFIG.whatsapp || '').replace(/\D/g, '');
+    return 'https://wa.me/' + n + (msg ? '?text=' + encodeURIComponent(msg) : '');
+  }
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.href = waLink(a.getAttribute('data-wa'));
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-goinflu]').forEach(function (a) {
+    a.href = CONFIG.goInfluUrl;
+  });
+  var y = document.getElementById('year');
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  /* menu mobile */
+  var mb = document.getElementById('menu-btn'), mn = document.getElementById('mnav');
+  if (mb && mn) {
+    mb.addEventListener('click', function () {
+      var open = mn.hidden;
+      mn.hidden = !open;
+      mb.setAttribute('aria-expanded', String(open));
+      mb.textContent = open ? 'Fechar' : 'Menu';
+    });
+    mn.addEventListener('click', function (e) {
+      if (e.target.closest('a')) { mn.hidden = true; mb.setAttribute('aria-expanded', 'false'); mb.textContent = 'Menu'; }
+    });
+  }
+
+  /* ---------------- pré-diagnóstico ---------------- */
+  var SEG = {
+    saude: { label: 'Clínica ou consultório', quem: 'paciente', conv: 'consulta', prog: 'Saúde 360', progId: 'saude-360', unid: 'conversa' },
+    local: { label: 'Negócio local', quem: 'cliente', conv: 'venda', prog: 'Negócio Local', progId: 'negocio-local', unid: 'conversa' },
+    b2b:   { label: 'Empresa B2B', quem: 'lead', conv: 'reunião', prog: 'Aceleração B2B', progId: 'aceleracao-b2b', unid: 'lead' }
+  };
+  function pick(v, s) { return typeof v === 'function' ? v(s) : v; }
+
+  var Q = [
+    { id: 'pos', p: 'Posicionamento',
+      q: 'Se alguém perguntar “por que você e não o concorrente?”, a resposta aparece clara no seu Instagram e no seu site?',
+      o: ['Não aparece', 'Mais ou menos', 'Aparece clara'] },
+    { id: 'cont', p: 'Conteúdo',
+      q: 'Com que frequência sai conteúdo próprio, como vídeos, Reels e carrosséis?',
+      o: ['Quando dá tempo', 'Toda semana, no improviso', 'Toda semana, com pauta e roteiro'] },
+    { id: 'midia', p: 'Mídia paga',
+      q: 'Você investe em anúncios hoje?',
+      o: function (s) { return ['Não, ou só impulsiono post', 'Sim, mas não sei quanto custa cada contato', s === 'b2b' ? 'Sim, e sei o meu custo por lead' : 'Sim, e sei o meu custo por conversa']; } },
+    { id: 'alc', p: 'Alcance',
+      q: 'Quem vê o que você publica?',
+      o: ['Quase só quem já me segue', 'Gente nova, de vez em quando', 'Gente nova toda semana'] },
+    { id: 'atend', p: 'Atendimento',
+      q: function (s) { return s === 'b2b' ? 'Quando chega um lead, em quanto tempo o comercial faz o primeiro contato?' : 'Quando um ' + SEG[s].quem + ' chama no WhatsApp, em quanto tempo alguém responde?'; },
+      o: ['Horas, às vezes no dia seguinte', 'Em até uma hora', 'Em minutos, com roteiro'] },
+    { id: 'med', p: 'Medição',
+      q: function (s) { return 'Você sabe quantos contatos do mês passado viraram ' + SEG[s].conv + '?'; },
+      o: ['Não faço ideia', 'Tenho uma noção', 'Sei, está medido'] },
+    { id: 'prova', p: 'Prova social',
+      q: 'Como estão as suas avaliações no Google, depoimentos e casos reais?',
+      o: ['Poucos, ou parados', 'Tenho, mas quase não uso', 'Tenho e uso em conteúdo e anúncio'] },
+    { id: 'dest', p: 'Destino do clique',
+      q: 'Para onde vai quem clica no seu anúncio?',
+      o: ['Não tenho anúncio, ou não tenho site', 'Para o Instagram ou um site antigo', 'Para uma página feita para converter, com WhatsApp'] },
+    { id: 'x',
+      p: function (s) { return { saude: 'Regras do conselho', local: 'Presença local', b2b: 'Renovação da base' }[s]; },
+      q: function (s) { return {
+        saude: 'Seus posts e anúncios passam por checagem das regras do CFM ou do CFO?',
+        local: 'Quando alguém busca o seu serviço “perto de mim” no Google, você aparece?',
+        b2b: 'Os leads que chegam são sempre os mesmos nomes?' }[s]; },
+      o: function (s) { return {
+        saude: ['Não conheço bem as regras', 'Às vezes', 'Toda peça passa por checagem'],
+        local: ['Não apareço', 'Apareço, mas o perfil está parado', 'Apareço, com fotos, posts e avaliações respondidas'],
+        b2b: ['Sim, a base não se renova', 'Às vezes aparece gente nova', 'Chega gente nova todo mês'] }[s]; } }
+  ];
+
+  var SX = {
+    pos: { n: 'Especialidade não é posicionamento', t: 'Quem fala de tudo vira “mais uma opção boa”. Categoria não gera lembrança, gera comparação de preço.', a: 'Posicionamento vertical: um tema, muitos ângulos, até a sua marca virar sinônimo do assunto.', f: 'Diagnóstico e estratégia' },
+    cont: { n: 'Produção sem sistema', t: 'Post esporádico, gravado no improviso, sem roteiro e sem banco de conteúdo. Sem constância, a audiência não cresce.', a: 'Uma diária de gravação por mês, roteirizada, abastece o mês inteiro de Reels, cortes e criativos.', f: 'Conteúdo e gravação' },
+    midia: { n: 'Verba sem medida', t: function (s) { return 'Anúncio rodando sem saber quanto custa cada ' + SEG[s].unid + ' é gasto, não investimento.'; }, a: function (s) { return 'Campanhas com o custo por ' + SEG[s].unid + ' como número principal, revisadas toda semana.'; }, f: 'Tráfego pago' },
+    alc: { n: 'Conteúdo sem distribuição', t: 'O que você publica só alcança quem já segue. Quem está procurando agora não te encontra.', a: 'Mídia de alcance na sua região e creators locais levando o conteúdo a quem ainda não te conhece.', f: 'Tráfego pago e GO influ.' },
+    atend: { n: 'Conversa que esfria', t: 'Quanto mais tempo entre o contato e a resposta, menor a chance de virar agendamento.', a: 'Roteiro de resposta rápida para a recepção ou o comercial, entregue logo no início.', f: 'Atendimento e conversão' },
+    med: { n: 'Decisão no escuro', t: function (s) { return 'Sem saber o que virou ' + SEG[s].conv + ', a verba vai para o que dá clique, não para o que dá resultado.'; }, a: 'Painel com os números que importam e um update mensal em linguagem de gente.', f: 'BI e relatórios' },
+    prova: { n: 'Prova social parada', t: function (s) { return s === 'saude' ? 'Antes e depois sem história é comparação de foto. Com história, é prova.' : 'Depoimento genérico não convence. História real, contada por quem comprou, convence.'; }, a: 'Biblioteca de casos e depoimentos reais, com autorização, usada em conteúdo e em anúncio.', f: 'Conteúdo e gravação' },
+    dest: { n: 'Clique sem destino', t: 'Quem clica cai num perfil ou num site que não responde a dúvida dele, e vai embora.', a: 'Uma página por serviço, com WhatsApp e mensagem que já diz de onde o contato veio.', f: 'Sites e landing pages' },
+    x: {
+      saude: { n: 'CRM e CRO em risco', t: 'Uma peça fora das regras do conselho custa mais caro que qualquer anúncio.', a: 'Filtro ético antes de publicar, com base na Resolução CFM 2.336/2023 e nas normas do CFO.', f: 'Diagnóstico e estratégia' },
+      local: { n: 'Invisível no mapa', t: 'Quem busca “perto de mim” escolhe entre quem aparece no Google.', a: 'Perfil da Empresa no Google com fotos, posts semanais e avaliações respondidas.', f: 'Presença local' },
+      b2b: { n: 'A bolha', t: 'Search captura quem já busca, remarketing reimpacta quem já visitou e a rede social fala com quem já segue. A base não se renova.', a: 'YouTube como motor de alcance, influência em creators de nicho e conteúdo de autoridade.', f: 'Aceleração B2B' }
+    }
+  };
+  var PRIORITY = ['midia', 'atend', 'med', 'dest', 'x', 'alc', 'cont', 'pos', 'prova'];
+
+  var form = document.getElementById('dx-form');
+  var qsBox = document.getElementById('dx-qs');
+  if (!form || !qsBox) return;
+  var els = {
+    prog: document.getElementById('dx-prog'), num: document.getElementById('dx-num'), band: document.getElementById('dx-band'),
+    meters: document.getElementById('dx-meters'), sx: document.getElementById('dx-sx'), rec: document.getElementById('dx-rec'),
+    send: document.getElementById('dx-send'), reset: document.getElementById('dx-reset')
+  };
+  var answers = {};
+
+  function seg() { var r = form.querySelector('input[name="seg"]:checked'); return r ? r.value : 'saude'; }
+  function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+
+  function renderQuestions() {
+    var s = seg();
+    var html = '';
+    Q.forEach(function (q) {
+      var opts = pick(q.o, s);
+      html += '<fieldset class="dx-q"><legend>' + esc(pick(q.q, s)) + '</legend><span class="pill">' + esc(pick(q.p, s)) + '</span><div class="opts">';
+      opts.forEach(function (label, v) {
+        var id = 'q-' + q.id + '-' + v;
+        var chk = answers[q.id] === v ? ' checked' : '';
+        html += '<div class="opt" data-v="' + v + '"><input type="radio" name="q-' + q.id + '" id="' + id + '" value="' + v + '"' + chk + '><label for="' + id + '">' + esc(label) + '</label></div>';
+      });
+      html += '</div></fieldset>';
+    });
+    qsBox.innerHTML = html;
+  }
+
+  function band(score) {
+    if (score < 40) return { t: 'Crescimento travado', d: 'Há vazamentos entre o anúncio e o agendamento. São os mais rápidos de fechar.' };
+    if (score < 70) return { t: 'Base montada, com vazamentos', d: 'O básico existe, mas o sistema ainda perde gente no caminho.' };
+    return { t: 'Pronto para acelerar', d: 'A casa está arrumada. O próximo passo é escala: mais alcance e mais ângulos.' };
+  }
+
+  function update() {
+    var s = seg();
+    var done = Q.filter(function (q) { return answers[q.id] !== undefined; }).length;
+    els.prog.textContent = done + ' de ' + Q.length + ' respondidas';
+
+    var mh = '';
+    Q.forEach(function (q) {
+      var v = answers[q.id];
+      mh += '<div class="meter"' + (v !== undefined ? ' data-v="' + v + '"' : '') + '><span>' + esc(pick(q.p, s)) + '</span><i><span></span></i></div>';
+    });
+    els.meters.innerHTML = mh;
+
+    var total = 0;
+    Q.forEach(function (q) { if (answers[q.id] !== undefined) total += answers[q.id]; });
+    var score = Math.round(total / (Q.length * 2) * 100);
+    if (done === Q.length) {
+      var b = band(score);
+      els.num.classList.remove('empty');
+      els.num.innerHTML = score + '<small>/100</small>';
+      els.band.innerHTML = '<strong>' + esc(b.t) + '</strong>' + esc(b.d);
+    } else {
+      els.num.classList.add('empty');
+      els.num.textContent = '–';
+      els.band.innerHTML = '<strong>' + (done ? 'Faltam ' + (Q.length - done) + ' respostas' : 'Responda para ver a nota') + '</strong>A nota vai de 0 a 100 e sai quando as 9 perguntas estiverem respondidas.';
+    }
+
+    var low = PRIORITY.filter(function (id) { return answers[id] !== undefined && answers[id] < 2; })
+      .sort(function (a, b) { return answers[a] - answers[b] || PRIORITY.indexOf(a) - PRIORITY.indexOf(b); })
+      .slice(0, 3);
+    var picked = low.map(function (id) { var d = id === 'x' ? SX.x[s] : SX[id]; return { id: id, n: d.n, t: pick(d.t, s), a: pick(d.a, s), f: d.f }; });
+
+    if (!done) {
+      els.sx.innerHTML = '<p class="sx-empty">Os sintomas aparecem aqui conforme você responde. Cada um vem com a alavanca que resolve.</p>';
+    } else if (!picked.length) {
+      els.sx.innerHTML = '<p class="sx-empty">' + (done === Q.length ? 'Nenhum sintoma grave. O diagnóstico completo procura onde dá para escalar.' : 'Até aqui, nenhum sintoma. Continue respondendo.') + '</p>';
+    } else {
+      els.sx.innerHTML = picked.map(function (p, i) {
+        return '<div class="sx-card"><span class="k">Sintoma 0' + (i + 1) + (done < Q.length ? ' · parcial' : '') + '</span><h4>' + esc(p.n) + '</h4><p>' + esc(p.t) + '</p><p class="alv"><b>Alavanca:</b> ' + esc(p.a) + '</p></div>';
+      }).join('');
+    }
+
+    if (done === Q.length) {
+      els.rec.hidden = false;
+      els.rec.innerHTML = 'Programa que mais se parece com o seu caso: <a href="#' + SEG[s].progId + '">' + esc(SEG[s].prog) + '</a>.';
+    } else {
+      els.rec.hidden = true;
+    }
+
+    var msg = 'Olá! Fiz o pré-diagnóstico no site do Grupo Opera.\n' +
+      'Negócio: ' + SEG[s].label + '\n' +
+      (done === Q.length ? 'Nota: ' + score + '/100 (' + band(score).t + ')\n' : 'Respondi ' + done + ' de ' + Q.length + ' perguntas.\n') +
+      (picked.length ? 'Sintomas: ' + picked.map(function (p) { return p.n; }).join('; ') + '.\n' : '') +
+      'Quero o diagnóstico completo.';
+    els.send.href = waLink(msg);
+  }
+
+  form.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.name === 'seg') {
+      delete answers.x;
+      renderQuestions();
+    } else if (t.name && t.name.indexOf('q-') === 0) {
+      answers[t.name.slice(2)] = Number(t.value);
+    }
+    update();
+  });
+  els.reset.addEventListener('click', function () {
+    answers = {};
+    renderQuestions();
+    update();
+    var first = qsBox.querySelector('input');
+    if (first) first.focus();
+  });
+
+  renderQuestions();
+  update();
+})();
+</script>
+</body>
+</html>
