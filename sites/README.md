@@ -8,6 +8,8 @@ Dois sites estáticos, cada um num único `index.html` (HTML, CSS e JS no mesmo 
 | `go-influ/` | **GO influ.**, a unidade de influenciadores | Tese e pirâmide de verba, como funciona (6 passos), formatos, calculadora "Monte seu elenco", regras de publi (CONAR, CFM, CFO, LGPD) com filtro, medição em conversas, cadastro de creators via WhatsApp, FAQ |
 | `FONTES.md` | Fontes | De onde vem cada número e cada regra citada, com os pontos a confirmar |
 
+Prévias privadas (só abre quem tiver acesso à conta no claude.ai): [Grupo Opera](https://claude.ai/artifact/Avz8taGi7gpTS4fPugNjqD) · [GO influ.](https://claude.ai/artifact/FACixUukritqeqkfwMu6kM).
+
 ## Antes de publicar
 
 1. **WhatsApp**: abra cada `index.html`, procure `CONFIG` no fim do arquivo e preencha `whatsapp` só com dígitos, com DDI e DDD (ex.: `5517999999999`). Enquanto estiver vazio, os botões abrem o WhatsApp sem destinatário.

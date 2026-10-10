@@ -4,30 +4,34 @@ Tudo o que aparece com número nos dois sites vem de uma das fontes abaixo. Ante
 
 ## 1. Resultados de clientes (site do Grupo Opera)
 
-Fonte: Reportei, contas conectadas do Grupo Opera, consultadas em 10/10/2026. "Conversa" é a métrica da Meta *conversas iniciadas por mensagem* (atribuição de 7 dias). Valores em reais.
+Fonte: Reportei, contas conectadas do Grupo Opera, consultadas em 10/10/2026. "Conversa" é a métrica da Meta *conversas iniciadas por mensagem* (WhatsApp, Direct ou Messenger; atribuição de 7 dias). Valores em reais.
 
 | Cliente | Cidade | Período | Dado usado no site |
 |---|---|---|---|
-| Fiorini Odonto & Estética | Vargem Grande do Sul, SP | 12/07 a 09/10/2026 vs. 13/04 a 11/07/2026 | 839 conversas (antes 734, +14,3%); custo por conversa R$ 18,69 (antes R$ 31,27, −40,2%); investimento R$ 15.681 (antes R$ 22.949, −31,7%); campanha de lentes R$ 9,18 por conversa |
-| Trait Odontologia | Guarapuava, PR | 12/07 a 09/10/2026 vs. 13/04 a 11/07/2026 | 731 conversas (antes 729); custo por conversa R$ 16,01 (antes R$ 29,88, −46,4%); investimento R$ 11.700 (antes R$ 21.780, −46,3%); melhor mês (11/08 a 09/09) 390 conversas a R$ 10,65; 35 avaliações no Google, média 4,91 |
+| Fiorini Odonto & Estética | Vargem Grande do Sul, SP | 12/07 a 09/10/2026 vs. 13/04 a 11/07/2026 | 839 conversas (antes 734, +14,3%); custo por conversa R$ 18,69 (antes R$ 31,27, −40,2%); investimento R$ 15.681 (antes R$ 22.949, −31,7%); campanha de lentes R$ 9,18 por conversa; campanha de protocolo (agosto) R$ 11,23 por conversa |
+| Trait Odontologia | Guarapuava, PR | 12/07 a 09/10/2026 vs. 13/04 a 11/07/2026 | 731 conversas (antes 729); custo por conversa R$ 16,01 (antes R$ 29,88, −46,4%); investimento R$ 11.700 (antes R$ 21.780, −46,3%); melhor mês (11/08 a 09/09) 390 conversas a R$ 10,65; 35 avaliações recebidas no Google nos 90 dias, média 4,91 (Perfil da Empresa no Google) |
 | D'Plácido Odontologia | Embu das Artes, SP | 12/07 a 09/10/2026 vs. 13/04 a 11/07/2026 | 665 conversas (antes 362, +83,7%); custo por conversa R$ 12,78 (antes R$ 14,23, −10,2%); campanha de protocolo 194 conversas a R$ 8,46 |
 | CEMED | Mirassol, SP | 24/07 a 09/10/2026 | 327 conversas a R$ 11,90; primeiros 30 dias 105 a R$ 14,06; últimos 30 dias 134 a R$ 11,16 (investimento ~R$ 1,5 mil/mês nos dois) |
-| Instituto Sanrire | Brasília, DF | 10/09 a 09/10/2026 vs. 11/08 a 09/09/2026 | Google Ads: conversões 15 → 31; custo por conversão R$ 324,41 → R$ 122,49 (−62,2%); investimento −22% |
-| EGO Odontologia | Goiânia, GO | 01/09 a 08/10/2026 | PDF "Update de resultados" (repositório): 50 conversas em 8 dias de outubro (setembro inteiro: 59); R$ 37,81 por conversa (set.: R$ 39,72); CPC R$ 0,71 (−23%); 7 Reels, 1.825 visualizações |
+| Instituto Sanrire (clínica odontológica; contas Google Ads e YouTube) | Brasília, DF | 10/09 a 09/10/2026 vs. 11/08 a 09/09/2026 | Google Ads: conversões 15 → 31; custo por conversão R$ 324,41 → R$ 122,49 (−62,2%); investimento −22% |
+| EGO Odontologia (cidade inferida das hashtags e do nome da campanha GO_NEGRAODELIMA) | Goiânia, GO | 01/09 a 08/10/2026 | PDF "Update de resultados" (repositório): 50 conversas em 8 dias de outubro (setembro inteiro: 59); R$ 37,81 por conversa (set.: R$ 39,72); CPC R$ 0,71 (−23%); 7 Reels, 1.825 visualizações |
+
+| Dreisson Vivo Imóveis | Mirassol, SP | — | Só citado na lista de clientes (projeto no Reportei com conta Meta Ads "CA - DREISSON VIVO IMÓVEIS"). Sem números no site. |
 
 Soma do hero: 839 + 731 + 665 + 327 = **2.562 conversas** (Meta Ads, 12/07 a 09/10/2026; CEMED desde 24/07).
 
 ⚠️ **Atribuição "antes/depois"**: os períodos anteriores vêm do histórico retroativo da Meta. Confirme, para cada cliente, desde quando o Grupo Opera opera a conta. Na Fiorini, campanhas `GO_` já aparecem em junho (o "antes" mistura gestão anterior e o primeiro mês do Grupo Opera, o que subestima a melhora). Na D'Plácido, não há registro de quem operava antes de 27/07.
 ⚠️ **Sanrire**: o Google Ads não informou quais ações contam como "conversão". Confira a configuração antes de publicar.
-⚠️ **Autorização**: confirme com cada cliente o uso do nome e dos números no site.
+⚠️ **Autorização**: confirme com cada cliente o uso do nome e dos números no site. Até lá, se preferir, troque os nomes por segmento e cidade.
+⚠️ **Exemplo de update (EGO)**: o "Próximo 01" (novos depoimentos de pacientes, com autorização) é o plano real enviado ao cliente. Confirme com o CRO ou o jurídico antes de exibir publicamente.
 
 ## 2. Método, frentes e combinados (site do Grupo Opera)
 
 Fonte: propostas e entregáveis já publicados pelo Grupo Opera (Aceleração B2B, Dr. Cesar · Cardiologia 360, Projeto Dra. Carol, Plano de Conteúdo Trait, Invisalign Day Fiorini, NPS Grupo Opera).
 
 - Estrutura do diagnóstico (tese → sintomas → alavancas → plano de 90 dias): presente em todas as propostas.
-- Trechos de diagnóstico citados: Dr. Cesar ("Autoridade sem distribuição não gera consulta…"), Aceleração B2B ("O problema tem nome: bolha…"), Trait ("Mais criativo não é mais do mesmo. É mais ângulos."), Dra. Carol ("Dermatologia é a formação. Queda de cabelo é o posicionamento.").
-- Roadmap de 90 dias (Fase 0 de 2 semanas, mês 1 captura, mês 2 alcance, mês 3 escala e revisão): proposta Aceleração B2B e Dr. Cesar.
+- Trechos de diagnóstico citados: Dr. Cesar ("Autoridade sem distribuição não gera consulta…"), Aceleração B2B ("O problema tem nome: bolha…"), Trait ("Mais criativo não é mais do mesmo. É mais ângulos." e, no mesmo slide, "campanha com pouco ângulo cansa rápido"), Dra. Carol ("Dermatologia é a formação. Queda de cabelo é o posicionamento.").
+- "Uma captação vira dez ativos": proposta Aceleração B2B (Alavanca 03).
+- Roadmap de 90 dias (Fase 0 de 2 semanas, mês 1 captura, mês 2 alcance, mês 3 escala e revisão): proposta Aceleração B2B e Dr. Cesar. No site, a Fase 0 aparece dentro do primeiro mês (13 semanas no total), como na proposta do Dr. Cesar. ⚠️ Confirme se o contrato de 3 meses conta a Fase 0 dentro ou fora.
 - Rituais (semanal, mensal com reunião de 30 min, trimestral, NPS semestral): propostas e NPS.
 - Combinados (fee fixo sem taxa sobre a mídia, contrato mínimo de 3 meses, aviso de 45 dias, contas e conteúdo do cliente, mesmo time, resposta no mesmo dia em horário comercial): propostas Aceleração B2B e Dr. Cesar.
 - CNPJ 52.333.703/0001-35: rodapé das propostas.
@@ -35,6 +39,8 @@ Fonte: propostas e entregáveis já publicados pelo Grupo Opera (Aceleração B2
 ## 3. Pirâmide e faixas de cachê (site GO influ.)
 
 Fonte: proposta Aceleração B2B (Grupo Opera, set./2026): ~60% da verba em nano e especialistas (até 10 mil seguidores, de permuta a R$ 500 por entrega), ~30% em micro (10 a 100 mil, R$ 500 a R$ 2.500), ~10% em mid (100 a 500 mil, R$ 2.500 a R$ 10.000); uso do conteúdo em mídia paga por 6 a 12 meses. Na calculadora, para saúde, a faixa nano é R$ 250 a R$ 500 em cachê (sem permuta de tratamento).
+
+No site, a faixa é lida como **valor por creator na campanha do mês** (um pacote como 1 Reels e 3 stories), coerente com a pirâmide da proposta (8 a 15 nanos e 3 a 5 micros por mês). ⚠️ Confirme com o time se a referência da proposta é por creator ou por peça; se for por peça, a calculadora precisa multiplicar pelo número de peças.
 
 ## 4. Dados de mercado (site GO influ.)
 

@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>GO influ.</title>
-<meta name="description" content="Gestão de influenciadores do Grupo Opera. Creators da sua cidade e do seu nicho, com contrato, roteiro aprovado, #publi certo e resultado medido em conversas no WhatsApp.">
+<title>GO influ. · Gestão de influenciadores do Grupo Opera</title>
+<meta name="description" content="Gestão de influenciadores do Grupo Opera: creators da sua cidade e do seu nicho, com contrato, roteiro aprovado, #publi visível e resultado medido em conversas.">
 <meta property="og:title" content="GO influ. · Influência que vira agenda">
-<meta property="og:description" content="Creators locais e especialistas, com contrato, compliance de saúde e resultado medido. Uma unidade do Grupo Opera.">
+<meta property="og:description" content="Creators locais e especialistas, com contrato, regras de saúde em dia e resultado medido. Uma unidade do Grupo Opera.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="GO influ.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#E85D1B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E85D1B'/%3E%3Ctext x='8' y='44' font-family='Arial,Helvetica,sans-serif' font-weight='900' font-size='30' fill='%230B1433'%3EGO%3C/text%3E%3Ccircle cx='54' cy='40' r='4.5' fill='%23fff'/%3E%3C/svg%3E">
@@ -21,14 +23,15 @@
   --flame:#E85D1B; --flame-btn:#CC4B10; --flame-btn-h:#B4410C; --flame-ink:#B23E0B; --apricot:#F6A24E; --peach:#FFE6D6; --paper:#FFF8F3;
   --navy:#00247D; --navy-deep:#001A5C; --navy-line:#22409A; --sky:#A9C3E6;
   --ink:#0B1433; --ink-soft:#4A5272; --ink-mute:#6B7290; --line:#EEDFD4; --line-cool:#E2E8F2; --white:#FFFFFF;
-  --ok:#1E7E34; --ok-bg:#E3F4E8; --warn:#8A5A00; --warn-bg:#FFF0D2; --risk:#B23E0B; --risk-bg:#FFE6D6; --no:#B42318; --no-bg:#FDE7E4; --pub:#00247D; --pub-bg:#E6ECFA;
+  --ok:#1A7330; --ok-bg:#E3F4E8; --warn:#8A5A00; --warn-bg:#FFF0D2; --risk:#B23E0B; --risk-bg:#FFE6D6; --no:#B42318; --no-bg:#FDE7E4; --pub:#00247D; --pub-bg:#E6ECFA;
   --f-disp:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;
   --f-sans:'Archivo','Helvetica Neue',Arial,system-ui,sans-serif;
   --wrap:1200px; --gut:clamp(16px,5vw,56px); --r:18px;
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:calc(71px + env(safe-area-inset-top,0px))}
 body{margin:0;background:var(--white);color:var(--ink);font:400 1.0625rem/1.6 var(--f-sans);-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%}
 a{color:inherit}
@@ -37,12 +40,16 @@ p,ul,ol,figure,dl,dd{margin:0}
 ul,ol{list-style:none;padding:0}
 button,input,select{font:inherit}
 :focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:6px}
+.calc-sec :focus-visible,.foot :focus-visible,.stats :focus-visible,.crea :focus-visible{outline-color:var(--apricot)}
+.skip{position:absolute;left:16px;top:-80px;z-index:100;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;font:600 .9rem/1 var(--f-sans);text-decoration:none}
+.skip:focus{top:12px}
+p{text-wrap:pretty}
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
 .num{font-variant-numeric:tabular-nums}
 .sec{padding-block:clamp(64px,9vw,112px)}
 .sec--paper{background:var(--paper)}
-.label{display:inline-flex;align-items:center;gap:10px;font:700 .74rem/1.2 var(--f-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--flame-ink)}
-.label::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.label{display:inline-flex;align-items:flex-start;gap:10px;font:700 .74rem/1.2 var(--f-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--flame-ink)}
+.label::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;flex:none;margin-top:.22em}
 .h2{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:800;color:var(--ink);margin-top:16px;max-width:18ch}
 .h2 .o{color:var(--flame)}
 .lead{font-size:clamp(1.06rem,1.4vw,1.22rem);color:var(--ink-soft);max-width:60ch;margin-top:18px}
@@ -53,7 +60,7 @@ button,input,select{font:inherit}
 .logo{display:inline-flex;align-items:baseline;gap:.22em;font:800 1.45rem/1 var(--f-disp);letter-spacing:-.05em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .logo i{font-style:normal;font-weight:600;letter-spacing:-.04em}
 .logo b{font-weight:800;color:var(--flame);margin-left:-.2em}
-.logo-by{display:block;font:600 .62rem/1 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-top:5px}
+.logo-by{display:block;font:600 .62rem/1.45 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-top:5px}
 
 /* botões */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 1rem/1.1 var(--f-disp);letter-spacing:-.02em;text-decoration:none;border:0;border-radius:999px;padding:17px 26px;cursor:pointer;transition:transform .15s,background-color .15s,box-shadow .15s;text-align:center}
@@ -71,7 +78,7 @@ button,input,select{font:inherit}
 
 /* topo */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,248,243,.94);-webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:18px;height:70px}
+.top>.wrap{display:flex;align-items:center;gap:18px;height:70px}
 .top .logo{font-size:1.4rem}
 .nav{display:flex;align-items:center;gap:2px;margin-left:auto}
 .nav a{font:600 .9rem/1 var(--f-sans);color:var(--ink-soft);text-decoration:none;padding:10px 12px;border-radius:999px;white-space:nowrap}
@@ -82,7 +89,8 @@ button,input,select{font:inherit}
 .mnav{border-top:1px solid var(--line);background:var(--paper)}
 .mnav ul{display:grid;padding-block:6px 14px}
 .mnav a{display:block;padding:14px 2px;font:700 1.05rem/1.2 var(--f-disp);letter-spacing:-.02em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
-.mnav .btn{width:100%;margin-top:12px}
+.mnav .btn{width:100%;margin-top:12px;margin-bottom:16px;color:#fff;border-bottom:0;padding:17px 26px;font:700 1rem/1.1 var(--f-disp)}
+@media (min-width:1001px){.mnav{display:none!important}}
 @media (max-width:1000px){.nav{display:none}.menu-btn{display:inline-flex}}
 
 /* hero */
@@ -125,16 +133,17 @@ button,input,select{font:inherit}
 .bub--me{justify-self:end;background:#D8FDD2}
 .bub small{display:block;font-size:.52rem;color:#6B7280;text-align:right;margin-top:2px}
 .origin{justify-self:start;font:700 .56rem/1 var(--f-sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--flame-btn);padding:5px 7px;border-radius:6px}
-.deal{position:absolute;inset:0;background:var(--paper);padding:16px 12px 16px 50px;display:flex;flex-direction:column;gap:10px}
+.deal{position:absolute;inset:0;background:var(--paper);padding:16px 12px 16px 58px;display:flex;flex-direction:column;gap:10px}
 .deal h4{font:800 .9rem/1.1 var(--f-disp);letter-spacing:-.03em}
 .deal h4 b{color:var(--flame)}
 .deal ul{display:grid;gap:7px}
 .deal li{display:flex;gap:7px;align-items:flex-start;font:500 .64rem/1.3 var(--f-sans);color:var(--ink)}
 .deal li::before{content:"";width:12px;height:12px;flex:none;border-radius:4px;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 6.2l2 2 4-4.4' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
 .deal .sig{margin-top:auto;border-top:1px dashed var(--line);padding-top:8px;font:600 .58rem/1.3 var(--f-sans);color:var(--ink-mute)}
-.stage-note{position:absolute;left:50%;transform:translateX(-50%);bottom:0;font:600 .66rem/1 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:rgba(11,20,51,.6)}
+.stage-note{position:absolute;left:50%;transform:translateX(-50%);bottom:0;font:600 .66rem/1 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr}.stage{height:440px}}
-@media (max-width:560px){.stage{height:410px}.phone{width:176px}.phone--chat{transform:translateX(-62%) rotate(-7deg) translateY(20px)}.phone--deal{transform:translateX(62%) rotate(7deg) translateY(24px)}.reel-hook{font-size:1.02rem}}
+@media (max-width:980px){.hero{background:radial-gradient(520px 420px at 50% 88%,rgba(246,162,78,.55),transparent 60%),var(--flame)}}
+@media (max-width:560px){.stage{height:430px}.phone{width:176px}.phone--deal{display:none}.phone--reel{transform:translateX(24%)}.phone--chat{transform:translateX(-44%) rotate(-6deg) translateY(24px)}.chat-b{padding-right:66px}.reel-hook{font-size:1.02rem}}
 
 /* números */
 .stats{background:var(--ink);color:#fff}
@@ -155,8 +164,9 @@ button,input,select{font:inherit}
 .pull{margin-top:26px;padding:16px 18px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:.92rem;color:var(--ink-soft)}
 .pull b{display:block;font:800 1.6rem/1 var(--f-disp);letter-spacing:-.04em;color:var(--flame);margin-bottom:6px}
 .pyr{display:grid;gap:10px}
-.tier{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:18px;align-items:center}
-.tier-shape{height:92px;display:grid;place-items:center;justify-self:center;width:var(--w);color:#fff;font:800 1.5rem/1 var(--f-disp);letter-spacing:-.04em;clip-path:polygon(var(--i) 0,calc(100% - var(--i)) 0,100% 100%,0 100%)}
+.tier{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:18px;align-items:stretch}
+.tier-info{align-self:center}
+.tier-shape{height:auto;min-height:92px;display:grid;place-items:center;align-content:center;justify-self:center;width:var(--w);color:#fff;font:800 1.5rem/1 var(--f-disp);letter-spacing:-.04em;clip-path:polygon(var(--i) 0,calc(100% - var(--i)) 0,100% 100%,0 100%)}
 .tier-shape small{display:block;font:600 .64rem/1.2 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;margin-top:4px;text-align:center}
 .tier--mid .tier-shape{background:var(--ink);--w:44%;--i:30%}
 .tier--micro .tier-shape{background:var(--flame-btn);--w:72%;--i:19%}
@@ -166,13 +176,13 @@ button,input,select{font:inherit}
 .tier-info em{display:inline-block;font-style:normal;font:700 .78rem/1 var(--f-sans);color:var(--flame-ink);background:var(--peach);padding:5px 8px;border-radius:999px;margin-top:8px}
 .pyr-note{margin-top:14px}
 @media (max-width:980px){.thesis{grid-template-columns:1fr}}
-@media (max-width:520px){.tier{grid-template-columns:1fr;gap:10px}.tier-shape{height:74px}}
+@media (max-width:520px){.tier{grid-template-columns:1fr;gap:10px}.tier-shape{min-height:74px}}
 
 /* passos */
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:st}
 .step{background:#fff;border:1px solid var(--line-cool);border-radius:var(--r);padding:26px 24px 22px;display:flex;flex-direction:column;gap:10px;counter-increment:st;position:relative}
 .step::before{content:counter(st,decimal-leading-zero);font:800 2.6rem/1 var(--f-disp);letter-spacing:-.05em;color:var(--flame)}
-.step h3{font-size:1.3rem;font-weight:700;letter-spacing:-.035em}
+.step h3{font-size:1.3rem;font-weight:700;letter-spacing:-.035em;line-height:1.2}
 .step p{font-size:.95rem;color:var(--ink-soft)}
 .step .you{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-cool);font-size:.84rem;color:var(--ink-mute)}
 .step .you b{color:var(--ink);font-weight:700}
@@ -184,7 +194,7 @@ button,input,select{font:inherit}
 .fmt{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .fmt-frame{width:64px;aspect-ratio:9/16;border-radius:10px;background:var(--c,var(--navy));position:relative;overflow:hidden}
 .fmt-frame::after{content:"";position:absolute;left:8px;right:8px;bottom:9px;height:5px;border-radius:3px;background:rgba(255,255,255,.75);box-shadow:0 -9px 0 rgba(255,255,255,.45)}
-.fmt h3{font-size:1.1rem;font-weight:700;letter-spacing:-.03em}
+.fmt h3{font-size:1.1rem;font-weight:700;letter-spacing:-.03em;line-height:1.2}
 .fmt p{font-size:.9rem;color:var(--ink-soft);margin-top:6px;line-height:1.5}
 .fmt .rule{margin-top:10px;font-size:.8rem;color:var(--flame-ink);font-weight:600}
 @media (max-width:980px){.formats{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -228,7 +238,7 @@ input[type=range]{width:100%;margin-top:14px;accent-color:var(--apricot);height:
 .co-tier span{display:block;font-size:.8rem;color:var(--ink-mute);line-height:1.35}
 .co-tier strong{font:800 1.1rem/1 var(--f-disp);letter-spacing:-.03em;white-space:nowrap;text-align:right}
 .co-tier strong small{display:block;font:500 .7rem/1.3 var(--f-sans);letter-spacing:0;color:var(--ink-mute)}
-.co-tier.off{opacity:.5}
+.co-tier.off i{opacity:.35}.co-tier.off b,.co-tier.off strong{color:var(--ink-mute)}
 .co-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
 .co-box{background:var(--paper);border-radius:14px;padding:14px 16px}
 .co-box h4{font:700 .7rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--flame-ink);margin-bottom:8px}
@@ -272,7 +282,7 @@ input[type=range]{width:100%;margin-top:14px;accent-color:var(--apricot);height:
 .flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;position:relative}
 .flow::before{content:"";position:absolute;left:30px;right:calc((100% - 56px)/5 - 30px);top:30px;height:2px;background:repeating-linear-gradient(90deg,var(--flame) 0 10px,transparent 10px 18px)}
 .node{position:relative;text-align:left}
-.node .dot{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--flame);font:800 1.1rem/1 var(--f-disp);color:var(--flame);position:relative;z-index:1}
+.node .dot{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--flame);font:800 1.1rem/1 var(--f-disp);color:var(--flame-ink);position:relative;z-index:1}
 .node:last-child .dot{background:var(--flame-btn);color:#fff;border-color:var(--flame-btn)}
 .node h3{font-size:1.06rem;font-weight:700;margin-top:16px;letter-spacing:-.025em;line-height:1.25}
 .node p{font-size:.88rem;color:var(--ink-soft);margin-top:6px;line-height:1.5}
@@ -308,9 +318,9 @@ input[type=range]{width:100%;margin-top:14px;accent-color:var(--apricot);height:
 .form{background:#fff;color:var(--ink);border-radius:22px;padding:clamp(20px,2.6vw,30px);display:grid;gap:14px}
 .form h3{font-size:1.4rem;font-weight:800}
 .form>p{font-size:.92rem;color:var(--ink-soft);margin-top:-6px}
-.field{display:grid;gap:6px;min-width:0}
+.field{display:grid;gap:6px;min-width:0;align-content:start}
 .field label,.field legend{font:700 .82rem/1.2 var(--f-sans);color:var(--ink);padding:0}
-.field input,.field select{width:100%;font:500 1rem/1.3 var(--f-sans);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.field input,.field select{width:100%;font:500 1rem/1.3 var(--f-sans);color:var(--ink);background:var(--paper);border:1.5px solid #8E8178;border-radius:12px;padding:12px 14px;min-width:0}
 .field input:focus,.field select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,36,125,.14)}
 .field .err{font-size:.78rem;color:var(--no);font-weight:600}
 .field[data-bad] input,.field[data-bad] select{border-color:var(--no)}
@@ -334,7 +344,7 @@ fieldset.field{border:0;margin:0;padding:0}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 0;font:700 1.05rem/1.35 var(--f-disp);letter-spacing:-.025em}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--peach);color:var(--flame-ink);font:700 1.2rem/1 var(--f-disp);transition:transform .2s}
+.faq summary::after{content:"+";content:"+" / "";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--peach);color:var(--flame-ink);font:700 1.2rem/1 var(--f-disp);transition:transform .2s}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 0 20px;color:var(--ink-soft);max-width:64ch}
 @media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
@@ -350,17 +360,19 @@ fieldset.field{border:0;margin:0;padding:0}
 .foot .logo{color:#fff;font-size:1.9rem}
 .foot .logo-by{color:#9AA6C6}
 .foot p{margin-top:14px;max-width:40ch;line-height:1.55}
-.foot h4{font:700 .7rem/1.3 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--apricot);margin-bottom:12px}
+.foot .foot-h{font:700 .7rem/1.3 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--apricot);margin-bottom:12px}
 .foot li{margin-top:8px}
 .foot a{color:#E3E7F2;text-decoration:none}
 .foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:20px;border-top:1px solid rgba(169,195,230,.18);font-size:.78rem;color:#8E99B8}
 @media (max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid>div:first-child{grid-column:1 / -1}}
 
+@media (forced-colors:active){.chip label,.niche label,.rules-bar button{border:1px solid ButtonText}.chip input:checked+label,.niche input:checked+label,.rules-bar button[aria-pressed="true"]{forced-color-adjust:none;background:Highlight;color:HighlightText;border-color:Highlight}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#topo" aria-label="GO influ., início">GO <i>influ</i><b>.</b></a>
@@ -388,13 +400,13 @@ fieldset.field{border:0;margin:0;padding:0}
   </nav>
 </header>
 
-<main>
+<main id="conteudo" tabindex="-1">
 <section class="hero" id="topo">
   <div class="wrap hero-grid">
     <div>
-      <span class="label">Gestão de influenciadores · por Grupo Opera</span>
+      <span class="label">Gestão de influenciadores · do Grupo Opera</span>
       <h1>Influência que vira <span>agenda.</span></h1>
-      <p class="hero-sub">A GO influ. encontra creators da sua cidade e do seu nicho, cuida do contrato, do roteiro e do #publi, e mede o resultado em conversas no WhatsApp. Em saúde, tudo dentro das regras do CFM e do CFO.</p>
+      <p class="hero-sub">A GO influ. encontra creators da sua cidade e do seu nicho, cuida do contrato, do roteiro e do #publi, e mede o resultado em conversas no WhatsApp. Em saúde, cada roteiro passa pela checagem das regras do CFM e do CFO antes de ir ao ar.</p>
       <div class="hero-cta">
         <a class="btn btn-ink" href="#elenco">Sou marca: montar meu elenco <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn-white" href="#creators">Sou creator: quero entrar</a>
@@ -417,7 +429,7 @@ fieldset.field{border:0;margin:0;padding:0}
       <div class="phone phone--reel" aria-hidden="true">
         <div class="reel">
           <div class="reel-top"><span class="av"></span><div><b>@creatorlocal</b><small>Parceria paga com Sua Clínica</small></div></div>
-          <p class="reel-hook">Vim conhecer a clínica que <mark>todo mundo</mark> aqui da cidade comenta.</p>
+          <p class="reel-hook">Vim conhecer a clínica aqui da cidade e fazer a minha <mark>avaliação</mark>.</p>
           <p class="reel-cap"><b>#publi</b> · O que mais me surpreendeu foi a avaliação: explicaram tudo antes de qualquer coisa.</p>
           <div class="reel-rail"><i></i><i></i><i></i></div>
         </div>
@@ -445,13 +457,13 @@ fieldset.field{border:0;margin:0;padding:0}
   <div class="wrap">
     <div class="stats-grid">
       <div class="stat"><b class="num">81%</b><p>dos brasileiros entrevistados <strong>já compraram algo indicado por um influenciador</strong>.<sup>1</sup></p></div>
-      <div class="stat"><b class="num">48%</b><p>dizem que <strong>creators especialistas ou de nicho</strong> são os que mais influenciam a compra. Só 6% escolhem pelo número de seguidores.<sup>1</sup></p></div>
-      <div class="stat"><b class="num">69%</b><p>já compraram ou quiseram comprar algo indicado por <strong>um influenciador da sua região</strong>.<sup>2</sup></p></div>
-      <div class="stat"><b class="num">39%</b><p>citam a <strong>publi escondida ou mal sinalizada</strong> como motivo para não comprar. Na edição anterior, eram 29%.<sup>1</sup></p></div>
+      <div class="stat"><b class="num">48%</b><p>dizem que <strong>creators especialistas ou de nicho</strong> são os que mais influenciam a compra. Só 6% escolhem o influenciador pelo número de seguidores.<sup>1</sup></p></div>
+      <div class="stat"><b class="num">69%</b><p>já compraram ou quiseram comprar algo indicado por <strong>um influenciador da própria região</strong>.<sup>2</sup></p></div>
+      <div class="stat"><b class="num">39%</b><p>citam a <strong>publi escondida ou mal sinalizada</strong> como motivo para não comprar. Na edição anterior da pesquisa, eram 29%.<sup>1</sup></p></div>
     </div>
     <p class="stats-src">
-      <span>1. YOUPIX e Nielsen, “O Efeito da Influência no Consumo 2026” (Consumo &amp; Influência 2026): 1.000 entrevistados em todo o Brasil, campo de 8 a 13/05/2026.</span>
-      <span>2. Influency.me e Opinion Box, “Marketing de Influência e Regionalismo” (jun./2025): 2.448 internautas de todas as regiões.</span>
+      <span>1. YOUPIX e Nielsen, “O Efeito da Influência no Consumo 2026”: 1.000 entrevistados, campo de 8 a 13/05/2026.</span>
+      <span>2. Influency.me e Opinion Box, “Marketing de Influência e Regionalismo” (jun./2025): 2.448 internautas.</span>
     </p>
   </div>
 </section>
@@ -466,11 +478,11 @@ fieldset.field{border:0;margin:0;padding:0}
     </div>
     <div>
       <div class="pyr" role="list" aria-label="Pirâmide de distribuição da verba de influência">
-        <div class="tier tier--mid" role="listitem"><div class="tier-shape">~10%<small>da verba</small></div><div class="tier-info"><b>Mid · 100 a 500 mil</b><span>Pontual: lançamento, evento, campanha do trimestre.</span><em>R$ 2.500 a R$ 10.000 por entrega</em></div></div>
-        <div class="tier tier--micro" role="listitem"><div class="tier-shape">~30%<small>da verba</small></div><div class="tier-info"><b>Micro · 10 a 100 mil</b><span>Alcance qualificado e conteúdo com mais produção.</span><em>R$ 500 a R$ 2.500 por entrega</em></div></div>
-        <div class="tier tier--nano" role="listitem"><div class="tier-shape">~60%<small>da verba</small></div><div class="tier-info"><b>Nano e especialistas · até 10 mil</b><span>Volume, prova social espalhada e vídeo para anúncio.</span><em>Até R$ 500 por entrega</em></div></div>
+        <div class="tier tier--mid" role="listitem"><div class="tier-shape">~10%<small>da verba</small></div><div class="tier-info"><b>Mid · 100 a 500 mil seguidores</b><span>Pontual: lançamento, evento, campanha do trimestre.</span><em>R$&nbsp;2.500 a R$&nbsp;10.000 por creator</em></div></div>
+        <div class="tier tier--micro" role="listitem"><div class="tier-shape">~30%<small>da verba</small></div><div class="tier-info"><b>Micro · 10 a 100 mil seguidores</b><span>Alcance qualificado e conteúdo com mais produção.</span><em>R$&nbsp;500 a R$&nbsp;2.500 por creator</em></div></div>
+        <div class="tier tier--nano" role="listitem"><div class="tier-shape">~60%<small>da verba</small></div><div class="tier-info"><b>Nano e especialistas · até 10 mil seguidores</b><span>Volume, prova social espalhada e vídeo para anúncio.</span><em>Até R$&nbsp;500 por creator</em></div></div>
       </div>
-      <p class="fine pyr-note">Faixas de referência que usamos para negociar, ajustadas à praça e ao nicho. A verba de influência é paga direto aos creators, separada da gestão.</p>
+      <p class="fine pyr-note">Valores de referência por creator na campanha do mês, que usamos para negociar, ajustados à praça e ao nicho. A verba de influência é paga direto aos creators, separada da gestão.</p>
     </div>
   </div>
 </section>
@@ -503,9 +515,9 @@ fieldset.field{border:0;margin:0;padding:0}
     <div class="formats">
       <article class="fmt"><span class="fmt-frame" style="--c:var(--navy)" aria-hidden="true"></span><div><h3>Depoimento de marca</h3><p>O creator conta como foi conhecer o lugar. Vende confiança na marca, e não num procedimento.</p><p class="rule">Um detalhe concreto vale mais que “o atendimento é ótimo”.</p></div></article>
       <article class="fmt"><span class="fmt-frame" style="--c:var(--flame-btn)" aria-hidden="true"></span><div><h3>Experiência real</h3><p>Só com quem usa de verdade. O público percebe na hora quando o depoimento é encenado.</p><p class="rule">Em saúde, só no formato que o conselho permite.</p></div></article>
-      <article class="fmt"><span class="fmt-frame" style="--c:var(--ink)" aria-hidden="true"></span><div><h3>Chamada para evento</h3><p>Data, motivo e urgência de verdade. Gravada depois que a oferta estiver fechada, para citar a vantagem concreta.</p><p class="rule">Em odontologia, sem preço no anúncio.</p></div></article>
+      <article class="fmt"><span class="fmt-frame" style="--c:var(--ink)" aria-hidden="true"></span><div><h3>Chamada para evento</h3><p>Data, motivo e urgência de verdade. Gravada depois que a oferta estiver fechada, para citar a vantagem concreta.</p><p class="rule">Em odontologia, sem preço, serviço gratuito ou condição de pagamento. Em medicina, sem sorteio, prêmio ou venda casada.</p></div></article>
       <article class="fmt"><span class="fmt-frame" style="--c:var(--apricot)" aria-hidden="true"></span><div><h3>Vídeo para anúncio</h3><p>Conteúdo pensado para rodar como anúncio de parceria, com o direito de uso previsto em contrato.</p><p class="rule">Três aberturas por vídeo para testar o gancho.</p></div></article>
-      <article class="fmt"><span class="fmt-frame" style="--c:#2B4FB3" aria-hidden="true"></span><div><h3>Embaixador</h3><p>Contrato de vários meses e presença recorrente. A constância é o que faz a marca ser lembrada.</p><p class="rule">Bom para quem já performou numa campanha.</p></div></article>
+      <article class="fmt"><span class="fmt-frame" style="--c:#2B4FB3" aria-hidden="true"></span><div><h3>Embaixador</h3><p>Contrato de vários meses e presença recorrente. A constância é o que faz a marca ser lembrada.</p><p class="rule">Bom para quem já deu resultado numa campanha.</p></div></article>
       <article class="fmt"><span class="fmt-frame" style="--c:var(--flame)" aria-hidden="true"></span><div><h3>Cobertura de evento</h3><p>Bastidores e movimento no dia, para mostrar que a sua marca está viva na cidade.</p><p class="rule">Autorização de imagem de quem aparece.</p></div></article>
     </div>
   </div>
@@ -529,6 +541,7 @@ fieldset.field{border:0;margin:0;padding:0}
             <span class="chip"><input type="radio" name="seg" id="s-b2b" value="b2b"><label for="s-b2b">Empresa B2B</label></span>
           </div>
         </fieldset>
+        <p class="fine" style="color:#9AA6C6;margin-top:-14px">Nutrição, fisioterapia, psicologia e outras profissões de saúde têm conselho e regras próprias: fale com a gente antes de montar o elenco.</p>
         <fieldset>
           <legend>Objetivo da campanha</legend>
           <div class="chips">
@@ -540,18 +553,18 @@ fieldset.field{border:0;margin:0;padding:0}
         <fieldset>
           <legend><span class="budget-row" style="width:100%"><span>Verba mensal para os creators</span></span></legend>
           <div class="budget-row" style="margin-top:10px"><span class="budget-val num" id="b-val">R$ 6.000<small> por mês</small></span></div>
-          <input type="range" id="budget" min="2000" max="30000" step="500" value="6000" aria-label="Verba mensal para os creators, em reais">
+          <input type="range" id="budget" min="2000" max="30000" step="500" value="6000" aria-label="Verba mensal para os creators, em reais" aria-valuetext="R$ 6.000 por mês">
           <div class="range-ends"><span>R$ 2 mil</span><span>R$ 30 mil</span></div>
         </fieldset>
-        <p class="fine" style="color:#9AA6C6">A gestão da GO influ. é cobrada à parte, num fee mensal. A verba acima vai inteira para os creators.</p>
+        <p class="fine" style="color:#9AA6C6">A gestão da GO influ. é cobrada à parte, num valor fixo mensal. A verba acima vai inteira para os creators; se algum vídeo virar anúncio, a mídia é paga à parte, na sua conta.</p>
       </form>
 
-      <div class="calc-out" aria-live="polite">
-        <div class="co-h"><h3>Seu elenco</h3><span id="c-total">Estimativa</span></div>
+      <div class="calc-out">
+        <div class="co-h"><h3>Seu elenco</h3><span id="c-total" aria-live="polite" aria-atomic="true">Estimativa</span></div>
         <div class="cast" id="c-cast" aria-hidden="true"></div>
         <div class="co-tiers" id="c-tiers"></div>
         <div class="co-cols">
-          <div class="co-box"><h4>Entregas por creator</h4><ul id="c-deliv"></ul></div>
+          <div class="co-box"><h4>Pacote de cada creator</h4><ul id="c-deliv"></ul></div>
           <div class="co-box"><h4>Como medimos</h4><ul id="c-kpi"></ul></div>
         </div>
         <div class="co-rules"><h4 id="c-rules-h">Regras do seu segmento</h4><ul id="c-rules"></ul></div>
@@ -582,15 +595,15 @@ fieldset.field{border:0;margin:0;padding:0}
       <article class="rule-c" data-g="todos"><span class="who">Qualquer marca</span><h3>Cupom e link de afiliado também são publicidade?</h3><span class="verdict v-pub">São publi</span><p>Quando existe vínculo comercial com a marca, é publicidade, mesmo sem contrato formal. Na GO influ., tudo é sinalizado como publi: cachê, permuta, produto recebido, cupom, link de afiliado ou comissão por resultado.</p><p class="src">Código de Defesa do Consumidor, art. 36; CONAR, Guia de Marketing e Publicidade por Influenciadores Digitais (edição de 2026).</p></article>
       <article class="rule-c" data-g="todos"><span class="who">Qualquer marca</span><h3>A marca responde pelo que o creator posta?</h3><span class="verdict v-warn">Sim, junto</span><p>O Código do CONAR já responsabiliza anunciante e agência, e o guia de 2026 reforça o dever de orientar os creators, acompanhar o conteúdo e corrigir o que estiver irregular. Por isso o roteiro passa pela marca antes de gravar.</p><p class="src">Código Brasileiro de Autorregulamentação Publicitária, art. 45; CONAR, guia de influenciadores (2026).</p></article>
       <article class="rule-c" data-g="odonto"><span class="who">Odontologia</span><h3>Posso trocar tratamento por posts do creator?</h3><span class="verdict v-risk">Alto risco</span><p>A lei proíbe ao dentista prestar serviço gratuito em consultório particular, e o Código de Ética veda “oferecer trabalho gratuito com intenção de autopromoção ou promover campanhas oferecendo trocas de favores”. Na GO influ., o creator recebe cachê em contrato e o tratamento, se houver, é cobrado normalmente.</p><p class="src">Lei 5.081/1966, art. 7º, “e”; Código de Ética Odontológica (Res. CFO-118/2012), art. 44.</p></article>
-      <article class="rule-c" data-g="odonto"><span class="who">Odontologia</span><h3>O creator pode postar o antes e depois do tratamento?</h3><span class="verdict v-risk">Alto risco</span><p>Imagens de diagnóstico e de conclusão do tratamento só podem ser publicadas pelo dentista que fez o procedimento, com TCLE e nome e CRO na publicação. Imagens do procedimento em andamento seguem vedadas, e alguns CROs são ainda mais restritivos.</p><p class="src">Resolução CFO-196/2019.</p></article>
-      <article class="rule-c" data-g="odonto"><span class="who">Odontologia</span><h3>O creator pode divulgar o preço do tratamento?</h3><span class="verdict v-no">Não pode</span><p>O Código de Ética Odontológica ainda trata como infração a publicidade com preços, serviços gratuitos e modalidades de pagamento. Após decisão do CADE, o CFO flexibilizou regras sobre cartões de desconto, mas não localizamos norma que libere o anúncio de preços.</p><p class="src">Código de Ética Odontológica, art. 44, I; Lei 5.081/1966, art. 7º, “g”. Situação em out./2026.</p></article>
+      <article class="rule-c" data-g="odonto"><span class="who">Odontologia</span><h3>O creator pode postar o antes e depois do tratamento?</h3><span class="verdict v-risk">Alto risco</span><p>Imagens de diagnóstico e de conclusão do tratamento só podem ser publicadas pelo dentista que fez o procedimento, com o termo de consentimento do paciente (TCLE) e com o nome e o CRO do dentista. Na prática, o creator contratado não deve postar o antes e depois. Imagens do procedimento em andamento seguem vedadas, e alguns CROs são ainda mais restritivos.</p><p class="src">Resolução CFO-196/2019.</p></article>
+      <article class="rule-c" data-g="odonto"><span class="who">Odontologia</span><h3>O creator pode divulgar o preço do tratamento?</h3><span class="verdict v-no">Não pode</span><p>O Código de Ética Odontológica ainda trata como infração a publicidade com preços, serviços gratuitos e modalidades de pagamento. Após decisão do CADE, o CFO flexibilizou regras sobre cartões de desconto, mas não localizamos norma que libere o anúncio de preços.</p><p class="src">Código de Ética Odontológica, art. 44, I; Lei 5.081/1966, art. 7º, “g”; Res. CFO-271/2025 (cartões de desconto). Situação em out./2026.</p></article>
       <article class="rule-c" data-g="med"><span class="who">Medicina</span><h3>Posso oferecer um procedimento a um influenciador em troca de divulgação?</h3><span class="verdict v-risk">Alto risco</span><p>Segundo o CREMESP, oferecer serviço ou procedimento a pessoa famosa em troca de divulgação nas redes do médico ou da clínica é vedado e caracteriza concorrência desleal. Na GO influ., não existe permuta de procedimento: o creator recebe cachê.</p><p class="src">CREMESP, perguntas frequentes sobre a Resolução CFM 2.336/2023.</p></article>
       <article class="rule-c" data-g="med"><span class="who">Medicina</span><h3>Médico pode usar antes e depois?</h3><span class="verdict v-warn">Pode, com regras</span><p>Com finalidade educativa e autorização do paciente: imagens em conjunto, que mostrem também resultados insatisfatórios e possíveis complicações, com texto educativo. Sem identificar o paciente e sem editar a imagem. A regra vale para médicos; a odontologia segue o CFO.</p><p class="src">Resolução CFM 2.336/2023, art. 14 (em vigor desde 11/03/2024).</p></article>
       <article class="rule-c" data-g="med"><span class="who">Medicina</span><h3>Se eu repostar o elogio de um influenciador, vira problema meu?</h3><span class="verdict v-warn">Conta como seu</span><p>Publicação de paciente ou de terceiro que o médico compartilha ou reposta passa a ser considerada publicação do próprio médico e precisa seguir todas as regras da resolução.</p><p class="src">Resolução CFM 2.336/2023.</p></article>
       <article class="rule-c" data-g="med"><span class="who">Medicina</span><h3>Posso divulgar o valor da consulta?</h3><span class="verdict v-ok">Pode</span><p>O médico pode informar o valor da consulta e as formas de pagamento, com limites para ações promocionais: nada de venda casada, premiação ou sorteio. Isso vale para a consulta, não para o preço de procedimentos.</p><p class="src">Resolução CFM 2.336/2023.</p></article>
       <article class="rule-c" data-g="med"><span class="who">Medicina</span><h3>O que precisa aparecer no perfil do médico?</h3><span class="verdict v-warn">Obrigatório</span><p>Nome e número do CRM com a UF e, ao anunciar especialidade, o RQE. Nas redes sociais, esses dados ficam na página principal do perfil. Em anúncio de clínica, aparecem o nome e o CRM do diretor técnico.</p><p class="src">Resolução CFM 2.336/2023; Código de Ética Médica.</p></article>
-      <article class="rule-c" data-g="odonto med"><span class="who">Saúde</span><h3>O creator pode citar a marca do medicamento, como a toxina botulínica?</h3><span class="verdict v-no">Não pode</span><p>Medicamento de venda sob prescrição não pode ser anunciado ao público em geral. O creator fala do procedimento e da clínica, nunca da marca do produto, e isso inclui não usar “Botox”, que é marca registrada, como nome genérico.</p><p class="src">Lei 9.294/1996, art. 7º; RDC Anvisa 96/2008.</p></article>
-      <article class="rule-c" data-g="odonto med"><span class="who">Saúde</span><h3>Posso usar a foto de um paciente no post?</h3><span class="verdict v-warn">Com consentimento</span><p>Foto que revela a condição de saúde é dado pessoal sensível. Para publicidade, é preciso consentimento específico e destacado, num termo próprio, separado do consentimento do tratamento e revogável. As regras do conselho continuam valendo.</p><p class="src">LGPD (Lei 13.709/2018), arts. 5º, II, 8º e 11, I.</p></article>
+      <article class="rule-c" data-g="odonto med"><span class="who">Saúde</span><h3>O creator pode citar a marca do medicamento usado, como a da toxina botulínica?</h3><span class="verdict v-no">Não pode</span><p>Medicamento de venda sob prescrição não pode ser anunciado ao público em geral. O creator fala do procedimento e da clínica, nunca da marca do produto. Isso inclui não chamar a toxina botulínica de “Botox”, que é marca registrada.</p><p class="src">Lei 9.294/1996, art. 7º; RDC Anvisa 96/2008.</p></article>
+      <article class="rule-c" data-g="odonto med"><span class="who">Saúde</span><h3>Posso usar a foto de um paciente no post?</h3><span class="verdict v-warn">Com consentimento</span><p>Foto que revela a condição de saúde é dado pessoal sensível. Para publicidade, é preciso consentimento específico e destacado, só para essa finalidade, que o paciente pode revogar quando quiser. O mais seguro é um termo próprio, separado do consentimento do tratamento. As regras do conselho continuam valendo.</p><p class="src">LGPD (Lei 13.709/2018), arts. 5º, II, 8º e 11, I.</p></article>
     </div>
 
     <div class="checklist">
@@ -602,12 +615,12 @@ fieldset.field{border:0;margin:0;padding:0}
         <li>Selo de parceria paga ou #publi visível na primeira tela</li>
         <li>Roteiro aprovado pela marca antes de gravar</li>
         <li>Sem promessa de resultado e sem superlativo</li>
-        <li>Nome e CRO ou CRM e RQE onde a norma pede</li>
+        <li>Nome e CRO do dentista, ou nome, CRM e RQE do médico, onde a norma pede</li>
         <li>Autorização por escrito de quem aparece</li>
         <li>Direito de uso em anúncio, com prazo, no contrato</li>
       </ul>
     </div>
-    <p class="fine disclaimer">Resumo informativo para orientar campanhas, revisado em outubro de 2026. Não substitui parecer jurídico nem a orientação do CRO ou do CRM do seu estado, que podem ter regras próprias.</p>
+    <p class="fine disclaimer">Resumo informativo para orientar campanhas, atualizado em outubro de 2026. O capítulo de publicidade do Código de Ética Odontológica está em revisão pelo CFO (Decisão CFO-05/2025). Não substitui parecer jurídico nem a orientação do CRO ou do CRM do seu estado, que podem ter regras próprias.</p>
   </div>
 </section>
 
@@ -616,7 +629,7 @@ fieldset.field{border:0;margin:0;padding:0}
     <div class="sec-head">
       <span class="label">Medição</span>
       <h2 class="h2">Medimos em <span class="o">conversa</span>, não em curtida.</h2>
-      <p class="lead">A GO influ. nasceu dentro do Grupo Opera, que mede tudo em conversas no WhatsApp e custo por conversa. Cada creator tem a sua origem rastreada, do post até o agendamento.</p>
+      <p class="lead">A GO influ. nasceu dentro do Grupo Opera, que mede tudo em conversas no WhatsApp e custo por conversa. Cada creator recebe link, cupom ou mensagem própria, para cada conversa ser rastreada do post até o agendamento.</p>
     </div>
     <ol class="flow">
       <li class="node"><span class="dot">1</span><h3>O creator posta</h3><p>Com link, cupom ou uma mensagem de WhatsApp própria dele.</p></li>
@@ -627,7 +640,7 @@ fieldset.field{border:0;margin:0;padding:0}
     </ol>
     <div class="meta-note">
       <b class="num">−19%</b>
-      <p>de custo por aquisição, em média, em campanhas que somaram anúncios de parceria aos anúncios convencionais, segundo dados internos da Meta. Os resultados variam conforme a conta e a execução.<small>Meta, dados internos citados nos anúncios sobre anúncios de parceria (2024 e 2025). Compara campanhas com e sem anúncios de parceria.</small></p>
+      <p>de custo por aquisição, em média, em campanhas que somaram anúncios de parceria aos anúncios convencionais, segundo dados internos da Meta. Os resultados variam conforme a conta e a execução.<small>Meta, dados internos divulgados pela empresa sobre anúncios de parceria (2024 e 2025). Compara campanhas com e sem anúncios de parceria.</small></p>
     </div>
   </div>
 </section>
@@ -648,7 +661,7 @@ fieldset.field{border:0;margin:0;padding:0}
       </div>
       <div class="look">
         <h3>Quem a gente procura</h3>
-        <p>Creators locais e especialistas, de mil a 100 mil seguidores, com comentário de verdade e uma comunidade que confia em você. Saúde e bem-estar, maternidade, beleza, gastronomia, fitness, vida na cidade e negócios.</p>
+        <p>Creators locais e especialistas, de mil a 100 mil seguidores, com comentário de verdade e uma comunidade que confia em você. Saúde e bem-estar, maternidade, beleza, gastronomia, fitness, humor, vida na cidade e negócios.</p>
       </div>
       <div class="signed" aria-hidden="true"><span class="av"></span><div><small>Contratação confirmada</small><b>@você é do elenco <span>GO influ.</span></b></div></div>
     </div>
@@ -656,14 +669,14 @@ fieldset.field{border:0;margin:0;padding:0}
     <form class="form" id="crea-form" novalidate>
       <h3>Quero entrar no elenco</h3>
       <p>Preencha e envie pelo WhatsApp. A resposta vem da nossa equipe de casting.</p>
-      <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required><span class="err" hidden>Conta pra gente o seu nome.</span></div>
+      <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required aria-describedby="e-nome"><span class="err" id="e-nome" hidden>Conta pra gente o seu nome.</span></div>
       <div class="row2">
-        <div class="field"><label for="f-arroba">@ do perfil principal</label><input id="f-arroba" name="arroba" placeholder="@seuperfil" required><span class="err" hidden>Qual é o seu @?</span></div>
+        <div class="field"><label for="f-arroba">@ do perfil principal</label><input id="f-arroba" name="arroba" placeholder="@seuperfil" required aria-describedby="e-arroba"><span class="err" id="e-arroba" hidden>Qual é o seu @?</span></div>
         <div class="field"><label for="f-rede">Rede principal</label><select id="f-rede" name="rede"><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>Kwai</option></select></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="f-seg">Seguidores</label><select id="f-seg" name="seg"><option>Até 10 mil</option><option>10 a 50 mil</option><option>50 a 100 mil</option><option>100 a 500 mil</option><option>Mais de 500 mil</option></select></div>
-        <div class="field"><label for="f-cidade">Cidade e UF</label><input id="f-cidade" name="cidade" placeholder="Ex.: Mirassol, SP" autocomplete="address-level2" required><span class="err" hidden>Onde você mora?</span></div>
+        <div class="field"><label for="f-seg">Seguidores</label><select id="f-seg" name="seg" required aria-describedby="e-seg"><option value="" disabled selected>Selecione</option><option>Até 10 mil</option><option>10 a 50 mil</option><option>50 a 100 mil</option><option>100 a 500 mil</option><option>Mais de 500 mil</option></select><span class="err" id="e-seg" hidden>Quantos seguidores?</span></div>
+        <div class="field"><label for="f-cidade">Cidade e UF</label><input id="f-cidade" name="cidade" placeholder="Ex.: Mirassol, SP" autocomplete="address-level2" required aria-describedby="e-cidade"><span class="err" id="e-cidade" hidden>Onde você mora?</span></div>
       </div>
       <fieldset class="field">
         <legend>Seus nichos</legend>
@@ -680,8 +693,8 @@ fieldset.field{border:0;margin:0;padding:0}
       </fieldset>
       <div class="field"><label for="f-kit">Link do mídia kit <span style="font-weight:500;color:var(--ink-mute)">(opcional)</span></label><input id="f-kit" name="kit" type="url" inputmode="url" placeholder="https://"></div>
       <a class="btn btn-flame" id="crea-send" href="https://wa.me/" target="_blank" rel="noopener">Enviar pelo WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
-      <p class="form-msg" id="crea-msg" hidden></p>
-      <p class="fine">Este site não guarda os seus dados. Eles vão só na mensagem que você mesmo envia pelo WhatsApp para a nossa equipe.</p>
+      <p class="form-msg" id="crea-msg" role="alert" hidden></p>
+      <p class="fine">Este site não guarda os seus dados: eles vão só na mensagem que você envia pelo WhatsApp. A equipe do Grupo Opera usa esses dados só para casting, e você pode pedir a exclusão pelo mesmo WhatsApp.</p>
     </form>
   </div>
 </section>
@@ -691,15 +704,15 @@ fieldset.field{border:0;margin:0;padding:0}
     <div>
       <span class="label">Perguntas</span>
       <h2 class="h2">O que todo mundo <span class="o">pergunta</span>.</h2>
-      <p class="lead">A sua não está aqui? Manda no WhatsApp.</p>
+      <p class="lead">A sua não está aqui? <a data-wa="Olá! Vim pelo site da GO influ. e tenho uma pergunta." href="https://wa.me/">Manda no WhatsApp</a>.</p>
     </div>
     <div class="faq">
       <h3>Marcas</h3>
-      <details><summary>Quanto custa?</summary><p>São duas partes. A gestão da GO influ. é um fee mensal, que depende do tamanho do elenco. A verba dos creators você define, e ela vai direto para eles. Antes de começar, você vê a estimativa de elenco e de custo.</p></details>
+      <details><summary>Quanto custa?</summary><p>A gestão da GO influ. é um valor fixo por mês, que depende do tamanho do elenco. A verba dos creators você define, e ela vai direto para eles. Se os melhores vídeos rodarem como anúncio de parceria, a verba de anúncio é à parte, paga na sua conta. Antes de começar, você vê a estimativa de elenco e de custo.</p></details>
       <details><summary>Preciso ser cliente do Grupo Opera?</summary><p>Não. Quem já é cliente ganha a medição integrada: conversas por creator no mesmo painel da mídia e o melhor conteúdo rodando como anúncio na mesma conta.</p></details>
-      <details><summary>Vocês trabalham com permuta?</summary><p>Fora da saúde, sim, sempre identificada como publicidade. Em odontologia e medicina, não: o creator recebe cachê e, se fizer tratamento, ele é cobrado normalmente. Troca de procedimento por divulgação é risco para o CRO e para o CRM.</p></details>
+      <details><summary>Vocês trabalham com permuta?</summary><p>Fora da saúde, sim, sempre identificada como publicidade. Em odontologia e medicina, não: o creator recebe cachê e, se fizer tratamento, ele é cobrado normalmente. Trocar procedimento por divulgação pode gerar processo ético para o profissional no CRO ou no CRM.</p></details>
       <details><summary>De quem é o vídeo depois?</summary><p>O vídeo é do creator. O contrato define o direito de uso pela sua marca, inclusive em anúncio, com prazo combinado (em geral de 6 a 12 meses).</p></details>
-      <details><summary>Atende a minha cidade?</summary><p>Sim. O casting é feito por cidade e por nicho, em qualquer lugar do Brasil, e a operação é remota, com grupo no WhatsApp.</p></details>
+      <details><summary>Atende a minha cidade?</summary><p>Em geral, sim. O casting é feito por cidade e por nicho, em todo o Brasil, e a operação é remota, com grupo no WhatsApp. Antes de fechar, a gente confirma se há creators suficientes na sua cidade.</p></details>
       <h3>Creators</h3>
       <details><summary>Preciso ter muitos seguidores?</summary><p>Não. Para uma marca local, mil seguidores da cidade certa valem mais que 100 mil espalhados pelo país. A gente olha audiência, comentário de verdade e a sua relação com a comunidade.</p></details>
       <details><summary>Tem custo para entrar no elenco?</summary><p>Não. Você manda os seus dados pelo WhatsApp e, quando aparecer uma marca com o seu perfil, a gente chama você com a proposta.</p></details>
@@ -726,15 +739,15 @@ fieldset.field{border:0;margin:0;padding:0}
     <div class="foot-grid">
       <div>
         <span class="logo">GO <i>influ</i><b>.</b></span>
-        <span class="logo-by">Gestão de influenciadores · por Grupo Opera</span>
+        <span class="logo-by">Gestão de influenciadores · do Grupo Opera</span>
         <p>Creators da sua cidade e do seu nicho, com contrato, roteiro aprovado, #publi certo e resultado medido em conversas.</p>
       </div>
       <div>
-        <h4>GO influ.</h4>
+        <h2 class="foot-h">GO influ.</h2>
         <ul><li><a href="#marcas">Para marcas</a></li><li><a href="#elenco">Monte seu elenco</a></li><li><a href="#regras">Regras de publi</a></li><li><a href="#creators">Para creators</a></li></ul>
       </div>
       <div>
-        <h4>Grupo Opera</h4>
+        <h2 class="foot-h">Grupo Opera</h2>
         <ul><li><a data-opera href="../grupo-opera/">Site do Grupo Opera</a></li><li><a data-opera="#pre-diagnostico" href="../grupo-opera/#pre-diagnostico">Pré-diagnóstico</a></li><li><a data-wa="Olá! Vim pelo site da GO influ." href="https://wa.me/">WhatsApp</a></li></ul>
       </div>
     </div>
@@ -773,23 +786,24 @@ fieldset.field{border:0;margin:0;padding:0}
       mb.setAttribute('aria-expanded', String(open)); mb.textContent = open ? 'Fechar' : 'Menu';
     });
     mn.addEventListener('click', function (e) { if (e.target.closest('a')) { mn.hidden = true; mb.setAttribute('aria-expanded', 'false'); mb.textContent = 'Menu'; } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mn.hidden) { mn.hidden = true; mb.setAttribute('aria-expanded', 'false'); mb.textContent = 'Menu'; mb.focus(); } });
   }
 
   function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
-  function brl(v) { return 'R$ ' + Math.round(v).toLocaleString('pt-BR'); }
+  function brl(v) { return 'R$\u00a0' + Math.round(v).toLocaleString('pt-BR'); }
 
   /* ---------------- monte seu elenco ---------------- */
   var calc = document.getElementById('calc');
   if (calc) {
     var SEGS = {
-      odonto: { label: 'Odontologia', health: true, rules: ['Sem troca de tratamento por posts: cachê pago e tratamento cobrado à parte.', 'Sem antes e depois postado pelo creator e sem preço no anúncio.', 'Nome e CRO do responsável técnico nas peças. #publi visível na primeira tela.'] },
-      med: { label: 'Medicina', health: true, rules: ['Sem procedimento em troca de divulgação.', 'Antes e depois só no formato educativo da Resolução CFM 2.336/2023.', 'Repost de elogio conta como publicação do médico. CRM e RQE no perfil.'] },
+      odonto: { label: 'Odontologia', health: true, rules: ['Sem troca de tratamento por posts: cachê pago e tratamento cobrado à parte.', 'Sem antes e depois postado pelo creator e sem preço, serviço gratuito ou condição de pagamento no anúncio.', 'Nome e CRO do responsável técnico nas peças. #publi visível na primeira tela.'] },
+      med: { label: 'Medicina', health: true, rules: ['Sem procedimento em troca de divulgação.', 'Antes e depois só no formato educativo da Resolução CFM 2.336/2023.', 'Repost de elogio conta como publicação do médico. Nome, CRM com UF e, se anunciar especialidade, RQE no perfil.'] },
       local: { label: 'Negócio local', health: false, rules: ['#publi ou selo de parceria paga visível na primeira tela.', 'Cupom, link de afiliado e permuta também são publicidade.', 'Contrato com direito de uso do vídeo em anúncio, com prazo.'] },
-      b2b: { label: 'Empresa B2B', health: false, rules: ['Relevância antes de alcance: audiência com o perfil de quem compra.', '#publi visível e contrato com uso do conteúdo em mídia paga.', 'Creators especialistas do setor pesam mais que alcance.'] }
+      b2b: { label: 'Empresa B2B', health: false, rules: ['#publi ou selo de parceria paga visível na primeira tela.', 'Cupom, link de afiliado, comissão e permuta também são publicidade.', 'Contrato com uso do conteúdo em mídia paga, com prazo.'] }
     };
     var OBJS = {
-      agenda: { label: 'Agenda e conversas', deliv: ['1 Reels e 3 stories por creator', 'Link, cupom ou mensagem de WhatsApp com a origem', 'Vídeo liberado para anúncio de parceria'], kpi: ['Conversas no WhatsApp por creator', 'Custo por conversa (cachê e mídia)', 'Agendamentos registrados pela recepção'] },
-      evento: { label: 'Evento ou lançamento', deliv: ['Stories de contagem regressiva', 'Reels de chamada com a data e o motivo', 'Cobertura no dia e um recap depois'], kpi: ['Conversas e inscrições até a data', 'Comparecimento no dia', 'Alcance novo na cidade'] },
+      agenda: { label: 'Agenda e conversas', deliv: ['1 Reels e 3 stories por creator', 'Link, cupom ou mensagem de WhatsApp com a origem', 'Vídeo liberado para anúncio de parceria'], kpi: ['Conversas no WhatsApp por creator', 'Custo por conversa (cachê e mídia)', 'Agendamentos ou vendas registrados pela sua equipe'] },
+      evento: { label: 'Evento ou lançamento', deliv: ['Stories de contagem regressiva', 'Reels de chamada com a data e o motivo', 'Cobertura no dia e um resumo depois'], kpi: ['Conversas e inscrições até a data', 'Comparecimento no dia', 'Alcance novo na cidade'] },
       marca: { label: 'Autoridade da marca', deliv: ['Série de conteúdos ao longo de vários meses', 'Depoimento de marca e bastidores', 'Presença recorrente, como embaixador'], kpi: ['Busca pela marca no Google', 'Alcance novo e seguidores da região', 'Conversas vindas de quem já conhecia a marca'] }
     };
     var TIERS = [
@@ -807,6 +821,7 @@ fieldset.field{border:0;margin:0;padding:0}
       var obj = calc.querySelector('input[name="obj"]:checked').value;
       var V = Number(el.range.value);
       el.val.innerHTML = brl(V) + '<small> por mês</small>';
+      el.range.setAttribute('aria-valuetext', brl(V) + ' por mês');
 
       var budgets = TIERS.map(function (t) { return V * t.share; });
       var midOn = budgets[2] >= TIERS[2].min;
@@ -825,11 +840,11 @@ fieldset.field{border:0;margin:0;padding:0}
       rows.forEach(function (r) { var n = Math.round((r.lo + r.hi) / 2); for (var i = 0; i < Math.min(n, 40); i++) dots += '<i class="' + r.t.k + '" style="animation-delay:' + (i * 0.02).toFixed(2) + 's"></i>'; });
       el.cast.innerHTML = dots;
 
-      var nanoFee = SEGS[seg].health ? 'cachê de R$ 250 a R$ 500, sem troca de tratamento' : 'de permuta a R$ 500 por entrega';
+      var nanoFee = SEGS[seg].health ? brl(250) + ' a ' + brl(500) + ' por creator, sem troca de tratamento' : 'de permuta a ' + brl(500) + ' por creator';
       el.tiers.innerHTML = rows.map(function (r, i) {
-        var fee = i === 0 ? nanoFee : brl(r.t.min) + ' a ' + brl(r.t.max) + ' por entrega';
+        var fee = i === 0 ? nanoFee : brl(r.t.min) + ' a ' + brl(r.t.max) + ' por creator';
         if (r.hi === 0) {
-          var why = i === 2 ? 'Entra a partir de ' + brl(TIERS[2].min / TIERS[2].share) + ' por mês, ou num lançamento' : 'Aumente a verba para incluir';
+          var why = i === 2 ? 'Entra a partir de ' + brl(TIERS[2].min / TIERS[2].share) + ' por mês' : 'Aumente a verba para incluir';
           return '<div class="co-tier off"><i style="background:' + r.t.color + '"></i><div><b>' + esc(r.t.name) + '</b><span>' + esc(r.t.range) + ' · ' + esc(why) + '</span></div><strong>0</strong></div>';
         }
         var count = r.lo === r.hi ? String(r.lo) : r.lo + ' a ' + r.hi;
@@ -875,7 +890,7 @@ fieldset.field{border:0;margin:0;padding:0}
       var arroba = val('f-arroba'); if (arroba && arroba.charAt(0) !== '@') arroba = '@' + arroba;
       var m = 'Olá! Quero entrar no elenco da GO influ.\n' +
         'Nome: ' + val('f-nome') + '\n' +
-        'Perfil: ' + arroba + ' (' + val('f-rede') + ', ' + val('f-seg') + ')\n' +
+        'Perfil: ' + arroba + ' (' + val('f-rede') + (val('f-seg') ? ', ' + val('f-seg').toLowerCase() + ' seguidores' : '') + ')\n' +
         'Cidade: ' + val('f-cidade') + '\n' +
         (niches.length ? 'Nichos: ' + niches.join(', ') + '\n' : '') +
         (val('f-kit') ? 'Mídia kit: ' + val('f-kit') + '\n' : '');
@@ -883,9 +898,10 @@ fieldset.field{border:0;margin:0;padding:0}
     };
     var check = function () {
       var ok = true;
-      ['f-nome', 'f-arroba', 'f-cidade'].forEach(function (id) {
+      ['f-nome', 'f-arroba', 'f-seg', 'f-cidade'].forEach(function (id) {
         var input = document.getElementById(id), field = input.closest('.field'), err = field.querySelector('.err');
         var bad = !input.value.trim();
+        input.setAttribute('aria-invalid', String(bad));
         if (bad) { field.setAttribute('data-bad', ''); err.hidden = false; ok = false; } else { field.removeAttribute('data-bad'); err.hidden = true; }
       });
       return ok;
@@ -893,6 +909,7 @@ fieldset.field{border:0;margin:0;padding:0}
     form.addEventListener('input', function () { build(); if (!msgEl.hidden) { if (check()) msgEl.hidden = true; } });
     form.addEventListener('change', build);
     form.addEventListener('submit', function (e) { e.preventDefault(); });
+    form.addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.tagName === 'INPUT') { e.preventDefault(); send.click(); } });
     send.addEventListener('click', function (e) {
       if (!check()) {
         e.preventDefault();
