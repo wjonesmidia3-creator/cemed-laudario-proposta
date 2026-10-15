@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contrato · Grupo Opera × CEMED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --navy:#00247D; --navy-deep:#001A5C; --navy-line:#22409A;
+  --orange:#E85D1B; --orange-2:#F6A24E; --orange-ink:#C4460C; --orange-soft:#FDEEE5;
+  --ink:#111C3D; --ink-soft:#47547A; --ink-mute:#677190;
+  --bg:#FFFFFF; --bg-soft:#F4F7FC; --line:#E2E8F2;
+  --f-head:"Sora","Inter",system-ui,sans-serif; --f-sans:"Inter",system-ui,sans-serif;
+}
+@page{size:A4;margin:16mm 16mm 20mm}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 9.4pt/1.55 var(--f-sans);-webkit-font-smoothing:antialiased}
+.doc{max-width:178mm;margin:0 auto}
+@media screen{body{background:#E9EDF5;padding:24px 16px}.doc{background:#fff;padding:16mm;box-shadow:0 10px 40px -20px rgba(0,26,92,.4);border-radius:6px}}
+@media screen and (max-width:640px){.doc{padding:20px 16px}}
+
+/* capa */
+.cover{background:var(--navy);color:#fff;border-radius:14px;padding:22px 26px 24px;position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;right:-60px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(246,162,78,.22),rgba(246,162,78,0) 70%)}
+.brand{font:800 15pt/1 var(--f-head);letter-spacing:-.01em}
+.brand i{font-style:normal;color:var(--orange)}
+.eyebrow{display:block;margin-top:22px;font:700 7pt/1.2 var(--f-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--orange-2)}
+.cover h1{margin:8px 0 0;font:800 20pt/1.15 var(--f-head);letter-spacing:-.015em;max-width:24ch}
+.cover h1 span{color:var(--orange-2)}
+.cover p{margin:10px 0 0;color:#D5DDF2;font-size:9pt;max-width:62ch}
+
+/* partes */
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+@media screen and (max-width:640px){.parties{grid-template-columns:1fr}}
+.party{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg-soft);break-inside:avoid}
+.party h2{margin:0 0 6px;font:700 7pt/1.2 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-ink)}
+.party .name{font:700 10pt/1.3 var(--f-head);color:var(--navy)}
+.party dl{margin:6px 0 0;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:8.4pt}
+.party dt{color:var(--ink-mute)}
+.party dd{margin:0;font-weight:500}
+
+/* quadro-resumo */
+.summary{margin-top:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;break-inside:avoid}
+.summary h2{margin:0;padding:9px 14px;background:var(--navy);color:#fff;font:700 7pt/1.2 var(--f-sans);letter-spacing:.2em;text-transform:uppercase}
+.summary table{width:100%;border-collapse:collapse;font-size:8.6pt}
+.summary th,.summary td{padding:6.5px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+.summary tr:first-child th,.summary tr:first-child td{border-top:0}
+.summary th{width:31%;color:var(--ink-mute);font-weight:500}
+.summary td{font-weight:500}
+.summary td b{color:var(--navy);font-weight:700}
+.summary .hl td{background:var(--orange-soft)}
+.summary .hl b{color:var(--orange-ink)}
+.note{margin-top:10px;font-size:8.2pt;color:var(--ink-soft)}
+
+/* cláusulas */
+.intro{margin-top:16px}
+.clause{margin-top:14px}
+.clause h3{margin:0 0 6px;padding-bottom:5px;border-bottom:2px solid var(--navy);font:800 10.2pt/1.25 var(--f-head);color:var(--navy);break-after:avoid}
+.clause h3 small{display:inline-block;margin-right:8px;font:700 7pt/1 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink);vertical-align:2px}
+.clause p{margin:0 0 6px;text-align:justify;hyphens:auto}
+.clause p .n{font-weight:700;color:var(--navy);margin-right:3px}
+.clause ol{margin:0 0 7px;padding-left:20px;list-style:lower-alpha}
+.clause li{margin:0 0 3px;text-align:justify;hyphens:auto}
+.clause li::marker{font-weight:700;color:var(--navy)}
+.keep{break-inside:avoid}
+b,strong{font-weight:600}
+
+/* campos a preencher */
+.fill{background:var(--orange-soft);color:var(--orange-ink);font-weight:600;border-bottom:1px dashed var(--orange);padding:0 3px;border-radius:2px}
+
+/* assinaturas */
+.closing{margin-top:16px;break-inside:avoid}
+.closing p{margin:0 0 6px}
+.signs{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px;margin-top:34px}
+@media screen and (max-width:640px){.signs{grid-template-columns:1fr}}
+.sign{border-top:1.2px solid var(--ink);padding-top:6px;font-size:8.4pt;line-height:1.4}
+.sign b{display:block;font:700 8.8pt/1.3 var(--f-head);color:var(--navy)}
+.sign > span{display:block;color:var(--ink-soft)}
+.witness{margin-top:44px}
+.witness .sign{border-top-color:var(--ink-mute)}
+</style>
+</head>
+<body>
+<main class="doc">
+
+  <header class="cover">
+    <div class="brand">Grupo Opera<i>.</i></div>
+    <span class="eyebrow">Contrato de prestação de serviços</span>
+    <h1>Gestão de tráfego pago<br><span>para a CEMED</span></h1>
+    <p>Anúncios no Meta Ads e no Google Ads, com criação de peças, relatório semanal e reunião mensal de resultados. Mensalidade fixa, sem taxa sobre a verba de mídia.</p>
+  </header>
+
+  <section class="parties" aria-label="Partes">
+    <div class="party">
+      <h2>Contratante</h2>
+      <div class="name" data-k="contratante.razao"></div>
+      <dl>
+        <dt>CNPJ</dt><dd data-k="contratante.cnpj"></dd>
+        <dt>Endereço</dt><dd data-k="contratante.endereco"></dd>
+        <dt>Representante</dt><dd data-k="contratante.representante"></dd>
+        <dt>E-mail</dt><dd data-k="contratante.email"></dd>
+        <dt>WhatsApp</dt><dd data-k="contratante.whatsapp"></dd>
+      </dl>
+    </div>
+    <div class="party">
+      <h2>Contratada</h2>
+      <div class="name" data-k="contratada.nome"></div>
+      <dl>
+        <dt>Razão social</dt><dd data-k="contratada.razao" data-ph="razão social do cartão CNPJ"></dd>
+        <dt>CNPJ</dt><dd data-k="contratada.cnpj"></dd>
+        <dt>Endereço</dt><dd data-k="contratada.endereco" data-ph="endereço completo com CEP"></dd>
+        <dt>Representante</dt><dd data-k="contratada.representante" data-ph="nome do representante legal"></dd>
+        <dt>E-mail</dt><dd data-k="contratada.email" data-ph="e-mail para notificações"></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="summary" aria-label="Quadro-resumo">
+    <h2>Quadro-resumo</h2>
+    <table>
+      <tr><th>Serviço</th><td>Gestão de tráfego pago com criação de peças publicitárias (Cláusula 1)</td></tr>
+      <tr><th>Plataformas</th><td>Meta Ads (Instagram, Facebook, WhatsApp e Messenger) e Google Ads</td></tr>
+      <tr class="hl"><th>Mensalidade</th><td><b data-k="valor"></b> (<span data-k="valorExtenso"></span>), fixa</td></tr>
+      <tr><th>Verba de mídia</th><td>À parte, paga pela Contratante direto às plataformas, sem taxa da Contratada</td></tr>
+      <tr><th>Forma de pagamento</th><td>Boleto ou Pix emitido pelo Asaas em nome da Contratada (CNPJ <span data-k="contratada.cnpj"></span>)</td></tr>
+      <tr><th>Vencimento</th><td data-k="vencimentoResumo"></td></tr>
+      <tr><th>Vigência</th><td><b data-k="prazoTexto"></b> de permanência mínima, com renovação automática por períodos iguais</td></tr>
+      <tr><th>Não renovação</th><td>Aviso por e-mail com <span data-k="avisoTexto"></span> de antecedência do fim do período</td></tr>
+      <tr><th>Saída antecipada</th><td>Sem justa causa: mensalidades em aberto + multa de 1 (uma) mensalidade</td></tr>
+      <tr><th>Foro</th><td>Comarca de <span data-k="foro"></span></td></tr>
+    </table>
+  </section>
+  <p class="note">O quadro-resumo facilita a leitura. Em caso de dúvida, valem as cláusulas abaixo.</p>
+
+  <p class="intro">Pelo presente instrumento particular, as partes qualificadas acima, doravante <b>CONTRATANTE</b> e <b>CONTRATADA</b>, têm entre si justo e contratado o seguinte:</p>
+
+  <section class="clause">
+    <h3><small>Cláusula 1</small>Do objeto</h3>
+    <p><span class="n">1.1.</span>O objeto deste contrato é a prestação, pela CONTRATADA, de serviços de gestão de tráfego pago para a CONTRATANTE, com criação de peças publicitárias, para anunciar os serviços da CONTRATANTE nas plataformas Meta Ads (Instagram, Facebook, WhatsApp e Messenger) e Google Ads (Pesquisa, YouTube, Display e demais formatos da plataforma), com o objetivo de colocar potenciais pacientes em contato com a CONTRATANTE.</p>
+    <p><span class="n">1.2.</span>Os serviços compreendem:</p>
+    <ol>
+      <li>reunião inicial de alinhamento e estudo dos serviços, do público-alvo, dos interesses e das palavras-chave da CONTRATANTE;</li>
+      <li>configuração e revisão do Gerenciador de Negócios, das contas de anúncio, da verificação da empresa, do pixel, da API de conversões e dos eventos de conversão;</li>
+      <li>configuração das conversões do site e das páginas da CONTRATANTE, quando houver, na forma do item 1.4;</li>
+      <li>planejamento, criação, publicação, monitoramento e otimização das campanhas, com leitura semanal dos resultados e redistribuição da verba conforme o desempenho;</li>
+      <li>criação de peças publicitárias para os anúncios (artes, carrosséis e textos) e de roteiros, com orientação para a produção dos vídeos;</li>
+      <li>checagem das peças, antes da publicação, com base nas normas de publicidade médica do Conselho Federal de Medicina (Resolução CFM nº 2.336/2023) e no Código Brasileiro de Autorregulamentação Publicitária;</li>
+      <li>relatório semanal de acompanhamento, painel online de resultados com acesso da CONTRATANTE e reunião mensal de resultados por videochamada;</li>
+      <li>atendimento em grupo de WhatsApp com o gestor responsável pela conta, com resposta no mesmo dia útil para mensagens recebidas em horário comercial (segunda a sexta-feira, das 9h às 18h, exceto feriados).</li>
+    </ol>
+    <p><span class="n">1.3.</span>Não fazem parte deste contrato, e dependem de proposta e aditivo próprios: (a) a verba de mídia, tratada na Cláusula 2; (b) a gravação de vídeos, sessões de fotos e outras produções presenciais; (c) a gestão dos perfis orgânicos, como publicações, stories e respostas a comentários e mensagens; (d) a criação ou manutenção de sites e páginas; (e) campanhas com influenciadores; e (f) o atendimento dos contatos gerados e o trabalho comercial de transformá-los em pacientes, que cabem à equipe da CONTRATANTE.</p>
+    <p><span class="n">1.4.</span>A instalação técnica de integrações no site da CONTRATANTE (pixel, Google Analytics, tag do Google e similares) é de responsabilidade da CONTRATANTE ou do fornecedor do site. A CONTRATADA orienta e acompanha a instalação.</p>
+    <p><span class="n">1.5.</span>Este contrato não é exclusivo: a CONTRATADA pode atender outras empresas do mesmo ramo, mantidas em sigilo as informações da CONTRATANTE, nos termos da Cláusula 8.</p>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 2</small>Da verba de mídia</h3>
+    <p><span class="n">2.1.</span>O valor investido em anúncios (verba de mídia) não está incluído na mensalidade. Ele é pago pela CONTRATANTE diretamente às plataformas, com meio de pagamento em nome dela, sem passar pela CONTRATADA e sem taxa ou percentual da CONTRATADA sobre ele.</p>
+    <p><span class="n">2.2.</span>A verba é definida em conjunto na reunião inicial de alinhamento e revista nas reuniões mensais. Mudanças de verba dependem de aprovação da CONTRATANTE, que pode ser dada por WhatsApp ou e-mail.</p>
+    <p><span class="n">2.3.</span>A mensalidade é devida independentemente do valor investido em mídia, inclusive nos períodos em que a CONTRATANTE decidir pausar as campanhas ou não destinar verba a elas.</p>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 3</small>Das obrigações da Contratada</h3>
+    <p><span class="n">3.1.</span>Além do previsto na Cláusula 1, a CONTRATADA se obriga a:</p>
+    <ol>
+      <li>executar os serviços com diligência, de acordo com os termos de uso e as políticas de publicidade das plataformas, e acompanhar as atualizações dessas regras;</li>
+      <li>manter um gestor responsável pela conta da CONTRATANTE, substituído apenas com aviso prévio a ela;</li>
+      <li>entregar à CONTRATANTE, na assinatura, um guia de boas práticas e avisá-la, na reunião inicial e sempre que identificar, sobre comportamentos, conteúdos ou práticas que possam causar reprovação de anúncios ou bloqueio de contas;</li>
+      <li>não alterar a verba de mídia sem aprovação da CONTRATANTE;</li>
+      <li>aplicar uma pesquisa de satisfação a cada semestre e considerar as respostas no planejamento do período seguinte.</li>
+    </ol>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 4</small>Das obrigações da Contratante</h3>
+    <p><span class="n">4.1.</span>A CONTRATANTE se obriga a:</p>
+    <ol>
+      <li>conceder à CONTRATADA os acessos necessários às contas e ferramentas, na forma do item 9.5, e mantê-los ativos durante a vigência;</li>
+      <li>fornecer as informações, materiais e aprovações necessárias, como fotos, vídeos, especialidades, profissionais, valores e diferenciais, e responder aos pedidos de aprovação de peças em até 2 (dois) dias úteis;</li>
+      <li>pagar a verba de mídia diretamente às plataformas e manter em dia o meio de pagamento das contas de anúncio;</li>
+      <li>atender com sua equipe, com agilidade, os contatos gerados pelos anúncios e, sempre que possível, informar à CONTRATADA o retorno comercial desses contatos, como agendamentos e consultas;</li>
+      <li>não alterar campanhas, públicos, verbas ou configurações das contas sem alinhamento prévio com a CONTRATADA, para não prejudicar o andamento das campanhas;</li>
+      <li>observar o guia de boas práticas e as políticas das plataformas em seus perfis e contas;</li>
+      <li>pagar a mensalidade em dia, na forma da Cláusula 6.</li>
+    </ol>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 5</small>Da publicidade médica e do conteúdo</h3>
+    <p><span class="n">5.1.</span>A CONTRATANTE é responsável pela veracidade das informações sobre seus serviços, profissionais, preços e condições, e, por meio de seu diretor técnico médico, pela conformidade do conteúdo com as normas do Conselho Federal de Medicina e do Conselho Regional de Medicina do Estado de São Paulo.</p>
+    <p><span class="n">5.2.</span>A CONTRATADA checa as peças antes da publicação, nos termos do item 1.2, alínea “f”, e avisa a CONTRATANTE sobre conteúdos com risco ético ou de bloqueio. Se a CONTRATANTE determinar a publicação de conteúdo que a CONTRATADA tenha desaconselhado por escrito, responderá sozinha pelas consequências.</p>
+    <p><span class="n">5.3.</span>Imagens, depoimentos e dados de pacientes só serão usados com autorização expressa e por escrito do paciente, obtida e guardada pela CONTRATANTE, e dentro do que permitem as normas do Conselho Federal de Medicina.</p>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 6</small>Do preço e do pagamento</h3>
+    <p><span class="n">6.1.</span>Pelos serviços, a CONTRATANTE pagará à CONTRATADA a mensalidade fixa de <b data-k="valor"></b> (<span data-k="valorExtenso"></span>).</p>
+    <p><span class="n">6.2.</span>A CONTRATADA não cobra percentual sobre a verba de mídia nem comissão sobre as vendas da CONTRATANTE.</p>
+    <p><span class="n">6.3.</span><span data-k="vencimentoClausula"></span></p>
+    <p><span class="n">6.4.</span>As cobranças são emitidas pela plataforma de pagamentos Asaas, em nome da CONTRATADA, por boleto bancário ou Pix, e enviadas ao e-mail e ao WhatsApp da CONTRATANTE informados neste contrato. Só são válidos os pagamentos feitos pelos meios indicados nessas cobranças, em favor do CNPJ da CONTRATADA.</p>
+    <p><span class="n">6.5.</span>A CONTRATADA emitirá nota fiscal de serviço para cada mensalidade paga.</p>
+    <p><span class="n">6.6.</span>A mensalidade será reajustada a cada 12 (doze) meses de vigência pela variação positiva do IPCA/IBGE acumulada no período, ou pelo índice que vier a substituí-lo.</p>
+    <p><span class="n">6.7.</span>Em caso de atraso no pagamento:</p>
+    <ol>
+      <li>incidirão sobre o valor em aberto multa de 2% (dois por cento) e juros de mora de 1% (um por cento) ao mês;</li>
+      <li>após 10 (dez) dias de atraso, a CONTRATADA poderá, mediante aviso, suspender a execução dos serviços até a regularização, sem que isso suspenda a contagem do prazo do contrato ou o vencimento das mensalidades;</li>
+      <li>após 30 (trinta) dias de atraso, a CONTRATADA poderá rescindir o contrato por justa causa, levar o débito a protesto, incluir a CONTRATANTE em cadastros de inadimplentes e cobrá-lo judicialmente, acrescido das despesas de cobrança e dos honorários advocatícios.</li>
+    </ol>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 7</small>Do prazo, da renovação e da rescisão</h3>
+    <p><span class="n">7.1.</span><span data-k="vigenciaClausula"></span> Esse prazo é de permanência mínima e vale mesmo que as campanhas fiquem pausadas ou sem verba por decisão da CONTRATANTE.</p>
+    <p><span class="n">7.2.</span>Ao fim do prazo, o contrato se renova automaticamente por períodos iguais e sucessivos, nas mesmas condições, salvo se uma das partes avisar a outra, por e-mail, com pelo menos <span data-k="avisoTexto"></span> de antecedência do fim do período em curso, que não deseja renovar.</p>
+    <p><span class="n">7.3.</span>Se a CONTRATANTE encerrar o contrato antes do fim do período em curso, sem justa causa, deverá pagar, em até 72 (setenta e duas) horas, as mensalidades vencidas e em aberto e multa equivalente a 1 (uma) mensalidade vigente.</p>
+    <p><span class="n">7.4.</span>A CONTRATADA pode encerrar o contrato a qualquer tempo, sem justa causa e sem multa, mediante aviso enviado ao e-mail da CONTRATANTE com <span data-k="avisoTexto"></span> de antecedência. Durante o aviso, os serviços continuam normalmente.</p>
+    <p><span class="n">7.5.</span>Qualquer das partes pode rescindir o contrato por justa causa, sem multa para quem rescinde, se a outra descumprir obrigação deste contrato e não corrigir a falha em até 10 (dez) dias após ser notificada, ou na hipótese do item 6.7, alínea “c”. Se a rescisão por justa causa decorrer de falta da CONTRATANTE, aplica-se também o item 7.3.</p>
+    <p><span class="n">7.6.</span>No encerramento, por qualquer motivo, as partes seguirão este roteiro:</p>
+    <ol>
+      <li>a CONTRATADA entrega à CONTRATANTE o relatório final e os arquivos das peças produzidas e pagas;</li>
+      <li>os acessos e funções da CONTRATADA nas contas da CONTRATANTE são retirados pela própria CONTRATANTE, com orientação da CONTRATADA por vídeo ou acesso remoto, ou pela CONTRATADA, quando autorizada; neste último caso, a CONTRATANTE deve trocar as senhas logo em seguida, sob sua responsabilidade;</li>
+      <li>os grupos de atendimento no WhatsApp e as pastas compartilhadas na nuvem são encerrados 15 (quinze) dias após o fim do contrato, prazo em que a CONTRATANTE pode salvar o que desejar;</li>
+      <li>os dados pessoais são devolvidos ou eliminados, nos termos da Cláusula 9.</li>
+    </ol>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 8</small>Dos ativos, da propriedade e do sigilo</h3>
+    <p><span class="n">8.1.</span>Pertencem à CONTRATANTE, durante e após o contrato: as contas de anúncio, o Gerenciador de Negócios, o pixel e o aprendizado acumulado nele, os públicos, as listas de contatos e leads e os dados das campanhas.</p>
+    <p><span class="n">8.2.</span>Ficam cedidos à CONTRATANTE, sem limite de prazo, os direitos patrimoniais sobre as peças criadas pela CONTRATADA e pagas pela CONTRATANTE, para uso em sua comunicação. Imagens, músicas e fontes de bancos de terceiros seguem as licenças de cada banco.</p>
+    <p><span class="n">8.3.</span>As partes manterão em sigilo, durante a vigência e após o seu término, as informações da outra a que tiverem acesso por causa deste contrato, como dados de pacientes e clientes, valores, estratégias e resultados, e só as usarão para cumprir este contrato.</p>
+    <p><span class="n">8.4.</span>A CONTRATADA poderá citar a CONTRATANTE como cliente e divulgar resultados agregados das campanhas, como número de contatos e custo por contato, em seu portfólio e em materiais comerciais, sem dados pessoais e sem informações estratégicas. A CONTRATANTE pode retirar essa autorização a qualquer momento, por e-mail.</p>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 9</small>Da proteção de dados e dos acessos</h3>
+    <p><span class="n">9.1.</span>Para os fins da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados, LGPD), a CONTRATANTE é controladora e a CONTRATADA é operadora dos dados pessoais tratados na execução deste contrato, como os dados dos contatos gerados pelos anúncios.</p>
+    <p><span class="n">9.2.</span>A CONTRATANTE autoriza a CONTRATADA a coletar, tratar e compartilhar com as plataformas de anúncio os dados pessoais necessários à execução do contrato (art. 7º, V, da LGPD) e ao cumprimento de obrigações legais (art. 7º, II, da LGPD), sempre conforme as instruções da CONTRATANTE.</p>
+    <p><span class="n">9.3.</span>A CONTRATADA não recebe nem trata dados de prontuário. O uso de listas de pacientes para criar públicos de anúncio só ocorrerá mediante instrução por escrito da CONTRATANTE, que responde pela base legal desse uso.</p>
+    <p><span class="n">9.4.</span>A CONTRATADA adota medidas de segurança para proteger os dados e os acessos, comunica à CONTRATANTE em até 48 (quarenta e oito) horas qualquer incidente de segurança de que tome conhecimento e, ao fim do contrato, elimina os dados pessoais em seu poder, salvo os que deva guardar por obrigação legal. Essas obrigações continuam valendo após o término do contrato.</p>
+    <p><span class="n">9.5.</span>O acesso às contas será feito, sempre que a plataforma permitir, por permissão de parceiro (Gerenciador de Negócios da Meta e conta de administrador do Google Ads), sem compartilhamento de senha. Quando for indispensável, a CONTRATANTE autoriza o acesso por login e senha, nos limites dos serviços contratados.</p>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 10</small>Dos limites de responsabilidade</h3>
+    <p><span class="n">10.1.</span>A obrigação da CONTRATADA é de meio: ela se compromete a empregar as melhores práticas para gerar contatos, mas não garante quantidade de contatos, agendamentos, vendas ou faturamento, que dependem também de fatores fora do seu controle, como concorrência, verba, oferta e atendimento da CONTRATANTE.</p>
+    <p><span class="n">10.2.</span>A CONTRATADA não responde por falhas, instabilidades, erros, mudanças de regras ou de algoritmo das plataformas, nem por reprovações de anúncios, restrições ou bloqueios de contas aplicados por elas, salvo se causados por ato da própria CONTRATADA em desacordo com as políticas vigentes.</p>
+    <p><span class="n">10.3.</span>Não há subordinação nem vínculo empregatício entre as partes, seus sócios e colaboradores. Cada parte responde pelas obrigações trabalhistas, fiscais e previdenciárias de sua equipe.</p>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 11</small>Das comunicações</h3>
+    <p><span class="n">11.1.</span>São válidas entre as partes, inclusive como prova, as comunicações por WhatsApp e por e-mail feitas pelos contatos informados neste contrato.</p>
+    <p><span class="n">11.2.</span>Avisos de não renovação, de rescisão e demais notificações formais devem ser enviados por e-mail.</p>
+    <p><span class="n">11.3.</span>A mudança de endereço, e-mail ou WhatsApp deve ser informada à outra parte. Até lá, consideram-se recebidas as comunicações enviadas aos contatos anteriores.</p>
+  </section>
+
+  <section class="clause">
+    <h3><small>Cláusula 12</small>Disposições gerais</h3>
+    <p><span class="n">12.1.</span>A tolerância de uma parte com o descumprimento de qualquer cláusula não significa renúncia, novação ou alteração deste contrato.</p>
+    <p><span class="n">12.2.</span>Este contrato só pode ser alterado por aditivo escrito, que pode ser assinado eletronicamente. Nenhuma das partes pode ceder este contrato a terceiros sem a concordância da outra.</p>
+    <p><span class="n">12.3.</span>Este contrato constitui título executivo extrajudicial, nos termos do art. 784, inciso III e § 4º, do Código de Processo Civil.</p>
+    <p><span class="n">12.4.</span>As partes concordam que este contrato seja assinado eletronicamente, com validade jurídica assegurada pela Lei nº 14.063/2020 e pela Medida Provisória nº 2.200-2/2001, e reconhecem como válidas as assinaturas feitas por plataforma de assinatura eletrônica.</p>
+    <p><span class="n">12.5.</span>Fica eleito o foro da Comarca de <span data-k="foro"></span> para resolver qualquer questão relativa a este contrato, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
+  </section>
+
+  <section class="closing">
+    <p>E, por estarem de acordo, as partes assinam este contrato eletronicamente.</p>
+    <p><span data-k="localData"></span></p>
+    <div class="signs">
+      <div class="sign"><b data-k="contratante.razao"></b><span>CONTRATANTE · CNPJ <span data-k="contratante.cnpj"></span></span><span>Representante legal: <span data-k="contratante.representante"></span></span></div>
+      <div class="sign"><b data-k="contratada.assinatura" data-ph="razão social do Grupo Opera"></b><span>CONTRATADA · CNPJ <span data-k="contratada.cnpj"></span></span><span>Representante legal: <span data-k="contratada.representante" data-ph="nome do representante legal"></span></span></div>
+    </div>
+    <div class="signs witness">
+      <div class="sign"><b>Testemunha 1</b><span>Nome:</span><span>CPF:</span></div>
+      <div class="sign"><b>Testemunha 2</b><span>Nome:</span><span>CPF:</span></div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/*
+ * Dados do contrato. Edite aqui e gere o PDF de novo (veja README.md).
+ * Campo vazio aparece destacado em laranja no PDF, para preencher.
+ */
+const CONFIG = {
+  contratante: {
+    razao: "CEMED CENTRO DE ESPECIALIDADES MEDICAS DE MIRASSOL LTDA",
+    cnpj: "61.066.252/0001-08",
+    endereco: "Avenida Elieser Magalhães, 3956, Jardim Alvorada, Mirassol/SP, CEP 15137-112",
+    representante: "Leander Santos Maguetas",
+    email: "leander_90@hotmail.com",
+    whatsapp: "(18) 98113-2384"
+  },
+  contratada: {
+    nome: "GRUPO OPERA",
+    razao: "",          // razão social exatamente como no cartão CNPJ
+    cnpj: "52.333.703/0001-35",
+    endereco: "",       // rua, número, bairro, cidade/UF e CEP
+    representante: "",  // nome completo de quem assina pelo Grupo Opera
+    email: ""           // e-mail que recebe notificações do contrato
+  },
+  valor: "R$ 2.650,00",
+  valorExtenso: "dois mil, seiscentos e cinquenta reais",
+  prazoMeses: 6,
+  prazoExtenso: "seis",
+  avisoDias: 30,
+  avisoExtenso: "trinta",
+  // Deixe vazio para começar na data da última assinatura eletrônica,
+  // ou use uma data fixa no formato "01/11/2026".
+  dataInicio: "",
+  // Deixe vazio para a 1ª mensalidade vencer no início e as demais no mesmo dia dos meses seguintes,
+  // ou informe o dia fixo de vencimento (ex.: 10) e a data da 1ª cobrança.
+  diaVencimento: "",
+  primeiroVencimento: "",
+  foro: "Mirassol/SP",
+  local: "Mirassol/SP"
+};
+
+(function () {
+  const C = CONFIG;
+  const prazo = `${C.prazoMeses} (${C.prazoExtenso}) meses`;
+  const aviso = `${C.avisoDias} (${C.avisoExtenso}) dias`;
+  const inicio = C.dataInicio
+    ? `a partir de ${C.dataInicio}`
+    : "a partir da data da última assinatura eletrônica, que é a data de início";
+
+  const derived = {
+    prazoTexto: prazo,
+    avisoTexto: aviso,
+    vigenciaClausula: `Este contrato vigora por ${prazo} ${inicio}.`,
+    vencimentoResumo: C.diaVencimento
+      ? `1ª mensalidade em ${C.primeiroVencimento || "[data da 1ª cobrança]"}; demais todo dia ${C.diaVencimento}`
+      : "1ª mensalidade na data de início; demais no mesmo dia dos meses seguintes",
+    vencimentoClausula: C.diaVencimento
+      ? `A primeira mensalidade vence em ${C.primeiroVencimento || "[data da 1ª cobrança]"} e as demais no dia ${C.diaVencimento} de cada mês.`
+      : "A primeira mensalidade vence na data de início deste contrato e as demais no mesmo dia dos meses seguintes. Se o mês não tiver esse dia, o vencimento será no último dia do mês.",
+    localData: `${C.local}, na data da última assinatura eletrônica.`,
+    "contratada.assinatura": C.contratada.razao ? C.contratada.razao : ""
+  };
+
+  const get = (k) => (k in derived ? derived[k] : k.split(".").reduce((o, p) => (o == null ? o : o[p]), C));
+
+  document.querySelectorAll("[data-k]").forEach((el) => {
+    const v = get(el.dataset.k);
+    if (v !== undefined && v !== null && String(v).trim() !== "") {
+      el.textContent = String(v);
+    } else {
+      el.textContent = `[${el.dataset.ph || "preencher"}]`;
+      el.classList.add("fill");
+    }
+  });
+
+  window.__pendentes = [...new Set([...document.querySelectorAll(".fill")].map((el) => el.textContent))];
+})();
+</script>
+</body>
+</html>
