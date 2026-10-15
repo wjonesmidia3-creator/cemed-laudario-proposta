@@ -2,23 +2,22 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Logo grupo WhatsApp · Grupo Opera</title>
+<title>Logo grupo WhatsApp · padrão GO</title>
 <!--
-  Foto de grupo do WhatsApp no padrão Grupo Opera.
+  Foto de grupo do WhatsApp no padrão GO (Grupo Opera):
+  "GO." + linha laranja + nome do cliente.
   Uso: logo-grupo.html?cliente=CEMED
   O WhatsApp recorta a imagem em círculo, então todo o conteúdo fica
   dentro da área segura central.
 -->
 <style>
-  @font-face { font-family: "Poppins"; font-weight: 800; src: url("fonts/poppins-latin-800-normal.woff2") format("woff2"); }
-  @font-face { font-family: "Sora"; font-weight: 700; src: url("fonts/sora-latin-700-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("fonts/poppins-latin-700-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Marcellus"; font-weight: 400; src: url("fonts/marcellus-latin-400-normal.woff2") format("woff2"); }
 
   :root {
     --navy: #00247d;
-    --navy-2: #113386;
-    --laranja: #e85d1b;
-    --laranja-claro: #f6a24e;
-    --azul-claro: #a9c3e6;
+    --navy-2: #0d2f86;
+    --laranja: #f6a24e;
     --branco: #ffffff;
   }
 
@@ -30,84 +29,92 @@
     height: 1080px;
     overflow: hidden;
     background:
-      radial-gradient(circle at 80% 16%, rgba(255, 255, 255, 0.16) 0, rgba(255, 255, 255, 0) 42%),
-      linear-gradient(160deg, var(--navy) 0%, var(--navy) 55%, var(--navy-2) 100%);
+      radial-gradient(circle at 80% 14%, rgba(255, 255, 255, 0.14) 0, rgba(255, 255, 255, 0) 44%),
+      radial-gradient(circle at 50% 120%, rgba(13, 47, 134, 0.9) 0, rgba(13, 47, 134, 0) 60%),
+      linear-gradient(165deg, var(--navy) 0%, var(--navy) 60%, var(--navy-2) 100%);
+  }
+
+  .conteudo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
   }
 
-  .traco {
-    width: 96px;
-    height: 12px;
-    border-radius: 6px;
-    background: var(--laranja-claro);
-    margin-bottom: 44px;
+  .go {
+    display: flex;
+    align-items: flex-end;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 360px;
+    line-height: 0.72;
+    letter-spacing: -0.01em;
+    color: var(--branco);
+  }
+  .go .ponto {
+    width: 0.17em;
+    height: 0.17em;
+    margin-left: 0.08em;
+    background: var(--laranja);
+  }
+
+  .linha {
+    width: 300px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--laranja);
+    margin: 86px 0 88px;
   }
 
   .cliente {
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: 168px;
+    line-height: 0.7;
+    letter-spacing: 0.15em;
+    text-indent: 0.15em; /* compensa o espaçamento após a última letra */
+    text-transform: uppercase;
     color: var(--branco);
-    letter-spacing: -0.02em;
-    line-height: 1;
-    white-space: nowrap;
-    font-size: 220px;
-  }
-
-  .divisor {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    margin: 46px 0 40px;
-  }
-  .divisor span {
-    display: block;
-    width: 120px;
-    height: 4px;
-    border-radius: 2px;
-    background: rgba(169, 195, 230, 0.45);
-  }
-  .divisor b {
-    font-family: "Sora", sans-serif;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 1;
-    color: var(--laranja-claro);
-  }
-
-  .marca {
-    font-family: "Sora", sans-serif;
-    font-weight: 700;
-    font-size: 92px;
-    line-height: 1;
-    letter-spacing: -0.035em;
-    color: var(--branco);
+    -webkit-text-stroke: 0.026em var(--branco); /* traço mais encorpado, como no padrão */
     white-space: nowrap;
   }
-  .marca i { font-style: normal; color: var(--laranja); }
+  .cliente .apos {
+    letter-spacing: 0.02em;
+    margin-left: -0.08em;
+  }
 </style>
 </head>
 <body>
   <div class="logo" id="logo">
-    <div class="traco"></div>
-    <div class="cliente" id="cliente">CLIENTE</div>
-    <div class="divisor"><span></span><b>×</b><span></span></div>
-    <div class="marca">Grupo Opera<i>.</i></div>
+    <div class="conteudo">
+      <div class="go">GO<span class="ponto"></span></div>
+      <div class="linha"></div>
+      <div class="cliente" id="cliente">CLIENTE</div>
+    </div>
   </div>
 <script>
   const params = new URLSearchParams(location.search);
   const el = document.getElementById("cliente");
-  el.textContent = params.get("cliente") || "CLIENTE";
+  const nome = (params.get("cliente") || "CLIENTE").replace(/['`´]/g, "’");
+  // Apóstrofo com espaçamento menor para não abrir buraco no nome (ex.: D’Plácido).
+  el.replaceChildren(...nome.split(/(’)/).filter(Boolean).map((parte) => {
+    if (parte !== "’") return document.createTextNode(parte);
+    const span = document.createElement("span");
+    span.className = "apos";
+    span.textContent = parte;
+    return span;
+  }));
 
   // Ajusta o tamanho do nome para caber na área segura do recorte circular.
   const LARGURA_MAX = 760;
   document.fonts.ready.then(() => {
-    let size = 220;
+    let size = 168;
     el.style.fontSize = size + "px";
-    while (el.scrollWidth > LARGURA_MAX && size > 80) {
+    while (el.scrollWidth > LARGURA_MAX && size > 60) {
       size -= 2;
       el.style.fontSize = size + "px";
     }

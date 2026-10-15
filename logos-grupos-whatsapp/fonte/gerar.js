@@ -1,5 +1,5 @@
 // Gera as fotos de grupo do WhatsApp (PNG 1080x1080) a partir de logo-grupo.html.
-// Uso: node gerar.js "CEMED" "Dplacido"
+// Uso: node gerar.js "CEMED" "D’Plácido"
 const path = require("path");
 const { chromium } = require("playwright");
 
@@ -17,7 +17,9 @@ if (clientes.length === 0) {
   for (const cliente of clientes) {
     await page.goto(html + "?cliente=" + encodeURIComponent(cliente));
     await page.waitForSelector("body[data-pronto='1']");
-    const arquivo = path.join(__dirname, "..", `${cliente}_Grupo-Opera_WhatsApp.png`);
+    // Nome do arquivo sem acentos, apóstrofos ou espaços: "D’Plácido" -> "DPlacido".
+    const slug = cliente.normalize("NFD").replace(/[^A-Za-z0-9]/g, "");
+    const arquivo = path.join(__dirname, "..", `${slug}_GO_WhatsApp.png`);
     await page.locator("#logo").screenshot({ path: arquivo });
     console.log("ok:", arquivo);
   }
