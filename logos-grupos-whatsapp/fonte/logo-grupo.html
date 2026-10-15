@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Logo grupo WhatsApp · Grupo Opera</title>
+<!--
+  Foto de grupo do WhatsApp no padrão Grupo Opera.
+  Uso: logo-grupo.html?cliente=CEMED
+  O WhatsApp recorta a imagem em círculo, então todo o conteúdo fica
+  dentro da área segura central.
+-->
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 800; src: url("fonts/poppins-latin-800-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Sora"; font-weight: 700; src: url("fonts/sora-latin-700-normal.woff2") format("woff2"); }
+
+  :root {
+    --navy: #00247d;
+    --navy-2: #113386;
+    --laranja: #e85d1b;
+    --laranja-claro: #f6a24e;
+    --azul-claro: #a9c3e6;
+    --branco: #ffffff;
+  }
+
+  html, body { margin: 0; padding: 0; background: var(--navy); }
+
+  .logo {
+    position: relative;
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 80% 16%, rgba(255, 255, 255, 0.16) 0, rgba(255, 255, 255, 0) 42%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy) 55%, var(--navy-2) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .traco {
+    width: 96px;
+    height: 12px;
+    border-radius: 6px;
+    background: var(--laranja-claro);
+    margin-bottom: 44px;
+  }
+
+  .cliente {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    color: var(--branco);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    white-space: nowrap;
+    font-size: 220px;
+  }
+
+  .divisor {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin: 46px 0 40px;
+  }
+  .divisor span {
+    display: block;
+    width: 120px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(169, 195, 230, 0.45);
+  }
+  .divisor b {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--laranja-claro);
+  }
+
+  .marca {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 92px;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    color: var(--branco);
+    white-space: nowrap;
+  }
+  .marca i { font-style: normal; color: var(--laranja); }
+</style>
+</head>
+<body>
+  <div class="logo" id="logo">
+    <div class="traco"></div>
+    <div class="cliente" id="cliente">CLIENTE</div>
+    <div class="divisor"><span></span><b>×</b><span></span></div>
+    <div class="marca">Grupo Opera<i>.</i></div>
+  </div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const el = document.getElementById("cliente");
+  el.textContent = params.get("cliente") || "CLIENTE";
+
+  // Ajusta o tamanho do nome para caber na área segura do recorte circular.
+  const LARGURA_MAX = 760;
+  document.fonts.ready.then(() => {
+    let size = 220;
+    el.style.fontSize = size + "px";
+    while (el.scrollWidth > LARGURA_MAX && size > 80) {
+      size -= 2;
+      el.style.fontSize = size + "px";
+    }
+    document.body.dataset.pronto = "1";
+  });
+</script>
+</body>
+</html>
