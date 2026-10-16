@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Grupo Opera · Agência de marketing para clínicas e negócios locais</title>
-<meta name="description" content="Aceleradora de crescimento para clínicas, negócios locais e empresas B2B. Diagnóstico, mídia, conteúdo, site e relatório num time só. Comece pelo pré-diagnóstico.">
-<meta property="og:title" content="Grupo Opera · Mais conversas, menor custo por conversa">
-<meta property="og:description" content="Diagnóstico, mídia, conteúdo, site e relatório num time só, para clínicas, negócios locais e empresas B2B.">
+<title>Grupo Opera · Aceleradora B2B</title>
+<meta name="description" content="Aceleradora B2B: um squad dedicado que junta diagnóstico, Google e YouTube, mídia, influência, conteúdo e BI para criar demanda nova e medir até a receita. Comece pelo pré-diagnóstico.">
+<meta property="og:title" content="Grupo Opera · Aceleradora B2B">
+<meta property="og:description" content="Romper a bolha e acelerar a geração de demanda: um squad, nove frentes e uma meta.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Grupo Opera">
@@ -87,6 +87,7 @@ p,blockquote{text-wrap:pretty}
 .top>.wrap{display:flex;align-items:center;gap:20px;height:68px}
 .brand{font:800 1.3rem/1 var(--f-brand);letter-spacing:-.035em;color:var(--navy);text-decoration:none;white-space:nowrap}
 .brand .d{color:var(--orange)}
+.brand small{display:block;font:700 .5rem/1 var(--f-sans);letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);margin-top:5px}
 .nav{display:flex;align-items:center;gap:2px;margin-left:auto}
 .nav a{font:600 .875rem/1 var(--f-sans);color:var(--ink-soft);text-decoration:none;padding:10px 12px;border-radius:999px;white-space:nowrap}
 .nav a:hover{color:var(--navy);background:var(--bg-blue)}
@@ -116,29 +117,12 @@ p,blockquote{text-wrap:pretty}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero-note{margin-top:18px;font-size:.85rem;color:var(--sky-dim)}
 
-.panel{background:#fff;color:var(--ink);border-radius:20px;padding:clamp(18px,2.4vw,28px);box-shadow:0 40px 80px -40px rgba(0,10,40,.8),0 0 0 1px rgba(255,255,255,.06)}
-.panel-h{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.panel-k{font:700 .7rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
-.chip{display:inline-flex;align-items:center;gap:6px;font:700 .72rem/1 var(--f-sans);padding:6px 10px;border-radius:999px;background:var(--orange-soft);color:var(--orange-cta-h);white-space:nowrap}
-.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
-.panel-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:14px;padding-bottom:16px;border-bottom:1px solid var(--line)}
-.panel-big b{font:800 clamp(2.6rem,4.4vw,3.4rem)/1 var(--f-disp);letter-spacing:-.04em;color:var(--navy)}
-.panel-big span{font-size:.95rem;color:var(--ink-soft);max-width:26ch;line-height:1.4}
-.bars{display:grid;gap:4px;margin-top:10px}
-.bars-head,.bar-row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.2fr) 122px;gap:14px;align-items:center}
-.bars-head{font:700 .66rem/1.2 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:6px 0}
-.bars-head span:last-child,.bar-cost{text-align:right}
-.bar-row{padding:10px 0;border-top:1px solid var(--line-soft)}
-.bar-name{min-width:0}
-.bar-name b{display:block;font:700 .95rem/1.25 var(--f-disp);color:var(--navy);letter-spacing:-.01em}
-.bar-name small{display:block;font-size:.76rem;color:var(--ink-mute);margin-top:2px}
-.bar-track{display:flex;align-items:center;gap:10px;min-width:0}
-.bar-fill{height:12px;border-radius:6px;background:linear-gradient(90deg,var(--navy),#2B4FB3);width:var(--v);transform-origin:left;animation:grow 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
-.bar-track b{font:700 .95rem/1 var(--f-disp);color:var(--ink)}
-.bar-cost{font:700 .92rem/1 var(--f-disp);color:var(--ink);white-space:nowrap}
-.bar-cost small{display:block;font:500 .7rem/1.3 var(--f-sans);color:var(--ink-mute);margin-top:3px}
-@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.panel figcaption{font-size:.75rem;line-height:1.5;color:var(--ink-mute);margin-top:14px}
+.bubble{margin:0;border:1px solid var(--navy-line);border-radius:20px;padding:clamp(16px,2.2vw,24px);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015))}
+.bubble svg{display:block;width:100%;height:auto}
+.bubble-k{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;padding-top:14px;border-top:1px solid var(--navy-line)}
+.bubble-k p{font-size:.84rem;line-height:1.45;color:#C9D6EE}
+.bubble-k b{display:block;font:700 .66rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:5px}
+.bubble-k p+p b{color:var(--orange-2)}
 
 .hero-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--navy-line);margin-bottom:clamp(28px,4vw,48px)}
 .hero-strip li{padding:22px 22px 4px 0}
@@ -153,21 +137,11 @@ p,blockquote{text-wrap:pretty}
   .hero-strip li:nth-child(n+3){border-top:1px solid var(--navy-line)}
 }
 @media (max-width:520px){
-  .bars-head{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .bar-row{grid-template-columns:minmax(0,1fr) 104px;row-gap:8px}
-  .bar-track{grid-column:1 / -1;grid-row:2}
+  .bubble-k{grid-template-columns:1fr}
   .hero-strip{grid-template-columns:1fr}
   .hero-strip li,.hero-strip li+li{padding-left:0;border-left:0}
   .hero-strip li+li{border-top:1px solid var(--navy-line)}
 }
-
-/* ---------- quem confia ---------- */
-.trust{padding-block:28px;border-bottom:1px solid var(--line)}
-.trust ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 28px;align-items:center}
-.trust li.trust-k{font:700 .7rem/1.4 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);max-width:18ch}
-@media (max-width:760px){.trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.trust li{font:700 1rem/1.2 var(--f-disp);color:var(--ink-soft);letter-spacing:-.01em}
-.trust li small{display:block;font:500 .72rem/1.3 var(--f-sans);color:var(--ink-mute);letter-spacing:0;margin-top:2px}
 
 /* ---------- diagnóstico: anatomia ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
@@ -336,36 +310,21 @@ p,blockquote{text-wrap:pretty}
 .term span{display:block;font-size:.88rem;color:var(--ink-soft)}
 @media (max-width:980px){.progs,.terms{grid-template-columns:1fr}}
 
-/* ---------- resultados ---------- */
-.cases{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
-.case{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px}
-.case--wide{grid-column:span 3}
-.case-top{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.case-top .tag{order:-1}
-.case-name{font:700 1.08rem/1.25 var(--f-disp);color:var(--navy);letter-spacing:-.015em}
-.case-top b{display:block;font:700 1.08rem/1.25 var(--f-disp);color:var(--navy);letter-spacing:-.015em}
-.case-top small{display:block;font-size:.8rem;color:var(--ink-mute);margin-top:3px}
-.tag{font:700 .64rem/1 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--bg-blue);padding:6px 9px;border-radius:999px;white-space:nowrap}
-.tag--g{background:var(--green-soft);color:var(--green)}
-.case-big{font:800 clamp(2.4rem,4vw,3.3rem)/1 var(--f-disp);letter-spacing:-.045em;color:var(--orange)}
-.case-big small{font-size:.42em;letter-spacing:-.01em;color:var(--navy);margin-left:6px}
-.case-head{font:700 1.06rem/1.35 var(--f-disp);color:var(--ink);letter-spacing:-.015em}
-.cmp{display:grid;gap:8px}
-.cmp-row{display:grid;grid-template-columns:78px minmax(0,1fr) 76px;gap:10px;align-items:center;font-size:.8rem;color:var(--ink-mute)}
-.cmp-row i{display:block;height:10px;border-radius:5px;background:#C9D2E6;width:var(--w)}
-.cmp-row.now i{background:var(--navy)}
-.cmp-row b{font:700 .9rem/1 var(--f-disp);color:var(--ink);white-space:nowrap}
-.cmp-k{font:700 .66rem/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
-.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.fact{background:var(--bg-soft);border-radius:10px;padding:10px 12px}
-.fact b{display:block;font:700 1.08rem/1.15 var(--f-disp);color:var(--navy)}
-.fact span{display:block;margin-top:3px;font-size:.76rem;line-height:1.35;color:var(--ink-soft)}
-.case .src{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-soft);font-size:.72rem;line-height:1.5;color:var(--ink-mute)}
-.case .also{font-size:.86rem;color:var(--ink-soft)}
-.case .also b{color:var(--ink)}
-@media (max-width:1000px){.cases{grid-template-columns:repeat(2,minmax(0,1fr))}.case,.case--wide{grid-column:span 1}}
-@media (max-width:1000px) and (min-width:641px){.case:last-child{grid-column:1 / -1}}
-@media (max-width:640px){.cases{grid-template-columns:1fr}}
+/* ---------- como medimos ---------- */
+.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
+.stage{padding:24px 22px 22px;display:flex;flex-direction:column;gap:14px}
+.stage+.stage{border-left:1px solid var(--line)}
+.stage .k{font:700 .7rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink)}
+.stage h3{font-size:1.3rem;font-weight:800;color:var(--navy);margin-top:-6px}
+.stage dl{display:grid;gap:12px}
+.stage dt{font:700 .64rem/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+.stage dd{font-size:.9rem;line-height:1.45;color:var(--ink-soft);margin-top:4px}
+.stage .m{margin-top:auto;padding:12px 14px;border-radius:10px;background:var(--bg-blue);font:700 .95rem/1.35 var(--f-disp);color:var(--navy)}
+.stage .m b{display:block;font:700 .62rem/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+@media (max-width:980px){.funnel{grid-template-columns:repeat(2,minmax(0,1fr))}.stage:nth-child(3){border-left:0}.stage:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:560px){.funnel{grid-template-columns:1fr}.stage+.stage{border-left:0;border-top:1px solid var(--line)}}
+.keynote{margin-top:16px;padding:18px 22px;border-left:4px solid var(--orange);background:var(--orange-soft);border-radius:0 14px 14px 0;font-size:.98rem;color:var(--ink)}
+.keynote b{display:block;font:700 .66rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-cta-h);margin-bottom:6px}
 
 .report{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,56px);align-items:center;margin-top:clamp(56px,7vw,88px)}
 .report h3{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;color:var(--navy)}
@@ -385,9 +344,9 @@ p,blockquote{text-wrap:pretty}
 .upd-k{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
 .upd-k div{padding:14px 14px 16px}
 .upd-k div+div{border-left:1px solid var(--line)}
-.upd-k b{display:block;font:800 1.3rem/1.1 var(--f-disp);letter-spacing:-.03em;color:var(--navy)}
+.upd-k b{display:block;font:800 1rem/1.15 var(--f-disp);letter-spacing:-.02em;color:var(--navy)}
 .upd-k span{display:block;font-size:.72rem;line-height:1.35;color:var(--ink-soft);margin-top:4px}
-.upd-k em{display:block;font-style:normal;font:700 .7rem/1.3 var(--f-sans);color:var(--green);margin-top:5px}
+.upd-k em{display:block;font-style:normal;font:700 .68rem/1.3 var(--f-sans);color:var(--orange-ink);margin-top:6px}
 .upd-b{padding:16px 24px 20px;display:grid;gap:12px}
 .upd-read{border-left:3px solid var(--orange);background:var(--orange-soft);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.84rem;color:var(--ink)}
 .upd-read b{display:block;font:700 .64rem/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-cta-h);margin-bottom:3px}
@@ -471,7 +430,6 @@ p,blockquote{text-wrap:pretty}
   <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="m16 10.2 5-3v9.6l-5-3"/></symbol>
   <symbol id="i-feed" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><path d="M16.8 7.2h.01"/></symbol>
   <symbol id="i-site" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
   <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2c1.9.8 3 2.9 3 5.8"/></symbol>
   <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></symbol>
@@ -480,20 +438,20 @@ p,blockquote{text-wrap:pretty}
   <symbol id="i-pct" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
   <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9.5 13h6M9.5 17h6"/></symbol>
   <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
   <symbol id="i-sign" viewBox="0 0 24 24"><path d="M6 3h12v18H6z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2A9.7 9.7 0 0 0 3.6 16.8L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.6-.3z"/></symbol>
 </svg>
 
 <header class="top" id="topo-bar">
   <div class="wrap">
-    <a class="brand" href="#topo" aria-label="Grupo Opera, início">Grupo Opera<span class="d">.</span></a>
+    <a class="brand" href="#topo" aria-label="Grupo Opera, Aceleradora B2B, início">Grupo Opera<span class="d">.</span><small>Aceleradora B2B</small></a>
     <nav class="nav" aria-label="Principal">
       <a href="#diagnostico">Diagnóstico</a>
       <a href="#metodo">Método</a>
       <a href="#frentes">Frentes</a>
       <a href="#programas">Programas</a>
-      <a href="#resultados">Resultados</a>
+      <a href="#medicao">Como medimos</a>
       <a class="go-link" data-goinflu href="../go-influ/"><span class="go-mini">GO influ<span class="d">.</span></span></a>
       <a class="btn btn-o btn-sm" data-wa="Olá! Vim pelo site do Grupo Opera e quero conversar sobre um diagnóstico." href="https://wa.me/">Falar no WhatsApp</a>
     </nav>
@@ -506,7 +464,7 @@ p,blockquote{text-wrap:pretty}
         <li><a href="#metodo">Método</a></li>
         <li><a href="#frentes">Frentes</a></li>
         <li><a href="#programas">Programas</a></li>
-        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#medicao">Como medimos</a></li>
         <li><a data-goinflu href="../go-influ/">GO influ. · influenciadores</a></li>
       </ul>
       <a class="btn btn-o" data-wa="Olá! Vim pelo site do Grupo Opera e quero conversar sobre um diagnóstico." href="https://wa.me/">Falar no WhatsApp</a>
@@ -518,69 +476,50 @@ p,blockquote{text-wrap:pretty}
 <section class="hero on-navy" id="topo">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Aceleradora de crescimento</span>
-      <h1>Mais conversas.<br><span class="o">Menor custo</span> <span class="s">por conversa</span><span class="o">.</span></h1>
-      <p class="hero-sub">O Grupo Opera junta diagnóstico, mídia, conteúdo, site e relatório num time só, com uma meta: o seu WhatsApp tocando com quem quer comprar. Para clínicas, negócios locais e empresas B2B.</p>
+      <span class="eyebrow">Aceleradora B2B</span>
+      <h1>Romper a bolha.<br><span class="o">Acelerar</span> <span class="s">a demanda</span><span class="o">.</span></h1>
+      <p class="hero-sub">A maioria das empresas para de crescer no digital porque toda a verba roda em cima de quem já conhece a marca. O Grupo Opera monta um squad dedicado que cria demanda nova, captura quem já procura e mede tudo até a receita.</p>
       <div class="hero-cta">
         <a class="btn btn-o" href="#pre-diagnostico">Fazer o pré-diagnóstico <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#resultados">Ver resultados</a>
+        <a class="btn btn-ghost" href="#metodo">Ver o método</a>
       </div>
       <p class="hero-note">São 9 perguntas, leva uns 2 minutos e o resultado sai na hora.</p>
     </div>
 
-    <figure class="panel" aria-label="Conversas iniciadas por anúncios em 90 dias, por cliente">
-      <div class="panel-h">
-        <span class="panel-k">Meta Ads · 12/07 a 09/10/2026</span>
-        <span class="chip">Dados reais</span>
-      </div>
-      <p class="panel-big"><b class="num">2.562</b><span>conversas iniciadas por mensagem a partir dos anúncios de 4 clínicas</span></p>
-      <div class="bars" role="table" aria-label="Conversas e custo por conversa por cliente">
-        <div class="bars-head" role="row"><span role="columnheader">Cliente</span><span role="columnheader">Conversas</span><span role="columnheader">Custo/conversa</span></div>
-        <div class="bar-row" role="row">
-          <div class="bar-name" role="cell"><b>Fiorini</b><small>Vargem Grande do Sul · SP</small></div>
-          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:70.0%;--d:.1s"></span><b class="num">839</b></div>
-          <div class="bar-cost num" role="cell">R$ 18,69<small>antes R$ 31,27</small></div>
-        </div>
-        <div class="bar-row" role="row">
-          <div class="bar-name" role="cell"><b>Trait Odontologia</b><small>Guarapuava · PR</small></div>
-          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:61.0%;--d:.2s"></span><b class="num">731</b></div>
-          <div class="bar-cost num" role="cell">R$ 16,01<small>antes R$ 29,88</small></div>
-        </div>
-        <div class="bar-row" role="row">
-          <div class="bar-name" role="cell"><b>D’Plácido Odontologia</b><small>Embu das Artes · SP</small></div>
-          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:55.5%;--d:.3s"></span><b class="num">665</b></div>
-          <div class="bar-cost num" role="cell">R$ 12,78<small>antes R$ 14,23</small></div>
-        </div>
-        <div class="bar-row" role="row">
-          <div class="bar-name" role="cell"><b>CEMED</b><small>Mirassol · SP</small></div>
-          <div class="bar-track" role="cell"><span class="bar-fill" style="--v:27.3%;--d:.4s"></span><b class="num">327</b></div>
-          <div class="bar-cost num" role="cell">R$ 11,90<small>desde 24/07</small></div>
-        </div>
-      </div>
-      <figcaption>Fonte: Reportei (Meta Ads), métrica “conversas iniciadas por mensagem”. “Antes” são os 90 dias anteriores (13/04 a 11/07/2026).</figcaption>
+    <figure class="bubble">
+      <svg viewBox="0 0 480 344" role="img" aria-label="Diagrama: a bolha atual, de quem já conhece a marca, fica dentro de quem ainda não conhece e do mercado endereçável. YouTube, influência, conteúdo e LinkedIn levam a marca para fora da bolha.">
+        <defs>
+          <radialGradient id="bub" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F6A24E" stop-opacity=".55"/><stop offset="100%" stop-color="#F6A24E" stop-opacity="0"/></radialGradient>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#F6A24E"/></marker>
+        </defs>
+        <circle cx="240" cy="172" r="158" fill="none" stroke="#A9C3E6" stroke-opacity=".3" stroke-dasharray="3 7"/>
+        <circle cx="240" cy="172" r="112" fill="none" stroke="#A9C3E6" stroke-opacity=".55" stroke-dasharray="4 6"/>
+        <circle cx="240" cy="172" r="60" fill="url(#bub)" stroke="#F6A24E" stroke-width="1.5"/>
+        <text x="240" y="40" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="700" letter-spacing=".8" fill="#A9C3E6">MERCADO ENDEREÇÁVEL</text>
+        <text x="240" y="92" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing=".6" fill="#C9D6EE">AINDA NÃO CONHECE</text>
+        <text x="240" y="170" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="14" font-weight="800" letter-spacing=".5" fill="#fff">BOLHA ATUAL</text>
+        <text x="240" y="188" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#fff" fill-opacity=".85">quem já conhece</text>
+        <g stroke="#F6A24E" stroke-width="2" marker-end="url(#ah)">
+          <line x1="195" y1="127" x2="118" y2="50"/><line x1="285" y1="127" x2="362" y2="50"/>
+          <line x1="195" y1="217" x2="118" y2="294"/><line x1="285" y1="217" x2="362" y2="294"/>
+        </g>
+        <g font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#F6A24E">
+          <text x="108" y="36" text-anchor="end">YOUTUBE</text><text x="372" y="36">INFLUÊNCIA</text>
+          <text x="108" y="318" text-anchor="end">CONTEÚDO</text><text x="372" y="318">LINKEDIN</text>
+        </g>
+      </svg>
+      <figcaption class="bubble-k">
+        <p><b>Hoje</b>Search, remarketing e rede social só falam com quem já conhece a sua marca.</p>
+        <p><b>Com o squad</b>YouTube, influência e conteúdo criam demanda nova. Search e mídia capturam. O BI mede até a receita.</p>
+      </figcaption>
     </figure>
   </div>
   <div class="wrap">
     <ul class="hero-strip">
-      <li><b class="num"><span class="o">−46%</span></b><span>no custo por conversa da Trait Odontologia, com o mesmo volume de conversas</span></li>
-      <li><b class="num"><span class="o">−40%</span></b><span>no custo por conversa da Fiorini, com 14% mais conversas</span></li>
+      <li><b class="num">9 <span class="o">frentes</span></b><span>integradas num programa só, com uma meta de negócio</span></li>
+      <li><b class="num">1 <span class="o">squad</span></b><span>dedicado, com gerente de conta e um especialista por frente</span></li>
       <li><b class="num">0%</b><span>de taxa sobre a sua verba de mídia, que vai direto para as plataformas</span></li>
       <li><b class="num">90 dias</b><span>para o sistema completo rodando e medido</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="trust" aria-label="Clientes">
-  <div class="wrap">
-    <ul>
-      <li class="trust-k">Quem já trabalha com a gente</li>
-      <li>Fiorini Odonto &amp; Estética<small>Vargem Grande do Sul · SP</small></li>
-      <li>Trait Odontologia<small>Guarapuava · PR</small></li>
-      <li>D’Plácido Odontologia<small>Embu das Artes · SP</small></li>
-      <li>Instituto Sanrire<small>Brasília · DF</small></li>
-      <li>EGO Odontologia<small>Goiânia · GO</small></li>
-      <li>CEMED<small>Mirassol · SP</small></li>
-      <li>Dreisson Vivo Imóveis<small>Mirassol · SP</small></li>
     </ul>
   </div>
 </section>
@@ -594,20 +533,20 @@ p,blockquote{text-wrap:pretty}
     </div>
     <ol class="anat">
       <li><span class="step"><i>01</i>Tese</span><h3>O que mudou no seu mercado</h3><p>Uma leitura de onde está a oportunidade e de quem está ocupando o espaço que deveria ser seu.</p></li>
-      <li><span class="step"><i>02</i>Sintomas</span><h3>Três problemas com nome</h3><p>Descritos do jeito que você sente no dia a dia: o lead que não chega, o post que ninguém vê, o contato que esfria.</p></li>
+      <li><span class="step"><i>02</i>Sintomas</span><h3>Três problemas com nome</h3><p>Descritos do jeito que você sente no dia a dia: o custo por lead que sobe, os mesmos nomes chegando, o decisor que nunca ouviu falar de você.</p></li>
       <li><span class="step"><i>03</i>Alavancas</span><h3>O que resolve cada um</h3><p>Cada alavanca tem uma frente responsável e um indicador. Nada roda sem uma hipótese e uma meta.</p></li>
       <li><span class="step"><i>04</i>Plano</span><h3>Os primeiros 90 dias</h3><p>Fase 0, mês 1, mês 2 e mês 3. Cada mês liga uma camada nova sem parar o que já está rodando.</p></li>
     </ol>
 
     <div class="quotes-k">
-      <h3>Trechos de diagnósticos que já entregamos</h3>
-      <p>Clientes identificados só pelo segmento.</p>
+      <h3>Quatro ideias que aparecem em todo diagnóstico</h3>
+      <p>O jeito Opera de olhar para o crescimento.</p>
     </div>
     <div class="quotes">
-      <figure class="quote"><blockquote>Autoridade sem distribuição não gera consulta. Distribuição sem autoridade não gera confiança.</blockquote><figcaption>Cardiologista&nbsp;· consultório</figcaption></figure>
-      <figure class="quote"><blockquote>O problema tem nome: bolha. Search captura quem já busca, remarketing reimpacta quem já visitou, rede social fala com quem já segue.</blockquote><figcaption>Empresa B2B</figcaption></figure>
-      <figure class="quote"><blockquote>Mais criativo não é mais do mesmo. É mais ângulos. Campanha com pouco ângulo cansa rápido.</blockquote><figcaption>Clínica odontológica</figcaption></figure>
-      <figure class="quote"><blockquote>Dermatologia é a formação. Queda de cabelo é o posicionamento.</blockquote><figcaption>Dermatologista</figcaption></figure>
+      <figure class="quote"><blockquote>O problema tem nome: bolha. Search captura quem já busca, remarketing reimpacta quem já visitou, rede social fala com quem já segue.</blockquote><figcaption>Sobre alcance</figcaption></figure>
+      <figure class="quote"><blockquote>Autoridade sem distribuição não gera venda. Distribuição sem autoridade não gera confiança.</blockquote><figcaption>Sobre autoridade</figcaption></figure>
+      <figure class="quote"><blockquote>Mais criativo não é mais do mesmo. É mais ângulos. Campanha com pouco ângulo cansa rápido.</blockquote><figcaption>Sobre criativo</figcaption></figure>
+      <figure class="quote"><blockquote>Quem fala de tudo vira mais uma opção. Categoria gera comparação de preço. Posicionamento gera lembrança.</blockquote><figcaption>Sobre posicionamento</figcaption></figure>
     </div>
   </div>
 </section>
@@ -624,9 +563,9 @@ p,blockquote{text-wrap:pretty}
         <fieldset class="dx-seg">
           <legend>Qual é o seu negócio?</legend>
           <div class="seg-opts">
-            <div class="seg-opt"><input type="radio" name="seg" id="seg-saude" value="saude" checked><label for="seg-saude"><b>Clínica ou consultório</b><span>Odontologia, medicina, saúde</span></label></div>
+            <div class="seg-opt"><input type="radio" name="seg" id="seg-b2b" value="b2b" checked><label for="seg-b2b"><b>Empresa B2B</b><span>Vende para outras empresas</span></label></div>
+            <div class="seg-opt"><input type="radio" name="seg" id="seg-saude" value="saude"><label for="seg-saude"><b>Clínica ou consultório</b><span>Odontologia, medicina, saúde</span></label></div>
             <div class="seg-opt"><input type="radio" name="seg" id="seg-local" value="local"><label for="seg-local"><b>Negócio local</b><span>Imobiliária, comércio, serviços</span></label></div>
-            <div class="seg-opt"><input type="radio" name="seg" id="seg-b2b" value="b2b"><label for="seg-b2b"><b>Empresa B2B</b><span>Vende para outras empresas</span></label></div>
           </div>
         </fieldset>
         <div class="dx-qs" id="dx-qs"><noscript><p>O pré-diagnóstico precisa de JavaScript. Se preferir, chame a gente no WhatsApp e fazemos as 9 perguntas por lá.</p></noscript></div>
@@ -715,15 +654,15 @@ p,blockquote{text-wrap:pretty}
       <p class="lead">Cada frente tem um responsável e um indicador próprio, e todas respondem à mesma meta de negócio, definida no diagnóstico. Você contrata as frentes que o diagnóstico apontar.</p>
     </div>
     <div class="fronts">
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-compass"/></svg></span><h3>Diagnóstico e estratégia</h3><p>Imersão no negócio, posicionamento, público e meta do trimestre, com plano por canal.</p><p class="deliv"><b>Entrega:</b> diagnóstico escrito e plano de 90 dias.</p></article>
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-mega"/></svg></span><h3>Tráfego pago</h3><p>Meta Ads com campanhas de mensagem, Google Search, Performance Max e YouTube. LinkedIn e TikTok quando o público pede.</p><p class="deliv"><b>Entrega:</b> gestão diária, teste de criativos e custo por conversa no relatório.</p></article>
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-video"/></svg></span><h3>Conteúdo e gravação</h3><p>Roteiro, diária de gravação, edição e podcast quando faz sentido. Uma captação abastece o mês inteiro.</p><p class="deliv"><b>Entrega:</b> calendário mensal e banco de vídeos organizado.</p></article>
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-feed"/></svg></span><h3>Redes sociais</h3><p>Pauta, publicação e comunidade no Instagram, no YouTube e no LinkedIn, com séries que o público reconhece.</p><p class="deliv"><b>Entrega:</b> pauta mensal e comentários respondidos em horário comercial.</p></article>
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-site"/></svg></span><h3>Sites e landing pages</h3><p>Site institucional e uma página por serviço, prontas para anúncio, com botão de WhatsApp que já avisa de qual página o contato veio.</p><p class="deliv"><b>Entrega:</b> páginas no ar com Meta Pixel, Google Ads e GA4.</p></article>
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-pin"/></svg></span><h3>Presença local</h3><p>Perfil da Empresa no Google com fotos, posts e avaliações, para aparecer nas buscas “perto de mim”.</p><p class="deliv"><b>Entrega:</b> perfil otimizado e post semanal.</p></article>
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-chat"/></svg></span><h3>Atendimento e conversão</h3><p>Roteiro de resposta rápida para a recepção ou o comercial. Quanto menor o tempo de resposta, maior a taxa de agendamento.</p><p class="deliv"><b>Entrega:</b> roteiro no onboarding e leitura das conversas.</p></article>
-      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-chart"/></svg></span><h3>BI e relatórios</h3><p>Mídia, site e comercial no mesmo painel, com os números que importam e nenhum de vaidade.</p><p class="deliv"><b>Entrega:</b> painel aberto ao cliente e relatório mensal.</p></article>
-      <article class="front front--go"><span class="front-i"><svg class="ico"><use href="#i-people"/></svg></span><h3>Influência</h3><p>Creators locais e especialistas, com contrato, roteiro aprovado, #publi certo e resultado medido. É a nossa unidade <a data-goinflu href="../go-influ/">GO influ.</a></p><p class="deliv"><b>Entrega:</b> casting, contrato, aprovação e relatório.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-compass"/></svg></span><h3>Diagnóstico e estratégia</h3><p>Imersão no negócio, perfil de cliente ideal, posicionamento e meta do trimestre, com plano por canal.</p><p class="deliv"><b>Entrega:</b> diagnóstico escrito, OKRs e plano de 90 dias.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-video"/></svg></span><h3>Google e YouTube</h3><p>O motor de alcance. YouTube leva a marca a quem ainda não procura; Search, Performance Max e Demand Gen capturam e escalam.</p><p class="deliv"><b>Entrega:</b> conta Google por etapa do funil e otimização semanal.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-mega"/></svg></span><h3>Tráfego pago</h3><p>Meta, LinkedIn e TikTok conforme o público, com criativos vindos do time de conteúdo e dos creators.</p><p class="deliv"><b>Entrega:</b> gestão diária, teste de criativos e custo por lead no relatório.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-doc"/></svg></span><h3>Conteúdo e gravação</h3><p>Roteiro, diária de captação, edição e design. Uma captação vira dez ativos: vídeo longo, cortes, criativos e material para os creators.</p><p class="deliv"><b>Entrega:</b> calendário mensal e banco de ativos organizado.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-feed"/></svg></span><h3>Redes sociais</h3><p>LinkedIn da empresa e dos executivos, Instagram e YouTube, com pauta, publicação e comunidade.</p><p class="deliv"><b>Entrega:</b> pauta mensal e comentários respondidos em horário comercial.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-site"/></svg></span><h3>Sites e landing pages</h3><p>Site institucional e uma página por oferta, prontas para anúncio, com formulário ou WhatsApp que já avisa de onde o contato veio.</p><p class="deliv"><b>Entrega:</b> páginas no ar com pixel, Google Ads e GA4.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-chat"/></svg></span><h3>Atendimento e conversão</h3><p>Roteiro e tempo de resposta combinados com o seu comercial. Lead que espera esfria, e lead frio não vira reunião.</p><p class="deliv"><b>Entrega:</b> roteiro no onboarding e leitura das conversas.</p></article>
+      <article class="front"><span class="front-i"><svg class="ico"><use href="#i-chart"/></svg></span><h3>BI e relatórios</h3><p>Mídia, site, CRM e comercial no mesmo painel: lead, oportunidade, venda e receita por canal.</p><p class="deliv"><b>Entrega:</b> painel aberto ao cliente e relatório mensal.</p></article>
+      <article class="front front--go"><span class="front-i"><svg class="ico"><use href="#i-people"/></svg></span><h3>Influência</h3><p>Muitos creators de nicho com cachê baixo, em vez de um grande e caro. Contrato, roteiro aprovado, #publi certo e resultado medido. É a nossa unidade <a data-goinflu href="../go-influ/">GO influ.</a></p><p class="deliv"><b>Entrega:</b> casting, contrato, aprovação e relatório.</p></article>
     </div>
   </div>
 </section>
@@ -732,11 +671,26 @@ p,blockquote{text-wrap:pretty}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Programas</span>
-      <h2 class="h2">Três jeitos de <span class="o">começar</span><span class="dot-o">.</span></h2>
-      <p class="lead">Os programas juntam as frentes que mais aparecem nos diagnósticos de cada tipo de negócio. O diagnóstico ajusta o escopo para o seu caso.</p>
+      <h2 class="h2">Três jeitos de <span class="o">acelerar</span><span class="dot-o">.</span></h2>
+      <p class="lead">O programa principal é a Aceleração B2B. Para clínicas e negócios de bairro, a mesma lógica vira dois programas mais enxutos. O diagnóstico ajusta o escopo para o seu caso.</p>
     </div>
     <div class="progs">
-      <article class="prog prog--feat" id="saude-360">
+      <article class="prog prog--feat" id="aceleracao-b2b">
+        <span class="for">Empresas que vendem para empresas</span>
+        <h3>Aceleração B2B<span class="d">.</span></h3>
+        <p>Um squad dedicado a oito frentes para romper a bolha: criar demanda nova, e não só capturar a que já existe.</p>
+        <ul>
+          <li>YouTube como motor de alcance, com Search e Performance Max capturando</li>
+          <li>Influência distribuída em creators de nicho, com cachê baixo</li>
+          <li>Conteúdo de autoridade: uma captação vira dez ativos</li>
+          <li>LinkedIn da empresa e dos executivos</li>
+          <li>BI com lead, oportunidade, venda e receita por canal</li>
+          <li>Gerente de conta e um especialista por frente</li>
+        </ul>
+        <p class="kpi"><b>Número principal</b><span>Busca pela marca, CPL e CAC</span></p>
+        <a class="btn btn-o" data-wa="Olá! Tenho uma empresa B2B e quero saber mais sobre a Aceleração B2B do Grupo Opera." href="https://wa.me/">Quero a Aceleração B2B</a>
+      </article>
+      <article class="prog" id="saude-360">
         <span class="for">Médicos, dentistas e clínicas</span>
         <h3>Saúde 360<span class="d">.</span></h3>
         <p>Uma operação de conteúdo e mídia num fee só, para você virar a primeira opção de quem procura a sua especialidade na região.</p>
@@ -748,7 +702,7 @@ p,blockquote{text-wrap:pretty}
           <li>Peças conferidas com base nas normas do CFM e do CFO</li>
         </ul>
         <p class="kpi"><b>Número principal</b><span>Custo por conversa no WhatsApp</span></p>
-        <a class="btn btn-o" data-wa="Olá! Tenho uma clínica ou um consultório e quero saber mais sobre o Saúde 360 do Grupo Opera." href="https://wa.me/">Quero o Saúde 360</a>
+        <a class="btn btn-line" data-wa="Olá! Tenho uma clínica ou um consultório e quero saber mais sobre o Saúde 360 do Grupo Opera." href="https://wa.me/">Quero o Saúde 360</a>
       </article>
       <article class="prog" id="negocio-local">
         <span class="for">Imobiliárias, comércio e serviços</span>
@@ -764,20 +718,6 @@ p,blockquote{text-wrap:pretty}
         <p class="kpi"><b>Número principal</b><span>Custo por conversa e conversas por semana</span></p>
         <a class="btn btn-line" data-wa="Olá! Tenho um negócio local e quero saber mais sobre o programa Negócio Local do Grupo Opera." href="https://wa.me/">Quero o Negócio Local</a>
       </article>
-      <article class="prog" id="aceleracao-b2b">
-        <span class="for">Empresas que vendem para empresas</span>
-        <h3>Aceleração B2B<span class="d">.</span></h3>
-        <p>Um time dedicado a oito frentes para romper a bolha: criar demanda nova, e não só capturar a que já existe.</p>
-        <ul>
-          <li>YouTube como motor de alcance, com Search e Performance Max capturando</li>
-          <li>Influência distribuída em creators de nicho, com cachê baixo</li>
-          <li>Conteúdo de autoridade: uma captação vira dez ativos</li>
-          <li>LinkedIn da empresa e dos executivos</li>
-          <li>BI com lead, oportunidade, venda e receita por canal</li>
-        </ul>
-        <p class="kpi"><b>Número principal</b><span>Busca pela marca, CPL e CAC</span></p>
-        <a class="btn btn-line" data-wa="Olá! Tenho uma empresa B2B e quero saber mais sobre a Aceleração B2B do Grupo Opera." href="https://wa.me/">Quero a Aceleração B2B</a>
-      </article>
     </div>
     <div class="terms">
       <div class="term"><svg class="ico"><use href="#i-pct"/></svg><div><b>Fee mensal fixo</b><span>A verba de mídia é sua e vai direto para as plataformas, sem taxa nossa por cima.</span></div></div>
@@ -787,115 +727,50 @@ p,blockquote{text-wrap:pretty}
   </div>
 </section>
 
-<section class="sec" id="resultados">
+<section class="sec" id="medicao">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Resultados</span>
-      <h2 class="h2">Números com <span class="o">fonte e período</span><span class="dot-o">.</span></h2>
-      <p class="lead">Os números dos casos vêm do Reportei, o mesmo painel que o cliente acompanha. Conversa é a métrica da Meta “conversas iniciadas por mensagem”: cada conversa aberta no WhatsApp, no Direct ou no Messenger a partir de um anúncio.</p>
+      <span class="eyebrow">Como medimos</span>
+      <h2 class="h2">Um número para cada etapa, <span class="o">até a receita</span><span class="dot-o">.</span></h2>
+      <p class="lead">Cada etapa do funil tem uma frente que cria a demanda, outra que captura e um número que mostra se funcionou. O painel fica aberto para você, e a verba muda de lugar por resultado, não por clique.</p>
     </div>
-    <div class="cases">
-      <article class="case case--wide">
-        <div class="case-top"><div><h3 class="case-name">Trait Odontologia</h3><small>Clínica odontológica · Guarapuava, PR</small></div><span class="tag">Meta Ads</span></div>
-        <p class="case-big num">−46%<small>no custo por conversa</small></p>
-        <p class="case-head">O mesmo volume de conversas com quase metade da verba.</p>
-        <div class="cmp" role="img" aria-label="Custo por conversa: R$ 29,88 nos 90 dias anteriores e R$ 16,01 nos últimos 90 dias">
-          <span class="cmp-k">Custo por conversa</span>
-          <div class="cmp-row"><span>Antes</span><i style="--w:100%"></i><b class="num">R$ 29,88</b></div>
-          <div class="cmp-row now"><span>Depois</span><i style="--w:53.6%"></i><b class="num">R$ 16,01</b></div>
-        </div>
-        <div class="facts">
-          <div class="fact"><b class="num">731</b><span>conversas em 90 dias (antes: 729)</span></div>
-          <div class="fact"><b class="num">R$&nbsp;11,7&nbsp;mil</b><span>investidos (antes: R$&nbsp;21,8&nbsp;mil)</span></div>
-          <div class="fact"><b class="num">390</b><span>conversas no melhor mês, a R$ 10,65 cada</span></div>
-          <div class="fact"><b class="num">35</b><span>avaliações recebidas no Google em 90 dias, nota média 4,9</span></div>
-        </div>
-        <p class="src">12/07 a 09/10/2026 contra 13/04 a 11/07/2026. Melhor mês: 11/08 a 09/09/2026. Fonte: Reportei (Meta Ads e Perfil da Empresa no Google).</p>
-      </article>
-
-      <article class="case case--wide">
-        <div class="case-top"><div><h3 class="case-name">Fiorini Odonto &amp; Estética</h3><small>Clínica odontológica · Vargem Grande do Sul, SP</small></div><span class="tag">Meta Ads + site</span></div>
-        <p class="case-big num">−40%<small>no custo por conversa</small></p>
-        <p class="case-head">Mais conversas gastando menos, com páginas feitas para cada tratamento.</p>
-        <div class="cmp" role="img" aria-label="Custo por conversa: R$ 31,27 nos 90 dias anteriores e R$ 18,69 nos últimos 90 dias">
-          <span class="cmp-k">Custo por conversa</span>
-          <div class="cmp-row"><span>Antes</span><i style="--w:100%"></i><b class="num">R$ 31,27</b></div>
-          <div class="cmp-row now"><span>Depois</span><i style="--w:59.8%"></i><b class="num">R$ 18,69</b></div>
-        </div>
-        <div class="facts">
-          <div class="fact"><b class="num">839</b><span>conversas em 90 dias (+14%)</span></div>
-          <div class="fact"><b class="num">−32%</b><span>de investimento no mesmo período</span></div>
-          <div class="fact"><b class="num">R$ 9,18</b><span>por conversa na campanha de lentes de contato</span></div>
-          <div class="fact"><b class="num">R$&nbsp;11,23</b><span>por conversa na campanha de protocolo</span></div>
-        </div>
-        <p class="also"><b>Também entregamos:</b> site institucional, páginas de Protocolo e Implantes e de Lentes de Contato, e o planejamento do Invisalign Day.</p>
-        <p class="src">12/07 a 09/10/2026 contra 13/04 a 11/07/2026. O período anterior já inclui o primeiro mês do Grupo Opera na conta. Fonte: Reportei (Meta Ads).</p>
-      </article>
-
-      <article class="case">
-        <div class="case-top"><div><h3 class="case-name">D’Plácido Odontologia</h3><small>Clínica odontológica · Embu das Artes, SP</small></div><span class="tag">Meta Ads</span></div>
-        <p class="case-big num">+84%<small>conversas</small></p>
-        <p class="case-head">Mais verba e custo menor por conversa: 665 conversas em 90 dias, contra 362.</p>
-        <div class="facts">
-          <div class="fact"><b class="num">R$ 12,78</b><span>por conversa (antes R$ 14,23)</span></div>
-          <div class="fact"><b class="num">R$ 8,46</b><span>por conversa na campanha de protocolo</span></div>
-        </div>
-        <p class="src">12/07 a 09/10/2026 contra 13/04 a 11/07/2026. Fonte: Reportei (Meta Ads).</p>
-      </article>
-
-      <article class="case">
-        <div class="case-top"><div><h3 class="case-name">CEMED</h3><small>Clínica médica · Mirassol, SP</small></div><span class="tag">Meta Ads</span></div>
-        <p class="case-big num">327<small>conversas</small></p>
-        <p class="case-head">Desde o primeiro anúncio, a R$ 11,90 por conversa, e caindo.</p>
-        <div class="facts">
-          <div class="fact"><b class="num">105 → 134</b><span>conversas por mês, do 1º ao último mês</span></div>
-          <div class="fact"><b class="num">R$&nbsp;11,16</b><span>por conversa nos últimos 30 dias (nos primeiros 30: R$&nbsp;14,06), com a mesma verba</span></div>
-        </div>
-        <p class="src">24/07 a 09/10/2026. Primeiros 30 dias (24/07 a 22/08) contra últimos 30 (10/09 a 09/10). Fonte: Reportei (Meta Ads).</p>
-      </article>
-
-      <article class="case">
-        <div class="case-top"><div><h3 class="case-name">Instituto Sanrire</h3><small>Clínica odontológica · Brasília, DF</small></div><span class="tag tag--g">Google Ads</span></div>
-        <p class="case-big num">2×<small>conversões</small></p>
-        <p class="case-head">O dobro de conversões registradas no Google Ads em 30 dias, com 22% menos verba.</p>
-        <div class="facts">
-          <div class="fact"><b class="num">15 → 31</b><span>conversões registradas no Google Ads</span></div>
-          <div class="fact"><b class="num">−62%</b><span>no custo por conversão (R$&nbsp;324 → R$&nbsp;122)</span></div>
-        </div>
-        <p class="src">10/09 a 09/10/2026 contra 11/08 a 09/09/2026. Fonte: Reportei (Google Ads).</p>
-      </article>
-    </div>
-
+    <ol class="funnel">
+      <li class="stage"><span class="k">Etapa 01</span><h3>Alcance</h3><dl><div><dt>Quem cria a demanda</dt><dd>YouTube, creators e conteúdo</dd></div><div><dt>Quem captura</dt><dd>Ainda ninguém: aqui a marca chega a quem não procura</dd></div></dl><p class="m"><b>O número</b>Alcance novo, fora da base</p></li>
+      <li class="stage"><span class="k">Etapa 02</span><h3>Consideração</h3><dl><div><dt>Quem cria a demanda</dt><dd>Redes sociais e conteúdo de autoridade</dd></div><div><dt>Quem captura</dt><dd>Demand Gen e remarketing</dd></div></dl><p class="m"><b>O número</b>Busca pela marca e tráfego novo</p></li>
+      <li class="stage"><span class="k">Etapa 03</span><h3>Conversão</h3><dl><div><dt>Quem cria a demanda</dt><dd>Prova social dos creators nos criativos</dd></div><div><dt>Quem captura</dt><dd>Search, Meta e LinkedIn</dd></div></dl><p class="m"><b>O número</b>Leads, CPL e taxa de qualificação</p></li>
+      <li class="stage"><span class="k">Etapa 04</span><h3>Receita</h3><dl><div><dt>Quem cria a demanda</dt><dd>O trabalho das três etapas anteriores</dd></div><div><dt>Quem captura</dt><dd>O seu comercial, com tempo de resposta combinado</dd></div></dl><p class="m"><b>O número</b>Oportunidades, vendas, CAC e ROI</p></li>
+    </ol>
+    <p class="keynote"><b>O indicador que a gente mais olha</b>Crescimento da busca pela marca. Quando YouTube e creators funcionam, mais gente digita o nome da sua empresa no Google. É a prova mais barata e mais honesta de que a bolha rompeu.</p>
     <div class="report">
       <div>
         <span class="eyebrow">Como você acompanha</span>
         <h3 style="margin-top:14px">Todo mês, um relatório que se lê em três minutos<span class="dot-o">.</span></h3>
         <ol class="report-list">
-          <li><b>01</b><span><strong>O que aconteceu, em números.</strong> Conversas, custo por conversa, alcance e conteúdo publicado, sempre comparados com o mês anterior.</span></li>
+          <li><b>01</b><span><strong>O que aconteceu, em números.</strong> Alcance novo, busca pela marca, leads, custo por lead e conteúdo publicado, sempre comparados com o mês anterior.</span></li>
           <li><b>02</b><span><strong>O que funcionou e por quê.</strong> A leitura do time, em português claro e sem jargão de plataforma.</span></li>
           <li><b>03</b><span><strong>O que muda no mês seguinte.</strong> Três próximos passos, com responsável.</span></li>
         </ol>
       </div>
-      <figure class="upd" aria-label="Exemplo de relatório mensal: EGO Odontologia, outubro de 2026">
+      <figure class="upd" aria-label="Modelo do relatório mensal do Grupo Opera">
         <div class="upd-h">
-          <div class="row"><span class="brand">Grupo Opera<span class="d">.</span></span><small>Update de resultados · set. e out./2026</small></div>
-          <span class="eyebrow">EGO Odontologia</span>
-          <h4>Outubro começou <span class="o">acelerado</span>. <span class="s">Mais contatos, menor custo.</span></h4>
+          <div class="row"><span class="brand">Grupo Opera<span class="d">.</span></span><small>Relatório mensal · modelo</small></div>
+          <span class="eyebrow">Sua empresa</span>
+          <h4>O que aconteceu, <span class="o">o que funcionou</span> <span class="s">e o que muda.</span></h4>
         </div>
         <div class="upd-k">
-          <div><b class="num">50</b><span>conversas em 8 dias de outubro</span><em>setembro inteiro: 59</em></div>
-          <div><b class="num">R$ 37,81</b><span>custo por conversa</span><em>▼ 4,8% vs. setembro</em></div>
-          <div><b class="num">R$ 0,71</b><span>custo por clique</span><em>▼ 23% vs. setembro</em></div>
-          <div><b class="num">7</b><span>Reels novos publicados</span><em>1.825 visualizações</em></div>
+          <div><b>Alcance novo</b><span>pessoas impactadas fora da sua base</span><em>vs. mês anterior</em></div>
+          <div><b>Busca pela marca</b><span>quem digitou o seu nome no Google</span><em>vs. mês anterior</em></div>
+          <div><b>Leads e CPL</b><span>volume e custo por lead</span><em>vs. meta do trimestre</em></div>
+          <div><b>CAC</b><span>quanto custou cada cliente novo</span><em>por canal</em></div>
         </div>
         <div class="upd-b">
-          <p class="upd-read"><b>Leitura</b>Conteúdo com paciente real gera conversa, e conteúdo que responde uma dúvida gera visualização. Vamos manter essa linha e usar os melhores vídeos como anúncio.</p>
+          <p class="upd-read"><b>Leitura do time</b>Um parágrafo em português claro: o que subiu, o que caiu e por quê. Sem jargão de plataforma.</p>
           <div class="upd-next">
-            <div><b>Próximo 01</b><strong>Mais histórias reais</strong>Novos depoimentos, com autorização dos pacientes.</div>
-            <div><b>Próximo 02</b><strong>Vídeos como anúncio</strong>Testar os Reels de melhor desempenho como criativo nas campanhas de mensagem.</div>
-            <div><b>Próximo 03</b><strong>Ritmo de outubro</strong>Veiculação contínua para sustentar o volume.</div>
+            <div><b>Próximo 01</b><strong>Escalar o que vendeu</strong>Mais verba no canal e no criativo que trouxeram lead qualificado.</div>
+            <div><b>Próximo 02</b><strong>Testar um ângulo novo</strong>Um criativo diferente para a mesma oferta.</div>
+            <div><b>Próximo 03</b><strong>Ampliar o casting</strong>Mais creators no nicho que respondeu.</div>
           </div>
-          <p class="upd-src">Trecho adaptado do “Update de resultados” enviado ao cliente em 10/2026 (01/09 a 08/10).</p>
+          <p class="upd-src">Modelo do relatório. Os números de cada cliente ficam no painel dele e só ele acessa.</p>
         </div>
       </figure>
     </div>
@@ -916,7 +791,7 @@ p,blockquote{text-wrap:pretty}
       <div class="deal"><svg class="ico"><use href="#i-shield"/></svg><h3>Dentro das regras</h3><p>Toda peça de saúde passa pela nossa checagem, com base nas normas do CFM e do CFO e no Código do CONAR, antes de ir ao ar.</p></div>
       <div class="deal"><svg class="ico"><use href="#i-route"/></svg><h3>Se o número não melhorar, a rota muda</h3><p>Leitura semanal e verba realocada por resultado, não por opinião.</p></div>
       <div class="deal"><svg class="ico"><use href="#i-chat"/></svg><h3>Resposta no mesmo dia</h3><p>Grupo direto com o gerente e os especialistas, em horário comercial.</p></div>
-      <div class="deal"><svg class="ico"><use href="#i-heart"/></svg><h3>A gente pergunta como está</h3><p>Pesquisa de satisfação todo semestre, e a resposta vira prioridade no ciclo seguinte.</p></div>
+      <div class="deal"><svg class="ico"><use href="#i-lock"/></svg><h3>Seus números são seus</h3><p>Nome, número e resultado de cliente não aparecem no nosso site, em proposta ou em rede social sem autorização por escrito.</p></div>
     </div>
   </div>
 </section>
@@ -928,9 +803,9 @@ p,blockquote{text-wrap:pretty}
       <p class="go-sub">Gestão de influenciadores · por Grupo Opera</p>
     </div>
     <div>
-      <h2 id="go-t">Creators da sua cidade falando da sua marca, com contrato e resultado medido.</h2>
-      <p>A GO influ. é a nossa unidade de influência. Cuida do casting, do contrato, do roteiro, do #publi e da medição, e conecta cada post a conversas no WhatsApp. Em saúde, cada peça passa por checagem com base nas normas do CFM e do CFO.</p>
-      <ul><li>Creators locais e especialistas</li><li>Anúncios de parceria</li><li>Regras da saúde em dia</li></ul>
+      <h2 id="go-t">Conteúdo em escala, com creators que o seu público já segue.</h2>
+      <p>A GO influ. é a nossa unidade de influência. Monta um elenco de creators de nicho que produz, publica e vira anúncio pela sua marca, com contrato, #publi certo e resultado medido.</p>
+      <ul><li>Volume de conteúdo</li><li>Creators de nicho</li><li>Anúncios de parceria</li></ul>
       <a class="btn" data-goinflu href="../go-influ/">Conhecer a GO influ. <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
@@ -946,9 +821,10 @@ p,blockquote{text-wrap:pretty}
     <div class="faq">
       <details><summary>Quanto custa?</summary><p>Um fee mensal fixo, definido depois do diagnóstico conforme as frentes que entram no plano. A verba de mídia é sua e vai direto para Meta e Google, sem taxa nossa por cima. A proposta mostra separado o que é fee, o que é mídia e o que é produção.</p></details>
       <details><summary>Tem fidelidade?</summary><p>O contrato mínimo é de 3 meses, que é um ciclo completo de 90 dias. Depois disso, o cancelamento é com 45 dias de aviso.</p></details>
-      <details><summary>Em quanto tempo aparece resultado?</summary><p>No primeiro mês você já tem o custo por conversa medido e as primeiras conversas no painel. Em 90 dias o sistema completo está rodando, e a revisão do trimestre fecha os números de alcance, conversas e custo.</p></details>
-      <details><summary>Vocês atendem a minha cidade?</summary><p>Sim. A operação é remota, com grupo direto no WhatsApp e reuniões online. Hoje atendemos clínicas e empresas em São Paulo, Paraná, Goiás e no Distrito Federal. As diárias de gravação são planejadas com você.</p></details>
-      <details><summary>Eu preciso aparecer nos vídeos?</summary><p>Ajuda muito, principalmente em saúde. Por isso a gravação é concentrada: um dia de gravação por mês, com roteiro e direção. Você chega, grava e volta para o consultório, e o conteúdo trabalha o mês inteiro.</p></details>
+      <details><summary>Em quanto tempo aparece resultado?</summary><p>No primeiro mês você já tem o custo por lead medido e os primeiros leads no painel. No segundo, o YouTube e os creators entram e o alcance novo passa a ser medido. Em 90 dias o sistema completo está rodando, e a revisão do trimestre fecha os números de alcance, busca pela marca, CPL e CAC.</p></details>
+      <details><summary>Vocês atendem a minha cidade?</summary><p>Sim. A operação é remota, com grupo direto no WhatsApp e reuniões online, para empresas de todo o Brasil. As diárias de gravação são planejadas com você.</p></details>
+      <details><summary>Por que o site não mostra cases de clientes?</summary><p>Porque os números de cada cliente pertencem a ele. A gente não expõe nome nem resultado sem autorização por escrito. Na conversa de diagnóstico, mostramos como medimos e o que esperar para o seu tipo de negócio.</p></details>
+      <details><summary>Eu preciso aparecer nos vídeos?</summary><p>Ajuda muito: o decisor compra de quem ele já viu falar. Por isso a gravação é concentrada em diárias de captação, com roteiro e direção. Você e o seu time gravam, voltam para a operação, e o conteúdo trabalha o mês inteiro.</p></details>
       <details><summary>Como vocês lidam com as regras do CFM e do CFO?</summary><p>Toda peça passa por um filtro antes de ir ao ar: nada de promessa de resultado, sensacionalismo ou depoimento que vire propaganda. Nome, CRM ou CRO e RQE aparecem onde a norma pede. Fotos de pacientes só com autorização assinada.</p></details>
       <details><summary>De quem são as contas e os conteúdos?</summary><p>Seus. As contas de anúncio rodam no seu nome, o pixel é seu e todo o banco de vídeos, fotos e episódios pertence a você.</p></details>
       <details><summary>Como funciona o diagnóstico?</summary><p>O pré-diagnóstico deste site é gratuito e sai na hora. A proposta já chega com um diagnóstico do seu cenário. Depois que o contrato é fechado, a Fase 0 aprofunda tudo em até duas semanas, com acesso às suas contas e aos seus números.</p></details>
@@ -974,16 +850,16 @@ p,blockquote{text-wrap:pretty}
     <div class="foot-grid">
       <div>
         <span class="brand">Grupo Opera<span class="d">.</span></span>
-        <p class="tagline">Aceleradora de crescimento</p>
-        <p>Diagnóstico, mídia, conteúdo, site e relatório num time só, para clínicas, negócios locais e empresas B2B.</p>
+        <p class="tagline">Aceleradora B2B</p>
+        <p>Um squad, nove frentes e uma meta: criar demanda nova e medir até a receita.</p>
       </div>
       <div>
         <h2 class="foot-h">O trabalho</h2>
-        <ul><li><a href="#diagnostico">Diagnóstico</a></li><li><a href="#metodo">Método</a></li><li><a href="#frentes">Frentes</a></li><li><a href="#resultados">Resultados</a></li></ul>
+        <ul><li><a href="#diagnostico">Diagnóstico</a></li><li><a href="#metodo">Método</a></li><li><a href="#frentes">Frentes</a></li><li><a href="#medicao">Como medimos</a></li></ul>
       </div>
       <div>
         <h2 class="foot-h">Programas</h2>
-        <ul><li><a href="#saude-360">Saúde 360</a></li><li><a href="#negocio-local">Negócio Local</a></li><li><a href="#aceleracao-b2b">Aceleração B2B</a></li><li><a data-goinflu href="../go-influ/">GO influ.</a></li></ul>
+        <ul><li><a href="#aceleracao-b2b">Aceleração B2B</a></li><li><a href="#saude-360">Saúde 360</a></li><li><a href="#negocio-local">Negócio Local</a></li><li><a data-goinflu href="../go-influ/">GO influ.</a></li></ul>
       </div>
       <div>
         <h2 class="foot-h">Contato</h2>
@@ -992,7 +868,7 @@ p,blockquote{text-wrap:pretty}
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> Grupo Opera · CNPJ 52.333.703/0001-35</span>
-      <span>Resultados de clientes com fonte e período indicados. Resultados variam conforme mercado, oferta e investimento.</span>
+      <span>Resultados variam conforme mercado, oferta e investimento.</span>
     </div>
   </div>
 </footer>
@@ -1113,7 +989,7 @@ p,blockquote{text-wrap:pretty}
   };
   var answers = {};
 
-  function seg() { var r = form.querySelector('input[name="seg"]:checked'); return r ? r.value : 'saude'; }
+  function seg() { var r = form.querySelector('input[name="seg"]:checked'); return r ? r.value : 'b2b'; }
   function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
 
   function renderQuestions() {
