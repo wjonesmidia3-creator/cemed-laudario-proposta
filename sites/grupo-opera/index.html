@@ -124,15 +124,17 @@ p,blockquote{text-wrap:pretty}
 .panel-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:14px;padding-bottom:16px;border-bottom:1px solid var(--line)}
 .panel-big b{font:800 clamp(2.6rem,4.4vw,3.4rem)/1 var(--f-disp);letter-spacing:-.04em;color:var(--navy)}
 .panel-big span{font-size:.95rem;color:var(--ink-soft);max-width:26ch;line-height:1.4}
+/* Linha empilhada em todas as larguras: nome e custo em cima, barra embaixo (o painel tem ~430px no desktop). */
 .bars{display:grid;gap:4px;margin-top:10px}
-.bars-head,.bar-row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.2fr) 122px;gap:14px;align-items:center}
+.bars-head,.bar-row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:14px;align-items:center}
 .bars-head{font:700 .66rem/1.2 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:6px 0}
+.bars-head span:nth-child(2){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .bars-head span:last-child,.bar-cost{text-align:right}
-.bar-row{padding:10px 0;border-top:1px solid var(--line-soft)}
+.bar-row{padding:11px 0 12px;border-top:1px solid var(--line-soft);row-gap:8px}
 .bar-name{min-width:0}
 .bar-name b{display:block;font:700 .95rem/1.25 var(--f-disp);color:var(--navy);letter-spacing:-.01em}
 .bar-name small{display:block;font-size:.76rem;color:var(--ink-mute);margin-top:2px}
-.bar-track{display:flex;align-items:center;gap:10px;min-width:0}
+.bar-track{display:flex;align-items:center;gap:10px;min-width:0;grid-column:1 / -1;grid-row:2}
 .bar-fill{height:12px;border-radius:6px;background:linear-gradient(90deg,var(--navy),#2B4FB3);width:var(--v);transform-origin:left;animation:grow 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
 .bar-track b{font:700 .95rem/1 var(--f-disp);color:var(--ink)}
 .bar-cost{font:700 .92rem/1 var(--f-disp);color:var(--ink);white-space:nowrap}
@@ -153,9 +155,13 @@ p,blockquote{text-wrap:pretty}
   .hero-strip li:nth-child(n+3){border-top:1px solid var(--navy-line)}
 }
 @media (max-width:520px){
-  .bars-head{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .bar-row{grid-template-columns:minmax(0,1fr) 104px;row-gap:8px}
-  .bar-track{grid-column:1 / -1;grid-row:2}
+  .hero-cta .btn{flex:1 1 100%}
+  .hero-strip li{padding:18px 14px 16px 0}
+  .hero-strip li+li{padding-left:14px}
+  .hero-strip li:nth-child(3){padding-left:0}
+  .hero-strip li>span{font-size:.8rem}
+}
+@media (max-width:340px){
   .hero-strip{grid-template-columns:1fr}
   .hero-strip li,.hero-strip li+li{padding-left:0;border-left:0}
   .hero-strip li+li{border-top:1px solid var(--navy-line)}
@@ -164,8 +170,8 @@ p,blockquote{text-wrap:pretty}
 /* ---------- quem confia ---------- */
 .trust{padding-block:28px;border-bottom:1px solid var(--line)}
 .trust ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 28px;align-items:center}
-.trust li.trust-k{font:700 .7rem/1.4 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);max-width:18ch}
-@media (max-width:760px){.trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.trust li.trust-k{font:700 .7rem/1.5 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+@media (max-width:760px){.trust ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px}.trust li.trust-k{grid-column:1 / -1}}
 .trust li{font:700 1rem/1.2 var(--f-disp);color:var(--ink-soft);letter-spacing:-.01em}
 .trust li small{display:block;font:500 .72rem/1.3 var(--f-sans);color:var(--ink-mute);letter-spacing:0;margin-top:2px}
 
@@ -190,7 +196,13 @@ p,blockquote{text-wrap:pretty}
 .quote blockquote::before{content:"“";display:block;font:800 2.6rem/.7 var(--f-disp);color:var(--orange);margin-bottom:8px}
 .quote figcaption{margin-top:auto;font:700 .7rem/1.3 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
 @media (max-width:1000px){.quotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.quotes{grid-template-columns:1fr}}
+/* no celular, os trechos viram um carrossel com o próximo cartão aparecendo na borda */
+@media (max-width:560px){
+  .quotes{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:calc(-1*var(--gut));padding:2px var(--gut) 8px;scroll-padding-inline:var(--gut);scrollbar-width:none}
+  .quotes::-webkit-scrollbar{display:none}
+  .quote{scroll-snap-align:start}
+  .quotes.can-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent)}
+}
 
 /* ---------- pré-diagnóstico ---------- */
 .dx{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,3vw,40px);align-items:start}
@@ -227,8 +239,9 @@ p,blockquote{text-wrap:pretty}
 .dx-score b small{font-size:1.1rem;color:var(--sky);letter-spacing:0;margin-left:2px}
 .dx-score p{font-size:.88rem;line-height:1.45;color:#C9D6EE}
 .dx-score p strong{display:block;font:700 1rem/1.25 var(--f-disp);color:var(--orange-2);margin-bottom:4px}
-.meters{display:grid;gap:7px;margin-top:16px}
-.meter{display:grid;grid-template-columns:minmax(0,1fr) 84px;gap:10px;align-items:center;font-size:.8rem;color:#C9D6EE}
+/* 3×3 em vez de 9 linhas: o painel cabe na tela sem empurrar os sintomas para baixo. */
+.meters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 14px;margin-top:16px}
+.meter{display:grid;grid-template-rows:1fr auto;gap:6px;align-items:end;font-size:.74rem;line-height:1.25;color:#C9D6EE}
 .meter i{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;height:8px}
 .meter i::before,.meter i::after,.meter i span{content:"";border-radius:3px;background:rgba(169,195,230,.18)}
 .meter[data-v="0"] i::before{background:#FF8A80}
@@ -247,8 +260,18 @@ p,blockquote{text-wrap:pretty}
 .dx-actions{display:grid;gap:10px;margin-top:18px}
 .dx-actions .btn{width:100%}
 .dx-reset{background:none;border:0;color:var(--sky);font:600 .85rem/1 var(--f-sans);cursor:pointer;padding:8px;text-decoration:underline;text-underline-offset:3px}
-.dx-fine{font-size:.74rem;color:var(--sky-dim);margin-top:10px;line-height:1.45}
-@media (min-width:981px){.dx-out{max-height:calc(100vh - 112px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--navy-line) transparent}.dx-actions{position:sticky;bottom:calc(-1*clamp(20px,2.4vw,28px));margin-inline:calc(-1*clamp(20px,2.4vw,28px));margin-bottom:calc(-1*clamp(20px,2.4vw,28px));padding:14px clamp(20px,2.4vw,28px) clamp(20px,2.4vw,28px);background:var(--navy);border-top:1px solid var(--navy-line)}}
+.dx-fine{font-size:.74rem;color:var(--sky-dim);margin-top:16px;line-height:1.45}
+@media (max-width:420px){.dx-actions .btn{font-size:.95rem;padding-inline:16px}}
+
+/* barra de progresso do quiz no celular, enquanto o resultado está fora da tela */
+.dx-mini{position:fixed;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;align-items:center;gap:12px;padding:12px 16px 14px;border-radius:14px;background:var(--navy);color:#C9D6EE;text-decoration:none;font:500 .85rem/1.2 var(--f-sans);box-shadow:0 16px 36px -14px rgba(0,18,63,.7);overflow:hidden}
+.dx-mini b{margin-left:auto;font:700 .88rem/1 var(--f-disp);color:#fff;white-space:nowrap}
+.dx-mini-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(169,195,230,.2)}
+.dx-mini-bar i{display:block;height:100%;width:0;background:var(--orange-2);transition:width .25s ease}
+.dx-mini:focus-visible{outline-color:var(--orange-2)}
+@media (min-width:981px){.dx-mini{display:none!important}}
+@media (min-width:981px){.dx-out{max-height:calc(100vh - 112px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--navy-line) transparent}.dx-actions{position:sticky;bottom:calc(-1*clamp(20px,2.4vw,28px));margin-inline:calc(-1*clamp(20px,2.4vw,28px));margin-bottom:calc(-1*clamp(20px,2.4vw,28px));padding:14px clamp(20px,2.4vw,28px) clamp(20px,2.4vw,28px);background:var(--navy);border-top:1px solid var(--navy-line)}
+  .dx-out.has-more .dx-actions::before{content:"";position:absolute;left:0;right:0;bottom:calc(100% + 1px);height:32px;background:linear-gradient(rgba(0,36,125,0),var(--navy));pointer-events:none}}
 @media (max-width:980px){.dx{grid-template-columns:1fr}.dx-out{position:static}}
 @media (forced-colors:active){.seg-opt input:checked+label,.opt input:checked+label{border:3px solid Highlight}.meter i::before,.meter i::after,.meter i span{forced-color-adjust:none;background:Canvas;border:1px solid CanvasText}.meter[data-v="0"] i::before,.meter[data-v="1"] i::before,.meter[data-v="1"] i span,.meter[data-v="2"] i::before,.meter[data-v="2"] i span,.meter[data-v="2"] i::after{background:Highlight}}
 
@@ -283,7 +306,8 @@ p,blockquote{text-wrap:pretty}
 .sc-legend i.big{width:12px;height:12px;border-radius:50%;background:var(--orange-2);box-shadow:0 0 0 2px var(--navy)}
 .sc-legend i.dot{width:9px;height:9px;border-radius:50%;background:#fff}
 .sc-legend i.dia{width:9px;height:9px;border-radius:2px;transform:rotate(45deg);background:#fff}
-@media (max-width:820px){.score{grid-template-columns:128px minmax(0,1fr);min-width:600px;padding-left:0}.sc-label{position:sticky;left:0;z-index:2;background:var(--navy);padding-left:14px}.sc-label small{display:none}.sc-cols{position:relative}}
+@media (max-width:820px){.score{grid-template-columns:128px minmax(0,1fr);min-width:600px;padding-left:0}.sc-label{position:sticky;left:0;z-index:2;background:var(--navy);padding-left:14px}.sc-label small{display:none}.sc-cols{position:relative}
+  .score-wrap.can-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent)}}
 .scroll-hint{display:none;font-size:.78rem;color:var(--sky-dim);margin-top:10px}
 @media (max-width:820px){.scroll-hint{display:block}}
 
@@ -312,7 +336,16 @@ p,blockquote{text-wrap:pretty}
 .front--go a{color:var(--orange-2);font-weight:700;white-space:nowrap}
 @media (max-width:980px) and (min-width:601px){.front--go{grid-column:1 / -1}}
 @media (max-width:980px){.fronts{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.fronts{grid-template-columns:1fr}}
+@media (max-width:600px){
+  .fronts{grid-template-columns:1fr;gap:12px}
+  .front{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;align-items:center;padding:18px 18px 0}
+  .front:hover{transform:none}
+  .front-i{width:40px;height:40px;border-radius:11px}
+  .front h3{margin-top:0}
+  .front p{grid-column:1 / -1}
+  .front h3+p{margin-top:12px;margin-bottom:14px}
+  .front .deliv{padding:12px 0 14px}
+}
 
 /* ---------- programas ---------- */
 .progs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -407,7 +440,12 @@ p,blockquote{text-wrap:pretty}
 .deal h3{font-size:1.08rem;font-weight:700;line-height:1.25;color:var(--navy);margin-top:14px;letter-spacing:-.015em}
 .deal p{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
 @media (max-width:980px){.deals{grid-template-columns:repeat(2,minmax(0,1fr))}.deal:not(:nth-child(4n+1)){padding-left:0;border-left:0}.deal:nth-child(2n){padding-left:22px;border-left:1px solid var(--line)}}
-@media (max-width:560px){.deals{grid-template-columns:1fr}.deal:nth-child(2n){padding-left:0;border-left:0}}
+@media (max-width:560px){
+  .deals{grid-template-columns:1fr}
+  .deal,.deal:nth-child(2n){display:grid;grid-template-columns:26px minmax(0,1fr);column-gap:14px;padding:20px 0;border-left:0}
+  .deal h3{margin-top:2px}
+  .deal p{grid-column:2}
+}
 
 /* ---------- GO influ ---------- */
 .goband{background:var(--orange-cta);color:#fff;position:relative;overflow:hidden}
@@ -445,7 +483,7 @@ p,blockquote{text-wrap:pretty}
 .foot{background:var(--navy-900);color:#B9C8E6;padding-block:56px 40px;font-size:.88rem}
 .foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:32px}
 .foot .brand{color:#fff;font-size:1.6rem}
-.foot .tagline{font:700 .66rem/1.3 var(--f-sans);letter-spacing:.3em;text-transform:uppercase;color:var(--sky);margin-top:10px}
+.foot .tagline{font:700 .66rem/1.3 var(--f-sans);letter-spacing:.3em;text-transform:uppercase;color:var(--sky);margin-top:10px;max-width:none}
 .foot p{margin-top:14px;max-width:36ch;line-height:1.55}
 .foot .foot-h{font:700 .7rem/1.3 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
 .foot li{margin-top:8px}
@@ -457,6 +495,8 @@ p,blockquote{text-wrap:pretty}
 
 .wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:inline-flex;align-items:center;gap:8px;background:#0F7E42;color:#fff;text-decoration:none;font:700 .9rem/1 var(--f-disp);padding:14px 18px 14px 14px;border-radius:999px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
 .wa-float:hover{background:#0B6A37}
+.wa-float{transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.wa-float.is-off{opacity:0;visibility:hidden;transform:translateY(12px);pointer-events:none}
 .wa-float svg{width:22px;height:22px;fill:#fff;stroke:none}
 @media (max-width:560px){.wa-float span{display:none}.wa-float{padding:14px}}
 
@@ -603,7 +643,7 @@ p,blockquote{text-wrap:pretty}
       <h3>Trechos de diagnósticos que já entregamos</h3>
       <p>Clientes identificados só pelo segmento.</p>
     </div>
-    <div class="quotes">
+    <div class="quotes" role="region" aria-label="Trechos de diagnósticos">
       <figure class="quote"><blockquote>Autoridade sem distribuição não gera consulta. Distribuição sem autoridade não gera confiança.</blockquote><figcaption>Cardiologista&nbsp;· consultório</figcaption></figure>
       <figure class="quote"><blockquote>O problema tem nome: bolha. Search captura quem já busca, remarketing reimpacta quem já visitou, rede social fala com quem já segue.</blockquote><figcaption>Empresa B2B</figcaption></figure>
       <figure class="quote"><blockquote>Mais criativo não é mais do mesmo. É mais ângulos. Campanha com pouco ângulo cansa rápido.</blockquote><figcaption>Clínica odontológica</figcaption></figure>
@@ -642,14 +682,15 @@ p,blockquote{text-wrap:pretty}
         <div class="meters" id="dx-meters"></div>
         <div class="sx" id="dx-sx"><p class="sx-empty">Os sintomas aparecem aqui conforme você responde. Cada um vem com a alavanca que resolve.</p></div>
         <p class="dx-prog-rec" id="dx-rec" hidden></p>
+        <p class="dx-fine">O pré-diagnóstico é uma triagem. O diagnóstico completo olha os seus números, as suas contas de anúncio e os seus concorrentes.</p>
         <div class="dx-actions">
           <a class="btn btn-o" id="dx-send" href="https://wa.me/" target="_blank" rel="noopener">Quero o diagnóstico completo <span class="arrow" aria-hidden="true">→</span></a>
           <button type="button" class="dx-reset" id="dx-reset">Recomeçar</button>
         </div>
-        <p class="dx-fine">O pré-diagnóstico é uma triagem. O diagnóstico completo olha os seus números, as suas contas de anúncio e os seus concorrentes.</p>
       </aside>
     </div>
   </div>
+  <a class="dx-mini" id="dx-mini" href="#dx-out" hidden><span class="dx-mini-bar" aria-hidden="true"><i id="dx-mini-fill"></i></span><span id="dx-mini-t">0 de 9 respondidas</span><b>Ver resultado <span aria-hidden="true">↓</span></b></a>
 </section>
 
 <section class="sec on-navy" id="metodo">
@@ -849,7 +890,7 @@ p,blockquote{text-wrap:pretty}
         <p class="case-head">Desde o primeiro anúncio, a R$ 11,90 por conversa, e caindo.</p>
         <div class="facts">
           <div class="fact"><b class="num">105 → 134</b><span>conversas por mês, do 1º ao último mês</span></div>
-          <div class="fact"><b class="num">R$&nbsp;11,16</b><span>por conversa nos últimos 30 dias (nos primeiros 30: R$&nbsp;14,06), com a mesma verba</span></div>
+          <div class="fact"><b class="num">R$&nbsp;11,16</b><span>por conversa no último mês (no 1º: R$&nbsp;14,06), com a mesma verba</span></div>
         </div>
         <p class="src">24/07 a 09/10/2026. Primeiros 30 dias (24/07 a 22/08) contra últimos 30 (10/09 a 09/10). Fonte: Reportei (Meta Ads).</p>
       </article>
@@ -1040,6 +1081,33 @@ p,blockquote{text-wrap:pretty}
     });
   }
 
+  /* rolagem horizontal (partitura e trechos no celular): esmaece a borda direita enquanto há mais conteúdo */
+  function edgeFade(el, manageTab) {
+    function upd() {
+      var max = el.scrollWidth - el.clientWidth;
+      el.classList.toggle('can-r', max > 2 && el.scrollLeft < max - 2);
+      if (manageTab) { if (max > 2) el.tabIndex = 0; else el.removeAttribute('tabindex'); }
+    }
+    el.addEventListener('scroll', upd, { passive: true });
+    window.addEventListener('resize', upd);
+    upd();
+  }
+  var scoreWrap = document.querySelector('.score-wrap');
+  if (scoreWrap) edgeFade(scoreWrap, false);
+  var quotes = document.querySelector('.quotes');
+  if (quotes) edgeFade(quotes, true);
+
+  /* botão flutuante do WhatsApp: some quando a tela já tem um botão principal (hero, pré-diagnóstico, fechamento) */
+  var wa = document.querySelector('.wa-float');
+  var ctas = document.querySelectorAll('.hero-cta, #pre-diagnostico');
+  if (wa && ctas.length && 'IntersectionObserver' in window) {
+    var ctaIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.setAttribute('data-seen', e.isIntersecting ? '1' : ''); });
+      wa.classList.toggle('is-off', Array.prototype.some.call(ctas, function (c) { return c.getAttribute('data-seen') === '1'; }));
+    });
+    ctas.forEach(function (c) { ctaIO.observe(c); });
+  }
+
   /* ---------------- pré-diagnóstico ---------------- */
   var SEG = {
     saude: { label: 'Clínica ou consultório', quem: 'paciente', conv: 'consulta', prog: 'Saúde 360', progId: 'saude-360', unid: 'conversa' },
@@ -1112,6 +1180,30 @@ p,blockquote{text-wrap:pretty}
     send: document.getElementById('dx-send'), reset: document.getElementById('dx-reset')
   };
   var answers = {};
+
+  /* celular: barra fixa com o progresso enquanto as perguntas estão na tela e o resultado não */
+  var mini = document.getElementById('dx-mini'), miniT = document.getElementById('dx-mini-t'), miniFill = document.getElementById('dx-mini-fill');
+  var dxOut = document.getElementById('dx-out');
+  var mq = window.matchMedia ? window.matchMedia('(max-width: 980px)') : null;
+  var inView = { form: false, out: false };
+  function miniSync() {
+    mini.hidden = !(mq.matches && inView.form && !inView.out);
+  }
+  if (mini && dxOut && mq && 'IntersectionObserver' in window) {
+    var dxIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { inView[e.target === form ? 'form' : 'out'] = e.isIntersecting; });
+      miniSync();
+    });
+    dxIO.observe(form);
+    dxIO.observe(dxOut);
+    if (mq.addEventListener) mq.addEventListener('change', miniSync); else if (mq.addListener) mq.addListener(miniSync);
+  }
+  /* desktop: o painel rola por dentro; esmaece acima do botão enquanto há mais sintomas abaixo */
+  function moreSync() { if (dxOut) dxOut.classList.toggle('has-more', dxOut.scrollHeight - dxOut.clientHeight - dxOut.scrollTop > 2); }
+  if (dxOut) {
+    dxOut.addEventListener('scroll', moreSync, { passive: true });
+    window.addEventListener('resize', moreSync);
+  }
 
   function seg() { var r = form.querySelector('input[name="seg"]:checked'); return r ? r.value : 'saude'; }
   function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
@@ -1198,6 +1290,9 @@ p,blockquote{text-wrap:pretty}
       (picked.length ? (picked.length === 1 ? 'Sintoma: ' : 'Sintomas: ') + picked.map(function (p) { return p.n; }).join('; ') + '.\n' : '') +
       'Quero o diagnóstico completo.';
     els.send.href = waLink(msg);
+    if (miniT) miniT.textContent = done === Q.length ? 'Nota pronta: ' + score + '/100' : done + ' de ' + Q.length + ' respondidas';
+    if (miniFill) miniFill.style.width = Math.round(done / Q.length * 100) + '%';
+    moreSync();
     var live = document.getElementById('dx-live');
     if (live) live.textContent = done + ' de ' + Q.length + ' respondidas.' + (done === Q.length ? ' Nota ' + score + ' de 100.' : '') + (picked.length ? ' Principal sintoma: ' + picked[0].n + '.' : '');
   }
