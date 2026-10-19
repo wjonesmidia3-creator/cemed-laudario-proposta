@@ -15,10 +15,10 @@ Cada pasta tem:
 | 03_Trait_Odontologia | Trait Odontologia | Funil de outubro com Google: 85 conversas no Meta e 1.817 cliques no Google (38 pedidos de rota) | [link](https://app.reportei.com/report/McUrEzknLW0b044OUwxSQgxAUSn7RrrW) |
 | 04_Dreisson | Dreisson Vivo Imóveis | 18 conversas a R$ 16,10 (−27,6%), mas anúncios parados desde 15/10 | [link](https://app.reportei.com/report/js7tXBsJK5aI7N2uNyfuO82epVwFngHz) |
 | 05_Dplacido | D'Plácido | 132 conversas (+65%) a R$ 5,55, mesmo investimento | [link](https://app.reportei.com/report/7aPisjeuvVlfpiIX30AlF7Yf26C5JfaA) |
-| 06_EGO_Odontologia | EGO Odontologia | Alcance +27,8% e visitas ao perfil +53%; conversas 52 → 42. Primeiro relatório no Reportei | [link](https://app.reportei.com/report/VIyfDPYCHhIu1giuzTQBN6HQ52YFKAVP) |
+| 06_EGO_Odontologia | EGO Odontologia | Campanhas ajustadas e zeradas: a tendência é o custo cair daqui para frente. Alcance +27,8% e visitas ao perfil +53% | [link](https://app.reportei.com/report/VIyfDPYCHhIu1giuzTQBN6HQ52YFKAVP) |
 | 07_Instituto_Sanrire | Instituto Sanrire | 55 conversões (antes 21) a R$ 25,59, com 7,5% menos investimento | [link](https://app.reportei.com/report/bG6g16ovGeh0ukR69eelAcTjHHEmX95O) |
 
-Nos relatórios do Reportei da **CEMED**, da **Fiorini** e da **Trait**, foi adicionado um card de análise no topo (volta das campanhas, visão geral do Google e funil do mês, respectivamente).
+Nos relatórios do Reportei da **CEMED**, da **Fiorini**, da **Trait** e da **EGO**, foi adicionado um card de análise no topo (volta das campanhas, visão geral do Google, funil do mês e ajuste das campanhas, respectivamente).
 
 O relatório da **Fiorini** foi refeito sem citar a parada do Google. O novo relatório no Reportei traz só o Meta Ads da semana, e os números gerais do Google entram no card. **Apague manualmente o relatório antigo** no Reportei (ID 6498454, "Relatório Semanal - Fiorini · Início do Google Ads"), porque a integração não permite apagar relatórios.
 
@@ -56,6 +56,7 @@ O relatório da **Trait** foi refeito com o **Google Ads** (conta conectada ao R
 - A saudação usa "Dra. Luciana" (perfil @dralucianadeplacido). Ajustar se o contato for outra pessoa.
 
 **EGO**
+- O material enviado ao cliente foca no ajuste das campanhas (zeradas e reiniciadas) e na tendência de queda do custo por conversa. Uso interno: na semana foram 42 conversas (antes 52), a R$ 44,29 (antes R$ 37,18).
 - Em 16/10 o investimento caiu para R$ 92,36, contra R$ 258 a R$ 355 nos outros dias. Investigar.
 - A campanha GO_OLDADS_TESTEA (92,6% da verba) é otimizada para cliques, não para conversas. Foram só 49 visualizações de página de destino para 2.391 cliques: confirmar para onde o anúncio leva.
 - Genéricos · Mensagens gastou R$ 80,81 sem nenhuma conversa.
