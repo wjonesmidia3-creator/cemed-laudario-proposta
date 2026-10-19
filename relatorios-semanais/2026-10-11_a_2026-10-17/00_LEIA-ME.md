@@ -12,7 +12,7 @@ Cada pasta tem:
 |---|---|---|---|
 | 01_CEMED | CEMED | Volta das campanhas: Meta voltou em 15/10 e trouxe 7 conversas em 3 dias (R$ 232,80) | [link](https://app.reportei.com/report/B8dIG2gO4yhfabn1Kyon8FcSjfD0hX9h) |
 | 02_Fiorini | Fiorini | Visão geral do Google desde o início: 1.035 cliques a R$ 0,72. O Google retoma na segunda (19/10) | [link](https://app.reportei.com/report/pHTc3TochIJz7eZ2UGuNGZx5vpKYx3Gl) |
-| 03_Trait_Odontologia | Trait Odontologia | Funil de outubro: 85 conversas a R$ 21,82 (01 a 17/10). Google Ads começando | [link](https://app.reportei.com/report/mvIhwiaSudDWu6imDvDAxSfnjk4EIkjw) |
+| 03_Trait_Odontologia | Trait Odontologia | Funil de outubro com Google: 85 conversas no Meta e 1.817 cliques no Google (38 pedidos de rota) | [link](https://app.reportei.com/report/McUrEzknLW0b044OUwxSQgxAUSn7RrrW) |
 | 04_Dreisson | Dreisson Vivo Imóveis | 18 conversas a R$ 16,10 (−27,6%), mas anúncios parados desde 15/10 | [link](https://app.reportei.com/report/js7tXBsJK5aI7N2uNyfuO82epVwFngHz) |
 | 05_Dplacido | D'Plácido | 132 conversas (+65%) a R$ 5,55, mesmo investimento | [link](https://app.reportei.com/report/7aPisjeuvVlfpiIX30AlF7Yf26C5JfaA) |
 | 06_EGO_Odontologia | EGO Odontologia | Alcance +27,8% e visitas ao perfil +53%; conversas 52 → 42. Primeiro relatório no Reportei | [link](https://app.reportei.com/report/VIyfDPYCHhIu1giuzTQBN6HQ52YFKAVP) |
@@ -21,6 +21,8 @@ Cada pasta tem:
 Nos relatórios do Reportei da **CEMED**, da **Fiorini** e da **Trait**, foi adicionado um card de análise no topo (volta das campanhas, visão geral do Google e funil do mês, respectivamente).
 
 O relatório da **Fiorini** foi refeito sem citar a parada do Google. O novo relatório no Reportei traz só o Meta Ads da semana, e os números gerais do Google entram no card. **Apague manualmente o relatório antigo** no Reportei (ID 6498454, "Relatório Semanal - Fiorini · Início do Google Ads"), porque a integração não permite apagar relatórios.
+
+O relatório da **Trait** foi refeito com o **Google Ads** (conta conectada ao Reportei em 18/10). O novo relatório no Reportei inclui Meta Ads, Google Ads, Instagram e Google Meu Negócio. **Apague manualmente o relatório antigo** da Trait (ID 6498463, "… Funil do mês e início do Google").
 
 ## Antes de enviar: pontos para a equipe (uso interno)
 
@@ -36,7 +38,9 @@ O relatório da **Fiorini** foi refeito sem citar a parada do Google. O novo rel
 - A integração da página do Facebook está inativa no Reportei desde 27/07.
 
 **Trait**
-- **Conectar a conta do Google Ads ao projeto Trait no Reportei.** Hoje ela não está conectada, então o Google fica fora do funil.
+- Google Ads conectado em 18/10 e incluído no funil. O Google está no ar desde 06/10, com uma única campanha Performance Max ("Campaign #1").
+- **No Google, nenhuma conversão principal está registrando.** Só aparecem ações locais do perfil (rotas e engajamentos). Configurar o clique no WhatsApp e a ligação como conversões principais.
+- O gasto diário do Google caiu de cerca de R$ 81/dia (07 a 10/10) para R$ 67/dia (11 a 17/10). Conferir o orçamento configurado.
 - O Google Meu Negócio só entregou dados até 14/10. Revisar 15 a 17/10 no próximo relatório.
 - 23 anúncios do Meta gastaram R$ 201,89 (25% da semana) sem nenhuma conversa. Vale enxugar os criativos.
 - A campanha "GO_DEPOIMENTOS_MSG_OUTUBRO" registrou só R$ 0,11 na semana. Confirmar se está ativa.
