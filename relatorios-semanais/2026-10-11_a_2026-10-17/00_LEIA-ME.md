@@ -11,14 +11,16 @@ Cada pasta tem:
 | Pasta | Cliente | Destaque da semana | Relatório no Reportei |
 |---|---|---|---|
 | 01_CEMED | CEMED | Volta das campanhas: Meta voltou em 15/10 e trouxe 7 conversas em 3 dias (R$ 232,80) | [link](https://app.reportei.com/report/B8dIG2gO4yhfabn1Kyon8FcSjfD0hX9h) |
-| 02_Fiorini | Fiorini | Início do Google: 1.035 cliques a R$ 0,72. **Precisa de novo saldo para voltar na segunda (19/10)** | [link](https://app.reportei.com/report/toySRemrGuIyaqaJeOPk82vZvYYDopLo) |
+| 02_Fiorini | Fiorini | Visão geral do Google desde o início: 1.035 cliques a R$ 0,72. O Google retoma na segunda (19/10) | [link](https://app.reportei.com/report/pHTc3TochIJz7eZ2UGuNGZx5vpKYx3Gl) |
 | 03_Trait_Odontologia | Trait Odontologia | Funil de outubro: 85 conversas a R$ 21,82 (01 a 17/10). Google Ads começando | [link](https://app.reportei.com/report/mvIhwiaSudDWu6imDvDAxSfnjk4EIkjw) |
 | 04_Dreisson | Dreisson Vivo Imóveis | 18 conversas a R$ 16,10 (−27,6%), mas anúncios parados desde 15/10 | [link](https://app.reportei.com/report/js7tXBsJK5aI7N2uNyfuO82epVwFngHz) |
 | 05_Dplacido | D'Plácido | 132 conversas (+65%) a R$ 5,55, mesmo investimento | [link](https://app.reportei.com/report/7aPisjeuvVlfpiIX30AlF7Yf26C5JfaA) |
 | 06_EGO_Odontologia | EGO Odontologia | Alcance +27,8% e visitas ao perfil +53%; conversas 52 → 42. Primeiro relatório no Reportei | [link](https://app.reportei.com/report/VIyfDPYCHhIu1giuzTQBN6HQ52YFKAVP) |
 | 07_Instituto_Sanrire | Instituto Sanrire | 55 conversões (antes 21) a R$ 25,59, com 7,5% menos investimento | [link](https://app.reportei.com/report/bG6g16ovGeh0ukR69eelAcTjHHEmX95O) |
 
-Nos relatórios do Reportei da **CEMED**, da **Fiorini** e da **Trait**, foi adicionado um card de análise no topo (volta das campanhas, início do Google com o aviso de saldo e funil do mês, respectivamente).
+Nos relatórios do Reportei da **CEMED**, da **Fiorini** e da **Trait**, foi adicionado um card de análise no topo (volta das campanhas, visão geral do Google e funil do mês, respectivamente).
+
+O relatório da **Fiorini** foi refeito sem citar a parada do Google. O novo relatório no Reportei traz só o Meta Ads da semana, e os números gerais do Google entram no card. **Apague manualmente o relatório antigo** no Reportei (ID 6498454, "Relatório Semanal - Fiorini · Início do Google Ads"), porque a integração não permite apagar relatórios.
 
 ## Antes de enviar: pontos para a equipe (uso interno)
 
@@ -28,7 +30,7 @@ Nos relatórios do Reportei da **CEMED**, da **Fiorini** e da **Trait**, foi adi
 - Instagram, Página e Google Meu Negócio não estão conectados ao projeto.
 
 **Fiorini**
-- **Confirmar com o cliente o valor do novo saldo** do Google. Referência: de R$ 75 a R$ 96 por dia nos dias de entrega plena. O Reportei não mostra saldo nem pagamentos.
+- O material enviado ao cliente não cita a parada do Google. Uso interno: ele veiculou até 11/10, e a retomada está prevista para segunda (19/10). Nos dias de entrega plena, a campanha investiu de R$ 75 a R$ 96 por dia.
 - No Google, nenhuma conversão principal está registrando. Na retomada, colocar o clique no WhatsApp e a ligação como conversões principais.
 - No computador foram R$ 132,64 para só 13 cliques (CPC de cerca de R$ 10). Ajustar o lance ou excluir o computador.
 - A integração da página do Facebook está inativa no Reportei desde 27/07.
