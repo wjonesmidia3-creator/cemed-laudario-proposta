@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>{{NOME}} · Plano Black November</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --navy:#00247D; --navy-2:#0A2F95; --navy-dark:#001A5E;
+    --ink:#111C3D; --slate:#47547A; --muted:#8892AB; --sky:#A9C3E6; --sky-2:#DCE6F7;
+    --orange:#E85D1B; --orange-soft:#F6A24E; --orange-bg:#FDF0E8;
+    --green:#1E7E34; --green-bg:#E7F4EA; --red:#C2361B; --red-bg:#FBEAE6;
+    --line:#E2E7F1; --soft:#EEF3FB;
+  }
+  @page{size:A4;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  body{font-family:'Inter',sans-serif;color:var(--slate);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  b,strong{color:var(--ink);font-weight:600}
+  .page{width:794px;height:1123px;position:relative;overflow:hidden;background:#fff;page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto;break-after:auto}
+
+  /* ---------- marca ---------- */
+  .logo{font-family:'Poppins';font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1}
+  .logo i{font-style:normal;color:var(--orange)}
+  .logo.dark{color:var(--navy)}
+
+  /* ---------- cabeçalho / rodapé ---------- */
+  .hdr{height:66px;padding:0 40px;display:flex;justify-content:space-between;align-items:center;color:#fff;
+       background:radial-gradient(circle at 92% 0%,rgba(96,135,235,.55),transparent 38%),linear-gradient(90deg,var(--navy) 0%,var(--navy-2) 100%)}
+  .hdr .logo{font-size:17px}
+  .hdr .cli{font-size:7.5px;letter-spacing:.3em;color:var(--sky);text-transform:uppercase;margin-top:6px;font-weight:600}
+  .hdr .r{text-align:right}
+  .hdr .r b{display:block;color:#fff;font-family:'Poppins';font-weight:600;font-size:12px}
+  .hdr .r span{font-size:9.5px;color:var(--sky)}
+  .ftr{position:absolute;left:40px;right:40px;bottom:20px;border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;font-size:8.5px;color:var(--muted)}
+  .ftr .logo{font-size:9.5px;display:inline}
+  .ftr .pg{font-weight:600;color:var(--muted)}
+
+  .body{padding:24px 40px 0}
+  .eyebrow{font-size:9px;font-weight:700;letter-spacing:.26em;color:var(--orange);text-transform:uppercase}
+  .eyebrow .n{color:var(--muted);margin-right:10px}
+  h2{font-family:'Poppins';font-weight:800;font-size:27px;line-height:1.15;color:var(--navy);letter-spacing:-.015em;margin:7px 0 7px}
+  .acc{color:var(--orange)}
+  .lead{font-size:12.5px;line-height:1.6;max-width:640px}
+  .lbl{font-size:8px;font-weight:700;letter-spacing:.2em;color:var(--orange);text-transform:uppercase}
+  .chip{display:inline-block;font-size:7px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:3px 8px;border-radius:20px;background:var(--soft);color:var(--navy)}
+  .chip.or{background:var(--orange-bg);color:var(--orange)}
+  .chip.wh{background:rgba(255,255,255,.14);color:#fff}
+  .var{display:inline;background:var(--soft);color:var(--navy);font-weight:600;border-radius:4px;padding:0 4px}
+  .mt8{margin-top:8px}.mt12{margin-top:12px}.mt14{margin-top:14px}.mt16{margin-top:16px}.mt18{margin-top:18px}.mt20{margin-top:20px}
+
+  .card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:16px 18px;position:relative}
+  .card.tab::before{content:'';position:absolute;top:-1px;left:18px;width:24px;height:4px;background:var(--orange);border-radius:0 0 3px 3px}
+  .card h3{font-family:'Poppins';font-weight:700;font-size:13.5px;line-height:1.3;color:var(--navy);margin:5px 0 5px}
+  .card p{font-size:10.5px;line-height:1.55}
+  .ncard{border-radius:14px;padding:18px 20px;color:#fff;position:relative;overflow:hidden;
+         background:radial-gradient(circle at 88% 8%,rgba(100,140,240,.5),transparent 42%),linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%)}
+  .ncard h3{font-family:'Poppins';font-weight:700;font-size:17px;line-height:1.25;margin:6px 0 6px;color:#fff}
+  .ncard p{font-size:10.5px;line-height:1.55;color:var(--sky-2)}
+  .ncard .lbl{color:var(--orange-soft)}
+  .ncard b{color:#fff}
+  .ocard{border-radius:14px;padding:18px 20px;color:#fff;background:radial-gradient(circle at 90% 0%,rgba(255,190,120,.45),transparent 45%),linear-gradient(135deg,#E85D1B 0%,#F07A2E 100%)}
+  .ocard .lbl{color:#FFE2CC}
+  .ocard h3{font-family:'Poppins';font-weight:700;font-size:16px;margin:5px 0 5px;color:#fff}
+  .ocard p{font-size:10.5px;line-height:1.55;color:#FFF1E7}
+  .ocard b{color:#fff}
+
+  .leitura{background:var(--orange-bg);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:13px 20px}
+  .leitura p{font-size:11px;line-height:1.6;color:var(--ink);margin-top:5px}
+  .leitura p b{font-weight:700}
+
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+
+  /* ---------- capa ---------- */
+  .cover{color:#fff;background:radial-gradient(circle at 86% 7%,rgba(110,150,245,.55),transparent 30%),linear-gradient(165deg,#0A2C93 0%,var(--navy) 38%,var(--navy-dark) 100%)}
+  .cover .logo{position:absolute;left:48px;top:58px;font-size:22px}
+  .cover .top{position:absolute;left:48px;right:48px;top:200px}
+  .cover .ey{display:flex;align-items:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:.28em;color:var(--orange-soft);text-transform:uppercase}
+  .cover .ey::before{content:'';width:28px;height:2px;background:var(--orange-soft)}
+  .cover h1{font-family:'Poppins';font-weight:800;font-size:47px;line-height:1.08;letter-spacing:-.02em;margin-top:20px}
+  .cover h1 .o{color:var(--orange-soft)}
+  .cover h1 .l2{color:var(--sky);display:block}
+  .cover .sub{font-size:14px;line-height:1.6;color:var(--sky-2);max-width:540px;margin-top:20px}
+  .cover .sub b{color:#fff}
+  .pills{display:flex;gap:10px;margin-top:24px}
+  .pill{font-size:10px;font-weight:700;padding:9px 16px;border-radius:30px;border:1px solid rgba(169,195,230,.45);color:#fff}
+  .pill.f{background:var(--orange);border-color:var(--orange)}
+
+  .cal-wrap{position:absolute;left:48px;right:48px;top:540px;display:flex;justify-content:space-between;align-items:flex-start}
+  .cal-legend{width:300px;padding-top:24px}
+  .cal-legend .lbl{color:var(--orange-soft)}
+  .cal-legend h4{font-family:'Poppins';font-weight:700;font-size:17px;line-height:1.3;margin:6px 0 16px}
+  .leg{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+  .leg .d{font-family:'Poppins';font-weight:700;font-size:13px;width:44px;color:#fff;flex:none}
+  .leg .t{font-size:10.5px;line-height:1.45;color:var(--sky-2)}
+  .leg .dot{width:9px;height:9px;border-radius:3px;margin-top:4px;flex:none}
+  .cal{width:330px}
+  .cal .mh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+  .cal .mh b{font-family:'Poppins';font-weight:800;font-size:18px;color:#fff;letter-spacing:.02em}
+  .cal .mh span{font-size:9px;letter-spacing:.24em;color:var(--sky);font-weight:600}
+  .cal .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .cal .wd{font-size:8px;font-weight:700;letter-spacing:.14em;color:var(--sky);text-align:center;padding-bottom:2px}
+  .cal .day{height:40px;border-radius:8px;background:rgba(255,255,255,.10);display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:'Poppins';font-weight:600;font-size:13px;color:var(--sky-2);position:relative}
+  .cal .day small{font-family:'Inter';font-size:6.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:1px}
+  .cal .day.on{background:rgba(255,255,255,.13);color:#fff}
+  .cal .day.bw{background:rgba(255,255,255,.13);box-shadow:inset 0 0 0 1.5px var(--orange);color:#fff}
+  .cal .day.bf{background:var(--orange);color:#fff;font-weight:800}
+  .cal .day.st{background:#fff;color:var(--navy);font-weight:800}
+  .cal .day.end{background:rgba(255,255,255,.13);box-shadow:inset 0 0 0 2px var(--orange-soft);color:#fff}
+  .cal .day.ml{background:var(--orange-soft);color:var(--navy-dark);font-weight:800}
+  .cal .day.hol{background:rgba(255,255,255,.04);color:rgba(220,230,247,.55);box-shadow:inset 0 0 0 1px rgba(169,195,230,.35)}
+
+  .hl{position:absolute;left:48px;right:48px;top:852px;border:1px solid rgba(169,195,230,.28);border-radius:16px;background:rgba(255,255,255,.05);padding:22px 28px;display:flex;gap:30px;align-items:center}
+  .hl .big{text-align:center;width:110px;flex:none}
+  .hl .big b{display:block;font-family:'Poppins';font-weight:900;font-size:60px;line-height:1;color:#fff}
+  .hl .big span{font-size:9px;font-weight:700;letter-spacing:.24em;color:var(--orange-soft)}
+  .hl .lbl{color:var(--orange-soft)}
+  .hl h4{font-family:'Poppins';font-weight:700;font-size:17px;line-height:1.3;margin:6px 0 6px;color:#fff}
+  .hl h4 .o{color:var(--orange-soft)}
+  .hl p{font-size:10.5px;line-height:1.55;color:var(--sky-2)}
+  .strip{position:absolute;left:0;right:0;bottom:0;height:112px;border-top:1px solid rgba(169,195,230,.22);display:grid;grid-template-columns:repeat(4,1fr)}
+  .strip div{padding:24px 22px 0;border-right:1px solid rgba(169,195,230,.22)}
+  .strip div:last-child{border-right:0}
+  .strip b{display:block;font-family:'Poppins';font-weight:800;font-size:23px;color:#fff;line-height:1.1}
+  .strip b .o{color:var(--orange-soft)}
+  .strip span.c{display:block;font-size:9px;line-height:1.45;color:var(--sky-2);margin-top:6px}
+
+  /* ---------- p2 linha do tempo ---------- */
+  .reason .num{font-family:'Poppins';font-weight:800;font-size:22px;color:var(--orange);line-height:1}
+  .reason{display:flex;gap:14px;padding:20px 20px}
+  .reason .num{width:30px;flex:none;padding-top:4px}
+  .tl{position:relative;margin-left:86px;margin-right:6px}
+  .tl-row{display:flex;align-items:center;height:36px;position:relative}
+  .tl-row .nm{position:absolute;left:-86px;width:80px;font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--navy);text-transform:uppercase}
+  .tl-track{position:relative;height:100%;width:100%}
+  .seg{position:absolute;top:11px;height:14px;border-radius:4px;font-size:7.5px;font-weight:700;letter-spacing:.06em;color:#fff;display:flex;align-items:center;padding-left:6px;white-space:nowrap;overflow:hidden}
+  .seg.prod{background:#C9D6EE;color:var(--navy)}
+  .seg.nv{background:var(--navy)}
+  .seg.mid{background:#3459BF}
+  .seg.or{background:var(--orange)}
+  .seg.thick{top:8px;height:20px}
+  .mk{position:absolute;top:10px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--orange);color:#fff;font-size:8px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:'Poppins'}
+  .phase-h{position:relative;height:22px}
+  .phase-h div{position:absolute;top:0;font-size:7.5px;font-weight:700;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line);padding-left:5px;height:22px;white-space:nowrap}
+  .axis{position:relative;height:30px;border-top:1px solid var(--line);margin-top:4px}
+  .axis span{position:absolute;top:5px;font-size:8px;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
+  .axis span.h{color:var(--muted);font-style:italic}
+  .vline{position:absolute;top:-6px;bottom:24px;border-left:1.5px dashed var(--orange)}
+  .vlab{position:absolute;top:-20px;font-size:8.5px;font-weight:700;color:var(--orange);transform:translateX(-50%);white-space:nowrap}
+  .tl-legend{display:flex;gap:18px;font-size:8.5px;color:var(--slate);margin-top:4px}
+  .tl-legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+  /* ---------- p3 tratamento ---------- */
+  .opt .rows{margin-top:12px;border-top:1px solid rgba(169,195,230,.25)}
+  .opt .rw{display:flex;padding:7px 0;border-bottom:1px solid rgba(169,195,230,.2);font-size:9.5px}
+  .opt .rw span{width:70px;flex:none;font-size:7.5px;font-weight:700;letter-spacing:.16em;color:var(--orange-soft);text-transform:uppercase;padding-top:2px}
+  .opt .rw em{font-style:normal;color:#fff}
+  .opt .note{font-size:8.5px;color:var(--sky);margin-top:9px;line-height:1.45}
+  .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .steps3 div{background:rgba(255,255,255,.14);border-radius:9px;padding:10px 12px;font-size:9.5px;line-height:1.45;color:#fff}
+  .steps3 b{display:block;font-family:'Poppins';font-weight:800;font-size:15px;color:#fff;margin-bottom:2px}
+  .form{border:1.5px solid var(--navy);border-radius:14px;overflow:hidden}
+  .form .fh{background:var(--navy);color:#fff;padding:11px 20px;display:flex;justify-content:space-between;align-items:center}
+  .form .fh b{color:#fff;font-family:'Poppins';font-weight:700;font-size:13px}
+  .form .fh span{font-size:8.5px;font-weight:700;letter-spacing:.18em;color:var(--orange-soft);text-transform:uppercase}
+  .form .fb{padding:6px 20px 12px}
+  .fl{display:flex;align-items:flex-end;gap:12px;padding:10px 0 6px;border-bottom:1px solid var(--line);font-size:10.5px}
+  .fl:last-child{border-bottom:0}
+  .fl .k{width:250px;flex:none;color:var(--ink);font-weight:600}
+  .fl .k small{display:block;font-weight:400;color:var(--muted);font-size:8.5px;margin-top:1px}
+  .fl .v{flex:1;border-bottom:1px dashed #B9C3D8;height:16px}
+  .fl .opts{flex:1;display:flex;gap:16px;font-size:10px;color:var(--slate)}
+  .box{display:inline-block;width:11px;height:11px;border:1.5px solid var(--navy);border-radius:3px;margin-right:6px;vertical-align:-2px}
+
+  /* ---------- p4 como funciona ---------- */
+  .front .hd{display:flex;align-items:center;gap:10px}
+  .front .ic{width:34px;height:34px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none}
+  .front ul{list-style:none;margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+  .front li{font-size:9.5px;line-height:1.4;padding:3px 0 3px 14px;position:relative;color:var(--ink)}
+  .front li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:2px;background:var(--orange)}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:14px}
+  .flow .st{position:relative;padding:14px 10px 12px 20px;color:#fff;font-size:10px;line-height:1.3;min-height:66px;display:flex;flex-direction:column;justify-content:center;
+            clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%,14px 50%)}
+  .flow .st:first-child{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);padding-left:14px;border-radius:8px 0 0 8px}
+  .flow .st b{color:#fff;font-family:'Poppins';font-weight:700;font-size:11.5px;display:block}
+  .flow .st span{font-size:8.5px;opacity:.85;margin-top:2px}
+  .who{display:grid;grid-template-columns:1fr 4fr;gap:6px;margin-top:8px}
+  .who div{border-top:3px solid;padding-top:5px;font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+  .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .rule{display:flex;gap:10px;align-items:flex-start}
+  .rule .n{font-family:'Poppins';font-weight:800;font-size:20px;color:var(--orange);line-height:1;width:26px;flex:none}
+  .rule p{font-size:10px;line-height:1.5}
+
+  /* ---------- p5 roteiros ---------- */
+  .rt{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .rt .side{width:74px;flex:none;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+            background:radial-gradient(circle at 50% 0%,rgba(100,140,240,.55),transparent 60%),linear-gradient(180deg,var(--navy-2),var(--navy-dark))}
+  .rt .side.or{background:radial-gradient(circle at 50% 0%,rgba(255,190,120,.6),transparent 60%),linear-gradient(180deg,#F07A2E,#D9541A)}
+  .rt .side .pl{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center}
+  .rt .side b{font-family:'Poppins';font-weight:800;font-size:17px;color:#fff;line-height:1}
+  .rt .side span{font-size:6.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-align:center;line-height:1.3;padding:0 4px}
+  .rt .main{padding:11px 16px 11px;flex:1}
+  .rt .tt{display:flex;align-items:center;gap:8px}
+  .rt h3{font-family:'Poppins';font-weight:700;font-size:12.5px;color:var(--navy);margin:4px 0 6px}
+  .rt .cols{display:grid;grid-template-columns:1fr 1.25fr 0.9fr;gap:12px}
+  .rt .cols div{font-size:9.2px;line-height:1.45;color:var(--ink)}
+  .rt .cols i{display:block;font-style:normal;font-size:7px;font-weight:700;letter-spacing:.16em;color:var(--orange);text-transform:uppercase;margin-bottom:2px}
+  .rt .vers{margin-top:7px;padding-top:6px;border-top:1px dashed var(--line);display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:8.8px;line-height:1.4;color:var(--slate)}
+  .rt .vers b{font-weight:700;color:var(--navy)}
+  .tips{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .tip{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:9px;line-height:1.45;color:var(--ink)}
+  .tip b{display:block;font-family:'Poppins';font-weight:700;font-size:10px;color:var(--navy);margin-bottom:2px}
+
+  /* ---------- p6 mensagens ---------- */
+  .msg{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff}
+  .msg .mh{display:flex;justify-content:space-between;align-items:center}
+  .msg .mh b{font-family:'Poppins';font-weight:700;font-size:12px;color:var(--navy)}
+  .msg .dt{font-size:8px;font-weight:700;letter-spacing:.12em;color:#fff;background:var(--navy);padding:3px 8px;border-radius:20px}
+  .msg .dt.or{background:var(--orange)}
+  .bubble{margin-top:9px;background:#E9F7EF;border-radius:4px 12px 12px 12px;padding:10px 12px;font-size:9.8px;line-height:1.55;color:#14301F;position:relative}
+  .msg .why{font-size:8.5px;color:var(--muted);margin-top:7px;line-height:1.4}
+  .rulesbox{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .rb{border-radius:12px;padding:13px 15px}
+  .rb.ok{background:var(--green-bg)}
+  .rb.mid{background:var(--soft)}
+  .rb.no{background:var(--red-bg)}
+  .rb .t{display:flex;align-items:center;gap:7px;font-family:'Poppins';font-weight:700;font-size:11.5px}
+  .rb.ok .t{color:var(--green)}.rb.mid .t{color:var(--navy)}.rb.no .t{color:var(--red)}
+  .rb ul{list-style:none;margin-top:7px}
+  .rb li{font-size:9.3px;line-height:1.45;padding:3px 0 3px 12px;position:relative;color:var(--ink)}
+  .rb li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%}
+  .rb.ok li::before{background:var(--green)}.rb.mid li::before{background:var(--navy)}.rb.no li::before{background:var(--red)}
+  .ico{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+
+  /* ---------- p7 produção ---------- */
+  .sched{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .srow{display:grid;grid-template-columns:118px 1fr 104px;align-items:center;border-bottom:1px solid var(--line);min-height:46px}
+  .srow:last-child{border-bottom:0}
+  .srow .dd{padding:8px 16px;font-family:'Poppins';font-weight:700;font-size:12px;color:var(--navy);line-height:1.2}
+  .srow .dd small{display:block;font-family:'Inter';font-weight:600;font-size:8px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+  .srow .tx{padding:8px 10px;font-size:10px;line-height:1.45;color:var(--ink)}
+  .srow .tx span{color:var(--slate);display:block;font-size:9px}
+  .srow .ow{padding:8px 14px;text-align:right}
+  .own{display:inline-block;font-size:7px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;border-radius:20px;white-space:nowrap}
+  .own.c{background:var(--orange-bg);color:var(--orange)}
+  .own.g{background:var(--soft);color:var(--navy)}
+  .own.a{background:var(--navy);color:#fff}
+  .srow.live{background:linear-gradient(90deg,#FFF6F0,#fff)}
+  .srow.live .dd{color:var(--orange)}
+  .chk li{list-style:none;display:flex;gap:9px;align-items:flex-start;font-size:10px;line-height:1.45;color:var(--ink);padding:6px 0;border-bottom:1px solid var(--line)}
+  .chk li:last-child{border-bottom:0}
+  .kpi{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+  .kpi:last-child{border-bottom:0}
+  .kpi b{font-family:'Poppins';font-weight:800;font-size:16px;color:var(--orange);width:24px}
+  .kpi div{font-size:10px;line-height:1.4;color:var(--ink)}
+  .kpi div span{display:block;color:var(--slate);font-size:9px}
+  .nx .lbl{margin-bottom:2px}
+  .nx h3{margin-top:4px}
+
+  /* ---------- quem faz o quê / lista ---------- */
+  .duo{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .duo > div{padding:13px 18px}
+  .duo > div + div{border-left:1px solid var(--line);background:#FFFAF6}
+  .duo .wh{display:flex;align-items:center;gap:8px;font-family:'Poppins';font-weight:700;font-size:12px;color:var(--navy);margin-bottom:6px}
+  .duo .wh i{width:9px;height:9px;border-radius:3px;display:inline-block}
+  .duo ul{list-style:none;columns:2;column-gap:14px}
+  .duo li{font-size:9.3px;line-height:1.4;padding:3px 0;color:var(--ink);break-inside:avoid}
+  .lista{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .lista > div{padding:12px 16px}
+  .lista > div + div{border-left:1px solid var(--line)}
+  .lista h4{font-family:'Poppins';font-weight:700;font-size:11.5px;color:var(--navy);margin:3px 0 4px}
+  .lista p{font-size:9.3px;line-height:1.5;color:var(--slate)}
+  .src{font-size:7.8px;color:var(--muted);line-height:1.5;margin-top:10px}
+</style>
+</head>
+<body>
+
+<!-- ======================= 01 · CAPA ======================= -->
+<section class="page cover">
+  <div class="logo">Grupo Opera<i>.</i></div>
+  <div class="top">
+    <div class="ey">Plano de campanha · {{NOME_UP}}</div>
+    <h1>Black <span class="o">November</span>.<span class="l2">Mês de fechar tratamento.</span></h1>
+    <p class="sub">Plano de novembro {{DA}}: <b>por que a data funciona</b>, qual tratamento anunciar, como <b>reabrir quem já pediu orçamento</b> e os <b>roteiros prontos</b> para gravar.</p>
+    <div class="pills">
+      <span class="pill">Produção · 21 a 31/10</span>
+      <span class="pill f">Campanha no ar · 01 a 30/11</span>
+    </div>
+  </div>
+
+  <div class="cal-wrap">
+    <div class="cal-legend">
+      <div class="lbl">Um mês, não um dia</div>
+      <h4>Novembro inteiro de campanha, com a Black Friday como reta final.</h4>
+      <div class="leg"><span class="dot" style="background:#fff"></span><span class="d">01/11</span><span class="t">Anúncios no ar, com a comunicação repaginada para Black November</span></div>
+      <div class="leg"><span class="dot" style="background:var(--orange-soft)"></span><span class="d">03/11</span><span class="t">1º disparo do mailing para quem já pediu orçamento</span></div>
+      <div class="leg"><span class="dot" style="background:var(--orange)"></span><span class="d">27/11</span><span class="t">Black Friday. A semana dela (contorno laranja) é a reta final, com mais verba</span></div>
+      <div class="leg"><span class="dot" style="box-shadow:inset 0 0 0 2px var(--orange-soft)"></span><span class="d">30/11</span><span class="t">Encerramento da condição de novembro</span></div>
+    </div>
+    <div class="cal">
+      <div class="mh"><b>NOVEMBRO</b><span>2026</span></div>
+      <div class="grid">
+        <div class="wd">D</div><div class="wd">S</div><div class="wd">T</div><div class="wd">Q</div><div class="wd">Q</div><div class="wd">S</div><div class="wd">S</div>
+        <div class="day st">01<small>no ar</small></div><div class="day hol">02<small>feriado</small></div><div class="day ml">03<small>mailing</small></div><div class="day on">04</div><div class="day on">05</div><div class="day on">06</div><div class="day on">07</div>
+        <div class="day on">08</div><div class="day on">09</div><div class="day on">10</div><div class="day on">11</div><div class="day on">12</div><div class="day on">13</div><div class="day on">14</div>
+        <div class="day on">15</div><div class="day on">16</div><div class="day on">17</div><div class="day on">18</div><div class="day on">19</div><div class="day hol">20<small>feriado</small></div><div class="day on">21</div>
+        <div class="day on">22</div><div class="day bw">23</div><div class="day bw">24</div><div class="day bw">25</div><div class="day bw">26</div><div class="day bf">27<small>black</small></div><div class="day bw">28</div>
+        <div class="day bw">29</div><div class="day end">30<small>fim</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hl">
+    <div class="big"><b>30</b><span>DIAS</span></div>
+    <div>
+      <div class="lbl">A ideia em uma frase</div>
+      <h4>Começar por <span class="o">quem já quis fechar</span> e usar os anúncios para trazer <span class="o">gente nova</span> o mês inteiro.</h4>
+      <p>O mailing reabre os orçamentos que ficaram parados. Os anúncios, a partir de 01/11, repaginam a campanha do tratamento escolhido com a cara de Black November.</p>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div><b>01<span class="o">/11</span></b><span class="c">início dos anúncios, com os criativos repaginados para o tema</span></div>
+    <div><b>10 <span class="o">dias</span></b><span class="c">de produção: roteiros, gravação, criativos e mensagens</span></div>
+    <div><b>3 <span class="o">frentes</span></b><span class="c">mailing, anúncios e conteúdo trabalhando juntos</span></div>
+    <div><b>1 <span class="o">decisão</span></b><span class="c">{{DA_CLINICA}}: qual tratamento entra na campanha</span></div>
+  </div>
+</section>
+
+<!-- ======================= 02 · POR QUE NOVEMBRO ======================= -->
+<section class="page">
+  <header class="hdr">
+    <div><div class="logo">Grupo Opera<i>.</i></div><div class="cli">{{NOME_UP}}</div></div>
+    <div class="r"><b>Plano Black November</b><span>Por que novembro</span></div>
+  </header>
+  <div class="body">
+    <div class="eyebrow"><span class="n">01</span>A data</div>
+    <h2>Por que <span class="acc">novembro</span></h2>
+    <p class="lead">Tratamento de valor alto não se decide em um dia. Por isso a proposta é <b>Black November</b>: o mês inteiro de campanha, aproveitando o clima de compra da Black Friday <b>sem depender de uma data só</b>.</p>
+
+    <div class="g2 mt20">
+      <div class="card tab reason"><div class="num">1</div><div><h3>O paciente já está em modo compra</h3><p>A Black Friday (27/11) faz o mês inteiro girar em torno de oportunidade. Quem vem adiando o tratamento ganha <b>um motivo para decidir agora</b>.</p></div></div>
+      <div class="card tab reason"><div class="num">2</div><div><h3>Tem 13º salário entrando</h3><p>A 1ª parcela do 13º sai até <b>30/11</b> e a 2ª até <b>20/12</b>. É dinheiro extra para dar a entrada ou encaixar o parcelamento de um tratamento maior.</p></div></div>
+      <div class="card tab reason"><div class="num">3</div><div><h3>Começar ainda em 2026</h3><p>Quem decide em novembro faz avaliação e planejamento antes das festas e <b>entra no ano novo com o tratamento em andamento</b>.</p></div></div>
+      <div class="card tab reason"><div class="num">4</div><div><h3>Um mês, não um dia</h3><p>Até fechar existem etapas: conversa, avaliação, planejamento e decisão. Trinta dias dão tempo para isso e <b>espalham a agenda</b>, sem pico em um único dia.</p></div></div>
+    </div>
+
+    <div class="card mt20" style="padding:18px 20px 14px">
+      <h3 style="margin:0">O mês na prática</h3>
+      <p style="font-size:9.5px;color:var(--muted);margin-bottom:12px">Produção em outubro e três fases em novembro, de 21/10 a 30/11</p>
+      <div class="tl">
+        <div class="phase-h">
+          <div style="left:0%">Outubro</div>
+          <div style="left:26.83%">Fase 1 · Reabrir</div>
+          <div style="left:60.98%">Fase 2 · Provar</div>
+          <div style="left:80.49%">Fase 3 · Fechar</div>
+        </div>
+        <div style="position:relative">
+          <div class="vline" style="left:91.46%;top:-2px;bottom:-4px"></div>
+          <div class="tl-row"><span class="nm">Produção</span><div class="tl-track"><div class="seg prod" style="left:0;width:26.3%">roteiros · gravação · criativos</div></div></div>
+          <div class="tl-row"><span class="nm">Anúncios</span><div class="tl-track"><div class="seg nv" style="left:26.83%;width:53.2%">público novo + remarketing</div><div class="seg or thick" style="left:80.49%;width:19.51%">+ verba</div></div></div>
+          <div class="tl-row"><span class="nm">Mailing</span><div class="tl-track"><div style="position:absolute;left:28.05%;right:1.22%;top:17px;border-top:1px dashed #C9D6EE"></div><div class="mk" style="left:32.93%">1</div><div class="mk" style="left:54.88%">2</div><div class="mk" style="left:84.15%">3</div><div class="mk" style="left:98.78%">4</div></div></div>
+          <div class="tl-row"><span class="nm">Conteúdo</span><div class="tl-track"><div class="seg nv" style="left:26.83%;width:33.6%">abertura · "você adiou?"</div><div class="seg mid" style="left:60.98%;width:19%">histórias · dúvidas</div><div class="seg or" style="left:80.49%;width:19.51%">últimos dias</div></div></div>
+        </div>
+        <div class="axis">
+          <span style="left:1.22%">21/10</span><span style="left:28.05%">01/11</span><span style="left:45.12%">08/11</span><span style="left:62.2%">15/11</span><span style="left:74.39%" class="h">20 feriado</span><span style="left:91.46%;color:var(--orange);font-weight:700">27 · Black Friday</span>
+        </div>
+      </div>
+      <div class="g3" style="margin-top:4px;border-top:1px solid var(--line);padding-top:12px">
+        <div><div class="lbl">Fase 1 · 01 a 14/11</div><h3 style="font-size:12px;margin:3px 0 3px">Reabrir</h3><p style="font-size:9.5px">Mailing para os orçamentos parados e anúncios repaginados. Meta: conversa virar avaliação.</p></div>
+        <div><div class="lbl">Fase 2 · 15 a 22/11</div><h3 style="font-size:12px;margin:3px 0 3px">Provar</h3><p style="font-size:9.5px">Histórias reais e dúvidas respondidas. Remarketing para quem conversou e não agendou.</p></div>
+        <div><div class="lbl">Fase 3 · 23 a 30/11</div><h3 style="font-size:12px;margin:3px 0 3px">Fechar</h3><p style="font-size:9.5px">Semana da Black Friday: prazo final da condição, mais verba e último disparo.</p></div>
+      </div>
+    </div>
+
+    <div class="leitura mt20">
+      <div class="lbl">Leitura</div>
+      <p>Na odontologia, o anúncio fala de <b>momento e oportunidade</b> ("novembro é o mês de decidir"). A condição especial (valor, parcelamento, bônus) é apresentada <b>na conversa e na consulta, nunca no anúncio</b>. As regras estão na página 06.</p>
+    </div>
+  </div>
+  <footer class="ftr"><div><span class="logo dark">Grupo Opera<i>.</i></span> · Plano Black November {{NOME}}</div><div class="pg">02</div></footer>
+</section>
+
+<!-- ======================= 03 · TRATAMENTO ======================= -->
+<section class="page">
+  <header class="hdr">
+    <div><div class="logo">Grupo Opera<i>.</i></div><div class="cli">{{NOME_UP}}</div></div>
+    <div class="r"><b>Plano Black November</b><span>Qual tratamento</span></div>
+  </header>
+  <div class="body">
+    <div class="eyebrow"><span class="n">02</span>O tratamento</div>
+    <h2>Qual tratamento <span class="acc">entra na campanha</span></h2>
+    <p class="lead"><b>A escolha é {{DA_CLINICA}}.</b> Nossa recomendação é olhar para o <b>ticket médio</b>: em tratamento de valor alto, poucos fechamentos já pagam a campanha do mês inteiro.</p>
+
+    <div class="g2 mt16">
+      <div class="ncard opt">
+        <span class="chip wh">Recomendado · ticket alto</span>
+        <h3>Protocolo e implante</h3>
+        <p>Para quem perdeu dentes ou usa prótese móvel e quer voltar a mastigar, falar e sorrir com segurança.</p>
+        <div class="rows">
+          <div class="rw"><span>Para quem</span><em>adultos 45+, quem usa prótese ou dentadura</em></div>
+          <div class="rw"><span>Gancho</span><em>dentes fixos, segurança, qualidade de vida</em></div>
+          <div class="rw"><span>Decisão</span><em>emocional, costuma envolver a família</em></div>
+        </div>
+      </div>
+      <div class="ncard opt">
+        <span class="chip wh">Recomendado · ticket alto</span>
+        <h3>Invisalign</h3>
+        <p>Para quem quer alinhar os dentes de forma discreta, sem aparelho fixo aparente.</p>
+        <div class="rows">
+          <div class="rw"><span>Para quem</span><em>adultos 25 a 45, foco em estética e rotina</em></div>
+          <div class="rw"><span>Gancho</span><em>discrição, praticidade, autoestima</em></div>
+          <div class="rw"><span>Decisão</span><em>planejada, valoriza bem o parcelamento</em></div>
+        </div>
+        <div class="note">Usar o nome Invisalign só se a clínica for credenciada. Se não for, a campanha fala em "alinhadores transparentes".</div>
+      </div>
+    </div>
+
+    <div class="ocard mt14">
+      <div class="lbl">+ Somar à campanha</div>
+      <h3>O tratamento com mais orçamentos parados</h3>
+      <p>Além do tratamento escolhido, entra o serviço que <b>mais gerou contato e pedido de orçamento sem fechamento</b>. Essas pessoas já levantaram a mão: é a venda mais rápida do mês.</p>
+      <div class="steps3">
+        <div><b>1</b>Puxar do WhatsApp ou CRM as conversas de orçamento dos últimos 12 meses</div>
+        <div><b>2</b>Contar, por tratamento, quantos orçamentos não fecharam</div>
+        <div><b>3</b>O tratamento com mais orçamentos parados vira a lista do 1º disparo, em 03/11</div>
+      </div>
+    </div>
+
+    <div class="eyebrow mt20" style="font-size:8.5px">Como decidir em 3 perguntas</div>
+    <div class="g3 mt8">
+      <div class="card tab"><div class="lbl">Pergunta 01</div><h3>Tem agenda?</h3><p>Qual tratamento a equipe consegue atender <b>a mais</b> em novembro e dezembro?</p></div>
+      <div class="card tab"><div class="lbl">Pergunta 02</div><h3>Tem fila parada?</h3><p>Em qual tratamento há <b>mais orçamentos em aberto</b> e conversas sem retorno?</p></div>
+      <div class="card tab"><div class="lbl">Pergunta 03</div><h3>Tem condição?</h3><p>Que condição a clínica oferece <b>sem desvalorizar</b> o tratamento: parcelamento, bônus, prioridade na agenda?</p></div>
+    </div>
+
+    <div class="form mt16">
+      <div class="fh"><b>Decisão {{DA_CLINICA}}</b><span>Responder até 22/10 (qui)</span></div>
+      <div class="fb">
+        <div class="fl"><div class="k">Tratamento da campanha</div><div class="opts"><span><i class="box"></i>Protocolo e implante</span><span><i class="box"></i>Invisalign / alinhadores</span><span><i class="box"></i>Outro: ________</span></div></div>
+        <div class="fl"><div class="k">Tratamento com mais orçamentos parados<small>vira a lista do mailing</small></div><div class="v"></div></div>
+        <div class="fl"><div class="k">Condição de novembro<small>apresentada só na conversa e na consulta</small></div><div class="v"></div></div>
+        <div class="fl"><div class="k">Responsável pelo WhatsApp em novembro<small>quem responde e agenda as avaliações</small></div><div class="v"></div></div>
+      </div>
+    </div>
+  </div>
+  <footer class="ftr"><div><span class="logo dark">Grupo Opera<i>.</i></span> · Plano Black November {{NOME}}</div><div class="pg">03</div></footer>
+</section>
+
+<!-- ======================= 04 · COMO FUNCIONA ======================= -->
+<section class="page">
+  <header class="hdr">
+    <div><div class="logo">Grupo Opera<i>.</i></div><div class="cli">{{NOME_UP}}</div></div>
+    <div class="r"><b>Plano Black November</b><span>Como funciona</span></div>
+  </header>
+  <div class="body">
+    <div class="eyebrow"><span class="n">03</span>Como funciona</div>
+    <h2>Três frentes, <span class="acc">um objetivo</span>: avaliação agendada</h2>
+    <p class="lead">Mailing e anúncios começam juntos em novembro. Todo contato termina no mesmo lugar: <b>uma conversa no WhatsApp que vira avaliação</b>.</p>
+
+    <div class="g3 mt16">
+      <div class="card tab front">
+        <div class="hd"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg></div><div><div class="lbl">Frente 01 · Mailing</div></div></div>
+        <h3>Reabrir quem já pediu orçamento</h3>
+        <p>Mensagem personalizada para quem conversou com a clínica sobre o tratamento e não fechou. É o contato <b>mais quente e mais barato</b> que existe.</p>
+        <ul><li>Lista dos últimos 12 meses</li><li>4 disparos no mês (página 06)</li><li>Só quem já falou com a clínica</li></ul>
+      </div>
+      <div class="card tab front">
+        <div class="hd"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></div><div><div class="lbl">Frente 02 · Anúncios</div></div></div>
+        <h3>No ar a partir de 01/11</h3>
+        <p>Repaginamos os criativos da campanha do tratamento escolhido com a <b>identidade Black November</b>. Objetivo: conversas no WhatsApp.</p>
+        <ul><li>Público novo + remarketing</li><li>Lista do mailing também vira público</li><li>Mais verba na semana da Black Friday</li></ul>
+      </div>
+      <div class="card tab front">
+        <div class="hd"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></div><div><div class="lbl">Frente 03 · Conteúdo</div></div></div>
+        <h3>Vídeos que provam</h3>
+        <p>Reels e stories com os roteiros da página 05: abertura, história real, dúvida respondida e contagem regressiva.</p>
+        <ul><li>4 a 6 vídeos novos no mês</li><li>Stories com contagem até 30/11</li><li>O melhor vídeo vira anúncio</li></ul>
+      </div>
+    </div>
+
+    <div class="card mt16" style="padding:16px 20px 16px">
+      <h3 style="margin:0">O caminho do paciente</h3>
+      <p style="font-size:9.5px;color:var(--muted)">Do primeiro contato ao tratamento fechado, e quem cuida de cada etapa</p>
+      <div class="flow">
+        <div class="st" style="background:var(--navy)"><b>Anúncio ou mensagem</b><span>a pessoa vê e clica</span></div>
+        <div class="st" style="background:#D9541A"><b>Conversa no WhatsApp</b><span>resposta rápida</span></div>
+        <div class="st" style="background:#E85D1B"><b>Avaliação</b><span>horário oferecido na hora</span></div>
+        <div class="st" style="background:#EE7130"><b>Planejamento</b><span>caso e condição explicados</span></div>
+        <div class="st" style="background:#F38A45"><b>Fechamento</b><span>tratamento começa</span></div>
+      </div>
+      <div class="who">
+        <div style="border-color:var(--navy);color:var(--navy)">Grupo Opera</div>
+        <div style="border-color:var(--orange);color:var(--orange)">{{NOME}}</div>
+      </div>
+      <p style="font-size:10.5px;line-height:1.55;margin-top:12px;color:var(--ink)">A gente traz a conversa. <b>A partir dela, o resultado depende do atendimento {{DA_CLINICA}}</b>: responder rápido, oferecer horário e retomar quem parou de responder.</p>
+    </div>
+
+    <div class="eyebrow mt20" style="font-size:8.5px">Regras de ouro do atendimento em novembro</div>
+    <div class="rules mt12">
+      <div class="rule"><span class="n">1</span><p><b>Responder em minutos, não em horas.</b> Quem chama pelo anúncio está com o assunto na cabeça agora.</p></div>
+      <div class="rule"><span class="n">2</span><p><b>Toda conversa termina com um horário oferecido.</b> "Tenho terça às 10h ou quinta às 16h, qual fica melhor?"</p></div>
+      <div class="rule"><span class="n">3</span><p><b>Quem parou de responder recebe retorno</b> no dia seguinte e de novo três dias depois.</p></div>
+    </div>
+
+    <div class="leitura mt20">
+      <div class="lbl">Repaginar, não recomeçar</div>
+      <p>Os vídeos e artes que já existem da campanha do tratamento escolhido <b>continuam valendo</b>. Trocamos os 3 primeiros segundos, o texto e o final para o tema Black November. Assim a produção cabe em 10 dias e o que já funcionava não se perde.</p>
+    </div>
+
+    <div class="eyebrow mt20" style="font-size:8.5px">Quem faz o quê</div>
+    <div class="duo mt8">
+      <div>
+        <div class="wh"><i style="background:var(--navy)"></i>Grupo Opera</div>
+        <ul><li>Roteiros e mensagens</li><li>Edição dos vídeos</li><li>Criativos Black November</li><li>Públicos e verba</li><li>Anúncios no ar e ajustes</li><li>Números toda semana</li></ul>
+      </div>
+      <div>
+        <div class="wh"><i style="background:var(--orange)"></i>{{NOME}}</div>
+        <ul><li>Tratamento e condição</li><li>Lista do mailing</li><li>Gravação dos vídeos</li><li>Disparos pelo WhatsApp</li><li>Atender, agendar e fechar</li><li>Informar avaliações e fechamentos</li></ul>
+      </div>
+    </div>
+  </div>
+  <footer class="ftr"><div><span class="logo dark">Grupo Opera<i>.</i></span> · Plano Black November {{NOME}}</div><div class="pg">04</div></footer>
+</section>
+
+<!-- ======================= 05 · ROTEIROS ======================= -->
+<section class="page">
+  <header class="hdr">
+    <div><div class="logo">Grupo Opera<i>.</i></div><div class="cli">{{NOME_UP}}</div></div>
+    <div class="r"><b>Plano Black November</b><span>Roteiros</span></div>
+  </header>
+  <div class="body">
+    <div class="eyebrow"><span class="n">04</span>Roteiros</div>
+    <h2>Ideias de roteiro <span class="acc">prontas para gravar</span></h2>
+    <p class="lead">Vídeos de 30 a 60 segundos, no celular e na vertical. Cada roteiro tem versão para <b>protocolo e implante</b> e para <b>Invisalign</b>. Onde aparece <span class="var">[tratamento]</span>, troque pelo nome do tratamento escolhido.</p>
+
+    <div class="rt mt16">
+      <div class="side"><div class="pl"><svg width="9" height="10" viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z" fill="#00247D"/></svg></div><b>01</b><span>Dentista</span></div>
+      <div class="main">
+        <div class="tt"><span class="chip">Fase 1 · Abertura</span><span class="chip or">Anúncio + Reels</span></div>
+        <h3>"Novembro é o mês de decidir"</h3>
+        <div class="cols">
+          <div><i>Gancho · 0 a 3s</i>"Se você está adiando seu tratamento, novembro é o seu mês."</div>
+          <div><i>Meio</i>"Aqui {{NA}}, novembro é o mês de quem quer resolver isso de vez. Quem fizer a avaliação até 30/11 tem uma condição especial, que eu explico pessoalmente."</div>
+          <div><i>Final</i>"Me chama no WhatsApp e garante seu horário de avaliação."</div>
+        </div>
+        <div class="vers"><div><b>Protocolo e implante:</b> "...de quem quer voltar a ter dentes fixos e sorrir sem medo."</div><div><b>Invisalign:</b> "...de quem quer alinhar os dentes sem aparelho aparente."</div></div>
+      </div>
+    </div>
+
+    <div class="rt mt14">
+      <div class="side"><div class="pl"><svg width="9" height="10" viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z" fill="#00247D"/></svg></div><b>02</b><span>Dentista ou<br>recepção</span></div>
+      <div class="main">
+        <div class="tt"><span class="chip">Fase 1 · Reabertura</span><span class="chip or">Remarketing + mailing</span></div>
+        <h3>"Você já pediu orçamento? Esse vídeo é para você"</h3>
+        <div class="cols">
+          <div><i>Gancho · 0 a 3s</i>"Você conversou com a gente sobre <span class="var">[tratamento]</span> e deixou para depois? Normal."</div>
+          <div><i>Meio</i>"Muita gente adia por medo, por dúvida ou por causa do valor. Em novembro abrimos uma agenda para retomar essas conversas, com calma e com uma condição pensada para isso."</div>
+          <div><i>Final</i>"Responde a nossa mensagem ou chama no WhatsApp."</div>
+        </div>
+        <div class="vers"><div><b>Dica:</b> é o vídeo que vai junto do 1º disparo do mailing, em 03/11.</div><div><b>Tom:</b> acolhedor, sem cobrança. A pessoa não pode se sentir julgada por ter adiado.</div></div>
+      </div>
+    </div>
+
+    <div class="rt mt14">
+      <div class="side"><div class="pl"><svg width="9" height="10" viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z" fill="#00247D"/></svg></div><b>03</b><span>Paciente</span></div>
+      <div class="main">
+        <div class="tt"><span class="chip">Fase 2 · Prova</span><span class="chip or">Reels + anúncio</span></div>
+        <h3>História real de paciente</h3>
+        <div class="cols">
+          <div><i>Gancho · 0 a 3s</i>Uma frase forte do próprio paciente sobre como era antes.</div>
+          <div><i>Meio</i>O paciente conta o que incomodava, o medo que tinha, como foi o acolhimento e o que mudou na rotina.</div>
+          <div><i>Final</i>Dentista ou texto na tela: "Sua história pode ser a próxima. Avaliação em novembro."</div>
+        </div>
+        <div class="vers"><div><b>Protocolo e implante:</b> "Eu não sorria nem nas fotos da família."</div><div><b>Invisalign:</b> "Ninguém percebeu que eu estava usando."</div></div>
+      </div>
+    </div>
+
+    <div class="rt mt14">
+      <div class="side"><div class="pl"><svg width="9" height="10" viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z" fill="#00247D"/></svg></div><b>04</b><span>Dentista</span></div>
+      <div class="main">
+        <div class="tt"><span class="chip">Fase 2 · Dúvida</span><span class="chip or">Reels + stories</span></div>
+        <h3>"A dúvida que trava" o tratamento</h3>
+        <div class="cols">
+          <div><i>Gancho · 0 a 3s</i>A dúvida que mais aparece no WhatsApp, lida em voz alta.</div>
+          <div><i>Meio</i>Resposta honesta e simples: "cada caso é um caso, e é exatamente isso que a gente vê na avaliação". Sem prometer resultado ou prazo.</div>
+          <div><i>Final</i>"Manda a sua dúvida no WhatsApp que eu te respondo."</div>
+        </div>
+        <div class="vers"><div><b>Protocolo e implante:</b> "Faz muito tempo que perdi o dente, ainda dá para fazer implante?"</div><div><b>Invisalign:</b> "Alinhador funciona para o meu caso? Quanto tempo leva?"</div></div>
+      </div>
+    </div>
+
+    <div class="rt mt14">
+      <div class="side or"><div class="pl"><svg width="9" height="10" viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z" fill="#E85D1B"/></svg></div><b>05</b><span>Dentista e<br>stories</span></div>
+      <div class="main">
+        <div class="tt"><span class="chip or">Fase 3 · Últimos dias</span><span class="chip">23 a 30/11</span></div>
+        <h3>"A condição de novembro termina dia 30"</h3>
+        <div class="cols">
+          <div><i>Gancho · 0 a 3s</i>"A condição de novembro acaba na segunda-feira, dia 30."</div>
+          <div><i>Meio</i>"Ainda tenho horários de avaliação nesta semana para quem quer começar o <span class="var">[tratamento]</span> ainda este ano."</div>
+          <div><i>Final</i>"Chama agora no WhatsApp." Nos stories, usar a figurinha de contagem regressiva.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="ftr"><div><span class="logo dark">Grupo Opera<i>.</i></span> · Plano Black November {{NOME}}</div><div class="pg">05</div></footer>
+</section>
+
+<!-- ======================= 06 · MAILING E REGRAS ======================= -->
+<section class="page">
+  <header class="hdr">
+    <div><div class="logo">Grupo Opera<i>.</i></div><div class="cli">{{NOME_UP}}</div></div>
+    <div class="r"><b>Plano Black November</b><span>Mailing e regras</span></div>
+  </header>
+  <div class="body">
+    <div class="eyebrow"><span class="n">05</span>Mailing</div>
+    <h2>Mensagens <span class="acc">prontas para copiar</span></h2>
+    <p class="lead">Só para quem <b>já conversou com a clínica</b> sobre o tratamento e não fechou. Sempre pelo WhatsApp {{DA_CLINICA}}, com o nome da pessoa e do tratamento. Quem responder ao disparo sai da sequência e segue no atendimento.</p>
+
+    <div class="g2 mt16">
+      <div class="msg">
+        <div class="mh"><b>Disparo 1 · Reabertura</b><span class="dt">03/11 · TER</span></div>
+        <div class="bubble">Oi, [nome]! Aqui é a [atendente], {{DA}}. Há um tempo você conversou com a gente sobre [tratamento]. Em novembro abrimos uma agenda especial de avaliação para retomar essas conversas, com uma condição pensada para quem já tinha começado. Posso ver um horário para você esta semana?</div>
+        <div class="why">Junto, se quiser: o vídeo 02 ("Você já pediu orçamento?").</div>
+      </div>
+      <div class="msg">
+        <div class="mh"><b>Disparo 2 · Prova</b><span class="dt">12/11 · QUI</span></div>
+        <div class="bubble">Oi, [nome]! Separei este vídeo de um paciente que estava com a mesma dúvida que você. [vídeo] Se quiser, te explico como funciona no seu caso. Ainda temos horários de avaliação em novembro.</div>
+        <div class="why">Para quem não respondeu ao disparo 1. Use o vídeo 03 (história real).</div>
+      </div>
+      <div class="msg">
+        <div class="mh"><b>Disparo 3 · Semana da Black Friday</b><span class="dt or">24/11 · TER</span></div>
+        <div class="bubble">[nome], esta é a última semana da condição de novembro para [tratamento]. Ainda tenho horários de avaliação até o dia 30. Quer que eu reserve um para você?</div>
+        <div class="why">Só fale em "poucos horários" se for verdade.</div>
+      </div>
+      <div class="msg">
+        <div class="mh"><b>Disparo 4 · Último dia</b><span class="dt or">30/11 · SEG</span></div>
+        <div class="bubble">Oi, [nome]! Hoje é o último dia da condição de novembro. Se fizer sentido para você, me responde aqui que eu encaixo sua avaliação.</div>
+        <div class="why">Último contato da campanha. Quem pedir para não receber mais, sai da lista.</div>
+      </div>
+    </div>
+
+    <div class="eyebrow mt16" style="font-size:8.5px">Como montar a lista</div>
+    <div class="lista mt8">
+      <div><div class="lbl">Onde achar</div><h4>WhatsApp, CRM e planilhas</h4><p>Conversas com pedido de orçamento, etiquetas do WhatsApp Business e orçamentos entregues na recepção.</p></div>
+      <div><div class="lbl">O que anotar</div><h4>Nome, telefone e tratamento</h4><p>Mais o mês do contato e, se souber, o motivo de não ter fechado: valor, medo ou tempo.</p></div>
+      <div><div class="lbl">Por onde começar</div><h4>Do mais recente ao mais antigo</h4><p>Quem pediu orçamento nos últimos 3 meses recebe primeiro. Depois, de 4 a 12 meses.</p></div>
+    </div>
+
+    <div class="eyebrow mt20"><span class="n">06</span>O que pode e o que não pode</div>
+    <h2 style="font-size:20px;margin-top:5px">Black November <span class="acc">dentro das regras</span></h2>
+    <p class="lead" style="font-size:11px">O Código de Ética Odontológica (CFO) limita o que entra em anúncio e post. Este é o nosso combinado para a campanha:</p>
+
+    <div class="rulesbox mt12">
+      <div class="rb ok">
+        <div class="t"><span class="ico" style="background:var(--green)"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 5.2l2.2 2.2L8.5 2.6" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span>Pode no anúncio</div>
+        <ul>
+          <li>Falar do mês: "Black November", "novembro é o mês de decidir"</li>
+          <li>Convidar para avaliação e planejamento</li>
+          <li>Mostrar a clínica, a equipe e o atendimento</li>
+          <li>Explicar o tratamento e responder dúvidas</li>
+          <li>Histórias de pacientes, com autorização por escrito</li>
+        </ul>
+      </div>
+      <div class="rb mid">
+        <div class="t"><span class="ico" style="background:var(--navy)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg></span>Só na conversa e na consulta</div>
+        <ul>
+          <li>Valores, descontos e percentuais</li>
+          <li>Formas de pagamento e parcelamento</li>
+          <li>Bônus ou serviço sem custo</li>
+          <li>Detalhes da condição de novembro</li>
+        </ul>
+      </div>
+      <div class="rb no">
+        <div class="t"><span class="ico" style="background:var(--red)"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2.5 2.5l5 5M7.5 2.5l-5 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span>Evitar sempre</div>
+        <ul>
+          <li>Prometer resultado ou prazo ("dentes novos em 1 dia")</li>
+          <li>Lista comprada ou mensagem para quem nunca falou com a clínica</li>
+          <li>Urgência falsa ("só hoje" quando não é verdade)</li>
+          <li>Imagem de paciente sem autorização</li>
+        </ul>
+      </div>
+    </div>
+    <p class="src">Na dúvida, toda peça passa pela aprovação {{DA_CLINICA}} antes de ir ao ar. As regras de publicidade do CFO mudaram em 2025 (Resolução CFO-271/2025) e o tema ainda é discutido na Justiça; por isso a campanha segue o caminho mais seguro: condição comercial só no atendimento individual.</p>
+  </div>
+  <footer class="ftr"><div><span class="logo dark">Grupo Opera<i>.</i></span> · Plano Black November {{NOME}}</div><div class="pg">06</div></footer>
+</section>
+
+<!-- ======================= 07 · PRODUÇÃO ======================= -->
+<section class="page">
+  <header class="hdr">
+    <div><div class="logo">Grupo Opera<i>.</i></div><div class="cli">{{NOME_UP}}</div></div>
+    <div class="r"><b>Plano Black November</b><span>Próximos 10 dias</span></div>
+  </header>
+  <div class="body">
+    <div class="eyebrow"><span class="n">07</span>Produção</div>
+    <h2>Os <span class="acc">próximos 10 dias</span></h2>
+    <p class="lead">Produção de 21 a 31/10 para tudo estar no ar em <b>01/11</b>. O que está marcado como <span class="own c" style="vertical-align:1px">Clínica</span> depende {{DA_CLINICA}} para a data ser cumprida.</p>
+
+    <div class="sched mt16">
+      <div class="srow"><div class="dd">20 a 22/10<small>ter a qui</small></div><div class="tx"><b>Decisão do tratamento e da condição de novembro</b><span>Preencher a ficha da página 03 e levantar a lista de quem pediu orçamento</span></div><div class="ow"><span class="own c">Clínica</span></div></div>
+      <div class="srow"><div class="dd">23/10<small>sex</small></div><div class="tx"><b>Roteiros ajustados ao tratamento escolhido</b><span>Grupo Opera envia, a clínica aprova e confirma quem vai gravar</span></div><div class="ow"><span class="own g">Grupo Opera</span></div></div>
+      <div class="srow"><div class="dd">26 e 27/10<small>seg e ter</small></div><div class="tx"><b>Gravação na clínica</b><span>Dentista (roteiros 01, 02, 04 e 05) e paciente autorizado (roteiro 03)</span></div><div class="ow"><span class="own c">Clínica</span></div></div>
+      <div class="srow"><div class="dd">28 a 30/10<small>qua a sex</small></div><div class="tx"><b>Edição, criativos Black November, mensagens e públicos</b><span>Repaginação dos anúncios atuais, lista do mailing como público, campanhas configuradas</span></div><div class="ow"><span class="own g">Grupo Opera</span></div></div>
+      <div class="srow"><div class="dd">31/10<small>sáb</small></div><div class="tx"><b>Revisão final e anúncios agendados</b><span>Última conferência das peças com a clínica</span></div><div class="ow"><span class="own g">Grupo Opera</span></div></div>
+      <div class="srow live"><div class="dd">01/11<small>dom</small></div><div class="tx"><b>Campanha no ar</b><span>Anúncios rodando com a comunicação Black November</span></div><div class="ow"><span class="own a">No ar</span></div></div>
+      <div class="srow live"><div class="dd">03/11<small>ter</small></div><div class="tx"><b>1º disparo do mailing</b><span>Depois do domingo e do feriado de Finados (02/11), quando a clínica já está atendendo</span></div><div class="ow"><span class="own c">Clínica</span></div></div>
+    </div>
+
+    <div class="g2 mt16">
+      <div class="card tab">
+        <div class="lbl">Checklist {{DA_CLINICA}}</div>
+        <h3>O que precisamos até 22/10</h3>
+        <ul class="chk mt8">
+          <li><i class="box"></i>Tratamento e condição de novembro definidos</li>
+          <li><i class="box"></i>Lista de quem pediu orçamento: nome, telefone, tratamento e mês do contato</li>
+          <li><i class="box"></i>Dia de gravação reservado na agenda (26 ou 27/10)</li>
+          <li><i class="box"></i>1 ou 2 pacientes que topam gravar, com autorização</li>
+          <li><i class="box"></i>Responsável pelo WhatsApp em novembro</li>
+        </ul>
+      </div>
+      <div class="card tab">
+        <div class="lbl">Como vamos medir</div>
+        <h3>Três números, toda semana</h3>
+        <div class="mt8">
+          <div class="kpi"><b>1</b><div>Conversas iniciadas<span>anúncios e respostas ao mailing (Grupo Opera acompanha)</span></div></div>
+          <div class="kpi"><b>2</b><div>Avaliações agendadas<span>a clínica nos passa toda segunda-feira</span></div></div>
+          <div class="kpi"><b>3</b><div>Tratamentos fechados<span>o número que mostra se a campanha se pagou</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow mt16" style="font-size:8.5px">Para o dia da gravação</div>
+    <div class="tips mt8">
+      <div class="tip"><b>Vertical e perto</b>Celular na altura dos olhos, luz de janela de frente.</div>
+      <div class="tip"><b>Fale com uma pessoa</b>"Você", nunca "vocês". Como numa consulta.</div>
+      <div class="tip"><b>Legenda sempre</b>Muita gente assiste sem som.</div>
+      <div class="tip"><b>Autorização por escrito</b>Para todo paciente que aparecer em vídeo.</div>
+    </div>
+
+    <div class="g3 mt16 nx">
+      <div class="card"><div class="lbl">Próximo 01</div><h3>Decisão até 22/10</h3><p>Tratamento, condição e lista do mailing.</p></div>
+      <div class="card"><div class="lbl">Próximo 02</div><h3>Gravação 26 e 27/10</h3><p>Roteiros aprovados e pacientes confirmados.</p></div>
+      <div class="card" style="border-color:var(--orange)"><div class="lbl">Próximo 03</div><h3>No ar em 01/11</h3><p>Anúncios no domingo e 1º disparo na terça, 03/11.</p></div>
+    </div>
+  </div>
+  <footer class="ftr"><div><span class="logo dark">Grupo Opera<i>.</i></span> · Plano Black November {{NOME}}</div><div class="pg">07</div></footer>
+</section>
+
+</body>
+</html>
