@@ -12,7 +12,7 @@ Modelo Grupo Opera. Semana atual 18 a 24/10/2026, comparada com 11 a 17/10/2026;
 | Trait Odontologia | `Trait_Odontologia/` | Meta Ads, Google Ads, Instagram, Perfil da Empresa no Google |
 | Instituto Sanrire (reduzido) | `Instituto_Sanrire/` | Google Ads, YouTube, ChatGPT Ads (semana e mês) |
 
-Cada pasta tem o PDF do relatório. Fontes: Reportei para todos os canais, exceto o ChatGPT Ads da Sanrire, que vem dos prints do OpenAI Ads Manager de 26/10/2026.
+Cada pasta tem o PDF do relatório e o texto de envio (`Texto_envio_WhatsApp.txt`); todos os textos juntos estão em `TEXTOS_PARA_ENVIO.md`. Fontes: Reportei para todos os canais, exceto o ChatGPT Ads da Sanrire, que vem dos prints do OpenAI Ads Manager de 26/10/2026.
 
 ## Como gerar de novo
 
