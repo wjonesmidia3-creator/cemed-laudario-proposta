@@ -2,17 +2,17 @@
 
 Modelo Grupo Opera. Semana atual 18 a 24/10/2026, comparada com 11 a 17/10/2026; acumulado de outubro de 01 a 25/10/2026.
 
-| Marca | Arquivo | Canais |
+| Marca | Pasta | Canais |
 |---|---|---|
-| CEMED · Mirassol | `Relatorio_Semanal_CEMED_18-24out2026.pdf` | Meta Ads, Google Ads |
-| Dreisson · Vivo Imóveis | `Relatorio_Semanal_Dreisson_Vivo_Imoveis_18-24out2026.pdf` | Meta Ads |
-| D’Placido Odontologia | `Relatorio_Semanal_DPlacido_Odontologia_18-24out2026.pdf` | Meta Ads, Instagram |
-| EGO Odontologia | `Relatorio_Semanal_EGO_Odontologia_18-24out2026.pdf` | Meta Ads, Google Ads, Instagram, Facebook |
-| Fiorini Odonto & Estética | `Relatorio_Semanal_Fiorini_Odonto_18-24out2026.pdf` | Meta Ads, Google Ads |
-| Trait Odontologia | `Relatorio_Semanal_Trait_Odontologia_18-24out2026.pdf` | Meta Ads, Google Ads, Instagram, Perfil da Empresa no Google |
-| Instituto Sanrire (reduzido) | `Relatorio_Semanal_Reduzido_Instituto_Sanrire_18-24out2026.pdf` | Google Ads, YouTube, ChatGPT Ads (semana e mês) |
+| CEMED · Mirassol | `CEMED/` | Meta Ads, Google Ads |
+| Dreisson · Vivo Imóveis | `Dreisson_Vivo_Imoveis/` | Meta Ads |
+| D’Placido Odontologia | `DPlacido_Odontologia/` | Meta Ads, Instagram |
+| EGO Odontologia | `EGO_Odontologia/` | Meta Ads, Google Ads, Instagram, Facebook |
+| Fiorini Odonto & Estética | `Fiorini_Odonto/` | Meta Ads, Google Ads |
+| Trait Odontologia | `Trait_Odontologia/` | Meta Ads, Google Ads, Instagram, Perfil da Empresa no Google |
+| Instituto Sanrire (reduzido) | `Instituto_Sanrire/` | Google Ads, YouTube, ChatGPT Ads (semana e mês) |
 
-Fontes: Reportei para todos os canais, exceto o ChatGPT Ads da Sanrire, que vem dos prints do OpenAI Ads Manager de 26/10/2026.
+Cada pasta tem o PDF do relatório. Fontes: Reportei para todos os canais, exceto o ChatGPT Ads da Sanrire, que vem dos prints do OpenAI Ads Manager de 26/10/2026.
 
 ## Como gerar de novo
 
