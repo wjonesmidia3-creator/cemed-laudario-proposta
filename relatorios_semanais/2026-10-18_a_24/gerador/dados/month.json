@@ -1,0 +1,18 @@
+{
+ "_period": "2026-10-01 a 2026-10-25",
+ "fbads": {"ego":{"spend":6358.45,"conv":203,"cpconv":31.322414,"lclicks":9795,"impr":312967},
+           "cemed":{"spend":1106.47,"conv":85,"cpconv":13.017294,"lclicks":612,"impr":95903},
+           "dreisson":{"spend":1531.98,"conv":85,"cpconv":18.023294,"lclicks":2056,"impr":77556},
+           "dplacido":{"spend":2536.14,"conv":340,"cpconv":7.459235,"lclicks":1370,"impr":106796},
+           "trait":{"spend":2725.5,"conv":164,"cpconv":16.618902,"lclicks":589,"impr":164416},
+           "fiorini":{"spend":4551.98,"conv":205,"cpconv":22.20478,"lclicks":1885,"impr":370139}},
+ "gads": {"sanrire":{"cost":5511.296421,"clicks":16654,"conv":127,"impr":369336},
+          "cemed":{"cost":1179.003294,"clicks":367,"conv":56,
+                   "daily_cost":{"2026-10-01":98.495735,"2026-10-02":99.77343,"2026-10-05":98.739682,"2026-10-06":86.839573,"2026-10-19":148.913294,"2026-10-20":95.707947,"2026-10-21":177.768616,"2026-10-22":203.701734,"2026-10-23":169.063283}},
+          "trait":{"cost":1251.222703,"clicks":2614,"conv":0},
+          "ego":{"cost":4.65763,"clicks":2,"conv":0,"daily_cost":{"2026-10-24":4.65763}},
+          "fiorini":{"cost":750.443729,"clicks":1025,"conv":0}},
+ "ig_reach_daily_prev_11_17": {"ego":[10638,8185,4775,2213,2531,710,1784],"dplacido":[479,322,333,89,162,125,319],"trait":[1418,1543,4460,2976,1982,1182,1253]},
+ "yt_views_daily_prev_11_17": [28,159,519,94,829,909,889],
+ "dplacido_recent_posts": [["2026-10-17","Imagem","My family (pessoal)",564,1089,71],["2026-10-12","Reels","Você se posiciona de verdade? (fé)",288,495,26],["2026-10-10","Carrossel","Quer usar aparelho, mas não quer que ele apareça? (Invisalign)",838,2086,34],["2026-10-04","Imagem","Amor da vida pra vida (pessoal)",535,929,52],["2026-10-03","Imagem","Esse livro me fez mudar de direção (fé)",261,488,21]]
+}

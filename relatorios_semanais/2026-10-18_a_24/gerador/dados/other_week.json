@@ -1,0 +1,12 @@
+{
+ "trait_gmb": {"cur":{"views":115,"search":19,"maps":96,"actions":27,"dir":20,"calls":4,"web":3,"reviews":1,"rating":5},
+               "prev":{"views":131,"search":36,"maps":95,"actions":12,"dir":12,"calls":0,"web":0,"reviews":0,"rating":null}},
+ "sanrire_yt": {"cur":{"views":11913,"subs":0,"mins":2531,"views_daily_18_23":[1328,1088,698,983,3599,4217],"mins_daily_18_23":[378,252,234,215,685,767]},
+                "prev":{"views":3427,"subs":1,"mins":1224}},
+ "sanrire_gads_month_01_25": {"cost":5511.296421,"clicks":16654,"impr":369336,"ctr":0.0450917,"cpc":0.330929,"conv":127,"cpconv":43.396035},
+ "sanrire_chatgpt": {
+   "week_18_24": {"campaign":"GO_GENERICA_REACH","impr":3731,"clicks":27,"conv":0,"spend":279.99,"ctr":0.72,"cpc":10.37,
+                  "other_campaign":"Instituto Sanrire Odontologia e Health ... (sem entrega no período)"},
+   "month_01_25": {"campaign":"GO_GENERICA_REACH","impr":22216,"clicks":167,"conv":0,"spend":1372.84,"ctr":0.75,"cpc":8.22},
+   "notes": "Fonte: prints do OpenAI Ads Manager (Beta). Banner da plataforma: 'Insight metrics delayed - Some Ads Manager spend insights metrics may be incorrect'. Conversões ainda não configuradas na conta. Fuso: Brasília; faturamento em UTC."}
+}

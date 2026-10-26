@@ -1,0 +1,323 @@
+{
+ "_cols": [
+  "campaign",
+  "type",
+  "clicks",
+  "cost",
+  "impressions",
+  "conversions",
+  "ctr",
+  "cpc",
+  "cost_per_conv"
+ ],
+ "sanrire": {
+  "cur": {
+   "cost": 1800.558306,
+   "clicks": 7441,
+   "impr": 192371,
+   "ctr": 0.0386805,
+   "cpc": 0.241978,
+   "conv": 43.998565,
+   "cpconv": 40.923114
+  },
+  "prev": {
+   "cost": 1406.477076,
+   "clicks": 3772,
+   "impr": 65874,
+   "ctr": 0.0572608,
+   "cpc": 0.372873,
+   "conv": 55.000948,
+   "cpconv": 25.57187
+  },
+  "camp": [
+   [
+    "[GO] - [DEMAND GEN] - INSTITUTO SANRIRE - IMPLANTES",
+    "Demand Gen",
+    4438,
+    352.368037,
+    142232,
+    3.546744,
+    0.0312025,
+    0.0793979,
+    99.349724
+   ],
+   [
+    "[GO] - [PMAX] - INSTITUTO SANRIRE - LEADS",
+    "Performance Max",
+    2862,
+    332.722411,
+    47412,
+    37.451821,
+    0.0603645,
+    0.1162552,
+    8.884012
+   ],
+   [
+    "[GO] - [SEARCH] [TERMOS GERAIS] CLÍNICA ODONTO",
+    "Pesquisa",
+    54,
+    195.112296,
+    1099,
+    0,
+    0.0491356,
+    3.613191,
+    0
+   ],
+   [
+    "[GO] - [SEARCH] - IMPLANTE/ PRÓTESE - LP + LIGAÇÃO",
+    "Pesquisa",
+    51,
+    377.595562,
+    1288,
+    3,
+    0.0395963,
+    7.403835,
+    125.865187
+   ],
+   [
+    "[GO] - [SEARCH] - ENDODONTIA - LP e LIGAÇÃO",
+    "Pesquisa",
+    13,
+    234.14,
+    125,
+    0,
+    0.104,
+    18.010769,
+    0
+   ],
+   [
+    "[GO] - [SEARCH] - LENTE DE CONTATO - LP + LIGAÇÃO",
+    "Pesquisa",
+    12,
+    228.97,
+    132,
+    0,
+    0.0909091,
+    19.080833,
+    0
+   ],
+   [
+    "[GO] - BM | Search | Instituto Sanrire",
+    "Pesquisa",
+    11,
+    79.65,
+    83,
+    0,
+    0.1325301,
+    7.240909,
+    0
+   ]
+  ],
+  "camp_prev": [
+   [
+    "[GO] - [PMAX] - INSTITUTO SANRIRE - LEADS",
+    "Performance Max",
+    3652,
+    354.348299,
+    63494,
+    50.000948,
+    0.0575172,
+    0.0970286,
+    7.086832
+   ],
+   [
+    "[GO] - [SEARCH] [TERMOS GERAIS] CLÍNICA ODONTO",
+    "Pesquisa",
+    51,
+    211.498777,
+    822,
+    0,
+    0.0620438,
+    4.147035,
+    0
+   ],
+   [
+    "[GO] - [SEARCH] - IMPLANTE/ PRÓTESE - LP + LIGAÇÃO",
+    "Pesquisa",
+    41,
+    442.33,
+    1125,
+    3,
+    0.0364444,
+    10.788537,
+    147.443333
+   ],
+   [
+    "[GO] - [SEARCH] - LENTE DE CONTATO - LP + LIGAÇÃO",
+    "Pesquisa",
+    14,
+    222.35,
+    220,
+    1,
+    0.0636364,
+    15.882143,
+    222.35
+   ],
+   [
+    "[GO] - [SEARCH] - ENDODONTIA - LP e LIGAÇÃO",
+    "Pesquisa",
+    10,
+    158.32,
+    177,
+    1,
+    0.0564972,
+    15.832,
+    158.32
+   ],
+   [
+    "[GO] - BM | Search | Instituto Sanrire",
+    "Pesquisa",
+    4,
+    17.63,
+    36,
+    0,
+    0.1111111,
+    4.4075,
+    0
+   ]
+  ]
+ },
+ "ego": {
+  "cur": {
+   "cost": 4.65763,
+   "clicks": 2,
+   "impr": 37,
+   "ctr": 0.0540541,
+   "cpc": 2.328815,
+   "conv": 0,
+   "cpconv": 0
+  },
+  "prev": {
+   "cost": 0,
+   "clicks": 0,
+   "impr": 0,
+   "ctr": 0,
+   "cpc": 0,
+   "conv": 0,
+   "cpconv": 0
+  },
+  "camp": [
+   [
+    "GO_Generico_Long_Tail",
+    "Pesquisa",
+    2,
+    4.65763,
+    37,
+    0,
+    0.0540541,
+    2.328815,
+    0
+   ]
+  ]
+ },
+ "trait": {
+  "cur": {
+   "cost": 386.856225,
+   "clicks": 562,
+   "impr": 9275,
+   "ctr": 0.060593,
+   "cpc": 0.688356,
+   "conv": 0,
+   "cpconv": 0
+  },
+  "prev": {
+   "cost": 466.207186,
+   "clicks": 1036,
+   "impr": 16546,
+   "ctr": 0.0626133,
+   "cpc": 0.450007,
+   "conv": 0,
+   "cpconv": 0
+  },
+  "camp": [
+   [
+    "Campaign #1",
+    "Performance Max",
+    562,
+    386.856225,
+    9275,
+    0,
+    0.060593,
+    0.688356,
+    0
+   ]
+  ]
+ },
+ "cemed": {
+  "cur": {
+   "cost": 795.154874,
+   "clicks": 260,
+   "impr": 5646,
+   "ctr": 0.0460503,
+   "cpc": 3.058288,
+   "conv": 33,
+   "cpconv": 24.095602
+  },
+  "prev": {
+   "cost": 0,
+   "clicks": 0,
+   "impr": 0,
+   "ctr": 0,
+   "cpc": 0,
+   "conv": 0,
+   "cpconv": 0
+  },
+  "camp": [
+   [
+    "USG",
+    "Pesquisa",
+    186,
+    471.786815,
+    4236,
+    22,
+    0.0439093,
+    2.536488,
+    21.444855
+   ],
+   [
+    "Psiq Oft Cardio Endoc GO Derm",
+    "Pesquisa",
+    74,
+    323.368059,
+    1410,
+    11,
+    0.0524823,
+    4.369839,
+    29.397096
+   ]
+  ]
+ },
+ "fiorini": {
+  "cur": {
+   "cost": 3.859841,
+   "clicks": 5,
+   "impr": 191,
+   "ctr": 0.026178,
+   "cpc": 0.771968,
+   "conv": 0,
+   "cpconv": 0
+  },
+  "prev": {
+   "cost": 1.867676,
+   "clicks": 7,
+   "impr": 169,
+   "ctr": 0.0414201,
+   "cpc": 0.266811,
+   "conv": 0,
+   "cpconv": 0
+  },
+  "camp": [
+   [
+    "GO_PMAX_GERAL",
+    "Performance Max",
+    5,
+    3.859841,
+    191,
+    0,
+    0.026178,
+    0.771968,
+    0
+   ]
+  ]
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "_post_cols": ["date","type","caption","url","reach","views","interactions","eng_rate","likes","comments","saved","shares"],
+ "ego": {"cur": {"reach":7578,"views":14131,"pv":78,"fol":1076,"newfol":19},
+         "prev":{"reach":30836,"views":60430,"pv":912,"fol":1057,"newfol":40},
+         "reach_daily_cur":[1617,867,706,552,987,1138,1711],
+         "posts":[["2026-10-22","Carrossel","A tecnologia evoluiu. Os tratamentos evoluíram. E nós seguimos evoluindo.","https://www.instagram.com/p/Dez7vADIPpw/",45,160,7,0.155556,7,0,0,0],
+                  ["2026-10-20","Reels","Falta de osso para implante: a odontologia evoluiu e existem técnicas de reabilitação.","https://www.instagram.com/reel/Deuz_a5Tyjd/",149,238,18,0.120805,17,1,0,0]],
+         "fb_page": {"cur":{"reach":38697,"views":61984},"prev":{"reach":42764,"views":77544}},
+         "fbads_platform": {"reach_facebook":[18456,16109],"reach_instagram":[4842,7367],"impr_facebook":[59489,57186]}},
+ "dplacido": {"cur": {"reach":1580,"views":6440,"pv":82,"fol":2248,"newfol":-3},
+              "prev":{"reach":1829,"views":5140,"pv":67,"fol":2251,"newfol":0},
+              "reach_daily_cur":[468,347,109,120,140,188,208],
+              "posts":[]},
+ "trait": {"cur": {"reach":15361,"views":26492,"pv":185,"fol":3710,"newfol":8},
+           "prev":{"reach":14814,"views":26240,"pv":119,"fol":3702,"newfol":11},
+           "reach_daily_cur":[1322,3434,2917,2389,1657,1501,2141],
+           "posts":[["2026-10-19","Reels","Pesquisar na internet não substitui a avaliação odontológica.","https://www.instagram.com/reel/DesGUYkzI1H/",326,469,10,0.030675,8,0,0,1],
+                    ["2026-10-24","Imagem","Feliz aniversário, Dra. Josiane Gavlik Zandonai, fundadora da Trait.","https://www.instagram.com/p/De4X0Z4R06e/",251,436,14,0.055777,13,1,0,0],
+                    ["2026-10-24","Reels","Cuidar da saúde vai muito além de um procedimento: acolher, ouvir, respeitar.","https://www.instagram.com/reel/De4Z3ggprw_/",227,337,13,0.057269,12,0,0,0],
+                    ["2026-10-21","Imagem","A prótese também precisa de cuidados: higienização e limpeza profissional.","https://www.instagram.com/p/Dew8mllRY0G/",166,274,3,0.018072,2,0,0,0],
+                    ["2026-10-23","Reels","Prótese protocolo e dentadura não são a mesma coisa.","https://www.instagram.com/reel/De1y5W_xDHc/",102,162,2,0.019608,2,0,0,0]]}
+}
