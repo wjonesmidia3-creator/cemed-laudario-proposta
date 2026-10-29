@@ -587,7 +587,7 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 
 ### Filme 01 · Na mesa
 
-**Filme principal** · Releitura de: POST CLAUDIA 60 ANOS (149 conversas a R$ 12,84) · Filme 9:16 e 4:5 · 60 s (+ cortes de 30, 15 e 6 s) · Quem grava: Claudia (ou atriz de ~60 anos) + família + dentista · Onde usar: Criativo principal de todas as campanhas de mensagem + feed e stories
+**Filme principal** · Releitura de: POST CLAUDIA 60 ANOS (149 conversas a R$ 12,84) · Filme 9:16 e 4:5 · 60 s (+ cortes de 30, 15 e 6 s) · Quem grava: Claudia (ou atriz de ~60 anos) + família + Dra. · Onde usar: Criativo principal de todas as campanhas de mensagem + feed e stories
 
 **Objetivo:** Contar, em uma cena que todo mundo reconhece, por que não dá pra deixar a prótese pra depois, e ligar isso à Black Friday.  
 **Por quê:** Os posts com a Claudia são o maior resultado da conta: 210 conversas desde junho. O filme mantém a protagonista e o tema e transforma o post em uma história.
@@ -599,8 +599,8 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 | 9–15 s | Close no guardanapo com o pedaço da prótese. Ela sorri de boca fechada. | Neta: "Vó, tá tudo bem?"<br>Claudia (abafado): "Tá… tá sim." | CENA DRAMATIZADA (canto) |
 | 15–24 s | Banheiro: Claudia olha a prótese quebrada no espelho. | (off, Claudia) Todo ano eu troco alguma coisa na Black Friday. Menos o que mais me faz falta. | TODO ANO VOCÊ TROCA ALGUMA COISA NA BLACK… |
 | 24–30 s | Close do celular: ela envia BLACK para a Fiorini. | (off, Claudia) Esse ano, eu comecei por mim. | …E O SEU SORRISO? |
-| 30–44 s | Dentista na clínica, para a câmera. | Prótese que quebra, mexe ou machuca não precisa ser pra sempre. Existem soluções fixas, como o protocolo sobre implantes, e a indicação certa sai de uma avaliação cuidadosa. | PROTOCOLO SOBRE IMPLANTES · AVALIAÇÃO |
-| 44–54 s | Dentista mais perto; entra o lettering Black. | E é Black Friday na Fiorini: condição especial pra quem começar o tratamento agora. Os detalhes a gente te passa no WhatsApp. | BLACK FRIDAY FIORINI · CONDIÇÃO ESPECIAL |
+| 30–44 s | Dra. na clínica, para a câmera. | Prótese que quebra, mexe ou machuca não precisa ser pra sempre. Existem soluções fixas, como o protocolo sobre implantes, e a indicação certa sai de uma avaliação cuidadosa. | PROTOCOLO SOBRE IMPLANTES · AVALIAÇÃO |
+| 44–54 s | Dra. mais perto; entra o lettering Black. | E é Black Friday na Fiorini: condição especial pra quem começar o tratamento agora. Os detalhes a gente te passa no WhatsApp. | BLACK FRIDAY FIORINI · CONDIÇÃO ESPECIAL |
 | 54–60 s | De volta à mesa, celular ao lado do prato. Logo. | (off, Claudia) Tem coisa que não dá pra deixar pra próxima Black. | ENVIE "BLACK" NO WHATSAPP |
 
 **Legenda sugerida:**
@@ -617,9 +617,37 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 
 **Dica de gravação:** O filme vive do contraste entre a mesa animada e o silêncio depois do estalo. Grave a conversa da família de verdade, sem roteiro decorado, e só marque o momento da mordida.
 
+#### Opção B · Na mesa · só a Dra.
+
+Reels 9:16 · 42 s (+ corte de 15 s) · Quem grava: Dra. da Fiorini, com um modelo de prótese · Quando usar: Sem elenco ou locação: grava no consultório em uma hora
+
+**Objetivo:** Contar a mesma história do filme dramatizado só com a Dra. e o texto na tela, sem depender de elenco nem de locação.  
+**Por quê:** Mantém o gancho que dá força ao filme (a TV comprada na Black e a prótese que quebra no almoço) e a mesma virada: todo ano você troca alguma coisa, e o seu sorriso?
+
+| Tempo | Cena | Fala | Texto na tela |
+|---|---|---|---|
+| 0–3 s | Dra. em close no consultório, mostrando o celular como quem exibe uma compra. | Comprou uma TV na Black Friday? | COMPROU UMA TV NA BLACK FRIDAY? |
+| 3–8 s | Cortes rápidos; a Dra. conta nos dedos. | Um celular novo? Um tênis? A air fryer? | UM CELULAR? UM TÊNIS? A AIR FRYER? |
+| 8–17 s | Dra. pega um modelo de prótese da bancada. | Todo ano a gente troca alguma coisa na Black. Mas tem gente que está há anos com a mesma prótese: ela mexe, machuca e um dia quebra no meio do almoço de família. | E A PRÓTESE QUE QUEBRA NO ALMOÇO? |
+| 17–28 s | Plano médio, a Dra. com o modelo na mão. | Prótese que quebra, mexe ou machuca não precisa ser pra sempre. Existem soluções fixas, como o protocolo sobre implantes, e a indicação certa sai de uma avaliação cuidadosa. | PROTOCOLO SOBRE IMPLANTES · AVALIAÇÃO |
+| 28–37 s | Dra. mais perto da câmera; entra o lettering Black. | E é Black Friday na Fiorini: condição especial pra quem começar o tratamento agora. Os detalhes a gente te passa no WhatsApp. | BLACK FRIDAY FIORINI · CONDIÇÃO ESPECIAL |
+| 37–42 s | Dra. aponta para baixo. | Esse ano, troca o que mais te faz falta. Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
+
+**Legenda sugerida:**
+
+> Comprou uma TV na Black Friday? Um celular, um tênis? 🖤
+> 
+> Todo ano a gente troca alguma coisa. E a prótese que mexe, machuca ou quebra no meio do almoço? Ela não precisa ser pra sempre. Na Black Friday da Fiorini, condição especial para quem começar o tratamento agora.
+> 
+> 📲 Envie BLACK no nosso WhatsApp.
+> 
+> Responsável técnico: [nome] · CRO-[UF] [nº]
+
+**Dica de gravação:** O ritmo do começo é o que segura: três perguntas rápidas, um corte em cada. O corte de 15 s usa as cenas 1, 2 e 5 e a cartela final.
+
 #### Direção · Na mesa
 
-**Elenco:** Claudia, do post "Claudia 60 anos", se ela topar dramatizar a cena (autorização de imagem para anúncio). Se não, atriz com o mesmo perfil: mulher de ~60 anos, jeito de avó. Filho ou genro (~35 anos), neta (10 a 14 anos) e mais um ou dois adultos à mesa. Dentista da Fiorini, só nas cenas 6 e 7.
+**Elenco:** Claudia, do post "Claudia 60 anos", se ela topar dramatizar a cena (autorização de imagem para anúncio). Se não, atriz com o mesmo perfil: mulher de ~60 anos, jeito de avó. Filho ou genro (~35 anos), neta (10 a 14 anos) e mais um ou dois adultos à mesa. Dra. da Fiorini, só nas cenas 6 e 7. Sem elenco ou sem locação? Use a Opção B, gravada só com a Dra. no consultório (próxima página).
 
 **Cenário:** Mesa de almoço de domingo em uma casa, não na clínica: toalha, travessas, pão na cesta, luz quente de janela. TV ou celular pode mostrar algo de Black Friday, sem marca de loja real. Banheiro com espelho para a cena 4. Clínica para as cenas 6 e 7.
 
@@ -640,12 +668,12 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 
 **Cuidados:**
 - Lettering "Cena dramatizada" no canto durante a mesa: é encenação, não depoimento.
-- Claudia nunca fala da oferta. Quem apresenta a Black Friday é a dentista.
+- Claudia nunca fala da oferta. Quem apresenta a Black Friday é a Dra.
 - Não mostrar a Claudia com o tratamento pronto: o final é a decisão (mandar BLACK), não o resultado. Mostrar o "depois" seria promessa de resultado.
 
 ### Filme 02 · A lista da Black
 
-**Releitura** · Releitura de: Estáticos Homem 1 e 3 + POST HOMEM (222 conversas; Homem 3 a R$ 7,97) · Reels 9:16 · 33 s + 2 estáticos · Quem grava: Homem de 50 a 60 anos (paciente ou ator) + dentista · Onde usar: Campanhas de mensagem de Implantes e Protocolo
+**Releitura** · Releitura de: Estáticos Homem 1 e 3 + POST HOMEM (222 conversas; Homem 3 a R$ 7,97) · Reels 9:16 · 33 s + 2 estáticos · Quem grava: Homem de 50 a 60 anos (paciente ou ator) + Dra. · Onde usar: Campanhas de mensagem de Implantes e Protocolo
 
 **Objetivo:** Levar a persona masculina que mais converteu para o vídeo, com o gancho da lista de compras da Black Friday.  
 **Por quê:** Somados, os anúncios com o "homem" trouxeram 222 conversas, e o Estático Homem 3 teve o menor custo por conversa da conta (R$ 7,97). O filme mantém o rosto e o tema e ganha movimento.
@@ -655,8 +683,8 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 | 0–3 s | Close: mão escrevendo num bloco de papel "LISTA DA BLACK": celular pra Ana, furadeira, pneu do carro. | (off, homem) Minha lista da Black Friday tá pronta. | LISTA DA BLACK |
 | 3–9 s | Ele olha para a geladeira: foto de família em que é o único de boca fechada. | (off) Todo ano tem presente pra todo mundo. E todo ano eu fico assim nas fotos. | — |
 | 9–14 s | Ele volta ao bloco e escreve no topo da lista: "Voltar a sorrir nas fotos". | (off) Esse ano, o primeiro item é meu. | 1. VOLTAR A SORRIR NAS FOTOS |
-| 14–26 s | Dentista na clínica. | Se você esconde o sorriso por causa de dente faltando ou de prótese que não para no lugar, existem caminhos, como implantes e protocolo. Tudo começa com uma avaliação. | IMPLANTE · PROTOCOLO |
-| 26–33 s | Dentista, lettering Black. | E na Black Friday da Fiorini tem condição especial pra quem começar agora. Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
+| 14–26 s | Dra. na clínica. | Se você esconde o sorriso por causa de dente faltando ou de prótese que não para no lugar, existem caminhos, como implantes e protocolo. Tudo começa com uma avaliação. | IMPLANTE · PROTOCOLO |
+| 26–33 s | Dra., lettering Black. | E na Black Friday da Fiorini tem condição especial pra quem começar agora. Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
 
 **Legenda sugerida:**
 
@@ -670,19 +698,46 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 
 **Dica de gravação:** Como os originais eram estáticos, gere também dois estáticos para testar lado a lado: a lista com "Voltar a sorrir nas fotos" no topo, e o homem segurando a lista.
 
+#### Opção B · A lista da Black · só a Dra.
+
+Reels 9:16 · 32 s · Quem grava: Dra. da Fiorini, com um bloco de papel · Quando usar: Sem ator: grava no consultório, com um bloco e uma caneta
+
+**Objetivo:** Manter o gancho da lista de compras da Black Friday sem precisar de ator nem de cenário de casa.  
+**Por quê:** A lista é o que faz o filme funcionar, e ela cabe na mão da Dra. Os dois estáticos da Opção A (a lista com "Voltar a sorrir nas fotos" no topo) também não precisam de ninguém.
+
+| Tempo | Cena | Fala | Texto na tela |
+|---|---|---|---|
+| 0–3 s | Dra. segurando um bloco de papel escrito "LISTA DA BLACK". | Já fez a sua lista da Black Friday? | JÁ FEZ A SUA LISTA DA BLACK? |
+| 3–9 s | Dra. lê a lista, apontando item por item. | Celular pra filha, furadeira, pneu do carro… Presente pra todo mundo. | CELULAR · FURADEIRA · PNEU |
+| 9–15 s | Dra. baixa o bloco e olha para a câmera. | E você? Continua fechando a boca nas fotos de família? | E VOCÊ, NAS FOTOS? |
+| 15–25 s | Dra. escreve no topo da lista "Voltar a sorrir nas fotos" e mostra para a câmera. | Esse ano, coloca você no topo da lista. Dente faltando ou prótese que não para no lugar têm caminhos, como implantes e protocolo. Tudo começa com uma avaliação. | 1. VOLTAR A SORRIR NAS FOTOS |
+| 25–32 s | Dra. para a câmera; lettering Black. | Na Black Friday da Fiorini tem condição especial pra quem começar agora. Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
+
+**Legenda sugerida:**
+
+> Já fez a sua lista da Black Friday? 📝 Presente pra todo mundo… e você?
+> 
+> Se você fecha a boca nas fotos por causa de dente faltando ou de prótese, existem caminhos, como implantes e protocolo. Na Black Friday da Fiorini, condição especial para quem começar agora.
+> 
+> 📲 Envie BLACK no WhatsApp.
+> 
+> Responsável técnico: [nome] · CRO-[UF] [nº]
+
+**Dica de gravação:** Escreva a lista antes, com letra grande e caneta grossa, para ser lida na tela do celular. Só o último item é escrito na hora.
+
 ### Filme 03 · Você de Vargem Grande
 
-**Releitura** · Releitura de: Lentes Dentais em Vargem Grande (89 conversas a R$ 15,59) · Reels 9:16 · 30 s · Quem grava: Dentista, na fachada e no consultório · Onde usar: Campanha de Lentes com destino Direct + WhatsApp
+**Releitura** · Releitura de: Lentes Dentais em Vargem Grande (89 conversas a R$ 15,59) · Reels 9:16 · 30 s · Quem grava: Dra., na fachada e no consultório · Onde usar: Campanha de Lentes com destino Direct + WhatsApp
 
 **Objetivo:** Falar com quem mora perto e quer mudar o sorriso, usando o chamado local que já funcionou.  
 **Por quê:** "Lentes Dentais em Vargem Grande" trouxe 89 conversas, e "Você de Vargem Grande" teve custo de R$ 8,64 por conversa: chamar o bairro pelo nome funciona. Lentes rendem conversa mais barata pelo Direct (R$ 9,23).
 
 | Tempo | Cena | Fala | Texto na tela |
 |---|---|---|---|
-| 0–3 s | Dentista na porta da clínica, apontando para a rua. | Você que é de Vargem Grande e sempre quis mudar o sorriso: presta atenção. | VOCÊ DE VARGEM GRANDE |
-| 3–12 s | Consultório; dentista com um modelo de lente na mão. | Lentes dentais podem mudar a forma, o tamanho e a cor dos dentes. Mas cada caso tem a sua indicação: às vezes é lente, às vezes é outro caminho. | LENTES DENTAIS |
+| 0–3 s | Dra. na porta da clínica, apontando para a rua. | Você que é de Vargem Grande e sempre quis mudar o sorriso: presta atenção. | VOCÊ DE VARGEM GRANDE |
+| 3–12 s | Consultório; Dra. com um modelo de lente na mão. | Lentes dentais podem mudar a forma, o tamanho e a cor dos dentes. Mas cada caso tem a sua indicação: às vezes é lente, às vezes é outro caminho. | LENTES DENTAIS |
 | 12–20 s | B-roll: escaneamento, planejamento na tela, prova em paciente (com autorização). | Por isso a gente planeja antes: você vê a proposta e decide junto com a gente. | PLANEJAMENTO ANTES DE TUDO |
-| 20–30 s | Dentista para a câmera, lettering Black. | E é Black Friday na Fiorini, aqui em Vargem Grande: condição especial pra quem começar o tratamento agora. Manda BLACK no Direct ou no WhatsApp. | BLACK FRIDAY FIORINI · VARGEM GRANDE |
+| 20–30 s | Dra. para a câmera, lettering Black. | E é Black Friday na Fiorini, aqui em Vargem Grande: condição especial pra quem começar o tratamento agora. Manda BLACK no Direct ou no WhatsApp. | BLACK FRIDAY FIORINI · VARGEM GRANDE |
 
 **Legenda sugerida:**
 
@@ -698,17 +753,17 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 
 ### Filme 04 · Dente no mesmo dia?
 
-**Releitura** · Releitura de: Implante Carga Imediata (75 conversas a R$ 15,29) · Reels 9:16 · 32 s · Quem grava: Dentista, com um modelo de implante · Onde usar: Campanha de mensagem de Implantes
+**Releitura** · Releitura de: Implante Carga Imediata (75 conversas a R$ 15,29) · Reels 9:16 · 32 s · Quem grava: Dra., com um modelo de implante · Onde usar: Campanha de mensagem de Implantes
 
 **Objetivo:** Responder a pergunta que mais atrai quem precisa de implante, com a condição de Black Friday no fim.  
 **Por quê:** O vídeo de carga imediata trouxe 75 conversas desde julho, o quarto maior resultado da conta. A releitura mantém a pergunta e deixa claro que depende do caso.
 
 | Tempo | Cena | Fala | Texto na tela |
 |---|---|---|---|
-| 0–3 s | Dentista em close, segurando um modelo de implante. | Dá pra colocar o implante e sair com dente no mesmo dia? | DENTE NO MESMO DIA? |
-| 3–13 s | Plano médio, dentista mostra o modelo. | Quando o caso permite, sim. Chama-se carga imediata: o implante recebe um dente provisório logo depois da cirurgia. | CARGA IMEDIATA |
+| 0–3 s | Dra. em close, segurando um modelo de implante. | Dá pra colocar o implante e sair com dente no mesmo dia? | DENTE NO MESMO DIA? |
+| 3–13 s | Plano médio, Dra. mostra o modelo. | Quando o caso permite, sim. Chama-se carga imediata: o implante recebe um dente provisório logo depois da cirurgia. | CARGA IMEDIATA |
 | 13–22 s | B-roll: tomografia na tela, planejamento. | Mas isso depende do osso, da saúde da boca e do planejamento. Quem responde é a avaliação, não a internet. | DEPENDE DO SEU CASO |
-| 22–32 s | Dentista para a câmera, lettering Black. | E nessa Black Friday, quem quer resolver o dente que falta tem condição especial na Fiorini. Manda BLACK no WhatsApp. | BLACK FRIDAY FIORINI |
+| 22–32 s | Dra. para a câmera, lettering Black. | E nessa Black Friday, quem quer resolver o dente que falta tem condição especial na Fiorini. Manda BLACK no WhatsApp. | BLACK FRIDAY FIORINI |
 
 **Legenda sugerida:**
 
@@ -724,7 +779,7 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 
 ### Filme 05 · Eles não deixaram pra depois
 
-**Releitura** · Releitura de: Vários Depoimentos (CTR 2,25%, 28 conversas a R$ 18,26) · Reels 9:16 · 32 s · montagem · Quem grava: Depoimentos já gravados + dentista · Onde usar: Campanhas de mensagem + remarketing de quem interagiu
+**Releitura** · Releitura de: Vários Depoimentos (CTR 2,25%, 28 conversas a R$ 18,26) · Reels 9:16 · 32 s · montagem · Quem grava: Depoimentos já gravados + Dra. · Onde usar: Campanhas de mensagem + remarketing de quem interagiu
 
 **Objetivo:** Juntar a prova social que a clínica já tem em um filme só, com a Black Friday como fechamento.  
 **Por quê:** Os anúncios de depoimento têm as maiores taxas de clique entre os de mensagem (até 2,25%). A montagem reaproveita material que já existe: Claudia, Sergio, Rossi, Isabela, Elsa, Paulo.
@@ -736,8 +791,8 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 | 0–2 s | A frase mais forte de um depoimento já aprovado. | (áudio original do paciente) | — |
 | 2–12 s | Cortes de 2 s: Claudia, Sergio, Rossi, Isabela, Elsa (o material que já existe). | (áudios originais) | (primeiro nome de cada paciente) |
 | 12–16 s | Fundo preto, lettering. | (só trilha) | ELES NÃO DEIXARAM PRA DEPOIS. |
-| 16–28 s | Dentista para a câmera. | Cada uma dessas histórias começou com uma conversa. Na Black Friday da Fiorini, a próxima pode ser a sua: condição especial pra quem começar agora. | BLACK FRIDAY FIORINI |
-| 28–32 s | Dentista aponta para baixo. | Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
+| 16–28 s | Dra. para a câmera. | Cada uma dessas histórias começou com uma conversa. Na Black Friday da Fiorini, a próxima pode ser a sua: condição especial pra quem começar agora. | BLACK FRIDAY FIORINI |
+| 28–32 s | Dra. aponta para baixo. | Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
 
 **Legenda sugerida:**
 
@@ -753,7 +808,7 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 
 ### Filme 06 · Era o medo
 
-**Releitura** · Releitura de: Não Era o Tratamento (CTR 6,59%) · Reels 9:16 · 36 s · Quem grava: Dentista + figurante (atuação) · Onde usar: Campanha de Sedação Consciente
+**Releitura** · Releitura de: Não Era o Tratamento (CTR 6,59%) · Reels 9:16 · 36 s · Quem grava: Dra. + figurante da equipe (atuação) · Onde usar: Campanha de Sedação Consciente
 
 **Objetivo:** Falar com quem adia por medo, o tema que mais gera clique na conta, e ligar à Black Friday.  
 **Por quê:** "Não Era o Tratamento" teve taxa de cliques de 6,59%, entre as maiores da conta, e a campanha de Sedação Consciente fez 5,15%. O filme usa o mesmo título como gancho.
@@ -761,10 +816,10 @@ Entrega única, sem calendário: cada filme é a releitura de um anúncio que j�
 | Tempo | Cena | Fala | Texto na tela |
 |---|---|---|---|
 | 0–3 s | Sala de espera: close na perna de alguém balançando, mãos apertadas (atuação). | (off) Não era o tratamento. Era o medo. | NÃO ERA O TRATAMENTO. ERA O MEDO. |
-| 3–13 s | Dentista em plano médio. | Muita gente adia por anos, não porque não quer cuidar do sorriso, mas por medo da cadeira do dentista. | — |
+| 3–13 s | Dra. em plano médio. | Muita gente adia por anos, não porque não quer cuidar do sorriso, mas por medo da cadeira do dentista. | — |
 | 13–24 s | B-roll: paciente tranquilo na cadeira, equipe ao lado. | Pra esses casos existe a sedação consciente: você fica acordado, mais relaxado, e a equipe acompanha você o tempo todo. A indicação é feita na avaliação. | SEDAÇÃO CONSCIENTE |
-| 24–33 s | Dentista para a câmera, lettering Black. | Na Black Friday da Fiorini, quem decidir começar agora tem condição especial. O medo não precisa decidir por você. | BLACK FRIDAY FIORINI |
-| 33–36 s | Dentista aponta para baixo. | Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
+| 24–33 s | Dra. para a câmera, lettering Black. | Na Black Friday da Fiorini, quem decidir começar agora tem condição especial. O medo não precisa decidir por você. | BLACK FRIDAY FIORINI |
+| 33–36 s | Dra. aponta para baixo. | Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
 
 **Legenda sugerida:**
 
