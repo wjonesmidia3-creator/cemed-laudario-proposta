@@ -1,27 +1,25 @@
 # Roteiros Black Friday 2026 · Odontologia
 
-Roteiros de vídeo para a Black Friday dos cinco clientes de odontologia do Grupo Opera. São cinco roteiros por clínica, montados a partir dos dados de campanhas e conteúdos de agosto a outubro de 2026 (Reportei).
+Campanhas de Black Friday dos cinco clientes de odontologia do Grupo Opera. Cada clínica recebe uma entrega única, sem datas de publicação: de 5 a 6 filmes, e cada um é a releitura de um anúncio ou conteúdo que já trouxe resultado para ela (dados da Reportei, junho a outubro de 2026).
 
-| Cliente | PDF | Foco dos roteiros |
-|---|---|---|
-| EGO Odontologia | [Roteiros_BlackFriday_2026_EGO.pdf](Roteiros_BlackFriday_2026_EGO.pdf) | Implante, prótese e protocolo; depoimento da Dona Dalva |
-| Trait Odontologia (Guarapuava) | [Roteiros_BlackFriday_2026_Trait.pdf](Roteiros_BlackFriday_2026_Trait.pdf) | Protocolo, implantes, bate-bola e vídeo com a equipe |
-| D'Placido (Dra. Luciana) | [Roteiros_BlackFriday_2026_DPlacido.pdf](Roteiros_BlackFriday_2026_DPlacido.pdf) | Protocolo, sedação, Invisalign e reativação da base antiga |
-| Instituto Sanrire (Brasília) | [Roteiros_BlackFriday_2026_Sanrire.pdf](Roteiros_BlackFriday_2026_Sanrire.pdf) | YouTube (bumper e in-stream): prótese, lentes e facetas, institucional |
-| Fiorini Odonto & Estética | [Roteiros_BlackFriday_2026_Fiorini.pdf](Roteiros_BlackFriday_2026_Fiorini.pdf) | Entrega única, sem calendário: 6 filmes que são releituras dos anúncios campeões. Filme principal: a prótese que quebra no almoço de família |
+| Cliente | PDF | Filme principal | Releituras |
+|---|---|---|---|
+| EGO Odontologia | [Roteiros_BlackFriday_2026_EGO.pdf](Roteiros_BlackFriday_2026_EGO.pdf) | "O que faz falta": a Dona Dalva fala de Black Friday | Dente perdido, prótese, implante, acolhimento |
+| Trait Odontologia (Guarapuava) | [Roteiros_BlackFriday_2026_Trait.pdf](Roteiros_BlackFriday_2026_Trait.pdf) | "Fala, Guarapuava": enquete na rua sobre o que cada um vai comprar | Homem do estático, atendimento, implante unitário, depoimentos |
+| D'Placido (Dra. Luciana) | [Roteiros_BlackFriday_2026_DPlacido.pdf](Roteiros_BlackFriday_2026_DPlacido.pdf) | "O copo": a prótese no copo enquanto chegam as ofertas | Sedação, depoimentos, alinhador, a história da Dra. |
+| Instituto Sanrire (Brasília) | [Roteiros_BlackFriday_2026_Sanrire.pdf](Roteiros_BlackFriday_2026_Sanrire.pdf) | "A pesquisa da Black": gravação de tela com a busca que a pessoa adia | Institucional, canal, lentes, experiência |
+| Fiorini Odonto & Estética | [Roteiros_BlackFriday_2026_Fiorini.pdf](Roteiros_BlackFriday_2026_Fiorini.pdf) | "Na mesa": a prótese que quebra no almoço de família | Homem, Vargem Grande, carga imediata, depoimentos, sedação |
 
 Todos os roteiros em texto, para copiar no teleprompter: [ROTEIROS.md](ROTEIROS.md).
 
-## Como a campanha funciona
+## Como a entrega funciona
 
-A Fiorini segue um modelo próprio: uma entrega única de 6 filmes, sem datas de publicação e sem Invisalign. Cada filme é a releitura de um anúncio que já trouxe resultado (dados por anúncio do Meta Ads, de junho a outubro). As outras quatro clínicas seguem o calendário abaixo.
+- **Filme principal com duas opções.** A Opção A tem gente ou cena (paciente, enquete na rua, dramatização ou gravação de tela). A Opção B é gravada só com a Dra. ou o dentista, no consultório, em cerca de uma hora: sem elenco nem locação.
+- **Gancho de consumo.** Todos os filmes partem da mesma pergunta: na Black Friday a gente troca a TV, o celular, a air fryer… e o sorriso?
+- **Um único chamado.** Todo filme termina pedindo para mandar BLACK no WhatsApp, e a condição especial é apresentada na conversa individual e na avaliação.
+- **Sem a marca Invisalign.** Os filmes de alinhador falam em "alinhador transparente", porque marcas costumam ter regras próprias para campanhas com condição especial.
 
-1. **Aquecimento (09 a 20/11):** Lista VIP. O vídeo pede para mandar BLACK no WhatsApp.
-2. **Esquenta (23 a 26/11):** vídeo que tira dúvidas do tratamento principal da clínica.
-3. **Black Friday (27/11):** abertura. A condição especial passa a valer.
-4. **Última chamada (28 a 30/11):** prazo real até segunda, 30/11.
-
-Antes de gravar, cada clínica precisa definir a condição de Black Friday (para quais tratamentos, qual regra, até quando) **até 05/11**, para a recepção falar a mesma coisa que os vídeos. Gravação até **06/11**.
+Antes de gravar, cada clínica precisa definir a condição de Black Friday (para quais tratamentos e com qual regra), para a recepção falar a mesma coisa que os vídeos.
 
 ## Por que nenhum vídeo fala de preço
 

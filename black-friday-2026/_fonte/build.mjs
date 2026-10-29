@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CALENDARIO, PRAZOS, CHECKLIST, WHATSAPP, CLIENTES } from './conteudo.mjs';
+import { CALENDARIO, PRAZOS, CHECKLIST, WHATSAPP, WHATSAPP_ENTREGA, CLIENTES } from './conteudo.mjs';
 
 const require = createRequire(import.meta.url);
 let chromium;
@@ -158,7 +158,7 @@ td.tela { width: 21%; font-family: 'Poppins', sans-serif; font-weight: 700; font
 .check div::before { content: ''; width: 14px; height: 14px; border: 1.6px solid var(--ink); border-radius: 4px; margin-top: 1px; }
 .fonte { margin-top: 16px; font-size: 9.5px; line-height: 1.5; color: var(--muted); }
 
-/* entrega única (Fiorini) */
+/* entrega única */
 .meta.entrega { grid-template-columns: 1.05fr 1fr 1.05fr 1.1fr; }
 .direcao-grid { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .card ul { margin-top: 8px; padding-left: 16px; display: grid; gap: 5px; font-size: 10.8px; line-height: 1.5; color: #3a3e4f; }
@@ -200,36 +200,32 @@ function capa(c) {
   </section>`;
 }
 
-// Fiorini: entrega única, sem calendário. Mostra de qual anúncio cada filme é releitura.
+// Entrega única, sem calendário. Mostra de qual anúncio ou conteúdo cada filme é releitura.
 function estrategiaEntrega(c, pg, pgs) {
   const linhas = c.ranking.map((r) => `<tr><td class="fala">${esc(r.anuncio)}</td><td><b>${esc(r.resultado)}</b></td><td>${esc(r.custo)}</td><td class="vira">${esc(r.vira)}</td></tr>`).join('');
+  const usos = c.usos.map((u) => `<div class="fase${u.on ? ' on' : ''}"><div><b>${esc(u.b)}</b><small>${esc(u.small)}</small></div><div>${esc(u.texto)}</div></div>`).join('');
   return `<section class="page">${topo(c, 'Estratégia')}
   <div class="miolo">
     <div class="secao"><em>01</em>Estratégia</div>
-    <h2>Os campeões da Fiorini <span>viram filmes de Black</span></h2>
-    <p class="intro">Analisamos os 153 anúncios da Fiorini no Meta Ads de junho a outubro. Cada filme desta entrega é uma releitura de um campeão: mantém o rosto e o tema que funcionaram e troca o motivo para Black Friday.</p>
-    <table class="ranking"><thead><tr><th>Anúncio original</th><th>Resultado</th><th>Custo/conversa</th><th>Vira</th></tr></thead><tbody>${linhas}</tbody></table>
+    <h2>Os campeões ${c.de || 'da'} ${esc(c.curto)} <span>viram filmes de Black</span></h2>
+    <p class="intro">${esc(c.intro)}</p>
+    <table class="ranking"><thead><tr><th>${esc(c.colOriginal || 'Anúncio original')}</th><th>Resultado</th><th>${esc(c.colCusto || 'Custo/conversa')}</th><th>Vira</th></tr></thead><tbody>${linhas}</tbody></table>
     <div class="leitura"><div class="lbl">LEITURA</div>${esc(c.leitura)}${c.notaCanal ? `<br><b>Nota:</b> ${esc(c.notaCanal)}` : ''}</div>
     <div class="duas">
       <div class="card"><h3>Conceito: ${esc(c.conceito)}</h3><p>${esc(c.conceitoTexto)}</p>
         <div class="passos">
-          <div class="passo"><i>1</i><div><b>Envie BLACK</b>Todo filme termina pedindo para mandar BLACK no WhatsApp (ou no Direct, no filme de lentes).</div></div>
+          <div class="passo"><i>1</i><div><b>Envie BLACK</b>${esc(c.envie)}</div></div>
           <div class="passo"><i>2</i><div><b>Conversa individual</b>A recepção entende o caso e convida para a avaliação (mensagens na pág. ${pgs.atendimento}).</div></div>
           <div class="passo"><i>3</i><div><b>Avaliação</b>A condição especial de Black Friday é apresentada na avaliação, para quem começar o tratamento.</div></div>
         </div></div>
-      <div class="card"><h3>Como usar a entrega</h3><div class="cal">
-        <div class="fase on"><div><b>Filme 01</b><small>Na mesa</small></div><div>Criativo principal de todas as campanhas de mensagem. Opção A dramatizada ou B só com a Dra.</div></div>
-        <div class="fase"><div><b>Filmes 02 a 04</b><small>Releituras</small></div><div>Cada um entra na campanha do seu tema (implante e protocolo, lentes), ao lado do anúncio original.</div></div>
-        <div class="fase"><div><b>Filme 05</b><small>Depoimentos</small></div><div>Remarketing para quem já interagiu ou conversou e não agendou.</div></div>
-        <div class="fase"><div><b>Filme 06</b><small>Sedação</small></div><div>Campanha de Sedação Consciente, para quem adia por medo.</div></div>
-      </div></div>
+      <div class="card"><h3>Como usar a entrega</h3><div class="cal">${usos}</div></div>
     </div>
     <div class="alerta">
       <div><h3>Por que os vídeos <span>não falam de preço</span></h3>
         <p>O Código de Ética Odontológica proíbe anunciar preço, serviço gratuito e forma de pagamento. O desconto em si deixou de ser infração em 2025 (Res. CFO 271), mas Black Friday em massa ainda é discutida na Justiça. Por isso, os filmes falam em "condição especial" e os valores ficam para a conversa individual (regras na pág. ${pgs.regras}).</p></div>
       <div class="prazos">
         <div><b>Antes de gravar</b>A clínica define a condição de Black Friday (tratamentos e regra) para a recepção falar a mesma coisa.</div>
-        <div><b>Sem elenco?</b>Os filmes 01 e 02 têm uma Opção B, gravada só com a Dra. no consultório.</div>
+        <div><b>Sem elenco?</b>${esc(c.semElenco)}</div>
       </div>
     </div>
   </div>${rodape(c, pg)}</section>`;
@@ -296,7 +292,7 @@ function estrategia(c, pg) {
 function roteiro(c, r, i, pg) {
   const linhas = r.cenas.map((s) => `<tr><td class="t">${esc(s.t)}</td><td class="img">${multilinha(s.imagem)}</td><td class="fala">${fala(s.fala)}</td><td class="tela">${esc(s.tela)}</td></tr>`).join('');
   const peca = c.entrega ? 'Filme' : 'Roteiro';
-  const opcao = r.opcao === 'B' ? ' · Opção B: só a Dra.' : r.opcaoB ? ' · Opção A: dramatizada' : '';
+  const opcao = r.opcao === 'B' ? ` · Opção B: ${c.rotuloB}` : r.opcaoB ? ` · Opção A: ${r.rotuloA || 'dramatizada'}` : '';
   const etiqueta = c.entrega ? esc(r.tipo + opcao) : `${esc(r.fase)} · ${esc(r.janela)}`;
   const ultima = r.opcao === 'B'
     ? `<div><small>Quando usar</small><b>${esc(r.quando)}</b></div>`
@@ -324,8 +320,8 @@ function roteiro(c, r, i, pg) {
 }
 
 function atendimento(c, pg) {
-  const msgs = (c.whatsapp || WHATSAPP).map((m) => `<div class="msg"><div class="q"><b>${esc(m.etapa)}</b><small>${esc(m.quando)}</small></div>
-    <div class="balao">${esc(m.texto.replaceAll('{clinica}', c.curto))}</div></div>`).join('');
+  const msgs = (c.whatsapp || (c.entrega ? WHATSAPP_ENTREGA : WHATSAPP)).map((m) => `<div class="msg"><div class="q"><b>${esc(m.etapa)}</b><small>${esc(m.quando)}</small></div>
+    <div class="balao">${esc(m.texto.replaceAll('{clinica}', c.curto).replaceAll('{tratamentos}', c.tratamentos))}</div></div>`).join('');
   return `<section class="page">${topo(c, 'Atendimento')}
   <div class="miolo">
     <div class="secao"><em>02</em>Atendimento</div>
@@ -366,7 +362,7 @@ function regras(c, pg) {
     <div class="leitura" style="margin-top:18px"><div class="lbl">CHECKLIST ANTES DE PUBLICAR</div>Passe por esta lista em cada vídeo, legenda e anúncio.</div>
     <div class="check">${chk}</div>
     <p class="fonte">Base: Código de Ética Odontológica (Res. CFO 118/2012), com as alterações das Res. CFO 196/2019 (imagens e selfies) e 271/2025 (descontos), e a discussão judicial sobre campanhas de Black Friday na odontologia (TRF5, MS 0805602-15.2025.4.05.8300). Este material não substitui orientação jurídica nem a consulta ao CRO do estado.<br>
-    Dados de desempenho: ${c.entrega ? 'Reportei (Meta Ads, por anúncio), junho a outubro de 2026.' : 'Reportei (Meta Ads, Google Ads, Instagram e YouTube), agosto a outubro de 2026.'}</p>
+    Dados de desempenho: ${c.entrega ? esc(c.fonte) : 'Reportei (Meta Ads, Google Ads, Instagram e YouTube), agosto a outubro de 2026.'}</p>
   </div>${rodape(c, pg)}</section>`;
 }
 
@@ -393,7 +389,7 @@ function documento(c) {
 function markdown() {
   const md = [`# Roteiros Black Friday 2026 · Clientes de odontologia`, ``,
     `> Gerado a partir de \`_fonte/conteudo.mjs\`. Os PDFs desta pasta têm o mesmo conteúdo, com layout para enviar ao cliente.`, ``,
-    `**Calendário:** ${CALENDARIO.map((f) => `${f.fase} (${f.janela})`).join(' → ')}. Condição definida pela clínica até ${PRAZOS.condicao}; gravação até ${PRAZOS.gravacao}.`, ``];
+    `**Formato:** entrega única por clínica, sem datas de publicação. Cada filme é a releitura de um anúncio ou conteúdo que já funcionou, e o filme principal tem uma Opção B sem elenco.`, ``];
   for (const c of CLIENTES) {
     md.push(`---`, ``, `## ${c.nome}`, ``, `**Conceito:** ${c.conceito}. ${c.conceitoTexto}`, ``);
     if (c.entrega) {
@@ -451,6 +447,9 @@ for (const c of alvos) {
   const estouros = await page.$$eval('.page', (ps) => ps.map((p, i) => {
     const limite = p.getBoundingClientRect().bottom - 52;
     const fundo = Math.max(...[...p.querySelectorAll('.miolo > *')].map((e) => e.getBoundingClientRect().bottom), 0);
+    // Na capa, a faixa de números fica colada no rodapé: legenda que quebra linha sai da página.
+    const faixa = [...p.querySelectorAll('.faixa span')].some((e) => e.getBoundingClientRect().bottom > p.getBoundingClientRect().bottom - 8);
+    if (faixa) return `pág. ${i + 1}: legenda da faixa da capa quebrou linha`;
     return fundo > limite ? `pág. ${i + 1}: ${Math.round(fundo - limite)}px além do limite` : null;
   }).filter(Boolean));
   if (estouros.length) console.warn(`⚠ ${c.slug}: ${estouros.join('; ')}`);
