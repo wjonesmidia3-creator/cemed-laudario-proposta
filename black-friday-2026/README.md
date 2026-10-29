@@ -8,11 +8,13 @@ Roteiros de vídeo para a Black Friday dos cinco clientes de odontologia do Grup
 | Trait Odontologia (Guarapuava) | [Roteiros_BlackFriday_2026_Trait.pdf](Roteiros_BlackFriday_2026_Trait.pdf) | Protocolo, implantes, bate-bola e vídeo com a equipe |
 | D'Placido (Dra. Luciana) | [Roteiros_BlackFriday_2026_DPlacido.pdf](Roteiros_BlackFriday_2026_DPlacido.pdf) | Protocolo, sedação, Invisalign e reativação da base antiga |
 | Instituto Sanrire (Brasília) | [Roteiros_BlackFriday_2026_Sanrire.pdf](Roteiros_BlackFriday_2026_Sanrire.pdf) | YouTube (bumper e in-stream): prótese, lentes e facetas, institucional |
-| Fiorini Odonto & Estética | [Roteiros_BlackFriday_2026_Fiorini.pdf](Roteiros_BlackFriday_2026_Fiorini.pdf) | Protocolo, sedação consciente, lentes e Invisalign |
+| Fiorini Odonto & Estética | [Roteiros_BlackFriday_2026_Fiorini.pdf](Roteiros_BlackFriday_2026_Fiorini.pdf) | Entrega única, sem calendário: 6 filmes que são releituras dos anúncios campeões. Filme principal: a prótese que quebra no almoço de família |
 
 Todos os roteiros em texto, para copiar no teleprompter: [ROTEIROS.md](ROTEIROS.md).
 
 ## Como a campanha funciona
+
+A Fiorini segue um modelo próprio: uma entrega única de 6 filmes, sem datas de publicação e sem Invisalign. Cada filme é a releitura de um anúncio que já trouxe resultado (dados por anúncio do Meta Ads, de junho a outubro). As outras quatro clínicas seguem o calendário abaixo.
 
 1. **Aquecimento (09 a 20/11):** Lista VIP. O vídeo pede para mandar BLACK no WhatsApp.
 2. **Esquenta (23 a 26/11):** vídeo que tira dúvidas do tratamento principal da clínica.

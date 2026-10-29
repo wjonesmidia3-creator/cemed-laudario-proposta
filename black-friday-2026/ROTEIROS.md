@@ -572,137 +572,208 @@
 
 ## Fiorini Odonto & Estética
 
-**Conceito:** Black Fiorini · Lista VIP. A Fiorini tem campanhas fortes em reabilitação (protocolo e implantes) e em estética (lentes e Invisalign). Os roteiros falam com os dois públicos e usam a Lista VIP para juntar interessados antes da abertura. A condição especial é apresentada só no atendimento individual.
+**Conceito:** Black Fiorini · E o seu sorriso?. Na Black Friday, todo mundo troca alguma coisa: a TV, o celular, o tênis. A campanha pega essa conversa que já está na mesa de todo mundo e faz uma pergunta só: e o seu sorriso? Cada filme leva para o WhatsApp, onde a condição especial é apresentada individualmente.
 
-- **283** conversas na campanha de Protocolo, a R$ 18,17. O maior volume da conta (Meta Ads, set–out).
-- **5,15%** de taxa de cliques no anúncio de Sedação Consciente. A maior da conta. O tema chama atenção.
-- **R$ 9,23** por conversa na campanha de Lentes com destino Direct. Contra R$ 36,78 na outra campanha de Lentes (V2). Amostra ainda pequena: 10 conversas.
+Entrega única, sem calendário: cada filme é a releitura de um anúncio que já trouxe resultado.
 
-### Roteiro 01 · Vou te contar antes de todo mundo
+| Anúncio original | Resultado | Custo por conversa | Vira |
+|---|---|---|---|
+| Posts da Claudia (60 anos) | 210 conversas | R$ 12,84 a 16,60 | Filme 01 · Na mesa |
+| Estáticos e post do Homem | 222 conversas | R$ 7,97 a 13,15 | Filme 02 · A lista da Black |
+| Lentes Dentais em Vargem Grande | 89 conversas | R$ 15,59 | Filme 03 · Você de Vargem Grande |
+| Implante Carga Imediata | 75 conversas | R$ 15,29 | Filme 04 · Dente no mesmo dia? |
+| Vários Depoimentos | CTR 2,25% | R$ 18,26 | Filme 05 · Eles não deixaram pra depois |
+| Não Era o Tratamento (sedação) | CTR 6,59% | — | Filme 06 · Era o medo |
 
-**Aquecimento · 09 a 13/11** · Reels 9:16 · 28 s · Quem grava: Dentista · Onde usar: Feed e stories + criativo nas campanhas de Protocolo e Implantes
+### Filme 01 · Na mesa
 
-**Objetivo:** Anunciar que a Black Friday vem aí e abrir a Lista VIP.  
-**Por quê:** Protocolo e implantes concentram o maior volume de conversas da conta. O aquecimento junta esse público na lista antes da abertura.
+**Filme principal** · Releitura de: POST CLAUDIA 60 ANOS (149 conversas a R$ 12,84) · Filme 9:16 e 4:5 · 60 s (+ cortes de 30, 15 e 6 s) · Quem grava: Claudia (ou atriz de ~60 anos) + família + dentista · Onde usar: Criativo principal de todas as campanhas de mensagem + feed e stories
+
+**Objetivo:** Contar, em uma cena que todo mundo reconhece, por que não dá pra deixar a prótese pra depois, e ligar isso à Black Friday.  
+**Por quê:** Os posts com a Claudia são o maior resultado da conta: 210 conversas desde junho. O filme mantém a protagonista e o tema e transforma o post em uma história.
 
 | Tempo | Cena | Fala | Texto na tela |
 |---|---|---|---|
-| 0–3 s | Dentista se aproxima da câmera, tom de segredo. | Vou te contar uma coisa antes de todo mundo. | VOU TE CONTAR ANTES 🤫 |
-| 3–13 s | Plano médio. | Em novembro vai ter Black Friday na Fiorini. Uma condição especial pra quem quer começar aquele tratamento que vem adiando: implante, protocolo, lentes, Invisalign. | BLACK FRIDAY FIORINI |
-| 13–22 s | B-roll da clínica e da equipe. | Os detalhes eu vou contar primeiro pra quem estiver na nossa Lista VIP. | LISTA VIP |
-| 22–28 s | Dentista aponta para baixo. | Pra entrar, é só mandar BLACK no WhatsApp ou no Direct. | ENVIE "BLACK" NO WHATSAPP OU DIRECT |
+| 0–5 s | Almoço de domingo em casa. O filho mostra o celular para a mãe. | Filho: "Mãe, olha a TV que eu peguei na Black Friday!"<br>Neta: "E eu comprei um tênis!" | — |
+| 5–9 s | Claudia ri e morde um pão. Estalo seco; ela congela. | (som do estalo; 1 s de silêncio) | — |
+| 9–15 s | Close no guardanapo com o pedaço da prótese. Ela sorri de boca fechada. | Neta: "Vó, tá tudo bem?"<br>Claudia (abafado): "Tá… tá sim." | CENA DRAMATIZADA (canto) |
+| 15–24 s | Banheiro: Claudia olha a prótese quebrada no espelho. | (off, Claudia) Todo ano eu troco alguma coisa na Black Friday. Menos o que mais me faz falta. | TODO ANO VOCÊ TROCA ALGUMA COISA NA BLACK… |
+| 24–30 s | Close do celular: ela envia BLACK para a Fiorini. | (off, Claudia) Esse ano, eu comecei por mim. | …E O SEU SORRISO? |
+| 30–44 s | Dentista na clínica, para a câmera. | Prótese que quebra, mexe ou machuca não precisa ser pra sempre. Existem soluções fixas, como o protocolo sobre implantes, e a indicação certa sai de uma avaliação cuidadosa. | PROTOCOLO SOBRE IMPLANTES · AVALIAÇÃO |
+| 44–54 s | Dentista mais perto; entra o lettering Black. | E é Black Friday na Fiorini: condição especial pra quem começar o tratamento agora. Os detalhes a gente te passa no WhatsApp. | BLACK FRIDAY FIORINI · CONDIÇÃO ESPECIAL |
+| 54–60 s | De volta à mesa, celular ao lado do prato. Logo. | (off, Claudia) Tem coisa que não dá pra deixar pra próxima Black. | ENVIE "BLACK" NO WHATSAPP |
 
 **Legenda sugerida:**
 
-> Vem aí a Black Friday da Fiorini! 🖤
+> Todo ano a gente troca alguma coisa na Black Friday: a TV, o celular, o tênis. 🖤
 > 
-> Condição especial para quem quer começar o tratamento que vem adiando: implante, protocolo, lentes, Invisalign. Quem está na Lista VIP fica sabendo primeiro.
+> E o seu sorriso? Se a sua prótese quebra, mexe ou machuca, não precisa ser pra sempre. Na Black Friday da Fiorini, quem começar o tratamento agora tem condição especial.
 > 
-> 📲 Envie BLACK no WhatsApp ou no Direct.
+> 📲 Envie BLACK no nosso WhatsApp.
+> 
+> *Cena dramatizada.
 > 
 > Responsável técnico: [nome] · CRO-[UF] [nº]
 
-**Dica de gravação:** O tom de segredo funciona com voz mais baixa e a câmera bem perto. Grave a primeira frase sussurrando e falando normal; escolha na edição.
+**Dica de gravação:** O filme vive do contraste entre a mesa animada e o silêncio depois do estalo. Grave a conversa da família de verdade, sem roteiro decorado, e só marque o momento da mordida.
 
-### Roteiro 02 · 3 sinais de que é hora de pensar em protocolo
+#### Direção · Na mesa
 
-**Aquecimento · 16 a 20/11** · Reels 9:16 · 38 s · Quem grava: Dentista, com um modelo de protocolo · Onde usar: Feed + criativo na campanha de Protocolo
+**Elenco:** Claudia, do post "Claudia 60 anos", se ela topar dramatizar a cena (autorização de imagem para anúncio). Se não, atriz com o mesmo perfil: mulher de ~60 anos, jeito de avó. Filho ou genro (~35 anos), neta (10 a 14 anos) e mais um ou dois adultos à mesa. Dentista da Fiorini, só nas cenas 6 e 7.
 
-**Objetivo:** Ajudar quem usa prótese a se reconhecer e levar para a Lista VIP.  
-**Por quê:** Protocolo é a campanha de maior volume da Fiorini: 283 conversas a R$ 18,17.
+**Cenário:** Mesa de almoço de domingo em uma casa, não na clínica: toalha, travessas, pão na cesta, luz quente de janela. TV ou celular pode mostrar algo de Black Friday, sem marca de loja real. Banheiro com espelho para a cena 4. Clínica para as cenas 6 e 7.
+
+**Objetos de cena:** Prótese cenográfica (sem uso) para o pedaço quebrado. Nada de close desconfortável: o pedaço aparece no guardanapo e na mão. Celular com a conversa da Fiorini no WhatsApp montada, mostrando "BLACK" enviado.
+
+**Som:** Conversa e risadas reais, estalo seco gravado à parte (foley) no momento da mordida e 1 segundo de silêncio. A trilha só entra na virada, na cena 5.
+
+**Peças:**
+- Corte 30 s (Anúncio de mensagem (WhatsApp)): Cenas 1, 2, 3, 5, 7 e 8
+- Corte 15 s (Stories e remarketing): Cena 2 (estalo) + frase da cena 4 + cena 7 + cartela final
+- Corte 6 s (Teste de gancho e stories): Estalo da cena 2 + cartela "Tem coisa que não dá pra deixar pra próxima Black."
+- Estático (Feed e anúncio): Frame da cena 3 (guardanapo na boca, família olhando) + título "Todo ano você troca alguma coisa na Black. E o seu sorriso?"
+
+**Ganchos para testar:**
+- Começar direto no estalo da mordida.
+- Começar com a fala "Mãe, olha a TV que eu peguei na Black Friday!".
+- Começar no close do guardanapo com o "Vó, tá tudo bem?".
+
+**Cuidados:**
+- Lettering "Cena dramatizada" no canto durante a mesa: é encenação, não depoimento.
+- Claudia nunca fala da oferta. Quem apresenta a Black Friday é a dentista.
+- Não mostrar a Claudia com o tratamento pronto: o final é a decisão (mandar BLACK), não o resultado. Mostrar o "depois" seria promessa de resultado.
+
+### Filme 02 · A lista da Black
+
+**Releitura** · Releitura de: Estáticos Homem 1 e 3 + POST HOMEM (222 conversas; Homem 3 a R$ 7,97) · Reels 9:16 · 33 s + 2 estáticos · Quem grava: Homem de 50 a 60 anos (paciente ou ator) + dentista · Onde usar: Campanhas de mensagem de Implantes e Protocolo
+
+**Objetivo:** Levar a persona masculina que mais converteu para o vídeo, com o gancho da lista de compras da Black Friday.  
+**Por quê:** Somados, os anúncios com o "homem" trouxeram 222 conversas, e o Estático Homem 3 teve o menor custo por conversa da conta (R$ 7,97). O filme mantém o rosto e o tema e ganha movimento.
 
 | Tempo | Cena | Fala | Texto na tela |
 |---|---|---|---|
-| 0–3 s | Dentista mostrando três dedos. | Três sinais de que está na hora de pensar em protocolo. | 3 SINAIS |
-| 3–11 s | Plano médio. | Um: a sua prótese mexe quando você fala ou mastiga. | 1. A PRÓTESE MEXE |
-| 11–19 s | Corte. | Dois: você já evita certos alimentos, ou sorrir em foto. | 2. VOCÊ EVITA COMER OU SORRIR |
-| 19–27 s | Corte. | Três: você usa cola todo dia e mesmo assim não se sente seguro. | 3. COLA TODO DIA, POUCA SEGURANÇA |
-| 27–38 s | Dentista com o modelo de protocolo. | O protocolo é uma prótese fixa sobre implantes. E na Black Friday da Fiorini, quem iniciar o planejamento até 30 de novembro tem condição especial. Manda BLACK no WhatsApp. | CONDIÇÃO ESPECIAL ATÉ 30/11 |
+| 0–3 s | Close: mão escrevendo num bloco de papel "LISTA DA BLACK": celular pra Ana, furadeira, pneu do carro. | (off, homem) Minha lista da Black Friday tá pronta. | LISTA DA BLACK |
+| 3–9 s | Ele olha para a geladeira: foto de família em que é o único de boca fechada. | (off) Todo ano tem presente pra todo mundo. E todo ano eu fico assim nas fotos. | — |
+| 9–14 s | Ele volta ao bloco e escreve no topo da lista: "Voltar a sorrir nas fotos". | (off) Esse ano, o primeiro item é meu. | 1. VOLTAR A SORRIR NAS FOTOS |
+| 14–26 s | Dentista na clínica. | Se você esconde o sorriso por causa de dente faltando ou de prótese que não para no lugar, existem caminhos, como implantes e protocolo. Tudo começa com uma avaliação. | IMPLANTE · PROTOCOLO |
+| 26–33 s | Dentista, lettering Black. | E na Black Friday da Fiorini tem condição especial pra quem começar agora. Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
 
 **Legenda sugerida:**
 
-> Se você se identificou com pelo menos um desses sinais, vale conversar sobre protocolo. 🦷
+> Presente pra todo mundo na Black Friday. E pra você? 📝
 > 
-> Na Black Friday da Fiorini, quem iniciar o planejamento até 30/11 tem condição especial. Cada caso é avaliado com cuidado.
+> Se você esconde o sorriso nas fotos por causa de dente faltando ou de prótese, existem caminhos, como implantes e protocolo. Na Black Friday da Fiorini, condição especial para quem começar agora.
 > 
 > 📲 Envie BLACK no WhatsApp.
 > 
 > Responsável técnico: [nome] · CRO-[UF] [nº]
 
-**Dica de gravação:** Um corte por sinal, com o número grande na tela: facilita assistir sem som.
+**Dica de gravação:** Como os originais eram estáticos, gere também dois estáticos para testar lado a lado: a lista com "Voltar a sorrir nas fotos" no topo, e o homem segurando a lista.
 
-### Roteiro 03 · Só de pensar em dentista, você sente isso?
+### Filme 03 · Você de Vargem Grande
 
-**Esquenta · 23 a 26/11** · Reels 9:16 · 35 s · Quem grava: Dentista + figurante (atuação) · Onde usar: Feed + criativo na campanha de Sedação Consciente
+**Releitura** · Releitura de: Lentes Dentais em Vargem Grande (89 conversas a R$ 15,59) · Reels 9:16 · 30 s · Quem grava: Dentista, na fachada e no consultório · Onde usar: Campanha de Lentes com destino Direct + WhatsApp
 
-**Objetivo:** Falar com quem adia por medo, tema que mais gera clique na conta.  
-**Por quê:** O anúncio de Sedação Consciente teve a maior taxa de cliques da conta (5,15%).
-
-| Tempo | Cena | Fala | Texto na tela |
-|---|---|---|---|
-| 0–3 s | Close: mão apertando o braço da cadeira (atuação); corte para a dentista. | Só de pensar em dentista, você já sente isso? | SÓ DE PENSAR EM DENTISTA… |
-| 3–14 s | Dentista em plano médio. | Você não está sozinho. Muita gente adia tratamento por anos por causa do medo. Pra esses casos existe a sedação consciente. | SEDAÇÃO CONSCIENTE |
-| 14–26 s | B-roll: paciente tranquilo na cadeira, equipe ao lado. | Você fica acordado, mas mais relaxado, e a equipe acompanha você o tempo todo. A indicação é feita na avaliação. | ACORDADO, MAIS RELAXADO |
-| 26–35 s | Dentista para a câmera. | E até 30 de novembro, na Black Friday da Fiorini, quem iniciar o tratamento tem condição especial. Chama a gente no WhatsApp. | CONDIÇÃO ESPECIAL ATÉ 30/11 |
-
-**Legenda sugerida:**
-
-> Medo de dentista é mais comum do que parece, e não precisa te fazer adiar mais um ano. 🤍
-> 
-> Com a sedação consciente, você fica acordado e mais relaxado, com acompanhamento o tempo todo. A indicação é feita na avaliação. Até 30/11, condição especial de Black Friday.
-> 
-> 📲 Chame no WhatsApp.
-> 
-> Responsável técnico: [nome] · CRO-[UF] [nº]
-
-**Dica de gravação:** Nada de "você não sente nada" ou "sem dor": fale de tranquilidade e acompanhamento.
-
-### Roteiro 04 · Lente ou Invisalign: qual é o seu caso?
-
-**Black Friday · 27/11** · Reels 9:16 · 37 s · Quem grava: Dentista, com uma lente (ou modelo) e um alinhador · Onde usar: Feed e stories + campanhas de Lentes (destino Direct) e Invisalign
-
-**Objetivo:** Abrir a Black Friday respondendo à dúvida de quem busca estética.  
-**Por quê:** Invisalign Experience teve taxa de cliques de 4,41%, e lentes trazem conversa barata pelo Direct (R$ 9,23). Um vídeo que ajuda a pessoa a se encaixar atende os dois públicos.
+**Objetivo:** Falar com quem mora perto e quer mudar o sorriso, usando o chamado local que já funcionou.  
+**Por quê:** "Lentes Dentais em Vargem Grande" trouxe 89 conversas, e "Você de Vargem Grande" teve custo de R$ 8,64 por conversa: chamar o bairro pelo nome funciona. Lentes rendem conversa mais barata pelo Direct (R$ 9,23).
 
 | Tempo | Cena | Fala | Texto na tela |
 |---|---|---|---|
-| 0–3 s | Dentista com uma lente em uma mão e um alinhador na outra. | Lente ou Invisalign: qual é o seu caso? | LENTE OU INVISALIGN? |
-| 3–13 s | Levanta o alinhador. | Se o que te incomoda é a posição dos dentes, tortos ou separados, o caminho costuma ser o alinhador: transparente e feito sob medida. | DENTES TORTOS? ALINHADOR |
-| 13–23 s | Levanta a lente. | Se o incômodo é a forma, o tamanho ou a cor, as lentes podem ser indicadas. E tem caso que combina os dois. | FORMA E COR? LENTES |
-| 23–33 s | Dentista, tom de anúncio. | Quem decide é a avaliação. E hoje começou a Black Friday da Fiorini: até segunda, 30 de novembro, condição especial pra quem iniciar o tratamento. | BLACK FRIDAY FIORINI · COMEÇOU |
-| 33–37 s | Dentista aponta para baixo. | Manda BLACK no WhatsApp ou no Direct. | ENVIE "BLACK" NO WHATSAPP OU DIRECT |
+| 0–3 s | Dentista na porta da clínica, apontando para a rua. | Você que é de Vargem Grande e sempre quis mudar o sorriso: presta atenção. | VOCÊ DE VARGEM GRANDE |
+| 3–12 s | Consultório; dentista com um modelo de lente na mão. | Lentes dentais podem mudar a forma, o tamanho e a cor dos dentes. Mas cada caso tem a sua indicação: às vezes é lente, às vezes é outro caminho. | LENTES DENTAIS |
+| 12–20 s | B-roll: escaneamento, planejamento na tela, prova em paciente (com autorização). | Por isso a gente planeja antes: você vê a proposta e decide junto com a gente. | PLANEJAMENTO ANTES DE TUDO |
+| 20–30 s | Dentista para a câmera, lettering Black. | E é Black Friday na Fiorini, aqui em Vargem Grande: condição especial pra quem começar o tratamento agora. Manda BLACK no Direct ou no WhatsApp. | BLACK FRIDAY FIORINI · VARGEM GRANDE |
 
 **Legenda sugerida:**
 
-> Lente ou Invisalign? Depende do que te incomoda, e às vezes a resposta é os dois. ✨
+> Você de Vargem Grande que sempre quis mudar o sorriso: é Black Friday na Fiorini. ✨
 > 
-> Começou a Black Friday da Fiorini: até 30/11, condição especial para quem iniciar o tratamento.
+> Lentes dentais mudam forma, tamanho e cor, sempre com planejamento antes. Condição especial para quem começar o tratamento agora.
 > 
-> 📲 Envie BLACK no WhatsApp ou no Direct.
+> 📲 Envie BLACK no Direct ou no WhatsApp.
 > 
 > Responsável técnico: [nome] · CRO-[UF] [nº]
 
-**Dica de gravação:** Mantenha os dois objetos sempre no quadro; eles organizam o vídeo visualmente.
+**Dica de gravação:** O nome do bairro precisa aparecer na fala e na tela nos 3 primeiros segundos: é ele que faz a pessoa parar.
 
-### Roteiro 05 · Quem começou, conta
+### Filme 04 · Dente no mesmo dia?
 
-**Última chamada · 28 a 30/11** · Reels + stories 9:16 · 18 s (+ corte de 6 s para anúncio) · Quem grava: Paciente (trecho de depoimento já autorizado) + dentista · Onde usar: Stories de sábado a segunda + remarketing para quem interagiu
+**Releitura** · Releitura de: Implante Carga Imediata (75 conversas a R$ 15,29) · Reels 9:16 · 32 s · Quem grava: Dentista, com um modelo de implante · Onde usar: Campanha de mensagem de Implantes
 
-**Objetivo:** Fechar com prova social e prazo real.  
-**Por quê:** A campanha de Depoimento trouxe 44 conversas a R$ 17,29, entre os melhores custos da conta.
+**Objetivo:** Responder a pergunta que mais atrai quem precisa de implante, com a condição de Black Friday no fim.  
+**Por quê:** O vídeo de carga imediata trouxe 75 conversas desde julho, o quarto maior resultado da conta. A releitura mantém a pergunta e deixa claro que depende do caso.
 
 | Tempo | Cena | Fala | Texto na tela |
 |---|---|---|---|
-| 0–4 s | Trecho de depoimento já aprovado: paciente sorrindo, uma frase. | (áudio original do paciente) | QUEM COMEÇOU, CONTA |
-| 4–12 s | Dentista para a câmera. | Faltam poucos dias pra Black Friday da Fiorini acabar. A condição especial vale só até segunda, 30 de novembro. | ÚLTIMOS DIAS · ATÉ 30/11 |
-| 12–18 s | Dentista aponta para o botão. | Se você estava esperando um sinal, é esse. Chama no WhatsApp. | CHAME NO WHATSAPP |
+| 0–3 s | Dentista em close, segurando um modelo de implante. | Dá pra colocar o implante e sair com dente no mesmo dia? | DENTE NO MESMO DIA? |
+| 3–13 s | Plano médio, dentista mostra o modelo. | Quando o caso permite, sim. Chama-se carga imediata: o implante recebe um dente provisório logo depois da cirurgia. | CARGA IMEDIATA |
+| 13–22 s | B-roll: tomografia na tela, planejamento. | Mas isso depende do osso, da saúde da boca e do planejamento. Quem responde é a avaliação, não a internet. | DEPENDE DO SEU CASO |
+| 22–32 s | Dentista para a câmera, lettering Black. | E nessa Black Friday, quem quer resolver o dente que falta tem condição especial na Fiorini. Manda BLACK no WhatsApp. | BLACK FRIDAY FIORINI |
 
 **Legenda sugerida:**
 
-> Últimos dias da Black Friday Fiorini. ⏳ Condição especial até segunda, 30/11.
+> Sair com dente no mesmo dia? Quando o caso permite, sim: é a carga imediata. 🦷
 > 
-> 📲 Chame no WhatsApp e agende sua avaliação.
+> Mas quem decide é a avaliação. Na Black Friday da Fiorini, condição especial para quem quer resolver o dente que falta.
+> 
+> 📲 Envie BLACK no WhatsApp.
 > 
 > Responsável técnico: [nome] · CRO-[UF] [nº]
 
-**Dica de gravação:** Grave três aberturas da dentista: "Faltam 3 dias", "Faltam 2 dias" e "É hoje, último dia!".
+**Dica de gravação:** Não corte o "quando o caso permite": sem ele, a fala vira promessa.
+
+### Filme 05 · Eles não deixaram pra depois
+
+**Releitura** · Releitura de: Vários Depoimentos (CTR 2,25%, 28 conversas a R$ 18,26) · Reels 9:16 · 32 s · montagem · Quem grava: Depoimentos já gravados + dentista · Onde usar: Campanhas de mensagem + remarketing de quem interagiu
+
+**Objetivo:** Juntar a prova social que a clínica já tem em um filme só, com a Black Friday como fechamento.  
+**Por quê:** Os anúncios de depoimento têm as maiores taxas de clique entre os de mensagem (até 2,25%). A montagem reaproveita material que já existe: Claudia, Sergio, Rossi, Isabela, Elsa, Paulo.
+
+> **Atenção:** Use só trechos de pacientes cuja autorização de imagem cobre anúncio. As falas são as originais, sem edição que mude o sentido.
+
+| Tempo | Cena | Fala | Texto na tela |
+|---|---|---|---|
+| 0–2 s | A frase mais forte de um depoimento já aprovado. | (áudio original do paciente) | — |
+| 2–12 s | Cortes de 2 s: Claudia, Sergio, Rossi, Isabela, Elsa (o material que já existe). | (áudios originais) | (primeiro nome de cada paciente) |
+| 12–16 s | Fundo preto, lettering. | (só trilha) | ELES NÃO DEIXARAM PRA DEPOIS. |
+| 16–28 s | Dentista para a câmera. | Cada uma dessas histórias começou com uma conversa. Na Black Friday da Fiorini, a próxima pode ser a sua: condição especial pra quem começar agora. | BLACK FRIDAY FIORINI |
+| 28–32 s | Dentista aponta para baixo. | Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
+
+**Legenda sugerida:**
+
+> Eles não deixaram pra depois. 🤍 Obrigado a cada paciente que confiou na Fiorini e topou contar a sua história.
+> 
+> Na Black Friday, a próxima pode ser a sua: condição especial para quem começar o tratamento agora.
+> 
+> 📲 Envie BLACK no WhatsApp.
+> 
+> Responsável técnico: [nome] · CRO-[UF] [nº]
+
+**Dica de gravação:** Escolha frases curtas e diferentes entre si (decisão, medo, resultado no dia a dia). Repetir "foi ótimo" cinco vezes cansa.
+
+### Filme 06 · Era o medo
+
+**Releitura** · Releitura de: Não Era o Tratamento (CTR 6,59%) · Reels 9:16 · 36 s · Quem grava: Dentista + figurante (atuação) · Onde usar: Campanha de Sedação Consciente
+
+**Objetivo:** Falar com quem adia por medo, o tema que mais gera clique na conta, e ligar à Black Friday.  
+**Por quê:** "Não Era o Tratamento" teve taxa de cliques de 6,59%, entre as maiores da conta, e a campanha de Sedação Consciente fez 5,15%. O filme usa o mesmo título como gancho.
+
+| Tempo | Cena | Fala | Texto na tela |
+|---|---|---|---|
+| 0–3 s | Sala de espera: close na perna de alguém balançando, mãos apertadas (atuação). | (off) Não era o tratamento. Era o medo. | NÃO ERA O TRATAMENTO. ERA O MEDO. |
+| 3–13 s | Dentista em plano médio. | Muita gente adia por anos, não porque não quer cuidar do sorriso, mas por medo da cadeira do dentista. | — |
+| 13–24 s | B-roll: paciente tranquilo na cadeira, equipe ao lado. | Pra esses casos existe a sedação consciente: você fica acordado, mais relaxado, e a equipe acompanha você o tempo todo. A indicação é feita na avaliação. | SEDAÇÃO CONSCIENTE |
+| 24–33 s | Dentista para a câmera, lettering Black. | Na Black Friday da Fiorini, quem decidir começar agora tem condição especial. O medo não precisa decidir por você. | BLACK FRIDAY FIORINI |
+| 33–36 s | Dentista aponta para baixo. | Manda BLACK no WhatsApp. | ENVIE "BLACK" NO WHATSAPP |
+
+**Legenda sugerida:**
+
+> Não era o tratamento. Era o medo. 🤍
+> 
+> Com a sedação consciente, você fica acordado e mais relaxado, com acompanhamento o tempo todo. A indicação é feita na avaliação. Na Black Friday da Fiorini, condição especial para quem decidir começar agora.
+> 
+> 📲 Envie BLACK no WhatsApp.
+> 
+> Responsável técnico: [nome] · CRO-[UF] [nº]
+
+**Dica de gravação:** Antes de editar, assista ao anúncio original "Não Era o Tratamento" e mantenha o mesmo ritmo de abertura. Nada de "você não sente nada" ou "sem dor".

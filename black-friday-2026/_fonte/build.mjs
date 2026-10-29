@@ -47,7 +47,7 @@ h1, h2, h3, .poppins { font-family: 'Poppins', sans-serif; }
 .capa .eyebrow { margin-top: 150px; display: flex; align-items: center; gap: 14px; color: var(--orange-2);
   font-size: 11px; font-weight: 700; letter-spacing: .32em; text-transform: uppercase; }
 .capa .eyebrow::before { content: ''; width: 34px; height: 3px; background: var(--orange-2); border-radius: 2px; }
-.capa h1 { margin-top: 22px; font-size: 44px; line-height: 1.08; font-weight: 800; letter-spacing: -0.025em; max-width: 640px; }
+.capa h1 { margin-top: 22px; font-size: 44px; line-height: 1.08; font-weight: 800; letter-spacing: -0.025em; max-width: 640px; text-wrap: balance; }
 .capa h1 span { color: var(--orange); display: block; }
 .capa .sub { margin-top: 22px; font-size: 15px; line-height: 1.6; color: #c9ccd8; max-width: 560px; }
 .chips { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
@@ -64,7 +64,7 @@ h1, h2, h3, .poppins { font-family: 'Poppins', sans-serif; }
   border-top: 1px solid rgba(255,255,255,.12); }
 .capa .faixa div { padding: 24px 26px; border-right: 1px solid rgba(255,255,255,.12); }
 .capa .faixa div:last-child { border-right: 0; }
-.capa .faixa b { display: block; font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 800; color: #fff; }
+.capa .faixa b { white-space: nowrap; display: block; font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 800; color: #fff; }
 .capa .faixa b em { font-style: normal; color: var(--orange); }
 .capa .faixa span { font-size: 11px; color: #aeb2c2; }
 
@@ -157,6 +157,15 @@ td.tela { width: 21%; font-family: 'Poppins', sans-serif; font-weight: 700; font
 .check div { display: grid; grid-template-columns: 18px 1fr; gap: 8px; font-size: 10.8px; line-height: 1.45; }
 .check div::before { content: ''; width: 14px; height: 14px; border: 1.6px solid var(--ink); border-radius: 4px; margin-top: 1px; }
 .fonte { margin-top: 16px; font-size: 9.5px; line-height: 1.5; color: var(--muted); }
+
+/* entrega única (Fiorini) */
+.meta.entrega { grid-template-columns: 1.05fr 1fr 1.05fr 1.1fr; }
+.direcao-grid { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card ul { margin-top: 8px; padding-left: 16px; display: grid; gap: 5px; font-size: 10.8px; line-height: 1.5; color: #3a3e4f; }
+.card.cuidados { border-color: var(--orange); background: #fffaf6; }
+table.ranking td:nth-child(2), table.ranking td:nth-child(3) { white-space: nowrap; }
+td.vira { width: 36%; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 9.5px; }
+.fim.so-legenda { grid-template-columns: 1fr; }
 `;
 
 function topo(c, direita) {
@@ -168,23 +177,85 @@ function rodape(c, n) {
 }
 
 function capa(c) {
-  const chips = CALENDARIO.map((f) =>
-    `<div class="chip${f.fase === 'Black Friday' ? ' on' : ''}">${esc(f.fase)} · <b>${esc(f.janela)}</b></div>`).join('');
+  const chips = c.entrega
+    ? c.roteiros.map((r, i) => `<div class="chip${i === 0 ? ' on' : ''}"><b>${num(i)}</b> ${esc(r.titulo)}</div>`).join('')
+    : CALENDARIO.map((f) =>
+      `<div class="chip${f.fase === 'Black Friday' ? ' on' : ''}">${esc(f.fase)} · <b>${esc(f.janela)}</b></div>`).join('');
+  const faixa = c.faixa
+    ? c.faixa.map((f) => `<div><b>${esc(f.b)}<em>${esc(f.em)}</em></b><span>${esc(f.span)}</span></div>`).join('')
+    : `<div><b>${c.roteiros.length} <em>roteiros</em></b><span>prontos para gravar</span></div>
+      <div><b>até ${PRAZOS.gravacao}</b><span>prazo para gravação</span></div>
+      <div><b>27<em>/11</em></b><span>abertura da Black Friday</span></div>
+      <div><b>30<em>/11</em></b><span>último dia da condição</span></div>`;
+  const destino = c.entrega ? 'para o WhatsApp' : 'para a Lista VIP ou para o WhatsApp';
   return `<section class="page capa">
     <div class="brand">Grupo Opera<i>.</i></div>
-    <div class="eyebrow">Roteiros Black Friday 2026 · ${esc(c.nome)}</div>
+    <div class="eyebrow">${c.entrega ? 'Campanha' : 'Roteiros'} Black Friday 2026 · ${esc(c.nome)}</div>
     <h1>${esc(c.capa.titulo)} <span>${esc(c.capa.destaque)}</span></h1>
     <p class="sub">${esc(c.capa.sub)}</p>
     <div class="chips">${chips}</div>
     <div class="conceito"><div class="lbl">Conceito da campanha</div><div class="nome">${esc(c.conceito)}</div>
-      <p>Vídeos sem preço, sem "grátis" e sem forma de pagamento. A condição especial é apresentada no atendimento individual, e cada vídeo leva para a Lista VIP ou para o WhatsApp.</p></div>
-    <div class="faixa">
-      <div><b>${c.roteiros.length} <em>roteiros</em></b><span>prontos para gravar</span></div>
-      <div><b>até ${PRAZOS.gravacao}</b><span>prazo para gravação</span></div>
-      <div><b>27<em>/11</em></b><span>abertura da Black Friday</span></div>
-      <div><b>30<em>/11</em></b><span>último dia da condição</span></div>
-    </div>
+      <p>Vídeos sem preço, sem "grátis" e sem forma de pagamento. A condição especial é apresentada no atendimento individual, e cada vídeo leva ${destino}.</p></div>
+    <div class="faixa">${faixa}</div>
   </section>`;
+}
+
+// Fiorini: entrega única, sem calendário. Mostra de qual anúncio cada filme é releitura.
+function estrategiaEntrega(c, pg, pgs) {
+  const linhas = c.ranking.map((r) => `<tr><td class="fala">${esc(r.anuncio)}</td><td><b>${esc(r.resultado)}</b></td><td>${esc(r.custo)}</td><td class="vira">${esc(r.vira)}</td></tr>`).join('');
+  return `<section class="page">${topo(c, 'Estratégia')}
+  <div class="miolo">
+    <div class="secao"><em>01</em>Estratégia</div>
+    <h2>Os campeões da Fiorini <span>viram filmes de Black</span></h2>
+    <p class="intro">Analisamos os 153 anúncios da Fiorini no Meta Ads de junho a outubro. Cada filme desta entrega é uma releitura de um campeão: mantém o rosto e o tema que funcionaram e troca o motivo para Black Friday.</p>
+    <table class="ranking"><thead><tr><th>Anúncio original</th><th>Resultado</th><th>Custo/conversa</th><th>Vira</th></tr></thead><tbody>${linhas}</tbody></table>
+    <div class="leitura"><div class="lbl">LEITURA</div>${esc(c.leitura)}${c.notaCanal ? `<br><b>Nota:</b> ${esc(c.notaCanal)}` : ''}</div>
+    <div class="duas">
+      <div class="card"><h3>Conceito: ${esc(c.conceito)}</h3><p>${esc(c.conceitoTexto)}</p>
+        <div class="passos">
+          <div class="passo"><i>1</i><div><b>Envie BLACK</b>Todo filme termina pedindo para mandar BLACK no WhatsApp (ou no Direct, no filme de lentes).</div></div>
+          <div class="passo"><i>2</i><div><b>Conversa individual</b>A recepção entende o caso e convida para a avaliação (mensagens na pág. ${pgs.atendimento}).</div></div>
+          <div class="passo"><i>3</i><div><b>Avaliação</b>A condição especial de Black Friday é apresentada na avaliação, para quem começar o tratamento.</div></div>
+        </div></div>
+      <div class="card"><h3>Como usar a entrega</h3><div class="cal">
+        <div class="fase on"><div><b>Filme 01</b><small>Na mesa</small></div><div>Criativo principal: sobe em todas as campanhas de mensagem, com os cortes de 30, 15 e 6 s.</div></div>
+        <div class="fase"><div><b>Filmes 02 a 04</b><small>Releituras</small></div><div>Cada um entra na campanha do seu tema (implante e protocolo, lentes), ao lado do anúncio original.</div></div>
+        <div class="fase"><div><b>Filme 05</b><small>Depoimentos</small></div><div>Remarketing para quem já interagiu ou conversou e não agendou.</div></div>
+        <div class="fase"><div><b>Filme 06</b><small>Sedação</small></div><div>Campanha de Sedação Consciente, para quem adia por medo.</div></div>
+      </div></div>
+    </div>
+    <div class="alerta">
+      <div><h3>Por que os vídeos <span>não falam de preço</span></h3>
+        <p>O Código de Ética Odontológica proíbe anunciar preço, serviço gratuito e forma de pagamento. O desconto em si deixou de ser infração em 2025 (Res. CFO 271), mas Black Friday em massa ainda é discutida na Justiça. Por isso, os filmes falam em "condição especial" e os valores ficam para a conversa individual (regras na pág. ${pgs.regras}).</p></div>
+      <div class="prazos">
+        <div><b>Antes de gravar</b>A clínica define a condição de Black Friday (tratamentos e regra) para a recepção falar a mesma coisa.</div>
+        <div><b>Elenco</b>Confirmar com a Claudia se ela topa dramatizar o filme principal.</div>
+      </div>
+    </div>
+  </div>${rodape(c, pg)}</section>`;
+}
+
+function direcao(c, r, i, pg) {
+  const d = r.direcao;
+  const lista = (xs) => `<ul>${xs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
+  const cortes = d.cortes.map((k) => `<tr><td class="t">${esc(k.nome)}</td><td class="img">${esc(k.uso)}</td><td class="fala">${esc(k.cenas)}</td></tr>`).join('');
+  return `<section class="page">${topo(c, `Filme ${num(i)} · Direção`)}
+  <div class="miolo">
+    <div class="secao"><em>Filme ${num(i)}</em>${esc(r.tipo)} · Direção e peças</div>
+    <h2>${esc(r.titulo)}: <span>como gravar</span></h2>
+    <div class="direcao-grid">
+      <div class="card"><h3>Elenco</h3>${lista(d.elenco)}</div>
+      <div class="card"><h3>Cenário</h3>${lista(d.cenario)}</div>
+      <div class="card"><h3>Objetos de cena</h3>${lista(d.objetos)}</div>
+      <div class="card"><h3>Som</h3><p>${esc(d.som)}</p></div>
+    </div>
+    <div class="leitura"><div class="lbl">DICA DE GRAVAÇÃO</div>${esc(r.dica)}</div>
+    <table><thead><tr><th>Peça</th><th>Uso</th><th>Montagem</th></tr></thead><tbody>${cortes}</tbody></table>
+    <div class="duas">
+      <div class="card"><h3>Três ganchos para testar</h3><p>Os 3 primeiros segundos decidem se a pessoa assiste. Edite três aberturas e deixe o anúncio escolher:</p>${lista(d.ganchos)}</div>
+      <div class="card cuidados"><h3>Cuidados</h3>${lista(d.cuidados)}</div>
+    </div>
+  </div>${rodape(c, pg)}</section>`;
 }
 
 function estrategia(c, pg) {
@@ -224,27 +295,32 @@ function estrategia(c, pg) {
 
 function roteiro(c, r, i, pg) {
   const linhas = r.cenas.map((s) => `<tr><td class="t">${esc(s.t)}</td><td class="img">${multilinha(s.imagem)}</td><td class="fala">${fala(s.fala)}</td><td class="tela">${esc(s.tela)}</td></tr>`).join('');
-  return `<section class="page">${topo(c, `Roteiro ${num(i)} de ${num(c.roteiros.length - 1)}`)}
+  const peca = c.entrega ? 'Filme' : 'Roteiro';
+  const etiqueta = c.entrega ? esc(r.tipo) : `${esc(r.fase)} · ${esc(r.janela)}`;
+  const ultima = c.entrega
+    ? `<div><small>Releitura de</small><b>${esc(r.releitura.de)}</b><br>${esc(r.releitura.resultado)}</div>`
+    : `<div><small>Publicar</small><b>${esc(r.janela)}</b></div>`;
+  return `<section class="page">${topo(c, `${peca} ${num(i)} de ${num(c.roteiros.length - 1)}`)}
   <div class="miolo">
-    <div class="rot-cab"><div><div class="secao"><em>Roteiro ${num(i)}</em>${esc(r.fase)} · ${esc(r.janela)}</div><h2>${esc(r.titulo)}</h2></div><div class="rot-num">${num(i)}</div></div>
-    <div class="meta">
+    <div class="rot-cab"><div><div class="secao"><em>${peca} ${num(i)}</em>${etiqueta}</div><h2>${esc(r.titulo)}</h2></div><div class="rot-num">${num(i)}</div></div>
+    <div class="meta${c.entrega ? ' entrega' : ''}">
       <div><small>Formato</small>${esc(r.formato)}</div>
       <div><small>Quem grava</small>${esc(r.quem)}</div>
       <div><small>Onde usar</small>${esc(r.onde)}</div>
-      <div><small>Publicar</small><b>${esc(r.janela)}</b></div>
+      ${ultima}
     </div>
     <div class="obj"><div><small>Objetivo</small>${esc(r.objetivo)}</div><div><small>Por que este roteiro</small>${esc(r.porque)}</div></div>
     ${r.aviso ? `<div class="aviso"><b>Atenção:</b> ${esc(r.aviso)}</div>` : ''}
     <table><thead><tr><th>Tempo</th><th>Cena</th><th>Fala</th><th>Texto na tela</th></tr></thead><tbody>${linhas}</tbody></table>
-    <div class="fim">
+    <div class="fim${r.direcao ? ' so-legenda' : ''}">
       <div><small>Legenda sugerida</small><div class="leg">${multilinha(r.legenda)}</div><div class="rt">+ Responsável técnico: [nome] · CRO-[UF] [nº]</div></div>
-      <div><small>Dica de gravação</small>${esc(r.dica)}</div>
+      ${r.direcao ? '' : `<div><small>Dica de gravação</small>${esc(r.dica)}</div>`}
     </div>
   </div>${rodape(c, pg)}</section>`;
 }
 
 function atendimento(c, pg) {
-  const msgs = WHATSAPP.map((m) => `<div class="msg"><div class="q"><b>${esc(m.etapa)}</b><small>${esc(m.quando)}</small></div>
+  const msgs = (c.whatsapp || WHATSAPP).map((m) => `<div class="msg"><div class="q"><b>${esc(m.etapa)}</b><small>${esc(m.quando)}</small></div>
     <div class="balao">${esc(m.texto.replaceAll('{clinica}', c.curto))}</div></div>`).join('');
   return `<section class="page">${topo(c, 'Atendimento')}
   <div class="miolo">
@@ -254,7 +330,7 @@ function atendimento(c, pg) {
     <div class="wpp">${msgs}</div>
     <div class="leitura" style="margin-top:18px"><div class="lbl">REGRA DE OURO</div>Valores, percentuais e formas de pagamento só aparecem na conversa individual ou na consulta. Nunca em post, stories, anúncio, status do WhatsApp ou lista de transmissão.</div>
     <div class="duas">
-      <div class="card"><h3>Mensagem automática das campanhas</h3><p>Nas campanhas de mensagem da Meta, troque a mensagem pré-preenchida por: <b>"Oi! Quero entrar na Lista VIP Black 🖤"</b>. Assim a recepção sabe de onde veio o contato.</p></div>
+      <div class="card"><h3>Mensagem automática das campanhas</h3><p>Nas campanhas de mensagem da Meta, troque a mensagem pré-preenchida por: <b>${c.entrega ? `"Oi! Vi a Black Friday da ${esc(c.curto)} 🖤"` : '"Oi! Quero entrar na Lista VIP Black 🖤"'}</b>. Assim a recepção sabe de onde veio o contato.</p></div>
       <div class="card"><h3>Marcar quem chegou pela Black</h3><p>Use uma etiqueta "Black 2026" no WhatsApp Business. Em dezembro, ela mostra quantas conversas viraram avaliação e tratamento iniciado.</p></div>
     </div>
   </div>${rodape(c, pg)}</section>`;
@@ -269,8 +345,8 @@ function regras(c, pg) {
     <p class="intro">Resumo prático para a clínica e para quem edita os vídeos. Na dúvida, o responsável técnico da clínica valida antes de publicar.</p>
     <div class="regras">
       <div class="card pode"><h3>Pode</h3><ul>
-        <li>Falar em Black Friday, "condição especial" e prazo (até 30/11).</li>
-        <li>Lista VIP e convite para a avaliação.</li>
+        <li>${c.entrega ? 'Falar em Black Friday, "condição especial" e tempo limitado.' : 'Falar em Black Friday, "condição especial" e prazo (até 30/11).'}</li>
+        <li>${c.entrega ? 'Cena dramatizada, identificada como tal.' : 'Lista VIP e convite para a avaliação.'}</li>
         <li>Conteúdo educativo sobre tratamentos, sem promessa de resultado.</li>
         <li>Depoimento de paciente com autorização de imagem assinada.</li>
         <li>Desconto apresentado de forma individual, na conversa ou na consulta.</li>
@@ -286,15 +362,20 @@ function regras(c, pg) {
     <div class="leitura" style="margin-top:18px"><div class="lbl">CHECKLIST ANTES DE PUBLICAR</div>Passe por esta lista em cada vídeo, legenda e anúncio.</div>
     <div class="check">${chk}</div>
     <p class="fonte">Base: Código de Ética Odontológica (Res. CFO 118/2012), com as alterações das Res. CFO 196/2019 (imagens e selfies) e 271/2025 (descontos), e a discussão judicial sobre campanhas de Black Friday na odontologia (TRF5, MS 0805602-15.2025.4.05.8300). Este material não substitui orientação jurídica nem a consulta ao CRO do estado.<br>
-    Dados de desempenho: Reportei (Meta Ads, Google Ads, Instagram e YouTube), agosto a outubro de 2026.</p>
+    Dados de desempenho: ${c.entrega ? 'Reportei (Meta Ads, por anúncio), junho a outubro de 2026.' : 'Reportei (Meta Ads, Google Ads, Instagram e YouTube), agosto a outubro de 2026.'}</p>
   </div>${rodape(c, pg)}</section>`;
 }
 
 function documento(c) {
   let pg = 1;
   const paginas = [capa(c)];
-  paginas.push(estrategia(c, ++pg));
-  c.roteiros.forEach((r, i) => paginas.push(roteiro(c, r, i, ++pg)));
+  const totalRoteiros = c.roteiros.length + c.roteiros.filter((r) => r.direcao).length;
+  const pgs = { atendimento: String(3 + totalRoteiros).padStart(2, '0'), regras: String(4 + totalRoteiros).padStart(2, '0') };
+  paginas.push(c.entrega ? estrategiaEntrega(c, ++pg, pgs) : estrategia(c, ++pg));
+  c.roteiros.forEach((r, i) => {
+    paginas.push(roteiro(c, r, i, ++pg));
+    if (r.direcao) paginas.push(direcao(c, r, i, ++pg));
+  });
   paginas.push(atendimento(c, ++pg));
   paginas.push(regras(c, ++pg));
   return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
@@ -310,15 +391,33 @@ function markdown() {
     `**Calendário:** ${CALENDARIO.map((f) => `${f.fase} (${f.janela})`).join(' → ')}. Condição definida pela clínica até ${PRAZOS.condicao}; gravação até ${PRAZOS.gravacao}.`, ``];
   for (const c of CLIENTES) {
     md.push(`---`, ``, `## ${c.nome}`, ``, `**Conceito:** ${c.conceito}. ${c.conceitoTexto}`, ``);
-    md.push(...c.dados.map((d) => `- **${d.valor}** ${d.rotulo}. ${d.nota}`), ``);
+    if (c.entrega) {
+      md.push(`Entrega única, sem calendário: cada filme é a releitura de um anúncio que já trouxe resultado.`, ``,
+        `| Anúncio original | Resultado | Custo por conversa | Vira |`, `|---|---|---|---|`,
+        ...c.ranking.map((r) => `| ${r.anuncio} | ${r.resultado} | ${r.custo} | ${r.vira} |`), ``);
+    } else {
+      md.push(...c.dados.map((d) => `- **${d.valor}** ${d.rotulo}. ${d.nota}`), ``);
+    }
     c.roteiros.forEach((r, i) => {
-      md.push(`### Roteiro ${num(i)} · ${r.titulo}`, ``,
-        `**${r.fase} · ${r.janela}** · ${r.formato} · Quem grava: ${r.quem} · Onde usar: ${r.onde}`, ``,
+      const cab = c.entrega
+        ? `**${r.tipo}** · Releitura de: ${r.releitura.de} (${r.releitura.resultado}) · ${r.formato}`
+        : `**${r.fase} · ${r.janela}** · ${r.formato}`;
+      md.push(`### ${c.entrega ? 'Filme' : 'Roteiro'} ${num(i)} · ${r.titulo}`, ``,
+        `${cab} · Quem grava: ${r.quem} · Onde usar: ${r.onde}`, ``,
         `**Objetivo:** ${r.objetivo}  `, `**Por quê:** ${r.porque}`, ``);
       if (r.aviso) md.push(`> **Atenção:** ${r.aviso}`, ``);
       md.push(`| Tempo | Cena | Fala | Texto na tela |`, `|---|---|---|---|`);
       md.push(...r.cenas.map((s) => `| ${s.t} | ${s.imagem} | ${s.fala.replace(/\n/g, '<br>')} | ${s.tela} |`), ``);
       md.push(`**Legenda sugerida:**`, ``, ...r.legenda.split('\n').map((l) => `> ${l}`), `> `, `> Responsável técnico: [nome] · CRO-[UF] [nº]`, ``, `**Dica de gravação:** ${r.dica}`, ``);
+      if (r.direcao) {
+        const d = r.direcao;
+        md.push(`#### Direção · ${r.titulo}`, ``,
+          `**Elenco:** ${d.elenco.join(' ')}`, ``, `**Cenário:** ${d.cenario.join(' ')}`, ``,
+          `**Objetos de cena:** ${d.objetos.join(' ')}`, ``, `**Som:** ${d.som}`, ``,
+          `**Peças:**`, ...d.cortes.map((k) => `- ${k.nome} (${k.uso}): ${k.cenas}`), ``,
+          `**Ganchos para testar:**`, ...d.ganchos.map((g) => `- ${g}`), ``,
+          `**Cuidados:**`, ...d.cuidados.map((g) => `- ${g}`), ``);
+      }
     });
   }
   return md.join('\n');
