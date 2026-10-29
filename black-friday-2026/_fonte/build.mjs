@@ -218,7 +218,7 @@ function estrategiaEntrega(c, pg, pgs) {
           <div class="passo"><i>3</i><div><b>Avaliação</b>A condição especial de Black Friday é apresentada na avaliação, para quem começar o tratamento.</div></div>
         </div></div>
       <div class="card"><h3>Como usar a entrega</h3><div class="cal">
-        <div class="fase on"><div><b>Filme 01</b><small>Na mesa</small></div><div>Criativo principal: sobe em todas as campanhas de mensagem, com os cortes de 30, 15 e 6 s.</div></div>
+        <div class="fase on"><div><b>Filme 01</b><small>Na mesa</small></div><div>Criativo principal de todas as campanhas de mensagem. Opção A dramatizada ou B só com a Dra.</div></div>
         <div class="fase"><div><b>Filmes 02 a 04</b><small>Releituras</small></div><div>Cada um entra na campanha do seu tema (implante e protocolo, lentes), ao lado do anúncio original.</div></div>
         <div class="fase"><div><b>Filme 05</b><small>Depoimentos</small></div><div>Remarketing para quem já interagiu ou conversou e não agendou.</div></div>
         <div class="fase"><div><b>Filme 06</b><small>Sedação</small></div><div>Campanha de Sedação Consciente, para quem adia por medo.</div></div>
@@ -229,7 +229,7 @@ function estrategiaEntrega(c, pg, pgs) {
         <p>O Código de Ética Odontológica proíbe anunciar preço, serviço gratuito e forma de pagamento. O desconto em si deixou de ser infração em 2025 (Res. CFO 271), mas Black Friday em massa ainda é discutida na Justiça. Por isso, os filmes falam em "condição especial" e os valores ficam para a conversa individual (regras na pág. ${pgs.regras}).</p></div>
       <div class="prazos">
         <div><b>Antes de gravar</b>A clínica define a condição de Black Friday (tratamentos e regra) para a recepção falar a mesma coisa.</div>
-        <div><b>Elenco</b>Confirmar com a Claudia se ela topa dramatizar o filme principal.</div>
+        <div><b>Sem elenco?</b>Os filmes 01 e 02 têm uma Opção B, gravada só com a Dra. no consultório.</div>
       </div>
     </div>
   </div>${rodape(c, pg)}</section>`;
@@ -296,11 +296,15 @@ function estrategia(c, pg) {
 function roteiro(c, r, i, pg) {
   const linhas = r.cenas.map((s) => `<tr><td class="t">${esc(s.t)}</td><td class="img">${multilinha(s.imagem)}</td><td class="fala">${fala(s.fala)}</td><td class="tela">${esc(s.tela)}</td></tr>`).join('');
   const peca = c.entrega ? 'Filme' : 'Roteiro';
-  const etiqueta = c.entrega ? esc(r.tipo) : `${esc(r.fase)} · ${esc(r.janela)}`;
-  const ultima = c.entrega
-    ? `<div><small>Releitura de</small><b>${esc(r.releitura.de)}</b><br>${esc(r.releitura.resultado)}</div>`
-    : `<div><small>Publicar</small><b>${esc(r.janela)}</b></div>`;
-  return `<section class="page">${topo(c, `${peca} ${num(i)} de ${num(c.roteiros.length - 1)}`)}
+  const opcao = r.opcao === 'B' ? ' · Opção B: só a Dra.' : r.opcaoB ? ' · Opção A: dramatizada' : '';
+  const etiqueta = c.entrega ? esc(r.tipo + opcao) : `${esc(r.fase)} · ${esc(r.janela)}`;
+  const ultima = r.opcao === 'B'
+    ? `<div><small>Quando usar</small><b>${esc(r.quando)}</b></div>`
+    : c.entrega
+      ? `<div><small>Releitura de</small><b>${esc(r.releitura.de)}</b><br>${esc(r.releitura.resultado)}</div>`
+      : `<div><small>Publicar</small><b>${esc(r.janela)}</b></div>`;
+  const cabecalho = r.opcao === 'B' ? `${peca} ${num(i)} · Opção B` : `${peca} ${num(i)} de ${num(c.roteiros.length - 1)}`;
+  return `<section class="page">${topo(c, cabecalho)}
   <div class="miolo">
     <div class="rot-cab"><div><div class="secao"><em>${peca} ${num(i)}</em>${etiqueta}</div><h2>${esc(r.titulo)}</h2></div><div class="rot-num">${num(i)}</div></div>
     <div class="meta${c.entrega ? ' entrega' : ''}">
@@ -369,12 +373,13 @@ function regras(c, pg) {
 function documento(c) {
   let pg = 1;
   const paginas = [capa(c)];
-  const totalRoteiros = c.roteiros.length + c.roteiros.filter((r) => r.direcao).length;
+  const totalRoteiros = c.roteiros.length + c.roteiros.filter((r) => r.direcao).length + c.roteiros.filter((r) => r.opcaoB).length;
   const pgs = { atendimento: String(3 + totalRoteiros).padStart(2, '0'), regras: String(4 + totalRoteiros).padStart(2, '0') };
   paginas.push(c.entrega ? estrategiaEntrega(c, ++pg, pgs) : estrategia(c, ++pg));
   c.roteiros.forEach((r, i) => {
     paginas.push(roteiro(c, r, i, ++pg));
     if (r.direcao) paginas.push(direcao(c, r, i, ++pg));
+    if (r.opcaoB) paginas.push(roteiro(c, { ...r.opcaoB, tipo: r.tipo, opcao: 'B' }, i, ++pg));
   });
   paginas.push(atendimento(c, ++pg));
   paginas.push(regras(c, ++pg));
@@ -409,6 +414,15 @@ function markdown() {
       md.push(`| Tempo | Cena | Fala | Texto na tela |`, `|---|---|---|---|`);
       md.push(...r.cenas.map((s) => `| ${s.t} | ${s.imagem} | ${s.fala.replace(/\n/g, '<br>')} | ${s.tela} |`), ``);
       md.push(`**Legenda sugerida:**`, ``, ...r.legenda.split('\n').map((l) => `> ${l}`), `> `, `> Responsável técnico: [nome] · CRO-[UF] [nº]`, ``, `**Dica de gravação:** ${r.dica}`, ``);
+      if (r.opcaoB) {
+        const o = r.opcaoB;
+        md.push(`#### Opção B · ${o.titulo}`, ``, `${o.formato} · Quem grava: ${o.quem} · Quando usar: ${o.quando}`, ``,
+          `**Objetivo:** ${o.objetivo}  `, `**Por quê:** ${o.porque}`, ``,
+          `| Tempo | Cena | Fala | Texto na tela |`, `|---|---|---|---|`,
+          ...o.cenas.map((x) => `| ${x.t} | ${x.imagem} | ${x.fala.replace(/\n/g, '<br>')} | ${x.tela} |`), ``,
+          `**Legenda sugerida:**`, ``, ...o.legenda.split('\n').map((l) => `> ${l}`), `> `, `> Responsável técnico: [nome] · CRO-[UF] [nº]`, ``,
+          `**Dica de gravação:** ${o.dica}`, ``);
+      }
       if (r.direcao) {
         const d = r.direcao;
         md.push(`#### Direção · ${r.titulo}`, ``,
