@@ -25,8 +25,8 @@
   --r:16px;
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0}
-body{background:var(--bg);color:var(--ink);font:400 clamp(13px,1.02vw,20px)/1.55 var(--f-sans);-webkit-font-smoothing:antialiased;overflow:hidden}
+html,body{height:100%;margin:0;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font:400 clamp(14px,1.14vw,22px)/1.55 var(--f-sans);-webkit-font-smoothing:antialiased;overflow:hidden}
 h1,h2,h3,h4{font-family:var(--f-disp);margin:0;letter-spacing:-.03em;line-height:1.08;text-wrap:balance}
 p,ul,ol{margin:0} ul,ol{padding:0;list-style:none}
 button{font:inherit}
@@ -51,7 +51,7 @@ button{font:inherit}
 .lock{display:flex;align-items:center;gap:12px}
 .gp{font:800 1.45em/1 var(--f-brand);letter-spacing:-.035em;color:var(--navy)}
 .gp .d{color:var(--orange)}
-.navy .gp,.deep .gp{color:#fff} .navy .gp .d,.deep .gp .d{color:var(--orange-2)}
+.navy .gp,.deep .gp{color:#fff}
 .tagline{font:700 .72em/1.2 var(--f-sans);letter-spacing:.3em;color:var(--ink-mute);border-left:1px solid var(--line);padding-left:12px;text-transform:uppercase}
 .navy .tagline,.deep .tagline{color:var(--sky);border-color:var(--navy-line)}
 .client{font:600 .9em/1.2 var(--f-sans);color:var(--ink-mute)}
@@ -197,7 +197,7 @@ h2{font-size:clamp(24px,2.75vw,56px);font-weight:800;color:var(--navy);margin-bo
 .plan-b .row b{color:var(--navy);font-family:var(--f-disp);font-variant-numeric:tabular-nums}
 
 /* simulador */
-.calc label{display:flex;justify-content:space-between;gap:10px;font-size:.88em;color:var(--ink-soft);margin-top:.95em;font-weight:500}
+.calc label{display:flex;justify-content:space-between;gap:10px;font-size:.88em;color:var(--ink-soft);margin-top:.7em;font-weight:500}
 .calc label:first-child{margin-top:0}
 .calc label b{color:var(--navy);font-family:var(--f-disp);font-variant-numeric:tabular-nums}
 .calc input[type=range]{width:100%;accent-color:var(--orange);margin:.35em 0 0}
@@ -261,6 +261,43 @@ body.editing .editbadge{display:block}
 }
 @media (max-width:520px){ .g3,.g4,.g6,.split,.g2,.strip{grid-template-columns:1fr} }
 @media (prefers-reduced-motion:reduce){.track,.progress,.hint{transition:none}}
+/* ---------- ajustes da revisão (vêm por último para vencer a cascata) ---------- */
+.gp{font:800 clamp(18px,1.45vw,28px)/1 var(--f-brand);letter-spacing:-.035em}
+.tagline{font-size:clamp(10px,.62vw,12px)}
+.eyebrow .n{font-family:var(--f-disp);font-weight:800;color:var(--ink-mute);letter-spacing:.1em}
+.navy .eyebrow .n,.deep .eyebrow .n{color:var(--sky)}
+.slide.deep{background:radial-gradient(34vw 34vw at 88% 12%,rgba(246,162,78,.18),transparent 60%),var(--navy-deep)}
+.deep .eyebrow{font:700 .9em/1.2 var(--f-disp);letter-spacing:.3em}
+.deep .eyebrow::before{width:30px}
+.slide.final{background:radial-gradient(60vw 36vw at 50% 118%,rgba(246,162,78,.22),transparent 70%),var(--navy)}
+.final .body{align-items:center;text-align:center}
+.final .eyebrow{justify-content:center}
+.final .g3{width:100%;text-align:left}
+.signoff{display:flex;flex-direction:column;align-items:center;gap:.5em;margin-top:5vh}
+.signoff .gp{font-size:clamp(24px,1.9vw,36px)}
+.signoff .tagline{border:0;padding:0}
+.nav button{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line),0 10px 24px -14px rgba(0,18,63,.5)}
+.nav button:hover{background:#fff;box-shadow:inset 0 0 0 1.5px var(--navy),0 10px 24px -14px rgba(0,18,63,.5)}
+.nav button[disabled]{opacity:.45}
+.card .no,.front-b .imp b,.sprint-b .meta b{color:var(--orange-ink)}
+.navy .card .no{color:var(--orange-2)}
+.tag{font-size:max(.64em,10px)}
+.foot,.front-h .fk,.panel-k{font-size:max(.66em,10.5px)}
+.note .l{font-size:max(.64em,10.5px)}
+.tbl th{font-size:max(.74em,10.5px)}
+.chip,.plan-h .pk{font-size:max(.68em,10.5px)}
+.northstar .ns-k,.out .k{font-size:max(.7em,10.5px)}
+.panel figcaption{font-size:max(.7em,10.5px)}
+.bar-name small{font-size:max(.72em,10.5px)}
+.bar-cost small{font-size:max(.78em,10.5px)}
+.tbl .n{white-space:nowrap}
+.sprint{display:flex;flex-direction:column}
+.sprint-b{flex:1;display:flex;flex-direction:column}
+.sprint-b ul{flex:1}
+@media (max-width:900px),(hover:none){.hint{display:none}}
+@media (max-width:900px){.body{flex:1 0 auto;justify-content:flex-start}}
+@media (max-width:520px){.tbl th,.tbl td{padding:.65em .5em}.chrome .tagline{display:none}}
+.gp{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -285,7 +322,7 @@ body.editing .editbadge{display:block}
 
 <!-- 1 · CAPA -->
 <section class="slide navy">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">Novembro/2026</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Novembro/2026</span></div>
   <div class="body">
     <div class="eyebrow" data-edit>Proposta · All Star Concept Salon · Midtown Miami</div>
     <h1 data-edit>Transformar a nota <span class="o">5,0</span><br>em <span class="s">agenda cheia</span> de clientes novos<span class="o">.</span></h1>
@@ -302,7 +339,7 @@ body.editing .editbadge{display:block}
 
 <!-- 2 · QUEM É O GRUPO OPERA -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
     <div class="split">
       <div>
@@ -331,9 +368,9 @@ body.editing .editbadge{display:block}
 
 <!-- 3 · DIAGNÓSTICO -->
 <section class="slide soft">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">01 · Diagnóstico</div>
+    <div class="eyebrow"><span class="n">01</span> Diagnóstico</div>
     <h2 data-edit>Onde a All Star está <span class="o">hoje</span></h2>
     <p class="lead" data-edit>Frentes avaliadas de 0 a 10, no mesmo método que usamos nos nossos diagnósticos. <strong>A qualidade do serviço existe. O que trava é a vitrine.</strong></p>
     <div class="g g3">
@@ -350,9 +387,9 @@ body.editing .editbadge{display:block}
 
 <!-- 4 · PROVOCAÇÃO -->
 <section class="slide navy">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">02 · A provocação</div>
+    <div class="eyebrow"><span class="n">02</span> A provocação</div>
     <h2 data-edit>Enquanto o Google da All Star está parado, os líderes da região <span class="o">ganham avaliações toda semana</span>.</h2>
     <div class="split" style="align-items:stretch;margin-top:2vh">
       <div>
@@ -366,7 +403,7 @@ body.editing .editbadge{display:block}
             <tr class="us"><td><span class="big">All Star Concept</span> <span class="small">· Midtown</span></td><td class="n" data-edit>5,0 ★</td><td class="n" style="color:var(--orange-ink)" data-edit>20</td><td data-edit>Google</td></tr>
           </tbody>
         </table>
-        <p class="small" style="margin-top:1.4vh" data-edit>Consulta de novembro/2026. Os números mudam toda semana. Pressione E para editar ao vivo.</p>
+        <p class="small" style="margin-top:1.4vh" data-edit>Consulta de novembro/2026 no Google e no Yelp. Os números mudam toda semana.</p>
       </div>
       <div class="northstar">
         <div class="ns-k">O líder da região tem</div>
@@ -381,9 +418,9 @@ body.editing .editbadge{display:block}
 
 <!-- 5 · TRIÂNGULO -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">03 · O método</div>
+    <div class="eyebrow"><span class="n">03</span> O método</div>
     <h2 data-edit>Três pilares sustentam o crescimento. <span class="o">O de aquisição já está montado.</span></h2>
     <div class="g g2" style="margin-top:1.6vh">
       <div class="tri">
@@ -421,20 +458,20 @@ body.editing .editbadge{display:block}
 
 <!-- 6 · DIVISOR -->
 <section class="slide deep">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">Parte 02 · Recomendação 360</div>
-    <h1 style="font-size:clamp(30px,4vw,78px);max-width:18ch" data-edit>Reputação primeiro, <span class="o">mídia em cima</span>.</h1>
-    <p class="lead" style="margin-top:2.6vh" data-edit>O anúncio leva a cliente até o perfil. Quem decide se ela agenda são as estrelas, as avaliações e o conteúdo que ela encontra lá. Por isso a máquina de feedback no Google liga junto com as campanhas.</p>
+    <div class="eyebrow">A recomendação 360</div>
+    <h1 style="font-size:clamp(30px,4vw,78px);max-width:18ch" data-edit>Aquisição no ar, <span class="o">base em construção</span>.</h1>
+    <p class="lead" style="margin-top:2.6vh" data-edit>As campanhas sobem agora. Em paralelo começamos a construir a base: a máquina de feedback no Google é o primeiro passo, porque quem decide se a cliente agenda são as estrelas e as avaliações que ela encontra no perfil.</p>
   </div>
   <div class="foot">Conteúdo · Reviews · Meta · Google</div>
 </section>
 
 <!-- 7 · CONTEÚDO -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">04 · Conteúdo · 7/10</div>
+    <div class="eyebrow"><span class="n">04</span> Conteúdo · 7/10</div>
     <h2 data-edit>A produção já tem qualidade. O que falta é <span class="o">história</span>.</h2>
     <div class="g g3" style="margin-top:2vh">
       <div class="card"><div class="no">Hoje</div><h4 data-edit>Bonito, mas sem gancho</h4><ul class="dots">
@@ -457,9 +494,9 @@ body.editing .editbadge{display:block}
 
 <!-- 8 · MÁQUINA DE REVIEWS -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">05 · Prioridade #1</div>
+    <div class="eyebrow"><span class="n">05</span> Primeiro passo da base</div>
     <h2 data-edit>Máquina de feedback no Google, com <span class="o">competição entre as equipes</span></h2>
     <div class="g g4" style="margin-top:2vh">
       <div class="card"><div class="ico"><svg><use href="#i-team"/></svg></div><h4>Times</h4><p data-edit>Equipes de atendimento separadas (cabelo, nails, wellness e recepção), cada uma com QR code e link próprios.</p></div>
@@ -478,9 +515,9 @@ body.editing .editbadge{display:block}
 
 <!-- 9 · QR CODE -->
 <section class="slide soft">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">06 · Recomendação 360</div>
+    <div class="eyebrow"><span class="n">06</span> QR code no salão</div>
     <h2 data-edit>QR code do Google <span class="o">em todo o salão</span></h2>
     <p class="lead" data-edit>Quanto menos fricção, mais avaliação. A cliente não precisa procurar o perfil: o link está onde ela olha.</p>
     <div class="g g4">
@@ -499,9 +536,9 @@ body.editing .editbadge{display:block}
 
 <!-- 10 · META ADS -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">07 · Meta Ads</div>
+    <div class="eyebrow"><span class="n">07</span> Meta Ads</div>
     <h2 data-edit>Campanhas separadas em <span class="o">3 frentes</span></h2>
     <p class="lead" data-edit>Cada frente tem verba própria, para que cada uma aprenda sozinha e a gente saiba exatamente de onde vem cada cliente.</p>
     <div class="g g3">
@@ -521,9 +558,9 @@ body.editing .editbadge{display:block}
 
 <!-- 11 · REGIONAL -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">08 · Frente regional</div>
+    <div class="eyebrow"><span class="n">08</span> Frente regional</div>
     <h2 data-edit>Testar as 6 nacionalidades e <span class="o">escalar as 3 melhores</span></h2>
     <div class="g g6" style="margin-top:2vh">
       <div class="card"><span class="flag">CU</span><h4 data-edit>Cuba</h4><p data-edit>Espanhol · Little Havana, Hialeah</p></div>
@@ -538,24 +575,24 @@ body.editing .editbadge{display:block}
       <div class="sprint"><div class="sprint-h"><div class="ph">Semana 3</div><h4>Cortar</h4></div><div class="sprint-b"><p class="txt" data-edit>Desligar as 3 nacionalidades com maior custo por agendamento.</p></div></div>
       <div class="sprint"><div class="sprint-h"><div class="ph">Semana 4+</div><h4>Escalar</h4></div><div class="sprint-b"><p class="txt" data-edit>Concentrar verba nas 3 vencedoras, com uma oferta de entrada para cada comunidade.</p></div></div>
     </div>
-    <p class="small" style="margin-top:1.6vh" data-edit>Ordem de referência pela população nascida no exterior em Miami-Dade (Censo ACS). Validar antes de subir as campanhas.</p>
+    <p class="small" style="margin-top:1.6vh" data-edit>Ordem de referência pela população nascida no exterior em Miami-Dade (Censo ACS). A ordem final sai do teste das semanas 1–2.</p>
   </div>
   <div class="foot">Teste · corte · escala</div>
 </section>
 
 <!-- 12 · GOOGLE ADS -->
 <section class="slide soft">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">09 · Google Ads</div>
+    <div class="eyebrow"><span class="n">09</span> Google Ads</div>
     <h2 data-edit>Capturar quem <span class="o">já está procurando</span></h2>
     <p class="lead" data-edit>O Meta cria a vontade. O Google pega quem já decidiu e está digitando agora.</p>
     <table class="tbl">
-      <thead><tr><th>Campanha</th><th>Busca de exemplo</th><th>O que roda</th><th>Indicador</th></tr></thead>
+      <thead><tr><th>Frente</th><th>Busca de exemplo</th><th>O que roda</th><th>Indicador</th></tr></thead>
       <tbody>
         <tr><td class="big">Serviço</td><td data-edit>“hair salon Midtown Miami” · “nail salon Wynwood” · “balayage Miami”</td><td data-edit>Search por linha de serviço, extensão de local e chamada, <strong>estrelas do Google no anúncio</strong> e estacionamento privativo como diferencial</td><td data-edit>Custo por agendamento</td></tr>
         <tr><td class="big">Regional</td><td data-edit>“salón de belleza cerca de mí” · “uñas acrílicas Miami” · buscas em crioulo</td><td data-edit>Anúncio e página de destino no idioma da busca, alinhados às nacionalidades vencedoras do Meta</td><td data-edit>Custo por agendamento por idioma</td></tr>
-        <tr><td class="big">Perfil da Empresa</td><td data-edit>“salon near me” no Maps</td><td data-edit>Fotos, posts semanais, resposta a todas as avaliações e a máquina de reviews rodando</td><td data-edit>Posição no Maps, ligações, rotas</td></tr>
+        <tr><td><span class="big">Perfil da Empresa</span> <span class="small">· orgânico, sem verba</span></td><td data-edit>“salon near me” no Maps</td><td data-edit>Fotos, posts semanais, resposta a todas as avaliações e a máquina de reviews rodando</td><td data-edit>Posição no Maps, ligações, rotas</td></tr>
       </tbody>
     </table>
     <div class="note"><span class="l">Ligação direta</span><p data-edit>O Google Ads converte melhor quando o perfil tem muitas avaliações. <strong>Por isso a máquina de reviews liga antes ou junto com as campanhas.</strong></p></div>
@@ -565,15 +602,15 @@ body.editing .editbadge{display:block}
 
 <!-- 13 · VERBA -->
 <section class="slide navy">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">10 · A conta da verba</div>
+    <div class="eyebrow"><span class="n">10</span> A conta da verba</div>
     <h2 data-edit>US$ 1.000 dividido em 5 campanhas dá <span class="o">US$ 6,70 por dia</span> para cada uma</h2>
     <div class="strip" style="margin-top:2.6vh">
       <div><b class="num">US$ <span class="o">200</span></b><span data-edit>por campanha/mês: 3 frentes no Meta e 2 no Google</span></div>
-      <div><b class="num">US$ <span class="o">1,10</span></b><span data-edit>por dia para cada país no teste regional (US$ 200 ÷ 6). O teste não roda.</span></div>
-      <div><b class="num"><span class="o">2–3</span> cliques</b><span data-edit>por dia no Google, com CPC local de beleza entre US$ 2 e 4</span></div>
-      <div><b class="num">~<span class="o">50</span>/semana</b><span data-edit>conversões por conjunto para o Meta sair da fase de aprendizado</span></div>
+      <div><b class="num">US$ <span class="o">1,10</span></b><span data-edit>por dia para cada país no teste regional (US$ 6,70 por dia ÷ 6 países). O teste não roda.</span></div>
+      <div><b class="num"><span class="o">2–3</span> cliques</b><span data-edit>por dia em cada campanha do Google, com CPC local de beleza entre US$ 2 e 4</span></div>
+      <div><b class="num">~<span class="o">11</span> leads</b><span data-edit>por campanha no mês com US$ 200 (CPL ~US$ 18). Pouco para o algoritmo otimizar e para decidir o que cortar.</span></div>
     </div>
     <div class="note" style="margin-top:4vh"><span class="l">O que acontece com verba picada</span><p data-edit>A campanha fica presa no aprendizado, o custo sobe e o teste não traz resposta. <strong>Você paga para não aprender nada.</strong></p></div>
   </div>
@@ -582,28 +619,28 @@ body.editing .editbadge{display:block}
 
 <!-- 14 · CENÁRIOS -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">11 · Estimativa de clientes novos</div>
-    <h2 data-edit>Quantos clientes <span class="o">cada verba traz</span> por mês</h2>
+    <div class="eyebrow"><span class="n">11</span> Estimativa de clientes novos</div>
+    <h2 data-edit>Quantos clientes <span class="o" style="white-space:nowrap">cada verba traz</span> por mês</h2>
     <div class="g g3" style="margin-top:2vh">
-      <div class="plan"><div class="plan-h"><div class="pk">Hoje</div><h4>Verba US$ 1.000</h4><div class="pv num"><span id="s1">~24</span><small>clientes/mês</small></div></div>
-        <div class="plan-b"><div class="row">Leads<b id="s1l">71</b></div><div class="row">Custo por cliente<b id="s1c">$41</b></div><div class="row">Faturamento na 1ª visita<b id="s1r">$2,9k</b></div><div class="row">Valor em 12 meses<b id="s1v">$12k</b></div></div></div>
+      <div class="plan"><div class="plan-h"><div class="pk">Verba atual</div><h4>Verba US$ 1.000</h4><div class="pv num"><span id="s1">~19</span><small>clientes/mês</small></div></div>
+        <div class="plan-b"><div class="row">Leads<b id="s1l">56</b></div><div class="row">Custo por cliente<b id="s1c">US$ 53</b></div><div class="row">Faturamento na 1ª visita<b id="s1r">US$ 2,3k</b></div><div class="row">Valor em 12 meses<b id="s1v">US$ 9,1k</b></div></div></div>
       <div class="plan"><div class="plan-h"><div class="pk">Mínimo recomendado</div><h4>Verba US$ 3.000</h4><div class="pv num"><span id="s2">~78</span><small>clientes/mês</small></div></div>
-        <div class="plan-b"><div class="row">Leads<b id="s2l">231</b></div><div class="row">Custo por cliente<b id="s2c">$38</b></div><div class="row">Faturamento na 1ª visita<b id="s2r">$9,4k</b></div><div class="row">Valor em 12 meses<b id="s2v">$38k</b></div></div></div>
+        <div class="plan-b"><div class="row">Leads<b id="s2l">231</b></div><div class="row">Custo por cliente<b id="s2c">US$ 38</b></div><div class="row">Faturamento na 1ª visita<b id="s2r">US$ 9,4k</b></div><div class="row">Valor em 12 meses<b id="s2v">US$ 37,7k</b></div></div></div>
       <div class="plan hot"><div class="plan-h"><div class="pk">Verba média ideal</div><h4>Verba US$ 4.000</h4><div class="pv num"><span id="s3">~105</span><small>clientes/mês</small></div></div>
-        <div class="plan-b"><div class="row">Leads<b id="s3l">308</b></div><div class="row">Custo por cliente<b id="s3c">$38</b></div><div class="row">Faturamento na 1ª visita<b id="s3r">$13k</b></div><div class="row">Valor em 12 meses<b id="s3v">$50k</b></div></div></div>
+        <div class="plan-b"><div class="row">Leads<b id="s3l">308</b></div><div class="row">Custo por cliente<b id="s3c">US$ 38</b></div><div class="row">Faturamento na 1ª visita<b id="s3r">US$ 12,6k</b></div><div class="row">Valor em 12 meses<b id="s3v">US$ 50,2k</b></div></div></div>
     </div>
-    <p class="small" style="margin-top:2vh" data-edit>Premissas: CPL de US$ 14 (1k) e US$ 13 (3k/4k), 40% dos leads agendam, 85% comparecem, ticket médio de US$ 120 e 4 visitas/ano por cliente. São estimativas para ajustar com os dados reais do salão no simulador.</p>
+    <p class="small" style="margin-top:2vh" data-edit>Premissas: CPL de US$ 18 com US$ 1k (verba picada fica presa no aprendizado) e US$ 13 com 3k/4k, 40% dos leads agendam, 85% comparecem, ticket médio de US$ 120 e 4 visitas/ano por cliente. São estimativas para ajustar com os dados reais do salão no simulador.</p>
   </div>
   <div class="foot">Estimativas · premissas ajustáveis</div>
 </section>
 
 <!-- 15 · SIMULADOR -->
 <section class="slide soft">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">12 · Simulador ao vivo</div>
+    <div class="eyebrow"><span class="n">12</span> Simulador ao vivo</div>
     <h2 data-edit>Ajuste as premissas com os <span class="o">números de vocês</span></h2>
     <div class="split" style="align-items:stretch;margin-top:1.6vh">
       <div class="card calc">
@@ -625,19 +662,19 @@ body.editing .editbadge{display:block}
       </div>
     </div>
   </div>
-  <div class="foot">Use as setas do teclado fora dos controles para navegar</div>
+  <div class="foot">Simulador · premissas ajustáveis</div>
 </section>
 
 <!-- 16 · ROADMAP -->
 <section class="slide">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
-    <div class="eyebrow">13 · Roadmap</div>
+    <div class="eyebrow"><span class="n">13</span> Roadmap</div>
     <h2 data-edit>Os primeiros <span class="o">90 dias</span></h2>
     <div class="g g3" style="margin-top:2vh">
       <div class="sprint"><div class="sprint-h"><div class="ph">Mês 1</div><h4>Base e campanhas no ar</h4></div><div class="sprint-b"><ul>
         <li data-edit><strong>Máquina de reviews:</strong> QR codes, times e meta semanal</li>
-        <li data-edit>Meta nas 3 frentes e Google em serviço e regional</li>
+        <li data-edit>Meta e Google em serviço e regional; a frente de influenciadores entra no mês 2</li>
         <li data-edit>Teste das 6 nacionalidades</li>
         <li data-edit>Treino de câmera com a equipe</li></ul><div class="meta"><b>Saída:</b> custo por lead base medido</div></div></div>
       <div class="sprint"><div class="sprint-h"><div class="ph">Mês 2</div><h4>Otimização</h4></div><div class="sprint-b"><ul>
@@ -656,18 +693,19 @@ body.editing .editbadge{display:block}
 </section>
 
 <!-- 17 · FECHAMENTO -->
-<section class="slide navy">
-  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+<section class="slide navy final">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">All Star Concept Salon · Plano 360</span></div>
   <div class="body">
     <div class="eyebrow">Nossa recomendação</div>
-    <h1 style="font-size:clamp(30px,4vw,78px)" data-edit>Mínimo <span class="o">US$ 3k</span>. Ideal <span class="s">US$ 4k</span>/mês.</h1>
+    <h1 style="font-size:clamp(30px,4vw,78px)" data-edit>Mínimo <span class="s">US$ 3k</span>. Ideal <span class="o">US$ 4k</span>/mês.</h1>
     <div class="g g3" style="margin-top:4vh">
       <div class="card"><div class="no">Passo 01</div><h4>Aprovar a verba</h4><p data-edit>US$ 3 a 4 mil por mês, pagos direto às plataformas, para as 5 campanhas aprenderem.</p></div>
       <div class="card"><div class="no">Passo 02</div><h4>Ligar os reviews</h4><p data-edit>QR codes e dinâmica dos times já nesta semana.</p></div>
       <div class="card"><div class="no">Passo 03</div><h4>Subir as campanhas</h4><p data-edit>A estrutura de aquisição já está pronta para rodar.</p></div>
     </div>
+    <div class="signoff"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div>
   </div>
-  <div class="foot">Proposta para All Star Concept Salon · Novembro/2026 · Grupo Opera</div>
+  <div class="foot">Proposta · Novembro/2026</div>
 </section>
 
 </div>
@@ -703,22 +741,23 @@ body.editing .editbadge{display:block}
   var tx=null; document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
   document.addEventListener('touchend',function(e){ if(tx===null)return; var d=e.changedTouches[0].clientX-tx; if(Math.abs(d)>50) go(i+(d<0?1:-1)); tx=null; });
   window.addEventListener('resize',function(){go(i)});
+  window.addEventListener('hashchange',function(){ var h=parseInt(location.hash.slice(1),10); if(h>=1&&h<=n&&h-1!==i) go(h-1); });
   setTimeout(function(){document.getElementById('hint').style.opacity=0},5000);
 
   // modo edição + memória local
-  var eds=document.querySelectorAll('[data-edit]'), KEY='allstar-deck-go-v1';
+  var eds=document.querySelectorAll('[data-edit]'), KEY='allstar-deck-go-v2';
   try{ var saved=JSON.parse(localStorage.getItem(KEY)||'{}'); eds.forEach(function(el,k){ if(saved[k]!=null) el.innerHTML=saved[k]; }); }catch(e){}
   function save(){ try{ var o={}; eds.forEach(function(el,k){o[k]=el.innerHTML}); localStorage.setItem(KEY,JSON.stringify(o)); }catch(e){} }
   function toggleEdit(){ var on=document.body.classList.toggle('editing'); eds.forEach(function(el){ el.contentEditable=on?'true':'false'; }); if(!on){ if(document.activeElement) document.activeElement.blur(); save(); } }
   eds.forEach(function(el){ el.addEventListener('input',save); });
 
   // cenários + simulador
-  function money(v){ return v>=10000 ? '$'+(v/1000).toFixed(0)+'k' : v>=1000 ? '$'+(v/1000).toFixed(1).replace('.',',')+'k' : '$'+Math.round(v); }
+  function money(v){ return 'US$ '+(v>=1000 ? (v/1000).toFixed(1).replace('.',',').replace(/,0$/,'')+'k' : Math.round(v)); }
   function model(b,cpl,a,s,t,f){ var l=b/cpl, c=l*a*s; return {l:l,c:c,cac:b/c,r:c*t,v:c*t*f,roas:c*t/b}; }
-  [[1,1000,14],[2,3000,13],[3,4000,13]].forEach(function(x){ var m=model(x[1],x[2],.4,.85,120,4);
+  [[1,1000,18],[2,3000,13],[3,4000,13]].forEach(function(x){ var m=model(x[1],x[2],.4,.85,120,4);
     document.getElementById('s'+x[0]).textContent='~'+Math.round(m.c);
     document.getElementById('s'+x[0]+'l').textContent=Math.round(m.l);
-    document.getElementById('s'+x[0]+'c').textContent='$'+Math.round(m.cac);
+    document.getElementById('s'+x[0]+'c').textContent='US$ '+Math.round(m.cac);
     document.getElementById('s'+x[0]+'r').textContent=money(m.r);
     document.getElementById('s'+x[0]+'v').textContent=money(m.v); });
   function calc(){ var g=function(k){return +document.getElementById('i'+k).value};
