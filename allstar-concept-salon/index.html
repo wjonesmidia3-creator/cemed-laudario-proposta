@@ -5,383 +5,619 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>All Star Aquisição 360</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
 <style>
+/* Layout: deck 16:9 no padrão Grupo Opera — palco navy (capa, provocação, verba, fechamento)
+   alternando com papel branco; o laranja é a batuta: pontos, destaques e chamadas.
+   Single-theme por escolha: identidade de marca. */
 :root{
-  --bg:#0b0a09; --bg2:#141210; --card:#1a1714; --line:#2e2923;
-  --ink:#f5efe6; --mute:#a99f92; --dim:#6f665b;
-  --gold:#d8b26a; --gold2:#f1d79c; --red:#e2604f; --green:#6fc28f; --blue:#7fa8d9;
-  --serif:'Playfair Display', Georgia, serif; --sans:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color-scheme:light;
+  --navy:#00247D; --navy-deep:#001A5C; --navy-900:#00123F; --navy-800:#0D2A80; --navy-line:#22409A;
+  --orange:#E85D1B; --orange-ink:#C4460C; --orange-cta:#CC4B10; --orange-2:#F6A24E; --orange-soft:#FDEEE5;
+  --sky:#A9C3E6; --sky-dim:#7F9CCB; --on-navy:#C9D6EE;
+  --ink:#111C3D; --ink-soft:#47547A; --ink-mute:#677190;
+  --bg:#FFFFFF; --bg-soft:#F4F7FC; --bg-blue:#EEF3FB; --line:#E2E8F2; --line-soft:#EEF2F8;
+  --green:#1E7E34; --green-soft:#E7F5EC; --red:#C0392B;
+  --f-brand:'Sora','Poppins',system-ui,sans-serif;
+  --f-disp:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --r:16px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden}
-body{font-size:clamp(14px,1.15vw,22px);line-height:1.4}
-.track{display:flex;height:100vh;transition:transform .55s cubic-bezier(.7,0,.2,1)}
-.slide{flex:0 0 100vw;height:100vh;padding:6vh 6vw 9vh;display:flex;flex-direction:column;position:relative;overflow:hidden;
-  background:radial-gradient(1200px 600px at 85% -10%, rgba(216,178,106,.10), transparent 60%), var(--bg)}
-.kicker{font-size:.78em;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1.2vh}
-h1{font-family:var(--serif);font-weight:800;font-size:clamp(34px,5.4vw,104px);line-height:1.02;letter-spacing:-.01em}
-h2{font-family:var(--serif);font-weight:800;font-size:clamp(26px,3.3vw,64px);line-height:1.08;margin-bottom:3vh}
-h3{font-size:1.15em;font-weight:700;margin-bottom:.5em}
-em{font-style:italic;color:var(--gold2)}
-.gold{color:var(--gold)} .red{color:var(--red)} .green{color:var(--green)} .mute{color:var(--mute)}
-.lead{font-size:1.35em;color:var(--mute);max-width:60ch}
-.grow{flex:1;min-height:0}
-.grid{display:grid;gap:1.6vw}
-.g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g5{grid-template-columns:repeat(5,1fr)} .g6{grid-template-columns:repeat(6,1fr)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.4em 1.4em}
-.card.hl{border-color:var(--gold);box-shadow:0 0 0 1px rgba(216,178,106,.25), 0 20px 60px -30px rgba(216,178,106,.5)}
-.card p{color:var(--mute)}
-.big{font-family:var(--serif);font-size:3em;font-weight:800;line-height:1}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 clamp(13px,1.02vw,20px)/1.55 var(--f-sans);-webkit-font-smoothing:antialiased;overflow:hidden}
+h1,h2,h3,h4{font-family:var(--f-disp);margin:0;letter-spacing:-.03em;line-height:1.08;text-wrap:balance}
+p,ul,ol{margin:0} ul,ol{padding:0;list-style:none}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
 .num{font-variant-numeric:tabular-nums}
-ul.clean{list-style:none} ul.clean li{padding:.45em 0 .45em 1.4em;position:relative;color:var(--mute)}
-ul.clean li::before{content:"★";position:absolute;left:0;color:var(--gold);font-size:.8em;top:.6em}
-ul.clean li b{color:var(--ink)}
-.tag{display:inline-block;font-size:.72em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.35em .8em;border-radius:99px;border:1px solid var(--line);color:var(--mute)}
-.tag.gold{border-color:var(--gold);color:var(--gold)} .tag.red{border-color:var(--red);color:var(--red)} .tag.green{border-color:var(--green);color:var(--green)}
-.bar{height:8px;background:#2a2520;border-radius:9px;overflow:hidden;margin:.8em 0 .3em}
-.bar i{display:block;height:100%;border-radius:9px;background:var(--gold)}
-.foot{position:absolute;left:6vw;bottom:3.2vh;font-size:.72em;color:var(--dim);letter-spacing:.12em;text-transform:uppercase}
-.star-bg{position:absolute;right:-6vw;bottom:-14vh;font-size:60vh;color:rgba(216,178,106,.05);line-height:1;pointer-events:none;font-family:var(--serif)}
+.o{color:var(--orange)} .navy .o,.deep .o{color:var(--orange-2)}
+.s{color:var(--sky)}
 
-/* nav */
-.nav{position:fixed;bottom:2.2vh;right:2vw;display:flex;gap:10px;align-items:center;z-index:20}
-.nav button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:rgba(26,23,20,.85);color:var(--ink);font-size:22px;cursor:pointer;backdrop-filter:blur(6px)}
-.nav button:hover{border-color:var(--gold);color:var(--gold)}
-.nav .count{font-size:13px;color:var(--mute);min-width:56px;text-align:center;font-variant-numeric:tabular-nums}
-.progress{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:20;transition:width .5s}
-.hint{position:fixed;bottom:2.6vh;left:50%;transform:translateX(-50%);font-size:12px;color:var(--dim);z-index:20;transition:opacity .6s}
-body.editing [data-edit]{outline:1px dashed rgba(216,178,106,.6);outline-offset:3px}
-.editbadge{position:fixed;top:12px;right:16px;z-index:30;font-size:12px;background:var(--gold);color:#111;padding:4px 10px;border-radius:99px;font-weight:700;display:none}
+/* ---------- trilho de slides ---------- */
+.track{display:flex;height:100vh;transition:transform .55s cubic-bezier(.7,0,.2,1)}
+.slide{flex:0 0 100vw;height:100vh;padding:4.2vh 5vw 10vh;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--bg)}
+.slide.soft{background:var(--bg-soft)}
+.slide.navy{color:#fff;background:
+  radial-gradient(60vw 40vw at 96% -12%, rgba(246,162,78,.20), transparent 62%),
+  radial-gradient(56vw 44vw at -12% 115%, rgba(169,195,230,.14), transparent 60%),
+  var(--navy)}
+.slide.deep{color:#fff;background:radial-gradient(48vw 40vw at 100% -20%, rgba(246,162,78,.18), transparent 60%),var(--navy-deep)}
+.body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+
+/* cabeçalho de marca em todo slide */
+.chrome{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:3.2vh;font-size:.78em}
+.lock{display:flex;align-items:center;gap:12px}
+.gp{font:800 1.45em/1 var(--f-brand);letter-spacing:-.035em;color:var(--navy)}
+.gp .d{color:var(--orange)}
+.navy .gp,.deep .gp{color:#fff} .navy .gp .d,.deep .gp .d{color:var(--orange-2)}
+.tagline{font:700 .72em/1.2 var(--f-sans);letter-spacing:.3em;color:var(--ink-mute);border-left:1px solid var(--line);padding-left:12px;text-transform:uppercase}
+.navy .tagline,.deep .tagline{color:var(--sky);border-color:var(--navy-line)}
+.client{font:600 .9em/1.2 var(--f-sans);color:var(--ink-mute)}
+.navy .client,.deep .client{color:var(--sky)}
+
+/* tipografia */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 .74em/1.2 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:1.6vh}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;border-radius:2px;flex:none}
+.navy .eyebrow,.deep .eyebrow{color:var(--orange-2)}
+h1{font-size:clamp(30px,4.3vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff}
+h2{font-size:clamp(24px,2.75vw,56px);font-weight:800;color:var(--navy);margin-bottom:1.4vh;max-width:30ch}
+.navy h2,.deep h2{color:#fff}
+.lead{font-size:1.12em;line-height:1.55;color:var(--ink-soft);max-width:64ch;margin-bottom:3vh}
+.lead strong{color:var(--ink);font-weight:600}
+.navy .lead,.deep .lead{color:var(--on-navy)} .navy .lead strong,.deep .lead strong{color:#fff}
+.small{font-size:.8em;color:var(--ink-mute);line-height:1.5}
+.navy .small{color:var(--sky-dim)}
+
+/* grades */
+.g{display:grid;gap:1.25vw}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))} .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))} .g6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:3.2vw;align-items:center}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.35em 1.45em;min-width:0}
+.card .no{font:700 .74em/1.2 var(--f-disp);letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}
+.card h4{font-size:1.12em;font-weight:700;color:var(--navy);margin:.5em 0 .35em;letter-spacing:-.015em;line-height:1.25}
+.card p{font-size:.9em;color:var(--ink-soft);line-height:1.5}
+.card p strong{color:var(--ink)}
+.card.hl{border-color:var(--orange);box-shadow:0 18px 44px -22px rgba(232,93,27,.35)}
+.navy .card{background:rgba(255,255,255,.05);border-color:var(--navy-line)}
+.navy .card h4{color:#fff} .navy .card p{color:var(--on-navy)} .navy .card .no{color:var(--orange-2)}
+.ico{width:2.4em;height:2.4em;border-radius:11px;background:var(--bg-blue);color:var(--navy);display:grid;place-items:center}
+.ico svg{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tag{display:inline-block;font:700 .64em/1 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--bg-blue);padding:.55em .8em;border-radius:999px;white-space:nowrap}
+.tag.o{background:var(--orange-soft);color:var(--orange-ink)}
+.tag.g{background:var(--green-soft);color:var(--green)}
+.tag.r{background:#FBE9E7;color:var(--red)}
+
+/* pilar (padrão diagnóstico) */
+.pilar{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:12px;padding:1.1em 1.25em;min-width:0}
+.pilar.fraco{border-top-color:var(--orange)}
+.pilar.ok{border-top-color:var(--green)}
+.pilar .t{display:flex;justify-content:space-between;gap:8px;align-items:center;font:700 .8em/1.2 var(--f-disp);color:var(--navy);letter-spacing:.06em;text-transform:uppercase}
+.pilar .v{font:800 2.2em/1 var(--f-disp);letter-spacing:-.035em;margin-top:.35em;color:var(--ink)}
+.pilar .v small{font:500 .4em/1 var(--f-sans);color:var(--ink-mute);margin-left:4px;letter-spacing:0}
+.pilar.fraco .v{color:var(--orange)} .pilar.ok .v{color:var(--green)}
+.pilar .m{font-size:.86em;color:var(--ink-soft);margin-top:.45em;line-height:1.45}
+.trilho{height:8px;background:var(--line-soft);border-radius:4px;overflow:hidden;margin-top:.8em}
+.trilho i{display:block;height:100%;background:var(--navy);border-radius:4px}
+.pilar.fraco .trilho i{background:var(--orange)} .pilar.ok .trilho i{background:var(--green)}
+
+/* tabela */
+.tbl{width:100%;border-collapse:collapse;font-size:.92em;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tbl th{background:var(--navy);text-align:left;padding:.85em 1.1em;font:600 .74em/1.2 var(--f-disp);letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.tbl td{padding:.8em 1.1em;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td strong{color:var(--ink)}
+.tbl .big{font:700 1em/1.3 var(--f-disp);color:var(--navy)}
+.tbl tr.us td{background:var(--orange-soft);color:var(--ink)}
+.tbl tr.us td:first-child{box-shadow:inset 4px 0 0 var(--orange)}
+.tbl .n{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+.tbl .small{color:var(--ink-mute)}
+
+/* nota */
+.note{border-left:4px solid var(--orange);background:var(--orange-soft);padding:.9em 1.3em;border-radius:0 12px 12px 0;margin-top:2.4vh}
+.note .l{font:800 .64em/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-ink);display:block;margin-bottom:.35em}
+.note p{font-size:.92em;color:var(--ink);line-height:1.5}
+.navy .note{background:rgba(232,93,27,.14);border-color:var(--orange-2)} .navy .note p{color:#fff} .navy .note .l{color:var(--orange-2)}
+
+/* faixa de números (hero-strip) */
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--navy-line);margin-top:4vh}
+.strip>div{padding:1.2em 1.3em .2em 0}
+.strip>div+div{padding-left:1.3em;border-left:1px solid var(--navy-line)}
+.strip b{display:block;font:800 clamp(20px,2vw,40px)/1 var(--f-disp);letter-spacing:-.03em;color:#fff}
+.strip b .o{color:var(--orange-2)}
+.strip>div>span{display:block;font-size:.84em;line-height:1.45;color:#B9C8E6;margin-top:.55em;max-width:30ch}
+.strip b span{display:inline}
+.strip.light{border-color:var(--line)} .strip.light>div+div{border-color:var(--line)}
+.strip.light b{color:var(--navy)} .strip.light b .o{color:var(--orange)} .strip.light>div>span{color:var(--ink-soft)}
+
+/* painel de resultados */
+.panel{background:#fff;color:var(--ink);border-radius:20px;padding:1.4em 1.6em;box-shadow:0 30px 60px -36px rgba(0,36,125,.45);border:1px solid var(--line)}
+.panel-h{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.panel-k{font:700 .66em/1.2 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .68em/1 var(--f-sans);padding:.5em .8em;border-radius:999px;background:var(--orange-soft);color:var(--orange-ink);white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.panel-big{display:flex;align-items:baseline;gap:12px;margin-top:.7em;padding-bottom:.8em;border-bottom:1px solid var(--line)}
+.panel-big b{font:800 2.8em/1 var(--f-disp);letter-spacing:-.04em;color:var(--navy)}
+.panel-big span{font-size:.88em;color:var(--ink-soft);max-width:26ch;line-height:1.4}
+.bar-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.2fr) 7.2em;gap:.9em;align-items:center;padding:.55em 0;border-bottom:1px solid var(--line-soft)}
+.bar-row:last-of-type{border-bottom:0}
+.bar-name b{display:block;font:700 .9em/1.25 var(--f-disp);color:var(--navy)}
+.bar-name small{display:block;font-size:.72em;color:var(--ink-mute)}
+.bar-track{display:flex;align-items:center;gap:.6em}
+.bar-fill{height:10px;border-radius:5px;background:linear-gradient(90deg,var(--navy),#2B4FB3);width:var(--v)}
+.bar-track b{font:700 .88em/1 var(--f-disp)}
+.bar-cost{text-align:right;font:700 .86em/1 var(--f-disp);white-space:nowrap}
+.bar-cost small{display:block;font:500 .78em/1.3 var(--f-sans);color:var(--ink-mute);margin-top:2px}
+.panel figcaption{font-size:.7em;color:var(--ink-mute);margin-top:.7em;line-height:1.45}
+
+/* triângulos */
+.tri{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.2em 1.4em 1.1em;text-align:center}
+.tri.ours{border-color:var(--orange);box-shadow:0 18px 44px -24px rgba(232,93,27,.4)}
+.tri svg{width:100%;max-height:44vh;display:block;margin:0 auto}
+.tri .cap{font-size:.9em;color:var(--ink-soft);margin-top:.6em}
+.tri .cap b{color:var(--navy);font-family:var(--f-disp)}
+
+/* frentes (cabeçalho colorido) */
+.front{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.front-h{padding:1.1em 1.3em .95em;color:#fff}
+.front.f1 .front-h{background:linear-gradient(120deg,var(--orange),#C0451A)}
+.front.f2 .front-h{background:linear-gradient(120deg,var(--navy),var(--navy-deep))}
+.front.f6 .front-h{background:linear-gradient(120deg,#2C72C7,#1B4F96)}
+.front-h .fk{font:700 .66em/1.2 var(--f-disp);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.front-h h4{margin:.35em 0 0;font-size:1.25em;font-weight:800;color:#fff}
+.front-b{padding:1em 1.3em 1.1em;flex:1;display:flex;flex-direction:column;gap:.6em}
+.front-b p{font-size:.9em;color:var(--ink-soft);line-height:1.5}
+.front-b p strong{color:var(--ink)}
+.front-b .imp{margin-top:auto;padding-top:.7em;border-top:1px dashed var(--line);font-size:.82em;color:var(--ink-soft);line-height:1.45}
+.front-b .imp b{color:var(--orange);font-family:var(--f-disp)}
+
+/* bandeiras */
+.flag{display:inline-grid;place-items:center;width:2.5em;height:2.5em;border-radius:50%;background:var(--navy);color:#fff;font:800 .82em/1 var(--f-disp);letter-spacing:.02em}
+
+/* planos / cenários */
+.plan{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.plan.hot{border-color:var(--orange);box-shadow:0 18px 44px -22px rgba(232,93,27,.35)}
+.plan-h{padding:1.05em 1.35em .9em;border-bottom:1px solid var(--line-soft)}
+.plan.hot .plan-h{background:var(--navy);border-bottom-color:var(--navy)}
+.plan-h .pk{font:700 .68em/1.2 var(--f-disp);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+.plan.hot .plan-h .pk{color:var(--orange-2)}
+.plan-h h4{margin:.25em 0 .4em;font-size:1.15em;font-weight:800;color:var(--navy)}
+.plan.hot .plan-h h4{color:#fff}
+.plan-h .pv{font:800 2.6em/1 var(--f-disp);color:var(--orange);letter-spacing:-.03em}
+.plan.hot .plan-h .pv{color:var(--orange-2)}
+.plan-h .pv small{font-size:.32em;color:var(--ink-mute);font-weight:600;letter-spacing:0;margin-left:4px}
+.plan.hot .plan-h .pv small{color:var(--sky)}
+.plan-b{padding:.7em 1.35em 1em;flex:1}
+.plan-b .row{display:flex;justify-content:space-between;gap:10px;padding:.5em 0;border-bottom:1px dashed var(--line);font-size:.9em;color:var(--ink-soft)}
+.plan-b .row:last-child{border-bottom:0}
+.plan-b .row b{color:var(--navy);font-family:var(--f-disp);font-variant-numeric:tabular-nums}
+
+/* simulador */
+.calc label{display:flex;justify-content:space-between;gap:10px;font-size:.88em;color:var(--ink-soft);margin-top:.95em;font-weight:500}
+.calc label:first-child{margin-top:0}
+.calc label b{color:var(--navy);font-family:var(--f-disp);font-variant-numeric:tabular-nums}
+.calc input[type=range]{width:100%;accent-color:var(--orange);margin:.35em 0 0}
+.out{background:linear-gradient(120deg,var(--navy),var(--navy-800));color:#fff;border-radius:20px;padding:1.5em 1.7em;position:relative;overflow:hidden;border:1px solid var(--navy-line)}
+.out::before{content:"";position:absolute;top:-40%;right:-10%;width:22vw;height:22vw;background:radial-gradient(circle,rgba(246,162,78,.24),transparent 60%);pointer-events:none}
+.out .k{font:700 .7em/1.2 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-2);position:relative}
+.out .big{font:900 4.6em/1 var(--f-disp);letter-spacing:-.05em;margin:.12em 0 .25em;position:relative}
+.out .row{display:flex;justify-content:space-between;gap:12px;padding:.6em 0;border-top:1px solid var(--navy-line);font-size:.92em;color:var(--on-navy);position:relative}
+.out .row b{color:#fff;font-family:var(--f-disp);font-variant-numeric:tabular-nums}
+
+/* roadmap */
+.sprint{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;min-width:0}
+.sprint-h{background:var(--navy);color:#fff;padding:.95em 1.3em}
+.sprint-h .ph{font:700 .7em/1.2 var(--f-disp);letter-spacing:.1em;text-transform:uppercase;color:var(--orange-2)}
+.sprint-h h4{margin:.3em 0 0;font-size:1.1em;font-weight:700;color:#fff}
+.sprint-b{padding:1em 1.3em 1.1em}
+.sprint-b ul{display:flex;flex-direction:column;gap:.6em}
+.sprint-b li{font-size:.88em;color:var(--ink-soft);line-height:1.45;padding-left:1.3em;position:relative}
+.sprint-b li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.sprint-b li strong{color:var(--ink)}
+.sprint-b .meta{margin-top:.9em;padding-top:.7em;border-top:1px dashed var(--line);font-size:.8em;color:var(--ink-mute)}
+.sprint-b .meta b{color:var(--orange);font-family:var(--f-disp)}
+.sprint-b .txt{font-size:.88em;color:var(--ink-soft);line-height:1.45}
+
+/* listas com ponto laranja */
+.dots{display:flex;flex-direction:column;gap:.55em;margin-top:.4em}
+.dots li{font-size:.9em;color:var(--ink-soft);line-height:1.45;padding-left:1.2em;position:relative}
+.dots li::before{content:"";position:absolute;left:0;top:.52em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.dots li strong{color:var(--ink)}
+
+/* north star */
+.northstar{background:linear-gradient(120deg,var(--navy),var(--navy-800));border-radius:20px;padding:1.6em 2em;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:.6em;position:relative;overflow:hidden;border:1px solid var(--navy-line)}
+.northstar::before{content:"";position:absolute;top:-45%;right:-4%;width:24vw;height:24vw;background:radial-gradient(circle,rgba(246,162,78,.24),transparent 60%);pointer-events:none}
+.northstar .ns-num{font:900 6em/.95 var(--f-disp);position:relative;letter-spacing:-.05em;color:#fff}
+.northstar .ns-k{font:700 .7em/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-2);position:relative}
+.northstar h3{font-size:1.4em;font-weight:800;line-height:1.2;position:relative}
+.northstar h3 .o{color:var(--orange-2)}
+.northstar p{font-size:.95em;color:var(--on-navy);position:relative}
+.navy .northstar{background:rgba(255,255,255,.06)}
+
+/* navegação */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--orange);z-index:20;transition:width .5s}
+.nav{position:fixed;bottom:calc(2.2vh + env(safe-area-inset-bottom,0px));right:calc(2vw + env(safe-area-inset-right,0px));display:flex;gap:10px;align-items:center;z-index:20}
+.nav button{width:48px;height:48px;border-radius:50%;border:0;background:var(--orange-cta);color:#fff;font:700 20px/1 var(--f-disp);cursor:pointer;box-shadow:0 12px 28px -12px rgba(232,93,27,.75)}
+.nav button:hover{background:#B4410C}
+.nav button[disabled]{opacity:.35;cursor:default}
+.nav .count{font:700 13px/1 var(--f-disp);color:var(--ink-mute);min-width:52px;text-align:center;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.9);padding:8px 10px;border-radius:999px;border:1px solid var(--line)}
+.foot{position:absolute;left:5vw;bottom:3.4vh;font:700 .66em/1.2 var(--f-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.navy .foot,.deep .foot{color:var(--sky-dim)}
+.hint{position:fixed;bottom:calc(3vh + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);font:500 12px/1 var(--f-sans);color:var(--ink-mute);z-index:20;transition:opacity .6s;background:rgba(255,255,255,.92);padding:7px 12px;border-radius:999px;border:1px solid var(--line)}
+body.editing [data-edit]{outline:1px dashed rgba(232,93,27,.7);outline-offset:3px}
+.editbadge{position:fixed;top:12px;right:16px;z-index:30;font:700 12px/1 var(--f-sans);background:var(--orange);color:#fff;padding:7px 12px;border-radius:99px;display:none}
 body.editing .editbadge{display:block}
 
-/* cover */
-.cover{justify-content:center}
-.cover .meta{margin-top:5vh;display:flex;gap:3vw;color:var(--mute);font-size:.95em}
-.cover .meta b{display:block;color:var(--ink);font-size:1.1em}
-
-/* scorecard */
-.score .big{font-size:2.6em}
-.score small{color:var(--dim);font-size:.8em}
-
-/* table */
-table{width:100%;border-collapse:collapse;font-size:1em}
-th,td{text-align:left;padding:.85em 1em;border-bottom:1px solid var(--line)}
-th{font-size:.72em;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700}
-td.n{font-variant-numeric:tabular-nums;font-weight:700}
-tr.us td{background:rgba(226,96,79,.08);color:var(--ink)}
-tr.us td:first-child{border-left:3px solid var(--red)}
-.ph{color:var(--dim)}
-.quote{border-left:3px solid var(--gold);padding:.6em 1em;color:var(--mute);font-style:italic;margin-bottom:.8em;background:rgba(216,178,106,.04)}
-
-/* pyramid */
-.pyr{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%}
-.pyr .lv{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;height:9.5vh;font-size:.92em;padding:0 2em;
-  clip-path:polygon(var(--i) 0, calc(100% - var(--i)) 0, 100% 100%, 0 100%)}
-.pyr .lv span{display:block;font-weight:500;font-size:.78em;opacity:.8}
-.pyr.ref .lv{background:#3a332b;color:var(--ink)}
-.pyr.ref .lv:nth-child(1){background:#6b5a3e}
-.pyr.ref .lv:nth-child(2){background:#55483a}
-.pyr.ref .lv:nth-child(3){background:#463c32}
-.pyr.ours .lv{background:repeating-linear-gradient(135deg,#1e1a16 0 10px,#25201b 10px 20px);color:var(--mute)}
-.pyr.ours .lv.done{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1b150c}
-
-/* funnel / calc */
-.scen .big{font-size:3.4em}
-.scen .row{display:flex;justify-content:space-between;padding:.45em 0;border-bottom:1px solid var(--line);color:var(--mute)}
-.scen .row b{color:var(--ink);font-variant-numeric:tabular-nums}
-.calc label{display:block;color:var(--mute);font-size:.9em;margin-top:1.1em}
-.calc label b{float:right;color:var(--ink);font-variant-numeric:tabular-nums}
-input[type=range]{width:100%;accent-color:var(--gold);margin-top:.4em}
-.out .big{font-size:4em}
-.out .row{display:flex;justify-content:space-between;padding:.6em 0;border-bottom:1px solid var(--line);color:var(--mute)}
-.out .row b{color:var(--ink);font-variant-numeric:tabular-nums;font-size:1.15em}
-
-/* timeline */
-.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw}
-.tl .card h3{color:var(--gold)}
-.qrmap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vw}
-.qrmap .card{text-align:left}
-.qrmap .ic{font-size:1.8em;margin-bottom:.4em}
-.flagcode{display:inline-flex;width:2.6em;height:2.6em;border-radius:50%;align-items:center;justify-content:center;background:#2a2520;border:1px solid var(--gold);color:var(--gold);font-weight:800;margin-bottom:.6em}
-.note{font-size:.8em;color:var(--dim);margin-top:auto;padding-top:2vh}
-.split{display:grid;grid-template-columns:1.1fr 1fr;gap:3vw;align-items:start}
 @media (max-width:900px){
-  .g3,.g4,.g5,.g6,.qrmap,.tl,.split,.g2{grid-template-columns:1fr 1fr}
-  .slide{overflow-y:auto}
+  .g3,.g4,.g6,.split,.g2,.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .slide{overflow-y:auto;padding:3vh 18px 96px}
+  .strip>div+div{border-left:0;padding-left:0}
+  .chrome .client{display:none}
+  .foot{display:none}
 }
+@media (max-width:520px){ .g3,.g4,.g6,.split,.g2,.strip{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){.track,.progress,.hint{transition:none}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-desk" viewBox="0 0 24 24"><path d="M3 9h18M5 9v11M19 9v11M8 9V5h8v4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M4 18h16M6 18a6 6 0 0 1 12 0M12 9V7M10 7h4"/></symbol>
+  <symbol id="i-mirror" viewBox="0 0 24 24"><ellipse cx="12" cy="10" rx="6" ry="7.5"/><path d="M12 17.5V21M8.5 21h7M9.5 7.5l2-2M10 10.5l4-4"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5v2M12 3.5v2"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M5 21V4h11v17M3 21h18M13 12.5h.01"/><path d="M16 7h3v14"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9.5 13h6M9.5 17h6"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2c1.9.8 3 2.9 3 5.8"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20a5 5 0 0 1 10 0M1.5 18a3.6 3.6 0 0 1 5-3M22.5 18a3.6 3.6 0 0 0-5-3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol>
+</svg>
+
 <div class="progress" id="progress"></div>
-<div class="editbadge">MODO EDIÇÃO — pressione E para sair</div>
+<div class="editbadge">Modo edição · pressione E para sair</div>
 <div class="track" id="track">
 
-<!-- 1 CAPA -->
-<section class="slide cover">
-  <div class="star-bg">★</div>
-  <div class="kicker" data-edit>Midtown Miami · Plano de Aquisição &amp; Expansão · Modelo 360</div>
-  <h1 data-edit>All Star<br><em>Concept Salon</em></h1>
-  <p class="lead" style="margin-top:3vh" data-edit>Como transformar qualidade de serviço em <b style="color:var(--ink)">fila de clientes novos</b> todos os meses.</p>
-  <div class="meta">
-    <div data-edit><b>Foco</b>100% aquisição e expansão</div>
-    <div data-edit><b>Canais</b>Google · Meta · Influência · Reputação</div>
-    <div data-edit><b>Endereço</b>3430 N Miami Ave · estacionamento privativo</div>
-    <div data-edit><b>Data</b>Novembro 2026</div>
-  </div>
-</section>
-
-<!-- 2 MISSÃO -->
-<section class="slide">
-  <div class="kicker">O ponto de partida</div>
-  <h2 data-edit>O grupo já opera <em>360</em>.<br>Agora a máquina de aquisição precisa rodar.</h2>
-  <div class="grid g3 grow" style="align-content:start">
-    <div class="card"><div class="big gold">01</div><h3 style="margin-top:.6em">Atrair</h3><p data-edit>Tráfego pago com estrutura: Meta em 3 frentes e Google por intenção de busca.</p></div>
-    <div class="card"><div class="big gold">02</div><h3 style="margin-top:.6em">Converter</h3><p data-edit>Prova social no Google: quem pesquisa compara estrelas e número de avaliações antes de agendar.</p></div>
-    <div class="card"><div class="big gold">03</div><h3 style="margin-top:.6em">Expandir</h3><p data-edit>Novos públicos por nacionalidade e região, com verba que permita testar e escalar.</p></div>
-  </div>
-  <div class="foot">All Star Concept Salon · Plano 360</div>
-</section>
-
-<!-- 3 DIAGNÓSTICO -->
-<section class="slide">
-  <div class="kicker">Diagnóstico honesto</div>
-  <h2 data-edit>Onde vocês estão hoje</h2>
-  <div class="grid g5 score">
-    <div class="card"><div class="tag red">Crítico</div><h3 style="margin-top:1em">Google / Feedbacks</h3><div class="big red">Parado</div><div class="bar"><i style="width:15%;background:var(--red)"></i></div><p data-edit>Nota 5,0, mas só 20 avaliações. Perfil sem movimento.</p></div>
-    <div class="card"><div class="tag gold">Bom</div><h3 style="margin-top:1em">Conteúdo</h3><div class="big">7<small>/10</small></div><div class="bar"><i style="width:70%"></i></div><p data-edit>Produção de qualidade. Falta narrativa.</p></div>
-    <div class="card"><div class="tag red">Fraco</div><h3 style="margin-top:1em">Influenciadoras</h3><div class="big">3<small>/10</small></div><div class="bar"><i style="width:30%;background:var(--red)"></i></div><p data-edit>Parcerias pontuais e sem método.</p></div>
-    <div class="card"><div class="tag">A mapear</div><h3 style="margin-top:1em">Eventos</h3><div class="big mute">?</div><div class="bar"><i style="width:0%"></i></div><p data-edit>Sem calendário nem uso para gerar demanda.</p></div>
-    <div class="card hl"><div class="tag gold">Pronto</div><h3 style="margin-top:1em">Aquisição</h3><div class="big gold">✓</div><div class="bar"><i style="width:100%"></i></div><p data-edit>Estrutura de campanhas já montada pela nossa equipe.</p></div>
-  </div>
-  <p class="lead" style="margin-top:4vh" data-edit>Verba atual: <b style="color:var(--ink)">US$ 1.000/mês</b>. Dá para começar, mas é pouco para testar e escalar (as contas estão mais à frente).</p>
-  <div class="foot">Diagnóstico · Novembro 2026</div>
-</section>
-
-<!-- 4 PROVOCAÇÃO -->
-<section class="slide">
-  <div class="kicker">A provocação</div>
-  <h2 data-edit>Enquanto o Google de vocês está parado,<br>os líderes da região <em>ganham avaliações toda semana</em>.</h2>
-  <div class="split grow">
-    <div>
-      <table>
-        <thead><tr><th>Salão</th><th>Nota</th><th>Avaliações</th><th>Fonte</th></tr></thead>
-        <tbody>
-          <tr><td data-edit>Avant-Garde Salon &amp; Spa <span class="mute">· Coral Gables</span></td><td class="n" data-edit>4,9 ★</td><td class="n" data-edit>1.573</td><td class="mute" data-edit>Google</td></tr>
-          <tr><td data-edit>Casa Bella Hair <span class="mute">· Coral Gables</span></td><td class="n" data-edit>4,9 ★</td><td class="n" data-edit>600+</td><td class="mute" data-edit>Google</td></tr>
-          <tr><td data-edit>Kairos Hair Salon <span class="mute">· Miami</span></td><td class="n" data-edit>4,5 ★</td><td class="n" data-edit>241</td><td class="mute" data-edit>Yelp</td></tr>
-          <tr><td data-edit>True Hair Miami</td><td class="n" data-edit>4,7 ★</td><td class="n" data-edit>209</td><td class="mute" data-edit>Yelp</td></tr>
-          <tr class="us"><td><b>All Star Concept</b> <span class="mute">· Midtown</span></td><td class="n" data-edit>5,0 ★</td><td class="n red" data-edit>20</td><td class="mute" data-edit>Google</td></tr>
-        </tbody>
-      </table>
-      <p class="note" data-edit>Consulta de novembro 2026. Os números mudam toda semana. Pressione <b>E</b> para editar ao vivo.</p>
-    </div>
-    <div class="card hl" style="text-align:center">
-      <p>O líder da região tem</p>
-      <div class="big gold num" style="font-size:6em" data-edit>79x</div>
-      <p data-edit>mais avaliações que a All Star</p>
-      <p style="margin-top:2vh;font-size:1.15em;color:var(--ink)" data-edit><b>Nota 5,0 que quase ninguém vê.</b></p>
-      <p style="margin-top:1vh" data-edit>A cliente nova ainda não conhece o trabalho de vocês, só as estrelas. Quem tem 20 avaliações perde a comparação no Maps para quem tem 1.500.</p>
+<!-- 1 · CAPA -->
+<section class="slide navy">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">Novembro/2026</span></div>
+  <div class="body">
+    <div class="eyebrow" data-edit>Proposta · All Star Concept Salon · Midtown Miami</div>
+    <h1 data-edit>Transformar a nota <span class="o">5,0</span><br>em <span class="s">agenda cheia</span> de clientes novos<span class="o">.</span></h1>
+    <p class="lead" style="margin-top:2.6vh" data-edit>Um plano 100% focado em <strong>aquisição e expansão</strong>: reputação no Google, Meta Ads em 3 frentes e Google Ads por intenção de busca, com verba dimensionada para aprender e escalar.</p>
+    <div class="strip">
+      <div><b class="num" data-edit>5,0 <span class="o">★</span></b><span data-edit>nota no Google, mas só com 20 avaliações</span></div>
+      <div><b class="num" data-edit>3 <span class="o">frentes</span></b><span data-edit>no Meta: influenciadores, serviço e regional</span></div>
+      <div><b class="num" data-edit>US$ <span class="o">3–4k</span></b><span data-edit>verba mensal recomendada (mínimo e ideal)</span></div>
+      <div><b class="num" data-edit>90 dias</b><span data-edit>para o sistema rodando, medido e escalando</span></div>
     </div>
   </div>
-  <div class="foot">Benchmark regional</div>
+  <div class="foot">3430 N Miami Ave · Midtown Miami · estacionamento privativo</div>
 </section>
 
-<!-- 5 PIRÂMIDE -->
+<!-- 2 · QUEM É O GRUPO OPERA -->
 <section class="slide">
-  <div class="kicker">O modelo</div>
-  <h2 data-edit>A pirâmide 360: o topo já está montado</h2>
-  <div class="grid g2 grow" style="align-items:center">
-    <div>
-      <div class="pyr ref">
-        <div class="lv" style="--i:38%;width:100%" data-edit>Aquisição</div>
-        <div class="lv" style="--i:28%;width:100%" data-edit>Influência &amp; Eventos</div>
-        <div class="lv" style="--i:18%;width:100%" data-edit>Conteúdo com narrativa</div>
-        <div class="lv" style="--i:8%;width:100%" data-edit>Reputação · Google &amp; feedbacks</div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="split">
+      <div>
+        <div class="eyebrow">Quem está apresentando</div>
+        <h2 data-edit>Uma aceleradora de crescimento no <span class="o">modelo 360</span>.</h2>
+        <p class="lead" data-edit>O Grupo Opera junta diagnóstico, mídia, conteúdo, reputação e relatório num time só, com uma meta: <strong>o seu WhatsApp tocando com quem quer comprar.</strong></p>
+        <div class="strip light" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1vh">
+          <div><b class="num"><span class="o">−46%</span></b><span data-edit>no custo por conversa da Trait Odontologia, com o mesmo volume</span></div>
+          <div><b class="num"><span class="o">−40%</span></b><span data-edit>no custo por conversa da Fiorini, com 14% mais conversas</span></div>
+        </div>
+        <p class="small" style="margin-top:2.4vh" data-edit>Clientes: Fiorini, Trait, D’Plácido, Instituto Sanrire, EGO Odontologia, CEMED e Dreisson Vivo Imóveis.</p>
       </div>
-      <p style="text-align:center;margin-top:2vh" class="mute" data-edit><b style="color:var(--ink)">Exemplo: Sanrire</b>. Base sólida sustenta o tráfego pago.</p>
+      <figure class="panel" style="margin:0">
+        <div class="panel-h"><span class="panel-k">Meta Ads · 12/07 a 09/10/2026</span><span class="chip">Dados reais</span></div>
+        <p class="panel-big"><b class="num">2.562</b><span>conversas iniciadas por mensagem a partir dos anúncios de 4 clínicas</span></p>
+        <div class="bar-row"><div class="bar-name"><b>Fiorini</b><small>Vargem Grande do Sul · SP</small></div><div class="bar-track"><span class="bar-fill" style="--v:70%"></span><b class="num">839</b></div><div class="bar-cost num">R$ 18,69<small>antes R$ 31,27</small></div></div>
+        <div class="bar-row"><div class="bar-name"><b>Trait Odontologia</b><small>Guarapuava · PR</small></div><div class="bar-track"><span class="bar-fill" style="--v:61%"></span><b class="num">731</b></div><div class="bar-cost num">R$ 16,01<small>antes R$ 29,88</small></div></div>
+        <div class="bar-row"><div class="bar-name"><b>D’Plácido</b><small>Embu das Artes · SP</small></div><div class="bar-track"><span class="bar-fill" style="--v:55.5%"></span><b class="num">665</b></div><div class="bar-cost num">R$ 12,78<small>antes R$ 14,23</small></div></div>
+        <div class="bar-row"><div class="bar-name"><b>CEMED</b><small>Mirassol · SP</small></div><div class="bar-track"><span class="bar-fill" style="--v:27.3%"></span><b class="num">327</b></div><div class="bar-cost num">R$ 11,90<small>desde 24/07</small></div></div>
+        <figcaption>Fonte: Reportei (Meta Ads), métrica “conversas iniciadas por mensagem”. “Antes” são os 90 dias anteriores (13/04 a 11/07/2026).</figcaption>
+      </figure>
     </div>
-    <div>
-      <div class="pyr ours">
-        <div class="lv done" style="--i:38%;width:100%" data-edit>Aquisição ✓</div>
-        <div class="lv" style="--i:28%;width:100%" data-edit>Influência &amp; Eventos<span>3/10 · ?</span></div>
-        <div class="lv" style="--i:18%;width:100%" data-edit>Conteúdo com narrativa<span>7/10</span></div>
-        <div class="lv" style="--i:8%;width:100%" data-edit>Reputação · Google<span>parado</span></div>
+  </div>
+  <div class="foot">Grupo Opera · modelo 360</div>
+</section>
+
+<!-- 3 · DIAGNÓSTICO -->
+<section class="slide soft">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">01 · Diagnóstico</div>
+    <h2 data-edit>Onde a All Star está <span class="o">hoje</span></h2>
+    <p class="lead" data-edit>Frentes avaliadas de 0 a 10, no mesmo método que usamos nos nossos diagnósticos. <strong>A qualidade do serviço existe. O que trava é a vitrine.</strong></p>
+    <div class="g g3">
+      <div class="pilar fraco"><div class="t">Vitrine Google <span class="tag r">Crítico</span></div><div class="v" data-edit>Parado</div><div class="m" data-edit>Nota 5,0, mas só 20 avaliações. Perfil sem movimento.</div><div class="trilho"><i style="width:15%"></i></div></div>
+      <div class="pilar"><div class="t">Produção de conteúdo <span class="tag">Bom</span></div><div class="v" data-edit>7<small>/10</small></div><div class="m" data-edit>Produção com qualidade. Falta narrativa.</div><div class="trilho"><i style="width:70%"></i></div></div>
+      <div class="pilar fraco"><div class="t">Parcerias · influência <span class="tag r">Fraco</span></div><div class="v" data-edit>3<small>/10</small></div><div class="m" data-edit>Parcerias pontuais e sem método.</div><div class="trilho"><i style="width:30%"></i></div></div>
+      <div class="pilar"><div class="t">Eventos <span class="tag">A mapear</span></div><div class="v" style="color:var(--ink-mute)" data-edit>?</div><div class="m" data-edit>Sem calendário nem uso para gerar demanda.</div><div class="trilho"><i style="width:0"></i></div></div>
+      <div class="pilar fraco"><div class="t">Verba de mídia <span class="tag o">Abaixo</span></div><div class="v num" data-edit>US$ 1k<small>/mês</small></div><div class="m" data-edit>Dá para começar, mas não para testar e escalar.</div><div class="trilho"><i style="width:25%"></i></div></div>
+      <div class="pilar ok"><div class="t">Estrutura de aquisição <span class="tag g">Pronto</span></div><div class="v" data-edit>Montada ✓</div><div class="m" data-edit>Campanhas desenhadas pelo Grupo Opera e prontas para subir.</div><div class="trilho"><i style="width:100%"></i></div></div>
+    </div>
+  </div>
+  <div class="foot">Diagnóstico · Novembro/2026</div>
+</section>
+
+<!-- 4 · PROVOCAÇÃO -->
+<section class="slide navy">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">02 · A provocação</div>
+    <h2 data-edit>Enquanto o Google da All Star está parado, os líderes da região <span class="o">ganham avaliações toda semana</span>.</h2>
+    <div class="split" style="align-items:stretch;margin-top:2vh">
+      <div>
+        <table class="tbl">
+          <thead><tr><th>Salão</th><th>Nota</th><th>Avaliações</th><th>Fonte</th></tr></thead>
+          <tbody>
+            <tr><td><span class="big" data-edit>Avant-Garde Salon &amp; Spa</span> <span class="small" data-edit>· Coral Gables</span></td><td class="n" data-edit>4,9 ★</td><td class="n" data-edit>1.573</td><td data-edit>Google</td></tr>
+            <tr><td><span class="big" data-edit>Casa Bella Hair</span> <span class="small" data-edit>· Coral Gables</span></td><td class="n" data-edit>4,9 ★</td><td class="n" data-edit>600+</td><td data-edit>Google</td></tr>
+            <tr><td><span class="big" data-edit>Kairos Hair Salon</span> <span class="small" data-edit>· Miami</span></td><td class="n" data-edit>4,5 ★</td><td class="n" data-edit>241</td><td data-edit>Yelp</td></tr>
+            <tr><td><span class="big" data-edit>True Hair Miami</span></td><td class="n" data-edit>4,7 ★</td><td class="n" data-edit>209</td><td data-edit>Yelp</td></tr>
+            <tr class="us"><td><span class="big">All Star Concept</span> <span class="small">· Midtown</span></td><td class="n" data-edit>5,0 ★</td><td class="n" style="color:var(--orange-ink)" data-edit>20</td><td data-edit>Google</td></tr>
+          </tbody>
+        </table>
+        <p class="small" style="margin-top:1.4vh" data-edit>Consulta de novembro/2026. Os números mudam toda semana. Pressione E para editar ao vivo.</p>
       </div>
-      <p style="text-align:center;margin-top:2vh" class="mute" data-edit><b class="gold">All Star</b>. A aquisição já está pronta, e os pilares de baixo a gente constrói com o tempo.</p>
+      <div class="northstar">
+        <div class="ns-k">O líder da região tem</div>
+        <div class="ns-num num" data-edit>79x</div>
+        <h3 data-edit>mais avaliações que a All Star. <span class="o">Nota 5,0 que quase ninguém vê.</span></h3>
+        <p data-edit>A cliente nova ainda não conhece o trabalho de vocês, só as estrelas. Quem tem 20 avaliações perde a comparação no Maps para quem tem 1.500.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Benchmark · Miami</div>
+</section>
+
+<!-- 5 · TRIÂNGULO -->
+<section class="slide">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">03 · O método</div>
+    <h2 data-edit>Três pilares sustentam o crescimento. <span class="o">O de aquisição já está montado.</span></h2>
+    <div class="g g2" style="margin-top:1.6vh">
+      <div class="tri">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Triângulo Sanrire: Aquisição 6,6 no topo, Reputação 7,7 e Vendas 6,75 na base, nota geral 6,9">
+          <text x="200" y="22" text-anchor="middle" font-family="Poppins,sans-serif" font-size="15" font-weight="800" fill="#00247D" letter-spacing="1.5">AQUISIÇÃO · 6,6</text>
+          <polygon points="200,36 44,248 356,248" fill="#EEF3FB" stroke="#00247D" stroke-width="3" stroke-linejoin="round"/>
+          <text x="200" y="168" text-anchor="middle" font-family="Poppins,sans-serif" font-size="44" font-weight="800" fill="#E85D1B">6,9</text>
+          <text x="200" y="194" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#47547A">138 de 200 pontos · 20 frentes</text>
+          <text x="70" y="274" text-anchor="middle" font-family="Poppins,sans-serif" font-size="14" font-weight="800" fill="#00247D" letter-spacing="1.5">REPUTAÇÃO</text>
+          <text x="70" y="292" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#E85D1B">7,7</text>
+          <text x="330" y="274" text-anchor="middle" font-family="Poppins,sans-serif" font-size="14" font-weight="800" fill="#00247D" letter-spacing="1.5">VENDAS</text>
+          <text x="330" y="292" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#E85D1B">6,75</text>
+        </svg>
+        <p class="cap" data-edit><b>Exemplo · Instituto Sanrire.</b> Diagnóstico completo, com nota por frente e por pilar.</p>
+      </div>
+      <div class="tri ours">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Triângulo All Star: Aquisição montada no topo, Reputação e Vendas em desenvolvimento na base">
+          <text x="200" y="22" text-anchor="middle" font-family="Poppins,sans-serif" font-size="15" font-weight="800" fill="#C4460C" letter-spacing="1.5">AQUISIÇÃO · MONTADA ✓</text>
+          <polygon points="136,122 264,122 356,248 44,248" fill="#F4F7FC" stroke="#A9C3E6" stroke-width="2.5" stroke-dasharray="8 7" stroke-linejoin="round"/>
+          <polygon points="200,36 136,122 264,122" fill="#E85D1B" stroke="#E85D1B" stroke-width="3" stroke-linejoin="round"/>
+          <text x="200" y="104" text-anchor="middle" font-family="Poppins,sans-serif" font-size="15" font-weight="800" fill="#fff">PRONTO</text>
+          <text x="200" y="184" text-anchor="middle" font-family="Poppins,sans-serif" font-size="17" font-weight="700" fill="#47547A">em construção</text>
+          <text x="200" y="206" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#677190">desenvolvidos com o tempo</text>
+          <text x="70" y="274" text-anchor="middle" font-family="Poppins,sans-serif" font-size="14" font-weight="800" fill="#00247D" letter-spacing="1.5">REPUTAÇÃO</text>
+          <text x="70" y="292" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#677190">Google parado</text>
+          <text x="330" y="274" text-anchor="middle" font-family="Poppins,sans-serif" font-size="14" font-weight="800" fill="#00247D" letter-spacing="1.5">VENDAS</text>
+          <text x="330" y="292" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#677190">verba US$ 1k</text>
+        </svg>
+        <p class="cap" data-edit><b>All Star.</b> Vamos desenvolver os pilares de baixo com o tempo. O de aquisição já montamos.</p>
+      </div>
     </div>
   </div>
   <div class="foot">Quanto mais forte a base, mais barato fica cada cliente</div>
 </section>
 
-<!-- 6 CONTEÚDO -->
-<section class="slide">
-  <div class="kicker">Conteúdo · 7/10</div>
-  <h2 data-edit>A produção já tem qualidade.<br>O que falta é <em>história</em>.</h2>
-  <div class="grid g3 grow" style="align-content:start">
-    <div class="card"><h3>Como é hoje</h3><ul class="clean">
-      <li data-edit><b>Qualidade de produção</b> alta</li>
-      <li data-edit>Vídeo bonito, mas <b>sem gancho</b> nos 3 primeiros segundos</li>
-      <li data-edit>Mostra o resultado e <b>esquece a pessoa</b></li></ul></div>
-    <div class="card hl"><h3>A fórmula</h3><p data-edit style="font-size:1.1em;color:var(--ink)"><b class="gold">Filmmaker</b> + <b class="gold">quem está sendo gravado</b>, com energia e treino.</p>
-      <p data-edit style="margin-top:1em">Câmera boa sem presença não vende. Por isso a equipe também precisa treinar para aparecer.</p></div>
-    <div class="card"><h3>Estrutura de narrativa</h3><ul class="clean">
-      <li data-edit><b>Gancho:</b> a dor ou o desejo da cliente</li>
-      <li data-edit><b>Transformação:</b> o processo com a profissional</li>
-      <li data-edit><b>Revelação:</b> o antes e depois mais a reação</li>
-      <li data-edit><b>Prova:</b> o review do Google na tela</li></ul></div>
+<!-- 6 · DIVISOR -->
+<section class="slide deep">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">Parte 02 · Recomendação 360</div>
+    <h1 style="font-size:clamp(30px,4vw,78px);max-width:18ch" data-edit>Reputação primeiro, <span class="o">mídia em cima</span>.</h1>
+    <p class="lead" style="margin-top:2.6vh" data-edit>O anúncio leva a cliente até o perfil. Quem decide se ela agenda são as estrelas, as avaliações e o conteúdo que ela encontra lá. Por isso a máquina de feedback no Google liga junto com as campanhas.</p>
   </div>
-  <div class="foot">Esse conteúdo vira o criativo das campanhas</div>
+  <div class="foot">Conteúdo · Reviews · Meta · Google</div>
 </section>
 
-<!-- 7 GOOGLE REVIEWS - DINÂMICA -->
+<!-- 7 · CONTEÚDO -->
 <section class="slide">
-  <div class="kicker">Recomendação 360 · Prioridade #1</div>
-  <h2 data-edit>Uma máquina de feedback no Google,<br>com <em>competição entre equipes</em></h2>
-  <div class="grid g4" style="align-content:start">
-    <div class="card"><div class="big gold">1</div><h3 style="margin-top:.5em">Times</h3><p data-edit>Separar as equipes de atendimento (cabelo, unhas, estética, recepção), cada uma com seu QR code e link próprio.</p></div>
-    <div class="card"><div class="big gold">2</div><h3 style="margin-top:.5em">Meta semanal</h3><p data-edit>Cada time tem uma meta de avaliações por semana, e o ranking fica visível no salão e no grupo da equipe.</p></div>
-    <div class="card"><div class="big gold">3</div><h3 style="margin-top:.5em">Momento certo</h3><p data-edit>O pedido é feito no pico de satisfação, quando a cliente se vê no espelho pronta.</p></div>
-    <div class="card"><div class="big gold">4</div><h3 style="margin-top:.5em">Reconhecimento</h3><p data-edit>O time campeão do mês ganha um prêmio interno. A equipe é premiada pela execução.</p></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">04 · Conteúdo · 7/10</div>
+    <h2 data-edit>A produção já tem qualidade. O que falta é <span class="o">história</span>.</h2>
+    <div class="g g3" style="margin-top:2vh">
+      <div class="card"><div class="no">Hoje</div><h4 data-edit>Bonito, mas sem gancho</h4><ul class="dots">
+        <li data-edit><strong>Qualidade de produção</strong> alta</li>
+        <li data-edit>Sem gancho nos <strong>3 primeiros segundos</strong></li>
+        <li data-edit>Mostra o resultado e <strong>esquece a pessoa</strong></li></ul></div>
+      <div class="card hl"><div class="no">A fórmula</div><h4 data-edit>Filmmaker + quem está sendo gravado</h4>
+        <p data-edit>O resultado vem da junção das duas pontas: o filmmaker e a pessoa na frente da câmera, <strong>com energia e treino</strong>.</p>
+        <p data-edit style="margin-top:.7em">Câmera boa sem presença não vende. Por isso a equipe também treina para aparecer.</p></div>
+      <div class="card"><div class="no">Estrutura de narrativa</div><h4 data-edit>Quatro tempos</h4><ul class="dots">
+        <li data-edit><strong>Gancho:</strong> a dor ou o desejo da cliente</li>
+        <li data-edit><strong>Transformação:</strong> o processo com a profissional</li>
+        <li data-edit><strong>Revelação:</strong> antes e depois com a reação</li>
+        <li data-edit><strong>Prova:</strong> o review do Google na tela</li></ul></div>
+    </div>
+    <div class="note"><span class="l">Por que importa para a aquisição</span><p data-edit>Esse conteúdo vira o criativo das campanhas. <strong>Criativo com narrativa baixa o custo por lead</strong>, e é a mesma verba trazendo mais clientes.</p></div>
   </div>
-  <div class="grid g3" style="margin-top:3vh">
-    <div class="card hl"><p>Meta inicial</p><div class="big gold num" data-edit>+40</div><p data-edit>avaliações/mês. Em 30 dias é o dobro de todo o histórico atual (20).</p></div>
-    <div class="card"><p>Por que importa</p><h3 style="margin-top:.4em" data-edit>Mais avaliações melhoram o ranking no Maps e o CTR dos anúncios, e o custo por cliente cai.</h3></div>
-    <div class="card"><p>Regra do jogo</p><h3 style="margin-top:.4em" data-edit>Nunca dar desconto ou brinde à cliente em troca de avaliação, porque a política do Google proíbe.</h3></div>
+  <div class="foot">Conteúdo vira criativo</div>
+</section>
+
+<!-- 8 · MÁQUINA DE REVIEWS -->
+<section class="slide">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">05 · Prioridade #1</div>
+    <h2 data-edit>Máquina de feedback no Google, com <span class="o">competição entre as equipes</span></h2>
+    <div class="g g4" style="margin-top:2vh">
+      <div class="card"><div class="ico"><svg><use href="#i-team"/></svg></div><h4>Times</h4><p data-edit>Equipes de atendimento separadas (cabelo, nails, wellness e recepção), cada uma com QR code e link próprios.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-chart"/></svg></div><h4>Meta semanal</h4><p data-edit>Cada time tem meta de avaliações por semana, com ranking visível no salão e no grupo da equipe.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-clock"/></svg></div><h4>Momento certo</h4><p data-edit>O pedido acontece no pico de satisfação, quando a cliente se vê pronta no espelho.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-trophy"/></svg></div><h4>Reconhecimento</h4><p data-edit>O time campeão do mês ganha prêmio interno. Quem é premiado é a equipe, pela execução.</p></div>
+    </div>
+    <div class="g g3" style="margin-top:1.25vw">
+      <div class="pilar fraco"><div class="t">Meta inicial</div><div class="v num" data-edit>+40<small>avaliações/mês</small></div><div class="m" data-edit>Em 30 dias, o dobro de todo o histórico atual (20).</div></div>
+      <div class="card"><div class="no">Por que importa</div><p style="margin-top:.5em;color:var(--ink);font-weight:500" data-edit>Mais avaliações melhoram o ranking no Maps e o CTR dos anúncios, e o custo por cliente cai.</p></div>
+      <div class="card"><div class="no">Regra do jogo</div><p style="margin-top:.5em;color:var(--ink);font-weight:500" data-edit>Nada de desconto ou brinde à cliente em troca de avaliação. A política do Google proíbe.</p></div>
+    </div>
   </div>
   <div class="foot">Reputação alimenta a aquisição</div>
 </section>
 
-<!-- 8 QR CODE -->
-<section class="slide">
-  <div class="kicker">Recomendação 360</div>
-  <h2 data-edit>QR code do Google <em>em todo o salão</em></h2>
-  <div class="qrmap grow" style="align-content:start">
-    <div class="card"><div class="ic">🪑</div><h3>Mesa da profissional</h3><p data-edit>Na bancada de cada profissional, com o nome dela no card.</p></div>
-    <div class="card"><div class="ic">🛎️</div><h3>Recepção</h3><p data-edit>Display no balcão, na hora do pagamento.</p></div>
-    <div class="card"><div class="ic">🪞</div><h3>Espelhos</h3><p data-edit>Adesivo discreto no momento do "uau".</p></div>
-    <div class="card"><div class="ic">☕</div><h3>Espera &amp; café</h3><p data-edit>Mesa de espera e área do café.</p></div>
-    <div class="card"><div class="ic">🚪</div><h3>Saída</h3><p data-edit>Na porta: "Gostou? Conta pra gente."</p></div>
-    <div class="card"><div class="ic">💬</div><h3>WhatsApp pós-visita</h3><p data-edit>Mensagem automática duas horas depois, com o link direto.</p></div>
-    <div class="card"><div class="ic">🧾</div><h3>Recibo / cartão</h3><p data-edit>Cartão de agradecimento com o QR no verso.</p></div>
-    <div class="card"><div class="ic">🚻</div><h3>Banheiro</h3><p data-edit>Ponto de atenção garantida.</p></div>
+<!-- 9 · QR CODE -->
+<section class="slide soft">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">06 · Recomendação 360</div>
+    <h2 data-edit>QR code do Google <span class="o">em todo o salão</span></h2>
+    <p class="lead" data-edit>Quanto menos fricção, mais avaliação. A cliente não precisa procurar o perfil: o link está onde ela olha.</p>
+    <div class="g g4">
+      <div class="card"><div class="ico"><svg><use href="#i-desk"/></svg></div><h4>Mesa da profissional</h4><p data-edit>Na bancada de cada profissional, com o nome dela no card.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-bell"/></svg></div><h4>Recepção</h4><p data-edit>Display no balcão, na hora do pagamento.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-mirror"/></svg></div><h4>Espelhos</h4><p data-edit>Adesivo discreto, no momento do “uau”.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-cup"/></svg></div><h4>Espera e café</h4><p data-edit>Mesa de espera e área do café.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-door"/></svg></div><h4>Saída</h4><p data-edit>Na porta: “Gostou? Conta pra gente.”</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-chat"/></svg></div><h4>WhatsApp pós-visita</h4><p data-edit>Mensagem automática duas horas depois, com o link direto.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-doc"/></svg></div><h4>Recibo e cartão</h4><p data-edit>Cartão de agradecimento com o QR no verso.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-people"/></svg></div><h4>Banheiro</h4><p data-edit>Ponto de atenção garantida.</p></div>
+    </div>
   </div>
-  <div class="foot">Quanto menos fricção, mais avaliações</div>
+  <div class="foot">8 pontos de contato</div>
 </section>
 
-<!-- 9 META ADS -->
+<!-- 10 · META ADS -->
 <section class="slide">
-  <div class="kicker">Meta Ads</div>
-  <h2 data-edit>Campanhas separadas em <em>3 frentes</em></h2>
-  <div class="grid g3 grow" style="align-content:start">
-    <div class="card"><div class="tag gold">Frente 1</div><h3 style="margin-top:1em;font-size:1.4em">Influenciadores</h3><ul class="clean">
-      <li data-edit>Conteúdo de influenciadoras impulsionado como <b>anúncio de parceria</b></li>
-      <li data-edit>Usa o público dela com a <b>prova social</b> dela</li>
-      <li data-edit>Puxa o pilar de 3/10 para cima</li></ul></div>
-    <div class="card hl"><div class="tag gold">Frente 2</div><h3 style="margin-top:1em;font-size:1.4em">Serviço</h3><ul class="clean">
-      <li data-edit>Uma campanha por <b>linha de serviço</b>: hair design, nails e wellness</li>
-      <li data-edit>Criativo com <b>antes e depois</b>, narrativa e <b>estacionamento privativo</b> como gancho</li>
-      <li data-edit>Público local num raio de Midtown, Wynwood e Edgewater</li></ul></div>
-    <div class="card"><div class="tag gold">Frente 3</div><h3 style="margin-top:1em;font-size:1.4em">Regional</h3><ul class="clean">
-      <li data-edit>Público por <b>país de origem</b>: as 6 nacionalidades com mais imigrantes em Miami</li>
-      <li data-edit>Criativo no <b>idioma nativo</b> e com profissional da mesma origem</li>
-      <li data-edit>Geo nos bairros de cada comunidade: Little Havana, Doral, Little Haiti e Sweetwater</li></ul></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">07 · Meta Ads</div>
+    <h2 data-edit>Campanhas separadas em <span class="o">3 frentes</span></h2>
+    <p class="lead" data-edit>Cada frente tem verba própria, para que cada uma aprenda sozinha e a gente saiba exatamente de onde vem cada cliente.</p>
+    <div class="g g3">
+      <div class="front f1"><div class="front-h"><div class="fk">Frente 01</div><h4>Influenciadores</h4></div><div class="front-b">
+        <p data-edit><strong>Prova social de quem a cliente já segue.</strong> Conteúdo das influenciadoras impulsionado como anúncio de parceria, usando o público e a credibilidade delas.</p>
+        <div class="imp"><b>Objetivo:</b> tirar o pilar de parcerias do 3/10</div></div></div>
+      <div class="front f2"><div class="front-h"><div class="fk">Frente 02</div><h4>Serviço</h4></div><div class="front-b">
+        <p data-edit><strong>Uma campanha por linha de serviço:</strong> hair design, nails e wellness. Criativo com antes e depois, narrativa e o estacionamento privativo como gancho.</p>
+        <div class="imp"><b>Público:</b> raio de Midtown, Wynwood e Edgewater</div></div></div>
+      <div class="front f6"><div class="front-h"><div class="fk">Frente 03</div><h4>Regional</h4></div><div class="front-b">
+        <p data-edit><strong>Público por país de origem:</strong> as 6 nacionalidades com mais imigrantes em Miami, com criativo no idioma nativo e profissional da mesma origem.</p>
+        <div class="imp"><b>Geo:</b> Little Havana, Doral, Little Haiti e Sweetwater</div></div></div>
+    </div>
   </div>
-  <div class="foot">Cada frente com verba própria, para cada uma aprender sozinha</div>
+  <div class="foot">Meta Ads · 3 frentes</div>
 </section>
 
-<!-- 10 REGIONAL -->
+<!-- 11 · REGIONAL -->
 <section class="slide">
-  <div class="kicker">Frente regional · Teste</div>
-  <h2 data-edit>Testar as 6 nacionalidades e <em>escalar as 3 melhores</em></h2>
-  <div class="grid g6">
-    <div class="card"><div class="flagcode">CU</div><h3 data-edit>Cuba</h3><p data-edit>Espanhol · Little Havana, Hialeah</p></div>
-    <div class="card"><div class="flagcode">CO</div><h3 data-edit>Colômbia</h3><p data-edit>Espanhol · Kendall, Doral</p></div>
-    <div class="card"><div class="flagcode">VE</div><h3 data-edit>Venezuela</h3><p data-edit>Espanhol · Doral, Weston</p></div>
-    <div class="card"><div class="flagcode">NI</div><h3 data-edit>Nicarágua</h3><p data-edit>Espanhol · Sweetwater</p></div>
-    <div class="card"><div class="flagcode">HT</div><h3 data-edit>Haiti</h3><p data-edit>Crioulo · Little Haiti (vizinho de Midtown)</p></div>
-    <div class="card"><div class="flagcode">HN</div><h3 data-edit>Honduras</h3><p data-edit>Espanhol · Allapattah, Flagami</p></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">08 · Frente regional</div>
+    <h2 data-edit>Testar as 6 nacionalidades e <span class="o">escalar as 3 melhores</span></h2>
+    <div class="g g6" style="margin-top:2vh">
+      <div class="card"><span class="flag">CU</span><h4 data-edit>Cuba</h4><p data-edit>Espanhol · Little Havana, Hialeah</p></div>
+      <div class="card"><span class="flag">CO</span><h4 data-edit>Colômbia</h4><p data-edit>Espanhol · Kendall, Doral</p></div>
+      <div class="card"><span class="flag">VE</span><h4 data-edit>Venezuela</h4><p data-edit>Espanhol · Doral, Weston</p></div>
+      <div class="card"><span class="flag">NI</span><h4 data-edit>Nicarágua</h4><p data-edit>Espanhol · Sweetwater</p></div>
+      <div class="card"><span class="flag">HT</span><h4 data-edit>Haiti</h4><p data-edit>Crioulo · Little Haiti, vizinho de Midtown</p></div>
+      <div class="card"><span class="flag">HN</span><h4 data-edit>Honduras</h4><p data-edit>Espanhol · Allapattah, Flagami</p></div>
+    </div>
+    <div class="g g3" style="margin-top:1.25vw">
+      <div class="sprint"><div class="sprint-h"><div class="ph">Semanas 1–2</div><h4>Testar</h4></div><div class="sprint-b"><p class="txt" data-edit>Seis conjuntos com a mesma verba, o mesmo serviço e o criativo adaptado ao idioma.</p></div></div>
+      <div class="sprint"><div class="sprint-h"><div class="ph">Semana 3</div><h4>Cortar</h4></div><div class="sprint-b"><p class="txt" data-edit>Desligar as 3 nacionalidades com maior custo por agendamento.</p></div></div>
+      <div class="sprint"><div class="sprint-h"><div class="ph">Semana 4+</div><h4>Escalar</h4></div><div class="sprint-b"><p class="txt" data-edit>Concentrar verba nas 3 vencedoras, com uma oferta de entrada para cada comunidade.</p></div></div>
+    </div>
+    <p class="small" style="margin-top:1.6vh" data-edit>Ordem de referência pela população nascida no exterior em Miami-Dade (Censo ACS). Validar antes de subir as campanhas.</p>
   </div>
-  <div class="grid g3" style="margin-top:3.5vh">
-    <div class="card"><h3 class="gold">Semanas 1–2</h3><p data-edit>Seis conjuntos com a mesma verba, mesmo serviço e criativo adaptado ao idioma.</p></div>
-    <div class="card"><h3 class="gold">Semana 3</h3><p data-edit>Cortar as 3 nacionalidades com maior custo por agendamento.</p></div>
-    <div class="card hl"><h3 class="gold">Semana 4+</h3><p data-edit>Escalar as 3 vencedoras e criar uma oferta de entrada específica para cada comunidade.</p></div>
-  </div>
-  <p class="note" data-edit>Ordem de referência pela população nascida no exterior em Miami-Dade (Censo ACS). Validar antes de subir as campanhas.</p>
+  <div class="foot">Teste · corte · escala</div>
 </section>
 
-<!-- 11 GOOGLE ADS -->
-<section class="slide">
-  <div class="kicker">Google Ads</div>
-  <h2 data-edit>Capturar quem <em>já está procurando</em></h2>
-  <div class="grid g2 grow" style="align-content:start">
-    <div class="card hl"><div class="tag gold">Campanha 1</div><h3 style="margin-top:1em;font-size:1.4em">Serviço</h3>
-      <p data-edit>Busca de alta intenção por serviço e localização.</p>
-      <ul class="clean" style="margin-top:.6em">
-        <li data-edit>"hair salon Midtown Miami" · "nail salon Wynwood"</li>
-        <li data-edit>"balayage Miami" · "hair extensions Miami" · "wellness spa near me"</li>
-        <li data-edit>Extensão de chamada e de local, com as <b>estrelas do Google</b> aparecendo</li>
-        <li data-edit>Diferencial no anúncio: <b>estacionamento privativo em Midtown</b></li></ul></div>
-    <div class="card"><div class="tag gold">Campanha 2</div><h3 style="margin-top:1em;font-size:1.4em">Regional</h3>
-      <p data-edit>Busca no idioma de cada comunidade imigrante.</p>
-      <ul class="clean" style="margin-top:.6em">
-        <li data-edit>"salón de belleza cerca de mí" · "peluquería en Midtown Miami"</li>
-        <li data-edit>"uñas acrílicas Miami" · "keratina Miami" · busca em crioulo para Little Haiti</li>
-        <li data-edit>Anúncio e página de destino no idioma da busca</li></ul></div>
+<!-- 12 · GOOGLE ADS -->
+<section class="slide soft">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">09 · Google Ads</div>
+    <h2 data-edit>Capturar quem <span class="o">já está procurando</span></h2>
+    <p class="lead" data-edit>O Meta cria a vontade. O Google pega quem já decidiu e está digitando agora.</p>
+    <table class="tbl">
+      <thead><tr><th>Campanha</th><th>Busca de exemplo</th><th>O que roda</th><th>Indicador</th></tr></thead>
+      <tbody>
+        <tr><td class="big">Serviço</td><td data-edit>“hair salon Midtown Miami” · “nail salon Wynwood” · “balayage Miami”</td><td data-edit>Search por linha de serviço, extensão de local e chamada, <strong>estrelas do Google no anúncio</strong> e estacionamento privativo como diferencial</td><td data-edit>Custo por agendamento</td></tr>
+        <tr><td class="big">Regional</td><td data-edit>“salón de belleza cerca de mí” · “uñas acrílicas Miami” · buscas em crioulo</td><td data-edit>Anúncio e página de destino no idioma da busca, alinhados às nacionalidades vencedoras do Meta</td><td data-edit>Custo por agendamento por idioma</td></tr>
+        <tr><td class="big">Perfil da Empresa</td><td data-edit>“salon near me” no Maps</td><td data-edit>Fotos, posts semanais, resposta a todas as avaliações e a máquina de reviews rodando</td><td data-edit>Posição no Maps, ligações, rotas</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><span class="l">Ligação direta</span><p data-edit>O Google Ads converte melhor quando o perfil tem muitas avaliações. <strong>Por isso a máquina de reviews liga antes ou junto com as campanhas.</strong></p></div>
   </div>
-  <p class="lead" style="margin-top:3vh" data-edit>O Google Ads converte melhor quando o perfil tem muitas avaliações. <b style="color:var(--ink)">Por isso a máquina de reviews vem antes.</b></p>
-  <div class="foot">Intenção de busca · demanda pronta</div>
+  <div class="foot">Google · intenção de busca</div>
 </section>
 
-<!-- 12 VERBA: POR QUE 1K NÃO RODA -->
-<section class="slide">
-  <div class="kicker">Verba · A conta</div>
-  <h2 data-edit>US$ 1.000 dividido em 5 campanhas<br>dá <em>US$ 6,60 por dia</em> para cada uma</h2>
-  <div class="grid g3" style="align-content:start">
-    <div class="card"><p>Por campanha / mês</p><div class="big red num">$200</div><p data-edit style="margin-top:.6em">3 frentes no Meta + 2 no Google</p></div>
-    <div class="card"><p>Por país no teste regional</p><div class="big red num">$1,40<small style="font-size:.4em">/dia</small></div><p data-edit style="margin-top:.6em">O teste das 6 nacionalidades não roda</p></div>
-    <div class="card"><p>Cliques/dia no Google</p><div class="big red num">2–3</div><p data-edit style="margin-top:.6em">Com CPC local de beleza entre US$ 2 e 4</p></div>
-  </div>
-  <div class="card hl" style="margin-top:3.5vh">
-    <h3 data-edit>O algoritmo precisa de volume para aprender</h3>
-    <p data-edit>O Meta sai da fase de aprendizado com cerca de <b style="color:var(--ink)">50 conversões por semana por conjunto</b>. Com verba picada, a campanha fica presa no aprendizado, o custo sobe e o teste não traz resposta.</p>
+<!-- 13 · VERBA -->
+<section class="slide navy">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">10 · A conta da verba</div>
+    <h2 data-edit>US$ 1.000 dividido em 5 campanhas dá <span class="o">US$ 6,60 por dia</span> para cada uma</h2>
+    <div class="strip" style="margin-top:2.6vh">
+      <div><b class="num">US$ <span class="o">200</span></b><span data-edit>por campanha/mês: 3 frentes no Meta e 2 no Google</span></div>
+      <div><b class="num">US$ <span class="o">1,40</span></b><span data-edit>por dia para cada país no teste regional. O teste não roda.</span></div>
+      <div><b class="num"><span class="o">2–3</span> cliques</b><span data-edit>por dia no Google, com CPC local de beleza entre US$ 2 e 4</span></div>
+      <div><b class="num">~<span class="o">50</span>/semana</b><span data-edit>conversões por conjunto para o Meta sair da fase de aprendizado</span></div>
+    </div>
+    <div class="note" style="margin-top:4vh"><span class="l">O que acontece com verba picada</span><p data-edit>A campanha fica presa no aprendizado, o custo sobe e o teste não traz resposta. <strong>Você paga para não aprender nada.</strong></p></div>
   </div>
   <div class="foot">Verba fragmentada = dado nenhum</div>
 </section>
 
-<!-- 13 CENÁRIOS -->
+<!-- 14 · CENÁRIOS -->
 <section class="slide">
-  <div class="kicker">Estimativa de clientes novos / mês</div>
-  <h2 data-edit>Quantos clientes cada verba traz</h2>
-  <div class="grid g3 scen grow" style="align-content:start">
-    <div class="card"><div class="tag">Atual</div><p style="margin-top:1em">Verba US$ 1.000</p><div class="big num" id="s1">~24</div><p>clientes novos/mês</p>
-      <div style="margin-top:1em"><div class="row">Leads<b id="s1l">71</b></div><div class="row">Custo por cliente<b id="s1c">$42</b></div><div class="row">Faturamento 1ª visita<b id="s1r">$2.9k</b></div><div class="row">Valor em 12 meses<b id="s1v">$11.5k</b></div></div></div>
-    <div class="card"><div class="tag gold">Mínimo recomendado</div><p style="margin-top:1em">Verba US$ 3.000</p><div class="big gold num" id="s2">~78</div><p>clientes novos/mês</p>
-      <div style="margin-top:1em"><div class="row">Leads<b id="s2l">230</b></div><div class="row">Custo por cliente<b id="s2c">$38</b></div><div class="row">Faturamento 1ª visita<b id="s2r">$9.4k</b></div><div class="row">Valor em 12 meses<b id="s2v">$37k</b></div></div></div>
-    <div class="card hl"><div class="tag green">Verba média ideal</div><p style="margin-top:1em">Verba US$ 4.000</p><div class="big gold num" id="s3">~104</div><p>clientes novos/mês</p>
-      <div style="margin-top:1em"><div class="row">Leads<b id="s3l">307</b></div><div class="row">Custo por cliente<b id="s3c">$38</b></div><div class="row">Faturamento 1ª visita<b id="s3r">$12.5k</b></div><div class="row">Valor em 12 meses<b id="s3v">$50k</b></div></div></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">11 · Estimativa de clientes novos</div>
+    <h2 data-edit>Quantos clientes <span class="o">cada verba traz</span> por mês</h2>
+    <div class="g g3" style="margin-top:2vh">
+      <div class="plan"><div class="plan-h"><div class="pk">Hoje</div><h4>Verba US$ 1.000</h4><div class="pv num"><span id="s1">~24</span><small>clientes/mês</small></div></div>
+        <div class="plan-b"><div class="row">Leads<b id="s1l">71</b></div><div class="row">Custo por cliente<b id="s1c">$41</b></div><div class="row">Faturamento na 1ª visita<b id="s1r">$2,9k</b></div><div class="row">Valor em 12 meses<b id="s1v">$12k</b></div></div></div>
+      <div class="plan"><div class="plan-h"><div class="pk">Mínimo recomendado</div><h4>Verba US$ 3.000</h4><div class="pv num"><span id="s2">~78</span><small>clientes/mês</small></div></div>
+        <div class="plan-b"><div class="row">Leads<b id="s2l">231</b></div><div class="row">Custo por cliente<b id="s2c">$38</b></div><div class="row">Faturamento na 1ª visita<b id="s2r">$9,4k</b></div><div class="row">Valor em 12 meses<b id="s2v">$38k</b></div></div></div>
+      <div class="plan hot"><div class="plan-h"><div class="pk">Verba média ideal</div><h4>Verba US$ 4.000</h4><div class="pv num"><span id="s3">~105</span><small>clientes/mês</small></div></div>
+        <div class="plan-b"><div class="row">Leads<b id="s3l">308</b></div><div class="row">Custo por cliente<b id="s3c">$38</b></div><div class="row">Faturamento na 1ª visita<b id="s3r">$13k</b></div><div class="row">Valor em 12 meses<b id="s3v">$50k</b></div></div></div>
+    </div>
+    <p class="small" style="margin-top:2vh" data-edit>Premissas: CPL de US$ 14 (1k) e US$ 13 (3k/4k), 40% dos leads agendam, 85% comparecem, ticket médio de US$ 120 e 4 visitas/ano por cliente. São estimativas para ajustar com os dados reais do salão no simulador.</p>
   </div>
-  <p class="note" data-edit>Premissas: CPL de US$ 14 (1k) e US$ 13 (3k/4k), 40% dos leads agendam, 85% comparecem, ticket médio de US$ 120, 4 visitas/ano por cliente. São estimativas para ajustar com os dados reais do salão (veja o simulador).</p>
+  <div class="foot">Estimativas · premissas ajustáveis</div>
 </section>
 
-<!-- 14 SIMULADOR -->
-<section class="slide">
-  <div class="kicker">Simulador ao vivo</div>
-  <h2 data-edit>Ajuste as premissas com os números de vocês</h2>
-  <div class="split grow">
-    <div class="card calc">
-      <label>Verba mensal <b id="vB"></b></label><input type="range" id="iB" min="500" max="8000" step="250" value="4000">
-      <label>Custo por lead (CPL) <b id="vC"></b></label><input type="range" id="iC" min="5" max="35" step="1" value="13">
-      <label>% de leads que agendam <b id="vA"></b></label><input type="range" id="iA" min="10" max="80" step="5" value="40">
-      <label>% que comparecem <b id="vS"></b></label><input type="range" id="iS" min="50" max="100" step="5" value="85">
-      <label>Ticket médio <b id="vT"></b></label><input type="range" id="iT" min="40" max="400" step="10" value="120">
-      <label>Visitas por cliente / ano <b id="vF"></b></label><input type="range" id="iF" min="1" max="12" step="1" value="4">
-    </div>
-    <div class="card hl out">
-      <p>Clientes novos / mês</p>
-      <div class="big gold num" id="oN">0</div>
-      <div style="margin-top:1.5vh">
-        <div class="row">Leads / mês<b id="oL"></b></div>
+<!-- 15 · SIMULADOR -->
+<section class="slide soft">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">12 · Simulador ao vivo</div>
+    <h2 data-edit>Ajuste as premissas com os <span class="o">números de vocês</span></h2>
+    <div class="split" style="align-items:stretch;margin-top:1.6vh">
+      <div class="card calc">
+        <label for="iB">Verba mensal <b id="vB"></b></label><input type="range" id="iB" min="500" max="8000" step="250" value="4000">
+        <label for="iC">Custo por lead (CPL) <b id="vC"></b></label><input type="range" id="iC" min="5" max="35" step="1" value="13">
+        <label for="iA">% de leads que agendam <b id="vA"></b></label><input type="range" id="iA" min="10" max="80" step="5" value="40">
+        <label for="iS">% que comparecem <b id="vS"></b></label><input type="range" id="iS" min="50" max="100" step="5" value="85">
+        <label for="iT">Ticket médio <b id="vT"></b></label><input type="range" id="iT" min="40" max="400" step="10" value="120">
+        <label for="iF">Visitas por cliente/ano <b id="vF"></b></label><input type="range" id="iF" min="1" max="12" step="1" value="4">
+      </div>
+      <div class="out">
+        <div class="k">Clientes novos por mês</div>
+        <div class="big num" id="oN">0</div>
+        <div class="row">Leads por mês<b id="oL"></b></div>
         <div class="row">Custo por cliente novo<b id="oCAC"></b></div>
         <div class="row">Faturamento na 1ª visita<b id="oR"></b></div>
         <div class="row">Retorno sobre a verba (1ª visita)<b id="oROAS"></b></div>
@@ -392,69 +628,76 @@ input[type=range]{width:100%;accent-color:var(--gold);margin-top:.4em}
   <div class="foot">Use as setas do teclado fora dos controles para navegar</div>
 </section>
 
-<!-- 15 ROADMAP -->
+<!-- 16 · ROADMAP -->
 <section class="slide">
-  <div class="kicker">Execução</div>
-  <h2 data-edit>Os primeiros <em>90 dias</em></h2>
-  <div class="tl grow" style="align-content:start">
-    <div class="card"><h3>Mês 1 · Base</h3><ul class="clean">
-      <li data-edit>Máquina de reviews: QR codes, times e meta semanal</li>
-      <li data-edit>Subir o Meta nas 3 frentes e o Google em serviço e regional</li>
-      <li data-edit>Teste das 6 nacionalidades</li>
-      <li data-edit>Treino de câmera com a equipe</li></ul></div>
-    <div class="card"><h3>Mês 2 · Otimização</h3><ul class="clean">
-      <li data-edit>Cortar o que não funciona e escalar as 3 nacionalidades vencedoras</li>
-      <li data-edit>Conteúdo com narrativa virando criativo</li>
-      <li data-edit>Primeiras 3 influenciadoras com método e anúncio de parceria</li>
-      <li data-edit>Ranking das equipes no Google</li></ul></div>
-    <div class="card hl"><h3>Mês 3 · Escala</h3><ul class="clean">
-      <li data-edit>Verba concentrada nos vencedores</li>
-      <li data-edit>Primeiro evento como ativação, ligado ao tráfego pago</li>
-      <li data-edit>Remarketing para quem visitou e não agendou</li>
-      <li data-edit>Revisar o custo por cliente e o plano de expansão</li></ul></div>
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">13 · Roadmap</div>
+    <h2 data-edit>Os primeiros <span class="o">90 dias</span></h2>
+    <div class="g g3" style="margin-top:2vh">
+      <div class="sprint"><div class="sprint-h"><div class="ph">Mês 1</div><h4>Base e campanhas no ar</h4></div><div class="sprint-b"><ul>
+        <li data-edit><strong>Máquina de reviews:</strong> QR codes, times e meta semanal</li>
+        <li data-edit>Meta nas 3 frentes e Google em serviço e regional</li>
+        <li data-edit>Teste das 6 nacionalidades</li>
+        <li data-edit>Treino de câmera com a equipe</li></ul><div class="meta"><b>Saída:</b> custo por lead base medido</div></div></div>
+      <div class="sprint"><div class="sprint-h"><div class="ph">Mês 2</div><h4>Otimização</h4></div><div class="sprint-b"><ul>
+        <li data-edit>Cortar o que não funciona e escalar as 3 nacionalidades vencedoras</li>
+        <li data-edit>Conteúdo com narrativa virando criativo</li>
+        <li data-edit>Primeiras 3 influenciadoras com método e anúncio de parceria</li>
+        <li data-edit>Ranking das equipes no Google</li></ul><div class="meta"><b>Saída:</b> +80 avaliações acumuladas</div></div></div>
+      <div class="sprint"><div class="sprint-h"><div class="ph">Mês 3</div><h4>Escala</h4></div><div class="sprint-b"><ul>
+        <li data-edit>Verba concentrada nos vencedores</li>
+        <li data-edit>Primeiro evento como ativação, ligado ao tráfego pago</li>
+        <li data-edit>Remarketing para quem visitou e não agendou</li>
+        <li data-edit>Revisão do custo por cliente e do plano de expansão</li></ul><div class="meta"><b>Saída:</b> plano do próximo trimestre com dados</div></div></div>
+    </div>
   </div>
   <div class="foot">Plano 360 · 90 dias</div>
 </section>
 
-<!-- 16 FECHAMENTO -->
-<section class="slide cover">
-  <div class="star-bg">★</div>
-  <div class="kicker">Nossa recomendação</div>
-  <h1 data-edit>Mínimo <em>US$ 3k</em>.<br>Ideal <em>US$ 4k</em>/mês.</h1>
-  <div class="grid g3" style="margin-top:5vh;max-width:1200px">
-    <div class="card"><h3 class="gold">1. Aprovar a verba</h3><p data-edit>US$ 3 a 4 mil por mês para as 5 campanhas aprenderem.</p></div>
-    <div class="card"><h3 class="gold">2. Ligar os reviews</h3><p data-edit>QR codes e dinâmica dos times já nesta semana.</p></div>
-    <div class="card"><h3 class="gold">3. Subir as campanhas</h3><p data-edit>A estrutura de aquisição já está pronta para rodar.</p></div>
+<!-- 17 · FECHAMENTO -->
+<section class="slide navy">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Salão 360</span></div><span class="client">All Star Concept Salon</span></div>
+  <div class="body">
+    <div class="eyebrow">Nossa recomendação</div>
+    <h1 style="font-size:clamp(30px,4vw,78px)" data-edit>Mínimo <span class="o">US$ 3k</span>. Ideal <span class="s">US$ 4k</span>/mês.</h1>
+    <div class="g g3" style="margin-top:4vh">
+      <div class="card"><div class="no">Passo 01</div><h4>Aprovar a verba</h4><p data-edit>US$ 3 a 4 mil por mês, pagos direto às plataformas, para as 5 campanhas aprenderem.</p></div>
+      <div class="card"><div class="no">Passo 02</div><h4>Ligar os reviews</h4><p data-edit>QR codes e dinâmica dos times já nesta semana.</p></div>
+      <div class="card"><div class="no">Passo 03</div><h4>Subir as campanhas</h4><p data-edit>A estrutura de aquisição já está pronta para rodar.</p></div>
+    </div>
   </div>
+  <div class="foot">Proposta para All Star Concept Salon · Novembro/2026 · Grupo Opera</div>
 </section>
 
 </div>
 
 <div class="hint" id="hint">← → navegar · F tela cheia · E editar textos</div>
 <div class="nav">
-  <button id="prev" aria-label="Anterior">←</button>
+  <button id="prev" aria-label="Slide anterior">←</button>
   <span class="count" id="count"></span>
-  <button id="next" aria-label="Próximo">→</button>
+  <button id="next" aria-label="Próximo slide">→</button>
 </div>
 
 <script>
 (function(){
   var track=document.getElementById('track'), slides=track.children, n=slides.length, i=0;
   var count=document.getElementById('count'), prog=document.getElementById('progress');
+  var prev=document.getElementById('prev'), next=document.getElementById('next');
   try{ var h=parseInt(location.hash.slice(1),10); if(h>=1&&h<=n) i=h-1; }catch(e){}
   function go(k){ i=Math.max(0,Math.min(n-1,k)); track.style.transform='translateX('+(-i*100)+'vw)';
     count.textContent=(i+1)+' / '+n; prog.style.width=((i+1)/n*100)+'%';
+    prev.disabled=(i===0); next.disabled=(i===n-1);
     try{ history.replaceState(null,'','#'+(i+1)); }catch(e){} }
-  document.getElementById('next').onclick=function(){go(i+1)};
-  document.getElementById('prev').onclick=function(){go(i-1)};
+  next.onclick=function(){go(i+1)}; prev.onclick=function(){go(i-1)};
   document.addEventListener('keydown',function(e){
     var a=document.activeElement, typing=a&&(a.isContentEditable||a.tagName==='INPUT');
-    if(typing && e.key!=='Escape') { return; }
+    if(typing && e.key!=='Escape') return;
     if(e.key==='Escape' && a) a.blur();
     if(['ArrowRight','PageDown',' ','Enter'].indexOf(e.key)>-1){e.preventDefault();go(i+1)}
     else if(['ArrowLeft','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(i-1)}
     else if(e.key==='Home') go(0); else if(e.key==='End') go(n-1);
-    else if(e.key==='f'||e.key==='F'){ if(!document.fullscreenElement) document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+    else if(e.key==='f'||e.key==='F'){ try{ if(!document.fullscreenElement){var p=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen(); p&&p.catch&&p.catch(function(){});} else {var q=document.exitFullscreen(); q&&q.catch&&q.catch(function(){});} }catch(_){} }
     else if(e.key==='e'||e.key==='E'){ toggleEdit(); }
   });
   var tx=null; document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
@@ -462,14 +705,14 @@ input[type=range]{width:100%;accent-color:var(--gold);margin-top:.4em}
   window.addEventListener('resize',function(){go(i)});
   setTimeout(function(){document.getElementById('hint').style.opacity=0},5000);
 
-  // edit mode + persistence
-  var eds=document.querySelectorAll('[data-edit]'), KEY='allstar-deck-v2';
+  // modo edição + memória local
+  var eds=document.querySelectorAll('[data-edit]'), KEY='allstar-deck-go-v1';
   try{ var saved=JSON.parse(localStorage.getItem(KEY)||'{}'); eds.forEach(function(el,k){ if(saved[k]!=null) el.innerHTML=saved[k]; }); }catch(e){}
   function save(){ try{ var o={}; eds.forEach(function(el,k){o[k]=el.innerHTML}); localStorage.setItem(KEY,JSON.stringify(o)); }catch(e){} }
   function toggleEdit(){ var on=document.body.classList.toggle('editing'); eds.forEach(function(el){ el.contentEditable=on?'true':'false'; }); if(!on){ if(document.activeElement) document.activeElement.blur(); save(); } }
   eds.forEach(function(el){ el.addEventListener('input',save); });
 
-  // scenarios + simulator
+  // cenários + simulador
   function money(v){ return v>=10000 ? '$'+(v/1000).toFixed(0)+'k' : v>=1000 ? '$'+(v/1000).toFixed(1).replace('.',',')+'k' : '$'+Math.round(v); }
   function model(b,cpl,a,s,t,f){ var l=b/cpl, c=l*a*s; return {l:l,c:c,cac:b/c,r:c*t,v:c*t*f,roas:c*t/b}; }
   [[1,1000,14],[2,3000,13],[3,4000,13]].forEach(function(x){ var m=model(x[1],x[2],.4,.85,120,4);
@@ -478,7 +721,6 @@ input[type=range]{width:100%;accent-color:var(--gold);margin-top:.4em}
     document.getElementById('s'+x[0]+'c').textContent='$'+Math.round(m.cac);
     document.getElementById('s'+x[0]+'r').textContent=money(m.r);
     document.getElementById('s'+x[0]+'v').textContent=money(m.v); });
-  var ids=['B','C','A','S','T','F'];
   function calc(){ var g=function(k){return +document.getElementById('i'+k).value};
     var B=g('B'),C=g('C'),A=g('A')/100,S=g('S')/100,T=g('T'),F=g('F'), m=model(B,C,A,S,T,F);
     document.getElementById('vB').textContent='US$ '+B.toLocaleString('pt-BR');
@@ -488,7 +730,7 @@ input[type=range]{width:100%;accent-color:var(--gold);margin-top:.4em}
     document.getElementById('oN').textContent=Math.round(m.c); document.getElementById('oL').textContent=Math.round(m.l);
     document.getElementById('oCAC').textContent='US$ '+Math.round(m.cac); document.getElementById('oR').textContent='US$ '+Math.round(m.r).toLocaleString('pt-BR');
     document.getElementById('oROAS').textContent=m.roas.toFixed(1).replace('.',',')+'x'; document.getElementById('oV').textContent='US$ '+Math.round(m.v).toLocaleString('pt-BR'); }
-  ids.forEach(function(k){ document.getElementById('i'+k).addEventListener('input',calc); });
+  ['B','C','A','S','T','F'].forEach(function(k){ document.getElementById('i'+k).addEventListener('input',calc); });
   calc(); go(i);
 })();
 </script>
