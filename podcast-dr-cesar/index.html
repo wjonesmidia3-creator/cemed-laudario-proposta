@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Podcast Dr. Cesar · Roteiro</title>
+<meta name="description" content="Roteiro de gravação do podcast com o Dr. Cesar, cardiologista em Santo André: prevenção, obesidade e longevidade para o público 50+ do ABC Paulista.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#00247D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300247D'/%3E%3Ctext x='13' y='46' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='36' fill='%23fff'%3EG%3C/text%3E%3Ccircle cx='48' cy='42' r='5' fill='%23E85D1B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: deck 16:9 no padrão Grupo Opera. Palco navy (capa, dados, bate-bola, frases, fechamento)
+   alternando com papel branco; o laranja é a batuta: pontos, destaques e frases de corte.
+   Single-theme por escolha: identidade de marca. */
+:root{
+  color-scheme:light;
+  --navy:#00247D; --navy-deep:#001A5C; --navy-900:#00123F; --navy-800:#0D2A80; --navy-line:#22409A;
+  --orange:#E85D1B; --orange-ink:#C4460C; --orange-cta:#CC4B10; --orange-2:#F6A24E; --orange-soft:#FDEEE5;
+  --sky:#A9C3E6; --sky-dim:#7F9CCB; --on-navy:#C9D6EE;
+  --ink:#111C3D; --ink-soft:#47547A; --ink-mute:#677190;
+  --bg:#FFFFFF; --bg-soft:#F4F7FC; --bg-blue:#EEF3FB; --line:#E2E8F2; --line-soft:#EEF2F8;
+  --green:#1E7E34; --green-soft:#E7F5EC; --red:#C0392B; --red-soft:#FBE9E7;
+  --f-brand:'Sora','Poppins',system-ui,sans-serif;
+  --f-disp:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --r:16px;
+  --u:min(1vw,1.7778vh);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font:400 clamp(13px,calc(var(--u)*1.13),21px)/1.55 var(--f-sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--f-disp);margin:0;letter-spacing:-.03em;line-height:1.08;text-wrap:balance}
+p,ul,ol,figure{margin:0} ul,ol{padding:0;list-style:none}
+p{text-wrap:pretty}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.num{font-variant-numeric:tabular-nums}
+.o{color:var(--orange)} .navy .o,.deep .o{color:var(--orange-2)}
+.s{color:var(--sky)}
+
+/* ---------- trilho de slides ---------- */
+.track{display:flex;height:100vh;transition:transform .55s cubic-bezier(.7,0,.2,1)}
+.slide{flex:0 0 100vw;height:100vh;padding:4vh 5vw 10vh;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--bg)}
+.slide.soft{background:var(--bg-soft)}
+.slide.navy{color:#fff;background:
+  radial-gradient(60vw 40vw at 96% -12%, rgba(246,162,78,.20), transparent 62%),
+  radial-gradient(56vw 44vw at -12% 115%, rgba(169,195,230,.14), transparent 60%),
+  var(--navy)}
+.slide.deep{color:#fff;background:radial-gradient(34vw 34vw at 88% 12%,rgba(246,162,78,.18),transparent 60%),var(--navy-deep)}
+.slide.final{background:radial-gradient(60vw 36vw at 50% 118%,rgba(246,162,78,.22),transparent 70%),var(--navy)}
+.body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+
+/* cabeçalho de marca em todo slide */
+.chrome{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:2.8vh;font-size:.78em}
+.lock{display:flex;align-items:center;gap:12px}
+.gp{font:800 clamp(17px,calc(var(--u)*1.45),28px)/1 var(--f-brand);letter-spacing:-.035em;color:var(--navy);white-space:nowrap}
+.gp .d{color:var(--orange)}
+.navy .gp,.deep .gp{color:#fff}
+.tagline{font:700 clamp(10px,calc(var(--u)*.62),12px)/1.2 var(--f-sans);letter-spacing:.3em;color:var(--ink-mute);border-left:1px solid var(--line);padding-left:12px;text-transform:uppercase}
+.navy .tagline,.deep .tagline{color:var(--sky);border-color:var(--navy-line)}
+.client{font:600 .9em/1.2 var(--f-sans);color:var(--ink-mute)}
+.navy .client,.deep .client{color:var(--sky)}
+
+/* tipografia */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 .74em/1.2 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:1.4vh}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;border-radius:2px;flex:none}
+.navy .eyebrow,.deep .eyebrow{color:var(--orange-2)}
+.eyebrow .n{font-family:var(--f-disp);font-weight:800;color:var(--ink-mute);letter-spacing:.1em}
+.navy .eyebrow .n,.deep .eyebrow .n{color:var(--sky)}
+.bh{display:flex;align-items:center;gap:.7em;flex-wrap:wrap;margin-bottom:1.3vh}
+.bh .eyebrow{margin:0}
+h1{font-size:clamp(28px,calc(var(--u)*4.3),84px);font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff}
+h2{font-size:clamp(20px,calc(var(--u)*2.55),52px);font-weight:800;color:var(--navy);margin-bottom:1.6vh;max-width:32ch}
+.navy h2,.deep h2{color:#fff}
+.blks h2{font-size:clamp(19px,calc(var(--u)*2.25),46px);max-width:40ch}
+.lead{font-size:1.08em;line-height:1.55;color:var(--ink-soft);max-width:66ch;margin-bottom:2.6vh}
+.lead strong{color:var(--ink);font-weight:600}
+.navy .lead,.deep .lead{color:var(--on-navy)} .navy .lead strong,.deep .lead strong{color:#fff}
+.small{font-size:max(.78em,11px);color:var(--ink-mute);line-height:1.5}
+.navy .small,.deep .small{color:var(--sky-dim)}
+
+/* grades */
+.g{display:grid;gap:calc(var(--u)*1.1)}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))} .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))} .g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:calc(var(--u)*3);align-items:center}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.15em 1.3em;min-width:0}
+.card .no{font:700 max(.72em,10.5px)/1.2 var(--f-disp);letter-spacing:.06em;text-transform:uppercase;color:var(--orange-ink)}
+.card h4{font-size:1.05em;font-weight:700;color:var(--navy);margin:.45em 0 .3em;letter-spacing:-.015em;line-height:1.25}
+.card p{font-size:.86em;color:var(--ink-soft);line-height:1.5}
+.card p strong{color:var(--ink)}
+.card.hl{border-color:var(--orange);box-shadow:0 18px 44px -22px rgba(232,93,27,.35)}
+.navy .card,.deep .card{background:rgba(255,255,255,.05);border-color:var(--navy-line)}
+.navy .card h4,.deep .card h4{color:#fff} .navy .card p,.deep .card p{color:var(--on-navy)} .navy .card p strong,.deep .card p strong{color:#fff}
+.navy .card .no,.deep .card .no{color:var(--orange-2)}
+.navy .card.hl{border-color:var(--orange-2);background:rgba(232,93,27,.12)}
+.ico{width:2.3em;height:2.3em;border-radius:11px;background:var(--bg-blue);color:var(--navy);display:grid;place-items:center;flex:none}
+.ico svg,.who svg,.btn-full svg{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.navy .ico,.deep .ico{background:rgba(255,255,255,.08);color:var(--orange-2)}
+.tag{display:inline-block;font:700 max(.62em,10px)/1 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--bg-blue);padding:.55em .8em;border-radius:999px;white-space:nowrap}
+.tag.o{background:var(--orange-soft);color:var(--orange-ink)}
+.tag.g{background:var(--green-soft);color:var(--green)}
+.tag.r{background:var(--red-soft);color:var(--red)}
+.navy .tag,.deep .tag{background:rgba(255,255,255,.1);color:var(--sky)}
+.navy .tag.o,.deep .tag.o{background:rgba(232,93,27,.22);color:#FFC48C}
+.navy .tag.g,.deep .tag.g{background:rgba(110,200,140,.16);color:#9FE0B3}
+
+/* falas do roteiro */
+.blk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:calc(var(--u)*1.5);align-items:start}
+.fala{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:4px 14px 14px 4px;padding:.9em 1.15em 1em;min-width:0}
+.soft .fala{background:#fff}
+.who{display:flex;align-items:center;gap:8px;font:800 max(.64em,10.5px)/1.2 var(--f-disp);letter-spacing:.18em;text-transform:uppercase;color:var(--navy);margin-bottom:.55em}
+.who .sp{flex:1}
+.fala p{font-size:.86em;line-height:1.5;color:var(--ink)}
+.fala p+p{margin-top:.45em}
+.fala.dr{border-left-color:var(--orange)}
+.fala.dr .who{color:var(--orange-ink)}
+.navy .fala,.deep .fala{background:rgba(255,255,255,.06);border-color:var(--navy-line);border-left-color:var(--sky)}
+.navy .fala p,.deep .fala p{color:#fff}
+.navy .fala .who,.deep .fala .who{color:var(--sky)}
+.navy .fala.dr,.deep .fala.dr{border-left-color:var(--orange-2)}
+.navy .fala.dr .who,.deep .fala.dr .who{color:var(--orange-2)}
+.fala.big p{font-size:.98em;line-height:1.55}
+
+/* listas com ponto laranja */
+.dots{display:flex;flex-direction:column;gap:.42em}
+.dots li{font-size:.85em;color:var(--ink-soft);line-height:1.42;padding-left:1.15em;position:relative}
+.dots li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.dots li strong{color:var(--ink)}
+.navy .dots li,.deep .dots li{color:var(--on-navy)} .navy .dots li strong,.deep .dots li strong{color:#fff}
+.navy .dots li::before,.deep .dots li::before{background:var(--orange-2)}
+
+/* perguntas extras */
+.xq{margin-top:calc(var(--u)*1.1);background:var(--bg-blue);border-radius:12px;padding:.8em 1.1em .85em}
+.soft .xq{background:#fff;border:1px solid var(--line)}
+.xq .who{color:var(--navy);margin-bottom:.45em}
+.xq li{font-size:.83em;color:var(--ink);line-height:1.4;padding:.22em 0 .22em 1.2em;position:relative}
+.xq li::before{content:"+";position:absolute;left:0;top:.16em;font:800 1.05em/1 var(--f-disp);color:var(--orange)}
+.navy .xq,.deep .xq{background:rgba(255,255,255,.06)}
+.navy .xq .who,.deep .xq .who{color:var(--sky)}
+.navy .xq li,.deep .xq li{color:#fff}
+.navy .xq li::before,.deep .xq li::before{color:var(--orange-2)}
+
+/* mensagem-chave / frase de corte */
+.key{margin-top:1.8vh;background:var(--navy);color:#fff;border-radius:14px;padding:.85em 1.3em;display:flex;gap:1.2em;align-items:center;position:relative;overflow:hidden}
+.key::before{content:"";position:absolute;top:-60%;right:-6%;width:18vw;height:18vw;background:radial-gradient(circle,rgba(246,162,78,.22),transparent 60%);pointer-events:none}
+.key .l{font:800 max(.6em,10px)/1.3 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-2);flex:none;width:8.5em;position:relative}
+.key p{font:600 .98em/1.4 var(--f-disp);letter-spacing:-.01em;position:relative}
+.navy .key,.deep .key{background:rgba(232,93,27,.15);border:1px solid rgba(246,162,78,.45)}
+
+/* botão de texto completo */
+.btn-full{display:inline-flex;align-items:center;gap:.45em;border:0;background:var(--orange-soft);color:var(--orange-ink);font:700 max(.66em,10.5px)/1 var(--f-disp);letter-spacing:.04em;padding:.55em .85em;border-radius:999px;cursor:pointer;white-space:nowrap}
+.btn-full:hover{background:#FBDCC9}
+.btn-full svg{width:1.15em;height:1.15em}
+.navy .btn-full,.deep .btn-full{background:rgba(232,93,27,.22);color:#FFC48C}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.45em}
+.chips span{font:600 max(.74em,11px)/1 var(--f-sans);background:var(--bg-blue);color:var(--navy);padding:.55em .85em;border-radius:999px;white-space:nowrap}
+.chips span.o{background:var(--orange-soft);color:var(--orange-ink)}
+
+/* faixa de números */
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--navy-line);margin-top:4vh}
+.strip>div{padding:1.1em 1.3em .2em 0;min-width:0}
+.strip>div+div{padding-left:1.3em;border-left:1px solid var(--navy-line)}
+.strip b{display:block;font:800 clamp(19px,calc(var(--u)*2),40px)/1 var(--f-disp);letter-spacing:-.03em;color:#fff}
+.strip b .o{color:var(--orange-2)}
+.strip>div>span{display:block;font-size:.84em;line-height:1.45;color:#B9C8E6;margin-top:.55em;max-width:30ch}
+.strip.light{border-color:var(--line)} .strip.light>div+div{border-color:var(--line)}
+.strip.light b{color:var(--navy)} .strip.light b .o{color:var(--orange)} .strip.light>div>span{color:var(--ink-soft)}
+
+/* north star */
+.northstar{background:linear-gradient(120deg,var(--navy),var(--navy-800));border-radius:20px;padding:1.5em 1.9em;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:.55em;position:relative;overflow:hidden;border:1px solid var(--navy-line)}
+.northstar::before{content:"";position:absolute;top:-45%;right:-4%;width:24vw;height:24vw;background:radial-gradient(circle,rgba(246,162,78,.24),transparent 60%);pointer-events:none}
+.northstar .ns-num{font:900 5.4em/.95 var(--f-disp);position:relative;letter-spacing:-.05em;color:#fff}
+.northstar .ns-num small{font-size:.38em;letter-spacing:-.02em}
+.northstar .ns-k{font:700 max(.7em,10.5px)/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-2);position:relative}
+.northstar h3{font-size:1.32em;font-weight:800;line-height:1.22;position:relative}
+.northstar h3 .o{color:var(--orange-2)}
+.northstar p{font-size:.9em;color:var(--on-navy);position:relative}
+.navy .northstar,.deep .northstar{background:rgba(255,255,255,.06)}
+
+/* tabela */
+.tbl{width:100%;border-collapse:collapse;font-size:.86em;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tbl th{background:var(--navy);text-align:left;padding:.7em 1em;font:600 max(.74em,10.5px)/1.2 var(--f-disp);letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.tbl td{padding:.55em 1em;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);vertical-align:middle;line-height:1.38}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td strong{color:var(--ink)}
+.tbl .big{font:700 1em/1.3 var(--f-disp);color:var(--navy)}
+.tbl .n{font:800 1em/1 var(--f-disp);color:var(--orange-ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl tr.new td{background:#FFF8F3}
+.tbl tr.new td:first-child{box-shadow:inset 4px 0 0 var(--orange)}
+.tbl tr[data-go]{cursor:pointer}
+.tbl tr[data-go]:hover td{background:var(--bg-blue)}
+.tbl.cpt{font-size:.8em} .tbl.cpt td{padding:.42em .9em} .tbl.cpt th{padding:.6em .9em}
+.tbl .t{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+.tbl .quote{color:var(--ink);font-style:italic}
+
+/* nota */
+.note{border-left:4px solid var(--orange);background:var(--orange-soft);padding:.8em 1.2em;border-radius:0 12px 12px 0;margin-top:2vh}
+.note .l{font:800 max(.62em,10.5px)/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-ink);display:block;margin-bottom:.3em}
+.note p{font-size:.88em;color:var(--ink);line-height:1.5}
+.navy .note,.deep .note{background:rgba(232,93,27,.14);border-color:var(--orange-2)} .navy .note p,.deep .note p{color:#fff} .navy .note .l,.deep .note .l{color:var(--orange-2)}
+
+/* passos (5 tempos) */
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.05em 1.15em;min-width:0;display:flex;flex-direction:column;gap:.35em;position:relative}
+.step .sn{font:800 1.7em/1 var(--f-disp);color:var(--orange);letter-spacing:-.04em}
+.step h4{font-size:1.02em;font-weight:700;color:var(--navy);letter-spacing:-.015em;line-height:1.25}
+.step p{font-size:.84em;color:var(--ink-soft);line-height:1.48}
+.step.hl{border-color:var(--orange);box-shadow:0 18px 44px -22px rgba(232,93,27,.35)}
+
+/* inimigos x hábitos */
+.col2{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:.9em 1.3em .6em;min-width:0}
+.col2 .ch{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:.55em;border-bottom:2px solid var(--orange);font:800 max(.74em,11px)/1.2 var(--f-disp);letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink)}
+.col2.good .ch{border-bottom-color:var(--green);color:var(--green)}
+.it{display:grid;grid-template-columns:2.1em minmax(0,1fr);gap:.8em;align-items:center;padding:.5em 0;border-bottom:1px dashed var(--line)}
+.it:last-child{border-bottom:0}
+.it .nb{width:2.1em;height:2.1em;border-radius:50%;display:grid;place-items:center;font:800 .82em/1 var(--f-disp);background:var(--orange-soft);color:var(--orange-ink)}
+.good .it .nb{background:var(--green-soft);color:var(--green)}
+.it b{display:block;font:700 .93em/1.25 var(--f-disp);color:var(--navy)}
+.it span{display:block;font-size:.82em;color:var(--ink-soft);line-height:1.4}
+
+/* bate-bola */
+.mv{background:rgba(255,255,255,.05);border:1px solid var(--navy-line);border-radius:14px;padding:.95em 1.1em;display:flex;flex-direction:column;gap:.45em;min-width:0}
+.mv h4{font-size:.98em;font-weight:700;color:#fff;line-height:1.28;letter-spacing:-.01em}
+.mv p{font-size:.8em;color:var(--on-navy);line-height:1.45}
+
+/* frases */
+.q{background:rgba(255,255,255,.05);border:1px solid var(--navy-line);border-radius:14px;padding:.85em 1.05em;display:flex;flex-direction:column;justify-content:space-between;gap:.6em;min-width:0}
+.q p{font:600 .88em/1.36 var(--f-disp);color:#fff;letter-spacing:-.01em}
+.q small{font:700 max(.6em,10px)/1.2 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--sky)}
+.q.new{border-color:rgba(246,162,78,.55)}
+.q.new small{color:var(--orange-2)}
+
+/* roteiro de semanas */
+.sprint{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.sprint-h{background:var(--navy);color:#fff;padding:.85em 1.2em}
+.sprint-h .ph{font:700 max(.68em,10.5px)/1.2 var(--f-disp);letter-spacing:.1em;text-transform:uppercase;color:var(--orange-2)}
+.sprint-h h4{margin:.3em 0 0;font-size:1.05em;font-weight:700;color:#fff}
+.sprint-b{padding:.9em 1.2em 1em;flex:1}
+.sprint-b ul{display:flex;flex-direction:column;gap:.5em}
+.sprint-b li{font-size:.84em;color:var(--ink-soft);line-height:1.42;padding-left:1.2em;position:relative}
+.sprint-b li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.sprint-b li strong{color:var(--ink)}
+
+/* checklist */
+.chk{display:flex;flex-direction:column}
+.chk label{display:flex;gap:.7em;align-items:flex-start;font-size:.85em;color:var(--ink);line-height:1.42;padding:.5em 0;border-bottom:1px dashed var(--line);cursor:pointer}
+.chk li:last-child label{border-bottom:0}
+.chk input{accent-color:var(--orange);width:1.15em;height:1.15em;margin:.15em 0 0;flex:none;cursor:pointer}
+.chk input:checked+span{color:var(--ink-mute)}
+.chk small{display:block;color:var(--ink-mute);font-size:.88em;margin-top:.15em}
+.prog{display:flex;align-items:center;gap:.8em;margin-top:1.6vh}
+.prog .bar{flex:1;height:8px;background:var(--line-soft);border-radius:4px;overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:var(--orange);border-radius:4px;transition:width .3s}
+.prog b{font:700 .82em/1 var(--f-disp);color:var(--navy);white-space:nowrap}
+
+/* fechamento */
+.final .body{align-items:center;text-align:center}
+.final .eyebrow{justify-content:center}
+.final .g3{width:100%;text-align:left}
+.signoff{display:flex;flex-direction:column;align-items:center;gap:.5em;margin-top:5vh}
+.signoff .gp{font-size:clamp(22px,calc(var(--u)*1.9),36px)}
+.signoff .tagline{border:0;padding:0}
+
+/* navegação */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--orange);z-index:20;transition:width .5s}
+.nav{position:fixed;bottom:calc(2.2vh + env(safe-area-inset-bottom,0px));right:calc(2vw + env(safe-area-inset-right,0px));display:flex;gap:10px;align-items:center;z-index:20}
+.nav button{height:46px;min-width:46px;border-radius:999px;border:0;background:#fff;color:var(--navy);font:700 19px/1 var(--f-disp);cursor:pointer;box-shadow:inset 0 0 0 1.5px var(--line),0 10px 24px -14px rgba(0,18,63,.5)}
+.nav button:hover{box-shadow:inset 0 0 0 1.5px var(--navy),0 10px 24px -14px rgba(0,18,63,.5)}
+.nav button[disabled]{opacity:.45;cursor:default}
+.nav .count,.nav .tmr{font:700 13px/1 var(--f-disp);padding:0 14px;font-variant-numeric:tabular-nums}
+.nav .tmr.on{color:var(--orange-ink);box-shadow:inset 0 0 0 1.5px var(--orange),0 10px 24px -14px rgba(0,18,63,.5)}
+.foot{position:absolute;left:5vw;bottom:3.4vh;font:700 max(.64em,10.5px)/1.2 var(--f-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.navy .foot,.deep .foot{color:var(--sky-dim)}
+.hint{position:fixed;bottom:calc(3vh + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);font:500 12px/1 var(--f-sans);color:var(--ink-mute);z-index:20;transition:opacity .6s;background:rgba(255,255,255,.94);padding:7px 12px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+body.editing [data-edit]{outline:1px dashed rgba(232,93,27,.7);outline-offset:3px}
+.editbadge{position:fixed;top:12px;right:16px;z-index:30;font:700 12px/1 var(--f-sans);background:var(--orange);color:#fff;padding:7px 12px;border-radius:99px;display:none}
+body.editing .editbadge{display:block}
+
+/* janelas: índice e texto completo */
+dialog{border:0;padding:0;border-radius:20px;width:min(860px,92vw);max-height:86vh;color:var(--ink);background:#fff;box-shadow:0 40px 90px -30px rgba(0,18,63,.6);overflow:hidden}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:rgba(0,18,63,.6);backdrop-filter:blur(3px)}
+.dh{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--navy);color:#fff;padding:18px 24px}
+.dh .k{font:700 11px/1.2 var(--f-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--orange-2)}
+.dh h3{font:800 20px/1.2 var(--f-disp);margin-top:4px;letter-spacing:-.02em}
+.dh button{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font:700 18px/1 var(--f-disp);cursor:pointer;flex:none}
+.dh button:hover{background:rgba(255,255,255,.22)}
+.db{padding:22px 26px 26px;overflow:auto}
+.db p{font-size:16px;line-height:1.65;color:var(--ink)}
+.db p+p{margin-top:.75em}
+.db p strong{color:var(--navy)}
+.db .who{font-size:11px;margin-bottom:12px}
+.idx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.idx button{display:flex;gap:12px;align-items:baseline;text-align:left;border:0;background:var(--bg-soft);border-radius:10px;padding:10px 14px;cursor:pointer;font:500 14px/1.35 var(--f-sans);color:var(--ink)}
+.idx button b{font:800 13px/1 var(--f-disp);color:var(--orange-ink);min-width:22px;font-variant-numeric:tabular-nums}
+.idx button:hover,.idx button.cur{background:var(--bg-blue)}
+.idx button.cur{box-shadow:inset 0 0 0 1.5px var(--navy)}
+
+@media (max-width:900px){
+  .g3,.g4,.g5,.split,.g2,.strip,.blk{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .blk{grid-template-columns:1fr}
+  .slide{overflow-y:auto;padding:3vh 18px 96px}
+  .body{flex:1 0 auto;justify-content:flex-start}
+  .strip>div+div{border-left:0;padding-left:0}
+  .chrome .client{display:none}
+  .foot,.hint{display:none}
+  .key{flex-direction:column;align-items:flex-start;gap:.4em}
+  .key .l{width:auto}
+  .idx{grid-template-columns:1fr}
+  .tbl-wrap{overflow-x:auto}
+}
+@media (max-width:520px){
+  .g3,.g4,.g5,.split,.g2,.strip{grid-template-columns:1fr}
+  .chrome .tagline{display:none}
+  .tbl th,.tbl td{padding:.6em .5em}
+  .nav{gap:6px} .nav .tmr{display:none}
+}
+@media (hover:none){.hint{display:none}}
+@media (prefers-reduced-motion:reduce){.track,.progress,.hint{transition:none}}
+
+/* impressão / PDF: um slide por página 16:9 */
+@media print{
+  @page{size:16in 9in;margin:0}
+  html,body{height:auto;overflow:visible;background:#fff}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .track{display:block;height:auto;transform:none!important;transition:none}
+  .slide{width:16in;height:9in;break-after:page;page-break-after:always;overflow:hidden}
+  .nav,.progress,.hint,.editbadge,.btn-full,dialog{display:none!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M6 3H5v6a4.5 4.5 0 0 0 9 0V3h-1"/><path d="M9.5 13.5V16a4.5 4.5 0 0 0 9 0v-2.5"/><circle cx="18.5" cy="11.5" r="2"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/><path d="M7.5 12h2.3l1.4-2.4 1.8 4.4 1.3-2h2.2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9.5 13h6M9.5 17h6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2c1.9.8 3 2.9 3 5.8"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M9.5 9.5l5 5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-cut" viewBox="0 0 24 24"><circle cx="6" cy="6.5" r="2.6"/><circle cx="6" cy="17.5" r="2.6"/><path d="M8.2 8L20 18M8.2 16L20 6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.4h.01"/></symbol>
+  <symbol id="i-chest" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/><path d="M13 9l-2 3.2h3L12 15.5"/></symbol>
+  <symbol id="i-lungs" viewBox="0 0 24 24"><path d="M12 4v8M12 10c-1.5 0-2.5 1-3 2.5M12 10c1.5 0 2.5 1 3 2.5"/><path d="M8.5 7C5.5 7 4 11 4 15c0 3 1.5 4.5 3.5 4.5S10 18 10 15.5V9.5A2.5 2.5 0 0 0 8.5 7zM15.5 7C18.5 7 20 11 20 15c0 3-1.5 4.5-3.5 4.5S14 18 14 15.5V9.5A2.5 2.5 0 0 1 15.5 7z"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-5.5 4 11 2.5-5.5H21"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4.5a3 3 0 0 0-3 3v.2A3 3 0 0 0 4 10.5a3 3 0 0 0 1 2.3A3.2 3.2 0 0 0 7 18.5a3 3 0 0 0 5 1V5.7A3 3 0 0 0 9 4.5zM15 4.5a3 3 0 0 1 3 3v.2a3 3 0 0 1 2 2.8 3 3 0 0 1-1 2.3 3.2 3.2 0 0 1-2 5.7 3 3 0 0 1-5 1"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><rect x="3" y="6.5" width="13" height="11" rx="2"/><path d="M16 10.5l5-3v9l-5-3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+</svg>
+
+<div class="progress" id="progress"></div>
+<div class="editbadge">Modo edição · pressione E para sair</div>
+<div class="track" id="track">
+
+<!-- 1 · CAPA -->
+<section class="slide navy" data-title="Capa">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Roteiro de gravação · Novembro/2026</span></div>
+  <div class="body">
+    <div class="eyebrow" data-edit>Podcast · Episódio com Dr. Cesar · Cardiologia</div>
+    <h1 data-edit>Cuidar do coração <span class="s">antes</span><br>que ele peça socorro<span class="o">.</span></h1>
+    <p class="lead" style="margin-top:2.6vh" data-edit>Roteiro completo do episódio: perguntas do host, direcionamento das respostas, frases para cortes e plano de distribuição. <strong>Prevenção, obesidade e longevidade</strong> para quem tem 50+ em Santo André e no ABC Paulista.</p>
+    <div class="strip">
+      <div><b class="num" data-edit>18 <span class="o">anos</span></b><span data-edit>de medicina, 16 deles na cardiologia</span></div>
+      <div><b class="num" data-edit>10 <span class="o">blocos</span></b><span data-edit>mais bate-bola, sinais de alerta e pílulas do público</span></div>
+      <div><b class="num" data-edit>~60 <span class="o">min</span></b><span data-edit>de conversa, rendendo cerca de 30 cortes</span></div>
+      <div><b class="num" data-edit>50<span class="o">+</span></b><span data-edit>público prioritário, com fatores de risco</span></div>
+    </div>
+  </div>
+  <div class="foot">Santo André · ABC Paulista</div>
+</section>
+
+<!-- 2 · BRIEFING -->
+<section class="slide" data-title="Briefing do episódio">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="split" style="align-items:stretch">
+      <div style="display:flex;flex-direction:column;justify-content:center">
+        <div class="eyebrow">Briefing do episódio</div>
+        <h2 data-edit>Um episódio para quem acha que <span class="o">ainda não é hora</span> de ir ao cardiologista.</h2>
+        <p class="lead" data-edit><strong>Objetivo:</strong> posicionar o Dr. Cesar como referência em cardiologia e prevenção cardiovascular em Santo André e no ABC Paulista, mostrando experiência, propósito e a importância do acompanhamento contínuo.</p>
+        <div class="g g2">
+          <div class="card"><div class="no">Público prioritário</div><p style="margin-top:.5em" data-edit>Pessoas acima dos 50 anos, principalmente com comorbidades ou fatores de risco, que querem envelhecer com saúde, autonomia e qualidade de vida.</p></div>
+          <div class="card"><div class="no">Público que compartilha · novo</div><p style="margin-top:.5em" data-edit>Filhos de 25 a 45 anos que cuidam dos pais, e quem treina pesado achando que está protegido. Eles levam o episódio para dentro de casa.</p></div>
+        </div>
+        <div class="key"><span class="l">Mensagem central</span><p data-edit>Não precisamos esperar um infarto, um AVC ou qualquer outro problema para começar a cuidar do coração.</p></div>
+      </div>
+      <div class="card" style="padding:1.4em 1.6em;display:flex;flex-direction:column;justify-content:center">
+        <div class="no">O que o ouvinte precisa levar</div>
+        <div style="margin-top:.6em">
+          <div class="it"><span class="nb">01</span><div><b data-edit>Obesidade é saúde, não só estética</b><span data-edit>Uma condição que compromete o coração e outros sistemas.</span></div></div>
+          <div class="it"><span class="nb">02</span><div><b data-edit>50+ com comorbidades é prioridade</b><span data-edit>Obesidade com pressão alta, diabetes ou colesterol pede avaliação já.</span></div></div>
+          <div class="it"><span class="nb">03</span><div><b data-edit>Tirzepatida é tratamento, com indicação</b><span data-edit>Ferramenta para obesidade e melhora metabólica, não solução estética.</span></div></div>
+          <div class="it"><span class="nb">04</span><div><b data-edit>O cardiologista avalia o risco no caminho</b><span data-edit>Tratar o peso e cuidar do coração acontecem juntos.</span></div></div>
+          <div class="it"><span class="nb">05</span><div><b data-edit>Particular e convênios</b><span data-edit>Atendimento em Santo André, conforme a operadora e o plano.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Briefing · prevenção e longevidade</div>
+</section>
+
+<!-- 3 · ESTRATÉGIA -->
+<section class="slide navy" data-title="Por que este podcast">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="eyebrow">A estratégia</div>
+    <h2 style="max-width:30ch" data-edit>Autoridade sem distribuição não gera consulta. <span class="o">Distribuição sem autoridade não gera confiança.</span></h2>
+    <p class="lead" data-edit>O podcast resolve as duas pontas de uma vez: o Dr. Cesar mostra o que sabe com profundidade, e cada bloco vira conteúdo curto que chega a quem precisa marcar a consulta.</p>
+    <div class="g g3">
+      <div class="card"><div class="no">Autoridade</div><h4 data-edit>Trajetória que dá confiança</h4><p data-edit>Cerca de 18 anos de medicina, passagens por HCor, Rede D’Or, Hospital Brasil e Beneficência Portuguesa, SUS e formação de residentes.</p></div>
+      <div class="card"><div class="no">Educação</div><h4 data-edit>Prevenção em linguagem simples</h4><p data-edit>Obesidade, hábitos, atletas, sinais de alerta e mitos: o que o paciente pesquisa, explicado por quem atende todo dia.</p></div>
+      <div class="card hl"><div class="no">Proximidade</div><h4 data-edit>Santo André e todo o ABC</h4><p data-edit>Consultório próprio, atendimento particular e por convênios. O ouvinte termina o episódio sabendo como agendar.</p></div>
+    </div>
+    <div class="strip" style="margin-top:3.4vh">
+      <div><b class="num">1 <span class="o">gravação</span></b><span data-edit>episódio completo de cerca de 60 minutos</span></div>
+      <div><b class="num">13 <span class="o">cortes</span></b><span data-edit>prioritários para Reels e Shorts</span></div>
+      <div><b class="num">16 <span class="o">pílulas</span></b><span data-edit>mito ou verdade e perguntas do público</span></div>
+      <div><b class="num">4 <span class="o">semanas</span></b><span data-edit>de conteúdo saindo de um único dia de gravação</span></div>
+    </div>
+  </div>
+  <div class="foot">Estratégia · autoridade + distribuição</div>
+</section>
+
+<!-- 4 · ESCALETA -->
+<section class="slide soft" data-title="Escaleta do episódio">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="eyebrow">A escaleta</div>
+    <h2 data-edit>A ordem do episódio: <span class="o">gancho forte primeiro</span>, autoridade logo depois.</h2>
+    <div class="split" style="grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);gap:calc(var(--u)*2);align-items:stretch">
+      <div class="tbl-wrap">
+        <table class="tbl cpt">
+          <thead><tr><th>#</th><th>Bloco</th><th>Objetivo</th><th>Tempo</th></tr></thead>
+          <tbody>
+            <tr data-go="s-abertura"><td class="n">00</td><td><span class="big">Abertura: cold open e apresentação</span></td><td>Autoridade</td><td class="t">2 min</td></tr>
+            <tr data-go="s-b01"><td class="n">01</td><td><span class="big">Obesidade, 50+ e Mounjaro</span></td><td>Gancho forte e identificação</td><td class="t">7 min</td></tr>
+            <tr data-go="s-b02"><td class="n">02</td><td><span class="big">História e trajetória do Dr. Cesar</span></td><td>Autoridade e conexão</td><td class="t">6 min</td></tr>
+            <tr data-go="s-b03"><td class="n">03</td><td><span class="big">Mais de 400 mil mortes por ano</span></td><td>Conscientização</td><td class="t">5 min</td></tr>
+            <tr data-go="s-b04"><td class="n">04</td><td><span class="big">Prevenção x expectativa de vida · 50+</span></td><td>Valorizar o acompanhamento</td><td class="t">6 min</td></tr>
+            <tr data-go="s-b05"><td class="n">05</td><td><span class="big">Atletas e doenças silenciosas</span></td><td>Ampliar público</td><td class="t">5 min</td></tr>
+            <tr data-go="s-b06"><td class="n">06</td><td><span class="big">Cinco inimigos e cinco hábitos</span></td><td>Educação</td><td class="t">6 min</td></tr>
+            <tr class="new" data-go="s-bb"><td class="n">⚡</td><td><span class="big">Bate-bola: mito ou verdade</span> <span class="tag o">Novo</span></td><td>Ritmo e cortes curtos</td><td class="t">4 min</td></tr>
+            <tr data-go="s-b07"><td class="n">07</td><td><span class="big">Segunda opinião</span></td><td>Proximidade regional</td><td class="t">4 min</td></tr>
+            <tr data-go="s-b08"><td class="n">08</td><td><span class="big">Mounjaro e saúde cardiovascular</span></td><td>Aprofundamento científico</td><td class="t">7 min</td></tr>
+            <tr class="new" data-go="s-alerta"><td class="n">!</td><td><span class="big">Sinais que não esperam a consulta</span> <span class="tag o">Novo</span></td><td>Utilidade pública</td><td class="t">3 min</td></tr>
+            <tr data-go="s-b09"><td class="n">09</td><td><span class="big">Acompanhamento, ABC e convênios</span></td><td>Conversão</td><td class="t">4 min</td></tr>
+            <tr data-go="s-b10"><td class="n">10</td><td><span class="big">Convite final</span></td><td>Agendamento</td><td class="t">3 min</td></tr>
+            <tr class="new" data-go="s-pilulas"><td class="n">+</td><td><span class="big">Pílulas do público, gravadas depois</span> <span class="tag o">Novo</span></td><td>Série de shorts</td><td class="t">10 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="northstar" style="padding:1.3em 1.5em">
+        <div class="ns-k">Recomendação</div>
+        <h3 data-edit>A tirzepatida aparece <span class="o">duas vezes</span>, de propósito.</h3>
+        <p data-edit>Abre o episódio como gancho, no bloco 01, e volta no bloco 08 para aprofundar benefícios, limites e cuidados.</p>
+        <p data-edit>Assim o Dr. Cesar é o cardiologista que enxerga a obesidade como parte da saúde do coração e da longevidade, e não alguém que fala de emagrecimento.</p>
+        <p class="small" style="margin-top:.4em;color:var(--sky)">Total: cerca de 62 min de conversa + 10 min de pílulas. Clique numa linha para ir ao bloco.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Escaleta · ordem recomendada</div>
+</section>
+
+<!-- 5 · DIREÇÃO DE GRAVAÇÃO -->
+<section class="slide" data-title="Direção de gravação">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="eyebrow">Direção de gravação</div>
+    <h2 data-edit>Como gravar para o episódio <span class="o">render cortes</span></h2>
+    <p class="lead" data-edit>Tom médico, mas acessível. Seguro, sem ser técnico demais. Próximo e humanizado, com autoridade e sem cara de apresentação comercial. <strong>A ênfase é prevenção e longevidade.</strong></p>
+    <div class="g g4">
+      <div class="card"><div class="ico"><svg><use href="#i-chat"/></svg></div><h4>Retome o tema na resposta</h4><p data-edit>Comece repetindo o assunto: “A obesidade não é só estética…”. Assim o corte faz sentido sozinho, sem a pergunta.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-clock"/></svg></div><h4>Uma ideia por resposta</h4><p data-edit>De 60 a 90 segundos por resposta. Se o assunto render, o host puxa uma das perguntas extras.</p></div>
+      <div class="card hl"><div class="ico"><svg><use href="#i-star"/></svg></div><h4>Pausa na frase ★</h4><p data-edit>Respire um segundo antes e depois das frases marcadas com ★. É ali que a edição corta.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-people"/></svg></div><h4>Fale com uma pessoa</h4><p data-edit>Imagine o paciente de 55 anos com pressão alta. Troque sigla e termo técnico por infarto, AVC e pressão.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-pill"/></svg></div><h4>Remédio pelo princípio ativo</h4><p data-edit>“Tirzepatida, conhecida como Mounjaro.” Sem dose, sem promessa e sem tom de propaganda.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-shield"/></svg></div><h4>Sem promessa de resultado</h4><p data-edit>Prefira “pode ajudar”, “os estudos mostram” e “depende da avaliação”. Paciente citado nunca é identificado.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-mic"/></svg></div><h4>Olhe para o host</h4><p data-edit>É conversa, não palestra. A exceção é o convite final: ali o Dr. Cesar olha direto para a câmera.</p></div>
+      <div class="card"><div class="ico"><svg><use href="#i-cam"/></svg></div><h4>Pense no vertical</h4><p data-edit>Câmera fechada no Dr. Cesar com área segura para 9:16. A maior parte dos cortes vai para Reels e Shorts.</p></div>
+    </div>
+  </div>
+  <div class="foot">Tom · ritmo · cuidados</div>
+</section>
+
+<!-- 6 · ABERTURA -->
+<section class="slide deep" id="s-abertura" data-title="00 · Abertura e apresentação">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">00</span> Abertura</div><span class="tag">Autoridade · 2 min</span></div>
+    <h2 data-edit>Cold open, vinheta e a apresentação do Dr. Cesar.</h2>
+    <div class="blk" style="grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);margin-top:1vh">
+      <div style="display:flex;flex-direction:column;gap:calc(var(--u)*1.1)">
+        <div class="card hl"><div class="no">Cold open · 10 a 15 s · novo</div><p style="margin-top:.5em" data-edit>Antes da vinheta, abra com a frase mais forte do bloco 01, já editada: <strong>“Não espere emagrecer para descobrir como está seu coração.”</strong> Depois entram a vinheta e a apresentação.</p></div>
+        <div class="card"><div class="no">Dica de gravação</div><p style="margin-top:.5em" data-edit>Grave a apresentação duas vezes: a completa e uma versão de 20 segundos, para usar como abertura dos cortes de trajetória.</p></div>
+      </div>
+      <div class="fala big">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · apresentação</div>
+        <p data-edit>“Hoje recebemos o Dr. Cesar, médico com aproximadamente 18 anos de trajetória profissional, sendo 16 anos de atuação na cardiologia.</p>
+        <p data-edit>Ao longo de sua carreira, passou por instituições importantes, como HCor, Rede D’Or, Hospital Brasil e Beneficência Portuguesa, além de sua atuação na rede de hospitais da região do ABC e no SUS, junto aos residentes da Faculdade de Medicina do ABC.</p>
+        <p data-edit>Atualmente, atende pacientes em Santo André e em toda a região, com uma proposta de cuidado que une prevenção, acompanhamento cardiovascular e qualidade de vida.</p>
+        <p data-edit><strong>Dr. Cesar, seja muito bem-vindo!</strong>”</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Bloco 00 · abertura</div>
+</section>
+
+<!-- 7 · BLOCO 01 · PERGUNTA -->
+<section class="slide blks" id="s-b01" data-title="01 · Obesidade: a pergunta">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">01</span> Obesidade, longevidade e coração</div><span class="tag o">Gancho · 7 min</span></div>
+    <h2 data-edit>Emagrecer é estética ou é <span class="o">saúde do coração</span>?</h2>
+    <div class="blk">
+      <div class="fala">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+        <p data-edit>“Dr. Cesar, quero começar falando de um assunto que está muito presente na vida dos brasileiros: a obesidade.</p>
+        <p data-edit>Hoje, muita gente ainda enxerga o emagrecimento apenas como uma questão estética. Principalmente com a popularização das canetas emagrecedoras, como a Mounjaro, parece que o objetivo de muita gente é simplesmente perder peso e melhorar a aparência.</p>
+        <p data-edit>Mas existe uma questão muito mais importante: o que acontece com o coração de uma pessoa que convive com a obesidade durante anos? Uma pessoa obesa, especialmente depois dos 50 anos, com pressão alta, colesterol elevado, diabetes ou histórico familiar de problemas cardíacos, deveria estar fazendo uma avaliação cardiológica com urgência?</p>
+        <p data-edit>E quero entrar também em outro ponto: a Mounjaro e os medicamentos modernos para tratar a obesidade vão muito além da estética? Como o emagrecimento pode transformar a saúde metabólica e cardiovascular de um paciente?”</p>
+      </div>
+      <div>
+        <div class="card"><div class="no">Por que abrir com este tema</div><p style="margin-top:.5em" data-edit>É o assunto que o público já está pesquisando. <strong>A conversa entra pela caneta e sai pela saúde do coração</strong>, e isso segura quem chegou pelo tema do emagrecimento.</p></div>
+        <div class="xq">
+          <div class="who">Perguntas extras · se der tempo <span class="tag o">Novo</span></div>
+          <ul>
+            <li data-edit>A barriga importa mais do que o número da balança?</li>
+            <li data-edit>Ronco e apneia do sono têm a ver com o coração?</li>
+            <li data-edit>Quem já emagreceu com a caneta ainda precisa passar pelo cardiologista?</li>
+            <li data-edit>O que o senhor mais vê no consultório quando a pessoa chega só querendo emagrecer?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Bloco 01 · a pergunta</div>
+</section>
+
+<!-- 8 · BLOCO 01 · RESPOSTA -->
+<section class="slide soft blks" data-title="01 · Obesidade: a resposta">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">01</span> Direcionamento · Dr. Cesar</div><button class="btn-full" data-full="t-b01"><svg><use href="#i-doc"/></svg>Ler resposta completa</button></div>
+    <h2 data-edit>A resposta em <span class="o">cinco tempos</span></h2>
+    <div class="g g5" style="margin-top:1vh">
+      <div class="step"><span class="sn">01</span><h4 data-edit>Mudar o olhar</h4><p data-edit>Obesidade não é aparência nem só “estar acima do peso”. É uma condição que compromete vários sistemas, principalmente o cardiovascular.</p></div>
+      <div class="step"><span class="sn">02</span><h4 data-edit>O que acontece com o coração</h4><p data-edit>Mais sobrecarga e mais fatores de risco: hipertensão, diabetes tipo 2, colesterol alterado e apneia do sono.</p></div>
+      <div class="step"><span class="sn">03</span><h4 data-edit>O alerta do 50+</h4><p data-edit>Acima dos 50 e com comorbidades, a avaliação não pode ser adiada, mesmo sem nenhum sintoma.</p></div>
+      <div class="step"><span class="sn">04</span><h4 data-edit>Olhar integral</h4><p data-edit>Cerca de 18 anos de medicina, 16 na cardiologia: olhar o paciente como um todo, não só o peso.</p></div>
+      <div class="step hl"><span class="sn">05</span><h4 data-edit>Tirzepatida com critério</h4><p data-edit>Pode melhorar glicemia, pressão e indicadores metabólicos. Não é milagre estético nem substitui o cardiologista. Indicação individualizada.</p></div>
+    </div>
+    <div class="note"><span class="l">Atenção na fala</span><p data-edit>Ao citar a caneta, diga “tirzepatida, o princípio ativo da Mounjaro” e reforce que a indicação é médica, com avaliação de riscos, benefícios e contraindicações.</p></div>
+    <div class="key"><span class="l">★ Frase de corte</span><p data-edit>“Não espere emagrecer para descobrir como está seu coração. Cuide do coração enquanto trata a obesidade.”</p></div>
+  </div>
+  <template id="t-b01">
+    <div class="who" style="color:var(--orange-ink)">Dr. Cesar · direcionamento da resposta</div>
+    <p>“Primeiro, precisamos mudar a maneira como enxergamos a obesidade.</p>
+    <p>A obesidade não é simplesmente uma questão de aparência ou de estar acima do peso. É uma condição que pode comprometer diferentes sistemas do organismo, especialmente a saúde cardiovascular.</p>
+    <p>O excesso de peso pode aumentar a sobrecarga do coração e está associado a fatores de risco como hipertensão, diabetes tipo 2, alterações no colesterol, apneia do sono e maior risco de doenças cardiovasculares.</p>
+    <p>E existe um grupo que merece atenção especial: pessoas acima dos 50 anos que convivem com obesidade, principalmente quando apresentam outras comorbidades.</p>
+    <p>Minha recomendação é que essas pessoas não adiem uma avaliação médica. Mesmo sem sintomas, é importante investigar como está a saúde do coração.</p>
+    <p>Eu tenho uma trajetória de aproximadamente 18 anos na medicina, com 16 anos de atuação na cardiologia, e uma das coisas que considero fundamentais é justamente olhar para o paciente de maneira integral.</p>
+    <p>Hoje, quando falamos de medicamentos como a tirzepatida, presente na Mounjaro, precisamos entender que o tratamento vai muito além de perder alguns quilos.</p>
+    <p>A redução do peso pode melhorar indicadores metabólicos, contribuir para o controle da glicemia e da pressão arterial e reduzir fatores que sobrecarregam o sistema cardiovascular.</p>
+    <p>Mas é fundamental entender que não estamos falando de uma solução estética milagrosa, nem de um medicamento que substitui o acompanhamento cardiológico.</p>
+    <p>A indicação precisa ser individualizada, com avaliação dos riscos, benefícios, contraindicações e acompanhamento profissional.</p>
+    <p>O meu recado é muito claro: se você tem obesidade, principalmente se já passou dos 50 anos, não deixe para amanhã a avaliação da sua saúde cardiovascular.</p>
+    <p><strong>Não espere emagrecer para descobrir como está seu coração. Cuide do coração enquanto trata a obesidade.</strong>”</p>
+  </template>
+  <div class="foot">Bloco 01 · direcionamento</div>
+</section>
+
+<!-- 9 · BLOCO 01 · COMPLEMENTAR E CONVERSÃO -->
+<section class="slide navy blks" data-title="01 · Pergunta complementar e CTA">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">01</span> Pergunta complementar e conversão</div><button class="btn-full" data-full="t-b01b"><svg><use href="#i-doc"/></svg>Ler resposta completa</button></div>
+    <h2 data-edit>Quem procura ajuda para emagrecer <span class="o">deveria aproveitar para olhar o coração?</span></h2>
+    <div class="blk">
+      <div>
+        <div class="fala">
+          <div class="who"><svg><use href="#i-mic"/></svg>Host · complementar</div>
+          <p data-edit>“Então podemos dizer que uma pessoa que está procurando ajuda para emagrecer também deveria aproveitar esse momento para investigar a saúde do coração?</p>
+          <p data-edit>E, na sua opinião, por que alguém com obesidade e mais de 50 anos não deveria continuar adiando essa avaliação?”</p>
+        </div>
+        <div class="card" style="margin-top:calc(var(--u)*1.1)"><div class="no">CTA principal do episódio</div><p style="margin-top:.5em" data-edit>“Se você tem mais de 50 anos, está acima do peso, tem pressão alta, diabetes ou colesterol elevado, não espere sentir alguma coisa para procurar ajuda. Agende sua avaliação cardiológica. Atendemos também por convênios.”</p></div>
+      </div>
+      <div class="fala dr">
+        <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · fechamento</div>
+        <ul class="dots">
+          <li data-edit><strong>“Exatamente.”</strong> É a oportunidade de olhar a saúde como um todo.</li>
+          <li data-edit>A pessoa chega preocupada com o peso, e o médico olha <strong>pressão, colesterol, glicemia, função cardíaca</strong> e os demais fatores de risco.</li>
+          <li data-edit>Não precisa esperar uma dor no peito ou um infarto para começar a investigar.</li>
+          <li data-edit>Convite direto: tem mais de 50 anos, obesidade ou outras condições? <strong>Coloque a avaliação cardiológica como prioridade na agenda.</strong></li>
+          <li data-edit>Atendimento também por convênios, conforme a operadora e o plano.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key"><span class="l">★ Frase de corte</span><p data-edit>“Emagrecer pode mudar sua aparência. Cuidar da saúde cardiovascular pode mudar a sua história de vida.”</p></div>
+  </div>
+  <template id="t-b01b">
+    <div class="who" style="color:var(--orange-ink)">Dr. Cesar · fechamento e conversão</div>
+    <p>“Exatamente. É uma excelente oportunidade para olhar para a saúde como um todo.</p>
+    <p>Muitas vezes, a pessoa chega ao consultório preocupada com o peso, mas precisamos entender o que está acontecendo com a pressão arterial, o colesterol, a glicemia, a função cardíaca e os demais fatores de risco.</p>
+    <p>Não precisamos esperar aparecer uma dor no peito ou acontecer um infarto para começar essa investigação.</p>
+    <p>Se você tem mais de 50 anos, convive com obesidade ou apresenta outras condições de saúde, procure uma avaliação cardiológica.</p>
+    <p>Meu convite é para que você coloque essa consulta como prioridade na sua agenda.</p>
+    <p>Atendemos também pacientes por convênios, conforme a operadora e o plano, facilitando o acesso ao acompanhamento especializado.</p>
+    <p><strong>Emagrecer pode mudar sua aparência. Cuidar da saúde cardiovascular pode mudar a sua história de vida.</strong>”</p>
+  </template>
+  <div class="foot">Bloco 01 · conversão</div>
+</section>
+
+<!-- 10 · BLOCO 02 · TRAJETÓRIA -->
+<section class="slide blks" id="s-b02" data-title="02 · História e trajetória">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">02</span> História e trajetória</div><span class="tag">Autoridade e conexão · 6 min</span></div>
+    <h2 data-edit>Quem é o Dr. Cesar, e <span class="o">por que Santo André</span>?</h2>
+    <div class="chips" style="margin-bottom:1.6vh"><span>HCor</span><span>Rede D’Or</span><span>Hospital Brasil</span><span>Beneficência Portuguesa</span><span>Rede América · ABC</span><span>SUS</span><span>Faculdade de Medicina do ABC</span><span class="o">Consultório em Santo André</span></div>
+    <div class="blk">
+      <div>
+        <div class="fala">
+          <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+          <p data-edit>“Dr. Cesar, na abertura eu contei um pouco da sua trajetória: são cerca de 18 anos de medicina, passando por instituições como HCor, Rede D’Or, Hospital Brasil e Beneficência Portuguesa, pela Rede América, no ABC, e pelo SUS, junto aos residentes da Faculdade de Medicina do ABC.</p>
+          <p data-edit>Mas eu quero ouvir de você: como foi construir esse caminho? O que despertou a vontade de seguir a cardiologia, e o que fez você decidir abrir o seu próprio consultório em Santo André?”</p>
+        </div>
+        <div class="note" style="margin-top:calc(var(--u)*1.1)"><span class="l">Transição para o bloco 03</span><p data-edit>“E quando olhamos para toda essa experiência, uma coisa chama atenção: muita gente só procura o cardiologista quando já existe algum problema. Será que estamos cuidando do coração da maneira correta?”</p></div>
+      </div>
+      <div>
+        <div class="fala dr">
+          <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+          <ul class="dots">
+            <li data-edit>Como surgiu a escolha pela medicina e pela cardiologia.</li>
+            <li data-edit>A experiência nos hospitais e instituições por onde passou.</li>
+            <li data-edit>Um momento marcante da carreira.</li>
+            <li data-edit>O que aprendeu atendendo perfis tão diferentes de pacientes.</li>
+            <li data-edit>A decisão de construir o próprio espaço de atendimento.</li>
+            <li data-edit>O propósito: atendimento <strong>próximo, humanizado e individualizado</strong>.</li>
+            <li data-edit>O que mais motiva hoje e o legado que quer deixar.</li>
+          </ul>
+        </div>
+        <div class="xq">
+          <div class="who">Perguntas extras · se der tempo <span class="tag o">Novo</span></div>
+          <ul>
+            <li data-edit>Qual paciente mudou o seu jeito de ser médico? (sem identificar a pessoa)</li>
+            <li data-edit>O que formar residentes no SUS te ensinou sobre explicar a doença ao paciente?</li>
+            <li data-edit>No hospital grande tudo é rápido. O que você quis fazer diferente no consultório?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Bloco 02 · trajetória</div>
+</section>
+
+<!-- 11 · BLOCO 03 · DADOS -->
+<section class="slide navy" id="s-b03" data-title="03 · O tamanho do problema">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">03</span> O tamanho do problema</div><span class="tag g">Dado validado · SBC</span></div>
+    <h2 style="max-width:34ch" data-edit>Mais de <span class="o">400 mil</span> mortes por ano. E quase ninguém conhece o <span class="s">Setembro Vermelho</span>.</h2>
+    <div class="split" style="grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:stretch;margin-top:1.4vh">
+      <div class="northstar">
+        <div class="ns-k">No Brasil, em 2026</div>
+        <div class="ns-num num" data-edit>1 <small>a cada</small> 72s</div>
+        <h3 data-edit>uma pessoa morre por doença cardiovascular. <span class="o">Em média, 1.194 mortes por dia.</span></h3>
+        <p data-edit>Cardiômetro da Sociedade Brasileira de Cardiologia, acumulado até 16/10/2026.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:calc(var(--u)*1.1)">
+        <div class="g g3">
+          <div class="card"><div class="no">Outubro Rosa</div><h4>Câncer de mama</h4><p data-edit>Todo mundo conhece.</p></div>
+          <div class="card"><div class="no">Novembro Azul</div><h4>Saúde do homem</h4><p data-edit>Todo mundo conhece. E é o mês do episódio.</p></div>
+          <div class="card hl"><div class="no">Setembro Vermelho</div><h4>Coração</h4><p data-edit>Quase ninguém sabe responder.</p></div>
+        </div>
+        <div class="strip" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:.6vh">
+          <div><b class="num" data-edit>417.550</b><span data-edit>mortes por doenças cardiovasculares em 2024, último ano fechado</span></div>
+          <div><b class="num" data-edit>318.945</b><span data-edit>mortes em 2026, de 1º de janeiro a 16 de outubro</span></div>
+        </div>
+        <div class="note" style="margin-top:0"><span class="l">Gancho do mês</span><p data-edit>O episódio sai em pleno Novembro Azul. Vale o host lembrar: <strong>cuidar do coração também é saúde do homem</strong>, e da mulher, o ano inteiro.</p></div>
+      </div>
+    </div>
+    <p class="small" style="margin-top:1.6vh">Fonte: SBC, Cardiômetro e Hub de Doenças Cardiovasculares (Sistema de Informações sobre Mortalidade do Ministério da Saúde e estimativas GBD 2023). Consulta em 06/11/2026; o contador muda todo dia.</p>
+  </div>
+  <div class="foot">Bloco 03 · dados</div>
+</section>
+
+<!-- 12 · BLOCO 03 · PERGUNTA -->
+<section class="slide blks" data-title="03 · Prevenção cardíaca">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">03</span> A prevenção que pouca gente conhece</div><span class="tag">Conscientização · 5 min</span></div>
+    <h2 data-edit>Por que falamos tão pouco de <span class="o">prevenção do coração</span>?</h2>
+    <div class="blk">
+      <div class="fala">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+        <p data-edit>“Dr. Cesar, existe algo que me parece muito preocupante: segundo a Sociedade Brasileira de Cardiologia, as doenças cardiovasculares mataram mais de 400 mil brasileiros em 2024. É uma morte a cada 72 segundos.</p>
+        <p data-edit>Mesmo assim, a prevenção do coração parece não ter o mesmo espaço na nossa agenda de saúde. Todo mundo conhece o Outubro Rosa e o Novembro Azul, mas pergunte para qualquer pessoa o que é o Setembro Vermelho, campanha de conscientização sobre doenças cardiovasculares, e provavelmente pouca gente vai saber responder.</p>
+        <p data-edit>Por que ainda falamos tão pouco sobre prevenção cardíaca? E o que as pessoas deveriam fazer, antes de ter um infarto, para descobrir se estão realmente cuidando bem do coração?”</p>
+      </div>
+      <div>
+        <div class="fala dr">
+          <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+          <ul class="dots">
+            <li data-edit>Doenças cardiovasculares como <strong>problema de saúde pública</strong>.</li>
+            <li data-edit>A cultura de só procurar atendimento quando aparecem sintomas.</li>
+            <li data-edit>Hipertensão, colesterol elevado e diabetes podem <strong>evoluir em silêncio</strong>.</li>
+            <li data-edit>Dá para se sentir saudável e ainda ter fatores de risco.</li>
+            <li data-edit>O que a avaliação olha: histórico familiar, hábitos, pressão arterial e exames laboratoriais.</li>
+            <li data-edit>Exames complementares são pedidos <strong>conforme a necessidade de cada pessoa</strong>.</li>
+          </ul>
+        </div>
+        <div class="xq">
+          <div class="who">Pergunta extra <span class="tag o">Novo</span></div>
+          <ul><li data-edit>Se a pessoa nunca foi ao cardiologista, o que acontece na primeira consulta?</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="key"><span class="l">Mensagem-chave</span><p data-edit>“Não precisamos esperar o coração dar um sinal de alerta para começar a cuidar dele. Prevenir não é procurar uma doença. É ter a oportunidade de identificar riscos e agir antes.”</p></div>
+  </div>
+  <div class="foot">Bloco 03 · prevenção</div>
+</section>
+
+<!-- 13 · BLOCO 04 · LONGEVIDADE -->
+<section class="slide soft blks" id="s-b04" data-title="04 · Viver mais e melhor">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">04</span> Longevidade · parte 1</div><span class="tag">Valorizar o acompanhamento · 3 min</span></div>
+    <h2 data-edit>Não é só viver mais. <span class="o">É viver melhor.</span></h2>
+    <div class="blk">
+      <div class="fala">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+        <p data-edit>“Dr. Cesar, queria trazer uma questão para quem está nos ouvindo.</p>
+        <p data-edit>Na prática, qual é a diferença na qualidade e na expectativa de vida de uma pessoa que faz acompanhamento cardiológico preventivo e de alguém que só procura um médico quando sente algum sintoma?</p>
+        <p data-edit>Estamos falando apenas de evitar um infarto, ou essa prevenção também pode significar viver mais anos, com mais disposição, autonomia e qualidade de vida?”</p>
+        <div class="xq">
+          <div class="who">Pergunta extra <span class="tag o">Novo</span></div>
+          <ul><li data-edit>O que é envelhecer bem para o senhor? Tem um exemplo de paciente que voltou a fazer o que gostava? (sem identificar)</li></ul>
+        </div>
+      </div>
+      <div class="fala dr">
+        <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+        <ul class="dots">
+          <li data-edit>A importância de identificar fatores de risco <strong>cedo</strong>.</li>
+          <li data-edit>Controle da pressão arterial, do colesterol e da glicemia.</li>
+          <li data-edit>Como o acompanhamento ajuda a orientar e sustentar mudanças de hábito.</li>
+          <li data-edit>O objetivo não é só evitar eventos cardiovasculares: é <strong>preservar a autonomia</strong>.</li>
+          <li data-edit>Envelhecer com disposição para trabalhar, viajar, se exercitar e aproveitar a família.</li>
+          <li data-edit>Cada paciente precisa de uma <strong>estratégia individualizada</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key"><span class="l">★ Mensagem-chave</span><p data-edit>“Não queremos apenas que as pessoas vivam mais. Queremos que vivam melhor, com independência, disposição e saúde para aproveitar a família, o trabalho e tudo aquilo que conquistaram.”</p></div>
+  </div>
+  <div class="foot">Bloco 04 · longevidade</div>
+</section>
+
+<!-- 14 · BLOCO 04 · 50+ -->
+<section class="slide blks" data-title="04 · O público 50+">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">04</span> O público 50+ · parte 2</div><span class="tag">3 min</span></div>
+    <h2 data-edit>A partir dos 50, <span class="o">prevenção precisa entrar na agenda</span>.</h2>
+    <div class="blk">
+      <div class="fala">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+        <p data-edit>“Dr. Cesar, quero falar especialmente com quem está na faixa dos 50 anos ou já passou dela.</p>
+        <p data-edit>Muitas pessoas chegam a essa idade trabalhando, cuidando da família, realizando projetos e mantendo uma rotina aparentemente normal. Mas acabam deixando a própria saúde em segundo plano.</p>
+        <p data-edit>Você acredita que, a partir dos 50 anos, o acompanhamento cardiovascular deveria ganhar ainda mais espaço na rotina das pessoas? O que muda nessa fase da vida, e por que é tão importante conhecer os próprios fatores de risco antes que aconteça alguma complicação?”</p>
+        <div class="xq">
+          <div class="who">Pergunta extra <span class="tag o">Novo</span></div>
+          <ul><li data-edit>Um recado para os filhos: como puxar esse assunto com o pai e a mãe sem virar briga?</li></ul>
+        </div>
+      </div>
+      <div class="fala dr">
+        <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+        <ul class="dots">
+          <li data-edit>Com o passar dos anos, acompanhar os fatores de risco fica ainda mais importante.</li>
+          <li data-edit>O peso de <strong>hipertensão, diabetes, colesterol, tabagismo, histórico familiar e sedentarismo</strong>.</li>
+          <li data-edit>A idade sozinha não define o risco: o histórico individual também conta.</li>
+          <li data-edit>Quem cuidou da carreira e da família, mas deixou a própria saúde para depois.</li>
+          <li data-edit>Filhos e familiares podem e devem puxar essa conversa.</li>
+          <li data-edit>A avaliação é sempre individualizada.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key"><span class="l">★ Fala de impacto</span><p data-edit>“Eu gostaria muito que as pessoas da minha geração chegassem ao consultório para fazer prevenção, e não apenas depois de um infarto, de um AVC ou de uma complicação que poderia ter sido identificada antes.”</p></div>
+  </div>
+  <div class="foot">Bloco 04 · público 50+</div>
+</section>
+
+<!-- 15 · BLOCO 05 · ATLETAS -->
+<section class="slide blks" id="s-b05" data-title="05 · Atletas e doenças silenciosas">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">05</span> Atletas e pessoas ativas</div><span class="tag">Ampliar público · 5 min</span></div>
+    <h2 data-edit>Quem treina está <span class="o">automaticamente protegido</span>?</h2>
+    <div class="blk">
+      <div class="fala">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+        <p data-edit>“Dr. Cesar, hoje vemos cada vez mais pessoas praticando musculação, corrida, ciclismo e até esportes de alta performance.</p>
+        <p data-edit>Muitas delas treinam diariamente, têm uma alimentação controlada e acreditam que, por terem um excelente condicionamento físico, estão automaticamente protegidas contra problemas cardíacos. Mas será que isso é verdade?</p>
+        <p data-edit>Um atleta, mesmo em excelente forma física, pode ter uma doença cardíaca silenciosa? Quais cuidados e avaliações são importantes para quem exige muito do próprio coração durante os treinos?”</p>
+      </div>
+      <div>
+        <div class="fala dr">
+          <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+          <ul class="dots">
+            <li data-edit>Condicionamento físico <strong>não elimina todos os riscos</strong> cardiovasculares.</li>
+            <li data-edit>Histórico familiar e possíveis doenças silenciosas.</li>
+            <li data-edit>Avaliar sintomas, histórico e a intensidade da atividade.</li>
+            <li data-edit>Eletrocardiograma e outros exames <strong>quando houver indicação</strong>.</li>
+            <li data-edit>A avaliação considera idade, modalidade, intensidade e perfil de quem pratica.</li>
+            <li data-edit>Exercício é excelente, mas não substitui o acompanhamento médico.</li>
+          </ul>
+        </div>
+        <div class="xq">
+          <div class="who">Perguntas extras · se der tempo <span class="tag o">Novo</span></div>
+          <ul>
+            <li data-edit>Começou a treinar depois dos 40: precisa de avaliação antes?</li>
+            <li data-edit>Anabolizantes e pré-treinos muito fortes: qual o risco para o coração?</li>
+            <li data-edit>Que sintoma no treino é sinal para parar e procurar o médico?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="key"><span class="l">Mensagem-chave</span><p data-edit>“Treinar é cuidar da saúde, mas conhecer os limites e as condições do próprio coração também faz parte de uma vida saudável.”</p></div>
+  </div>
+  <div class="foot">Bloco 05 · atletas</div>
+</section>
+
+<!-- 16 · BLOCO 06 · CINCO INIMIGOS E CINCO HÁBITOS -->
+<section class="slide soft blks" id="s-b06" data-title="06 · Cinco inimigos e cinco hábitos">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">06</span> Os cinco inimigos e os cinco hábitos</div><span class="tag">Educação · 6 min</span><span class="tag o">Vira carrossel duplo</span></div>
+    <h2 data-edit>O que estamos fazendo <span class="o">de errado</span> na rotina?</h2>
+    <div class="fala" style="margin-bottom:calc(var(--u)*1.1)">
+      <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+      <p data-edit>“Dr. Cesar, sabemos que muitas doenças cardiovasculares estão relacionadas aos nossos hábitos de vida. Se você pudesse listar os cinco principais hábitos que prejudicam o coração, quais seriam? E, na contramão, quais são os cinco hábitos que todos deveriam adotar para proteger o coração e viver mais e melhor?”</p>
+    </div>
+    <div class="g g2">
+      <div class="col2">
+        <div class="ch">Os cinco inimigos do coração <span class="tag r">Evitar</span></div>
+        <div class="it"><span class="nb">1</span><div><b data-edit>Sedentarismo</b><span data-edit>Passar o dia sentado e não praticar atividade física regularmente.</span></div></div>
+        <div class="it"><span class="nb">2</span><div><b data-edit>Má alimentação</b><span data-edit>Excesso de sal, açúcar, ultraprocessados e gordura saturada.</span></div></div>
+        <div class="it"><span class="nb">3</span><div><b data-edit>Tabagismo</b><span data-edit>O cigarro agride os vasos e aumenta o risco de infarto e AVC.</span></div></div>
+        <div class="it"><span class="nb">4</span><div><b data-edit>Sono ruim e estresse crônico</b><span data-edit>Negligenciar o descanso e viver sob pressão o tempo todo.</span></div></div>
+        <div class="it"><span class="nb">5</span><div><b data-edit>Falta de acompanhamento</b><span data-edit>Não controlar pressão, colesterol e glicemia e esperar o sintoma.</span></div></div>
+      </div>
+      <div class="col2 good">
+        <div class="ch">Cinco atitudes para proteger <span class="tag g">Adotar</span></div>
+        <div class="it"><span class="nb">1</span><div><b data-edit>Atividade física regular</b><span data-edit>Aeróbico e musculação, conforme a condição de cada um.</span></div></div>
+        <div class="it"><span class="nb">2</span><div><b data-edit>Alimentação equilibrada</b><span data-edit>Fibras, frutas, verduras e alimentos naturais.</span></div></div>
+        <div class="it"><span class="nb">3</span><div><b data-edit>Dormir bem</b><span data-edit>De 7 a 9 horas de sono por noite, quando possível.</span></div></div>
+        <div class="it"><span class="nb">4</span><div><b data-edit>Peso e números sob controle</b><span data-edit>Peso adequado e pressão, colesterol e glicemia acompanhados.</span></div></div>
+        <div class="it"><span class="nb">5</span><div><b data-edit>Acompanhamento preventivo</b><span data-edit>Considerando histórico familiar e fatores individuais de risco.</span></div></div>
+      </div>
+    </div>
+    <div class="key"><span class="l">Mensagem-chave</span><p data-edit>“Não precisamos mudar tudo de uma vez. Pequenas mudanças consistentes fazem diferença ao longo dos anos. O importante é começar e manter o cuidado.”</p></div>
+  </div>
+  <div class="foot">Bloco 06 · hábitos</div>
+</section>
+
+<!-- 17 · BATE-BOLA -->
+<section class="slide navy" id="s-bb" data-title="⚡ Bate-bola: mito ou verdade">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow">⚡ Bate-bola · mito ou verdade</div><span class="tag o">Novo · 4 min</span></div>
+    <h2 data-edit>O host lê a frase. O Dr. Cesar responde <span class="o">em até 20 segundos</span>.</h2>
+    <p class="lead" style="margin-bottom:2vh" data-edit>Muda o ritmo depois do bloco mais educativo e gera uma série pronta de shorts. Dr. Cesar: responda começando por “Mito” ou “Verdade”, e depois explique em uma frase.</p>
+    <div class="g g4">
+      <div class="mv"><span><span class="tag o">Mito</span></span><h4 data-edit>“Quem não sente nada não precisa de cardiologista.”</h4><p data-edit>Pressão alta, colesterol e diabetes podem evoluir em silêncio por anos.</p></div>
+      <div class="mv"><span><span class="tag g">Verdade</span></span><h4 data-edit>“Pressão alta pode não dar nenhum sintoma.”</h4><p data-edit>Por isso ela é perigosa: só medindo para saber.</p></div>
+      <div class="mv"><span><span class="tag o">Mito</span></span><h4 data-edit>“Colesterol alto é coisa de quem está acima do peso.”</h4><p data-edit>A genética pesa. Gente magra também pode ter colesterol alto.</p></div>
+      <div class="mv"><span><span class="tag g">Verdade</span></span><h4 data-edit>“O infarto na mulher pode dar sintomas diferentes.”</h4><p data-edit>Cansaço, falta de ar, náusea, dor nas costas ou na mandíbula, nem sempre a dor clássica no peito.</p></div>
+      <div class="mv"><span><span class="tag o">Mito</span></span><h4 data-edit>“Quem treina todo dia está protegido.”</h4><p data-edit>Condicionamento não elimina doença silenciosa nem histórico familiar.</p></div>
+      <div class="mv"><span><span class="tag o">Mito</span></span><h4 data-edit>“A caneta substitui dieta e exercício.”</h4><p data-edit>Ela é parte do tratamento. Alimentação, atividade física e acompanhamento continuam.</p></div>
+      <div class="mv"><span><span class="tag g">Verdade</span></span><h4 data-edit>“Ronco alto pode ter a ver com o coração.”</h4><p data-edit>A apneia do sono está associada a pressão alta e arritmias. Vale investigar.</p></div>
+      <div class="mv"><span><span class="tag o">Mito</span></span><h4 data-edit>“Check-up do coração é igual para todo mundo.”</h4><p data-edit>Os exames dependem da idade, do histórico e dos fatores de risco de cada um.</p></div>
+    </div>
+  </div>
+  <div class="foot">Série “Mito ou verdade”</div>
+</section>
+
+<!-- 18 · BLOCO 07 · SEGUNDA OPINIÃO -->
+<section class="slide blks" id="s-b07" data-title="07 · Segunda opinião">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">07</span> Segunda opinião</div><span class="tag">Proximidade regional · 4 min</span></div>
+    <h2 data-edit>Saiu do consultório <span class="o">com dúvida</span>? Quando procurar uma segunda opinião.</h2>
+    <div class="blk">
+      <div>
+        <div class="fala">
+          <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+          <p data-edit>“Dr. Cesar, muitas pessoas recebem um diagnóstico, fazem exames ou começam um tratamento e acabam ficando com dúvidas. Às vezes, não sabem exatamente o que aquele resultado significa, por que determinado medicamento foi indicado ou quais são as alternativas de tratamento.</p>
+          <p data-edit>Quando é importante procurar uma segunda opinião cardiológica? E como esse acompanhamento pode ajudar o paciente a compreender melhor sua condição e tomar decisões mais seguras sobre a própria saúde?”</p>
+        </div>
+        <div class="xq">
+          <div class="who">O que levar na consulta · vira carrossel <span class="tag o">Novo</span></div>
+          <ul>
+            <li data-edit>Exames e laudos anteriores, mesmo os antigos</li>
+            <li data-edit>Lista dos remédios em uso, com a dose</li>
+            <li data-edit>Medidas de pressão anotadas em casa</li>
+            <li data-edit>Histórico da família: quem teve infarto ou AVC, e com que idade</li>
+            <li data-edit>As dúvidas escritas num papel</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fala dr">
+        <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+        <ul class="dots">
+          <li data-edit>Segunda opinião é uma <strong>atitude legítima</strong> e pode trazer mais clareza.</li>
+          <li data-edit>Revisão de exames, diagnósticos e tratamentos.</li>
+          <li data-edit>O objetivo não é desautorizar outro profissional, e sim <strong>ampliar a compreensão do caso</strong>.</li>
+          <li data-edit>Levar exames anteriores e o histórico clínico faz diferença.</li>
+          <li data-edit>O paciente precisa entender a própria condição e participar das decisões.</li>
+          <li data-edit><strong>Nunca interromper um tratamento por conta própria.</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="key"><span class="l">Mensagem-chave</span><p data-edit>“Entender o próprio diagnóstico e o tratamento é parte fundamental do cuidado. Se você tem dúvidas, buscar uma segunda opinião especializada pode ajudar a decidir com mais segurança.”</p></div>
+  </div>
+  <div class="foot">Bloco 07 · segunda opinião</div>
+</section>
+
+<!-- 19 · BLOCO 08 · MOUNJARO -->
+<section class="slide blks" id="s-b08" data-title="08 · Mounjaro e saúde cardiovascular">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">08</span> Mounjaro e saúde cardiovascular</div><span class="tag">Aprofundamento científico · 7 min</span></div>
+    <h2 data-edit>A caneta para emagrecer <span class="o">também pode ajudar o coração</span>?</h2>
+    <div class="blk">
+      <div>
+        <div class="fala">
+          <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+          <p data-edit>“Dr. Cesar, lá no começo a gente falou da obesidade. Agora quero aprofundar. A Mounjaro, conhecida pelo efeito no emagrecimento e no controle da glicose, está muito em evidência.</p>
+          <p data-edit>Mas existe algo que muita gente ainda não sabe: além de ajudar na perda de peso, a tirzepatida também pode trazer benefícios para a saúde cardiovascular? Ela pode melhorar fatores de risco, como pressão arterial e alguns indicadores metabólicos?</p>
+          <p data-edit>E existe diferença entre usar esse medicamento só para emagrecer e usá-lo dentro de um tratamento acompanhado por médicos, pensando na saúde como um todo?”</p>
+        </div>
+        <div class="xq">
+          <div class="who">Perguntas extras · se der tempo <span class="tag o">Novo</span></div>
+          <ul>
+            <li data-edit>Quais efeitos colaterais os pacientes mais relatam?</li>
+            <li data-edit>Quando para a caneta, o peso volta?</li>
+            <li data-edit>E a perda de massa muscular, como evitar?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fala dr">
+        <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento <span class="sp"></span><button class="btn-full" data-go="s-ciencia" style="letter-spacing:.02em;text-transform:none">Ver base científica →</button></div>
+        <ul class="dots">
+          <li data-edit>O que é a tirzepatida e <strong>como ela atua</strong>.</li>
+          <li data-edit>Controle glicêmico e perda de peso.</li>
+          <li data-edit>Possíveis melhorias em fatores metabólicos, como pressão arterial e alguns indicadores de colesterol.</li>
+          <li data-edit>Como reduzir o excesso de peso ajuda a melhorar o risco cardiovascular.</li>
+          <li data-edit><strong>Diferenciar melhora de fator de risco de prevenção comprovada de infarto ou AVC.</strong></li>
+          <li data-edit>Não é um medicamento para uso indiscriminado.</li>
+          <li data-edit>Avaliação individualizada e acompanhamento médico.</li>
+          <li data-edit>A medicação não substitui os tratamentos cardiológicos indicados.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key"><span class="l">Mensagem-chave</span><p data-edit>“Tratar a obesidade também é cuidar da saúde cardiovascular. Mas o tratamento precisa de indicação e acompanhamento médico, considerando a saúde do paciente como um todo.”</p></div>
+  </div>
+  <div class="foot">Bloco 08 · tirzepatida</div>
+</section>
+
+<!-- 20 · BLOCO 08 · BASE CIENTÍFICA -->
+<section class="slide soft" id="s-ciencia" data-title="08 · Base científica da tirzepatida">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">08</span> Base científica · para consulta do Dr. Cesar</div><span class="tag o">Não é para ler no ar</span></div>
+    <h2 style="max-width:44ch" data-edit>O que os estudos <span class="o">mostram</span>, e o que <span class="o">ainda não</span> dá para afirmar.</h2>
+    <div class="tbl-wrap">
+      <table class="tbl cpt">
+        <thead><tr><th>Estudo</th><th>Quem participou</th><th>O que mostrou</th><th>Como dizer no podcast</th></tr></thead>
+        <tbody>
+          <tr><td><span class="big">SURMOUNT-1</span><br><span class="small">NEJM · 2022</span></td><td data-edit>2.539 adultos com obesidade, sem diabetes</td><td data-edit>Perda média de 15% a 21% do peso em 72 semanas, conforme a dose (placebo: 3%)</td><td class="quote" data-edit>“Nos estudos, a perda de peso foi expressiva, mas varia de pessoa para pessoa.”</td></tr>
+          <tr><td><span class="big">SUMMIT</span><br><span class="small">NEJM · 2024</span></td><td data-edit>731 pessoas com insuficiência cardíaca de fração de ejeção preservada e obesidade</td><td data-edit>Morte cardiovascular ou piora da insuficiência cardíaca: 9,9% contra 15,3% (−38%), puxado pela piora da doença; sintomas melhoraram</td><td class="quote" data-edit>“Em quem tem insuficiência cardíaca e obesidade, reduziu a piora da doença e melhorou a qualidade de vida.”</td></tr>
+          <tr><td><span class="big">SURPASS-CVOT</span><br><span class="small">NEJM · 2025</span></td><td data-edit>13.299 pessoas com diabetes tipo 2 e doença cardiovascular</td><td data-edit>Contra a dulaglutida, que já tinha benefício cardíaco comprovado: infarto, AVC ou morte cardiovascular em 12,2% contra 13,1% (não inferior); mortalidade geral 16% menor</td><td class="quote" data-edit>“Em quem tem diabetes e doença do coração, protegeu tanto quanto um remédio que já tinha esse benefício comprovado.”</td></tr>
+          <tr class="new"><td><span class="big">SURMOUNT-MMO</span><br><span class="small">em andamento</span></td><td data-edit>Adultos com obesidade, sem diabetes, contra placebo</td><td data-edit>Vai responder se reduz infarto, AVC e morte nesse público. Resultado previsto para 2027</td><td class="quote" data-edit>“Para quem tem só obesidade, ainda não dá para dizer que previne infarto. O estudo que responde isso está em andamento.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="g g3" style="margin-top:calc(var(--u)*1.1)">
+      <div class="card"><div class="no">No Brasil</div><p style="margin-top:.45em" data-edit>A Anvisa aprovou a tirzepatida para obesidade em junho de 2025: IMC a partir de 30, ou a partir de 27 com comorbidade. <strong>Venda só com retenção de receita.</strong></p></div>
+      <div class="card"><div class="no">Cuidados para citar</div><p style="margin-top:.45em" data-edit>Efeitos gastrointestinais são os mais comuns. Perda de massa magra pede proteína e musculação. Ao parar, parte do peso tende a voltar.</p></div>
+      <div class="card hl"><div class="no">Evite no ar</div><p style="margin-top:.45em" data-edit>“Protege o coração de todo mundo.” “Emagrece sem esforço.” Doses, comparação de marcas e qualquer sugestão de uso sem receita.</p></div>
+    </div>
+    <p class="small" style="margin-top:1.2vh">Fontes: Jastreboff et al., NEJM 2022 · Packer et al., NEJM 2024 · Nicholls et al., NEJM 2025 · ClinicalTrials.gov NCT05556512 · Anvisa, DOU de 09/06/2025. Consulta em 06/11/2026. Validar com o Dr. Cesar antes de gravar.</p>
+  </div>
+  <div class="foot">Bloco 08 · evidências</div>
+</section>
+
+<!-- 21 · SINAIS DE ALERTA -->
+<section class="slide" id="s-alerta" data-title="! Sinais que não esperam a consulta">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow">! Sinais que não esperam a consulta</div><span class="tag o">Novo · 3 min</span></div>
+    <h2 data-edit>Prevenção vai para a agenda. <span class="o">Estes sinais vão para o pronto-socorro.</span></h2>
+    <div class="fala" style="margin-bottom:calc(var(--u)*1.1)">
+      <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+      <p data-edit>“Doutor, a gente falou muito de prevenção e de consulta marcada. Mas quais sinais não podem esperar a consulta de jeito nenhum?”</p>
+    </div>
+    <div class="split" style="grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:stretch;gap:calc(var(--u)*1.1)">
+      <div class="g g2">
+        <div class="card"><div class="ico" style="background:var(--red-soft);color:var(--red)"><svg><use href="#i-chest"/></svg></div><h4>Dor ou aperto no peito</h4><p data-edit>Que dura mais de alguns minutos ou vai e volta, e pode irradiar para braço, costas, pescoço ou mandíbula.</p></div>
+        <div class="card"><div class="ico" style="background:var(--red-soft);color:var(--red)"><svg><use href="#i-lungs"/></svg></div><h4>Falta de ar repentina</h4><p data-edit>Principalmente se vier com suor frio, náusea ou mal-estar.</p></div>
+        <div class="card"><div class="ico" style="background:var(--red-soft);color:var(--red)"><svg><use href="#i-pulse"/></svg></div><h4>Desmaio ou coração disparado</h4><p data-edit>Palpitação forte com tontura, desmaio ou sensação de que vai desmaiar.</p></div>
+        <div class="card"><div class="ico" style="background:var(--red-soft);color:var(--red)"><svg><use href="#i-brain"/></svg></div><h4>Sinais de AVC: lembre do SAMU</h4><p data-edit><strong>S</strong>orria (a boca entorta?), <strong>A</strong>brace (um braço fraco?), <strong>M</strong>úsica (fala enrolada?), <strong>U</strong>rgente: ligue 192.</p></div>
+      </div>
+      <div class="northstar">
+        <div class="ns-k">Na dúvida</div>
+        <div class="ns-num num" data-edit>192</div>
+        <h3 data-edit>Ligue para o SAMU. <span class="o">Não vá dirigindo.</span></h3>
+        <p data-edit>Em mulheres, idosos e diabéticos, o infarto pode vir sem a dor clássica: cansaço, náusea, dor nas costas.</p>
+      </div>
+    </div>
+    <div class="note"><span class="l">Por que este bloco não tem CTA</span><p data-edit>É utilidade pública: aqui não se fala de agendamento. Confiança primeiro; a conversão vem no bloco 09.</p></div>
+  </div>
+  <div class="foot">Utilidade pública · sinais de alerta</div>
+</section>
+
+<!-- 22 · BLOCO 09 · ATENDIMENTO -->
+<section class="slide soft blks" id="s-b09" data-title="09 · Acompanhamento, ABC e convênios">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">09</span> Atendimento em Santo André e no ABC</div><span class="tag o">Conversão · 4 min</span></div>
+    <h2 data-edit>Como funciona o acompanhamento <span class="o">no consultório</span>?</h2>
+    <div class="blk">
+      <div class="fala">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+        <p data-edit>“Dr. Cesar, temos muitas pessoas acompanhando nosso podcast aqui de Santo André e de toda a região do ABC Paulista.</p>
+        <p data-edit>Para quem mora na região e ainda não tem o hábito de fazer acompanhamento cardiológico, ou para quem já passou por uma avaliação, mas gostaria de uma segunda opinião especializada, como funciona o atendimento com você?</p>
+        <p data-edit>Quais pacientes podem se beneficiar desse acompanhamento? Estamos falando só de quem já tem algum problema cardíaco, ou também de quem quer fazer uma avaliação preventiva? E para quem tem convênio, existe essa possibilidade no seu consultório?”</p>
+      </div>
+      <div>
+        <div class="fala dr">
+          <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+          <ul class="dots">
+            <li data-edit>Apresentar o consultório e a localização em Santo André.</li>
+            <li data-edit>Pacientes de Santo André, São Bernardo, São Caetano e demais cidades do ABC.</li>
+            <li data-edit>Como funciona a consulta e a <strong>avaliação individualizada</strong>.</li>
+            <li data-edit>Convênios: quais operadoras são aceitas e em que condições. Como agendar.</li>
+          </ul>
+          <div class="who" style="margin-top:.9em">Motivos para procurar</div>
+          <div class="chips"><span>Avaliação preventiva</span><span>Hipertensão</span><span>Colesterol e diabetes</span><span>Sintomas e fatores de risco</span><span>Quem treina</span><span>Doença já diagnosticada</span><span class="o">Segunda opinião</span></div>
+        </div>
+        <div class="xq">
+          <div class="who">Para preencher antes de gravar</div>
+          <ul>
+            <li data-edit>Endereço: [preencher]</li>
+            <li data-edit>Convênios aceitos: [confirmar operadoras e planos]</li>
+            <li data-edit>Agendamento: [WhatsApp · telefone · link]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="key"><span class="l">Mensagem-chave</span><p data-edit>“Quero que as pessoas de Santo André e de todo o ABC saibam que podem procurar um cardiologista não apenas quando estão doentes, mas também quando querem preservar a saúde e cuidar do futuro.”</p></div>
+  </div>
+  <div class="foot">Bloco 09 · conversão</div>
+</section>
+
+<!-- 23 · BLOCO 10 · CONVITE FINAL -->
+<section class="slide navy blks" id="s-b10" data-title="10 · Convite final">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow"><span class="n">10</span> Convite final · olhar para a câmera</div><span class="tag o">Agendamento · 3 min</span><button class="btn-full" data-full="t-b10"><svg><use href="#i-doc"/></svg>Ler fala final completa</button></div>
+    <h2 data-edit>“Não espere sentir alguma coisa <span class="o">para cuidar do seu coração</span>.”</h2>
+    <div class="blk">
+      <div class="fala">
+        <div class="who"><svg><use href="#i-mic"/></svg>Host · pergunta</div>
+        <p data-edit>“Dr. Cesar, para encerrarmos, gostaria que você deixasse uma mensagem para quem chegou até aqui.</p>
+        <p data-edit>Talvez seja uma pessoa que já passou dos 50 anos, tem pressão alta, colesterol elevado, diabetes ou histórico familiar de doenças cardíacas. Talvez seja alguém que trabalha muito, cuida de todo mundo e sempre deixa a própria saúde para depois. Ou alguém que está se sentindo bem e acredita que não precisa de um cardiologista porque não tem nenhum sintoma.</p>
+        <p data-edit>Qual seria o seu conselho para essas pessoas? Por que elas deveriam começar a cuidar do coração agora?”</p>
+      </div>
+      <div class="fala dr">
+        <div class="who"><svg><use href="#i-steth"/></svg>Dr. Cesar · direcionamento</div>
+        <ul class="dots">
+          <li data-edit><strong>Ausência de sintomas não é ausência de fatores de risco.</strong></li>
+          <li data-edit>Incentivar a avaliação preventiva.</li>
+          <li data-edit>Falar direto com quem tem mais de 50 anos e com quem tem comorbidades.</li>
+          <li data-edit>Cuidar da saúde também é cuidar da família e da própria qualidade de vida.</li>
+          <li data-edit>Convidar para uma consulta no consultório em Santo André.</li>
+          <li data-edit>Mencionar o atendimento por convênios, conforme as operadoras.</li>
+          <li data-edit>A prevenção começa com <strong>uma conversa e uma avaliação individualizada</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key"><span class="l">★ Última frase</span><p data-edit>“Cuide do seu coração hoje. Ele ainda tem muita história para acompanhar.”</p></div>
+  </div>
+  <template id="t-b10">
+    <div class="who" style="color:var(--orange-ink)">Dr. Cesar · sugestão de fala final</div>
+    <p>“Eu gostaria de deixar uma mensagem muito simples: não espere sentir alguma coisa para cuidar do seu coração.</p>
+    <p>Muitas condições cardiovasculares podem evoluir silenciosamente. E quanto antes identificamos os fatores de risco, maiores são as oportunidades de agir e cuidar da saúde.</p>
+    <p>Se você tem mais de 50 anos, possui pressão alta, diabetes, colesterol elevado ou histórico familiar, não deixe sua saúde para depois. E mesmo que você não tenha nenhum desses fatores, vale conversar com um médico sobre a necessidade de uma avaliação.</p>
+    <p>Atendo aqui em Santo André, recebendo pacientes de toda a região do ABC, inclusive por convênios.</p>
+    <p>Será um prazer ajudar você a cuidar melhor da sua saúde.</p>
+    <p>Porque o objetivo não é apenas viver mais. É viver mais e melhor, com saúde, autonomia e qualidade de vida.</p>
+    <p><strong>Cuide do seu coração hoje. Ele ainda tem muita história para acompanhar.</strong>”</p>
+  </template>
+  <div class="foot">Bloco 10 · convite final</div>
+</section>
+
+<!-- 24 · PÍLULAS DO PÚBLICO -->
+<section class="slide soft" id="s-pilulas" data-title="+ Pílulas do público">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow">+ Pílulas do público</div><span class="tag o">Novo · gravar depois do episódio</span></div>
+    <h2 data-edit>Oito perguntas que o paciente faz no consultório, <span class="o">respondidas em 40 segundos</span>.</h2>
+    <p class="lead" style="margin-bottom:2vh" data-edit>Gravadas em sequência, com o Dr. Cesar olhando para a câmera e enquadramento vertical. Cada uma vira um short. Depois, a caixinha de perguntas dos Stories alimenta a próxima rodada.</p>
+    <div class="g g4">
+      <div class="card"><div class="no">Pílula 01</div><h4 data-edit>Com que idade devo ir ao cardiologista pela primeira vez?</h4><p data-edit>Não existe idade única: depende do histórico e dos fatores de risco. Com 50+, a avaliação não deve ficar para depois.</p></div>
+      <div class="card"><div class="no">Pílula 02</div><h4 data-edit>Meu pai infartou aos 50. Eu tenho mais risco?</h4><p data-edit>Infarto precoce na família (homem antes dos 55, mulher antes dos 65) aumenta o risco e antecipa a avaliação.</p></div>
+      <div class="card"><div class="no">Pílula 03</div><h4 data-edit>Eletro normal quer dizer coração saudável?</h4><p data-edit>Ajuda muito, mas é um retrato do momento. A avaliação completa olha histórico, fatores de risco e, se preciso, outros exames.</p></div>
+      <div class="card"><div class="no">Pílula 04</div><h4 data-edit>Café faz mal para o coração?</h4><p data-edit>Para a maioria, em quantidade moderada, não. Quem tem arritmia ou pressão descontrolada deve conversar com o médico.</p></div>
+      <div class="card"><div class="no">Pílula 05</div><h4 data-edit>Tenho pressão alta. Posso fazer musculação?</h4><p data-edit>Na maioria dos casos, sim: exercício faz parte do tratamento, com a pressão controlada e orientação.</p></div>
+      <div class="card"><div class="no">Pílula 06</div><h4 data-edit>Estresse pode causar infarto?</h4><p data-edit>O estresse crônico piora pressão, sono e hábitos, e pode ser o gatilho em quem já tem risco.</p></div>
+      <div class="card"><div class="no">Pílula 07</div><h4 data-edit>Sou magro. Posso ter colesterol alto?</h4><p data-edit>Pode. A genética pesa muito. Peso não é exame: só o exame de sangue mostra.</p></div>
+      <div class="card hl"><div class="no">Pílula 08</div><h4 data-edit>A pressão normalizou. Posso parar o remédio?</h4><p data-edit>Não por conta própria. Muitas vezes ela normalizou justamente porque o remédio está funcionando.</p></div>
+    </div>
+  </div>
+  <div class="foot">Série de shorts · perguntas do público</div>
+</section>
+
+<!-- 25 · FRASES DE IMPACTO -->
+<section class="slide deep" data-title="Frases de impacto para cortes">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="bh"><div class="eyebrow">★ Frases de impacto</div><span class="tag o">Borda laranja: frase nova</span></div>
+    <h2 data-edit>Frases para <span class="o">cortes, chamadas e capas</span></h2>
+    <div class="g g4" style="margin-top:1vh">
+      <div class="q"><p data-edit>“O melhor momento para cuidar do coração é antes de ele pedir socorro.”</p><small>Abertura · título</small></div>
+      <div class="q"><p data-edit>“Não espere emagrecer para descobrir como está seu coração.”</p><small>Bloco 01 · cold open</small></div>
+      <div class="q"><p data-edit>“Emagrecer pode mudar sua aparência. Cuidar do coração pode mudar a sua história.”</p><small>Bloco 01</small></div>
+      <div class="q"><p data-edit>“A ausência de sintomas não significa ausência de riscos.”</p><small>Bloco 03</small></div>
+      <div class="q"><p data-edit>“Prevenir não é procurar uma doença. É ter a oportunidade de agir antes.”</p><small>Bloco 03</small></div>
+      <div class="q"><p data-edit>“Não queremos apenas que você viva mais. Queremos que você viva melhor.”</p><small>Bloco 04</small></div>
+      <div class="q"><p data-edit>“A partir dos 50 anos, prevenção precisa entrar na agenda.”</p><small>Bloco 04</small></div>
+      <div class="q"><p data-edit>“Treinar é importante, mas conhecer a saúde do próprio coração também é.”</p><small>Bloco 05</small></div>
+      <div class="q new"><p data-edit>“Pressão alta não dói. É por isso que ela é perigosa.”</p><small>Bate-bola · nova</small></div>
+      <div class="q new"><p data-edit>“Tratar a obesidade também é cuidar do coração.”</p><small>Bloco 08 · nova</small></div>
+      <div class="q new"><p data-edit>“Peso não é exame.”</p><small>Pílula 07 · nova</small></div>
+      <div class="q new"><p data-edit>“Remédio que está funcionando não é remédio para parar por conta própria.”</p><small>Pílula 08 · nova</small></div>
+      <div class="q"><p data-edit>“Cuidar da sua saúde também é cuidar da sua família.”</p><small>Bloco 10</small></div>
+      <div class="q"><p data-edit>“Não espere um susto para começar a se cuidar.”</p><small>Bloco 10</small></div>
+      <div class="q"><p data-edit>“Sua saúde não pode ficar para depois.”</p><small>Bloco 10</small></div>
+      <div class="q"><p data-edit>“Cuide do seu coração hoje. Ele ainda tem muita história para acompanhar.”</p><small>Bloco 10 · encerramento</small></div>
+    </div>
+  </div>
+  <div class="foot">16 frases · use com o nome, CRM e RQE na tela</div>
+</section>
+
+<!-- 26 · PLANO DE CORTES -->
+<section class="slide" data-title="Plano de cortes">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="eyebrow">Plano de cortes</div>
+    <h2 data-edit><span class="o">13 cortes</span> prioritários, com o gancho dos 3 primeiros segundos</h2>
+    <div class="tbl-wrap">
+      <table class="tbl cpt">
+        <thead><tr><th>#</th><th>Corte</th><th>Gancho na tela (3 s)</th><th>Origem</th><th>Formato</th></tr></thead>
+        <tbody>
+          <tr><td class="n">01</td><td><span class="big" data-edit>Obesidade não é só estética</span></td><td class="quote" data-edit>“Você está tratando a obesidade só pelo espelho?”</td><td>Bloco 01</td><td>Reels · Shorts</td></tr>
+          <tr><td class="n">02</td><td><span class="big" data-edit>400 mil mortes e o Setembro Vermelho</span></td><td class="quote" data-edit>“Você conhece o Outubro Rosa. E o Setembro Vermelho?”</td><td>Bloco 03</td><td>Reels · carrossel</td></tr>
+          <tr><td class="n">03</td><td><span class="big" data-edit>Passou dos 50?</span></td><td class="quote" data-edit>“Passou dos 50? Isso precisa entrar na sua agenda.”</td><td>Bloco 04</td><td>Reels · Shorts</td></tr>
+          <tr><td class="n">04</td><td><span class="big" data-edit>Atleta também tem doença silenciosa</span></td><td class="quote" data-edit>“Treina todo dia? Seu coração ainda pode esconder algo.”</td><td>Bloco 05</td><td>Reels · Shorts</td></tr>
+          <tr><td class="n">05</td><td><span class="big" data-edit>Os cinco inimigos do coração</span></td><td class="quote" data-edit>“Cinco hábitos que estão cansando o seu coração.”</td><td>Bloco 06</td><td>Reels · carrossel</td></tr>
+          <tr><td class="n">06</td><td><span class="big" data-edit>Os cinco hábitos que protegem</span></td><td class="quote" data-edit>“Cinco atitudes para viver mais e melhor.”</td><td>Bloco 06</td><td>Reels · carrossel</td></tr>
+          <tr><td class="n">07</td><td><span class="big" data-edit>Tirzepatida e o coração</span></td><td class="quote" data-edit>“A caneta emagrecedora também cuida do coração?”</td><td>Bloco 08</td><td>Reels · YouTube</td></tr>
+          <tr><td class="n">08</td><td><span class="big" data-edit>Segunda opinião</span></td><td class="quote" data-edit>“Saiu da consulta com dúvida? Isso é para você.”</td><td>Bloco 07</td><td>Reels</td></tr>
+          <tr><td class="n">09</td><td><span class="big" data-edit>Viver mais x viver melhor</span></td><td class="quote" data-edit>“Não é só viver mais. É viver melhor.”</td><td>Bloco 04</td><td>Reels · Shorts</td></tr>
+          <tr><td class="n">10</td><td><span class="big" data-edit>A trajetória do Dr. Cesar</span></td><td class="quote" data-edit>“18 anos de medicina em um minuto.”</td><td>Bloco 02</td><td>Reels · Google</td></tr>
+          <tr class="new"><td class="n">11</td><td><span class="big" data-edit>Sinais que não esperam</span></td><td class="quote" data-edit>“Sentiu isso? Não marque consulta: ligue 192.”</td><td>Sinais de alerta</td><td>Reels · destaque</td></tr>
+          <tr><td class="n">12</td><td><span class="big" data-edit>Convite para Santo André e o ABC</span></td><td class="quote" data-edit>“Mora no ABC? Este recado é para você.”</td><td>Bloco 10</td><td>Reels · anúncio</td></tr>
+          <tr class="new"><td class="n">13</td><td><span class="big" data-edit>Séries “Mito ou verdade” e “Pílulas”</span></td><td data-edit>16 shorts curtos, publicados em sequência</td><td>Bate-bola · pílulas</td><td>Shorts · Stories</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot">Plano de cortes · ganchos</div>
+</section>
+
+<!-- 27 · DISTRIBUIÇÃO -->
+<section class="slide soft" data-title="Distribuição em 4 semanas">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="eyebrow">Depois da gravação</div>
+    <h2 data-edit>Uma gravação, <span class="o">um mês de conteúdo</span>, e cada conversa medida.</h2>
+    <div class="g g4" style="margin-top:1.2vh">
+      <div class="sprint"><div class="sprint-h"><div class="ph">Semana 1</div><h4>Lançamento</h4></div><div class="sprint-b"><ul>
+        <li data-edit>Episódio completo no <strong>YouTube e no Spotify</strong></li>
+        <li data-edit>Trailer de 30 s com o cold open</li>
+        <li data-edit>Cortes 01 (obesidade) e 10 (trajetória)</li>
+        <li data-edit>Post no Perfil da Empresa no Google</li></ul></div></div>
+      <div class="sprint"><div class="sprint-h"><div class="ph">Semana 2</div><h4>Prevenção</h4></div><div class="sprint-b"><ul>
+        <li data-edit>Cortes 02, 03 e 09</li>
+        <li data-edit>Carrossel “400 mil mortes por ano”</li>
+        <li data-edit>Stories com caixinha de perguntas</li>
+        <li data-edit>Começa a série “Mito ou verdade”</li></ul></div></div>
+      <div class="sprint"><div class="sprint-h"><div class="ph">Semana 3</div><h4>Hábitos e esporte</h4></div><div class="sprint-b"><ul>
+        <li data-edit>Cortes 04, 05, 06 e 11</li>
+        <li data-edit>Carrossel duplo inimigos x hábitos</li>
+        <li data-edit>Sinais de alerta fixado nos destaques</li>
+        <li data-edit>Primeiras pílulas do público</li></ul></div></div>
+      <div class="sprint"><div class="sprint-h"><div class="ph">Semana 4</div><h4>Conversão</h4></div><div class="sprint-b"><ul>
+        <li data-edit>Cortes 07, 08 e 12</li>
+        <li data-edit>Carrossel “o que levar na consulta”</li>
+        <li data-edit>Anúncio regional no ABC com o convite final</li>
+        <li data-edit>Pílulas com as perguntas da caixinha</li></ul></div></div>
+    </div>
+    <div class="note"><span class="l">Como medimos</span><p data-edit>Todo corte leva ao WhatsApp com a mensagem pronta <strong>“Olá, vi o podcast do Dr. Cesar e quero agendar uma avaliação”</strong>. Assim contamos quantas conversas o episódio gerou, no mesmo relatório mensal do Grupo Opera.</p></div>
+  </div>
+  <div class="foot">Distribuição · 4 semanas</div>
+</section>
+
+<!-- 28 · CHECKLIST -->
+<section class="slide" data-title="Checklist antes de gravar e publicar">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="eyebrow">Antes de gravar e de publicar</div>
+    <h2 data-edit>Checklist: <span class="o">validar antes</span>, publicar com segurança.</h2>
+    <div class="g g2" id="checklist">
+      <div class="card">
+        <div class="no">Antes de gravar · com o Dr. Cesar</div>
+        <ul class="chk" style="margin-top:.4em">
+          <li><label><input type="checkbox"><span>Confirmar o tempo de carreira: cerca de 18 anos de medicina e 16 de cardiologia</span></label></li>
+          <li><label><input type="checkbox"><span>Confirmar os nomes oficiais das instituições<small>HCor, Rede D’Or, Hospital Brasil, BP (Beneficência Portuguesa de São Paulo), FMABC, e se é “Rede América” ou “Rede Américas”</small></span></label></li>
+          <li><label><input type="checkbox"><span>Lista dos convênios aceitos: operadoras e planos</span></label></li>
+          <li><label><input type="checkbox"><span>Endereço, telefone, WhatsApp e link de agendamento</span></label></li>
+          <li><label><input type="checkbox"><span>CRM e RQE de cardiologia, para legendas e descrição</span></label></li>
+          <li><label><input type="checkbox"><span>Dr. Cesar revisou a base científica da tirzepatida</span></label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="no">Antes de publicar</div>
+        <ul class="chk" style="margin-top:.4em">
+          <li><label><input type="checkbox" checked><span>Dado de mortalidade validado: 417.550 mortes em 2024 (SBC)<small>Conferido em 06/11/2026</small></span></label></li>
+          <li><label><input type="checkbox"><span>Em toda peça: nome, CRM com a palavra “médico” e especialidade com RQE<small>Resolução CFM nº 2.336/2023</small></span></label></li>
+          <li><label><input type="checkbox"><span>Sem promessa de resultado, e nenhum exame apresentado como obrigatório para todos</span></label></li>
+          <li><label><input type="checkbox"><span>Medicamento citado pelo princípio ativo, em tom educativo<small>Remédio vendido com receita não pode ter propaganda dirigida ao público</small></span></label></li>
+          <li><label><input type="checkbox"><span>Aviso na descrição: “Conteúdo informativo. Não substitui a consulta médica.”</span></label></li>
+          <li><label><input type="checkbox"><span>Nenhum paciente identificado nas histórias, e cortes aprovados pelo Dr. Cesar</span></label></li>
+        </ul>
+      </div>
+    </div>
+    <div class="prog"><div class="bar"><i id="chkbar"></i></div><b id="chkcount">0 de 12</b></div>
+  </div>
+  <div class="foot">As marcações ficam salvas neste navegador</div>
+</section>
+
+<!-- 29 · FECHAMENTO -->
+<section class="slide navy final" data-title="Próximos passos">
+  <div class="chrome"><div class="lock"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div><span class="client">Podcast Dr. Cesar · Roteiro</span></div>
+  <div class="body">
+    <div class="eyebrow">Próximos passos</div>
+    <h1 style="font-size:clamp(28px,calc(var(--u)*4),78px)" data-edit>Pronto para gravar<span class="o">.</span></h1>
+    <div class="g g3" style="margin-top:4vh">
+      <div class="card"><div class="no">Passo 01</div><h4>Validar com o Dr. Cesar</h4><p data-edit>Checklist e base científica, numa conversa de 30 minutos antes da diária de gravação.</p></div>
+      <div class="card"><div class="no">Passo 02</div><h4>Gravar o episódio</h4><p data-edit>Cerca de 60 minutos de conversa e mais 10 minutos de pílulas, já pensando no vertical.</p></div>
+      <div class="card"><div class="no">Passo 03</div><h4>Publicar e medir</h4><p data-edit>Quatro semanas de cortes, com cada conversa no WhatsApp contada no relatório.</p></div>
+    </div>
+    <div class="signoff"><span class="gp">Grupo Opera<span class="d">.</span></span><span class="tagline">Aceleradora de crescimento</span></div>
+  </div>
+  <div class="foot">Roteiro · Novembro/2026</div>
+</section>
+
+</div>
+
+<div class="hint" id="hint">← → navegar · I índice · T cronômetro · F tela cheia · E editar textos</div>
+<div class="nav">
+  <button class="tmr" id="tmr" aria-label="Cronômetro da gravação: clique para iniciar ou pausar, duplo clique para zerar" title="T inicia/pausa · Shift+T zera">⏱ 00:00</button>
+  <button id="prev" aria-label="Slide anterior">←</button>
+  <button class="count" id="count" aria-label="Abrir índice" title="Índice (I)"></button>
+  <button id="next" aria-label="Próximo slide">→</button>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlg-t">
+  <div class="dh"><div><div class="k">Texto completo</div><h3 id="dlg-t">Resposta sugerida</h3></div><button data-close aria-label="Fechar">✕</button></div>
+  <div class="db" id="dlg-b"></div>
+</dialog>
+<dialog id="idxd" aria-labelledby="idx-t">
+  <div class="dh"><div><div class="k">Podcast Dr. Cesar</div><h3 id="idx-t">Índice do roteiro</h3></div><button data-close aria-label="Fechar">✕</button></div>
+  <div class="db"><div class="idx" id="idx"></div></div>
+</dialog>
+
+<script>
+(function(){
+  var track=document.getElementById('track'), slides=track.children, n=slides.length, i=0;
+  var count=document.getElementById('count'), prog=document.getElementById('progress');
+  var prev=document.getElementById('prev'), next=document.getElementById('next');
+  var dlg=document.getElementById('dlg'), idxd=document.getElementById('idxd');
+  try{ var h=parseInt(location.hash.slice(1),10); if(h>=1&&h<=n) i=h-1; }catch(e){}
+  function go(k){ i=Math.max(0,Math.min(n-1,k)); track.style.transform='translateX('+(-i*100)+'vw)';
+    count.textContent=(i+1)+' / '+n; prog.style.width=((i+1)/n*100)+'%';
+    prev.disabled=(i===0); next.disabled=(i===n-1);
+    for(var s=0;s<n;s++){ slides[s].setAttribute('aria-hidden', s===i?'false':'true'); slides[s].inert = (s!==i); }
+    try{ history.replaceState(null,'','#'+(i+1)); }catch(e){} }
+  function goId(id){ var el=document.getElementById(id); if(!el) return; for(var s=0;s<n;s++){ if(slides[s]===el){ go(s); return; } } }
+  next.onclick=function(){go(i+1)}; prev.onclick=function(){go(i-1)};
+
+  // janelas
+  function openDlg(d){ try{ d.showModal(); }catch(e){ d.setAttribute('open',''); } }
+  function closeDlg(d){ try{ d.close(); }catch(e){ d.removeAttribute('open'); } }
+  [dlg,idxd].forEach(function(d){
+    d.addEventListener('click',function(e){ if(e.target===d || e.target.closest('[data-close]')) closeDlg(d); });
+  });
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('[data-full]');
+    if(b){ var t=document.getElementById(b.getAttribute('data-full')); if(!t) return;
+      var sl=b.closest('.slide'); document.getElementById('dlg-t').textContent=sl?sl.getAttribute('data-title'):'Texto completo';
+      var body=document.getElementById('dlg-b'); body.innerHTML=''; body.appendChild(t.content.cloneNode(true)); body.scrollTop=0; openDlg(dlg); return; }
+    var g=e.target.closest('[data-go]');
+    if(g && !document.body.classList.contains('editing')){ closeDlg(idxd); goId(g.getAttribute('data-go')); }
+  });
+  var idx=document.getElementById('idx');
+  for(var s=0;s<n;s++){ (function(s){ var b=document.createElement('button'); b.type='button';
+    b.innerHTML='<b>'+(s+1<10?'0':'')+(s+1)+'</b><span></span>'; b.lastChild.textContent=slides[s].getAttribute('data-title')||('Slide '+(s+1));
+    b.onclick=function(){ closeDlg(idxd); go(s); }; idx.appendChild(b); })(s); }
+  function openIdx(){ var bs=idx.children; for(var k=0;k<bs.length;k++) bs[k].classList.toggle('cur',k===i); openDlg(idxd); if(bs[i]) bs[i].focus(); }
+  count.onclick=openIdx;
+
+  // cronômetro da gravação
+  var tmr=document.getElementById('tmr'), t0=0, acc=0, run=false, tick=null;
+  function fmt(ms){ var t=Math.floor(ms/1000), h=Math.floor(t/3600), m=Math.floor(t%3600/60), sec=t%60;
+    return (h?h+':':'')+(m<10?'0':'')+m+':'+(sec<10?'0':'')+sec; }
+  function paint(){ tmr.textContent='⏱ '+fmt(acc+(run?Date.now()-t0:0)); }
+  function toggleT(){ if(run){ acc+=Date.now()-t0; run=false; clearInterval(tick); } else { t0=Date.now(); run=true; tick=setInterval(paint,500); } tmr.classList.toggle('on',run); paint(); }
+  function resetT(){ acc=0; t0=Date.now(); paint(); }
+  var clickT=null;
+  tmr.addEventListener('click',function(){ if(clickT){ clearTimeout(clickT); clickT=null; resetT(); return; } clickT=setTimeout(function(){ clickT=null; toggleT(); },260); });
+
+  document.addEventListener('keydown',function(e){
+    var a=document.activeElement, typing=a&&(a.isContentEditable||a.tagName==='INPUT'&&a.type!=='checkbox');
+    if(dlg.open||idxd.open) return;
+    if(typing && e.key!=='Escape') return;
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key===' ' && a && (a.tagName==='BUTTON'||a.tagName==='INPUT')) return;
+    if(e.key==='Escape' && a) a.blur();
+    if(['ArrowRight','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(i+1)}
+    else if(e.key==='Enter' && !(a&&a.tagName==='BUTTON')){e.preventDefault();go(i+1)}
+    else if(['ArrowLeft','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(i-1)}
+    else if(e.key==='Home') go(0); else if(e.key==='End') go(n-1);
+    else if(e.key==='i'||e.key==='I'){ e.preventDefault(); openIdx(); }
+    else if(e.key==='T'&&e.shiftKey){ resetT(); }
+    else if(e.key==='t'){ toggleT(); }
+    else if(e.key==='f'||e.key==='F'){ try{ if(!document.fullscreenElement){var p=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen(); p&&p.catch&&p.catch(function(){});} else {var q=document.exitFullscreen(); q&&q.catch&&q.catch(function(){});} }catch(_){} }
+    else if(e.key==='e'||e.key==='E'){ toggleEdit(); }
+  });
+  var tx=null, ty=null;
+  document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX; ty=e.touches[0].clientY},{passive:true});
+  document.addEventListener('touchend',function(e){ if(tx===null)return; var dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty;
+    if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)*1.5 && !dlg.open && !idxd.open) go(i+(dx<0?1:-1)); tx=null; });
+  window.addEventListener('resize',function(){go(i)});
+  window.addEventListener('hashchange',function(){ var h=parseInt(location.hash.slice(1),10); if(h>=1&&h<=n&&h-1!==i) go(h-1); });
+  setTimeout(function(){document.getElementById('hint').style.opacity=0},6000);
+
+  // modo edição + memória local
+  var eds=document.querySelectorAll('[data-edit]'), KEY='podcast-dr-cesar-v1';
+  try{ var saved=JSON.parse(localStorage.getItem(KEY)||'{}'); eds.forEach(function(el,k){ if(saved[k]!=null) el.innerHTML=saved[k]; }); }catch(e){}
+  function save(){ try{ var o={}; eds.forEach(function(el,k){o[k]=el.innerHTML}); localStorage.setItem(KEY,JSON.stringify(o)); }catch(e){} }
+  function toggleEdit(){ var on=document.body.classList.toggle('editing'); eds.forEach(function(el){ el.contentEditable=on?'true':'false'; }); if(!on){ if(document.activeElement) document.activeElement.blur(); save(); } }
+  eds.forEach(function(el){ el.addEventListener('input',save); });
+
+  // checklist salvo no navegador
+  var boxes=document.querySelectorAll('#checklist input[type=checkbox]'), CK='podcast-dr-cesar-chk-v1';
+  try{ var st=JSON.parse(localStorage.getItem(CK)||'null'); if(st) boxes.forEach(function(b,k){ if(st[k]!=null) b.checked=!!st[k]; }); }catch(e){}
+  function paintChk(){ var c=0; boxes.forEach(function(b){ if(b.checked) c++; });
+    document.getElementById('chkcount').textContent=c+' de '+boxes.length; document.getElementById('chkbar').style.width=(c/boxes.length*100)+'%'; }
+  boxes.forEach(function(b){ b.addEventListener('change',function(){ try{ localStorage.setItem(CK,JSON.stringify([].map.call(boxes,function(x){return x.checked?1:0}))); }catch(e){} paintChk(); }); });
+  paintChk(); go(i);
+})();
+</script>
+</body>
+</html>
