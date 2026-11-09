@@ -111,7 +111,7 @@
           "melhor": "up"
         },
         {
-          "rotulo": "Custo por clique",
+          "rotulo": "CPC (todos os cliques)",
           "prev": 1.0531,
           "cur": 1.3174,
           "fmt": "brl",

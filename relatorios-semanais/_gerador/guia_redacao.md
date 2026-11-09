@@ -12,6 +12,7 @@ Exemplos prontos (um por cliente): `dados/2026-11-02_a_08/clientes/*.json`. Siga
 - Todo número citado em texto precisa bater com os dados coletados e com as tabelas do próprio relatório.
 - Custo por conversa = investimento ÷ conversas. Custo por conversão no Google = custo ÷ conversões.
 - `ig:reach` é "Alcance (soma diária)": diga isso no rótulo.
+- O CPC do Meta (`fb_ads:cpc`) é calculado sobre **todos os cliques**, não só os cliques no link: rotule como "CPC (todos os cliques)" para ninguém tentar dividir investimento por cliques no link.
 
 ## Marcação nos textos
 
@@ -53,11 +54,13 @@ Exemplos prontos (um por cliente): `dados/2026-11-02_a_08/clientes/*.json`. Siga
 - **Gráfico** (14 dias): alcance diário do Instagram se houver dados; senão, alcance diário da página do Facebook; senão, investimento diário no Meta Ads (`unidade: "brl"`).
 - **Posts**: os da semana atual, no máximo 4, ordenados por engajamento; marque na `tag` o tipo (REELS, CARROSSEL, IMAGEM) e, se couber, "· MAIS ENGAJAMENTO" / "· MAIS ALCANCE". Use um título curto que descreva o tema (não copie a legenda inteira).
 - **Insights**: o que subiu, o que caiu e o principal ponto de atenção.
-- **Próximos passos**: ações que a agência pode fazer ou propor (ajustar verba, renovar criativos, revisar rastreamento, retomar posts).
+- **Próximos passos**: ações que a agência pode fazer ou propor (ajustar verba, renovar criativos, revisar rastreamento, retomar posts). Escreva para o cliente: nada de linguagem interna (Reportei, API, coleta, integração).
 
 ## Alertas que sempre aparecem
 
 - Conta com investimento ~0 na semana e > 0 na anterior: **anúncios parados** (diga a data da última veiculação, se o diário mostrar).
+- Dias com investimento ~0 **no meio da semana** (série diária do Meta): **pausa parcial**. Diga as datas e trate como causa provável da queda, não como "verba menor" (foi o caso da EGO em 03 e 04/11).
+- Google Ads com 0 conversões nas duas semanas, mesmo com cliques: sugerir conferir a tag e as ações de conversão.
 - Conversões caindo muito mais que cliques: sugerir **revisar o rastreamento de conversões**.
 - Integração que não retornou dados ou está inativa: citar na `fonte` ou num insight.
 - Feriado nacional dentro da semana: citar na `fonte` (ex.: "Semana com feriado de Finados (02/11).").

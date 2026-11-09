@@ -56,7 +56,7 @@
     },
     {
       "valor": "R$ 0,57",
-      "rotulo": "Custo por clique\nesta semana",
+      "rotulo": "CPC no Meta Ads\n(todos os cliques)",
       "cur": 0.5734,
       "prev": 0.3786,
       "melhor": "down"
@@ -111,7 +111,7 @@
           "melhor": "up"
         },
         {
-          "rotulo": "Custo por clique",
+          "rotulo": "CPC (todos os cliques)",
           "prev": 0.3786,
           "cur": 0.5734,
           "fmt": "brl",

@@ -23,7 +23,7 @@ Sempre use `start`/`end` = semana atual e `comparisonStart`/`comparisonEnd` = se
  {"id":"a7","reference_key":"fb_ads:inline_link_clicks","component":"number_v1","metrics":["inline_link_clicks"]},
  {"id":"a8","reference_key":"fb_ads:actions_lead","component":"number_v1","metrics":["actions:lead"]}]
 ```
-a1 investimento (R$) · a2 conversas iniciadas por mensagem · a3 custo por conversa (R$) · a4 CPC (R$) · a5 alcance · a6 impressões · a7 cliques no link · a8 leads.
+a1 investimento (R$) · a2 conversas iniciadas por mensagem · a3 custo por conversa (R$) · a4 CPC sobre **todos os cliques** (R$; não é investimento ÷ a7) · a5 alcance · a6 impressões · a7 cliques no link · a8 leads.
 
 ## facebook_ads — por plataforma (com comparação, opcional)
 

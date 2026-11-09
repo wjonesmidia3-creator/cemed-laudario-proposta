@@ -2,15 +2,15 @@
   "arquivo": "EGO_Odontologia",
   "nome": "EGO Odontologia",
   "titulo": [
-    "Semana de {{verba menor}}.",
+    "{{2 dias}} quase sem anúncios.",
     "Contato segue barato."
   ],
   "lead": "Resumo semanal de **anúncios Meta, Google Ads, Instagram e Facebook** da EGO Odontologia, comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
   "destaque": {
     "num": "35",
     "rotulo": "CONVERSAS",
-    "titulo": "Com {{37% menos investimento}}, a semana gerou 35 conversas a {{R$ 18,10}} cada.",
-    "texto": "O custo por conversa subiu frente à semana anterior (R$ 13,96), mas segue menos da metade do registrado no início de outubro (R$ 37,81)."
+    "titulo": "Com os anúncios {{quase parados em 03 e 04/11}}, a semana gerou 35 conversas a {{R$ 18,10}} cada.",
+    "texto": "O Meta Ads investiu R$ 0,02 em 03/11, nada em 04/11 e voltou em 05/11. O custo por conversa subiu (R$ 13,96 na semana anterior), mas segue menos da metade do início de outubro (R$ 37,81)."
   },
   "faixa": [
     {
@@ -22,15 +22,15 @@
       "legenda": "custo por conversa iniciada (anterior: R$ 13,96)"
     },
     {
-      "valor": "4 {{leads}}",
-      "legenda": "cadastros pelos anúncios, contra 1 na semana anterior"
+      "valor": "{{2 dias}}",
+      "legenda": "com os anúncios do Meta quase parados (03 e 04/11)"
     },
     {
-      "valor": "2 {{posts}}",
-      "legenda": "novos no Instagram; Reels com 14,3% de engajamento"
+      "valor": "4 {{leads}}",
+      "legenda": "registrados pelos anúncios Meta, contra 1 na semana anterior"
     }
   ],
-  "intro_p2": "A semana teve **37% menos verba** no Meta Ads e o volume de conversas acompanhou. O custo por resultado segue baixo para o histórico da conta.",
+  "intro_p2": "O Meta Ads ficou **quase parado em 03 e 04/11** e a semana fechou com **37% menos verba**; as conversas acompanharam.",
   "kpis": [
     {
       "valor": "35",
@@ -104,7 +104,7 @@
           "melhor": "up"
         },
         {
-          "rotulo": "Custo por clique",
+          "rotulo": "CPC (todos os cliques)",
           "prev": 0.4448,
           "cur": 0.5522,
           "fmt": "brl",
@@ -193,7 +193,7 @@
       504
     ]
   },
-  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Página do Facebook). Semana com feriado de Finados (02/11). Alcance do Instagram é a soma do alcance diário.",
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Página do Facebook). Semana com feriado de Finados (02/11). Meta Ads com veiculação quase nula em 03 e 04/11. Alcance do Instagram é a soma do alcance diário.",
   "titulo_p3": "Conteúdo e {{próximos passos}}",
   "intro_p3": "Duas publicações no Instagram na semana. O Reels educativo sobre **tabagismo e implantes** foi o conteúdo com mais interações.",
   "posts": [
@@ -238,9 +238,9 @@
   ],
   "insights": [
     {
-      "tipo": "neu",
-      "titulo": "Conversas acompanharam a verba",
-      "texto": "O investimento caiu **37%** e as conversas caíram **51%**. O volume responde diretamente ao orçamento."
+      "tipo": "ruim",
+      "titulo": "2 dias quase sem anúncios",
+      "texto": "O Meta investiu **R$ 0,02** em 03/11 e nada em 04/11. Nesses dias o alcance do Instagram caiu para cerca de 100 pessoas."
     },
     {
       "tipo": "bom",
@@ -249,19 +249,19 @@
     },
     {
       "tipo": "ruim",
-      "titulo": "Google Ads com pouco volume",
-      "texto": "Apenas **9 cliques** e R$ 41,68 investidos na semana, sem conversões registradas."
+      "titulo": "Google Ads sem conversões",
+      "texto": "**9 cliques** na semana e nenhuma conversão registrada nas duas semanas: vale conferir o rastreamento."
     }
   ],
-  "leitura": "A semana foi mais curta em orçamento e o resultado acompanhou. Como o custo por conversa segue saudável, o principal fator para recuperar volume é a **verba diária**. No conteúdo, vídeos que respondem dúvidas (implante, prótese, hábitos) seguem sendo os que mais engajam.",
+  "leitura": "A queda da semana coincide com os **2 dias quase sem anúncios** (03 e 04/11), quando o alcance também despencou. Como o custo por conversa segue saudável, manter a conta **sempre no ar** é o principal fator para recuperar o volume. No conteúdo, vídeos que respondem dúvidas (implante, prótese, hábitos) seguem sendo os que mais engajam.",
   "proximos": [
     {
-      "titulo": "Retomar o ritmo de verba",
-      "texto": "Voltar ao investimento da semana anterior para recuperar o volume de ~70 conversas por semana."
+      "titulo": "Evitar novas pausas",
+      "texto": "Apurar o que parou a veiculação em 03 e 04/11 (pagamento, limite ou reprovação) e monitorar a conta."
     },
     {
       "titulo": "Revisar o Google Ads",
-      "texto": "Ajustar palavras-chave e orçamento: a campanha teve só 9 cliques na semana."
+      "texto": "Conferir a tag e as ações de conversão e ajustar palavras-chave: 9 cliques e nenhuma conversão."
     },
     {
       "titulo": "Mais vídeos de dúvida",

@@ -11,13 +11,13 @@ Pasta `2026-11-02_a_08/`:
 | CEMED | `CEMED_Semanal_02-08nov2026.pdf` | 82 contatos (+28%), Google Ads com 66 conversões |
 | D'Placido Odonto | `DPlacido_Semanal_02-08nov2026.pdf` | 110 conversas a R$ 6,75 |
 | Dreisson | `Dreisson_Semanal_02-08nov2026.pdf` | 24 conversas (+14%), custo por conversa −13% |
-| EGO Odontologia | `EGO_Odontologia_Semanal_02-08nov2026.pdf` | verba −37%, 35 conversas a R$ 18,10 |
+| EGO Odontologia | `EGO_Odontologia_Semanal_02-08nov2026.pdf` | **Meta quase parado em 03 e 04/11**; 35 conversas a R$ 18,10 |
 | Fiorini Odonto | `Fiorini_Semanal_02-08nov2026.pdf` | Meta +29% de conversas; **Google Ads sem veiculação** |
 | Instituto Sanrire | `Instituto_Sanrire_Semanal_02-08nov2026.pdf` | custo por conversa −19%; Google estável |
 | Luisa Alves Tattoo | `Luisa_Alves_Tattoo_Semanal_02-08nov2026.pdf` | **anúncios pausados desde 31/10** |
 | Trait Odontologia | `Trait_Odontologia_Semanal_02-08nov2026.pdf` | conversas −34%, conversões Google −67% |
 
-Fonte: Reportei, extração em 09/11/2026.
+Fonte: Reportei, extração em 09/11/2026. Os 112 números brutos desta semana foram conferidos de novo, do zero, pelo workflow (validação em 09/11): todos bateram.
 
 ## Como gerar a próxima semana (automático)
 
