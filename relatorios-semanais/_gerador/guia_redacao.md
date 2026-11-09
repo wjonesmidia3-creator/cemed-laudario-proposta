@@ -46,6 +46,33 @@ Exemplos prontos (um por cliente): `dados/2026-11-02_a_08/clientes/*.json`. Siga
 `melhor`: `"up"` quando subir é bom (conversas, alcance, cliques), `"down"` quando cair é bom (custos, CPC), `null` quando é neutro (investimento).
 `destaque: true` nas linhas principais (conversas, custo por conversa, conversões e o que mais mudou): elas ganham cor e selo de variação.
 
+## Mensagem de WhatsApp (campo `whatsapp`)
+
+Resumo curto que vai no grupo do cliente junto com o PDF. Até ~900 caracteres (máximo 1200). Modelos prontos em `dados/2026-11-02_a_08/clientes/*.json`.
+
+```
+*Resumo semanal · Nome do cliente*
+_02 a 08/11 · comparado com 26/10 a 01/11_
+
+📌 Frase principal da semana com 1–2 *destaques* em negrito.
+
+📊 *Números*
+• 3 a 5 linhas: "Métrica: valor (antes valor)"
+
+⚠️ *Atenção*            (só se houver alerta; em semana boa use ✨ *Destaque de conteúdo*)
+• 1 a 2 linhas
+
+➡️ *Próximos passos*
+1. … 2. … 3. …
+
+📎 Relatório completo em PDF anexo.
+```
+
+- Formatação do WhatsApp: `*negrito*`, `_itálico_`; nada de `**` ou `#`.
+- Mesmos números e mesmas regras de percentual do PDF; cada número tem de estar no relatório.
+- Cuidado com o período: um pico ou queda da semana anterior não pode parecer desta semana.
+- Escreva para o dono do negócio: sem siglas soltas (explique CPC como "custo por clique"), sem linguagem interna, sem culpar o cliente.
+
 ## O que escolher
 
 - **Destaque da capa**: o resultado principal da semana (conversas, contatos ou conversões). Se algo grave aconteceu (anúncios parados, conta sem veiculação), o destaque é isso.

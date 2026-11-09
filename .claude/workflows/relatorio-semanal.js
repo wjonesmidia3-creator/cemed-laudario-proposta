@@ -8,7 +8,7 @@ export const meta = {
     { title: 'Conferir', detail: 'segunda leitura independente dos números principais, com desempate' },
     { title: 'Redigir', detail: 'escreve o JSON do cliente e gera o PDF' },
     { title: 'Revisar', detail: 'revisor cético confere cada número e cada frase' },
-    { title: 'Fechar', detail: 'gera todos os PDFs juntos e atualiza o README' },
+    { title: 'Fechar', detail: 'gera todos os PDFs juntos, as mensagens de WhatsApp e atualiza o README' },
   ],
 }
 
@@ -226,6 +226,7 @@ ${dados.divergencias.length ? `Divergências entre leituras, já resolvidas pela
 Se houver feriado nacional entre ${S.inicio} e ${S.fim}, cite na fonte.
 
 Grave ${G}/dados/${S.pasta}/clientes/${c.arquivo}.json com "arquivo": "${c.arquivo}" e "nome": "${c.nome_exibicao}".
+Inclua também o campo "whatsapp": a mensagem curta para o grupo do cliente, no formato da seção "Mensagem de WhatsApp" do guia.
 Depois, dentro de ${G}, rode:
   python3 gerar.py ${S.pasta} ${c.arquivo} --validar
   python3 gerar.py ${S.pasta} ${c.arquivo}
@@ -249,6 +250,7 @@ Confira, um por um:
 4. Afirmações: toda conclusão é sustentada pelos dados? Nada inventado, nada comparando com outros clientes, nenhuma causa afirmada como fato sem evidência (use "indica", "sugere").
 5. Alertas obrigatórios do guia: anúncios parados, conversões caindo muito mais que cliques, integração sem dados ou inativa, feriado na semana.
 6. Português: ortografia, acentos, concordância.
+7. Campo "whatsapp": cada número bate com o relatório e com o período certo (um pico da semana anterior não pode parecer desta semana), formatação do WhatsApp correta (*negrito* fechado, sem ** ou #), sem jargão nem linguagem interna, até ~900 caracteres.
 Corrija direto no arquivo. Depois, dentro de ${G}, rode python3 gerar.py ${S.pasta} ${c.arquivo} (código 0; se ESTOURO, encurte e rode de novo).
 Retorne cada correção feita no formato "campo: antes → depois" e as pendências que precisam de decisão humana.`
 
@@ -325,7 +327,7 @@ const fechamento = await agent(`${RAIZ}
 
 Feche o relatório semanal da pasta ${S.pasta}.
 1. Dentro de ${G}, rode: python3 gerar.py ${S.pasta}
-   Deve sair com código 0 e um PDF por cliente em relatorios-semanais/${S.pasta}/. Se algum cliente der ERRO ou ESTOURO, corrija só o JSON dele (encurtar texto ou tirar linha secundária) e rode de novo.
+   Deve sair com código 0, um PDF por cliente em relatorios-semanais/${S.pasta}/ e a pasta downloads/ atualizada (PDFs, .zip e downloads/mensagens_${S.sufixo}/ com uma mensagem de WhatsApp por cliente; se aparecer "AVISO sem mensagem", escreva o campo whatsapp do cliente indicado e rode de novo). Se algum cliente der ERRO ou ESTOURO, corrija só o JSON dele (encurtar texto ou tirar linha secundária) e rode de novo.
 2. Confira com ls que existem ${prontos.length} PDFs e que nenhum arquivo _tmp_ ficou em ${G}/fonts/.
 3. ${ATUALIZAR_README
     ? `Atualize relatorios-semanais/README.md: acima da seção da semana mais recente, adicione "## Semana ${S.cur_curto}/${S.fim.slice(0, 4)} (comparada com ${S.prev_curto})" no mesmo formato da seção existente (pasta + tabela Cliente | Arquivo | Destaque), usando estas manchetes resumidas:\n${manchetes}`

@@ -4,6 +4,7 @@ Uso (na pasta _gerador):
     python3 gerar.py <pasta>                 # todos os clientes da semana
     python3 gerar.py <pasta> CEMED Fiorini   # só alguns (nome do arquivo JSON, sem .json)
     python3 gerar.py <pasta> --validar       # só confere os JSON, sem gerar PDF
+    python3 gerar.py <pasta> --mensagens     # só exporta as mensagens de WhatsApp para downloads/
 
 Entrada: dados/<pasta>/semana.json e dados/<pasta>/clientes/<arquivo>.json
 Saída:   ../<pasta>/<arquivo>_Semanal_<sufixo>.pdf
@@ -310,6 +311,9 @@ def validar(c, sem):
     for p in c.get("posts") or []:
         exige(re.fullmatch(r"\d{2}/[A-Z]{3}", p.get("data", "")) is not None, f"post '{p.get('titulo')}': data no formato '05/NOV'")
     exige(len(c.get("posts") or []) <= 4, "no máximo 4 posts")
+    if "whatsapp" in c:
+        exige(isinstance(c["whatsapp"], str) and c["whatsapp"].strip(), "whatsapp deve ser um texto")
+        exige(len(c.get("whatsapp") or "") <= 1200, f"whatsapp com {len(c.get('whatsapp') or '')} caracteres (máximo 1200)")
     return erros
 
 
@@ -394,6 +398,9 @@ def main():
     if so_validar:
         print(f"ok {len(clientes)} JSON válido(s)")
         return
+    if "--mensagens" in resto:  # só exporta as mensagens de WhatsApp, sem gerar PDF
+        exportar_mensagens(sem, clientes)
+        return
     saida = os.path.join(AQUI, "..", sem["pasta"])
     os.makedirs(saida, exist_ok=True)
     previa = os.environ.get("PREVIA")  # pasta para salvar PNGs de conferência
@@ -421,7 +428,38 @@ def main():
     # semana completa gerada sem erro -> atualiza a pasta downloads/ (PDFs soltos + .zip com todos)
     if rc == 0 and not so and not sem["pasta"].startswith("_"):
         empacotar(sem, [p[1] for p in pares])
+        exportar_mensagens(sem, clientes)
     sys.exit(rc)
+
+
+def exportar_mensagens(sem, clientes):
+    """downloads/mensagens_<sufixo>/: um .txt por cliente (pronto para o WhatsApp) + um arquivo com todas + .zip."""
+    import zipfile
+    raiz = os.path.abspath(os.path.join(AQUI, "..", ".."))
+    pasta = os.path.join(raiz, "downloads", f"mensagens_{sem['sufixo']}")
+    os.makedirs(pasta, exist_ok=True)
+    for antigo in glob.glob(os.path.join(pasta, "*.txt")):
+        os.remove(antigo)
+    com_msg = [c for c in clientes if c.get("whatsapp")]
+    sem_msg = [c["arquivo"] for c in clientes if not c.get("whatsapp")]
+    arquivos = []
+    for c in com_msg:
+        caminho = os.path.join(pasta, f"{c['arquivo']}.txt")
+        with open(caminho, "w", encoding="utf-8") as fh:
+            fh.write(c["whatsapp"].strip() + "\n")
+        arquivos.append(caminho)
+    todas = os.path.join(pasta, "_TODAS_AS_MENSAGENS.txt")
+    sep = "\n\n" + "=" * 40 + "\n\n"
+    with open(todas, "w", encoding="utf-8") as fh:
+        fh.write(sep.join(f"[{c['nome']}]\n\n{c['whatsapp'].strip()}" for c in com_msg) + "\n")
+    arquivos.append(todas)
+    zip_path = os.path.join(raiz, "downloads", f"Mensagens_WhatsApp_{sem['sufixo']}.zip")
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+        for a in sorted(arquivos):
+            z.write(a, os.path.basename(a))
+    print(f"mensagens: {len(com_msg)} em", os.path.relpath(pasta, raiz) + "/", "e", os.path.relpath(zip_path, raiz))
+    if sem_msg:
+        print("AVISO sem mensagem de WhatsApp:", ", ".join(sem_msg))
 
 
 def empacotar(sem, pdfs):
