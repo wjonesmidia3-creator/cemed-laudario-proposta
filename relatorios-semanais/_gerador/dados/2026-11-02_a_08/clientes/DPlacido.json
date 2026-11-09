@@ -1,0 +1,234 @@
+{
+  "arquivo": "DPlacido",
+  "nome": "D'Placido Odonto",
+  "titulo": [
+    "{{110 conversas}} na semana.",
+    "R$ 6,75 por contato."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta e Instagram** da D'Placido Odonto (@dralucianadeplacido), comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "110",
+    "rotulo": "CONVERSAS",
+    "titulo": "Mais {{conversas}} e {{custo menor}}: 110 contatos a R$ 6,75 cada.",
+    "texto": "Pessoas que chamaram a clínica por mensagem a partir dos anúncios. Na semana anterior foram 103, a R$ 7,10 cada."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{742}}",
+      "legenda": "investidos em Meta Ads (anterior: R$ 731)"
+    },
+    {
+      "valor": "R$ {{6,75}}",
+      "legenda": "custo por conversa, 4,9% menor"
+    },
+    {
+      "valor": "{{+9%}}",
+      "legenda": "alcance no Instagram vs. semana anterior"
+    },
+    {
+      "valor": "{{21,5%}}",
+      "legenda": "engajamento do post de 08/11"
+    }
+  ],
+  "intro_p2": "Com investimento praticamente igual, a semana teve **mais conversas**, custo menor e **crescimento no Instagram**.",
+  "kpis": [
+    {
+      "valor": "110",
+      "ref": "/103",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 110,
+      "prev": 103,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 6,75",
+      "rotulo": "Custo por conversa\nesta semana",
+      "cur": 6.7495,
+      "prev": 7.0967,
+      "melhor": "down"
+    },
+    {
+      "valor": "2.952",
+      "rotulo": "Alcance no Instagram\n(soma diária)",
+      "cur": 2952,
+      "prev": 2707,
+      "melhor": "up"
+    },
+    {
+      "valor": "8.988",
+      "rotulo": "Visualizações no\nInstagram",
+      "cur": 8988,
+      "prev": 8207,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 103,
+          "cur": 110,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 7.0967,
+          "cur": 6.7495,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 730.96,
+          "cur": 742.45,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 18977,
+          "cur": 16120,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 29628,
+          "cur": 25179,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por clique",
+          "prev": 1.0749,
+          "cur": 1.2478,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    },
+    {
+      "titulo": "INSTAGRAM",
+      "linhas": [
+        {
+          "rotulo": "Alcance (soma diária)",
+          "prev": 2707,
+          "cur": 2952,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visualizações",
+          "prev": 8207,
+          "cur": 8988,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visitas ao perfil",
+          "prev": 93,
+          "cur": 82,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Novos seguidores",
+          "prev": 4,
+          "cur": 7,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Alcance diário no Instagram",
+    "sub": "Pessoas alcançadas por dia, de 26/10 a 08/11",
+    "prev": [
+      412,
+      417,
+      74,
+      704,
+      238,
+      116,
+      746
+    ],
+    "cur": [
+      525,
+      273,
+      201,
+      342,
+      461,
+      619,
+      531
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads e Instagram Business). Semana com feriado de Finados (02/11). Alcance do Instagram é a soma do alcance diário.",
+  "titulo_p3": "Conteúdo e {{próximos passos}}",
+  "intro_p3": "Uma publicação no Instagram na semana, com a melhor taxa de engajamento do período.",
+  "posts": [
+    {
+      "data": "08/NOV",
+      "tag": "IMAGEM · MAIS ENGAJAMENTO",
+      "titulo": "“O extraordinário de Deus ainda está por vir”",
+      "metricas": [
+        [
+          "465",
+          "views"
+        ],
+        [
+          "47",
+          "interações"
+        ],
+        [
+          "7",
+          "coment."
+        ],
+        [
+          "21,5%",
+          "eng."
+        ]
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Volume em alta",
+      "texto": "**110 conversas**, 7 a mais que na semana anterior, com investimento praticamente igual."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Custo por conversa menor",
+      "texto": "Caiu de **R$ 7,10 para R$ 6,75**, mesmo com o clique um pouco mais caro (R$ 1,25)."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Instagram crescendo",
+      "texto": "Alcance **+9%**, visualizações +9,5% e 7 novos seguidores na semana."
+    }
+  ],
+  "leitura": "Semana consistente: mais conversas, custo menor e Instagram em crescimento. O post pessoal de 08/11 teve **21,5% de engajamento** e 7 comentários — conteúdo com a voz da Dra. Luciana aproxima o público.",
+  "proximos": [
+    {
+      "titulo": "Manter a verba",
+      "texto": "Sustentar o investimento atual, que entrega conversas a menos de R$ 7."
+    },
+    {
+      "titulo": "Mais conteúdo pessoal",
+      "texto": "Intercalar posts da rotina e da história da Dra. Luciana com conteúdo de tratamentos."
+    },
+    {
+      "titulo": "Postar com mais frequência",
+      "texto": "Foi 1 publicação na semana; mais frequência ajuda a sustentar o alcance orgânico."
+    }
+  ],
+  "nota_p3": "Visualizações e interações dos posts são orgânicas e acumuladas desde a publicação até 08/11."
+}

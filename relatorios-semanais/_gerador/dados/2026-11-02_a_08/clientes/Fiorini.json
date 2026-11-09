@@ -1,0 +1,217 @@
+{
+  "arquivo": "Fiorini",
+  "nome": "Fiorini Odonto",
+  "titulo": [
+    "Meta Ads {{acelerou}}.",
+    "Google Ads ficou parado."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta e Google Ads** da Fiorini Odonto & Estética, comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "75",
+    "rotulo": "CONVERSAS",
+    "titulo": "{{+29% de conversas}} no Meta, com custo por conversa {{17% menor}}.",
+    "texto": "75 pessoas chamaram a clínica por mensagem a partir dos anúncios (anterior: 58). O custo por conversa caiu de R$ 23,77 para R$ 19,82."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{1.487}}",
+      "legenda": "investidos em Meta Ads (anterior: R$ 1.379)"
+    },
+    {
+      "valor": "R$ {{19,82}}",
+      "legenda": "custo por conversa no Meta Ads"
+    },
+    {
+      "valor": "105,8 {{mil}}",
+      "legenda": "impressões dos anúncios Meta, 9% a mais"
+    },
+    {
+      "valor": "R$ {{2,46}}",
+      "legenda": "investidos no Google Ads: campanha sem veiculação"
+    }
+  ],
+  "intro_p2": "O Meta Ads teve **mais conversas e custo menor**. O Google Ads, por outro lado, **praticamente não veiculou** na semana.",
+  "kpis": [
+    {
+      "valor": "75",
+      "ref": "/58",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 75,
+      "prev": 58,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 19,82",
+      "rotulo": "Custo por conversa\nno Meta Ads",
+      "cur": 19.8239,
+      "prev": 23.7698,
+      "melhor": "down"
+    },
+    {
+      "valor": "R$ 0,97",
+      "rotulo": "Custo por clique\nno Meta Ads",
+      "cur": 0.968,
+      "prev": 1.089,
+      "melhor": "down"
+    },
+    {
+      "valor": "3",
+      "ref": "/699",
+      "rotulo": "Cliques no Google Ads\nesta semana / anterior",
+      "cur": 3,
+      "prev": 699,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 58,
+          "cur": 75,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 23.7698,
+          "cur": 19.8239,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 1378.65,
+          "cur": 1486.79,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 32924,
+          "cur": 34148,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 96974,
+          "cur": 105796,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 505,
+          "cur": 505,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por clique",
+          "prev": 1.089,
+          "cur": 0.968,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 425.64,
+          "cur": 2.46,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 699,
+          "cur": 3,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 10988,
+          "cur": 44,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Conversões (todas as ações)",
+          "prev": 3,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Investimento diário em Meta Ads",
+    "sub": "Valor investido por dia, de 26/10 a 08/11",
+    "unidade": "brl",
+    "prev": [
+      229.92,
+      264.23,
+      242.47,
+      209.6,
+      146.77,
+      137.99,
+      147.67
+    ],
+    "cur": [
+      236.41,
+      272.85,
+      258.71,
+      236.33,
+      189.95,
+      151.97,
+      140.57
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads e Google Ads). Semana com feriado de Finados (02/11). A página do Facebook está com a integração inativa no Reportei.",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "Melhor semana do Meta Ads no comparativo, e um alerta importante no Google Ads.",
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Meta mais eficiente",
+      "texto": "Conversas **+29%**, CPC **−11%** e alcance +4%, com 8% a mais de investimento."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Google Ads sem veiculação",
+      "texto": "Só **R$ 2,46** investidos e 3 cliques na semana, contra 699 cliques na anterior."
+    },
+    {
+      "tipo": "neu",
+      "titulo": "Verba concentrada no início da semana",
+      "texto": "Nas duas semanas, o investimento diário no Meta cai de **sexta a domingo**."
+    }
+  ],
+  "leitura": "O Meta Ads entregou mais conversas com custo menor. Em compensação, o **Google Ads ficou praticamente sem veiculação** — vale checar pagamento, orçamento ou status da campanha para não perder quem procura a clínica no Google.",
+  "proximos": [
+    {
+      "titulo": "Reativar o Google Ads",
+      "texto": "Verificar forma de pagamento, orçamento e status da campanha e retomar a veiculação."
+    },
+    {
+      "titulo": "Manter o ritmo no Meta",
+      "texto": "Sustentar a verba atual, que entrega conversas abaixo de R$ 20."
+    },
+    {
+      "titulo": "Acompanhar agendamentos",
+      "texto": "Cruzar as 75 conversas com os agendamentos da semana para medir a conversão."
+    }
+  ]
+}

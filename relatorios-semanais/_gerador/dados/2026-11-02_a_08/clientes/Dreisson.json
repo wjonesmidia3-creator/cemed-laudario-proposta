@@ -1,0 +1,217 @@
+{
+  "arquivo": "Dreisson",
+  "nome": "Dreisson",
+  "titulo": [
+    "Mesma verba, {{mais conversas}}.",
+    "Custo por conversa caiu 13%."
+  ],
+  "lead": "Resumo semanal dos **anúncios Meta** do Dreisson (Vivo Imóveis), comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "24",
+    "rotulo": "CONVERSAS",
+    "titulo": "{{24 conversas}} iniciadas pelos anúncios, 3 a mais que na semana anterior, com o {{mesmo investimento}}.",
+    "texto": "Pessoas que chamaram por mensagem (WhatsApp, Direct ou Messenger) a partir dos anúncios. O custo por conversa caiu de R$ 23,15 para R$ 20,12."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{483}}",
+      "legenda": "investidos na semana (anterior: R$ 486)"
+    },
+    {
+      "valor": "R$ {{20,12}}",
+      "legenda": "custo por conversa, 13% menor"
+    },
+    {
+      "valor": "{{474}}",
+      "legenda": "cliques no link dos anúncios (anterior: 520)"
+    },
+    {
+      "valor": "9,1 {{mil}}",
+      "legenda": "pessoas alcançadas pelos anúncios"
+    }
+  ],
+  "intro_p2": "Investimento praticamente igual ao da semana anterior, com **mais conversas** e **custo menor** por contato.",
+  "kpis": [
+    {
+      "valor": "24",
+      "ref": "/21",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 24,
+      "prev": 21,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 20,12",
+      "rotulo": "Custo por conversa\nesta semana",
+      "cur": 20.1183,
+      "prev": 23.1476,
+      "melhor": "down"
+    },
+    {
+      "valor": "R$ 483",
+      "rotulo": "Investimento em\nMeta Ads",
+      "cur": 482.84,
+      "prev": 486.1,
+      "melhor": null
+    },
+    {
+      "valor": "R$ 0,57",
+      "rotulo": "Custo por clique\nesta semana",
+      "cur": 0.5734,
+      "prev": 0.3786,
+      "melhor": "down"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 21,
+          "cur": 24,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 23.1476,
+          "cur": 20.1183,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 486.1,
+          "cur": 482.84,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 12799,
+          "cur": 9120,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 25739,
+          "cur": 19243,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 520,
+          "cur": 474,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por clique",
+          "prev": 0.3786,
+          "cur": 0.5734,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    },
+    {
+      "titulo": "META ADS · POR PLATAFORMA",
+      "linhas": [
+        {
+          "rotulo": "Conversas no Facebook",
+          "prev": 12,
+          "cur": 13,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por conversa no Facebook",
+          "prev": 17.0017,
+          "cur": 15.2154,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Conversas no Instagram",
+          "prev": 9,
+          "cur": 11,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por conversa no Instagram",
+          "prev": 31.3422,
+          "cur": 25.9127,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Investimento diário em Meta Ads",
+    "sub": "Valor investido por dia, de 26/10 a 08/11",
+    "unidade": "brl",
+    "prev": [
+      75.49,
+      84.78,
+      72.07,
+      58.91,
+      55.39,
+      58.55,
+      80.91
+    ],
+    "cur": [
+      92.57,
+      82.05,
+      73.88,
+      61.94,
+      52.65,
+      45.52,
+      74.23
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads). Semana com feriado de Finados (02/11). ",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "A campanha ficou mais eficiente em gerar conversas, mesmo alcançando menos pessoas.",
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Mais conversas pelo mesmo valor",
+      "texto": "**+14%** de conversas com investimento estável (R$ 483) e custo por conversa 13% menor."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Facebook converte mais barato",
+      "texto": "No Facebook a conversa custou **R$ 15,22**; no Instagram, R$ 25,91. Os dois ficaram mais baratos que na semana anterior."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Clique mais caro",
+      "texto": "O CPC subiu de **R$ 0,38 para R$ 0,57**, sem impacto no custo por conversa até aqui."
+    }
+  ],
+  "leitura": "O público impactado na semana **converteu melhor**: alcance 29% menor e, ainda assim, mais conversas. O ponto de atenção é o custo por clique, que subiu 51% e pode pressionar o custo por conversa nas próximas semanas.",
+  "proximos": [
+    {
+      "titulo": "Qualificar as conversas",
+      "texto": "Acompanhar quantas das 24 conversas viraram visita ou proposta de imóvel."
+    },
+    {
+      "titulo": "Renovar criativos",
+      "texto": "Testar novos imóveis e peças para reduzir o CPC e ampliar o alcance."
+    },
+    {
+      "titulo": "Testar mais verba no Facebook",
+      "texto": "Deslocar parte do orçamento para o Facebook, onde a conversa custou ~40% menos."
+    }
+  ]
+}

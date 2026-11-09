@@ -1,2 +1,4 @@
 __pycache__/
 relatorios-semanais/_gerador/fonts/_tmp_*
+relatorios-semanais/_validacao*/
+relatorios-semanais/_gerador/dados/_validacao*/

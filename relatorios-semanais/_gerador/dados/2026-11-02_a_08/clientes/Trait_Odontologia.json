@@ -1,0 +1,301 @@
+{
+  "arquivo": "Trait_Odontologia",
+  "nome": "Trait Odontologia",
+  "titulo": [
+    "Semana mais {{fraca}} em contatos.",
+    "Hora de ajustar campanhas."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta, Google Ads, Instagram e Google Meu Negócio** da Trait Odontologia, comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "23",
+    "rotulo": "CONVERSAS",
+    "titulo": "Conversas pelo Meta caíram para {{23}} e o custo por conversa subiu para {{R$ 33,76}}.",
+    "texto": "Na semana anterior foram 35 conversas a R$ 23,76 cada. No Google Ads, as conversões caíram de 182 para 60. Semana com feriado de Finados (02/11)."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{1.122}}",
+      "legenda": "investidos em Meta + Google (anterior: R$ 1.217)"
+    },
+    {
+      "valor": "55,7 {{mil}}",
+      "legenda": "alcance do Instagram na semana (soma diária)"
+    },
+    {
+      "valor": "53,1 {{mil}}",
+      "legenda": "pico de alcance diário no Instagram, em 01/11"
+    },
+    {
+      "valor": "4 {{posts}}",
+      "legenda": "publicados no Instagram na semana"
+    }
+  ],
+  "intro_p2": "Investimento **8% menor** e queda de contatos nos dois canais pagos, em semana com feriado.",
+  "kpis": [
+    {
+      "valor": "23",
+      "ref": "/35",
+      "rotulo": "Conversas iniciadas\nno Meta Ads",
+      "cur": 23,
+      "prev": 35,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 33,76",
+      "rotulo": "Custo por conversa\nno Meta Ads",
+      "cur": 33.7591,
+      "prev": 23.7577,
+      "melhor": "down"
+    },
+    {
+      "valor": "60",
+      "ref": "/182",
+      "rotulo": "Conversões no\nGoogle Ads",
+      "cur": 60,
+      "prev": 182,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 0,50",
+      "rotulo": "Custo por clique\nno Google Ads",
+      "cur": 0.5038,
+      "prev": 0.5187,
+      "melhor": "down"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 35,
+          "cur": 23,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 23.7577,
+          "cur": 33.7591,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 831.52,
+          "cur": 776.46,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 21570,
+          "cur": 18785,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por clique",
+          "prev": 1.4955,
+          "cur": 2.022,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversões (todas as ações)",
+          "prev": 182,
+          "cur": 60,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 385.4,
+          "cur": 345.13,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 743,
+          "cur": 685,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "INSTAGRAM · GOOGLE MEU NEGÓCIO",
+      "linhas": [
+        {
+          "rotulo": "Alcance Instagram (soma diária)",
+          "prev": 89225,
+          "cur": 55712,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Visualizações Instagram",
+          "prev": 179037,
+          "cur": 90458,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Visualizações no Google",
+          "prev": 156,
+          "cur": 59,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "denso": true,
+  "grafico": {
+    "titulo": "Alcance diário no Instagram",
+    "sub": "Pessoas alcançadas por dia, de 26/10 a 08/11",
+    "prev": [
+      3549,
+      3515,
+      1789,
+      4382,
+      5897,
+      16982,
+      53111
+    ],
+    "cur": [
+      19704,
+      9697,
+      14515,
+      5842,
+      2497,
+      1890,
+      1567
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Google Meu Negócio). Semana com feriado de Finados (02/11). Alcance do Instagram é a soma do alcance diário.",
+  "titulo_p3": "Conteúdo e {{próximos passos}}",
+  "intro_p3": "Quatro publicações no Instagram na semana. O carrossel sobre **facetas em resina** teve o melhor engajamento.",
+  "posts": [
+    {
+      "data": "05/NOV",
+      "tag": "CARROSSEL · MAIS ENGAJAMENTO",
+      "titulo": "3 motivos para conhecer as facetas em resina",
+      "metricas": [
+        [
+          "279",
+          "views"
+        ],
+        [
+          "12",
+          "interações"
+        ],
+        [
+          "10,7%",
+          "eng."
+        ]
+      ]
+    },
+    {
+      "data": "06/NOV",
+      "tag": "REELS · MAIS ALCANCE",
+      "titulo": "Sorriso, autoestima e confiança",
+      "metricas": [
+        [
+          "297",
+          "views"
+        ],
+        [
+          "9",
+          "interações"
+        ],
+        [
+          "4,5%",
+          "eng."
+        ]
+      ]
+    },
+    {
+      "data": "03/NOV",
+      "tag": "REELS",
+      "titulo": "Sorrir sem receio",
+      "metricas": [
+        [
+          "215",
+          "views"
+        ],
+        [
+          "2",
+          "interações"
+        ],
+        [
+          "1,3%",
+          "eng."
+        ]
+      ]
+    },
+    {
+      "data": "04/NOV",
+      "tag": "REELS · IMPLANTES",
+      "titulo": "Como funciona um implante dentário",
+      "metricas": [
+        [
+          "213",
+          "views"
+        ],
+        [
+          "2",
+          "interações"
+        ],
+        [
+          "1,4%",
+          "eng."
+        ]
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "tipo": "ruim",
+      "titulo": "Conversas mais caras",
+      "texto": "Custo por conversa **+42%** (R$ 33,76) e CPC +35%: sinal de desgaste dos anúncios."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Conversões do Google em queda",
+      "texto": "**60 conversões** contra 182, com cliques e investimento quase estáveis. Vale revisar o rastreamento."
+    },
+    {
+      "tipo": "neu",
+      "titulo": "Pico no Instagram",
+      "texto": "Alcance chegou a **53 mil** em 01/11 e foi caindo ao longo da semana. 1 nova avaliação 5,0 no Google."
+    }
+  ],
+  "leitura": "Semana abaixo da anterior nos dois canais pagos, com feriado no início. No Meta, o clique ficou mais caro e as conversas caíram; no Google, a queda de conversões foi bem maior que a de cliques, o que pede checagem. No conteúdo, **carrossel educativo** engajou bem mais que os Reels.",
+  "proximos": [
+    {
+      "titulo": "Renovar criativos no Meta",
+      "texto": "Novas peças e públicos para trazer o custo por conversa de volta para perto de R$ 24."
+    },
+    {
+      "titulo": "Checar conversões no Google",
+      "texto": "Revisar ações de conversão e campanha para entender a queda de 182 para 60."
+    },
+    {
+      "titulo": "Mais carrosséis educativos",
+      "texto": "O formato teve 10,7% de engajamento, bem acima dos Reels da semana (1% a 4,5%)."
+    }
+  ],
+  "nota_p3": "Visualizações e interações dos posts são orgânicas e acumuladas desde a publicação até 08/11."
+}

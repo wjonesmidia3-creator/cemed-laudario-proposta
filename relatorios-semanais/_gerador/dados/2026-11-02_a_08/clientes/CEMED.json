@@ -1,0 +1,232 @@
+{
+  "arquivo": "CEMED",
+  "nome": "CEMED",
+  "titulo": [
+    "{{Mais resultados}}, custo menor.",
+    "Google Ads puxou a semana."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta e Google Ads** do CEMED – Centro de Especialidades Médicas de Mirassol, comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "82",
+    "rotulo": "CONTATOS",
+    "titulo": "{{66 conversões}} no Google Ads e {{16 conversas}} pelo Meta: 28% a mais que na semana anterior (64).",
+    "texto": "Contatos somam as conversões registradas no Google Ads (todas as ações) e as conversas iniciadas por mensagem a partir dos anúncios Meta."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{1.191}}",
+      "legenda": "investidos na semana em Meta + Google (anterior: R$ 1.151)"
+    },
+    {
+      "valor": "R$ {{14,53}}",
+      "legenda": "custo médio por contato (anterior: R$ 17,98)"
+    },
+    {
+      "valor": "{{+35%}}",
+      "legenda": "conversões no Google Ads vs. semana anterior"
+    },
+    {
+      "valor": "R$ {{21,33}}",
+      "legenda": "custo por conversa no Meta, 10% menor"
+    }
+  ],
+  "intro_p2": "Com investimento total **3,5% maior**, a semana trouxe 28% mais contatos. O destaque foi o Google Ads, com mais conversões e custo menor por resultado.",
+  "kpis": [
+    {
+      "valor": "82",
+      "ref": "/64",
+      "rotulo": "Contatos na semana\nesta semana / anterior",
+      "cur": 82,
+      "prev": 64,
+      "melhor": "up"
+    },
+    {
+      "valor": "66",
+      "rotulo": "Conversões no\nGoogle Ads",
+      "cur": 66,
+      "prev": 49,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 12,88",
+      "rotulo": "Custo por conversão\nno Google Ads",
+      "cur": 12.8772,
+      "prev": 16.2655,
+      "melhor": "down"
+    },
+    {
+      "valor": "R$ 21,33",
+      "rotulo": "Custo por conversa\nno Meta Ads",
+      "cur": 21.3256,
+      "prev": 23.59,
+      "melhor": "down"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 15,
+          "cur": 16,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 23.59,
+          "cur": 21.3256,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 353.85,
+          "cur": 341.21,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 10375,
+          "cur": 9171,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 35619,
+          "cur": 28528,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 203,
+          "cur": 137,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por clique",
+          "prev": 1.0531,
+          "cur": 1.3174,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversões (todas as ações)",
+          "prev": 49,
+          "cur": 66,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversão",
+          "prev": 16.2655,
+          "cur": 12.8772,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 797.01,
+          "cur": 849.9,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 205,
+          "cur": 229,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 1795,
+          "cur": 2758,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "CPC médio",
+          "prev": 3.8879,
+          "cur": 3.7113,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Investimento diário em Meta Ads",
+    "sub": "Valor investido por dia, de 26/10 a 08/11",
+    "unidade": "brl",
+    "prev": [
+      50.31,
+      84.64,
+      51.95,
+      43.75,
+      40.15,
+      40.72,
+      42.33
+    ],
+    "cur": [
+      26.02,
+      82.17,
+      80.82,
+      46.32,
+      35.8,
+      35.12,
+      34.96
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads e Google Ads). Semana com feriado de Finados (02/11). Custo por conversão do Google = investimento ÷ conversões (todas as ações).",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "Os dois canais pagos ficaram mais eficientes na semana, com destaque para o **Google Ads**.",
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Google Ads em alta",
+      "texto": "Impressões **+54%** e cliques **+12%**, com 66 conversões (anterior: 49) e custo por conversão 21% menor."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Meta estável e mais barato",
+      "texto": "16 conversas com investimento parecido; custo por conversa caiu de **R$ 23,59 para R$ 21,33**."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Clique mais caro no Meta",
+      "texto": "O CPC subiu **25%** (R$ 1,32) e os cliques no link caíram 33%. Sinal de desgaste dos criativos."
+    }
+  ],
+  "leitura": "O **Google Ads** foi o canal mais eficiente da semana: mais conversões com custo menor por resultado. No Meta, as conversas se mantiveram mesmo com menos alcance, mas o clique ficou mais caro, o que indica necessidade de renovar as peças.",
+  "proximos": [
+    {
+      "titulo": "Reforçar o Google Ads",
+      "texto": "Avaliar aumento de verba nas campanhas com melhor custo por conversão."
+    },
+    {
+      "titulo": "Novos criativos no Meta",
+      "texto": "Testar novas peças e chamadas para baixar o CPC e recuperar cliques."
+    },
+    {
+      "titulo": "Medir agendamentos",
+      "texto": "Cruzar os 82 contatos com os agendamentos da semana para medir a conversão real."
+    }
+  ]
+}

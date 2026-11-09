@@ -1,17 +1,26 @@
 """Gera os relatórios semanais (padrão Grupo Opera) em PDF, um por cliente.
 
-Uso:
-    python3 gerar.py semana_2026_11_02 [arquivo ...]
+Uso (na pasta _gerador):
+    python3 gerar.py <pasta>                 # todos os clientes da semana
+    python3 gerar.py <pasta> CEMED Fiorini   # só alguns (nome do arquivo JSON, sem .json)
+    python3 gerar.py <pasta> --validar       # só confere os JSON, sem gerar PDF
 
-O argumento é o nome de um módulo nesta pasta que define:
-    SEMANA  -> dict com rótulos dos períodos e pasta de saída
-    CLIENTES -> lista de dicts com os dados e textos de cada cliente
+Entrada: dados/<pasta>/semana.json e dados/<pasta>/clientes/<arquivo>.json
+Saída:   ../<pasta>/<arquivo>_Semanal_<sufixo>.pdf
+
+Marcação aceita nos textos dos JSON:
+    {{texto}}  -> destaque laranja (no titulo_p3 vira o trecho laranja do título)
+    **texto**  -> negrito
+    quebra de linha (\n) nos rótulos dos KPIs -> <br>
+
+Código de saída: 0 ok · 2 JSON inválido · 3 conteúdo encostando no rodapé (encurtar textos/linhas)
 """
+import glob
 import html
-import importlib
 import json
 import math
 import os
+import re
 import subprocess
 import sys
 
@@ -252,49 +261,164 @@ def pagina_leitura(c, sem, n):
 </section>"""
 
 
+# ---------------------------------------------------------------- JSON -> estrutura de render
+def md(s, em=False):
+    """Escapa HTML e converte {{destaque}} e **negrito**."""
+    s = html.escape(str(s), quote=False)
+    s = re.sub(r"\{\{(.+?)\}\}", (r"<em>\1</em>" if em else r'<span class="hl">\1</span>'), s)
+    s = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
+    return s.replace("\n", "<br>")
+
+
+def validar(c, sem):
+    erros = []
+
+    def exige(cond, msg):
+        if not cond:
+            erros.append(msg)
+
+    for k in ("arquivo", "nome", "titulo", "lead", "destaque", "faixa", "intro_p2", "kpis", "grupos",
+              "grafico", "fonte", "titulo_p3", "intro_p3", "insights", "leitura", "proximos"):
+        exige(k in c, f"falta o campo '{k}'")
+    if erros:
+        return erros
+    exige(isinstance(c["titulo"], list) and len(c["titulo"]) == 2, "titulo deve ter 2 linhas")
+    for k in ("num", "rotulo", "titulo", "texto"):
+        exige(k in c["destaque"], f"destaque sem '{k}'")
+    exige(len(c["faixa"]) == 4, "faixa deve ter 4 itens")
+    exige(len(c["kpis"]) == 4, "kpis deve ter 4 itens")
+    for i, k in enumerate(c["kpis"]):
+        for campo in ("valor", "rotulo", "cur", "prev", "melhor"):
+            exige(campo in k, f"kpis[{i}] sem '{campo}'")
+        exige(k.get("melhor") in ("up", "down", None), f"kpis[{i}].melhor deve ser 'up', 'down' ou null")
+    for g in c["grupos"]:
+        exige(g.get("linhas"), f"grupo '{g.get('titulo')}' sem linhas")
+        for l in g.get("linhas", []):
+            exige(l.get("fmt") in FMT, f"linha '{l.get('rotulo')}': fmt deve ser um de {sorted(FMT)}")
+            exige(l.get("melhor") in ("up", "down", None), f"linha '{l.get('rotulo')}': melhor inválido")
+            for campo in ("prev", "cur"):
+                v = l.get(campo)
+                exige(v is None or isinstance(v, (int, float)), f"linha '{l.get('rotulo')}': {campo} deve ser número ou null")
+    ch = c["grafico"]
+    exige(len(ch.get("prev", [])) == 7 and len(ch.get("cur", [])) == 7, "grafico.prev e grafico.cur devem ter 7 valores cada")
+    exige(all(isinstance(v, (int, float)) for v in ch.get("prev", []) + ch.get("cur", [])), "grafico: valores devem ser números")
+    exige(any(v > 0 for v in ch.get("prev", []) + ch.get("cur", [])), "grafico: todos os valores são zero")
+    exige(2 <= len(c["insights"]) <= 4, "insights deve ter de 2 a 4 itens")
+    for i in c["insights"]:
+        exige(i.get("tipo") in ("bom", "ruim", "neu"), f"insight '{i.get('titulo')}': tipo deve ser bom, ruim ou neu")
+    exige(len(c["proximos"]) == 3, "proximos deve ter 3 itens")
+    for p in c.get("posts") or []:
+        exige(re.fullmatch(r"\d{2}/[A-Z]{3}", p.get("data", "")) is not None, f"post '{p.get('titulo')}': data no formato '05/NOV'")
+    exige(len(c.get("posts") or []) <= 4, "no máximo 4 posts")
+    return erros
+
+
+def normalizar(c):
+    """Converte o JSON (marcação simples) para a estrutura usada pelas funções de render."""
+    r = dict(c)
+    r["nome"] = c["nome"]
+    r["titulo"] = [md(t) for t in c["titulo"]]
+    r["lead"] = md(c["lead"])
+    r["destaque"] = {k: md(v) for k, v in c["destaque"].items()}
+    r["faixa"] = [(md(f["valor"]), md(f["legenda"])) for f in c["faixa"]]
+    r["intro_p2"] = md(c["intro_p2"])
+    r["kpis"] = [{"valor": md(k["valor"]) + (f"<small>{md(k['ref'])}</small>" if k.get("ref") else ""),
+                  "rotulo": md(k["rotulo"]),
+                  "delta": delta_linha(k["cur"], k["prev"], k["melhor"])} for k in c["kpis"]]
+    r["grupos"] = [{"titulo": md(g["titulo"]),
+                    "linhas": [(md(l["rotulo"]), l["prev"], l["cur"], l["fmt"], l["melhor"], bool(l.get("destaque")))
+                               for l in g["linhas"]]} for g in c["grupos"]]
+    r["grafico"] = dict(c["grafico"], titulo=md(c["grafico"]["titulo"]), sub=md(c["grafico"]["sub"]))
+    r["fonte"] = md(c["fonte"])
+    r["titulo_p3"] = md(c["titulo_p3"], em=True)
+    r["intro_p3"] = md(c["intro_p3"])
+    if c.get("posts"):
+        r["posts"] = [{"data": p["data"], "tag": md(p["tag"]), "titulo": md(p["titulo"]),
+                       "metricas": [(md(v), md(l)) for v, l in p["metricas"]]} for p in c["posts"]]
+    r["insights"] = [(i["tipo"], md(i["titulo"]), md(i["texto"])) for i in c["insights"]]
+    r["leitura"] = md(c["leitura"])
+    r["proximos"] = [(md(p["titulo"]), md(p["texto"])) for p in c["proximos"]]
+    if c.get("nota_p3"):
+        r["nota_p3"] = md(c["nota_p3"])
+    return r
+
+
 def documento(c, sem):
     css = open(os.path.join(AQUI, "estilo.css"), encoding="utf-8").read()
     fontes = open(os.path.join(AQUI, "fonts", "local.css"), encoding="utf-8").read()
     # tabela longa (linhas + títulos de grupo > LIMITE) -> gráfico vai para a página 3
-    if "grafico_p3" not in c:
+    if c.get("grafico_p3") is None:
         unidades = sum(len(g["linhas"]) + 1 for g in c["grupos"])
         # sem posts, a página 3 tem espaço: o gráfico vai para lá (exceto tabelas curtas)
         c["grafico_p3"] = unidades > LIMITE_TABELA_COM_GRAFICO or (not c.get("posts") and unidades > 9)
-    corpo =pagina_capa(c, sem) + pagina_numeros(c, sem, 2) + pagina_leitura(c, sem, 3)
+    corpo = pagina_capa(c, sem) + pagina_numeros(c, sem, 2) + pagina_leitura(c, sem, 3)
     return f"""<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <title>Relatório semanal · {html.escape(c['nome'])}</title>
 <style>{fontes}</style><style>{css}</style></head><body>{corpo}</body></html>"""
 
 
 def main():
-    mod = importlib.import_module(sys.argv[1] if len(sys.argv) > 1 else "semana_2026_11_02")
-    sem, clientes = mod.SEMANA, mod.CLIENTES
+    args = sys.argv[1:]
+    if not args:
+        sys.exit(__doc__)
+    pasta, resto = args[0], args[1:]
+    so_validar = "--validar" in resto
+    so = {a for a in resto if not a.startswith("--")}
+    base = os.path.join(AQUI, "dados", pasta)
+    sem = json.load(open(os.path.join(base, "semana.json"), encoding="utf-8"))
+    arquivos = sorted(glob.glob(os.path.join(base, "clientes", "*.json")))
+    clientes = []
+    falhou = False
+    for a in arquivos:
+        nome = os.path.basename(a)[:-5]
+        if so and nome not in so:
+            continue
+        try:
+            c = json.load(open(a, encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            print(f"ERRO {nome}: JSON inválido ({e})")
+            falhou = True
+            continue
+        erros = validar(c, sem)
+        if erros:
+            falhou = True
+            for e in erros:
+                print(f"ERRO {nome}: {e}")
+            continue
+        clientes.append(c)
+    if so - {os.path.basename(a)[:-5] for a in arquivos}:
+        print("ERRO arquivo(s) não encontrado(s):", ", ".join(sorted(so - {os.path.basename(a)[:-5] for a in arquivos})))
+        falhou = True
+    if falhou:
+        sys.exit(2)
+    if so_validar:
+        print(f"ok {len(clientes)} JSON válido(s)")
+        return
     saida = os.path.join(AQUI, "..", sem["pasta"])
     os.makedirs(saida, exist_ok=True)
-    so = set(sys.argv[2:])
     previa = os.environ.get("PREVIA")  # pasta para salvar PNGs de conferência
+    tag = f"{os.getpid()}"  # nomes únicos: várias execuções podem rodar em paralelo
     pares, temporarios = [], []
     for c in clientes:
-        if so and c["arquivo"] not in so:
-            continue
         # o HTML fica na pasta fonts/ para resolver os arquivos de fonte por caminho relativo
-        html_path = os.path.join(AQUI, "fonts", f"_tmp_{c['arquivo']}.html")
+        html_path = os.path.join(AQUI, "fonts", f"_tmp_{tag}_{c['arquivo']}.html")
         with open(html_path, "w", encoding="utf-8") as fh:
-            fh.write(documento(c, sem))
+            fh.write(documento(normalizar(c), sem))
         destino = os.path.abspath(os.path.join(saida, f"{c['arquivo']}_Semanal_{sem['sufixo']}.pdf"))
         par = [html_path, destino]
         if previa:
             par.append(os.path.join(previa, f"{c['arquivo']}.png"))
         pares.append(par)
         temporarios.append(html_path)
-    lista = os.path.join(AQUI, "fonts", "_tmp_lista.json")
+    lista = os.path.join(AQUI, "fonts", f"_tmp_{tag}_lista.json")
     with open(lista, "w", encoding="utf-8") as fh:
         json.dump(pares, fh)
     temporarios.append(lista)
-    subprocess.run(["node", os.path.join(AQUI, "pdf.js"), lista], check=True)
+    rc = subprocess.run(["node", os.path.join(AQUI, "pdf.js"), lista]).returncode
     if os.environ.get("MANTER_HTML") != "1":
         for t in temporarios:
             os.remove(t)
+    sys.exit(rc)
 
 
 if __name__ == "__main__":

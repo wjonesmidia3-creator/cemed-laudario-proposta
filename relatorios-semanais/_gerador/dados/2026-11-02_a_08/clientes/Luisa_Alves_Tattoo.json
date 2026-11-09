@@ -1,0 +1,205 @@
+{
+  "arquivo": "Luisa_Alves_Tattoo",
+  "nome": "Luisa Alves Tattoo",
+  "titulo": [
+    "Anúncios {{pausados}} desde 31/10.",
+    "O alcance caiu junto."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta, Instagram e Facebook** do estúdio Luisa Alves Tattoo (@luisaalvestattoo), comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "R$ 0",
+    "rotulo": "INVESTIDOS",
+    "titulo": "Sem anúncios no ar, o Instagram passou de {{~39 mil}} para {{~20 pessoas}} alcançadas por dia.",
+    "texto": "A última veiculação foi em 31/10 (R$ 21,01). Na semana anterior, os anúncios geraram 9 conversas e 1.637 cliques no link com R$ 241,33 investidos."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{0}}",
+      "legenda": "investidos em anúncios na semana (anterior: R$ 241)"
+    },
+    {
+      "valor": "{{141}}",
+      "legenda": "alcance do Instagram na semana (anterior: 192,9 mil)"
+    },
+    {
+      "valor": "0 {{posts}}",
+      "legenda": "publicados no Instagram nas duas últimas semanas"
+    },
+    {
+      "valor": "{{9}}",
+      "legenda": "conversas na semana anterior, com anúncios ativos"
+    }
+  ],
+  "intro_p2": "Com os anúncios pausados, **todas as frentes caíram**: alcance, visualizações, visitas ao perfil e conversas.",
+  "kpis": [
+    {
+      "valor": "R$ 0",
+      "rotulo": "Investimento em\nMeta Ads",
+      "cur": 0,
+      "prev": 241.33,
+      "melhor": null
+    },
+    {
+      "valor": "0",
+      "ref": "/9",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 0,
+      "prev": 9,
+      "melhor": "up"
+    },
+    {
+      "valor": "141",
+      "rotulo": "Alcance no Instagram\n(soma diária)",
+      "cur": 141,
+      "prev": 192906,
+      "melhor": "up"
+    },
+    {
+      "valor": "29",
+      "rotulo": "Visitas ao perfil\nno Instagram",
+      "cur": 29,
+      "prev": 336,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 241.33,
+          "cur": 0,
+          "fmt": "brl",
+          "melhor": null,
+          "destaque": true
+        },
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 9,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 26.8144,
+          "cur": null,
+          "fmt": "brl",
+          "melhor": "down"
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 22465,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 1637,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "INSTAGRAM",
+      "linhas": [
+        {
+          "rotulo": "Alcance (soma diária)",
+          "prev": 192906,
+          "cur": 141,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visualizações",
+          "prev": 413455,
+          "cur": 248,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Visitas ao perfil",
+          "prev": 336,
+          "cur": 29,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "FACEBOOK",
+      "linhas": [
+        {
+          "rotulo": "Alcance da página",
+          "prev": 1507,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Alcance diário no Instagram",
+    "sub": "Pessoas alcançadas por dia, de 26/10 a 08/11",
+    "prev": [
+      43383,
+      36749,
+      35468,
+      38898,
+      32566,
+      5836,
+      6
+    ],
+    "cur": [
+      6,
+      6,
+      2,
+      6,
+      2,
+      105,
+      14
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads, Instagram Business e Página do Facebook). Semana com feriado de Finados (02/11). Contas conectadas ao Reportei em 04/11. A segunda conta de anúncios (LA Tattoo) não teve dados nas duas semanas.",
+  "titulo_p3": "O que aconteceu e {{próximos passos}}",
+  "intro_p3": "A queda da semana tem uma causa clara: a **pausa dos anúncios** em 31/10, somada à ausência de posts.",
+  "insights": [
+    {
+      "tipo": "ruim",
+      "titulo": "Anúncios fora do ar",
+      "texto": "A conta de anúncios **não veiculou** de 01/11 a 08/11. Última veiculação: 31/10."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Alcance dependia da mídia paga",
+      "texto": "O alcance diário caiu de **~39 mil** para perto de zero a partir de 31/10, mesma data da pausa."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Sem publicações",
+      "texto": "**Nenhum post novo** no Instagram entre 26/10 e 08/11."
+    }
+  ],
+  "leitura": "O comportamento do alcance indica que **quase toda a visibilidade do perfil vinha dos anúncios**. Com a pausa em 31/10, o perfil praticamente deixou de ser visto e as conversas zeraram. Retomar a veiculação e o calendário de posts é a prioridade.",
+  "proximos": [
+    {
+      "titulo": "Reativar os anúncios",
+      "texto": "Definir verba e voltar a veicular as campanhas de mensagem e alcance."
+    },
+    {
+      "titulo": "Retomar as postagens",
+      "texto": "Publicar trabalhos recentes (Reels de processo e resultado) para alimentar o perfil."
+    },
+    {
+      "titulo": "Conferir a 2ª conta",
+      "texto": "A conta “LA Tattoo” não teve dados no período; confirmar se deve ser usada."
+    }
+  ]
+}

@@ -19,19 +19,38 @@ Pasta `2026-11-02_a_08/`:
 
 Fonte: Reportei, extração em 09/11/2026.
 
-## Como gerar a próxima semana
+## Como gerar a próxima semana (automático)
 
-1. Copie `_gerador/semana_2026_11_02.py` para um novo arquivo (ex.: `semana_2026_11_09.py`).
-2. Atualize `SEMANA` (rótulos, dias do gráfico, pasta e sufixo) e, em `CLIENTES`, os números e textos de cada cliente.
-3. Rode na pasta `_gerador`:
+Peça ao Claude Code, nesta pasta do repositório:
+
+> Rode o workflow relatorio-semanal com inicio 2026-11-09
+
+O workflow `.claude/workflows/relatorio-semanal.js` faz tudo, com um agente por cliente rodando em paralelo:
+
+1. **Descobrir** – lista clientes e contas no Reportei (cliente novo entra sozinho) e grava `semana.json`.
+2. **Coletar** – puxa as métricas das duas semanas, as séries diárias e os posts (usa `_gerador/catalogo_reportei.md`, sem perder tempo procurando métrica).
+3. **Conferir** – outro agente busca de novo, sem ver os valores, os números principais (investimento, conversas, custo do Google, conversões, alcance). Se divergir, um terceiro desempata pela mediana.
+4. **Redigir** – escreve o JSON do cliente seguindo `_gerador/guia_redacao.md` e o relatório da semana anterior como modelo, e gera o PDF.
+5. **Revisar** – um revisor cético recalcula cada número e percentual dos textos, confere o gráfico e o português, e corrige.
+6. **Fechar** – gera todos os PDFs juntos e acrescenta a semana neste README.
+
+Parâmetros (`args`): `inicio` (obrigatório, AAAA-MM-DD), `fim` (padrão: inicio + 6 dias), `clientes` (ex.: `["CEMED","Fiorini"]` para refazer só alguns), `exemplo` (pasta usada como modelo; padrão `2026-11-02_a_08`), `atualizar_readme` (padrão `true`).
+No fim ele devolve, por cliente: manchete, alertas, divergências encontradas na conferência e correções do revisor. Vale ler os alertas antes de enviar.
+
+## Como ajustar à mão
+
+Os dados e textos de cada cliente ficam em `_gerador/dados/<pasta>/clientes/<arquivo>.json` (formato descrito no guia de redação). Depois de editar, na pasta `_gerador`:
 
 ```bash
-python3 gerar.py semana_2026_11_09
+python3 gerar.py 2026-11-02_a_08 --validar
 ```
 
-Para gerar só alguns clientes, passe o nome do arquivo depois do módulo (ex.: `python3 gerar.py semana_2026_11_09 CEMED Fiorini`).
+```bash
+python3 gerar.py 2026-11-02_a_08 CEMED Fiorini
+```
 
-O script imprime a folga de cada página até o rodapé; se aparecer "conteúdo passa", encurte textos ou remova linhas da tabela.
+O primeiro só confere a estrutura; o segundo gera os PDFs dos clientes indicados (sem nomes, gera todos).
+O gerador imprime a folga de cada página até o rodapé e sai com código 3 ("ESTOURO") se algo encostar nele: encurte textos ou remova linhas da tabela.
 Tabelas com mais de 14 linhas (somando os títulos de grupo) ou clientes sem posts levam o gráfico para a página 3 automaticamente.
 
 Requisitos: Python 3 e Node com Playwright (Chromium). As fontes Poppins e Inter estão em `_gerador/fonts/` (licença OFL).

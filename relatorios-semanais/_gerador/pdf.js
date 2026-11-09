@@ -2,6 +2,7 @@
 // Uso: node pdf.js lista.json   (lista = [[html, pdf, png?], ...])
 const { chromium } = require('playwright');
 const fs = require('fs');
+let estouro = false;
 
 (async () => {
   const pares = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
@@ -25,11 +26,17 @@ const fs = require('fs');
       });
       return out;
     });
-    console.log(html.split('/').pop(), '|', problemas.join(' | '));
+    const nome = pdf.split('/').pop();
+    console.log(nome, '|', problemas.join(' | '));
+    if (problemas.some(p => p.includes('passa'))) {
+      estouro = true;
+      console.log(`ESTOURO ${nome}: encurte textos ou remova linhas da tabela e gere de novo`);
+    }
     await page.pdf({ path: pdf, format: 'A4', printBackground: true, preferCSSPageSize: true,
                      margin: { top: 0, bottom: 0, left: 0, right: 0 } });
     if (png) await page.screenshot({ path: png, fullPage: true });
     console.log('ok', pdf);
   }
   await browser.close();
+  if (estouro) process.exit(3);
 })();

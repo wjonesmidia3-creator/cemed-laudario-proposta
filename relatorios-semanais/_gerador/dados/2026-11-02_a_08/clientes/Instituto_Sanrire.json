@@ -1,0 +1,252 @@
+{
+  "arquivo": "Instituto_Sanrire",
+  "nome": "Instituto Sanrire",
+  "titulo": [
+    "Conversa {{19% mais barata}}.",
+    "Google Ads estável."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta, Google Ads e ChatGPT Ads**, além de **Facebook e YouTube**, do Instituto Sanrire, comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "30",
+    "rotulo": "CONVERSAS",
+    "titulo": "{{30 conversas}} pelo Meta, com custo por conversa {{19% menor}} (R$ 64,93).",
+    "texto": "Na semana anterior foram 26 conversas a R$ 80,15 cada. No Google Ads, as conversões principais ficaram em 33 (anterior: 32)."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{3.802}}",
+      "legenda": "investidos em Meta, Google e ChatGPT Ads (anterior: R$ 3.999)"
+    },
+    {
+      "valor": "R$ {{64,93}}",
+      "legenda": "custo por conversa no Meta (anterior: R$ 80,15)"
+    },
+    {
+      "valor": "{{33}}",
+      "legenda": "conversões principais no Google Ads (96 em todas as ações)"
+    },
+    {
+      "valor": "38,7 {{mil}}",
+      "legenda": "alcance da página no Facebook, 6% a mais"
+    }
+  ],
+  "intro_p2": "Investimento total **5% menor**, com mais conversas no Meta e conversões estáveis no Google Ads.",
+  "kpis": [
+    {
+      "valor": "30",
+      "ref": "/26",
+      "rotulo": "Conversas iniciadas\nno Meta Ads",
+      "cur": 30,
+      "prev": 26,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 64,93",
+      "rotulo": "Custo por conversa\nno Meta Ads",
+      "cur": 64.9333,
+      "prev": 80.15,
+      "melhor": "down"
+    },
+    {
+      "valor": "33",
+      "rotulo": "Conversões principais\nno Google Ads",
+      "cur": 33.0,
+      "prev": 31.8,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 3.802",
+      "rotulo": "Investimento total\n(Meta + Google + ChatGPT)",
+      "cur": 3802.22,
+      "prev": 3999.06,
+      "melhor": null
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS (CA 03)",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 26,
+          "cur": 30,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 80.15,
+          "cur": 64.9333,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 2083.9,
+          "cur": 1948.0,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 21419,
+          "cur": 23018,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 441,
+          "cur": 322,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por clique",
+          "prev": 3.7146,
+          "cur": 4.3677,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversões principais",
+          "prev": 31.8,
+          "cur": 33.0,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 1635.62,
+          "cur": 1726.98,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 7928,
+          "cur": 5319,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 231595,
+          "cur": 199124,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "CHATGPT ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 279.54,
+          "cur": 127.24,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 38,
+          "cur": 14,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "FACEBOOK · YOUTUBE",
+      "linhas": [
+        {
+          "rotulo": "Alcance da página (Facebook)",
+          "prev": 36440,
+          "cur": 38679,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Visualizações (YouTube)",
+          "prev": 28232,
+          "cur": 3215,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        }
+      ]
+    }
+  ],
+  "denso": true,
+  "grafico": {
+    "titulo": "Alcance diário da página no Facebook",
+    "sub": "Pessoas alcançadas por dia, de 26/10 a 08/11",
+    "prev": [
+      4835,
+      5026,
+      6438,
+      4823,
+      4289,
+      5239,
+      5790
+    ],
+    "cur": [
+      6388,
+      7032,
+      6002,
+      5853,
+      4193,
+      4633,
+      4578
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, ChatGPT Ads, Página do Facebook e YouTube). Semana com feriado de Finados (02/11). A conta de anúncios CA 02 não teve veiculação nas duas semanas. Google Ads: conta Dra. Ingrid Aquino.",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "Mais eficiência no Meta, volume estável no Google e um canal novo em teste (ChatGPT Ads).",
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Meta mais eficiente",
+      "texto": "Mais conversas (**30**) e custo por conversa **19% menor**, com 6,5% a menos de investimento."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Google Ads estável",
+      "texto": "**33 conversões principais** (96 em todas as ações), mesmo com 33% menos cliques."
+    },
+    {
+      "tipo": "neu",
+      "titulo": "ChatGPT Ads em teste",
+      "texto": "R$ 127 investidos e **14 cliques** (CPC de R$ 9,09), sem conversões registradas na semana."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "YouTube e Instagram",
+      "texto": "Visualizações no YouTube caíram de 28,2 mil para **3,2 mil**. O Instagram não retornou dados de alcance no período."
+    }
+  ],
+  "leitura": "O Meta Ads melhorou a eficiência: mais conversas gastando menos. O Google Ads manteve o volume de conversões com menos cliques, sinal de **tráfego mais qualificado**. O ChatGPT Ads ainda não gerou conversões e merece acompanhamento antes de ampliar a verba.",
+  "proximos": [
+    {
+      "titulo": "Escalar o que converte",
+      "texto": "Direcionar verba para os conjuntos do Meta com menor custo por conversa."
+    },
+    {
+      "titulo": "Avaliar o ChatGPT Ads",
+      "texto": "Definir meta e prazo de teste; sem conversões, reduzir ou pausar."
+    },
+    {
+      "titulo": "Reconectar o Instagram",
+      "texto": "Revisar permissões da conta no Reportei para voltar a medir alcance e posts."
+    }
+  ]
+}

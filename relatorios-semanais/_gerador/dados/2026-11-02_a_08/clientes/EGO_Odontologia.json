@@ -1,0 +1,272 @@
+{
+  "arquivo": "EGO_Odontologia",
+  "nome": "EGO Odontologia",
+  "titulo": [
+    "Semana de {{verba menor}}.",
+    "Contato segue barato."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta, Google Ads, Instagram e Facebook** da EGO Odontologia, comparando a semana de 02 a 08/11 com a semana anterior (26/10 a 01/11).",
+  "destaque": {
+    "num": "35",
+    "rotulo": "CONVERSAS",
+    "titulo": "Com {{37% menos investimento}}, a semana gerou 35 conversas a {{R$ 18,10}} cada.",
+    "texto": "O custo por conversa subiu frente à semana anterior (R$ 13,96), mas segue menos da metade do registrado no início de outubro (R$ 37,81)."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{633}}",
+      "legenda": "investidos em Meta Ads na semana (anterior: R$ 1.005)"
+    },
+    {
+      "valor": "R$ {{18,10}}",
+      "legenda": "custo por conversa iniciada (anterior: R$ 13,96)"
+    },
+    {
+      "valor": "4 {{leads}}",
+      "legenda": "cadastros pelos anúncios, contra 1 na semana anterior"
+    },
+    {
+      "valor": "2 {{posts}}",
+      "legenda": "novos no Instagram; Reels com 14,3% de engajamento"
+    }
+  ],
+  "intro_p2": "A semana teve **37% menos verba** no Meta Ads e o volume de conversas acompanhou. O custo por resultado segue baixo para o histórico da conta.",
+  "kpis": [
+    {
+      "valor": "35",
+      "ref": "/72",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 35,
+      "prev": 72,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 18,10",
+      "rotulo": "Custo por conversa\nesta semana",
+      "cur": 18.0951,
+      "prev": 13.9628,
+      "melhor": "down"
+    },
+    {
+      "valor": "R$ 633",
+      "rotulo": "Investimento em\nMeta Ads",
+      "cur": 633.33,
+      "prev": 1005.32,
+      "melhor": null
+    },
+    {
+      "valor": "5.933",
+      "rotulo": "Alcance no Instagram\n(soma diária)",
+      "cur": 5933,
+      "prev": 8306,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 72,
+          "cur": 35,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 13.9628,
+          "cur": 18.0951,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 1005.32,
+          "cur": 633.33,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 19148,
+          "cur": 12985,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 44074,
+          "cur": 22874,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por clique",
+          "prev": 0.4448,
+          "cur": 0.5522,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 75.57,
+          "cur": 41.68,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 13,
+          "cur": 9,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "INSTAGRAM",
+      "linhas": [
+        {
+          "rotulo": "Alcance (soma diária)",
+          "prev": 8306,
+          "cur": 5933,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Visualizações",
+          "prev": 12531,
+          "cur": 8570,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Novos seguidores",
+          "prev": 21,
+          "cur": 12,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "FACEBOOK",
+      "linhas": [
+        {
+          "rotulo": "Alcance da página",
+          "prev": 28133,
+          "cur": 16256,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Alcance diário no Instagram",
+    "sub": "Pessoas alcançadas por dia, de 26/10 a 08/11",
+    "prev": [
+      2338,
+      1416,
+      979,
+      717,
+      823,
+      906,
+      1127
+    ],
+    "cur": [
+      876,
+      114,
+      92,
+      1349,
+      1328,
+      1670,
+      504
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Página do Facebook). Semana com feriado de Finados (02/11). Alcance do Instagram é a soma do alcance diário.",
+  "titulo_p3": "Conteúdo e {{próximos passos}}",
+  "intro_p3": "Duas publicações no Instagram na semana. O Reels educativo sobre **tabagismo e implantes** foi o conteúdo com mais interações.",
+  "posts": [
+    {
+      "data": "03/NOV",
+      "tag": "REELS · MAIS ENGAJAMENTO",
+      "titulo": "Tabagismo e implantes dentários",
+      "metricas": [
+        [
+          "308",
+          "views"
+        ],
+        [
+          "27",
+          "interações"
+        ],
+        [
+          "14,3%",
+          "eng."
+        ]
+      ]
+    },
+    {
+      "data": "06/NOV",
+      "tag": "CARROSSEL",
+      "titulo": "Hábitos que podem causar mau hálito",
+      "metricas": [
+        [
+          "165",
+          "views"
+        ],
+        [
+          "7",
+          "interações"
+        ],
+        [
+          "12,5%",
+          "eng."
+        ]
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "tipo": "neu",
+      "titulo": "Conversas acompanharam a verba",
+      "texto": "O investimento caiu **37%** e as conversas caíram **51%**. O volume responde diretamente ao orçamento."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Custo ainda competitivo",
+      "texto": "**R$ 18,10** por conversa: acima da semana anterior, mas bem abaixo dos R$ 37,81 do início de outubro."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Google Ads com pouco volume",
+      "texto": "Apenas **9 cliques** e R$ 41,68 investidos na semana, sem conversões registradas."
+    }
+  ],
+  "leitura": "A semana foi mais curta em orçamento e o resultado acompanhou. Como o custo por conversa segue saudável, o principal fator para recuperar volume é a **verba diária**. No conteúdo, vídeos que respondem dúvidas (implante, prótese, hábitos) seguem sendo os que mais engajam.",
+  "proximos": [
+    {
+      "titulo": "Retomar o ritmo de verba",
+      "texto": "Voltar ao investimento da semana anterior para recuperar o volume de ~70 conversas por semana."
+    },
+    {
+      "titulo": "Revisar o Google Ads",
+      "texto": "Ajustar palavras-chave e orçamento: a campanha teve só 9 cliques na semana."
+    },
+    {
+      "titulo": "Mais vídeos de dúvida",
+      "texto": "Seguir a linha de Reels educativos e testar o de tabagismo como criativo de anúncio."
+    }
+  ],
+  "nota_p3": "Visualizações e interações dos posts são orgânicas e acumuladas desde a publicação até 08/11."
+}
