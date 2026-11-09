@@ -4,7 +4,7 @@ Um PDF por cliente, no mesmo visual do update da EGO (capa azul, comparativo lad
 
 ## Semana 02 a 08/11/2026 (comparada com 26/10 a 01/11)
 
-Pasta `2026-11-02_a_08/`:
+Pasta `2026-11-02_a_08/` · para baixar: `downloads/Relatorios_Semanais_02-08nov2026.zip` (os 8 PDFs) ou `downloads/02-08nov2026/`:
 
 | Cliente | Arquivo | Destaque da semana |
 |---|---|---|
@@ -32,7 +32,7 @@ O workflow `.claude/workflows/relatorio-semanal.js` faz tudo, com um agente por 
 3. **Conferir** – outro agente busca de novo, sem ver os valores, os números principais (investimento, conversas, custo do Google, conversões, alcance). Se divergir, um terceiro desempata pela mediana.
 4. **Redigir** – escreve o JSON do cliente seguindo `_gerador/guia_redacao.md` e o relatório da semana anterior como modelo, e gera o PDF.
 5. **Revisar** – um revisor cético recalcula cada número e percentual dos textos, confere o gráfico e o português, e corrige.
-6. **Fechar** – gera todos os PDFs juntos e acrescenta a semana neste README.
+6. **Fechar** – gera todos os PDFs juntos, atualiza a pasta `downloads/` (PDFs + .zip da semana) e acrescenta a semana neste README.
 
 Parâmetros (`args`): `inicio` (obrigatório, AAAA-MM-DD), `fim` (padrão: inicio + 6 dias), `clientes` (ex.: `["CEMED","Fiorini"]` para refazer só alguns), `exemplo` (pasta usada como modelo; padrão `2026-11-02_a_08`), `atualizar_readme` (padrão `true`).
 No fim ele devolve, por cliente: manchete, alertas, divergências encontradas na conferência e correções do revisor. Vale ler os alertas antes de enviar.

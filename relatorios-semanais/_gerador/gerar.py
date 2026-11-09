@@ -418,7 +418,27 @@ def main():
     if os.environ.get("MANTER_HTML") != "1":
         for t in temporarios:
             os.remove(t)
+    # semana completa gerada sem erro -> atualiza a pasta downloads/ (PDFs soltos + .zip com todos)
+    if rc == 0 and not so and not sem["pasta"].startswith("_"):
+        empacotar(sem, [p[1] for p in pares])
     sys.exit(rc)
+
+
+def empacotar(sem, pdfs):
+    import shutil
+    import zipfile
+    raiz = os.path.abspath(os.path.join(AQUI, "..", ".."))
+    destino = os.path.join(raiz, "downloads", sem["sufixo"])
+    os.makedirs(destino, exist_ok=True)
+    for antigo in glob.glob(os.path.join(destino, "*.pdf")):
+        os.remove(antigo)
+    for p in pdfs:
+        shutil.copy2(p, destino)
+    zip_path = os.path.join(raiz, "downloads", f"Relatorios_Semanais_{sem['sufixo']}.zip")
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+        for p in sorted(pdfs):
+            z.write(p, os.path.basename(p))
+    print("downloads:", os.path.relpath(zip_path, raiz), "e", os.path.relpath(destino, raiz) + "/")
 
 
 if __name__ == "__main__":
