@@ -1,0 +1,208 @@
+{
+  "marca": "ego",
+  "periodo": {
+    "atual": {
+      "inicio": "2026-11-09",
+      "fim": "2026-11-15"
+    },
+    "anterior": {
+      "inicio": "2026-11-02",
+      "fim": "2026-11-08"
+    }
+  },
+  "valores": {
+    "3788544": {
+      "_conta": "EGO Odontologia (facebook)",
+      "alcance": {
+        "atual": null,
+        "anterior": null
+      },
+      "visualizacoes": {
+        "atual": null,
+        "anterior": null
+      },
+      "novos_seguidores": {
+        "atual": null,
+        "anterior": null
+      },
+      "conversas": {
+        "atual": null,
+        "anterior": null
+      }
+    },
+    "3788548": {
+      "_conta": "Clínica EGO - 01 (facebook_ads)",
+      "conversas": {
+        "atual": null,
+        "anterior": null
+      },
+      "custo_conversa": {
+        "atual": null,
+        "anterior": null
+      },
+      "leads": {
+        "atual": null,
+        "anterior": null
+      },
+      "investimento": {
+        "atual": null,
+        "anterior": null
+      },
+      "alcance": {
+        "atual": null,
+        "anterior": null
+      },
+      "impressoes": {
+        "atual": null,
+        "anterior": null
+      },
+      "cliques_link": {
+        "atual": null,
+        "anterior": null
+      },
+      "cpc": {
+        "atual": null,
+        "anterior": null
+      }
+    },
+    "3789787": {
+      "_conta": "egoclinicaodontologica (instagram_business)",
+      "alcance": {
+        "atual": null,
+        "anterior": null
+      },
+      "visualizacoes": {
+        "atual": null,
+        "anterior": null
+      },
+      "visitas_perfil": {
+        "atual": null,
+        "anterior": null
+      },
+      "novos_seguidores": {
+        "atual": null,
+        "anterior": null
+      },
+      "interacoes": {
+        "atual": null,
+        "anterior": null
+      },
+      "reels": {
+        "atual": null,
+        "anterior": null
+      },
+      "posts": {
+        "atual": null,
+        "anterior": null
+      }
+    },
+    "3833501": {
+      "_conta": "Odontologia - EGO (google_adwords)",
+      "conversoes": {
+        "atual": null,
+        "anterior": null
+      },
+      "custo_conversao": {
+        "atual": null,
+        "anterior": null
+      },
+      "investimento": {
+        "atual": null,
+        "anterior": null
+      },
+      "cliques": {
+        "atual": null,
+        "anterior": null
+      },
+      "impressoes": {
+        "atual": null,
+        "anterior": null
+      },
+      "ctr": {
+        "atual": null,
+        "anterior": null
+      },
+      "cpc": {
+        "atual": null,
+        "anterior": null
+      }
+    }
+  },
+  "grafico": {
+    "fonte": 3789787,
+    "tipo": "alcance_diario",
+    "_ref": "ig:reach_over_time",
+    "anterior": [
+      {
+        "data": "2026-11-02",
+        "valor": null
+      },
+      {
+        "data": "2026-11-03",
+        "valor": null
+      },
+      {
+        "data": "2026-11-04",
+        "valor": null
+      },
+      {
+        "data": "2026-11-05",
+        "valor": null
+      },
+      {
+        "data": "2026-11-06",
+        "valor": null
+      },
+      {
+        "data": "2026-11-07",
+        "valor": null
+      },
+      {
+        "data": "2026-11-08",
+        "valor": null
+      }
+    ],
+    "atual": [
+      {
+        "data": "2026-11-09",
+        "valor": null
+      },
+      {
+        "data": "2026-11-10",
+        "valor": null
+      },
+      {
+        "data": "2026-11-11",
+        "valor": null
+      },
+      {
+        "data": "2026-11-12",
+        "valor": null
+      },
+      {
+        "data": "2026-11-13",
+        "valor": null
+      },
+      {
+        "data": "2026-11-14",
+        "valor": null
+      },
+      {
+        "data": "2026-11-15",
+        "valor": null
+      }
+    ]
+  },
+  "texto": {
+    "titulo": "",
+    "subtitulo": "",
+    "resumo": "",
+    "destaque": null,
+    "kpis_capa": null,
+    "kpis": null,
+    "intro_numeros": "",
+    "leitura": "",
+    "proximos": []
+  },
+  "conteudo": null
+}

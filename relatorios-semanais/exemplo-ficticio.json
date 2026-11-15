@@ -1,0 +1,115 @@
+{
+  "_sobre": "DADOS FICTÍCIOS. Só servem para conferir o layout do template (node gerar.mjs exemplo). Todas as páginas saem com a marca d'água EXEMPLO.",
+  "ficticio": true,
+  "marca": "exemplo",
+  "marca_config": {
+    "nome": "Clínica Exemplo",
+    "fontes": [
+      { "id": 1, "slug": "facebook_ads", "conta": "Conta de anúncios", "ativa": true },
+      { "id": 2, "slug": "google_adwords", "conta": "Google Ads", "ativa": true },
+      { "id": 3, "slug": "instagram_business", "conta": "@clinicaexemplo", "ativa": true },
+      { "id": 4, "slug": "facebook", "conta": "Clínica Exemplo", "ativa": true },
+      { "id": 5, "slug": "google_my_business", "conta": "Clínica Exemplo", "ativa": true },
+      { "id": 6, "slug": "youtube", "conta": "Canal Exemplo", "ativa": false }
+    ]
+  },
+  "periodo": {
+    "atual": { "inicio": "2026-11-09", "fim": "2026-11-15" },
+    "anterior": { "inicio": "2026-11-02", "fim": "2026-11-08" }
+  },
+  "valores": {
+    "1": {
+      "conversas": { "atual": 41, "anterior": 33 },
+      "custo_conversa": { "atual": 31.4, "anterior": 36.9 },
+      "leads": { "atual": 0, "anterior": 0 },
+      "investimento": { "atual": 1287.4, "anterior": 1217.7 },
+      "alcance": { "atual": 9820, "anterior": 10410 },
+      "impressoes": { "atual": 28455, "anterior": 25120 },
+      "cliques_link": { "atual": 1532, "anterior": 1204 },
+      "cpc": { "atual": 0.69, "anterior": 0.84 }
+    },
+    "2": {
+      "conversoes": { "atual": 18, "anterior": 14 },
+      "custo_conversao": { "atual": 27.9, "anterior": 33.2 },
+      "investimento": { "atual": 502.2, "anterior": 464.8 },
+      "cliques": { "atual": 391, "anterior": 352 },
+      "impressoes": { "atual": 6120, "anterior": 5980 },
+      "ctr": { "atual": 6.39, "anterior": 5.89 },
+      "cpc": { "atual": 1.28, "anterior": 1.32 }
+    },
+    "3": {
+      "alcance": { "atual": 14230, "anterior": 11876 },
+      "visualizacoes": { "atual": 21450, "anterior": 18760 },
+      "visitas_perfil": { "atual": 412, "anterior": 365 },
+      "novos_seguidores": { "atual": 38, "anterior": 24 },
+      "interacoes": { "atual": 286, "anterior": 301 },
+      "reels": { "atual": 3, "anterior": 2 },
+      "posts": { "atual": 1, "anterior": 2 }
+    },
+    "4": {
+      "alcance": { "atual": 8840, "anterior": 9310 },
+      "visualizacoes": { "atual": 15230, "anterior": 15410 },
+      "novos_seguidores": { "atual": 6, "anterior": 4 },
+      "conversas": { "atual": 12, "anterior": 9 }
+    },
+    "5": {
+      "visualizacoes": { "atual": 1840, "anterior": 1712 },
+      "acoes": { "atual": 96, "anterior": 81 },
+      "ligacoes": { "atual": 31, "anterior": 27 },
+      "rotas": { "atual": 22, "anterior": 25 },
+      "site": { "atual": 43, "anterior": 29 },
+      "avaliacoes": { "atual": 2, "anterior": 1 }
+    }
+  },
+  "grafico": {
+    "fonte": 3,
+    "tipo": "alcance_diario",
+    "anterior": [
+      { "data": "2026-11-02", "valor": 1320 }, { "data": "2026-11-03", "valor": 1810 }, { "data": "2026-11-04", "valor": 1650 },
+      { "data": "2026-11-05", "valor": 2140 }, { "data": "2026-11-06", "valor": 1980 }, { "data": "2026-11-07", "valor": 1520 },
+      { "data": "2026-11-08", "valor": 1456 }
+    ],
+    "atual": [
+      { "data": "2026-11-09", "valor": 1710 }, { "data": "2026-11-10", "valor": 2380 }, { "data": "2026-11-11", "valor": 2960 },
+      { "data": "2026-11-12", "valor": 2210 }, { "data": "2026-11-13", "valor": 1890 }, { "data": "2026-11-14", "valor": 1640 },
+      { "data": "2026-11-15", "valor": 1440 }
+    ]
+  },
+  "texto": {
+    "titulo": "Semana de *mais contatos*.",
+    "subtitulo": "Conversa mais barata nos anúncios.",
+    "resumo": "Resumo dos resultados de **anúncios Meta, Google Ads, Instagram, Facebook e Google Meu Negócio** da Clínica Exemplo, comparando a semana de 09 a 15/11 com a semana anterior.",
+    "destaque": {
+      "numero": "41",
+      "rotulo": "conversas",
+      "titulo": "*8 conversas a mais* que na semana anterior, com custo *15% menor*.",
+      "texto": "Pessoas que chamaram a clínica por mensagem (WhatsApp, Direct ou Messenger) a partir dos anúncios Meta."
+    },
+    "kpis_capa": [
+      { "valor": "59", "texto": "contatos pelos anúncios (41 conversas Meta + 18 conversões Google)" },
+      { "valor": "R$ *31,40*", "texto": "custo por conversa no Meta (semana anterior: R$ 36,90)" },
+      { "valor": "R$ *0,69*", "texto": "custo por clique no Meta, 18% menor" },
+      { "valor": "14,2 *mil*", "texto": "pessoas alcançadas no Instagram, 20% a mais" }
+    ],
+    "intro_numeros": "Semana de **09 a 15/11** comparada com **02 a 08/11**. Os anúncios trouxeram mais contatos gastando praticamente o mesmo.",
+    "leitura": "Os anúncios de mensagem ganharam eficiência: mais conversas com custo menor. O Instagram cresceu em alcance com os Reels, mas as interações caíram um pouco; vale reforçar chamadas para comentar e salvar.",
+    "proximos": [
+      { "titulo": "Escalar o que funciona", "texto": "Aumentar a verba do conjunto com menor custo por conversa." },
+      { "titulo": "Reels como anúncio", "texto": "Testar o Reel de maior alcance como criativo nas campanhas de mensagem." },
+      { "titulo": "Responder avaliações", "texto": "Responder as novas avaliações no Google para manter a nota." }
+    ]
+  },
+  "conteudo": {
+    "eyebrow": "Conteúdo",
+    "titulo": "Publicados *na semana*",
+    "texto": "Quatro publicações entre 09 e 15/11. Os vídeos que respondem dúvidas comuns seguem puxando o alcance.",
+    "posts": [
+      { "data": "2026-11-11", "destaque": true, "etiqueta": "Mais alcance", "titulo": "Quanto tempo dura um implante?", "descricao": "Resposta direta para a dúvida mais frequente no Direct.", "numeros": [ { "valor": "3.120", "rotulo": "visualizações" }, { "valor": "9,8%", "rotulo": "engajamento" }, { "valor": "41", "rotulo": "interações" } ] },
+      { "data": "2026-11-13", "destaque": true, "etiqueta": "Mais comentários", "titulo": "Bastidores do atendimento", "descricao": "Um dia de recepção e acolhimento na clínica.", "numeros": [ { "valor": "1.870", "rotulo": "visualizações" }, { "valor": "12", "rotulo": "comentários" }, { "valor": "33", "rotulo": "interações" } ] },
+      { "data": "2026-11-10", "etiqueta": "Reel", "titulo": "Clareamento: mitos e verdades", "descricao": "Três mitos respondidos em 30 segundos.", "numeros": [ { "valor": "1.240", "rotulo": "views" }, { "valor": "19", "rotulo": "interações", "hl": true } ] },
+      { "data": "2026-11-14", "etiqueta": "Carrossel", "titulo": "Antes e depois: lentes", "descricao": "Caso com autorização da paciente.", "numeros": [ { "valor": "860", "rotulo": "alcance" }, { "valor": "27", "rotulo": "interações", "hl": true } ] },
+      { "total": true, "qtd": "4", "etiqueta": "Total da semana", "titulo": "7.090 visualizações orgânicas", "descricao": "Somando as quatro publicações de 09 a 15/11.", "numeros": [ { "valor": "120", "rotulo": "interações" }, { "valor": "5.410", "rotulo": "alcance" } ] }
+    ],
+    "nota": "Números das publicações são orgânicos e acumulados desde a publicação até 15/11."
+  }
+}

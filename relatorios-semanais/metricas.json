@@ -1,0 +1,100 @@
+{
+  "_sobre": "Métricas que entram no relatório semanal, por tipo de integração do Reportei. 'ref' é o reference_key do catálogo do Reportei (reportei://integrations/{slug}/metrics). 'melhor' diz se a variação positiva é boa (maior), ruim (menor) ou neutra. 'kpi' define a prioridade para os cartões de destaque (menor = mais importante).",
+  "facebook_ads": {
+    "grupo": "Anúncios · Meta Ads",
+    "linhas": [
+      { "id": "conversas", "rotulo": "Conversas iniciadas", "ref": "fb_ads:actions_onsite_conversion.messaging_conversation_started_7d", "formato": "int", "melhor": "maior", "kpi": 1 },
+      { "id": "custo_conversa", "rotulo": "Custo por conversa", "ref": "fb_ads:spend-actions_onsite_conversion.messaging_conversation_started_7d", "formato": "brl", "melhor": "menor", "kpi": 2 },
+      { "id": "leads", "rotulo": "Leads (formulário)", "ref": "fb_ads:actions_lead", "formato": "int", "melhor": "maior", "kpi": 3 },
+      { "id": "investimento", "rotulo": "Investimento", "ref": "fb_ads:spend", "formato": "brl", "melhor": "neutro" },
+      { "id": "alcance", "rotulo": "Alcance", "ref": "fb_ads:reach", "formato": "int", "melhor": "maior", "kpi": 6 },
+      { "id": "impressoes", "rotulo": "Impressões", "ref": "fb_ads:impressions", "formato": "int", "melhor": "maior", "kpi": 7 },
+      { "id": "cliques_link", "rotulo": "Cliques no link", "ref": "fb_ads:inline_link_clicks", "formato": "int", "melhor": "maior" },
+      { "id": "cpc", "rotulo": "Custo por clique", "ref": "fb_ads:cpc", "formato": "brl", "melhor": "menor", "kpi": 4 }
+    ],
+    "graficos": {
+      "investimento_diario": { "ref": "fb_ads:spend_by_date", "titulo": "Investimento diário em anúncios Meta", "subtitulo": "Valor investido por dia", "formato": "brl" },
+      "cliques_diarios": { "ref": "fb_ads:clicks_and_ctr_by_date", "serie": 0, "titulo": "Cliques diários nos anúncios Meta", "subtitulo": "Cliques por dia", "formato": "int" }
+    }
+  },
+  "google_adwords": {
+    "grupo": "Anúncios · Google Ads",
+    "linhas": [
+      { "id": "conversoes", "rotulo": "Conversões", "ref": "gads:conversions", "formato": "dec", "melhor": "maior", "kpi": 2 },
+      { "id": "custo_conversao", "rotulo": "Custo por conversão", "ref": "gads:cost_per_conversion", "formato": "brl", "melhor": "menor", "kpi": 3 },
+      { "id": "investimento", "rotulo": "Investimento", "ref": "gads:cost_micros", "formato": "brl", "melhor": "neutro" },
+      { "id": "cliques", "rotulo": "Cliques", "ref": "gads:clicks", "formato": "int", "melhor": "maior", "kpi": 5 },
+      { "id": "impressoes", "rotulo": "Impressões", "ref": "gads:impressions", "formato": "int", "melhor": "maior", "kpi": 8 },
+      { "id": "ctr", "rotulo": "Taxa de cliques (CTR)", "ref": "gads:ctr", "formato": "pct", "melhor": "maior" },
+      { "id": "cpc", "rotulo": "Custo por clique", "ref": "gads:average_cpc", "formato": "brl", "melhor": "menor", "kpi": 6 }
+    ],
+    "graficos": {
+      "cliques_diarios": { "ref": "gads:clicks_ctr_per_day", "serie": 0, "titulo": "Cliques diários no Google Ads", "subtitulo": "Cliques por dia", "formato": "int" }
+    }
+  },
+  "chatgpt_ads": {
+    "grupo": "Anúncios · ChatGPT Ads",
+    "linhas": [
+      { "id": "conversoes", "rotulo": "Conversões", "ref": "chatgpt_ads:conversions", "formato": "int", "melhor": "maior", "kpi": 5 },
+      { "id": "investimento", "rotulo": "Investimento", "ref": "chatgpt_ads:spend", "formato": "brl", "melhor": "neutro" },
+      { "id": "cliques", "rotulo": "Cliques", "ref": "chatgpt_ads:clicks", "formato": "int", "melhor": "maior", "kpi": 9 },
+      { "id": "impressoes", "rotulo": "Impressões", "ref": "chatgpt_ads:impressions", "formato": "int", "melhor": "maior" },
+      { "id": "ctr", "rotulo": "Taxa de cliques (CTR)", "ref": "chatgpt_ads:ctr", "formato": "pct", "melhor": "maior" },
+      { "id": "cpc", "rotulo": "Custo por clique", "ref": "chatgpt_ads:cpc", "formato": "brl", "melhor": "menor" }
+    ],
+    "graficos": {
+      "cliques_diarios": { "ref": "chatgpt_ads:impressions_clicks_per_day", "serie": 1, "titulo": "Cliques diários no ChatGPT Ads", "subtitulo": "Cliques por dia", "formato": "int" }
+    }
+  },
+  "instagram_business": {
+    "grupo": "Instagram",
+    "linhas": [
+      { "id": "alcance", "rotulo": "Alcance", "ref": "ig:reach", "formato": "int", "melhor": "maior", "kpi": 4 },
+      { "id": "visualizacoes", "rotulo": "Visualizações", "ref": "ig:views", "formato": "int", "melhor": "maior", "kpi": 7 },
+      { "id": "visitas_perfil", "rotulo": "Visitas ao perfil", "ref": "ig:profile_views", "formato": "int", "melhor": "maior", "kpi": 5 },
+      { "id": "novos_seguidores", "rotulo": "Novos seguidores", "ref": "ig:new_followers_count", "formato": "int", "melhor": "maior", "kpi": 6 },
+      { "id": "interacoes", "rotulo": "Interações nos posts", "ref": "ig:media_engagement", "formato": "int", "melhor": "maior" },
+      { "id": "reels", "rotulo": "Reels publicados", "ref": "ig:reels_count", "formato": "int", "melhor": "neutro" },
+      { "id": "posts", "rotulo": "Posts no feed", "ref": "ig:media_count", "formato": "int", "melhor": "neutro" }
+    ],
+    "graficos": {
+      "alcance_diario": { "ref": "ig:reach_over_time", "serie": 0, "titulo": "Alcance diário no Instagram", "subtitulo": "Pessoas alcançadas por dia", "formato": "int" }
+    }
+  },
+  "facebook": {
+    "grupo": "Facebook",
+    "linhas": [
+      { "id": "alcance", "rotulo": "Alcance da página", "ref": "fb:page_reach", "formato": "int", "melhor": "maior", "kpi": 8 },
+      { "id": "visualizacoes", "rotulo": "Visualizações", "ref": "fb:page_media_views", "formato": "int", "melhor": "maior" },
+      { "id": "novos_seguidores", "rotulo": "Novos seguidores", "ref": "fb:net_page_follows", "formato": "int", "melhor": "maior" },
+      { "id": "conversas", "rotulo": "Novas conversas por mensagem", "ref": "fb:page_messages_new", "formato": "int", "melhor": "maior" }
+    ],
+    "graficos": {
+      "alcance_diario": { "ref": "fb:reach_over_time", "serie": 0, "titulo": "Alcance diário no Facebook", "subtitulo": "Pessoas alcançadas por dia", "formato": "int" }
+    }
+  },
+  "google_my_business": {
+    "grupo": "Google Meu Negócio",
+    "linhas": [
+      { "id": "visualizacoes", "rotulo": "Visualizações do perfil", "ref": "gmb:total_views", "formato": "int", "melhor": "maior", "kpi": 7 },
+      { "id": "acoes", "rotulo": "Ações no perfil", "ref": "gmb:total_actions", "formato": "int", "melhor": "maior", "kpi": 5 },
+      { "id": "ligacoes", "rotulo": "Ligações", "ref": "gmb:total_calls_actions", "formato": "int", "melhor": "maior" },
+      { "id": "rotas", "rotulo": "Pedidos de rota", "ref": "gmb:total_directions_actions", "formato": "int", "melhor": "maior" },
+      { "id": "site", "rotulo": "Cliques no site", "ref": "gmb:total_website_clicks_actions", "formato": "int", "melhor": "maior" },
+      { "id": "avaliacoes", "rotulo": "Novas avaliações", "ref": "gmb:total_reviews_in_period", "formato": "int", "melhor": "maior" }
+    ],
+    "graficos": {
+      "acoes_diarias": { "ref": "gmb:daily_actions", "serie": 0, "titulo": "Ações diárias no Google Meu Negócio", "subtitulo": "Ligações, rotas, cliques no site e conversas por dia", "formato": "int" }
+    }
+  },
+  "youtube": {
+    "grupo": "YouTube",
+    "linhas": [
+      { "id": "visualizacoes", "rotulo": "Visualizações", "ref": "youtube:views", "formato": "int", "melhor": "maior", "kpi": 9 },
+      { "id": "horas", "rotulo": "Horas assistidas", "ref": "youtube:estimated_minutes_watched", "formato": "horas", "melhor": "maior" },
+      { "id": "inscritos", "rotulo": "Saldo de inscritos", "ref": "youtube:subscribers_variation", "formato": "int", "melhor": "maior" },
+      { "id": "curtidas", "rotulo": "Curtidas", "ref": "youtube:likes", "formato": "int", "melhor": "maior" }
+    ],
+    "graficos": {}
+  }
+}
