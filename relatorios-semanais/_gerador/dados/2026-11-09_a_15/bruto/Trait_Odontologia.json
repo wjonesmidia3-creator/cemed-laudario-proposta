@@ -1,0 +1,490 @@
+{
+ "cliente": "Trait Odontologia",
+ "arquivo": "Trait_Odontologia",
+ "projeto_reportei": 1292584,
+ "semana_atual": {
+  "inicio": "2026-11-09",
+  "fim": "2026-11-15"
+ },
+ "semana_comparacao": {
+  "inicio": "2026-11-02",
+  "fim": "2026-11-08"
+ },
+ "coletado_em": "2026-11-18",
+ "integracoes": [
+  {
+   "id": 3830336,
+   "slug": "google_adwords",
+   "nome": "Trait Odontologia",
+   "status": "active"
+  },
+  {
+   "id": 3719069,
+   "slug": "google_my_business",
+   "nome": "Clínica Odontológica Trait em Guarapuava, Implante Dentário, Faceta Resina, Ortodontia, Clareamento, Clínico Geral, Cirurgias",
+   "status": "active"
+  },
+  {
+   "id": 3697302,
+   "slug": "instagram_business",
+   "nome": "traitodontologia",
+   "status": "active"
+  },
+  {
+   "id": 3672501,
+   "slug": "facebook_ads",
+   "nome": "Traito Odontologia (ID3279)",
+   "status": "active"
+  },
+  {
+   "id": 3672500,
+   "slug": "facebook",
+   "nome": "Trait Odontologia",
+   "status": "inactive",
+   "obs": "não consultada (integração inativa)"
+  }
+ ],
+ "facebook_ads_numeros": {
+  "a1_fb_ads:spend": {
+   "cur": "849.89",
+   "prev": "776.98",
+   "difference_pct": 9.383767921954231
+  },
+  "a2_fb_ads:conversas_iniciadas": {
+   "cur": 43,
+   "prev": 23,
+   "difference_pct": 86.95652173913044
+  },
+  "a3_fb_ads:custo_por_conversa": {
+   "cur": 19.764883720930232,
+   "prev": 33.78173913043479,
+   "difference_pct": -41.492403204536124
+  },
+  "a4_fb_ads:cpc_todos_cliques": {
+   "cur": "2.41446",
+   "prev": "2.023385",
+   "difference_pct": 19.327760164279155
+  },
+  "a5_fb_ads:reach": {
+   "cur": "15595",
+   "prev": "18785",
+   "difference_pct": -16.981634282672346
+  },
+  "a6_fb_ads:impressions": {
+   "cur": "41581",
+   "prev": "44374",
+   "difference_pct": -6.294226348762791
+  },
+  "a7_fb_ads:inline_link_clicks": {
+   "cur": "123",
+   "prev": "136",
+   "difference_pct": -9.558823529411768
+  },
+  "a8_fb_ads:actions_lead": {
+   "cur": 5,
+   "prev": 1,
+   "difference_pct": 400
+  }
+ },
+ "facebook_ads_investimento_diario_02_a_15_11": {
+  "labels": [
+   "2026-11-02",
+   "2026-11-03",
+   "2026-11-04",
+   "2026-11-05",
+   "2026-11-06",
+   "2026-11-07",
+   "2026-11-08",
+   "2026-11-09",
+   "2026-11-10",
+   "2026-11-11",
+   "2026-11-12",
+   "2026-11-13",
+   "2026-11-14",
+   "2026-11-15"
+  ],
+  "spend": [
+   "90.58",
+   "148.1",
+   "192.86",
+   "130.36",
+   "91.23",
+   "53.83",
+   "70.02",
+   "192.36",
+   "183.68",
+   "126.16",
+   "107.05",
+   "72.23",
+   "51.83",
+   "116.58"
+  ],
+  "obs": "14 dias com veiculação; nenhum dia zerado. Soma 02-08 = 776,98; soma 09-15 = 849,89."
+ },
+ "google_ads_numeros": {
+  "g1_gads:cost_micros_reais": {
+   "cur": 0,
+   "prev": 345.011096,
+   "difference_pct": -100
+  },
+  "g2_gads:clicks": {
+   "cur": "0",
+   "prev": "683",
+   "difference_pct": -100
+  },
+  "g3_gads:impressions": {
+   "cur": "0",
+   "prev": "14159",
+   "difference_pct": -100
+  },
+  "g4_gads:all_conversions": {
+   "cur": 0,
+   "prev": 60,
+   "difference_pct": -100
+  }
+ },
+ "google_ads_diario_custo_e_cliques": {
+  "obs": "chamadas de g1+g2 dia a dia (start=end). Semana 09-15/11 inteira = 0 (total semanal 0). 16 e 17/11 consultados juntos = 0.",
+  "2026-11-02": {
+   "custo": 98.118771,
+   "cliques": "240"
+  },
+  "2026-11-03": {
+   "custo": 67.233581,
+   "cliques": "125"
+  },
+  "2026-11-04": {
+   "custo": 33.633479,
+   "cliques": "27"
+  },
+  "2026-11-05": {
+   "custo": 86.700795,
+   "cliques": "170"
+  },
+  "2026-11-06": {
+   "custo": 52.938877,
+   "cliques": "107"
+  },
+  "2026-11-07": {
+   "custo": 6.385593,
+   "cliques": "14"
+  },
+  "2026-11-08": {
+   "custo": 0,
+   "cliques": "0"
+  },
+  "2026-11-09_a_15": {
+   "custo": 0,
+   "cliques": "0"
+  },
+  "2026-11-16_a_17": {
+   "custo": 0,
+   "cliques": "0"
+  }
+ },
+ "instagram_numeros": {
+  "i1_ig:reach_soma_diaria": {
+   "cur": 18957,
+   "prev": 55712,
+   "difference_pct": -65.9732194141298,
+   "trend_cur": [
+    5796,
+    4374,
+    2121,
+    1852,
+    1454,
+    1305,
+    2055
+   ]
+  },
+  "i2_ig:views": {
+   "cur": 33864,
+   "prev": 90459,
+   "difference_pct": -62.56425562962226
+  },
+  "i3_ig:profile_views": {
+   "cur": 145,
+   "prev": 164,
+   "difference_pct": -11.58536585365853
+  },
+  "i4_ig:new_followers_count": {
+   "cur": 11,
+   "prev": 19,
+   "difference_pct": -42.10526315789473
+  }
+ },
+ "instagram_alcance_diario_02_a_15_11": {
+  "labels": [
+   "2026-11-02",
+   "2026-11-03",
+   "2026-11-04",
+   "2026-11-05",
+   "2026-11-06",
+   "2026-11-07",
+   "2026-11-08",
+   "2026-11-09",
+   "2026-11-10",
+   "2026-11-11",
+   "2026-11-12",
+   "2026-11-13",
+   "2026-11-14",
+   "2026-11-15"
+  ],
+  "reach": [
+   19704,
+   9697,
+   14515,
+   5842,
+   2497,
+   1890,
+   1567,
+   5796,
+   4374,
+   2121,
+   1852,
+   1454,
+   1305,
+   2055
+  ]
+ },
+ "instagram_posts_semana_atual": {
+  "colunas": [
+   "url",
+   "texto_inicio",
+   "tipo",
+   "alcance",
+   "views",
+   "interacoes",
+   "taxa_engajamento",
+   "curtidas",
+   "comentarios",
+   "salvos",
+   "follows",
+   "visitas_perfil",
+   "compartilhamentos",
+   "created_at"
+  ],
+  "linhas": [
+   [
+    "https://www.instagram.com/p/DfnQULdIKap/",
+    "Às vezes, uma transformação vai muito além da estética... (reabilitação oral, transformação do sorriso)",
+    "Carousel",
+    348,
+    883,
+    13,
+    0.03735632183908046,
+    9,
+    0,
+    1,
+    0,
+    2,
+    2,
+    "2026-11-11T16:40:52-03:00"
+   ],
+   [
+    "https://www.instagram.com/reel/DfsObkVJd4K/",
+    "São 20 anos fazendo parte de Guarapuava...",
+    "Reels",
+    141,
+    217,
+    2,
+    0.014184397163120567,
+    2,
+    0,
+    0,
+    "-",
+    "-",
+    0,
+    "2026-11-13T15:01:10-03:00"
+   ],
+   [
+    "https://www.instagram.com/reel/DfkrNxsibdI/",
+    "Perdeu um dente e não sabe como recuperar seu sorriso? O implante dentário...",
+    "Reels",
+    150,
+    264,
+    7,
+    0.04666666666666667,
+    6,
+    0,
+    0,
+    "-",
+    "-",
+    0,
+    "2026-11-10T16:38:33-03:00"
+   ],
+   [
+    "https://www.instagram.com/reel/DfiDofxCSas/",
+    "O clima de Natal já tomou conta da Trait! Nossa reunião... equipe",
+    "Reels",
+    288,
+    538,
+    16,
+    0.05555555555555555,
+    13,
+    0,
+    0,
+    "-",
+    "-",
+    2,
+    "2026-11-09T16:14:23-03:00"
+   ]
+  ],
+  "obs": "métricas dos posts são acumuladas desde a publicação até a data da coleta (18/11); URLs de imagem do CDN omitidas"
+ },
+ "compare_periods_projeto": {
+  "fb_ads:cpc": {
+   "cur": "2.41446",
+   "prev": "2.023385",
+   "pct": 19.33
+  },
+  "fb_ads:reach": {
+   "cur": "15595",
+   "prev": "18785",
+   "pct": -16.98
+  },
+  "fb_ads:reach_facebook": {
+   "cur": "8474",
+   "prev": "10782",
+   "pct": -21.41
+  },
+  "fb_ads:reach_instagram": {
+   "cur": "8464",
+   "prev": "9716",
+   "pct": -12.89
+  },
+  "fb_ads:impressions": {
+   "cur": "41581",
+   "prev": "44374",
+   "pct": -6.29
+  },
+  "fb_ads:impressions_facebook": {
+   "cur": "20930",
+   "prev": "22569",
+   "pct": -7.26
+  },
+  "ig:views": {
+   "cur": 33864,
+   "prev": 90459,
+   "pct": -62.56
+  },
+  "ig:reach": {
+   "cur": 18957,
+   "prev": 55712,
+   "pct": -65.97
+  },
+  "ig:viewers": {
+   "cur": 11900,
+   "prev": 42076,
+   "pct": -71.72
+  },
+  "ig:total_reach": {
+   "cur": 91995,
+   "prev": 91906,
+   "pct": 0.1
+  },
+  "ig:paid_reach": {
+   "cur": 90383,
+   "prev": 90517,
+   "pct": -0.15
+  },
+  "ig:organic_reach": {
+   "cur": 1612,
+   "prev": 1389,
+   "pct": 16.05
+  },
+  "ig:follower_reach": {
+   "cur": 1905,
+   "prev": 1870,
+   "pct": 1.87
+  },
+  "ig:non_follower_reach": {
+   "cur": 89909,
+   "prev": 90285,
+   "pct": -0.42
+  },
+  "gmb:total_reviews_in_period": {
+   "cur": 3,
+   "prev": 1,
+   "pct": 200
+  },
+  "gmb:average_rating_in_period": {
+   "cur": 4.666666666666667,
+   "prev": 5,
+   "pct": -6.67
+  },
+  "gmb:average_reply_time": {
+   "cur": 0,
+   "prev": 0
+  },
+  "gmb:rate_replied_reviews": {
+   "cur": 0,
+   "prev": 0
+  },
+  "gmb:reviews_awaiting_reply": {
+   "cur": 3,
+   "prev": 1,
+   "pct": 200
+  },
+  "gmb:rate_commented_reviews": {
+   "cur": 100,
+   "prev": 100,
+   "pct": 0
+  },
+  "gmb:total_views": {
+   "cur": 61,
+   "prev": 114,
+   "pct": -46.49
+  },
+  "gmb:total_search_views": {
+   "cur": 31,
+   "prev": 29,
+   "pct": 6.9
+  },
+  "gads:clicks": {
+   "cur": "0",
+   "prev": "683",
+   "pct": -100
+  },
+  "gads:count_campaigns": {
+   "cur": 0,
+   "prev": 1,
+   "pct": -100
+  },
+  "gads:count_ads": {
+   "cur": 0,
+   "prev": 0
+  },
+  "gads:all_conversions": {
+   "cur": 0,
+   "prev": 60,
+   "pct": -100
+  },
+  "gads:conversions_value": {
+   "cur": 0,
+   "prev": 0
+  },
+  "gads:all_conversions_value": {
+   "cur": 0,
+   "prev": 60,
+   "pct": -100
+  },
+  "gads:conversions": {
+   "cur": 0,
+   "prev": 0
+  },
+  "gads:impressions": {
+   "cur": "0",
+   "prev": "14159",
+   "pct": -100
+  },
+  "partial_results": false,
+  "sources_with_errors": [],
+  "integrations_fetched": 4
+ },
+ "observacoes": [
+  "Google Ads: último gasto em 07/11 (R$ 6,39; 14 cliques); zero de 08/11 a 17/11. count_campaigns 0 na semana atual (1 na anterior).",
+  "Dados da semana 02-08/11 revisados pelo Reportei desde o relatório anterior: Meta investimento 776,46 -> 776,98; custo por conversa 33,7591 -> 33,7817; Google custo 345,13 -> 345,01; cliques 685 -> 683; IG views 90.458 -> 90.459; GMB visualizações 59 -> 114 (atraso típico do Google Meu Negócio; os 61 desta semana podem subir).",
+  "Página do Facebook (3672500) inativa: não consultada."
+ ]
+}

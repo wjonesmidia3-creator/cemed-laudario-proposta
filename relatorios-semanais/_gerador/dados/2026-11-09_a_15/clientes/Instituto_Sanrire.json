@@ -1,0 +1,239 @@
+{
+  "arquivo": "Instituto_Sanrire",
+  "nome": "Instituto Sanrire",
+  "titulo": [
+    "Meta com {{28% mais alcance}}",
+    "e 32 conversas na semana."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta, Google Ads e ChatGPT Ads**, além de **Facebook e YouTube**, do Instituto Sanrire, comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
+  "destaque": {
+    "num": "32",
+    "rotulo": "CONVERSAS",
+    "titulo": "{{32 conversas}} pelo Meta, 2 a mais que na semana anterior, a {{R$ 67,12}} cada.",
+    "texto": "O custo por conversa ficou 3,4% acima do anterior (R$ 64,93). No Google Ads, as conversões principais caíram de 32 para 23 e o total subiu para 117: vamos revisar a medição."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{3.827}}",
+      "legenda": "investidos em anúncios (anterior: R$ 3.804)"
+    },
+    {
+      "valor": "29,5 {{mil}}",
+      "legenda": "pessoas alcançadas pelos anúncios do Meta, 28% a mais"
+    },
+    {
+      "valor": "{{23}}",
+      "legenda": "conversões principais no Google Ads (117 em todas as ações)"
+    },
+    {
+      "valor": "45,5 {{mil}}",
+      "legenda": "alcance da página no Facebook, 18% a mais"
+    }
+  ],
+  "intro_p2": "Investimento total estável (**+0,6%**). O Meta ganhou alcance e conversas, e o Google Ads registrou menos conversões principais.",
+  "kpis": [
+    {
+      "valor": "32",
+      "ref": "/30",
+      "rotulo": "Conversas iniciadas\nno Meta Ads",
+      "cur": 32,
+      "prev": 30,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 67,12",
+      "rotulo": "Custo por conversa\nno Meta Ads",
+      "cur": 67.1240625,
+      "prev": 64.93333333333334,
+      "melhor": "down"
+    },
+    {
+      "valor": "23",
+      "ref": "/32",
+      "rotulo": "Conversões principais\nno Google Ads",
+      "cur": 22.999733,
+      "prev": 31.998265,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 3.827",
+      "rotulo": "Investimento total\n(Meta + Google + ChatGPT)",
+      "cur": 3827.43219,
+      "prev": 3804.296958,
+      "melhor": null
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS (CA 03)",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 30,
+          "cur": 32,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 64.93333333333334,
+          "cur": 67.1240625,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 1948.0,
+          "cur": 2147.97,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 23018,
+          "cur": 29458,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 322,
+          "cur": 334,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "CPC (todos os cliques)",
+          "prev": 4.367713,
+          "cur": 4.710461,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversões principais",
+          "prev": 31.998265,
+          "cur": 22.999733,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Todas as conversões",
+          "prev": 94.998265,
+          "cur": 116.999733,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 1729.056958,
+          "cur": 1679.46219,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 5322,
+          "cur": 4778,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "CHATGPT ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 127.24,
+          "cur": 0,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 14,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "FACEBOOK · YOUTUBE",
+      "linhas": [
+        {
+          "rotulo": "Alcance da página (Facebook)",
+          "prev": 38679,
+          "cur": 45532,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visualizações (YouTube)",
+          "prev": 4342,
+          "cur": 2907,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "denso": true,
+  "grafico": {
+    "titulo": "Alcance diário da página no Facebook",
+    "sub": "Pessoas alcançadas por dia, de 02/11 a 15/11",
+    "prev": [6388, 7032, 6002, 5853, 4193, 4633, 4578],
+    "cur": [5618, 5804, 5405, 7213, 10000, 5027, 6465]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, ChatGPT Ads, Página do Facebook e YouTube). Feriados: Finados (02/11) na semana anterior e Proclamação da República (15/11, domingo) nesta. ChatGPT Ads sem veiculação desde 06/11. Conta CA 02 sem veiculação nas duas semanas. Instagram: integração inativa no Reportei desde 09/11. Google Ads e YouTube atualizaram os números de 02 a 08/11 depois do último relatório.",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "Meta com mais alcance e conversas, Google Ads com menos conversões principais e ChatGPT Ads sem veiculação desde 06/11.",
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Meta alcançou mais gente",
+      "texto": "**29.458 pessoas** alcançadas (28% a mais) e **32 conversas**, com 10% a mais de investimento e custo por conversa 3,4% maior."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Google: conversões principais",
+      "texto": "Caíram de 32 para **23** (28%), bem mais que os cliques (10%). Já o total de conversões subiu de 95 para 117."
+    },
+    {
+      "tipo": "neu",
+      "titulo": "ChatGPT Ads sem veiculação",
+      "texto": "Última entrega em 05/11. Na semana anterior foram R$ 127,24 e **14 cliques**, sem conversões registradas."
+    },
+    {
+      "tipo": "neu",
+      "titulo": "Facebook sobe, YouTube cai",
+      "texto": "Alcance da página subiu **18%** (45,5 mil, pico de 10 mil em 13/11). No YouTube, as visualizações caíram de 4.342 para 2.907."
+    }
+  ],
+  "leitura": "A campanha de mensagens no Meta ganhou fôlego: alcançou **28% mais pessoas** e trouxe 32 conversas, com custo quase igual ao da semana anterior. No Google Ads, as conversões principais caíram bem mais que os cliques, enquanto o total de conversões subiu. Essa diferença pede uma **revisão da medição** antes de qualquer mudança de verba.",
+  "proximos": [
+    {
+      "titulo": "Revisar a medição no Google",
+      "texto": "Conferir a tag e quais ações contam como principais, para entender a queda de 32 para 23."
+    },
+    {
+      "titulo": "Decidir o ChatGPT Ads",
+      "texto": "Sem entrega desde 06/11 e sem conversões no teste: definir com vocês se retomamos com meta e prazo."
+    },
+    {
+      "titulo": "Reconectar o Instagram",
+      "texto": "Refazer o acesso à conta para voltar a mostrar alcance e posts do Instagram no relatório."
+    }
+  ],
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 do Instituto Sanrire.\n\nOs anúncios no Instagram/Facebook alcançaram *28% mais pessoas* e trouxeram *32 conversas*, 2 a mais que na semana anterior, com custo por conversa quase igual. O investimento total ficou praticamente estável.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelos anúncios no Instagram/Facebook: 32 (antes 30)\n• Custo por conversa: R$ 67,12 (antes R$ 64,93)\n• Investimento total em anúncios: R$ 3.827 (antes R$ 3.804)\n• Google Ads: 23 conversões principais (antes 32) e 117 no total (antes 95)\n• Alcance da página no Facebook: 45,5 mil (antes 38,7 mil)\n\nPonto de atenção: no Google, as conversões principais caíram bem mais que os cliques (28% contra 10%). Nesta semana vamos:\n1. Revisar a medição de conversões do Google Ads\n2. Definir com vocês o futuro do ChatGPT Ads, sem anúncios no ar desde 06/11\n3. Refazer o acesso ao Instagram para voltar a medir alcance e posts\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+}

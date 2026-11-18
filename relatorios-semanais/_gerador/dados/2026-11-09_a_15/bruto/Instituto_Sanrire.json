@@ -1,0 +1,85 @@
+{
+  "cliente": "Instituto Sanrire",
+  "projeto_reportei": 1292582,
+  "periodo": {"inicio": "2026-11-09", "fim": "2026-11-15", "comp_inicio": "2026-11-02", "comp_fim": "2026-11-08"},
+  "coletado_em": "2026-11-18",
+  "integracoes": {
+    "3845077": {"slug": "facebook", "nome": "Instituto Sanrire", "status": "active", "obs": "pagina com alcance 0 nas duas semanas"},
+    "3845078": {"slug": "facebook", "nome": "Sanrire", "status": "active", "obs": "pagina usada no relatorio (bate com compare_periods fb:page_reach)"},
+    "3845079": {"slug": "instagram_business", "nome": "instituto.sanrire", "status": "inactive", "updated_at": "2026-11-09T12:22:48-03:00", "obs": "nao consultada (inativa)"},
+    "3845074": {"slug": "facebook_ads", "nome": "CONTA DE ANUNCIO 02 - SANRIRE - 20/10/23", "status": "active", "obs": "sem dados nas duas semanas"},
+    "3845075": {"slug": "facebook_ads", "nome": "CA 03 - SANRIRE", "status": "active"},
+    "3844790": {"slug": "chatgpt_ads", "nome": "Instituto Sanrire Odontologia e Health Center", "status": "active", "obs": "sem veiculacao em 09-15/11; ultima veiculacao 05/11"},
+    "3728922": {"slug": "youtube", "nome": "Instituto Sanrire", "status": "active"},
+    "3672498": {"slug": "google_adwords", "nome": "Dra. Ingrid Aquino", "status": "active"}
+  },
+  "facebook_ads_3845075_CA03": {
+    "a1_spend": {"cur": "2147.97", "prev": "1948", "difference_pct": 10.2654004106776},
+    "a2_conversas_iniciadas": {"cur": 32, "prev": 30, "difference_pct": 6.666666666666671},
+    "a3_custo_por_conversa": {"cur": 67.1240625, "prev": 64.93333333333334, "difference_pct": 3.3738128850102385},
+    "a4_cpc_todos_cliques": {"cur": "4.710461", "prev": "4.367713", "difference_pct": 7.84731048033602},
+    "a5_reach": {"cur": "29458", "prev": "23018", "difference_pct": 27.978104092449385},
+    "a6_impressions": {"cur": "72351", "prev": "47724", "difference_pct": 51.602967060598445},
+    "a7_inline_link_clicks": {"cur": "334", "prev": "322", "difference_pct": 3.726708074534173},
+    "a8_leads": {"cur": 5, "prev": 5, "difference_pct": 0},
+    "s1_spend_by_date_02a15": {
+      "labels": ["2026-11-02","2026-11-03","2026-11-04","2026-11-05","2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14","2026-11-15"],
+      "data": ["317.5","325.05","284.15","370.13","234.45","213.07","203.65","468.33","300.92","281.71","350.18","231.14","228.94","286.75"],
+      "obs": "14 dias com veiculacao, nenhum dia zerado; soma 02-08 = 1948.00, soma 09-15 = 2147.97"
+    },
+    "plataforma_compare_periods": {
+      "reach_instagram": {"cur": "29244", "prev": "22810"},
+      "reach_facebook": {"cur": "229", "prev": "288"},
+      "impressions_facebook": {"cur": "265", "prev": "339"}
+    }
+  },
+  "facebook_ads_3845074_CA02": {
+    "a1..a8": "warning: There is no data for the selected period (09-15 e 02-08)",
+    "s1_spend_by_date_02a15": "warning: There is no data for the selected period"
+  },
+  "google_adwords_3672498": {
+    "g1_cost": {"cur": 1679.46219, "prev": 1729.056958, "difference_pct": -2.868313144372422},
+    "g2_clicks": {"cur": "4778", "prev": "5322", "difference_pct": -10.221721157459612},
+    "g3_impressions": {"cur": "203238", "prev": "199114", "difference_pct": 2.071175306608268},
+    "g4_all_conversions": {"cur": 116.999733, "prev": 94.998265, "difference_pct": 23.159862972234293},
+    "compare_periods": {
+      "conversions_principais": {"cur": 22.999733, "prev": 31.998265, "pct": -28.12},
+      "all_conversions_value": {"cur": 7, "prev": 1},
+      "conversions_value": {"cur": 0, "prev": 0},
+      "count_campaigns": {"cur": 7, "prev": 7},
+      "count_ads": {"cur": 13, "prev": 11}
+    },
+    "calculado": {"custo_por_conversao_principal": {"cur": 73.0209, "prev": 54.0360}},
+    "obs": "valores de 02-08 revisados pela plataforma desde o relatorio anterior (antes: custo 1726.98, cliques 5319, impressoes 199124, conversoes principais 33.0, todas 96)"
+  },
+  "chatgpt_ads_3844790": {
+    "compare_periods_09a15_vs_02a08": "todas as metricas null (sem dados no periodo atual)",
+    "compare_periods_02a08_vs_26a01": {"spend": {"cur": 127.24, "prev": 279.54}, "clicks": {"cur": 14, "prev": 38}, "impressions": {"cur": 1846, "prev": 4083}, "cpc": {"cur": 9.088571428571429, "prev": 7.356315789473685}, "conversions": {"cur": 0, "prev": 0}},
+    "compare_periods_02a15_vs_19a01": {"spend": {"cur": 127.24, "prev": 559.76}, "clicks": {"cur": 14, "prev": 68}, "impressions": {"cur": 1846, "prev": 7861}, "conversions": {"cur": 0, "prev": 0}},
+    "diario": {"03/11": {"spend": 40.09, "clicks": 6, "impressions": 572}, "04/11": {"spend": 40.02, "clicks": 3, "impressions": 553}, "05/11": {"spend": 6.2, "clicks": 1, "impressions": 86}, "06-08/11": "null (sem veiculacao)", "02/11_deduzido": {"spend": 40.93, "clicks": 4, "impressions": 635}},
+    "conclusao": "semana 09-15 com investimento 0; ultima veiculacao em 05/11"
+  },
+  "youtube_3728922": {
+    "views": {"cur": 2907, "prev": 4342, "pct": -33.05},
+    "likes": {"cur": 0, "prev": 1},
+    "shares": {"cur": 0, "prev": 2},
+    "subscribers_gained": {"cur": 0, "prev": 1},
+    "comments": {"cur": 0, "prev": 0},
+    "obs": "views de 02-08 revisadas desde o relatorio anterior (antes: 3215)"
+  },
+  "facebook_3845078_pagina_Sanrire": {
+    "f1_page_reach": {"cur": 45532, "prev": 38679, "difference_pct": 17.71762455078982, "trend_cur": [5618,5804,5405,7213,10000,5027,6465]},
+    "f2_page_media_views": {"cur": 63878, "prev": 51108, "difference_pct": 24.986303514126945, "trend_cur": [7983,8828,7460,10182,14361,6559,8505]},
+    "f1_14dias_02a15": [6388,7032,6002,5853,4193,4633,4578,5618,5804,5405,7213,10000,5027,6465],
+    "compare_periods": {"page_reach_total": {"cur": 32212, "prev": 28132}, "page_posts_count": {"cur": 0, "prev": 0}, "page_messages_new": {"cur": 0, "prev": 0}}
+  },
+  "facebook_3845077_pagina_Instituto_Sanrire": {
+    "f1_page_reach": {"cur": 0, "prev": 0},
+    "f2_page_media_views": {"cur": 0, "prev": 0}
+  },
+  "instagram_business_3845079": "inativa desde 09/11 (updated_at 2026-11-09T12:22:48-03:00); nao consultada",
+  "totais": {
+    "investimento_total": {"cur": 3827.43219, "prev": 3804.296958, "composicao": "Meta CA03 + Google + ChatGPT (cur: 2147.97 + 1679.46219 + 0; prev: 1948 + 1729.056958 + 127.24)"}
+  },
+  "feriados": {"02/11": "Finados (semana anterior, segunda)", "15/11": "Proclamacao da Republica (semana atual, domingo)"}
+}

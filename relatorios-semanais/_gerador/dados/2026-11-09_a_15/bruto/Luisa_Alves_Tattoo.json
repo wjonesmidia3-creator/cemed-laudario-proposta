@@ -1,0 +1,76 @@
+{
+  "cliente": "Luisa_Alves_Tattoo",
+  "projeto_reportei": 1350513,
+  "coletado_em": "2026-11-18",
+  "periodo": {"inicio": "2026-11-09", "fim": "2026-11-15", "comp_inicio": "2026-11-02", "comp_fim": "2026-11-08"},
+  "integracoes": [
+    {"id": 3850104, "nome": "LA Tattoo", "slug": "facebook_ads", "status": "active"},
+    {"id": 3850105, "nome": "luisaalvestattoo", "slug": "instagram_business", "status": "active"},
+    {"id": 3850106, "nome": "_luisaaalves", "slug": "facebook", "status": "active"},
+    {"id": 3850107, "nome": "487998908345819", "slug": "facebook_ads", "status": "active"}
+  ],
+  "facebook_ads_3850104_LA_Tattoo": {
+    "numeros_com_comparacao": {
+      "a1_spend": {"cur": 310.67, "prev": null},
+      "a2_conversas_iniciadas": {"cur": 99, "prev": null},
+      "a3_custo_por_conversa": {"cur": 3.138080808080808, "prev": null},
+      "a4_cpc_todos_os_cliques": {"cur": 0.48391, "prev": null},
+      "a5_alcance": {"cur": 8409, "prev": null},
+      "a6_impressoes": {"cur": 12493, "prev": null},
+      "a7_cliques_no_link": {"cur": 454, "prev": null},
+      "a8_leads": {"cur": 0, "prev": null},
+      "obs": "comparison.values = null em todas: sem veiculação de 02 a 08/11 (confirmado pelo diário)"
+    },
+    "por_plataforma_com_comparacao": {
+      "p1_conversas_instagram": {"cur": 52, "prev": null},
+      "p2_conversas_facebook": {"cur": 47, "prev": null},
+      "p3_spend_instagram": {"cur": 205.21, "prev": null},
+      "p4_spend_facebook": {"cur": 105.46, "prev": null}
+    },
+    "investimento_diario_02_a_15_11": {
+      "labels_retornados": ["2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14","2026-11-15"],
+      "valores_retornados": [14.17, 39.26, 47.11, 65.15, 49.84, 49.34, 45.8],
+      "serie_14_dias_completada_com_zero": [0,0,0,0,0,0,0,14.17,39.26,47.11,65.15,49.84,49.34,45.8]
+    },
+    "semana_26_10_a_01_11": "sem dados (warning: There is no data for the selected period)"
+  },
+  "facebook_ads_3850107_conta_2_487998908345819": {
+    "numeros_com_comparacao_09_15_vs_02_08": "sem dados nas duas semanas (warning em todas as métricas a1-a8)",
+    "investimento_diario_02_a_15_11": "sem dados (warning)",
+    "semana_26_10_a_01_11_contexto": {
+      "a1_spend": 241.33,
+      "a2_conversas_iniciadas": 9,
+      "a3_custo_por_conversa": 26.814444444444447,
+      "diario_labels": ["2026-10-26","2026-10-27","2026-10-28","2026-10-29","2026-10-30","2026-10-31"],
+      "diario_valores": [39.06, 38.63, 43.79, 54.22, 44.62, 21.01],
+      "obs": "última veiculação desta conta em 31/10"
+    }
+  },
+  "instagram_business_3850105": {
+    "numeros_com_comparacao": {
+      "i1_alcance_soma_diaria": {"cur": 8289, "prev": 141, "difference_pct": 5778.723404255319},
+      "i2_visualizacoes": {"cur": 10852, "prev": 248, "difference_pct": 4275.806451612903},
+      "i3_visitas_ao_perfil": {"cur": 260, "prev": 29, "difference_pct": 796.5517241379309},
+      "i4_new_followers": {"cur": 20, "prev": -2, "obs": "prev negativo: métrica parece ser saldo; não usada no relatório"}
+    },
+    "alcance_diario_02_a_15_11": {
+      "labels": ["2026-11-02","2026-11-03","2026-11-04","2026-11-05","2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14","2026-11-15"],
+      "valores": [6, 6, 2, 6, 2, 105, 14, 457, 720, 810, 1682, 1700, 1742, 1178]
+    },
+    "posts_09_a_15_11": [
+      {"id": "18115328462336562", "url": "https://www.instagram.com/reel/DfiO_M1NLVg/", "legenda_inicio": "Vem acompanhar comigo o processo dessa tattoo super especial pra @carol.board 🫶 Duas damas que eu adorei tatuar!", "tipo": "Reels", "alcance": 600, "views": 893, "interacoes": 45, "taxa_engajamento": 0.075, "curtidas": 37, "comentarios": 3, "salvos": 0, "follows": "-", "visitas_perfil": "-", "compartilhamentos": 1, "criado_em": "2026-11-09T18:05:11-03:00"}
+    ],
+    "posts_01_10_a_08_11_contexto": [
+      {"id": "18072892157750798", "url": "https://www.instagram.com/reel/DejwdWqR6Ux/", "tipo": "Reels", "tema": "cobertura com lírios em preto e cinza", "alcance": 1541, "views": 1919, "interacoes": 84, "criado_em": "2026-10-16T11:34:02-03:00"},
+      {"id": "18043630490703373", "url": "https://www.instagram.com/reel/DeepmCotU86/", "tipo": "Reels", "tema": "caveira e cobra, duas sessões", "alcance": 469, "views": 816, "interacoes": 45, "criado_em": "2026-10-14T12:04:22-03:00"}
+    ],
+    "obs": "último post antes de 09/11 foi em 16/10"
+  },
+  "facebook_pagina_3850106": {
+    "numeros_com_comparacao": {
+      "f1_alcance_pagina": {"cur": 7427, "prev": 0, "trend_semana_atual": [347, 800, 789, 1432, 1331, 1567, 1161]},
+      "f2_visualizacoes_midia": {"cur": 9336, "prev": 0, "trend_semana_atual": [445, 1022, 1007, 1809, 1673, 1916, 1464]}
+    },
+    "alcance_diario_02_a_15_11": [0,0,0,0,0,0,0,347,800,789,1432,1331,1567,1161]
+  }
+}

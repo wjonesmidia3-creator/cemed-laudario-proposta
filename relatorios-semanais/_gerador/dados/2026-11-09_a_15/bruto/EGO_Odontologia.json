@@ -1,0 +1,123 @@
+{
+  "cliente": "EGO Odontologia",
+  "arquivo": "EGO_Odontologia",
+  "projeto_reportei": 1330234,
+  "coletado_em": "2026-11-18",
+  "semana_atual": {"inicio": "2026-11-09", "fim": "2026-11-15"},
+  "semana_anterior": {"inicio": "2026-11-02", "fim": "2026-11-08"},
+  "integracoes": [
+    {"id": 3788548, "slug": "facebook_ads", "nome": "Clínica EGO - 01", "status": "active"},
+    {"id": 3833501, "slug": "google_adwords", "nome": "Odontologia - EGO", "status": "active"},
+    {"id": 3789787, "slug": "instagram_business", "nome": "egoclinicaodontologica", "status": "active"},
+    {"id": 3788544, "slug": "facebook", "nome": "EGO Odontologia", "status": "active"}
+  ],
+  "facebook_ads": {
+    "numeros": {
+      "a1_spend": {"cur": "752.23", "prev": "633.37", "difference": 18.7662819520975},
+      "a2_conversas_iniciadas": {"cur": 53, "prev": 35, "difference": 51.428571428571416},
+      "a3_custo_por_conversa": {"cur": 14.193018867924529, "prev": 18.096285714285713, "difference": -21.569436446728048},
+      "a4_cpc_todos_cliques": {"cur": "0.610576", "prev": "0.552197", "difference": 10.572132771456566},
+      "a5_reach": {"cur": "12547", "prev": "12985", "difference": -3.373122834039279},
+      "a6_impressions": {"cur": "22983", "prev": "22881", "difference": 0.4457847122066454},
+      "a7_inline_link_clicks": {"cur": "1114", "prev": "1059", "difference": 5.193578847969775},
+      "a8_leads": {"cur": 0, "prev": 4, "difference": -100}
+    },
+    "por_plataforma": {
+      "p1_conversas_instagram": {"cur": 16, "prev": 12},
+      "p2_conversas_facebook": {"cur": 37, "prev": 23},
+      "p3_spend_instagram": {"cur": "265.763533", "prev": "196.886891"},
+      "p4_spend_facebook": {"cur": "486.466467", "prev": "436.433109"}
+    },
+    "s1_spend_diario_bruto": {
+      "labels": ["2026-11-02","2026-11-03","2026-11-05","2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14","2026-11-15"],
+      "spend": ["85.76","0.02","143.88","161.24","156.46","86.01","55.61","109.34","118.87","111.21","113.01","108.92","135.27"],
+      "obs": "2026-11-04 ausente nos labels = sem veiculação (0)"
+    },
+    "s1_spend_diario_14d_completo": {
+      "02/11": 85.76, "03/11": 0.02, "04/11": 0, "05/11": 143.88, "06/11": 161.24, "07/11": 156.46, "08/11": 86.01,
+      "09/11": 55.61, "10/11": 109.34, "11/11": 118.87, "12/11": 111.21, "13/11": 113.01, "14/11": 108.92, "15/11": 135.27
+    },
+    "referencia_pre_pausa_26out_a_01nov": {
+      "a1_spend": "1005.32",
+      "a2_conversas_iniciadas": 72,
+      "a3_custo_por_conversa": 13.962777777777779
+    }
+  },
+  "google_adwords": {
+    "numeros": {
+      "g1_cost": {"cur": 15.19, "prev": 41.678973, "difference": -63.554764173291886},
+      "g2_clicks": {"cur": "4", "prev": "9", "difference": -55.55555555555556},
+      "g3_impressions": {"cur": "190", "prev": "322", "difference": -40.993788819875775},
+      "g4_all_conversions": {"cur": 0, "prev": 0, "difference": null}
+    },
+    "compare_periods": {
+      "gads:conversions": {"cur": 0, "prev": 0},
+      "gads:all_conversions": {"cur": 0, "prev": 0},
+      "gads:conversions_value": {"cur": 0, "prev": 0},
+      "gads:all_conversions_value": {"cur": 0, "prev": 0},
+      "gads:count_campaigns": {"cur": 1, "prev": 1},
+      "gads:count_ads": {"cur": 1, "prev": 1},
+      "gads:clicks": {"cur": "4", "prev": "9"},
+      "gads:impressions": {"cur": "190", "prev": "322"}
+    },
+    "obs": "1ª tentativa de get_metrics_data deu Bad Gateway; 2ª tentativa ok."
+  },
+  "instagram_business": {
+    "numeros": {
+      "i1_reach_soma_diaria": {"cur": 9782, "prev": 5933, "difference": 64.87443114781729, "trend_cur": [469,1318,844,873,1054,2689,2535]},
+      "i2_views": {"cur": 14795, "prev": 8572, "difference": 72.59682687820813},
+      "i3_profile_views": {"cur": 84, "prev": 75, "difference": 12.000000000000014},
+      "i4_new_followers": {"cur": 2, "prev": 12, "difference": -83.33333333333334}
+    },
+    "d1_alcance_diario_14d": {
+      "labels": ["02/11","03/11","04/11","05/11","06/11","07/11","08/11","09/11","10/11","11/11","12/11","13/11","14/11","15/11"],
+      "reach": [876,114,92,1349,1328,1670,504,469,1318,844,873,1054,2689,2535]
+    },
+    "compare_periods_extra": {
+      "ig:viewers": {"cur": 7585, "prev": 4714},
+      "ig:total_reach": {"cur": 21301, "prev": 38812},
+      "ig:paid_reach": {"cur": 20108, "prev": 37505},
+      "ig:organic_reach": {"cur": 1193, "prev": 1307},
+      "ig:follower_reach": {"cur": 298, "prev": 300},
+      "ig:non_follower_reach": {"cur": 21040, "prev": 38643}
+    },
+    "m1_posts_semana_atual": {
+      "colunas": ["media_id","url","inicio_legenda","tipo","alcance","views","interacoes","taxa_engajamento","curtidas","comentarios","salvos","follows","visitas_perfil","compartilhamentos","created_at"],
+      "linhas": [
+        ["18438847246194869","https://www.instagram.com/reel/DfsNjlxgajW/","ATENÇÃO! A AGENDA DO SORRIA PARA 2027 JÁ ESTÁ ABERTA! O Dr. Rogério tem um convite especial... 25 de novembro","Reels",130,230,19,0.14615384615384616,18,1,0,"-","-",0,"2026-11-13T14:53:58-03:00"],
+        ["18120611585075083","https://www.instagram.com/reel/Dfptz0BT-_h/","Qual é o sorriso que você deseja conquistar em 2027? ... SORRIA PARA 2027 (25/11)","Reels",225,316,12,0.05333333333333334,12,0,0,"-","-",0,"2026-11-12T15:38:01-03:00"],
+        ["18651294190023083","https://www.instagram.com/reel/DfnJA3xTlgq/","Na implantodontia, cada sorriso tem seu próprio tempo. Receber dentes fixos rapidamente...","Reels",82,146,12,0.14634146341463414,10,1,1,"-","-",0,"2026-11-11T15:38:10-03:00"],
+        ["17988427188087586","https://www.instagram.com/reel/Dfk0FhuTM0X/","CHEGOU A HORA DE REVELAR! A EGO apresenta: SORRIA PARA 2027! ... 25 de novembro","Reels",193,281,22,0.11398963730569948,18,2,1,"-","-",1,"2026-11-10T17:56:57-03:00"],
+        ["17996327898025767","https://www.instagram.com/reel/DfkB09qTAJN/","Um implante dentário pode durar muitos anos, mas sua longevidade depende de diversos fatores...","Reels",176,293,20,0.11363636363636363,19,0,1,"-","-",0,"2026-11-10T10:37:16-03:00"],
+        ["17943647826381064","https://www.instagram.com/reel/DfhV_ooTSge/","Tem algo especial sendo preparado na EGO! ... Comente EU QUERO SABER!","Reels",100,196,18,0.18,16,2,0,"-","-",0,"2026-11-09T09:35:52-03:00"]
+      ]
+    },
+    "m1_posts_semana_anterior_referencia": {
+      "obs": "consultado só para contar publicações de 02 a 08/11 (2 posts); métricas acumuladas até a data da coleta",
+      "linhas": [
+        ["18203238619375845","https://www.instagram.com/p/DfZkwJeoJ8n/","Hábitos e mau hálito","Carousel",69,195,9,0.13043478260869565,9,0,0,1,1,0,"2026-11-06T09:10:04-03:00"],
+        ["17940090708122792","https://www.instagram.com/reel/DfS2R-6TKZz/","Tabagismo e implantes","Reels",214,338,30,0.14018691588785046,29,0,1,"-","-",0,"2026-11-03T18:29:12-03:00"]
+      ]
+    }
+  },
+  "facebook_pagina": {
+    "f1_page_reach": {"cur": 19346, "prev": 16260, "difference": 18.979089790897902, "trend_cur": [1200,2651,2492,2382,2589,3916,4116]},
+    "f2_page_media_views": {"cur": 24216, "prev": 21056, "difference": 15.007598784194528, "trend_cur": [1424,3316,3178,2921,3192,5003,5182]},
+    "compare_periods_extra": {
+      "fb:page_reach_total": {"cur": 13784, "prev": 11676},
+      "fb:page_messages_new": {"cur": 1, "prev": 0},
+      "fb:page_posts_count": {"cur": 6, "prev": 2},
+      "fb:page_posts_shares": {"cur": 0, "prev": null},
+      "fb:page_posts_comments": {"cur": 0, "prev": null}
+    }
+  },
+  "compare_periods_meta_extra": {
+    "fb_ads:reach_facebook": {"cur": "9091", "prev": "8795"},
+    "fb_ads:reach_instagram": {"cur": "4032", "prev": "4538"},
+    "fb_ads:impressions_facebook": {"cur": "15805", "prev": "16165"}
+  },
+  "observacoes": [
+    "Valores da semana 02-08/11 tiveram pequena revisão em relação ao relatório anterior: Meta spend 633,37 (antes 633,33), custo/conversa 18,0963 (antes 18,0951), impressões 22.881 (antes 22.874), IG views 8.572 (antes 8.570), alcance página FB 16.260 (antes 16.256). Exibição em R$ 633 e R$ 18,10 não muda.",
+    "Nenhum dia sem veiculação no Meta em 09-15/11; menor investimento diário foi 09/11 (R$ 55,61)."
+  ]
+}

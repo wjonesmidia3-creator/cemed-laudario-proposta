@@ -1,0 +1,75 @@
+{
+  "cliente": "Fiorini",
+  "projeto_reportei": 1289256,
+  "coletado_em": "2026-11-18",
+  "semana_atual": {"inicio": "2026-11-09", "fim": "2026-11-15"},
+  "semana_comparacao": {"inicio": "2026-11-02", "fim": "2026-11-08"},
+  "integracoes": [
+    {"id": 3661951, "slug": "facebook_ads", "nome": "[ID-088] Fiorini Odontologia - Pix", "status": "active"},
+    {"id": 3810152, "slug": "google_adwords", "nome": "Fiorini Odonto", "status": "active"},
+    {"id": 3672503, "slug": "facebook", "nome": "Fiorini Odonto & Estética", "status": "inactive", "obs": "inativa: não consultada"}
+  ],
+  "facebook_ads": {
+    "numeros_com_comparacao": {
+      "fb_ads:spend": {"cur": 1756.97, "prev": 1486.79, "dif_pct": 18.17203505538778},
+      "fb_ads:actions_onsite_conversion.messaging_conversation_started_7d": {"cur": 73, "prev": 75, "dif_pct": -2.666666666666657},
+      "fb_ads:spend-actions_onsite_conversion.messaging_conversation_started_7d": {"cur": 24.06808219178082, "prev": 19.823866666666667, "dif_pct": 21.40962505690524},
+      "fb_ads:cpc": {"cur": 1.122665, "prev": 0.966075, "dif_pct": 16.20888647361747},
+      "fb_ads:reach": {"cur": 35350, "prev": 34154, "dif_pct": 3.5017860279908746},
+      "fb_ads:impressions": {"cur": 115061, "prev": 105869, "dif_pct": 8.68242828401138},
+      "fb_ads:inline_link_clicks": {"cur": 545, "prev": 507, "dif_pct": 7.495069033530569},
+      "fb_ads:actions_lead": {"cur": 0, "prev": 2, "dif_pct": -100}
+    },
+    "por_plataforma_com_comparacao": {
+      "conversas_instagram": {"cur": 10, "prev": 23, "dif_pct": -56.52173913043478},
+      "conversas_facebook": {"cur": 57, "prev": 47, "dif_pct": 21.27659574468086},
+      "investimento_instagram": {"cur": 406.818221, "prev": 380.879753, "dif_pct": 6.810146193305272},
+      "investimento_facebook": {"cur": 1245.92017, "prev": 1045.561871, "dif_pct": 19.162739629016173},
+      "obs": "Instagram + Facebook não somam o total (conversas 67 de 73 / 70 de 75; investimento 1652,74 de 1756,97 / 1426,44 de 1486,79): o restante vem de outros posicionamentos."
+    },
+    "investimento_diario_sem_comparacao": {
+      "labels": ["2026-11-02","2026-11-03","2026-11-04","2026-11-05","2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14","2026-11-15"],
+      "spend": [236.41, 272.85, 258.71, 236.33, 189.95, 151.97, 140.57, 301.68, 350.17, 226.63, 268.9, 245.07, 175.27, 189.25],
+      "dias_completados_com_zero": [],
+      "obs": "14 dias com veiculação; nenhuma pausa."
+    }
+  },
+  "google_adwords": {
+    "numeros_com_comparacao": {
+      "gads:cost_micros": {"cur": 0, "prev": 2.457178, "dif_pct": -100},
+      "gads:clicks": {"cur": 0, "prev": 3, "dif_pct": -100},
+      "gads:impressions": {"cur": 0, "prev": 44, "dif_pct": -100},
+      "gads:all_conversions": {"cur": 0, "prev": 0, "dif_pct": null}
+    },
+    "diario_checagem_ultima_veiculacao": {
+      "2026-11-01": {"cost": 82.451136, "clicks": 175, "impressions": 2372},
+      "2026-11-02": {"cost": 2.457178, "clicks": 3, "impressions": 44},
+      "2026-11-03": {"cost": 0, "clicks": 0, "impressions": 0},
+      "2026-11-04_a_08": {"cost": 0, "clicks": 0, "impressions": 0},
+      "obs": "Última veiculação em 02/11; zero desde 03/11 (13 dias até 15/11)."
+    }
+  },
+  "compare_periods_projeto": {
+    "fb_ads:cpc": {"cur": 1.122665, "prev": 0.966075, "pct": 16.21},
+    "fb_ads:reach": {"cur": 35350, "prev": 34154, "pct": 3.5},
+    "fb_ads:reach_facebook": {"cur": 25063, "prev": 24836, "pct": 0.91},
+    "fb_ads:reach_instagram": {"cur": 10054, "prev": 10514, "pct": -4.38},
+    "fb_ads:reach_messenger": {"cur": null, "prev": null},
+    "fb_ads:reach_audience_network": {"cur": null, "prev": null},
+    "fb_ads:impressions": {"cur": 115061, "prev": 105869, "pct": 8.68},
+    "fb_ads:impressions_facebook": {"cur": 81571, "prev": 76073, "pct": 7.23},
+    "gads:clicks": {"cur": 0, "prev": 3, "pct": -100},
+    "gads:count_campaigns": {"cur": 0, "prev": 1, "pct": -100},
+    "gads:count_ads": {"cur": 0, "prev": 0, "pct": null},
+    "gads:all_conversions": {"cur": 0, "prev": 0, "pct": null},
+    "gads:conversions_value": {"cur": 0, "prev": 0, "pct": null},
+    "gads:all_conversions_value": {"cur": 0, "prev": 0, "pct": null},
+    "gads:conversions": {"cur": 0, "prev": 0, "pct": null},
+    "gads:impressions": {"cur": 0, "prev": 44, "pct": -100},
+    "sources_with_errors": []
+  },
+  "observacoes": [
+    "Semana de comparação (02 a 08/11) recalculada pelo Reportei: alcance 34154 (relatório anterior: 34148), impressões 105869 (105796), cliques no link 507 (505), CPC 0,966075 (0,968). Investimento, conversas e custo por conversa iguais.",
+    "Semana anterior teve o feriado de Finados (02/11)."
+  ]
+}

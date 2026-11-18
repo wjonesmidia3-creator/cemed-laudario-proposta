@@ -1,0 +1,230 @@
+{
+  "arquivo": "EGO_Odontologia",
+  "nome": "EGO Odontologia",
+  "titulo": [
+    "{{7 dias}} de anúncios no ar.",
+    "Conversas sobem para 53."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta, Google Ads, Instagram e Facebook** da EGO Odontologia, comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
+  "destaque": {
+    "num": "53",
+    "rotulo": "CONVERSAS",
+    "titulo": "Com os anúncios {{no ar todos os dias}}, as conversas subiram 51% e cada uma custou {{R$ 14,19}}.",
+    "texto": "Na semana anterior foram 35, com o Meta quase parado em 03 e 04/11. O custo por conversa caiu de R$ 18,10 para R$ 14,19, perto dos R$ 13,96 de antes da pausa (26/10 a 01/11)."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{752}}",
+      "legenda": "investidos no Meta Ads, com anúncios no ar nos 7 dias (antes: R$ 633)"
+    },
+    {
+      "valor": "R$ {{14,19}}",
+      "legenda": "custo por conversa iniciada (anterior: R$ 18,10)"
+    },
+    {
+      "valor": "{{+65%}}",
+      "legenda": "de alcance no Instagram (soma diária): 9.782, contra 5.933"
+    },
+    {
+      "valor": "{{6}} Reels",
+      "legenda": "publicados no Instagram, contra 2 posts na semana anterior"
+    }
+  ],
+  "intro_p2": "Com o Meta Ads **no ar todos os dias**, a verba subiu 19% e as conversas, 51%. O Google Ads segue **sem conversões registradas**.",
+  "kpis": [
+    {
+      "valor": "53",
+      "ref": "/35",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 53,
+      "prev": 35,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 14,19",
+      "rotulo": "Custo por conversa\nesta semana",
+      "cur": 14.193018867924529,
+      "prev": 18.096285714285713,
+      "melhor": "down"
+    },
+    {
+      "valor": "R$ 752",
+      "rotulo": "Investimento em\nMeta Ads",
+      "cur": 752.23,
+      "prev": 633.37,
+      "melhor": null
+    },
+    {
+      "valor": "9.782",
+      "rotulo": "Alcance no Instagram\n(soma diária)",
+      "cur": 9782,
+      "prev": 5933,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 35,
+          "cur": 53,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 18.096285714285713,
+          "cur": 14.193018867924529,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 633.37,
+          "cur": 752.23,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Leads (cadastros)",
+          "prev": 4,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 41.678973,
+          "cur": 15.19,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 9,
+          "cur": 4,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Conversões",
+          "prev": 0,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        }
+      ]
+    },
+    {
+      "titulo": "INSTAGRAM",
+      "linhas": [
+        {
+          "rotulo": "Alcance (soma diária)",
+          "prev": 5933,
+          "cur": 9782,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visualizações",
+          "prev": 8572,
+          "cur": 14795,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "FACEBOOK",
+      "linhas": [
+        {
+          "rotulo": "Alcance da página",
+          "prev": 16260,
+          "cur": 19346,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Alcance diário no Instagram",
+    "sub": "Pessoas alcançadas por dia, de 02/11 a 15/11",
+    "prev": [876, 114, 92, 1349, 1328, 1670, 504],
+    "cur": [469, 1318, 844, 873, 1054, 2689, 2535]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Página do Facebook). A semana anterior teve o feriado de Finados (02/11) e o Meta Ads quase parado em 03 e 04/11. Alcance do Instagram é a soma do alcance diário.",
+  "titulo_p3": "Conteúdo e {{próximos passos}}",
+  "intro_p3": "Foram 6 Reels no Instagram, contra 2 posts na semana anterior. Quatro deles giraram em torno do **Sorria para 2027**, o dia de avaliações de 25/11.",
+  "posts": [
+    {
+      "data": "10/NOV",
+      "tag": "REELS · MAIS ENGAJAMENTO",
+      "titulo": "Lançamento do Sorria para 2027",
+      "metricas": [["281", "views"], ["22", "interações"], ["11,4%", "eng."]]
+    },
+    {
+      "data": "10/NOV",
+      "tag": "REELS",
+      "titulo": "Quanto tempo dura um implante",
+      "metricas": [["293", "views"], ["20", "interações"], ["11,4%", "eng."]]
+    },
+    {
+      "data": "13/NOV",
+      "tag": "REELS",
+      "titulo": "Convite do Dr. Rogério para o dia 25/11",
+      "metricas": [["230", "views"], ["19", "interações"], ["14,6%", "eng."]]
+    },
+    {
+      "data": "09/NOV",
+      "tag": "REELS",
+      "titulo": "Teaser: novidade chegando na EGO",
+      "metricas": [["196", "views"], ["18", "interações"], ["18,0%", "eng."]]
+    }
+  ],
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Custo de volta ao normal",
+      "texto": "**R$ 14,19** por conversa, 22% abaixo da semana anterior e perto dos R$ 13,96 de antes da pausa."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Instagram mais visto",
+      "texto": "Alcance (soma diária) de **9.782**, 65% acima, com pico de 2.689 em 14/11. As visualizações subiram 73%."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Google Ads sem conversões",
+      "texto": "**4 cliques** e R$ 15,19 investidos, sem nenhuma conversão registrada nas duas semanas. Vamos conferir a tag."
+    }
+  ],
+  "leitura": "A queda da semana passada veio da pausa: com os anúncios **no ar os 7 dias**, as conversas voltaram a subir e o custo voltou para a casa dos R$ 14. O volume ainda fica abaixo das 72 conversas de antes da pausa porque a verba foi menor (R$ 752 contra R$ 1.005). Com o **Sorria para 2027** marcado para 25/11, a hora de reforçar é agora.",
+  "proximos": [
+    {
+      "titulo": "Anunciar o Sorria para 2027",
+      "texto": "Usar os Reels da campanha como anúncio de mensagem até 25/11 e avaliar com vocês um reforço de verba."
+    },
+    {
+      "titulo": "Revisar o Google Ads",
+      "texto": "Conferir a tag e as ações de conversão e rever palavras-chave: 4 cliques e nenhuma conversão na semana."
+    },
+    {
+      "titulo": "Conta sempre no ar",
+      "texto": "Acompanhar a veiculação todo dia para que uma pausa como a de 03 e 04/11 não se repita."
+    }
+  ],
+  "nota_p3": "Visualizações e interações dos posts são orgânicas e acumuladas desde a publicação até 15/11.",
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da EGO Odontologia.\n\nCom os anúncios no ar todos os dias, as conversas voltaram a subir: foram *53*, contra 35 na semana anterior, quando os anúncios ficaram quase parados em 03 e 04/11. Cada conversa saiu por *R$ 14,19*, perto do que custava antes da pausa.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelo Instagram/Facebook: 53 (antes 35)\n• Custo por conversa: R$ 14,19 (antes R$ 18,10)\n• Investimento no Instagram/Facebook: R$ 752 (antes R$ 633)\n• Alcance no Instagram (soma diária): 9.782 (antes 5.933)\n• Google Ads: 4 cliques (antes 9) e nenhum contato registrado\n\nO ponto de atenção segue no Google, que não registrou contatos nas duas semanas. Nesta semana vamos:\n1. Conferir se a contagem de contatos do Google está funcionando\n2. Usar os vídeos do Sorria para 2027 nos anúncios até o dia 25/11\n3. Acompanhar os anúncios todo dia para não ter nova pausa\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+}

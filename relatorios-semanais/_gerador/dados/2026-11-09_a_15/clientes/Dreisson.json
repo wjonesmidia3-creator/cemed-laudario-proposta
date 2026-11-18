@@ -1,0 +1,219 @@
+{
+  "arquivo": "Dreisson",
+  "nome": "Dreisson",
+  "titulo": [
+    "Anúncios {{pararam em 12/11}}.",
+    "Custo por conversa se manteve."
+  ],
+  "lead": "Resumo semanal dos **anúncios Meta** do Dreisson (Vivo Imóveis), comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
+  "destaque": {
+    "num": "4",
+    "rotulo": "DIAS SEM ANÚNCIOS",
+    "titulo": "Os anúncios {{ficaram parados de 12 a 15/11}} e a semana fechou com {{11 conversas}}, contra 24 na anterior.",
+    "texto": "Nos dias no ar (09 a 11/11), cada conversa custou R$ 19,81, abaixo dos R$ 20,12 da semana anterior. A veiculação voltou em 16/11."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{218}}",
+      "legenda": "investidos na semana (anterior: R$ 483)"
+    },
+    {
+      "valor": "R$ {{19,81}}",
+      "legenda": "custo por conversa, 1,5% menor"
+    },
+    {
+      "valor": "{{200}}",
+      "legenda": "cliques no link dos anúncios (anterior: 474)"
+    },
+    {
+      "valor": "4,5 {{mil}}",
+      "legenda": "pessoas alcançadas pelos anúncios (anterior: 9,1 mil)"
+    }
+  ],
+  "intro_p2": "Os anúncios rodaram só de 09 a 11/11. Conversas, alcance e cliques caíram junto com a **pausa**, e o **custo por conversa** ficou estável.",
+  "kpis": [
+    {
+      "valor": "11",
+      "ref": "/24",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 11,
+      "prev": 24,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 19,81",
+      "rotulo": "Custo por conversa\nesta semana",
+      "cur": 19.811818181818182,
+      "prev": 20.1225,
+      "melhor": "down"
+    },
+    {
+      "valor": "R$ 218",
+      "rotulo": "Investimento em\nMeta Ads",
+      "cur": 217.93,
+      "prev": 482.94,
+      "melhor": null
+    },
+    {
+      "valor": "3",
+      "ref": "/7",
+      "rotulo": "Dias com veiculação\nesta semana / anterior",
+      "cur": 3,
+      "prev": 7,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 24,
+          "cur": 11,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 20.1225,
+          "cur": 19.811818181818182,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 482.94,
+          "cur": 217.93,
+          "fmt": "brl",
+          "melhor": null,
+          "destaque": true
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 9121,
+          "cur": 4454,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 19249,
+          "cur": 8034,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 474,
+          "cur": 200,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "CPC (todos os cliques)",
+          "prev": 0.573563,
+          "cur": 0.605361,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    },
+    {
+      "titulo": "META ADS · POR PLATAFORMA",
+      "linhas": [
+        {
+          "rotulo": "Conversas no Instagram",
+          "prev": 11,
+          "cur": 6,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por conversa no Instagram",
+          "prev": 25.912727272727274,
+          "cur": 23.061375666666667,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Conversas no Facebook",
+          "prev": 13,
+          "cur": 5,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por conversa no Facebook",
+          "prev": 15.223076923076924,
+          "cur": 15.9123492,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Investimento diário em Meta Ads",
+    "sub": "Valor investido por dia, de 02/11 a 15/11",
+    "unidade": "brl",
+    "prev": [
+      92.57,
+      82.05,
+      73.88,
+      61.94,
+      52.65,
+      45.52,
+      74.33
+    ],
+    "cur": [
+      89.65,
+      88.51,
+      39.44,
+      0.33,
+      0,
+      0,
+      0
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads). Sem veiculação de 12 a 15/11 (só R$ 0,33 no dia 12). A semana anterior teve o feriado de Finados (02/11); o de 15/11 caiu no domingo.",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "Nos dias em que rodou, a campanha manteve o custo por conversa. O que derrubou o volume foi a pausa.",
+  "insights": [
+    {
+      "tipo": "ruim",
+      "titulo": "Quatro dias sem anúncios",
+      "texto": "A veiculação caiu em 11/11 e parou de 12 a 15/11. Com isso, as conversas foram de **24 para 11**."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Custo por conversa estável",
+      "texto": "**R$ 19,81** por conversa, 1,5% abaixo da semana anterior. Investimento e conversas caíram na mesma proporção."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Instagram mais barato",
+      "texto": "A conversa no Instagram caiu de R$ 25,91 para **R$ 23,06**. No Facebook saiu por R$ 15,91, ainda a mais barata."
+    }
+  ],
+  "leitura": "O investimento caiu 55% e as conversas, 54%, praticamente na mesma proporção: **a campanha continua eficiente**, o que faltou foi tempo no ar. Agora a nossa atenção é manter a veiculação contínua, sem novas interrupções.",
+  "proximos": [
+    {
+      "titulo": "Evitar nova pausa",
+      "texto": "Entender o que interrompeu os anúncios em 12/11 e acompanhar a veiculação todo dia para agir na hora."
+    },
+    {
+      "titulo": "Qualificar as conversas",
+      "texto": "Ver com vocês quantas das 11 conversas viraram visita ou proposta de imóvel."
+    },
+    {
+      "titulo": "Testar mais verba no Facebook",
+      "texto": "Levar parte do orçamento para o Facebook, onde a conversa custou 31% menos que no Instagram."
+    }
+  ],
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 do Dreisson.\n\nOs anúncios rodaram de 09 a 11/11 e ficaram parados de 12 a 15/11, por isso a semana fechou com *11 conversas* (contra 24 na anterior). Nos dias em que ficaram no ar, cada conversa custou *R$ 19,81*, um pouco abaixo dos R$ 20,12 da semana anterior. Ou seja, a campanha segue eficiente; faltou tempo no ar.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas iniciadas pelos anúncios: 11 (antes 24)\n• Custo por conversa: R$ 19,81 (antes R$ 20,12)\n• Investimento: R$ 218 (antes R$ 483)\n• Dias com anúncios no ar: 3 (antes 7)\n\nOs anúncios voltaram a rodar no dia 16/11. Nesta semana vamos:\n1. Entender o que causou a pausa e acompanhar a veiculação todo dia\n2. Ver com vocês quantas conversas viraram visita ou proposta\n3. Testar mais verba no Facebook, onde a conversa custou R$ 15,91\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+}

@@ -1,0 +1,240 @@
+{
+  "arquivo": "Luisa_Alves_Tattoo",
+  "nome": "Luisa Alves Tattoo",
+  "titulo": [
+    "Anúncios {{de volta}}:",
+    "99 conversas a R$ 3,14."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta, Instagram e Facebook** do estúdio Luisa Alves Tattoo (@luisaalvestattoo), comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
+  "destaque": {
+    "num": "99",
+    "rotulo": "CONVERSAS",
+    "titulo": "{{99 pessoas}} chamaram o estúdio por mensagem pelos anúncios. Na semana anterior, com os anúncios pausados, {{nenhuma}}.",
+    "texto": "Os anúncios voltaram em 09/11 e rodaram os 7 dias, com R$ 310,67 investidos. Na última semana antes da pausa (26/10 a 01/11), foram 9 conversas a R$ 26,81 cada."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{310,67}}",
+      "legenda": "investidos em anúncios na semana (anterior: R$ 0)"
+    },
+    {
+      "valor": "{{52}} e {{47}}",
+      "legenda": "conversas vindas do Instagram e do Facebook"
+    },
+    {
+      "valor": "{{8,3 mil}}",
+      "legenda": "alcance do Instagram na semana (anterior: 141)"
+    },
+    {
+      "valor": "{{260}}",
+      "legenda": "visitas ao perfil no Instagram (anterior: 29)"
+    }
+  ],
+  "intro_p2": "Com os anúncios de volta, **conversas, alcance e visitas ao perfil voltaram a subir** juntos.",
+  "kpis": [
+    {
+      "valor": "99",
+      "ref": "/0",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 99,
+      "prev": 0,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 3,14",
+      "rotulo": "Custo por conversa\nesta semana",
+      "cur": 3.138080808080808,
+      "prev": null,
+      "melhor": "down"
+    },
+    {
+      "valor": "8.289",
+      "rotulo": "Alcance no Instagram\n(soma diária)",
+      "cur": 8289,
+      "prev": 141,
+      "melhor": "up"
+    },
+    {
+      "valor": "260",
+      "rotulo": "Visitas ao perfil\nno Instagram",
+      "cur": 260,
+      "prev": 29,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 0,
+          "cur": 310.67,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 0,
+          "cur": 99,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": null,
+          "cur": 3.138080808080808,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 0,
+          "cur": 8409,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 0,
+          "cur": 454,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "CPC (todos os cliques)",
+          "prev": null,
+          "cur": 0.48391,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    },
+    {
+      "titulo": "INSTAGRAM",
+      "linhas": [
+        {
+          "rotulo": "Alcance (soma diária)",
+          "prev": 141,
+          "cur": 8289,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visualizações",
+          "prev": 248,
+          "cur": 10852,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Visitas ao perfil",
+          "prev": 29,
+          "cur": 260,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        }
+      ]
+    },
+    {
+      "titulo": "FACEBOOK",
+      "linhas": [
+        {
+          "rotulo": "Alcance da página",
+          "prev": 0,
+          "cur": 7427,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Alcance diário no Instagram",
+    "sub": "Pessoas alcançadas por dia, de 02/11 a 15/11",
+    "prev": [
+      6,
+      6,
+      2,
+      6,
+      2,
+      105,
+      14
+    ],
+    "cur": [
+      457,
+      720,
+      810,
+      1682,
+      1700,
+      1742,
+      1178
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads, Instagram Business e Página do Facebook). Semana com feriado da Proclamação da República (15/11, domingo). Anúncios veiculados pela conta LA Tattoo; a conta usada até 31/10 não veiculou nas duas semanas.",
+  "titulo_p3": "Conteúdo e {{próximos passos}}",
+  "intro_p3": "O perfil voltou a publicar: um **Reels de processo** em 09/11, o primeiro post desde 16/10, no mesmo dia em que os anúncios voltaram.",
+  "posts": [
+    {
+      "data": "09/NOV",
+      "tag": "REELS",
+      "titulo": "Processo da tattoo das duas damas",
+      "metricas": [
+        [
+          "600",
+          "alcance"
+        ],
+        [
+          "893",
+          "views"
+        ],
+        [
+          "45",
+          "interações"
+        ],
+        [
+          "7,5%",
+          "eng."
+        ]
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Anúncios de volta",
+      "texto": "No ar desde **09/11**, sem nenhum dia parado: 99 conversas, 52 vindas do Instagram e 47 do Facebook."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Perfil voltou a ser visto",
+      "texto": "Alcance do Instagram de **141 para 8.289** e visitas ao perfil de 29 para 260."
+    },
+    {
+      "tipo": "neu",
+      "titulo": "Só um post na semana",
+      "texto": "O Reels de 09/11 alcançou **600 contas**. Mais posts ajudam quem chega pelos anúncios a ver trabalhos recentes."
+    }
+  ],
+  "leitura": "A semana confirma o que a pausa mostrou: **quase todo o alcance do perfil vem dos anúncios**. Bastou voltar a veicular para as conversas reaparecerem, e mais baratas que antes da pausa. Agora o foco é manter os anúncios no ar sem interrupção e saber quantas dessas conversas viram sessão marcada.",
+  "proximos": [
+    {
+      "titulo": "Manter os anúncios no ar",
+      "texto": "Seguir com a veiculação diária, sem pausas, para não repetir a queda de alcance de 02 a 08/11."
+    },
+    {
+      "titulo": "Medir os agendamentos",
+      "texto": "Propor um controle simples de quantas conversas viram orçamento e sessão marcada."
+    },
+    {
+      "titulo": "Postar toda semana",
+      "texto": "A proposta é 2 a 3 posts por semana (processo e resultado), para quem chega pelos anúncios ver trabalhos novos."
+    }
+  ],
+  "nota_p3": "Visualizações e interações do post são orgânicas e acumuladas desde a publicação até 15/11.",
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da Luisa Alves Tattoo.\n\nOs anúncios voltaram ao ar no dia 09/11 e o retorno veio na mesma semana: *99 pessoas* chamaram o estúdio por mensagem, a *R$ 3,14* cada. Na última semana com anúncios antes da pausa (26/10 a 01/11), tinham sido 9 conversas, a R$ 26,81 cada.\n\n*Números da semana* (vs. 02 a 08/11, com os anúncios pausados)\n• Conversas pelos anúncios: 99 (antes 0), sendo 52 pelo Instagram e 47 pelo Facebook\n• Investimento em anúncios: R$ 310,67 (antes R$ 0)\n• Alcance do Instagram (soma dos 7 dias): 8.289 (antes 141)\n• Visitas ao perfil: 260 (antes 29)\n\nTambém saiu um Reels de processo no dia 09/11, o primeiro post desde 16/10, que alcançou 600 contas. Nesta semana vamos manter os anúncios rodando sem pausa e propor um jeito simples de contar quantas conversas viram sessão marcada. A proposta é ter 2 a 3 posts por semana.\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+}

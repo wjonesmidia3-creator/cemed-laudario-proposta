@@ -1,0 +1,226 @@
+{
+  "arquivo": "Fiorini",
+  "nome": "Fiorini Odonto",
+  "titulo": [
+    "Meta {{segurou}} as conversas.",
+    "Google Ads segue parado."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta e Google Ads** da Fiorini Odonto & Estética, comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
+  "destaque": {
+    "num": "13",
+    "rotulo": "DIAS SEM GOOGLE",
+    "titulo": "O {{Google Ads não voltou}}: a última veiculação foi em 02/11 e a semana fechou {{sem nenhum clique}}.",
+    "texto": "Enquanto isso, o Meta Ads segurou a procura: 73 conversas por mensagem (anterior: 75). Colocar o Google de volta no ar é a nossa prioridade nesta semana."
+  },
+  "faixa": [
+    {
+      "valor": "{{73}}",
+      "legenda": "conversas pelos anúncios Meta (anterior: 75)"
+    },
+    {
+      "valor": "R$ {{24,07}}",
+      "legenda": "custo por conversa no Meta Ads (anterior: R$ 19,82)"
+    },
+    {
+      "valor": "R$ {{1.757}}",
+      "legenda": "investidos em Meta Ads, 18% a mais"
+    },
+    {
+      "valor": "{{10}}",
+      "legenda": "conversas vindas do Instagram (anterior: 23)"
+    }
+  ],
+  "intro_p2": "O Meta Ads recebeu **18% mais verba** e fechou com 73 conversas, duas a menos. O Google Ads passou a semana **sem nenhum anúncio no ar**.",
+  "kpis": [
+    {
+      "valor": "73",
+      "ref": "/75",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 73,
+      "prev": 75,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 24,07",
+      "rotulo": "Custo por conversa\nno Meta Ads",
+      "cur": 24.06808219178082,
+      "prev": 19.823866666666667,
+      "melhor": "down"
+    },
+    {
+      "valor": "10",
+      "ref": "/23",
+      "rotulo": "Conversas no Instagram\nesta semana / anterior",
+      "cur": 10,
+      "prev": 23,
+      "melhor": "up"
+    },
+    {
+      "valor": "0",
+      "ref": "/3",
+      "rotulo": "Cliques no Google Ads\nesta semana / anterior",
+      "cur": 0,
+      "prev": 3,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 75,
+          "cur": 73,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Conversas pelo Instagram",
+          "prev": 23,
+          "cur": 10,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Conversas pelo Facebook",
+          "prev": 47,
+          "cur": 57,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 19.823866666666667,
+          "cur": 24.06808219178082,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 1486.79,
+          "cur": 1756.97,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 34154,
+          "cur": 35350,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 105869,
+          "cur": 115061,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 507,
+          "cur": 545,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "CPC (todos os cliques)",
+          "prev": 0.966075,
+          "cur": 1.122665,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Investimento",
+          "prev": 2.457178,
+          "cur": 0,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 3,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Conversões (todas as ações)",
+          "prev": 0,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Investimento diário em Meta Ads",
+    "sub": "Valor investido por dia, de 02/11 a 15/11",
+    "unidade": "brl",
+    "prev": [
+      236.41,
+      272.85,
+      258.71,
+      236.33,
+      189.95,
+      151.97,
+      140.57
+    ],
+    "cur": [
+      301.68,
+      350.17,
+      226.63,
+      268.9,
+      245.07,
+      175.27,
+      189.25
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads e Google Ads). Semana anterior com feriado de Finados (02/11). Instagram e Facebook não somam o total de conversas: o restante vem de outros posicionamentos da Meta. A página do Facebook está com a integração inativa no Reportei.",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "O Meta Ads manteve as conversas com o Google fora do ar. O custo subiu, e a gente já sabe de onde veio.",
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Facebook puxou as conversas",
+      "texto": "As conversas vindas do Facebook subiram **21%**, de 47 para 57, e seguraram o total da semana em 73."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Instagram rendeu menos",
+      "texto": "Pelo Instagram foram **10 conversas** (anterior: 23). É essa queda que explica quase toda a alta de 21% no custo por conversa."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Google Ads fora do ar",
+      "texto": "A última veiculação foi em **02/11**. A semana fechou com zero cliques: quem pesquisou no Google não viu os anúncios da clínica."
+    }
+  ],
+  "leitura": "A verba extra no Meta virou mais alcance (+3,5%) e mais cliques no link (+7,5%), e o Facebook respondeu com mais conversas. O Instagram trouxe menos da metade das conversas da semana anterior, e isso levou o custo por conversa para **R$ 24,07**. No Google, a campanha segue parada, e é por ela que começamos a semana.",
+  "proximos": [
+    {
+      "titulo": "Religar o Google Ads",
+      "texto": "Revisar pagamento, orçamento e status da campanha e, na volta, conferir se as conversões estão sendo contadas."
+    },
+    {
+      "titulo": "Recuperar o Instagram",
+      "texto": "Testar novos anúncios no Instagram e, se o custo não cair, passar parte da verba para o Facebook."
+    },
+    {
+      "titulo": "Acompanhar agendamentos",
+      "texto": "Cruzar as 73 conversas com os agendamentos da semana para ver quantas viraram consulta."
+    }
+  ],
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da Fiorini Odonto.\n\nOs anúncios no Instagram/Facebook trouxeram *73 conversas*, quase o mesmo volume da semana anterior. O investimento subiu 18%, mas o custo por conversa foi para *R$ 24,07* porque os anúncios no Instagram renderam menos. O Facebook compensou.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas por mensagem: 73 (antes 75)\n• Conversas vindas do Instagram: 10 (antes 23)\n• Custo por conversa: R$ 24,07 (antes R$ 19,82)\n• Investimento no Instagram/Facebook: R$ 1.756,97 (antes R$ 1.486,79)\n• Cliques no Google Ads: 0 (antes 3)\n\nPonto de atenção: o Google Ads segue parado, com a última veiculação em 02/11. Nesta semana vamos:\n1. Colocar a campanha do Google de volta no ar\n2. Testar novos anúncios no Instagram para baixar o custo\n3. Ver quantas das 73 conversas viraram consulta\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+}
