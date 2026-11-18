@@ -433,32 +433,39 @@ def main():
 
 
 def pasta_downloads(sem):
-    """downloads/Semanais_<sufixo>/: tudo da semana numa pasta só (PDFs + mensagens de WhatsApp)."""
+    """downloads/Semanais_<sufixo>/: os PDFs da semana + a subpasta Textos_para_os_grupos/ com as mensagens."""
     raiz = os.path.abspath(os.path.join(AQUI, "..", ".."))
     pasta = os.path.join(raiz, "downloads", f"Semanais_{sem['sufixo']}")
     os.makedirs(pasta, exist_ok=True)
     return raiz, pasta
 
 
+PASTA_TEXTOS = "Textos_para_os_grupos"
+
+
 def zipar(sem):
     import zipfile
     raiz, pasta = pasta_downloads(sem)
     zip_path = os.path.join(raiz, "downloads", f"Semanais_{sem['sufixo']}.zip")
+    base = os.path.dirname(pasta)
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-        for a in sorted(glob.glob(os.path.join(pasta, "*"))):
-            z.write(a, os.path.join(os.path.basename(pasta), os.path.basename(a)))
+        for a in sorted(glob.glob(os.path.join(pasta, "**", "*"), recursive=True)):
+            if os.path.isfile(a):
+                z.write(a, os.path.relpath(a, base))
     print("downloads:", os.path.relpath(pasta, raiz) + "/", "e", os.path.relpath(zip_path, raiz))
 
 
 def exportar_mensagens(sem, clientes):
-    """Um .txt por cliente (pronto para o WhatsApp), ao lado do PDF, + _TODAS_AS_MENSAGENS.txt."""
-    raiz, pasta = pasta_downloads(sem)
-    for antigo in glob.glob(os.path.join(pasta, "*.txt")):
+    """Subpasta Textos_para_os_grupos/: um .txt por cliente (pronto para o WhatsApp) + _TODAS_AS_MENSAGENS.txt."""
+    raiz, base = pasta_downloads(sem)
+    pasta = os.path.join(base, PASTA_TEXTOS)
+    os.makedirs(pasta, exist_ok=True)
+    for antigo in glob.glob(os.path.join(pasta, "*.txt")) + glob.glob(os.path.join(base, "*.txt")):
         os.remove(antigo)
     com_msg = [c for c in clientes if c.get("whatsapp")]
     sem_msg = [c["arquivo"] for c in clientes if not c.get("whatsapp")]
     for c in com_msg:
-        caminho = os.path.join(pasta, f"{c['arquivo']}_Mensagem_{sem['sufixo']}.txt")
+        caminho = os.path.join(pasta, f"{c['arquivo']}_texto_grupo.txt")
         with open(caminho, "w", encoding="utf-8") as fh:
             fh.write(c["whatsapp"].strip() + "\n")
     todas = os.path.join(pasta, "_TODAS_AS_MENSAGENS.txt")
