@@ -57,7 +57,7 @@
     },
     {
       "valor": "R$ 3.827",
-      "rotulo": "Investimento total\n(Meta + Google + ChatGPT)",
+      "rotulo": "Investimento total\nem anúncios",
       "cur": 3827.43219,
       "prev": 3804.296958,
       "melhor": null
@@ -223,12 +223,12 @@
     {
       "tipo": "ruim",
       "titulo": "Google: conversões principais",
-      "texto": "Caíram de 32 para **23** (28%), bem mais que os cliques (10%). Já o total de conversões subiu de 95 para 117."
+      "texto": "Caíram 28%, de 32 para **23**, bem mais que os cliques (queda de 10%). Já o total de conversões subiu de 95 para 117."
     },
     {
       "tipo": "neu",
       "titulo": "ChatGPT Ads sem veiculação",
-      "texto": "Última entrega em 05/11. Na semana anterior foram R$ 127,24 e **14 cliques**, sem conversões registradas."
+      "texto": "Última entrega em 05/11. Na semana anterior foram R$ 127,24 e **14 cliques**, sem conversões registradas."
     },
     {
       "tipo": "neu",
@@ -239,8 +239,8 @@
   "leitura": "A campanha de mensagens no Meta ganhou fôlego: alcançou **28% mais pessoas** e trouxe 32 conversas, com custo quase igual ao da semana anterior. No Google Ads, as conversões principais caíram bem mais que os cliques, enquanto o total de conversões subiu. Essa diferença pede uma **revisão da medição** antes de qualquer mudança de verba.",
   "proximos": [
     {
-      "titulo": "Revisar a medição no Google",
-      "texto": "Conferir a tag e quais ações contam como principais, para entender a queda de 32 para 23."
+      "titulo": "Revisar o Google Ads",
+      "texto": "Conferir a tag e quais ações contam como conversão principal, para entender a queda de 32 para 23."
     },
     {
       "titulo": "Decidir o ChatGPT Ads",

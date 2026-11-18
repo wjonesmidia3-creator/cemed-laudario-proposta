@@ -15,7 +15,7 @@
   "faixa": [
     {
       "valor": "R$ {{752}}",
-      "legenda": "investidos no Meta Ads, no ar nos 7 dias (antes: R$ 633)"
+      "legenda": "investidos no Meta Ads, no ar nos 7 dias (anterior: R$ 633)"
     },
     {
       "valor": "R$ {{14,19}}",
@@ -30,7 +30,7 @@
       "legenda": "publicados no Instagram, contra 2 posts na semana anterior"
     }
   ],
-  "intro_p2": "Com o Meta Ads **no ar todos os dias**, a verba subiu 19% e as conversas, 51%. O Google Ads segue **sem conversões registradas**.",
+  "intro_p2": "Com o Meta **no ar todos os dias**, as conversas subiram 51%. O Google Ads segue **sem conversões**.",
   "kpis": [
     {
       "valor": "53",
@@ -180,7 +180,7 @@
       2535
     ]
   },
-  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Página do Facebook). A semana anterior teve o feriado de Finados (02/11) e o Meta Ads quase parado em 03 e 04/11. Alcance do Instagram é a soma do alcance diário.",
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram e Página do Facebook). Semana anterior com Finados (02/11) e Meta Ads quase parado em 03 e 04/11.",
   "titulo_p3": "Conteúdo e {{próximos passos}}",
   "intro_p3": "Foram 6 Reels no Instagram, contra 2 posts na semana anterior. Quatro deles giraram em torno do **Sorria para 2027**, o dia de avaliações de 25/11.",
   "posts": [
