@@ -1,0 +1,220 @@
+{
+  "arquivo": "CEMED",
+  "nome": "CEMED",
+  "titulo": [
+    "{{61 contatos}} pelo Google.",
+    "Meta fora do ar desde 10/11."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta e Google Ads** do CEMED (Centro de Especialidades Médicas de Mirassol), comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
+  "destaque": {
+    "num": "63",
+    "rotulo": "CONTATOS",
+    "titulo": "Com o Meta {{fora do ar desde 10/11}}, o Google Ads trouxe {{61 dos 63 contatos}} da semana.",
+    "texto": "O Meta Ads investiu R$ 4,72 em 09/11 e não veiculou mais (anterior: R$ 341,26 e 16 conversas). No Google, os cliques subiram 23% e o custo por clique caiu 16%."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{878}}",
+      "legenda": "investidos em Meta + Google (anterior: R$ 1.191)"
+    },
+    {
+      "valor": "R$ {{4,72}}",
+      "legenda": "investidos no Meta Ads, todos em 09/11 (anterior: R$ 341)"
+    },
+    {
+      "valor": "{{+23%}}",
+      "legenda": "cliques no Google Ads, com custo por clique 16% menor"
+    },
+    {
+      "valor": "R$ {{14,31}}",
+      "legenda": "custo por conversão no Google (anterior: R$ 12,88)"
+    }
+  ],
+  "intro_p2": "Sem o Meta no ar desde 10/11, os contatos caíram **23%** (63 contra 82). O Google Ads ganhou cliques e respondeu por 61 deles.",
+  "kpis": [
+    {
+      "valor": "63",
+      "ref": "/82",
+      "rotulo": "Contatos na semana\nesta semana / anterior",
+      "cur": 63,
+      "prev": 82,
+      "melhor": "up"
+    },
+    {
+      "valor": "2",
+      "ref": "/16",
+      "rotulo": "Conversas no Meta\nesta semana / anterior",
+      "cur": 2,
+      "prev": 16,
+      "melhor": "up"
+    },
+    {
+      "valor": "61",
+      "rotulo": "Conversões no\nGoogle Ads",
+      "cur": 61,
+      "prev": 66,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 14,31",
+      "rotulo": "Custo por conversão\nno Google Ads",
+      "cur": 14.3111,
+      "prev": 12.8772,
+      "melhor": "down"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 16,
+          "cur": 2,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 341.26,
+          "cur": 4.72,
+          "fmt": "brl",
+          "melhor": null,
+          "destaque": true
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 9171,
+          "cur": 264,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 28538,
+          "cur": 310,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 137,
+          "cur": 2,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    },
+    {
+      "titulo": "GOOGLE ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversões",
+          "prev": 66,
+          "cur": 61,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversão",
+          "prev": 12.8772,
+          "cur": 14.3111,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 849.896896,
+          "cur": 872.977481,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Cliques",
+          "prev": 229,
+          "cur": 281,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 2758,
+          "cur": 3451,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "CPC médio",
+          "prev": 3.7113,
+          "cur": 3.1067,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Investimento diário em Meta Ads",
+    "sub": "Valor investido por dia, de 02/11 a 15/11",
+    "unidade": "brl",
+    "prev": [
+      26.02,
+      82.17,
+      80.82,
+      46.32,
+      35.8,
+      35.12,
+      35.01
+    ],
+    "cur": [
+      4.72,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads e Google Ads). A semana anterior teve o feriado de Finados (02/11, segunda), o que ajuda a explicar parte da alta de cliques no Google; nesta, o feriado de 15/11 caiu no domingo. Meta Ads sem veiculação de 10 a 15/11. Custo por conversão do Google = investimento ÷ conversões.",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "O **Google Ads** sustentou a semana. O Meta precisa voltar ao ar para recuperar as conversas por mensagem.",
+  "insights": [
+    {
+      "tipo": "ruim",
+      "titulo": "Meta fora do ar desde 10/11",
+      "texto": "Só **R$ 4,72** investidos, todos em 09/11. Foram 2 conversas, contra 16 na semana anterior."
+    },
+    {
+      "tipo": "bom",
+      "titulo": "Google com mais cliques",
+      "texto": "Cliques **+23%** (281) e impressões +25%, com o clique **16% mais barato** (R$ 3,11)."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Conversão menor no Google",
+      "texto": "Mesmo com mais cliques, as conversões ficaram em **61** (antes 66) e o custo por conversão subiu 11%, para **R$ 14,31**."
+    }
+  ],
+  "leitura": "A queda de contatos tem causa clara: a **última veiculação do Meta foi em 09/11**, e as conversas por mensagem caíram de 16 para 2. O Google Ads segurou o movimento com **61 conversões** e clique mais barato, mas converteu uma parte menor dos cliques. A prioridade é colocar o Meta de volta no ar e afinar as buscas do Google.",
+  "proximos": [
+    {
+      "titulo": "Reativar o Meta Ads",
+      "texto": "Conferir pagamento, orçamento e status das campanhas e combinar com vocês a volta da veiculação."
+    },
+    {
+      "titulo": "Afinar as buscas do Google",
+      "texto": "Revisar termos de pesquisa e a contagem de conversões: cliques subiram 23% e conversões caíram."
+    },
+    {
+      "titulo": "Medir agendamentos",
+      "texto": "Cruzar os 63 contatos com os agendamentos da semana para medir a conversão real."
+    }
+  ],
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 do CEMED.\n\nOs anúncios no Instagram/Facebook rodaram só em 09/11 (R$ 4,72) e ficaram fora do ar de 10 a 15/11. Por isso a semana fechou com *63 contatos*, contra 82 na anterior. Quem segurou o movimento foi o Google, com *61 contatos* e clique mais barato.\n\n*Números da semana* (vs. 02 a 08/11)\n• Contatos pelo Google: 61 (antes 66), a R$ 14,31 cada (antes R$ 12,88)\n• Cliques no Google: 281 (antes 229), a R$ 3,11 cada (antes R$ 3,71)\n• Conversas pelo Instagram/Facebook: 2 (antes 16)\n• Investimento total: R$ 878 (antes R$ 1.191)\n\nNesta semana vamos:\n1. Ver pagamento, orçamento e status das campanhas do Instagram/Facebook e combinar com vocês a volta dos anúncios\n2. Revisar as buscas do Google que geram clique mas não viram contato\n3. Cruzar os 63 contatos com os agendamentos (se puderem, nos passem a agenda da semana)\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+}
