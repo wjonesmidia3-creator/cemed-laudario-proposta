@@ -192,10 +192,26 @@
   "grafico": {
     "titulo": "Alcance diário da página no Facebook",
     "sub": "Pessoas alcançadas por dia, de 02/11 a 15/11",
-    "prev": [6388, 7032, 6002, 5853, 4193, 4633, 4578],
-    "cur": [5618, 5804, 5405, 7213, 10000, 5027, 6465]
+    "prev": [
+      6388,
+      7032,
+      6002,
+      5853,
+      4193,
+      4633,
+      4578
+    ],
+    "cur": [
+      5618,
+      5804,
+      5405,
+      7213,
+      10000,
+      5027,
+      6465
+    ]
   },
-  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, ChatGPT Ads, Página do Facebook e YouTube). Feriados: Finados (02/11) na semana anterior e Proclamação da República (15/11, domingo) nesta. ChatGPT Ads sem veiculação desde 06/11. Conta CA 02 sem veiculação nas duas semanas. Instagram: integração inativa no Reportei desde 09/11. Google Ads e YouTube atualizaram os números de 02 a 08/11 depois do último relatório.",
+  "fonte": "Fonte: Reportei (Meta Ads, Google Ads, ChatGPT Ads, Página do Facebook e YouTube). Feriados: Finados (02/11) e Proclamação da República (15/11, domingo). Conta CA 02 sem veiculação nas duas semanas. Instagram: integração inativa desde 09/11. Google Ads e YouTube revisaram os números de 02 a 08/11 após o último relatório.",
   "titulo_p3": "O que mudou e {{próximos passos}}",
   "intro_p3": "Meta com mais alcance e conversas, Google Ads com menos conversões principais e ChatGPT Ads sem veiculação desde 06/11.",
   "insights": [
@@ -235,5 +251,5 @@
       "texto": "Refazer o acesso à conta para voltar a mostrar alcance e posts do Instagram no relatório."
     }
   ],
-  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 do Instituto Sanrire.\n\nOs anúncios no Instagram/Facebook alcançaram *28% mais pessoas* e trouxeram *32 conversas*, 2 a mais que na semana anterior, com custo por conversa quase igual. O investimento total ficou praticamente estável.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelos anúncios no Instagram/Facebook: 32 (antes 30)\n• Custo por conversa: R$ 67,12 (antes R$ 64,93)\n• Investimento total em anúncios: R$ 3.827 (antes R$ 3.804)\n• Google Ads: 23 conversões principais (antes 32) e 117 no total (antes 95)\n• Alcance da página no Facebook: 45,5 mil (antes 38,7 mil)\n\nPonto de atenção: no Google, as conversões principais caíram bem mais que os cliques (28% contra 10%). Nesta semana vamos:\n1. Revisar a medição de conversões do Google Ads\n2. Definir com vocês o futuro do ChatGPT Ads, sem anúncios no ar desde 06/11\n3. Refazer o acesso ao Instagram para voltar a medir alcance e posts\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 do Instituto Sanrire.\n\nOs anúncios no Instagram/Facebook alcançaram *28% mais pessoas* e trouxeram *32 conversas*, 2 a mais que na semana anterior, com custo por conversa quase igual.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelo Instagram/Facebook: 32 (antes 30)\n• Custo por conversa: R$ 67,12 (antes R$ 64,93)\n• Investimento total em anúncios: R$ 3.827 (antes R$ 3.804)\n• Google Ads: 23 conversões principais (antes 32) e 117 no total (antes 95)\n• Alcance da página no Facebook: 45,5 mil (antes 38,7 mil)\n\nPonto de atenção: no Google, as conversões principais caíram bem mais que os cliques (28% contra 10%). Nesta semana vamos:\n1. Revisar a medição de conversões do Google Ads\n2. Definir com vocês o futuro do ChatGPT Ads, sem anúncios no ar desde 06/11\n3. Refazer o acesso ao Instagram para voltar a medir alcance e posts\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
 }
