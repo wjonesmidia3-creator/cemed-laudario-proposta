@@ -1,0 +1,223 @@
+{
+  "arquivo": "DPlacido",
+  "nome": "D'Placido Odonto",
+  "titulo": [
+    "{{109 conversas}} na semana.",
+    "Contato a menos de R$ 7."
+  ],
+  "lead": "Resumo semanal de **anúncios Meta e Instagram** da D'Placido Odonto (@dralucianadeplacido), comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
+  "destaque": {
+    "num": "109",
+    "rotulo": "CONVERSAS",
+    "titulo": "Anúncios no mesmo ritmo: {{109 conversas}} a {{R$ 6,85}} cada.",
+    "texto": "Pessoas que chamaram a clínica por mensagem a partir dos anúncios. Na semana anterior foram 110, a R$ 6,75 cada, com investimento quase igual (R$ 742,54 antes, R$ 746,61 agora)."
+  },
+  "faixa": [
+    {
+      "valor": "R$ {{6,85}}",
+      "legenda": "custo por conversa (anterior: R$ 6,75)"
+    },
+    {
+      "valor": "R$ {{747}}",
+      "legenda": "investidos em Meta Ads (anterior: R$ 743)"
+    },
+    {
+      "valor": "{{−59%}}",
+      "legenda": "alcance do Instagram vs. semana anterior"
+    },
+    {
+      "valor": "{{0}} posts",
+      "legenda": "no Instagram de 09 a 15/11 (o último foi em 08/11)"
+    }
+  ],
+  "intro_p2": "Conversas e custo praticamente iguais aos da semana anterior. A queda ficou no **Instagram**, que passou a semana sem posts e perdeu alcance.",
+  "kpis": [
+    {
+      "valor": "109",
+      "ref": "/110",
+      "rotulo": "Conversas iniciadas\nesta semana / anterior",
+      "cur": 109,
+      "prev": 110,
+      "melhor": "up"
+    },
+    {
+      "valor": "R$ 6,85",
+      "rotulo": "Custo por conversa\nesta semana",
+      "cur": 6.849633027522936,
+      "prev": 6.750363636363636,
+      "melhor": "down"
+    },
+    {
+      "valor": "1.213",
+      "rotulo": "Alcance no Instagram\n(soma diária)",
+      "cur": 1213,
+      "prev": 2952,
+      "melhor": "up"
+    },
+    {
+      "valor": "5.136",
+      "rotulo": "Visualizações no\nInstagram",
+      "cur": 5136,
+      "prev": 8988,
+      "melhor": "up"
+    }
+  ],
+  "grupos": [
+    {
+      "titulo": "ANÚNCIOS · META ADS",
+      "linhas": [
+        {
+          "rotulo": "Conversas iniciadas",
+          "prev": 110,
+          "cur": 109,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Custo por conversa",
+          "prev": 6.750363636363636,
+          "cur": 6.849633027522936,
+          "fmt": "brl",
+          "melhor": "down",
+          "destaque": true
+        },
+        {
+          "rotulo": "Investimento",
+          "prev": 742.54,
+          "cur": 746.61,
+          "fmt": "brl",
+          "melhor": null
+        },
+        {
+          "rotulo": "Alcance",
+          "prev": 16129,
+          "cur": 13120,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Impressões",
+          "prev": 25183,
+          "cur": 21964,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Cliques no link",
+          "prev": 369,
+          "cur": 333,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "CPC (todos os cliques)",
+          "prev": 1.247966,
+          "cur": 1.403402,
+          "fmt": "brl",
+          "melhor": "down"
+        }
+      ]
+    },
+    {
+      "titulo": "INSTAGRAM",
+      "linhas": [
+        {
+          "rotulo": "Posts publicados",
+          "prev": 1,
+          "cur": 0,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Alcance (soma diária)",
+          "prev": 2952,
+          "cur": 1213,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visualizações",
+          "prev": 8988,
+          "cur": 5136,
+          "fmt": "int",
+          "melhor": "up",
+          "destaque": true
+        },
+        {
+          "rotulo": "Visitas ao perfil",
+          "prev": 82,
+          "cur": 56,
+          "fmt": "int",
+          "melhor": "up"
+        },
+        {
+          "rotulo": "Novos seguidores",
+          "prev": 7,
+          "cur": 3,
+          "fmt": "int",
+          "melhor": "up"
+        }
+      ]
+    }
+  ],
+  "grafico": {
+    "titulo": "Alcance diário no Instagram",
+    "sub": "Pessoas alcançadas por dia, de 02/11 a 15/11",
+    "prev": [
+      525,
+      273,
+      201,
+      342,
+      461,
+      619,
+      531
+    ],
+    "cur": [
+      233,
+      119,
+      93,
+      175,
+      254,
+      172,
+      167
+    ]
+  },
+  "fonte": "Fonte: Reportei (Meta Ads e Instagram Business). Semana anterior com feriado de Finados (02/11). Alcance do Instagram é a soma do alcance diário. Os anúncios veicularam todos os dias nas duas semanas.",
+  "titulo_p3": "O que mudou e {{próximos passos}}",
+  "intro_p3": "Os anúncios seguraram o volume de contatos. O orgânico caiu numa semana **sem nenhuma publicação** no Instagram.",
+  "insights": [
+    {
+      "tipo": "bom",
+      "titulo": "Conversas no mesmo ritmo",
+      "texto": "**109 conversas** a R$ 6,85 cada, contra 110 a R$ 6,75 na semana anterior, com investimento quase igual."
+    },
+    {
+      "tipo": "ruim",
+      "titulo": "Instagram sem posts",
+      "texto": "Nenhuma publicação de 09 a 15/11. O alcance caiu **59%** (de 2.952 para 1.213) e as visualizações, 43%."
+    },
+    {
+      "tipo": "neu",
+      "titulo": "Anúncio alcançou menos",
+      "texto": "Os anúncios alcançaram 19% menos pessoas e o clique ficou 12% mais caro (R$ 1,40). As conversas se mantiveram."
+    }
+  ],
+  "leitura": "A campanha de mensagens segue entregando: **109 conversas a R$ 6,85**, quase igual à semana anterior. O ponto fraco foi o orgânico. Sem post desde 08/11, o alcance diário do perfil ficou abaixo da semana anterior em todos os dias, e as visitas ao perfil caíram de 82 para 56. **Voltar a publicar** é o ajuste mais rápido.",
+  "proximos": [
+    {
+      "titulo": "Voltar a publicar",
+      "texto": "Montar com a Dra. Luciana um calendário de posts para o perfil não passar outra semana em branco."
+    },
+    {
+      "titulo": "Renovar os criativos",
+      "texto": "Colocar peças novas na campanha de mensagens para recuperar o alcance e baratear o clique."
+    },
+    {
+      "titulo": "Manter a verba",
+      "texto": "Seguir com o investimento atual, que vem trazendo conversas a menos de R$ 7."
+    }
+  ],
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da D'Placido Odonto.\n\nOs anúncios mantiveram o ritmo: *109 pessoas* chamaram a clínica por mensagem, a *R$ 6,85* cada, praticamente o mesmo resultado da semana anterior, com investimento quase igual. O Instagram ficou sem post nesta semana e sentiu: o alcance do perfil caiu 59%.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelos anúncios: 109 (antes 110)\n• Custo por conversa: R$ 6,85 (antes R$ 6,75)\n• Investimento em anúncios: R$ 746,61 (antes R$ 742,54)\n• Alcance do Instagram (soma dos dias): 1.213 (antes 2.952)\n• Posts no Instagram: 0 (antes 1)\n\nNesta semana a ideia é montar com a Dra. Luciana um calendário de posts, para o perfil voltar a aparecer, e colocar criativos novos nos anúncios, que chegaram a 19% menos pessoas. A verba fica como está, porque o custo por conversa segue abaixo de R$ 7.\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+}

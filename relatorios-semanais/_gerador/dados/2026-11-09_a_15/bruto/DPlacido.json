@@ -1,0 +1,58 @@
+{
+  "cliente": "DPlacido",
+  "nome": "D'Placido Odonto",
+  "projeto_reportei": 1302453,
+  "coletado_em": "2026-11-18",
+  "semana_atual": ["2026-11-09", "2026-11-15"],
+  "semana_anterior": ["2026-11-02", "2026-11-08"],
+  "integracoes": [
+    {"id": 3698205, "slug": "facebook_ads", "nome": "D`Placido Odonto - Principal", "status": "active"},
+    {"id": 3698229, "slug": "instagram_business", "nome": "dralucianadeplacido", "status": "active"}
+  ],
+  "facebook_ads_3698205": {
+    "numeros_com_comparacao": {
+      "fb_ads:spend": {"cur": "746.61", "prev": "742.54", "difference": 0.5481186198723407},
+      "fb_ads:actions_onsite_conversion.messaging_conversation_started_7d": {"cur": 109, "prev": 110, "difference": -0.9090909090909065},
+      "fb_ads:spend-actions_onsite_conversion.messaging_conversation_started_7d": {"cur": 6.849633027522936, "prev": 6.750363636363636, "difference": 1.4705784237243762},
+      "fb_ads:cpc": {"cur": "1.403402", "prev": "1.247966", "difference": 12.45514701522319},
+      "fb_ads:reach": {"cur": "13120", "prev": "16129", "difference": -18.65583731167463},
+      "fb_ads:impressions": {"cur": "21964", "prev": "25183", "difference": -12.782432593416189},
+      "fb_ads:inline_link_clicks": {"cur": "333", "prev": "369", "difference": -9.756097560975604},
+      "fb_ads:actions_lead": {"cur": 3, "prev": 2, "difference": 50}
+    },
+    "por_plataforma_com_comparacao": {
+      "conversas_instagram": {"cur": 45, "prev": 44},
+      "conversas_facebook": {"cur": 64, "prev": 66},
+      "investimento_instagram": {"cur": "384.185146", "prev": "420.69"},
+      "investimento_facebook": {"cur": "362.424854", "prev": "321.85"}
+    },
+    "investimento_diario_2026-11-02_a_15": {
+      "labels": ["2026-11-02","2026-11-03","2026-11-04","2026-11-05","2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14","2026-11-15"],
+      "spend": ["68.69","158.62","161.37","111.26","70.68","68.43","103.49","128.13","145.76","113.4","103.34","71.17","67.07","117.74"],
+      "observacao": "14 dias com veiculação; nenhum dia zerado. Soma 02-08/11 = 742,54; soma 09-15/11 = 746,61."
+    }
+  },
+  "instagram_business_3698229": {
+    "numeros_com_comparacao": {
+      "ig:reach": {"cur": 1213, "prev": 2952, "difference": -58.90921409214092, "trend_semana_atual": [233,119,93,175,254,172,167]},
+      "ig:views": {"cur": 5136, "prev": 8988, "difference": -42.85714285714286},
+      "ig:profile_views": {"cur": 56, "prev": 82, "difference": -31.707317073170728},
+      "ig:new_followers_count": {"cur": 3, "prev": 7, "difference": -57.14285714285714}
+    },
+    "alcance_diario_2026-11-02_a_15": {
+      "labels": ["2026-11-02","2026-11-03","2026-11-04","2026-11-05","2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14","2026-11-15"],
+      "reach": [525,273,201,342,461,619,531,233,119,93,175,254,172,167]
+    },
+    "posts_semana_atual_2026-11-09_a_15": [],
+    "posts_2026-11-02_a_15": [
+      {
+        "url": "https://www.instagram.com/p/Dffk1qGB_9b/",
+        "legenda_inicio": "Existem coisas que hoje vivo que um dia nem passaram pela minha imaginação... O extraordinário de Deus ainda está por vir!",
+        "type": "Image", "reach": 354, "views": 715, "total_interactions": 57, "post_interactions_rate": 0.16101694915254236,
+        "likes": 47, "comments": 8, "saved": 0, "follows": 0, "profile_visits": 1, "shares": 1,
+        "created_at": "2026-11-08T17:20:03-03:00",
+        "observacao": "único post do período de 14 dias; publicado na semana anterior; métricas acumuladas até a coleta (18/11)"
+      }
+    ]
+  }
+}
