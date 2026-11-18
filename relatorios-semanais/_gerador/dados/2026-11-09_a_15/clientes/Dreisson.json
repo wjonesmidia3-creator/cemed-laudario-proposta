@@ -2,8 +2,8 @@
   "arquivo": "Dreisson",
   "nome": "Dreisson",
   "titulo": [
-    "Anúncios {{pararam em 12/11}}.",
-    "Custo por conversa se manteve."
+    "Custo por conversa {{estável}}.",
+    "Anúncios parados de 12 a 15/11."
   ],
   "lead": "Resumo semanal dos **anúncios Meta** do Dreisson (Vivo Imóveis), comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
   "destaque": {
@@ -26,7 +26,7 @@
       "legenda": "cliques no link dos anúncios (anterior: 474)"
     },
     {
-      "valor": "4,5 {{mil}}",
+      "valor": "{{4,5 mil}}",
       "legenda": "pessoas alcançadas pelos anúncios (anterior: 9,1 mil)"
     }
   ],

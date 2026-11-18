@@ -15,7 +15,7 @@
   "faixa": [
     {
       "valor": "R$ {{752}}",
-      "legenda": "investidos no Meta Ads, com anúncios no ar nos 7 dias (antes: R$ 633)"
+      "legenda": "investidos no Meta Ads, no ar nos 7 dias (antes: R$ 633)"
     },
     {
       "valor": "R$ {{14,19}}",
@@ -161,8 +161,24 @@
   "grafico": {
     "titulo": "Alcance diário no Instagram",
     "sub": "Pessoas alcançadas por dia, de 02/11 a 15/11",
-    "prev": [876, 114, 92, 1349, 1328, 1670, 504],
-    "cur": [469, 1318, 844, 873, 1054, 2689, 2535]
+    "prev": [
+      876,
+      114,
+      92,
+      1349,
+      1328,
+      1670,
+      504
+    ],
+    "cur": [
+      469,
+      1318,
+      844,
+      873,
+      1054,
+      2689,
+      2535
+    ]
   },
   "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Página do Facebook). A semana anterior teve o feriado de Finados (02/11) e o Meta Ads quase parado em 03 e 04/11. Alcance do Instagram é a soma do alcance diário.",
   "titulo_p3": "Conteúdo e {{próximos passos}}",
@@ -172,25 +188,77 @@
       "data": "10/NOV",
       "tag": "REELS · MAIS ENGAJAMENTO",
       "titulo": "Lançamento do Sorria para 2027",
-      "metricas": [["281", "views"], ["22", "interações"], ["11,4%", "eng."]]
+      "metricas": [
+        [
+          "281",
+          "views"
+        ],
+        [
+          "22",
+          "interações"
+        ],
+        [
+          "11,4%",
+          "eng."
+        ]
+      ]
     },
     {
       "data": "10/NOV",
       "tag": "REELS",
       "titulo": "Quanto tempo dura um implante",
-      "metricas": [["293", "views"], ["20", "interações"], ["11,4%", "eng."]]
+      "metricas": [
+        [
+          "293",
+          "views"
+        ],
+        [
+          "20",
+          "interações"
+        ],
+        [
+          "11,4%",
+          "eng."
+        ]
+      ]
     },
     {
       "data": "13/NOV",
       "tag": "REELS",
       "titulo": "Convite do Dr. Rogério para o dia 25/11",
-      "metricas": [["230", "views"], ["19", "interações"], ["14,6%", "eng."]]
+      "metricas": [
+        [
+          "230",
+          "views"
+        ],
+        [
+          "19",
+          "interações"
+        ],
+        [
+          "14,6%",
+          "eng."
+        ]
+      ]
     },
     {
       "data": "09/NOV",
       "tag": "REELS",
       "titulo": "Teaser: novidade chegando na EGO",
-      "metricas": [["196", "views"], ["18", "interações"], ["18,0%", "eng."]]
+      "metricas": [
+        [
+          "196",
+          "views"
+        ],
+        [
+          "18",
+          "interações"
+        ],
+        [
+          "18,0%",
+          "eng."
+        ]
+      ]
     }
   ],
   "insights": [
@@ -226,5 +294,5 @@
     }
   ],
   "nota_p3": "Visualizações e interações dos posts são orgânicas e acumuladas desde a publicação até 15/11.",
-  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da EGO Odontologia.\n\nCom os anúncios no ar todos os dias, as conversas voltaram a subir: foram *53*, contra 35 na semana anterior, quando os anúncios ficaram quase parados em 03 e 04/11. Cada conversa saiu por *R$ 14,19*, perto do que custava antes da pausa.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelo Instagram/Facebook: 53 (antes 35)\n• Custo por conversa: R$ 14,19 (antes R$ 18,10)\n• Investimento no Instagram/Facebook: R$ 752 (antes R$ 633)\n• Alcance no Instagram (soma diária): 9.782 (antes 5.933)\n• Google Ads: 4 cliques (antes 9) e nenhum contato registrado\n\nO ponto de atenção segue no Google, que não registrou contatos nas duas semanas. Nesta semana vamos:\n1. Conferir se a contagem de contatos do Google está funcionando\n2. Usar os vídeos do Sorria para 2027 nos anúncios até o dia 25/11\n3. Acompanhar os anúncios todo dia para não ter nova pausa\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da EGO Odontologia.\n\nCom os anúncios no ar todos os dias, as conversas voltaram a subir: foram *53*, 18 a mais que na semana anterior, quando os anúncios ficaram quase parados em 03 e 04/11. Cada conversa saiu por *R$ 14,19*, perto do que custava antes da pausa.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelo Instagram/Facebook: 53 (antes 35)\n• Custo por conversa: R$ 14,19 (antes R$ 18,10)\n• Investimento no Instagram/Facebook: R$ 752 (antes R$ 633)\n• Alcance no Instagram (soma diária): 9.782 (antes 5.933)\n\nO ponto de atenção é o Google: 4 cliques (antes 9) e nenhum contato registrado nas duas semanas. Nesta semana vamos:\n1. Conferir se a contagem de contatos do Google está funcionando\n2. Usar os vídeos do Sorria para 2027 nos anúncios até 25/11\n3. Acompanhar os anúncios todo dia para não ter nova pausa\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
 }
