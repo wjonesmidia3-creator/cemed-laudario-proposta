@@ -4,7 +4,7 @@ Um PDF por cliente, no mesmo visual do update da EGO (capa azul, comparativo lad
 
 ## Semana 09 a 15/11/2026 (comparada com 02 a 08/11)
 
-Pasta `2026-11-09_a_15/` · para baixar: `downloads/Relatorios_Semanais_09-15nov2026.zip` (os 8 PDFs) ou `downloads/09-15nov2026/`. Mensagens para os grupos de WhatsApp (tom de gestor da conta, sem emoji): `downloads/Mensagens_WhatsApp_09-15nov2026.zip` ou `downloads/mensagens_09-15nov2026/`.
+Tudo numa pasta só: `downloads/Semanais_09-15nov2026/` (os 8 PDFs e, ao lado de cada um, a mensagem de WhatsApp `<cliente>_Mensagem_09-15nov2026.txt`, mais `_TODAS_AS_MENSAGENS.txt`). A mesma pasta compactada: `downloads/Semanais_09-15nov2026.zip`. A partir desta semana o gerador já entrega assim.
 
 | Cliente | Destaque da semana |
 |---|---|

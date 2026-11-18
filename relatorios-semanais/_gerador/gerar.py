@@ -4,7 +4,7 @@ Uso (na pasta _gerador):
     python3 gerar.py <pasta>                 # todos os clientes da semana
     python3 gerar.py <pasta> CEMED Fiorini   # só alguns (nome do arquivo JSON, sem .json)
     python3 gerar.py <pasta> --validar       # só confere os JSON, sem gerar PDF
-    python3 gerar.py <pasta> --mensagens     # só exporta as mensagens de WhatsApp para downloads/
+    python3 gerar.py <pasta> --mensagens     # só exporta as mensagens de WhatsApp para downloads/Semanais_<sufixo>/
 
 Entrada: dados/<pasta>/semana.json e dados/<pasta>/clientes/<arquivo>.json
 Saída:   ../<pasta>/<arquivo>_Semanal_<sufixo>.pdf
@@ -425,58 +425,59 @@ def main():
     if os.environ.get("MANTER_HTML") != "1":
         for t in temporarios:
             os.remove(t)
-    # semana completa gerada sem erro -> atualiza a pasta downloads/ (PDFs soltos + .zip com todos)
+    # semana completa gerada sem erro -> atualiza downloads/Semanais_<sufixo>/ (PDFs + mensagens) e o .zip
     if rc == 0 and not so and not sem["pasta"].startswith("_"):
         empacotar(sem, [p[1] for p in pares])
         exportar_mensagens(sem, clientes)
     sys.exit(rc)
 
 
-def exportar_mensagens(sem, clientes):
-    """downloads/mensagens_<sufixo>/: um .txt por cliente (pronto para o WhatsApp) + um arquivo com todas + .zip."""
-    import zipfile
+def pasta_downloads(sem):
+    """downloads/Semanais_<sufixo>/: tudo da semana numa pasta só (PDFs + mensagens de WhatsApp)."""
     raiz = os.path.abspath(os.path.join(AQUI, "..", ".."))
-    pasta = os.path.join(raiz, "downloads", f"mensagens_{sem['sufixo']}")
+    pasta = os.path.join(raiz, "downloads", f"Semanais_{sem['sufixo']}")
     os.makedirs(pasta, exist_ok=True)
+    return raiz, pasta
+
+
+def zipar(sem):
+    import zipfile
+    raiz, pasta = pasta_downloads(sem)
+    zip_path = os.path.join(raiz, "downloads", f"Semanais_{sem['sufixo']}.zip")
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+        for a in sorted(glob.glob(os.path.join(pasta, "*"))):
+            z.write(a, os.path.join(os.path.basename(pasta), os.path.basename(a)))
+    print("downloads:", os.path.relpath(pasta, raiz) + "/", "e", os.path.relpath(zip_path, raiz))
+
+
+def exportar_mensagens(sem, clientes):
+    """Um .txt por cliente (pronto para o WhatsApp), ao lado do PDF, + _TODAS_AS_MENSAGENS.txt."""
+    raiz, pasta = pasta_downloads(sem)
     for antigo in glob.glob(os.path.join(pasta, "*.txt")):
         os.remove(antigo)
     com_msg = [c for c in clientes if c.get("whatsapp")]
     sem_msg = [c["arquivo"] for c in clientes if not c.get("whatsapp")]
-    arquivos = []
     for c in com_msg:
-        caminho = os.path.join(pasta, f"{c['arquivo']}.txt")
+        caminho = os.path.join(pasta, f"{c['arquivo']}_Mensagem_{sem['sufixo']}.txt")
         with open(caminho, "w", encoding="utf-8") as fh:
             fh.write(c["whatsapp"].strip() + "\n")
-        arquivos.append(caminho)
     todas = os.path.join(pasta, "_TODAS_AS_MENSAGENS.txt")
     sep = "\n\n" + "=" * 40 + "\n\n"
     with open(todas, "w", encoding="utf-8") as fh:
         fh.write(sep.join(f"[{c['nome']}]\n\n{c['whatsapp'].strip()}" for c in com_msg) + "\n")
-    arquivos.append(todas)
-    zip_path = os.path.join(raiz, "downloads", f"Mensagens_WhatsApp_{sem['sufixo']}.zip")
-    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-        for a in sorted(arquivos):
-            z.write(a, os.path.basename(a))
-    print(f"mensagens: {len(com_msg)} em", os.path.relpath(pasta, raiz) + "/", "e", os.path.relpath(zip_path, raiz))
+    print(f"mensagens: {len(com_msg)} em", os.path.relpath(pasta, raiz) + "/")
     if sem_msg:
         print("AVISO sem mensagem de WhatsApp:", ", ".join(sem_msg))
+    zipar(sem)
 
 
 def empacotar(sem, pdfs):
     import shutil
-    import zipfile
-    raiz = os.path.abspath(os.path.join(AQUI, "..", ".."))
-    destino = os.path.join(raiz, "downloads", sem["sufixo"])
-    os.makedirs(destino, exist_ok=True)
-    for antigo in glob.glob(os.path.join(destino, "*.pdf")):
+    raiz, pasta = pasta_downloads(sem)
+    for antigo in glob.glob(os.path.join(pasta, "*.pdf")):
         os.remove(antigo)
     for p in pdfs:
-        shutil.copy2(p, destino)
-    zip_path = os.path.join(raiz, "downloads", f"Relatorios_Semanais_{sem['sufixo']}.zip")
-    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-        for p in sorted(pdfs):
-            z.write(p, os.path.basename(p))
-    print("downloads:", os.path.relpath(zip_path, raiz), "e", os.path.relpath(destino, raiz) + "/")
+        shutil.copy2(p, pasta)
 
 
 if __name__ == "__main__":
