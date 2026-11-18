@@ -46,32 +46,35 @@ Exemplos prontos (um por cliente): `dados/2026-11-02_a_08/clientes/*.json`. Siga
 `melhor`: `"up"` quando subir é bom (conversas, alcance, cliques), `"down"` quando cair é bom (custos, CPC), `null` quando é neutro (investimento).
 `destaque: true` nas linhas principais (conversas, custo por conversa, conversões e o que mais mudou): elas ganham cor e selo de variação.
 
+## Tom: texto amarrado, vendendo o trabalho, sem cara de IA (vale para PDF e WhatsApp)
+
+- **Uma história só por cliente.** Escolha o fio da semana (ex.: "mais conversas com custo menor" ou "anúncios pararam dois dias") e amarre tudo nele: título da capa, destaque, intro, insights, leitura, próximos passos e mensagem contam a mesma história, sem repetir a mesma frase.
+- **Vender o trabalho da agência com fatos.** Ligue o resultado à gestão: "a campanha de mensagens segue trazendo contato a R$ 18", "o Google Ads entregou o menor custo por conversão do mês", "identificamos a queda e já ajustamos…" só se o ajuste for fato. Nunca invente ação que não foi feita; quando não souber, fale do próximo passo ("vamos ajustar", "a proposta é…"). Em semana ruim, venda o controle: mostramos que vimos o problema cedo e temos o plano.
+- **Escrita de gente.** Frases curtas, voz ativa, primeira pessoa do plural ("a gente", "nós", "vamos"). Português do dia a dia de quem cuida da conta.
+- **Proibido (soa IA):** travessão longo (—) no meio da frase, "vale destacar", "além disso", "em resumo", "nesse sentido", "é importante ressaltar", "não apenas… mas também", "alavancar", "potencializar", "robusto", "jornada", "estratégico" solto, trios de adjetivos, exclamações em série, emoji no começo de cada linha.
+- **Sem exagero.** Nada de "resultado incrível/excelente". Deixe o número falar ("35 conversas, 5 a mais que na semana anterior").
+
 ## Mensagem de WhatsApp (campo `whatsapp`)
 
-Resumo curto que vai no grupo do cliente junto com o PDF. Até ~900 caracteres (máximo 1200). Modelos prontos em `dados/2026-11-02_a_08/clientes/*.json`.
+Vai no grupo do cliente junto com o PDF. Tem de parecer escrita pelo gestor da conta. Até ~900 caracteres (máximo 1100).
 
 ```
-*Resumo semanal · Nome do cliente*
-_02 a 08/11 · comparado com 26/10 a 01/11_
+Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da Nome do cliente.
 
-📌 Frase principal da semana com 1–2 *destaques* em negrito.
+Parágrafo de 2 a 3 frases com o principal resultado e o porquê, com 1–2 *números em negrito*.
 
-📊 *Números*
-• 3 a 5 linhas: "Métrica: valor (antes valor)"
+*Números da semana* (vs. 02 a 08/11)
+• 3 a 5 linhas: "Conversas pelo Instagram/Facebook: 40 (antes 35)"
 
-⚠️ *Atenção*            (só se houver alerta; em semana boa use ✨ *Destaque de conteúdo*)
-• 1 a 2 linhas
+Parágrafo curto com o ponto de atenção (se houver) e o que vamos fazer nesta semana, em 2 a 3 frases ou lista 1. 2. 3.
 
-➡️ *Próximos passos*
-1. … 2. … 3. …
-
-📎 Relatório completo em PDF anexo.
+O relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar.
 ```
 
-- Formatação do WhatsApp: `*negrito*`, `_itálico_`; nada de `**` ou `#`.
+- No máximo 1 emoji na mensagem inteira (ou nenhum). Formatação do WhatsApp: `*negrito*`, `_itálico_`; nada de `**` ou `#`.
 - Mesmos números e mesmas regras de percentual do PDF; cada número tem de estar no relatório.
 - Cuidado com o período: um pico ou queda da semana anterior não pode parecer desta semana.
-- Escreva para o dono do negócio: sem siglas soltas (explique CPC como "custo por clique"), sem linguagem interna, sem culpar o cliente.
+- Escreva para o dono do negócio: sem siglas soltas (CPC = "custo por clique"), nada de Reportei/API/integração/coleta, sem culpar o cliente.
 
 ## O que escolher
 
