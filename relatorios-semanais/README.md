@@ -2,6 +2,23 @@
 
 Um PDF por cliente, no mesmo visual do update da EGO (capa azul, comparativo lado a lado, leitura e próximos passos).
 
+## Semana 09 a 15/11/2026 (comparada com 02 a 08/11)
+
+Pasta `2026-11-09_a_15/` · para baixar: `downloads/Relatorios_Semanais_09-15nov2026.zip` (os 8 PDFs) ou `downloads/09-15nov2026/`. Mensagens para os grupos de WhatsApp (tom de gestor da conta, sem emoji): `downloads/Mensagens_WhatsApp_09-15nov2026.zip` ou `downloads/mensagens_09-15nov2026/`.
+
+| Cliente | Destaque da semana |
+|---|---|
+| CEMED | 63 contatos, 61 pelo Google; **Meta sem veiculação desde 10/11** (ainda parado em 17/11) |
+| D'Placido Odonto | 109 conversas a R$ 6,85; Instagram sem posts na semana |
+| Dreisson | custo por conversa estável (R$ 19,81); **anúncios parados de 12 a 15/11** (voltaram em 16/11) |
+| EGO Odontologia | 53 conversas (+51%) a R$ 14,19, Meta no ar os 7 dias; Google sem conversões |
+| Fiorini Odonto | 73 conversas no Meta; **Google Ads parado desde 02/11** |
+| Instituto Sanrire | 32 conversas, alcance do Meta +28%; conversões principais do Google −28%; ChatGPT Ads parado |
+| Luisa Alves Tattoo | anúncios de volta: 99 conversas a R$ 3,14 |
+| Trait Odontologia | 43 conversas (+87%) a R$ 19,76; **Google Ads parado desde 07/11** |
+
+Fonte: Reportei, extração em 18/11/2026. Dados brutos de cada cliente em `_gerador/dados/2026-11-09_a_15/bruto/`.
+
 ## Semana 02 a 08/11/2026 (comparada com 26/10 a 01/11)
 
 Pasta `2026-11-02_a_08/` · para baixar: `downloads/Relatorios_Semanais_02-08nov2026.zip` (os 8 PDFs) ou `downloads/02-08nov2026/`. Mensagens curtas para os grupos de WhatsApp: `downloads/Mensagens_WhatsApp_02-08nov2026.zip` ou `downloads/mensagens_02-08nov2026/` (um .txt por cliente e `_TODAS_AS_MENSAGENS.txt`):

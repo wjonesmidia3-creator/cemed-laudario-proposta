@@ -7,10 +7,10 @@
   ],
   "lead": "Resumo semanal de **anúncios Meta, Google Ads, Instagram e Google Meu Negócio** da Trait Odontologia, comparando a semana de 09 a 15/11 com a semana anterior (02 a 08/11).",
   "destaque": {
-    "num": "R$ 0",
-    "rotulo": "GOOGLE ADS",
-    "titulo": "O Google Ads {{parou em 07/11}} e ficou a semana inteira sem veicular: {{nenhum clique}} de 09 a 15/11.",
-    "texto": "Na semana anterior foram R$ 345 investidos, 683 cliques e 60 conversões, com o último gasto (R$ 6,39) em 07/11. No Meta, as conversas subiram de 23 para 43."
+    "num": "43",
+    "rotulo": "CONVERSAS",
+    "titulo": "{{43 conversas}} pelo Meta, quase o dobro da semana anterior, a {{R$ 19,76}} cada.",
+    "texto": "O custo por conversa caiu 41% (antes R$ 33,78). O Google Ads parou em 07/11 e não veiculou de 09 a 15/11: reativar a campanha é a prioridade desta semana."
   },
   "faixa": [
     {
@@ -166,8 +166,24 @@
   "grafico": {
     "titulo": "Alcance diário no Instagram",
     "sub": "Pessoas alcançadas por dia, de 02/11 a 15/11",
-    "prev": [19704, 9697, 14515, 5842, 2497, 1890, 1567],
-    "cur": [5796, 4374, 2121, 1852, 1454, 1305, 2055]
+    "prev": [
+      19704,
+      9697,
+      14515,
+      5842,
+      2497,
+      1890,
+      1567
+    ],
+    "cur": [
+      5796,
+      4374,
+      2121,
+      1852,
+      1454,
+      1305,
+      2055
+    ]
   },
   "fonte": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Google Meu Negócio; página do Facebook com integração inativa). Feriados: Finados (02/11, semana anterior) e Proclamação da República (15/11, domingo). Alcance do Instagram é a soma do alcance diário.",
   "titulo_p3": "Conteúdo e {{próximos passos}}",
@@ -177,25 +193,77 @@
       "data": "09/NOV",
       "tag": "REELS · MAIS ENGAJAMENTO",
       "titulo": "Equipe no clima de Natal",
-      "metricas": [["538", "views"], ["16", "interações"], ["5,6%", "eng."]]
+      "metricas": [
+        [
+          "538",
+          "views"
+        ],
+        [
+          "16",
+          "interações"
+        ],
+        [
+          "5,6%",
+          "eng."
+        ]
+      ]
     },
     {
       "data": "11/NOV",
       "tag": "CARROSSEL · MAIS ALCANCE",
       "titulo": "Transformação do sorriso de uma paciente",
-      "metricas": [["883", "views"], ["13", "interações"], ["3,7%", "eng."]]
+      "metricas": [
+        [
+          "883",
+          "views"
+        ],
+        [
+          "13",
+          "interações"
+        ],
+        [
+          "3,7%",
+          "eng."
+        ]
+      ]
     },
     {
       "data": "10/NOV",
       "tag": "REELS · IMPLANTES",
       "titulo": "Implante para repor um dente perdido",
-      "metricas": [["264", "views"], ["7", "interações"], ["4,7%", "eng."]]
+      "metricas": [
+        [
+          "264",
+          "views"
+        ],
+        [
+          "7",
+          "interações"
+        ],
+        [
+          "4,7%",
+          "eng."
+        ]
+      ]
     },
     {
       "data": "13/NOV",
       "tag": "REELS",
       "titulo": "20 anos da Trait em Guarapuava",
-      "metricas": [["217", "views"], ["2", "interações"], ["1,4%", "eng."]]
+      "metricas": [
+        [
+          "217",
+          "views"
+        ],
+        [
+          "2",
+          "interações"
+        ],
+        [
+          "1,4%",
+          "eng."
+        ]
+      ]
     }
   ],
   "insights": [
@@ -212,7 +280,7 @@
     {
       "tipo": "neu",
       "titulo": "Instagram fora do pico",
-      "texto": "Alcance **66% menor**: a semana anterior começou alta, com 19,7 mil pessoas em 02/11. No Google, 3 avaliações novas (nota 4,7)."
+      "texto": "Alcance **66% menor**: a semana anterior começou alta, com 19,7 mil pessoas em 02/11. No Google, 3 avaliações novas (nota média 4,7)."
     }
   ],
   "leitura": "A campanha de mensagens no Meta segurou a semana sozinha: **43 conversas**, quase o dobro da semana do feriado, a R$ 19,76 cada. O Google Ads, que vinha trazendo cliques todos os dias, parou em 07/11 e não veiculou de 09 a 15/11. **Reativar a campanha** e conferir a contagem de conversões é a prioridade desta semana.",
@@ -231,5 +299,5 @@
     }
   ],
   "nota_p3": "Visualizações e interações dos posts são orgânicas e acumuladas desde a publicação até 18/11.",
-  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da Trait Odontologia.\n\nOs anúncios no Instagram e Facebook trouxeram *43 conversas*, quase o dobro da semana anterior, e cada uma saiu por *R$ 19,76*. A campanha de mensagens segurou a semana sozinha, já que o Google Ads parou de rodar em 07/11.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelo Instagram/Facebook: 43 (antes 23)\n• Custo por conversa: R$ 19,76 (antes R$ 33,78)\n• Cadastros pelos anúncios: 5 (antes 1)\n• Investimento em anúncios: R$ 850, todo no Instagram/Facebook (antes R$ 1.122)\n• Google Ads: nenhum clique e nenhuma conversão (antes 683 cliques e 60 conversões)\n\nPonto de atenção: o Google Ads ficou parado a semana inteira. Nesta semana vamos descobrir o motivo da parada, reativar a campanha e revisar a contagem de conversões. No Instagram, a ideia é repetir o que mais engajou: bastidores da equipe e casos reais de tratamento.\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
+  "whatsapp": "Oi, pessoal! Passando o resumo da semana de 09 a 15/11 da Trait Odontologia.\n\nOs anúncios no Instagram e Facebook trouxeram *43 conversas*, quase o dobro da semana anterior, e cada uma saiu por *R$ 19,76*. A campanha de mensagens segurou a semana sozinha, já que o Google Ads parou de rodar em 07/11.\n\n*Números da semana* (vs. 02 a 08/11)\n• Conversas pelo Instagram/Facebook: 43 (antes 23)\n• Custo por conversa: R$ 19,76 (antes R$ 33,78)\n• Cadastros pelos anúncios: 5 (antes 1)\n• Investimento em anúncios: R$ 850, só no Instagram/Facebook (antes R$ 1.122)\n• Google Ads: nenhum clique e nenhuma conversão (antes 683 cliques e 60 conversões)\n\nPonto de atenção: o Google Ads ficou parado a semana inteira. Nesta semana vamos descobrir o motivo, reativar a campanha e revisar a contagem de conversões. No Instagram, vamos repetir o que mais engajou: bastidores da equipe e casos reais.\n\nO relatório completo está no PDF abaixo. Qualquer dúvida, é só chamar."
 }
