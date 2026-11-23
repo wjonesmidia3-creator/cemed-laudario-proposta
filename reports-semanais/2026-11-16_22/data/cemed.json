@@ -1,0 +1,242 @@
+{
+  "client": "CEMED",
+  "slug": "cemed",
+  "project_id": 1341211,
+  "period": {
+    "cur": [
+      "2026-11-16",
+      "2026-11-22"
+    ],
+    "prev": [
+      "2026-11-09",
+      "2026-11-15"
+    ]
+  },
+  "meta_ads": [
+    {
+      "account_name": "CEMED - Mirassol",
+      "integration_id": 3821261,
+      "cur": {
+        "spend": 0,
+        "reach": 0,
+        "impressions": 0,
+        "link_clicks": 0,
+        "conversations": 0,
+        "leads": 0
+      },
+      "prev": {
+        "spend": 4.72,
+        "reach": 264,
+        "impressions": 310,
+        "link_clicks": 2,
+        "conversations": 2,
+        "leads": 0
+      },
+      "daily": [
+        [
+          "2026-11-09",
+          4.72,
+          1,
+          0,
+          2
+        ],
+        [
+          "2026-11-10",
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          "2026-11-11",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-12",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-13",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-14",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-15",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-16",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-17",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-18",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-19",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-20",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-21",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-22",
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "campaigns": []
+    }
+  ],
+  "google_ads": [
+    {
+      "account_name": "CEMED - Centro de Especialidades Médicas de Mirassol",
+      "integration_id": 3829315,
+      "cur": {
+        "cost": 754.58,
+        "clicks": 299,
+        "impressions": 3035,
+        "conversions": 44
+      },
+      "prev": {
+        "cost": 872.98,
+        "clicks": 281,
+        "impressions": 3451,
+        "conversions": 61
+      },
+      "daily": [
+        [
+          "2026-11-09",
+          46,
+          21
+        ],
+        [
+          "2026-11-10",
+          30,
+          6
+        ],
+        [
+          "2026-11-11",
+          67,
+          17
+        ],
+        [
+          "2026-11-12",
+          63,
+          11
+        ],
+        [
+          "2026-11-13",
+          75,
+          6
+        ],
+        [
+          "2026-11-14",
+          0,
+          0
+        ],
+        [
+          "2026-11-15",
+          0,
+          0
+        ],
+        [
+          "2026-11-16",
+          61,
+          13
+        ],
+        [
+          "2026-11-17",
+          31,
+          8
+        ],
+        [
+          "2026-11-18",
+          81,
+          9.0
+        ],
+        [
+          "2026-11-19",
+          75,
+          10.0
+        ],
+        [
+          "2026-11-20",
+          51,
+          4
+        ],
+        [
+          "2026-11-21",
+          0,
+          0
+        ],
+        [
+          "2026-11-22",
+          0,
+          0
+        ]
+      ],
+      "daily_columns": [
+        "date",
+        "clicks",
+        "conversions"
+      ]
+    }
+  ],
+  "instagram": [],
+  "facebook_page": [],
+  "other": [],
+  "errors": [],
+  "notes": [
+    "Meta Ads CEMED - Mirassol: sem veiculação na semana atual (gasto zero); na semana anterior houve apenas R$ 4,72 em 09/11, sem gasto a partir de 10/11.",
+    "Google Ads: 2 campanhas e 3 anúncios ativos nas duas semanas.",
+    "Google Ads: série diária (cliques e conversões) via gráfico do Reportei; as campanhas rodam apenas de segunda a sexta."
+  ]
+}

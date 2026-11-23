@@ -1,0 +1,34 @@
+{
+  "client_short": "Fiorini Odontologia",
+  "headline_1": "Volume estável, *custo controlado*.",
+  "headline_2": "Black Friday entrega mais com menos.",
+  "intro": "Resumo da semana de **16 a 22/11** da Fiorini Odontologia nos **anúncios Meta**, comparando com a semana anterior (09 a 15/11).",
+  "highlight": {
+    "number": "70",
+    "label": "CONVERSAS",
+    "title": "*Black Friday* trouxe mais conversas que Protocolo com *44% menos verba*.",
+    "text": "Black Friday: 15 conversas com R$ 365,30 (R$ 24,35 cada). Protocolo: 14 conversas com R$ 651,75 (R$ 46,55 cada), quase 40% de toda a verba da semana."
+  },
+  "strip": [
+    {"key": "meta.conversations", "desc": "conversas iniciadas pelos anúncios (semana anterior: 73)"},
+    {"key": "meta.cpconv", "desc": "custo médio por conversa, estável (antes: R$ 24,07)"},
+    {"value": "R$ 1.670", "desc": "investidos na Meta Ads na semana (5% a menos)"},
+    {"value": "32,1 mil", "desc": "pessoas alcançadas pelos anúncios"}
+  ],
+  "s1_intro": "A Fiorini manteve o volume de conversas (**70**, contra 73) com custo por conversa praticamente igual (**R$ 23,86**). Os cliques no link caíram 25%, o que encareceu o clique, mas quase não afetou as conversas.",
+  "kpis": [
+    {"key": "meta.conversations", "suffix": "/73", "label": "Conversas iniciadas: esta semana / anterior"},
+    {"key": "meta.cpconv", "label": "Custo por conversa na semana"},
+    {"key": "meta.spend", "label": "Investimento em anúncios Meta"},
+    {"key": "meta.link_clicks", "label": "Cliques no link dos anúncios"}
+  ],
+  "key_rows": ["meta.conversations", "meta.cpconv"],
+  "footnote1": "Fonte: Reportei (Meta Ads). Custos por conversa e por clique calculados como investimento ÷ resultado. O Google Ads da Fiorini não teve veiculação nas duas semanas e a página do Facebook está desconectada do Reportei.",
+  "s2_intro": "Sete campanhas no ar. **Protocolo** recebeu a maior verba, mas **Black Friday**, **Implantes** e **Invisalign** entregaram conversas mais baratas.",
+  "leitura": "**Protocolo** custou R$ 46,55 por conversa, quase o dobro da média da conta, e levou 39% da verba. **Black Friday** (R$ 24,35), **Implantes** (R$ 20,75) e **Invisalign** (R$ 21,31) convertem melhor. Vale separar a campanha **Contrate-se** (18 conversas a R$ 5,78): se ela for de vagas, as conversas de pacientes na semana foram 52.",
+  "proximos": [
+    {"title": "Rebalancear a verba", "text": "Reduzir o orçamento de Protocolo e reforçar Black Friday e Implantes na última semana de novembro."},
+    {"title": "Renovar Protocolo", "text": "A campanha ainda usa a versão de junho (V2). Testar criativos novos para trazer o custo por conversa para perto da média."},
+    {"title": "Reconectar canais", "text": "Reconectar a página do Facebook no Reportei e decidir se o Google Ads volta a rodar."}
+  ]
+}

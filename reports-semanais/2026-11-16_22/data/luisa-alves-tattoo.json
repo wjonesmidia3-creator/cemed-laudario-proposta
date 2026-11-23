@@ -1,0 +1,60 @@
+{
+  "client": "Luisa Alves Tattoo",
+  "slug": "luisa-alves-tattoo",
+  "project_id": 1350513,
+  "period": {"cur": ["2026-11-16", "2026-11-22"], "prev": ["2026-11-09", "2026-11-15"]},
+  "meta_ads": [
+    {
+      "account_name": "LA Tattoo",
+      "integration_id": 3850104,
+      "cur":  {"spend": 340.66, "reach": 10493, "impressions": 15083, "link_clicks": 298, "conversations": 83, "leads": 0},
+      "prev": {"spend": 310.67, "reach": 8409, "impressions": 12493, "link_clicks": 454, "conversations": 99, "leads": 0},
+      "daily": [
+        ["2026-11-09", 14.17, 4, 0, 9], ["2026-11-10", 39.26, 19, 0, 43], ["2026-11-11", 47.11, 17, 0, 40],
+        ["2026-11-12", 65.15, 21, 0, 91], ["2026-11-13", 49.84, 21, 0, 100], ["2026-11-14", 49.34, 10, 0, 67],
+        ["2026-11-15", 45.8, 7, 0, 104], ["2026-11-16", 58.61, 13, 0, 88], ["2026-11-17", 49.16, 13, 0, 37],
+        ["2026-11-18", 49.91, 11, 0, 27], ["2026-11-19", 55.75, 17, 0, 53], ["2026-11-20", 43.52, 13, 0, 32],
+        ["2026-11-21", 46.89, 12, 0, 40], ["2026-11-22", 36.82, 4, 0, 21]
+      ],
+      "campaigns": [
+        ["GO_BLACK_NOVEMBRO", 340.66, 83, 0, 298, 15083]
+      ]
+    },
+    {
+      "account_name": "487998908345819",
+      "integration_id": 3850107,
+      "cur":  {"spend": 0, "reach": 0, "impressions": 0, "link_clicks": 0, "conversations": 0, "leads": 0},
+      "prev": {"spend": 0, "reach": 0, "impressions": 0, "link_clicks": 0, "conversations": 0, "leads": 0},
+      "daily": [],
+      "campaigns": []
+    }
+  ],
+  "google_ads": [],
+  "instagram": [
+    {
+      "account_name": "luisaalvestattoo",
+      "integration_id": 3850105,
+      "cur":  {"reach": 6382, "views": 8635},
+      "prev": {"reach": 8289, "views": 10852},
+      "followers_current": 499,
+      "followers_delta": 15,
+      "reels": [],
+      "posts": []
+    }
+  ],
+  "facebook_page": [
+    {
+      "account_name": "_luisaaalves",
+      "integration_id": 3850106,
+      "cur":  {"page_reach": 8382, "media_views": 9764, "posts": 0},
+      "prev": {"page_reach": 7427, "media_views": 9336, "posts": 0}
+    }
+  ],
+  "other": [],
+  "errors": [],
+  "notes": [
+    "Meta Ads 487998908345819: conta sem veiculação nas duas semanas.",
+    "Instagram luisaalvestattoo: nenhum reel ou post de feed publicado na semana (tabelas vazias no Reportei).",
+    "Página do Facebook _luisaaalves: nenhum post publicado nas duas semanas."
+  ]
+}

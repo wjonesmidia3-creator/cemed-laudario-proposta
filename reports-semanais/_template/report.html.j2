@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Report semanal · {{ client }} · {{ period_cur }}</title>
+<link rel="stylesheet" href="../../_template/fonts/fonts.css">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --navy: #0A2580;
+    --navy-2: #0B2A8A;
+    --ink: #0B2275;
+    --orange: #E8601C;
+    --orange-soft: #F6A04D;
+    --sky: #B0C5F2;
+    --on-dark: #D3DCF4;
+    --text: #3A4357;
+    --muted: #7F889C;
+    --line: #E3E8F1;
+    --line-2: #EEF1F6;
+    --good: #1E8A4C;
+    --good-bg: #E3F4EA;
+    --bad: #C2412D;
+    --bad-bg: #FCE8E4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always; break-after: page; background: #fff; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .accent { color: var(--orange); }
+  .blk { display: flow-root; }
+  .measure .page { height: auto; overflow: visible; }
+  .measure .footer { position: static; margin: 0 48px 24px; }
+  strong { font-weight: 700; }
+  .logo { font-family: 'Sora', 'Poppins', sans-serif; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+  .logo i { font-style: normal; color: var(--orange); }
+
+  /* ---------------- capa */
+  .cover { color: #fff; padding: 46px 48px;
+    background:
+      radial-gradient(520px 380px at 84% 9%, rgba(124, 146, 226, 0.34), rgba(124, 146, 226, 0) 70%),
+      linear-gradient(180deg, #0A2580 0%, #0B2A8C 55%, #0A2580 100%); }
+  .cover .logo { font-size: 22px; }
+  .cover .eyebrow { margin-top: 148px; display: flex; align-items: center; gap: 12px; color: var(--orange-soft);
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; }
+  .cover .eyebrow::before { content: ""; width: 28px; height: 3px; border-radius: 2px; background: var(--orange-soft); }
+  .cover h1 { margin-top: 20px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 43px; line-height: 1.1; letter-spacing: -0.025em; }
+  .cover h1 .l1, .cover h1 .l2 { display: block; white-space: nowrap; }
+  .cover h1 .l2 { color: var(--sky); }
+  .cover h1 .accent { color: var(--orange-soft); }
+  .cover .intro { margin-top: 22px; max-width: 520px; font-size: 14.5px; line-height: 1.62; color: var(--on-dark); }
+  .cover .intro strong { color: #fff; }
+  .pills { margin-top: 26px; display: flex; gap: 10px; }
+  .pill { font-size: 11.5px; font-weight: 700; padding: 10px 17px; border-radius: 999px; }
+  .pill.ghost { border: 1px solid rgba(255,255,255,0.26); background: rgba(255,255,255,0.03); }
+  .pill.fill { background: var(--orange); }
+  .highlight { position: absolute; left: 48px; right: 48px; bottom: 150px; display: flex; gap: 30px; align-items: center;
+    padding: 28px 30px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.13); }
+  .highlight .big { min-width: 118px; text-align: center; }
+  .highlight .big b { display: block; font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 60px; line-height: 1; letter-spacing: -0.03em; }
+  .highlight .big span { display: block; margin-top: 12px; color: var(--orange-soft); font-size: 9.5px; font-weight: 700; letter-spacing: 0.26em; }
+  .highlight .eb { color: var(--orange-soft); font-size: 9.5px; font-weight: 700; letter-spacing: 0.26em; }
+  .highlight h3 { margin-top: 8px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.28; letter-spacing: -0.015em; }
+  .highlight h3 .accent { color: var(--orange-soft); }
+  .highlight p { margin-top: 8px; font-size: 12px; line-height: 1.55; color: var(--on-dark); }
+  .strip { position: absolute; left: 0; right: 0; bottom: 0; height: 118px; display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,0.14); }
+  .strip > div { padding: 24px 22px 0 26px; border-left: 1px solid rgba(255,255,255,0.12); }
+  .strip > div:first-child { border-left: 0; padding-left: 48px; }
+  .strip b { display: block; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; white-space: nowrap; }
+  .strip b .o { color: var(--orange-soft); }
+  .strip p { margin-top: 8px; font-size: 10.5px; line-height: 1.45; color: #C6D0EC; }
+
+  /* ---------------- páginas internas */
+  .hbar { height: 66px; background: var(--navy); color: #fff; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; }
+  .hbar .logo { font-size: 17px; line-height: 1; }
+  .hbar .sub { margin-top: 6px; font-size: 8px; font-weight: 700; letter-spacing: 0.26em; color: #C6D0EC; text-transform: uppercase; }
+  .hbar .r { text-align: right; }
+  .hbar .r b { display: block; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px; }
+  .hbar .r span { display: block; margin-top: 2px; font-size: 11px; color: #C6D0EC; }
+  .content { padding: 30px 48px 0; }
+  .footer { position: absolute; left: 48px; right: 48px; bottom: 24px; border-top: 1px solid var(--line); padding-top: 12px;
+    display: flex; justify-content: space-between; font-size: 10.5px; color: var(--muted); }
+  .footer .logo { color: var(--ink); font-size: 11px; }
+
+  .sec { padding-bottom: 18px; }
+  .sec .eb { font-size: 9.5px; font-weight: 700; letter-spacing: 0.26em; color: var(--orange); text-transform: uppercase; }
+  .sec .eb em { font-style: normal; color: #9AA3B6; margin-right: 8px; }
+  .sec h2 { margin-top: 8px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.025em; color: var(--ink); line-height: 1.15; }
+  .sec p { margin-top: 10px; max-width: 620px; font-size: 13px; line-height: 1.6; color: #4A5468; }
+  .sec p strong { color: #1F2840; }
+
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 2px 0 16px; }
+  .kpi { position: relative; border: 1px solid var(--line); border-radius: 14px; padding: 20px 16px 14px; min-height: 108px; }
+  .kpi::before { content: ""; position: absolute; top: -1px; left: 16px; width: 26px; height: 5px; border-radius: 0 0 4px 4px; background: var(--orange); }
+  .kpi b { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em; color: var(--ink); white-space: nowrap; }
+  .kpi b small { font-size: 12px; color: var(--orange); margin-left: 2px; }
+  .kpi .lab { margin-top: 6px; font-size: 11px; line-height: 1.4; color: #4A5468; }
+  .kpi .dl { margin-top: 8px; font-size: 10.5px; font-weight: 700; color: var(--muted); }
+  .kpi .dl.good { color: var(--good); }
+  .kpi .dl.bad { color: var(--bad); }
+
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+  .cmp .card { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .cmp .head { height: 50px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #EEF2FA; }
+  .cmp .head b { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); }
+  .cmp .head span { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; color: #8A93A8; }
+  .cmp .card.cur .head { background: var(--orange); }
+  .cmp .card.cur .head b, .cmp .card.cur .head span { color: #fff; }
+  .cmp .body { padding: 2px 20px 12px; }
+  .cmp .gl { margin-top: 11px; margin-bottom: 1px; font-size: 9px; font-weight: 700; letter-spacing: 0.22em; color: var(--orange); text-transform: uppercase; height: 18px; }
+  .cmp .row { display: flex; align-items: center; justify-content: space-between; height: 28px; border-bottom: 1px solid var(--line-2); font-size: 12.5px; }
+  .cmp .row:last-child { border-bottom: 0; }
+  .cmp .row .v { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px; color: var(--ink); display: flex; align-items: center; gap: 7px; }
+  .cmp .card.cur .row.key .v > span { color: var(--orange); }
+  .badge { font-style: normal; font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: #EEF1F6; color: var(--muted); white-space: nowrap; }
+  .badge.good { background: var(--good-bg); color: var(--good); }
+  .badge.bad { background: var(--bad-bg); color: var(--bad); }
+
+  .chart { border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px 14px; margin-bottom: 16px; }
+  .chart h4 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); }
+  .chart .s { margin-top: 3px; font-size: 11px; color: var(--muted); }
+  .chart svg { display: block; margin-top: 12px; }
+  .chart svg .ax { font-family: 'Inter', sans-serif; font-size: 9px; fill: #8A93A8; }
+  .chart svg .peak { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; fill: var(--orange); }
+  .legend { margin-top: 8px; display: flex; gap: 18px; font-size: 11px; color: #4A5468; }
+  .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .note { font-size: 10px; line-height: 1.5; color: var(--muted); margin-bottom: 14px; }
+
+  .camp { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-bottom: 16px; }
+  .camp table { width: 100%; border-collapse: collapse; font-size: 11.5px; table-layout: fixed; }
+  .camp col.name { width: 34%; }
+  .camp th { background: #EEF2FA; color: #6B7590; font-size: 8px; font-weight: 700; letter-spacing: 0.12em; white-space: nowrap; text-transform: uppercase; text-align: right; padding: 12px 12px; }
+  .camp th:first-child, .camp td:first-child { text-align: left; padding-left: 20px; }
+  .camp td { padding: 0 12px; height: 38px; border-top: 1px solid var(--line-2); text-align: right; white-space: nowrap; }
+  .camp td.n { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--ink); }
+  .camp td:first-child { font-weight: 600; color: #1F2840; white-space: normal; font-size: 10.5px; line-height: 1.3; padding-top: 6px; padding-bottom: 6px; }
+  .camp td:first-child .cn { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+  .camp .cnw { display: flex; align-items: center; gap: 8px; }
+  .camp .topb { flex: none; font-style: normal; font-size: 8px; font-weight: 800; letter-spacing: 0.12em; color: #fff; background: var(--orange); border-radius: 4px; padding: 2px 5px; }
+  .camp td.o { color: var(--orange); }
+  .camp .more { padding: 8px 20px 10px; font-size: 10px; color: var(--muted); border-top: 1px solid var(--line-2); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+  .item { display: flex; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; height: 112px; }
+  .item .side { width: 66px; flex: none; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    background: linear-gradient(180deg, #0B2A8C, #0A2580); }
+  .item .side .play { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.18); position: relative; margin-bottom: 6px; }
+  .item .side .play::after { content: ""; position: absolute; left: 8.5px; top: 6px; border-left: 7px solid #fff; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+  .item .side b { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 18px; line-height: 1; }
+  .item .side span { font-size: 8.5px; font-weight: 700; letter-spacing: 0.16em; }
+  .item.total .side { background: linear-gradient(180deg, #EF7A3A, #D9561A); }
+  .item .bd { padding: 13px 16px 12px; min-width: 0; display: flex; flex-direction: column; }
+  .tag { align-self: flex-start; font-size: 8px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink); background: #EAF0FB; padding: 3px 8px; border-radius: 999px; }
+  .item.total .tag { color: var(--orange); background: #FDEBDF; }
+  .item h5 { margin-top: 7px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 12.5px; line-height: 1.3; color: var(--ink);
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .item .st { margin-top: auto; font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+  .item .st b { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--ink); font-size: 11.5px; margin-left: 8px; }
+  .item .st b:first-child { margin-left: 0; }
+  .item .st b.o { color: var(--orange); }
+
+  .leitura { background: #FDEEE5; border-left: 4px solid var(--orange); border-radius: 0 12px 12px 0; padding: 16px 22px 17px; margin-bottom: 16px; }
+  .leitura .eb { font-size: 9.5px; font-weight: 700; letter-spacing: 0.26em; color: var(--orange); }
+  .leitura p { margin-top: 7px; font-size: 12.5px; line-height: 1.6; color: #2A3245; }
+  .leitura strong { color: #111A33; }
+
+  .prox { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+  .prox > div { border: 1px solid var(--line); border-radius: 12px; padding: 15px 17px 16px; min-height: 126px; }
+  .prox .eb { font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--orange); }
+  .prox b { display: block; margin-top: 6px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13.5px; line-height: 1.3; color: var(--ink); }
+  .prox p { margin-top: 7px; font-size: 11.2px; line-height: 1.5; color: #5A6478; }
+</style>
+</head>
+<body{% if measure %} class="measure"{% endif %}>
+
+{# ============================== CAPA ============================== #}
+{% if not measure %}
+<section class="page cover">
+  <div class="logo">Grupo Opera<i>.</i></div>
+  <div class="eyebrow">Report semanal · {{ client_short }}</div>
+  <h1 class="fit"><span class="l1">{{ nar.headline_1 | markup }}</span><span class="l2">{{ nar.headline_2 | markup }}</span></h1>
+  <p class="intro">{{ nar.intro | markup }}</p>
+  <div class="pills">
+    <span class="pill ghost">Semana anterior · {{ period_prev }}</span>
+    <span class="pill fill">Esta semana · {{ period_cur }}</span>
+  </div>
+  <div class="highlight">
+    <div class="big"><b>{{ nar.highlight.number }}</b><span>{{ nar.highlight.label }}</span></div>
+    <div>
+      <div class="eb">DESTAQUE DA SEMANA</div>
+      <h3>{{ nar.highlight.title | markup }}</h3>
+      <p>{{ nar.highlight.text | markup }}</p>
+    </div>
+  </div>
+  <div class="strip">
+    {% for s in strip %}
+    <div>
+      {% if s.mode == 'pre' %}<b>{{ s.a }} <span class="o">{{ s.b }}</span></b>
+      {% elif s.mode == 'post' %}<b>{{ s.a }} <span class="o">{{ s.b }}</span></b>
+      {% else %}<b>{{ s.a }}</b>{% endif %}
+      <p>{{ s.desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{# ============================== INTERNAS ============================== #}
+{% for page in pages %}
+<section class="page">
+  <div class="hbar">
+    <div><div class="logo">Grupo Opera<i>.</i></div><div class="sub">{{ client_short }}</div></div>
+    <div class="r"><b>Report semanal</b><span>{{ week_label }}</span></div>
+  </div>
+  <div class="content">
+  {% for b in page %}
+    <div class="blk" data-i="{{ b.i }}">
+    {% if b.type == 'section' %}
+    <div class="sec">
+      <div class="eb"><em>{{ b.num }}</em>{{ b.eyebrow }}</div>
+      <h2>{{ b.title | markup }}</h2>
+      {% if b.intro %}<p>{{ b.intro | markup }}</p>{% endif %}
+    </div>
+
+    {% elif b.type == 'kpis' %}
+    <div class="kpis">
+      {% for k in b.kpis %}
+      <div class="kpi">
+        <b>{{ k.value }}{% if k.suffix %}<small>{{ k.suffix }}</small>{% endif %}</b>
+        <div class="lab">{{ k.label }}</div>
+        {% if k.delta %}<div class="dl {{ k.tone }}">{{ k.delta }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% elif b.type == 'comparison' %}
+    <div class="cmp">
+      <div class="card">
+        <div class="head"><b>Semana anterior</b><span>{{ period_prev | upper }} · 7 DIAS</span></div>
+        <div class="body">
+          {% for g in table %}
+          <div class="gl">{{ g.title }}</div>
+          {% for r in g.rows %}
+          <div class="row"><span>{{ r.m.label }}</span><span class="v"><span>{{ r.m.prev_s }}</span></span></div>
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="card cur">
+        <div class="head"><b>Esta semana</b><span>{{ period_cur | upper }} · 7 DIAS</span></div>
+        <div class="body">
+          {% for g in table %}
+          <div class="gl">{{ g.title }}</div>
+          {% for r in g.rows %}
+          <div class="row{% if r.key %} key{% endif %}"><span>{{ r.m.label }}</span>
+            <span class="v"><span>{{ r.m.cur_s }}</span>{% if r.m.delta_s %}<em class="badge {{ r.m.tone }}">{{ r.m.delta_s }}</em>{% endif %}</span></div>
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% elif b.type == 'chart' %}
+    <div class="chart">
+      <h4>{{ b.chart.title }}</h4>
+      <div class="s">{{ b.chart.subtitle }}</div>
+      {{ b.chart.svg }}
+      <div class="legend"><span><i style="background:#0B2A84"></i>Semana anterior</span><span><i style="background:#E8601C"></i>Esta semana</span></div>
+    </div>
+
+    {% elif b.type == 'footnote' %}
+    <p class="note">{{ b.text | markup }}</p>
+
+    {% elif b.type == 'campaigns' %}
+    <div class="camp">
+      <table>
+        <colgroup><col class="name"></colgroup>
+        <thead><tr>
+          <th>Campanha (Meta Ads)</th><th>Investimento</th>
+          {% if b.c.show_conv %}<th>Conversas</th><th>Custo/conversa</th>{% endif %}
+          {% if b.c.show_leads %}<th>Leads</th><th>Custo/lead</th>{% endif %}
+          <th>Cliques</th>{% if not b.c.show_conv and not b.c.show_leads %}<th>Custo/clique</th>{% endif %}
+        </tr></thead>
+        <tbody>
+        {% for r in b.c.rows %}
+          <tr{% if loop.first %} class="top"{% endif %}>
+            <td><div class="cnw">{% if loop.first %}<i class="topb">TOP</i>{% endif %}<span class="cn">{{ r.display }}</span></div></td><td class="n">{{ r.spend_s }}</td>
+            {% if b.c.show_conv %}<td class="n o">{{ r.conv_s }}</td><td class="n">{{ r.cpconv_s }}</td>{% endif %}
+            {% if b.c.show_leads %}<td class="n o">{{ r.leads_s }}</td><td class="n">{{ r.cpl_s }}</td>{% endif %}
+            <td class="n">{{ r.clicks_s }}</td>{% if not b.c.show_conv and not b.c.show_leads %}<td class="n">{{ r.cpc_s }}</td>{% endif %}
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% if b.c.hidden %}<div class="more">+ {{ b.c.hidden }} campanha(s) menor(es), somando {{ b.c.hidden_spend }}.</div>{% endif %}
+    </div>
+
+    {% elif b.type == 'content' %}
+    <div class="grid2">
+      {% for it in b.c.cards %}
+      <div class="item">
+        <div class="side"><div class="play"></div><b>{{ it.day }}</b><span>{{ it.mon }}</span></div>
+        <div class="bd">
+          <span class="tag">{{ it.tag }}</span>
+          <h5>{{ it.title }}</h5>
+          <div class="st"><b{% if it.tag == 'MAIS ALCANCE' %} class="o"{% endif %}>{{ '{:,}'.format(it.reach or 0).replace(',', '.') }}</b> alcance<b>{{ '{:,}'.format(it.views or 0).replace(',', '.') }}</b> views<b{% if it.tag == 'MAIS ENGAJAMENTO' %} class="o"{% endif %}>{{ it.interactions or 0 }}</b> interações{% if it.eng_s %}<b>{{ it.eng_s }}</b> eng.{% endif %}</div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="item total">
+        <div class="side"><div class="play"></div><b>{{ b.c.total.count }}</b><span>{{ 'REELS' if b.c.total.count == b.c.total.n_reels else 'POSTS' }}</span></div>
+        <div class="bd">
+          <span class="tag">TOTAL DA SEMANA</span>
+          <h5>{{ '{:,}'.format(b.c.total.views).replace(',', '.') }} visualizações orgânicas</h5>
+          <div class="st"><b>{{ b.c.total.interactions }}</b> interações<b>{{ '{:,}'.format(b.c.total.reach).replace(',', '.') }}</b> alcance{% if b.c.hidden %}<b>+{{ b.c.hidden }}</b> não exibidos{% endif %}</div>
+        </div>
+      </div>
+    </div>
+
+    {% elif b.type == 'leitura' %}
+    <div class="leitura"><div class="eb">LEITURA</div><p>{{ b.text | markup }}</p></div>
+
+    {% elif b.type == 'proximos' %}
+    <div class="prox">
+      {% for p in b.list %}
+      <div><div class="eb">PRÓXIMO {{ '%02d' % loop.index }}</div><b>{{ p.title }}</b><p>{{ p.text | markup }}</p></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if b.note %}<p class="note">{{ b.note | markup }}</p>{% endif %}
+    </div>
+  {% endfor %}
+  </div>
+  <div class="footer"><span><span class="logo">Grupo Opera<i>.</i></span> · Report semanal {{ client_short }}</span><span>{{ '%02d' % (loop.index + 1) }}</span></div>
+</section>
+{% endfor %}
+
+<script>
+  // reduz a fonte do título da capa até cada linha caber em uma linha só
+  document.fonts.ready.then(() => {
+    document.querySelectorAll('h1.fit').forEach((h) => {
+      let fs = parseFloat(getComputedStyle(h).fontSize);
+      while (fs > 28 && [...h.children].some((c) => c.scrollWidth > h.clientWidth)) { fs -= 1; h.style.fontSize = fs + 'px'; }
+    });
+    window.__fitted = true;
+  });
+</script>
+</body>
+</html>

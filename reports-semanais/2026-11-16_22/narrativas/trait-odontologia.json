@@ -1,0 +1,34 @@
+{
+  "client_short": "Trait Odontologia",
+  "headline_1": "Mais alcance, *menos conversas*.",
+  "headline_2": "Hora de renovar as campanhas.",
+  "intro": "Resumo da semana de **16 a 22/11** da Trait Odontologia nos **anúncios Meta, Instagram e perfil da empresa no Google**, comparando com a semana anterior (09 a 15/11).",
+  "highlight": {
+    "number": "6",
+    "label": "AVALIAÇÕES",
+    "title": "*6 novas avaliações* no Google, todas com *nota 5*.",
+    "text": "O dobro da semana anterior (3). Todas ainda aguardam resposta: responder rápido reforça a reputação da clínica nas buscas em Guarapuava."
+  },
+  "strip": [
+    {"key": "meta.conversations", "desc": "conversas iniciadas pelos anúncios (semana anterior: 43)"},
+    {"value": "17,3 mil", "desc": "pessoas alcançadas pelos anúncios, 11% a mais"},
+    {"value": "R$ 21,45", "desc": "custo por conversa em Institucional, o menor da semana"},
+    {"value": "4 posts", "desc": "3 Reels e 1 post publicados no Instagram"}
+  ],
+  "s1_intro": "Com investimento parecido (R$ 803), os anúncios alcançaram **11% mais pessoas**, mas as conversas caíram de 43 para **28** e o custo por conversa subiu para **R$ 28,67**. No orgânico, o Instagram teve alcance 23% menor.",
+  "kpis": [
+    {"key": "meta.conversations", "suffix": "/43", "label": "Conversas iniciadas: esta semana / anterior"},
+    {"key": "meta.cpconv", "label": "Custo por conversa na semana"},
+    {"key": "meta.reach", "label": "Pessoas alcançadas pelos anúncios"},
+    {"key": "ig.reach", "label": "Alcance do Instagram na semana"}
+  ],
+  "key_rows": ["meta.conversations", "meta.cpconv", "meta.reach"],
+  "footnote1": "Fonte: Reportei (Meta Ads, Instagram Business e Perfil da Empresa no Google). Custos calculados como investimento ÷ resultado. O Google Ads da Trait não teve veiculação nas duas semanas e a página do Facebook está desconectada do Reportei.",
+  "s2_intro": "Cinco campanhas de mensagem no ar. **Institucional** e **Implantes** tiveram o menor custo por conversa; **Alinhadores** gastou R$ 105,47 para 2 conversas.",
+  "leitura": "O alcance subiu, mas menos gente chamou no WhatsApp: o gargalo está na conversão do anúncio, não na entrega. **Protocolo** levou a maior verba (R$ 270,66) a R$ 33,83 por conversa, e **Alinhadores** ficou em R$ 52,73. No Google, as **rotas solicitadas** caíram de 17 para 6, enquanto as **avaliações** dobraram.",
+  "proximos": [
+    {"title": "Novos criativos", "text": "As campanhas ainda usam a versão de agosto (V3). Subir criativos novos em Protocolo e Alinhadores, os de maior custo por conversa."},
+    {"title": "Responder avaliações", "text": "Responder as 6 avaliações novas no Google e pedir avaliação aos pacientes atendidos na semana."},
+    {"title": "Verba em Implantes", "text": "Reforçar Implantes e Institucional, que converteram a cerca de R$ 22 por conversa."}
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "client_short": "Luisa Alves Tattoo",
+  "headline_1": "*83 conversas* a R$ 4,10.",
+  "headline_2": "Black de Novembro segue rendendo.",
+  "intro": "Resumo da semana de **16 a 22/11** da Luisa Alves Tattoo nos **anúncios Meta, Instagram e Facebook**, comparando com a semana anterior (09 a 15/11).",
+  "highlight": {
+    "number": "83",
+    "label": "CONVERSAS",
+    "title": "Cada conversa custou *R$ 4,10* na campanha de *Black de Novembro*.",
+    "text": "Foram 83 pessoas chamando no WhatsApp ou Direct em 7 dias, quase 12 por dia, com R$ 340,66 investidos. Na semana anterior, foram 99 conversas a R$ 3,14."
+  },
+  "strip": [
+    {"key": "meta.conversations", "desc": "conversas iniciadas pelos anúncios (semana anterior: 99)"},
+    {"key": "meta.cpconv", "desc": "custo médio por conversa (antes: R$ 3,14)"},
+    {"value": "10,5 mil", "desc": "pessoas alcançadas pelos anúncios, 25% a mais"},
+    {"value": "+15", "desc": "novos seguidores no Instagram na semana"}
+  ],
+  "s1_intro": "Com **R$ 30 a mais** de investimento, os anúncios alcançaram **25% mais pessoas**, mas as conversas caíram de 99 para **83**. O custo por conversa segue baixo (**R$ 4,10**). No Instagram não houve publicações na semana, e o alcance orgânico caiu 23%.",
+  "kpis": [
+    {"key": "meta.conversations", "suffix": "/99", "label": "Conversas iniciadas: esta semana / anterior"},
+    {"key": "meta.cpconv", "label": "Custo por conversa na semana"},
+    {"key": "meta.reach", "label": "Pessoas alcançadas pelos anúncios"},
+    {"value": "+15", "label": "Novos seguidores no Instagram (total: 499)"}
+  ],
+  "key_rows": ["meta.conversations", "meta.cpconv", "meta.reach"],
+  "footnote1": "Fonte: Reportei (Meta Ads, Instagram Business e Página do Facebook). Custos calculados como investimento ÷ resultado. A segunda conta de anúncios (487998908345819) não teve veiculação nas duas semanas.",
+  "s2_intro": "Toda a verba está em uma campanha: **Black de Novembro**, com 83 conversas a R$ 4,10 cada.",
+  "leitura": "Mais alcance com menos cliques pode indicar **cansaço do criativo**: o anúncio chega a mais gente, mas convence menos. Domingo (22/11) teve só 4 conversas, o menor número da semana. No orgânico, a semana **sem nenhum post** no Instagram coincidiu com a queda de 23% no alcance.",
+  "proximos": [
+    {"title": "Criativo novo da Black", "text": "Subir 2 ou 3 variações de criativo (tattoos recentes, vídeo do processo) para recuperar a taxa de clique."},
+    {"title": "Voltar a postar", "text": "Retomar a frequência no Instagram: pelo menos 3 publicações por semana, com Reels de trabalhos finalizados."},
+    {"title": "Urgência da Black", "text": "Reforçar prazo e condições da Black de Novembro nos anúncios e nos Stories até o fim do mês."}
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "client": "D`placido",
+  "slug": "dplacido",
+  "project_id": 1302453,
+  "period": {
+    "cur": [
+      "2026-11-16",
+      "2026-11-22"
+    ],
+    "prev": [
+      "2026-11-09",
+      "2026-11-15"
+    ]
+  },
+  "meta_ads": [
+    {
+      "account_name": "D`Placido Odonto - Principal",
+      "integration_id": 3698205,
+      "cur": {
+        "spend": 756.11,
+        "reach": 13906,
+        "impressions": 23304,
+        "link_clicks": 343,
+        "conversations": 95,
+        "leads": 5
+      },
+      "prev": {
+        "spend": 746.61,
+        "reach": 13120,
+        "impressions": 21964,
+        "link_clicks": 333,
+        "conversations": 109,
+        "leads": 3
+      },
+      "daily": [
+        [
+          "2026-11-09",
+          128.13,
+          17,
+          0,
+          43
+        ],
+        [
+          "2026-11-10",
+          145.76,
+          23,
+          0,
+          63
+        ],
+        [
+          "2026-11-11",
+          113.4,
+          20,
+          0,
+          36
+        ],
+        [
+          "2026-11-12",
+          103.34,
+          17,
+          3,
+          48
+        ],
+        [
+          "2026-11-13",
+          71.17,
+          8,
+          0,
+          38
+        ],
+        [
+          "2026-11-14",
+          67.07,
+          11,
+          0,
+          44
+        ],
+        [
+          "2026-11-15",
+          117.74,
+          13,
+          0,
+          61
+        ],
+        [
+          "2026-11-16",
+          73.22,
+          16,
+          0,
+          34
+        ],
+        [
+          "2026-11-17",
+          166.13,
+          23,
+          5,
+          68
+        ],
+        [
+          "2026-11-18",
+          137.17,
+          17,
+          0,
+          69
+        ],
+        [
+          "2026-11-19",
+          88.78,
+          12,
+          0,
+          48
+        ],
+        [
+          "2026-11-20",
+          72.43,
+          6,
+          0,
+          31
+        ],
+        [
+          "2026-11-21",
+          77.58,
+          11,
+          0,
+          45
+        ],
+        [
+          "2026-11-22",
+          140.8,
+          10,
+          0,
+          48
+        ]
+      ],
+      "campaigns": [
+        [
+          "[OZ] [DEPOIMENTOS] [NOVA]",
+          250.06,
+          18,
+          3,
+          122,
+          6729
+        ],
+        [
+          "[OZ] [INVISALIGN]",
+          149.16,
+          13,
+          0,
+          27,
+          3422
+        ],
+        [
+          "[OZ] [PROTOCOLO]",
+          135.57,
+          42,
+          1,
+          144,
+          3862
+        ],
+        [
+          "[OZ] [SEDAÇÃO]",
+          112.43,
+          15,
+          1,
+          33,
+          4223
+        ],
+        [
+          "[OZ] Base Antiga – Top Leads",
+          108.89,
+          7,
+          0,
+          17,
+          5068
+        ]
+      ]
+    }
+  ],
+  "google_ads": [],
+  "instagram": [
+    {
+      "account_name": "dralucianadeplacido",
+      "integration_id": 3698229,
+      "cur": {
+        "reach": 2910,
+        "views": 8628
+      },
+      "prev": {
+        "reach": 1213,
+        "views": 5136
+      },
+      "followers_current": 2262,
+      "followers_delta": 1,
+      "reels": [
+        {
+          "title": "No mínimo peculiar",
+          "date": "2026-11-22",
+          "reach": 262,
+          "views": 409,
+          "interactions": 14,
+          "eng_rate": 0.0534,
+          "likes": 10,
+          "comments": 2,
+          "shares": 0,
+          "saved": 1,
+          "url": "https://www.instagram.com/reel/DgD_gDoh04E/"
+        },
+        {
+          "title": "Não desista! Cansou, descansa — até Deus descansou",
+          "date": "2026-11-22",
+          "reach": 249,
+          "views": 411,
+          "interactions": 24,
+          "eng_rate": 0.0964,
+          "likes": 23,
+          "comments": 0,
+          "shares": 0,
+          "saved": 0,
+          "url": "https://www.instagram.com/reel/DgDqYnXB2FR/"
+        }
+      ],
+      "posts": []
+    }
+  ],
+  "facebook_page": [],
+  "other": [],
+  "errors": [],
+  "notes": [
+    "Instagram: apenas 2 reels publicados na semana, ambos em 22/11; nenhum post de feed/carrossel no período (ig:media_datatable retornou só os 2 reels).",
+    "Soma do gasto diário 16–22/11 e das campanhas confere com o total da semana (R$ 756,11)."
+  ]
+}

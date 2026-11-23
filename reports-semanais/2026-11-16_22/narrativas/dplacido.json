@@ -1,0 +1,34 @@
+{
+  "client_short": "D’Placido Odonto",
+  "headline_1": "*95 conversas* na semana.",
+  "headline_2": "Protocolo segue como carro-chefe.",
+  "intro": "Resumo da semana de **16 a 22/11** da D’Placido Odonto nos **anúncios Meta e Instagram**, comparando com a semana anterior (09 a 15/11).",
+  "highlight": {
+    "number": "42",
+    "label": "CONVERSAS",
+    "title": "A campanha de *Protocolo* trouxe *42 das 95 conversas*, a R$ 3,23 cada.",
+    "text": "Com só 18% do investimento da semana (R$ 135,57), foi a campanha mais eficiente da conta, com custo por conversa abaixo da metade da média (R$ 7,96)."
+  },
+  "strip": [
+    {"key": "meta.conversations", "desc": "conversas iniciadas pelos anúncios (semana anterior: 109)"},
+    {"key": "meta.cpconv", "desc": "custo médio por conversa (semana anterior: R$ 6,85)"},
+    {"value": "+140%", "desc": "alcance do Instagram, de 1.213 para 2.910 contas"},
+    {"value": "2 Reels", "desc": "publicados no domingo (22/11)"}
+  ],
+  "s1_intro": "O investimento ficou estável (R$ 756), mas as conversas caíram **13%** (de 109 para 95) e o custo por conversa subiu para **R$ 7,96**. No orgânico, o Instagram mais que dobrou o alcance (**+140%**).",
+  "kpis": [
+    {"key": "meta.conversations", "suffix": "/109", "label": "Conversas iniciadas: esta semana / anterior"},
+    {"key": "meta.cpconv", "label": "Custo por conversa na semana"},
+    {"key": "ig.reach", "label": "Alcance do Instagram na semana"},
+    {"key": "meta.spend", "label": "Investimento em anúncios Meta"}
+  ],
+  "key_rows": ["meta.conversations", "meta.cpconv", "ig.reach", "ig.views"],
+  "footnote1": "Fonte: Reportei (Meta Ads e Instagram Business). Custos por conversa e por clique calculados como investimento ÷ resultado. Alcance e visualizações do Instagram consideram apenas os 7 dias de cada semana.",
+  "s2_intro": "**Protocolo** concentrou quase metade das conversas com o menor custo. **Depoimentos** teve o maior investimento (R$ 250,06) e entregou 18 conversas a R$ 13,89.",
+  "leitura": "A semana mostra uma diferença grande de eficiência entre campanhas: **Protocolo** gera conversa a **R$ 3,23**, enquanto **Depoimentos** (R$ 13,89) e **Base Antiga** (R$ 15,56) custam mais de 4 vezes isso. No Instagram, os dois Reels de domingo já somam 820 visualizações.",
+  "proximos": [
+    {"title": "Mais verba para Protocolo", "text": "Aumentar o orçamento da campanha de Protocolo, que tem o menor custo por conversa da conta (R$ 3,23)."},
+    {"title": "Revisar Depoimentos", "text": "Testar novos criativos ou públicos na campanha de maior investimento, hoje a R$ 13,89 por conversa."},
+    {"title": "Constância no Instagram", "text": "Os dois Reels saíram no domingo. Distribuir as publicações ao longo da semana para manter o alcance em alta."}
+  ]
+}

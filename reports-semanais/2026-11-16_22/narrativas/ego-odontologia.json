@@ -1,0 +1,35 @@
+{
+  "client_short": "EGO Odontologia",
+  "headline_1": "Reta final do *Sorria para 2027*.",
+  "headline_2": "Mais alcance, conversas estáveis.",
+  "intro": "Resumo da semana de **16 a 22/11** da EGO Odontologia nos **anúncios Meta, Instagram e Facebook**, comparando com a semana anterior (09 a 15/11), a poucos dias do **Sorria para 2027 (25/11)**.",
+  "highlight": {
+    "number": "39",
+    "label": "CONVERSAS",
+    "title": "*39 das 53 conversas* da semana vieram entre *sexta e domingo*.",
+    "text": "Depois de um dia sem anúncios no ar (quinta, 19/11), as campanhas voltaram mais fortes: 13 conversas na sexta, 18 no sábado (pico da semana) e 8 no domingo."
+  },
+  "strip": [
+    {"key": "meta.conversations", "desc": "conversas iniciadas pelos anúncios, mesmo volume da semana anterior"},
+    {"value": "R$ 9,79", "desc": "custo por conversa da campanha Sorriso 2027, a mais eficiente"},
+    {"value": "18,5 mil", "desc": "pessoas alcançadas pelos anúncios, 47% a mais"},
+    {"value": "3 Reels", "desc": "novos vídeos publicados no Instagram"}
+  ],
+  "s1_intro": "Mesmo com **um dia sem anúncios no ar (19/11)**, a semana fechou com o mesmo número de conversas da anterior e **47% mais pessoas alcançadas**. O custo por conversa subiu, puxado pelas campanhas de Promo e Protocolo, que trouxeram poucas conversas.",
+  "kpis": [
+    {"key": "meta.conversations", "suffix": "/53", "label": "Conversas iniciadas: esta semana / anterior", "delta": "= mesmo volume, com 1 dia a menos"},
+    {"key": "meta.cpconv", "label": "Custo por conversa na semana"},
+    {"key": "meta.reach", "label": "Pessoas alcançadas pelos anúncios"},
+    {"key": "meta.spend", "label": "Investimento em anúncios Meta"}
+  ],
+  "key_rows": ["meta.conversations", "meta.cpconv", "meta.reach", "meta.impressions"],
+  "footnote1": "Fonte: Reportei (Meta Ads, Google Ads, Instagram Business e Página do Facebook). Custos por conversa e por clique calculados como investimento ÷ resultado. Em 19/11 não houve veiculação na Meta Ads.",
+  "s2_title": "O que *puxou* a semana",
+  "s2_intro": "A campanha **Sorriso 2027 (clique para WhatsApp)** foi a mais eficiente: 17 conversas a **R$ 9,79** cada. No Instagram, três Reels novos, dois deles sobre o Sorria para 2027.",
+  "leitura": "As campanhas com chamada direta para o WhatsApp e tema do **Sorria para 2027** entregaram a conversa mais barata (R$ 9,79), enquanto **Promo** (R$ 47,22 por conversa) e **Protocolo** (R$ 101,02) somaram R$ 290 para 5 conversas. Com o evento na quarta (25/11), a prioridade é concentrar a verba no que já está convertendo.",
+  "proximos": [
+    {"title": "Verba no que converte", "text": "Remanejar parte do orçamento de Promo e Protocolo para Sorriso 2027 e Implantes (R$ 11,10 por conversa) até o dia 25/11."},
+    {"title": "Decidir o Google Ads", "text": "A conta investiu R$ 7,47 e teve 3 cliques na semana. Reativar com orçamento definido ou pausar de vez."},
+    {"title": "Conteúdo do dia 25", "text": "Registrar bastidores e depoimentos do Sorria para 2027 para usar como Reels e criativo nas próximas semanas."}
+  ]
+}

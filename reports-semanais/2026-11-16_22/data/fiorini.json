@@ -1,0 +1,225 @@
+{
+  "client": "Fiorini",
+  "slug": "fiorini",
+  "project_id": 1289256,
+  "period": {
+    "cur": [
+      "2026-11-16",
+      "2026-11-22"
+    ],
+    "prev": [
+      "2026-11-09",
+      "2026-11-15"
+    ]
+  },
+  "meta_ads": [
+    {
+      "account_name": "[ID-088] Fiorini Odontologia - Pix",
+      "integration_id": 3661951,
+      "cur": {
+        "spend": 1670.31,
+        "reach": 32141,
+        "impressions": 105188,
+        "link_clicks": 409,
+        "conversations": 70,
+        "leads": 0
+      },
+      "prev": {
+        "spend": 1756.97,
+        "reach": 35350,
+        "impressions": 115061,
+        "link_clicks": 545,
+        "conversations": 73,
+        "leads": 0
+      },
+      "daily": [
+        [
+          "2026-11-09",
+          301.68,
+          16,
+          0,
+          116
+        ],
+        [
+          "2026-11-10",
+          350.17,
+          15,
+          0,
+          103
+        ],
+        [
+          "2026-11-11",
+          226.63,
+          7,
+          0,
+          57
+        ],
+        [
+          "2026-11-12",
+          268.9,
+          11,
+          0,
+          52
+        ],
+        [
+          "2026-11-13",
+          245.07,
+          11,
+          0,
+          79
+        ],
+        [
+          "2026-11-14",
+          175.27,
+          5,
+          0,
+          63
+        ],
+        [
+          "2026-11-15",
+          189.25,
+          8,
+          0,
+          75
+        ],
+        [
+          "2026-11-16",
+          284.42,
+          13,
+          0,
+          76
+        ],
+        [
+          "2026-11-17",
+          320.72,
+          10,
+          0,
+          79
+        ],
+        [
+          "2026-11-18",
+          240.99,
+          18,
+          0,
+          69
+        ],
+        [
+          "2026-11-19",
+          234.33,
+          7,
+          0,
+          52
+        ],
+        [
+          "2026-11-20",
+          163.71,
+          3,
+          0,
+          24
+        ],
+        [
+          "2026-11-21",
+          174.56,
+          8,
+          0,
+          38
+        ],
+        [
+          "2026-11-22",
+          251.58,
+          11,
+          0,
+          71
+        ]
+      ],
+      "campaigns": [
+        [
+          "GO_PROTOCOLO_MENSAGEM_V2_JUNHO",
+          651.75,
+          14,
+          0,
+          73,
+          34171
+        ],
+        [
+          "GO_BLACKFRIDAY_NOVEMBRO",
+          365.3,
+          15,
+          0,
+          112,
+          24431
+        ],
+        [
+          "GO_DEPOIMENTO_MENSAGEM_V3_AGOSTO",
+          150.62,
+          6,
+          0,
+          83,
+          11877
+        ],
+        [
+          "GO_INVISALIGN_MENSAGEM_V2_JULHO",
+          149.16,
+          7,
+          0,
+          47,
+          8864
+        ],
+        [
+          "GO_IMPLANTES_MENSAGEM_V2_JULHO",
+          145.28,
+          7,
+          0,
+          29,
+          9081
+        ],
+        [
+          "GO_LENTES_MENSAGEM_V2_JULHO",
+          104.21,
+          3,
+          0,
+          24,
+          8761
+        ],
+        [
+          "GO_CONTRATE-SE",
+          103.99,
+          18,
+          0,
+          41,
+          8003
+        ]
+      ]
+    }
+  ],
+  "google_ads": [
+    {
+      "account_name": "Fiorini Odonto",
+      "integration_id": 3810152,
+      "cur": {
+        "cost": 0,
+        "clicks": 0,
+        "impressions": 0,
+        "conversions": 0
+      },
+      "prev": {
+        "cost": 0,
+        "clicks": 0,
+        "impressions": 0,
+        "conversions": 0
+      }
+    }
+  ],
+  "instagram": [],
+  "facebook_page": [],
+  "other": [],
+  "errors": [
+    "Página do Facebook Fiorini Odonto & Estética desconectada no Reportei (integração inativa)",
+    "Google Ads Fiorini Odonto: sem dados no período (semana atual zerada; semana anterior sem retorno da API)"
+  ],
+  "notes": [
+    "Google Ads: conta sem veiculação nas duas semanas (0 custo/cliques/impressões).",
+    "Meta Ads: nenhum lead de formulário nas duas semanas; resultado via conversas por mensagem (70 vs 73).",
+    "Soma do gasto diário 16–22/11 e das campanhas confere com o total da semana (R$ 1.670,31)."
+  ]
+}

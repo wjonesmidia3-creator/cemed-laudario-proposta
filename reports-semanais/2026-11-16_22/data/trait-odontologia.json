@@ -1,0 +1,76 @@
+{
+  "client": "Trait Odontologia",
+  "slug": "trait-odontologia",
+  "project_id": 1292584,
+  "period": {"cur": ["2026-11-16", "2026-11-22"], "prev": ["2026-11-09", "2026-11-15"]},
+  "meta_ads": [
+    {
+      "account_name": "Traito Odontologia (ID3279)",
+      "integration_id": 3672501,
+      "cur":  {"spend": 802.63, "reach": 17346, "impressions": 42578, "link_clicks": 114, "conversations": 28, "leads": 3},
+      "prev": {"spend": 849.89, "reach": 15595, "impressions": 41581, "link_clicks": 123, "conversations": 43, "leads": 5},
+      "daily": [
+        ["2026-11-09", 192.36, 7, 0, 18], ["2026-11-10", 183.68, 7, 1, 32], ["2026-11-11", 126.16, 8, 0, 14],
+        ["2026-11-12", 107.05, 5, 2, 14], ["2026-11-13", 72.23, 4, 1, 11], ["2026-11-14", 51.83, 2, 0, 9],
+        ["2026-11-15", 116.58, 10, 1, 25], ["2026-11-16", 121.51, 2, 1, 13], ["2026-11-17", 181.25, 6, 0, 21],
+        ["2026-11-18", 128.3, 4, 1, 17], ["2026-11-19", 101.63, 3, 1, 14], ["2026-11-20", 65.04, 2, 0, 8],
+        ["2026-11-21", 86.31, 4, 0, 17], ["2026-11-22", 118.59, 7, 0, 24]
+      ],
+      "campaigns": [
+        ["GO_PROTOCOLO_MENSAGEM_WPP_AGOSTO_V3", 270.66, 8, 2, 25, 15661],
+        ["GO_IMPLANTES_MENSAGEM_WPP_AGOSTO_V3", 178.77, 8, 0, 33, 9759],
+        ["GO_LENTESEFACETAS_MENSAGEM_AGOSTO", 140.47, 5, 0, 15, 7125],
+        ["GO_INSTITUCIONAL_MENSAGEM_WPP_AGOSTO_V3", 107.26, 5, 1, 25, 4642],
+        ["GO_ALINHADORES_MENSAGEM_WPP_AGOSTO_V3", 105.47, 2, 0, 16, 5390]
+      ]
+    }
+  ],
+  "google_ads": [
+    {
+      "account_name": "Trait Odontologia",
+      "integration_id": 3830336,
+      "cur":  {"cost": 0, "clicks": 0, "impressions": 0, "conversions": 0},
+      "prev": {"cost": 0, "clicks": 0, "impressions": 0, "conversions": 0}
+    }
+  ],
+  "instagram": [
+    {
+      "account_name": "traitodontologia",
+      "integration_id": 3697302,
+      "cur":  {"reach": 14658, "views": 25144},
+      "prev": {"reach": 18957, "views": 33864},
+      "followers_current": 3765,
+      "followers_delta": 9,
+      "reels": [
+        {"title": "Novembro Vermelho: um convite para olhar com atenção a saúde da boca", "date": "2026-11-16", "reach": 134, "views": 190, "interactions": 9, "eng_rate": 0.0672, "likes": 8, "comments": 0, "shares": 0, "saved": 0, "url": "https://www.instagram.com/reel/Df0Dh2Ujtla/"},
+        {"title": "Guarapuava tem uma identidade única", "date": "2026-11-17", "reach": 103, "views": 178, "interactions": 2, "eng_rate": 0.0194, "likes": 2, "comments": 0, "shares": 0, "saved": 0, "url": "https://www.instagram.com/reel/Df2qlgxmXNo/"},
+        {"title": "Um sorriso alinhado com discrição e tecnologia", "date": "2026-11-20", "reach": 59, "views": 87, "interactions": 1, "eng_rate": 0.0169, "likes": 1, "comments": 0, "shares": 0, "saved": 0, "url": "https://www.instagram.com/reel/Df-RtZzDKxj/"}
+      ],
+      "posts": [
+        {"title": "Muito mais do que um novo dente: conforto, segurança e autoestima", "date": "2026-11-19", "reach": 96, "views": 168, "interactions": 1, "eng_rate": 0.0104, "likes": 1, "comments": 0, "shares": 0, "saved": 0, "url": "https://www.instagram.com/p/Df7rRQMsqha/"}
+      ]
+    }
+  ],
+  "facebook_page": [],
+  "other": [
+    {
+      "platform": "google_my_business",
+      "account_name": "Clínica Odontológica Trait em Guarapuava",
+      "metrics": [
+        {"label_pt": "Visualizações do perfil", "cur": 55, "prev": 62},
+        {"label_pt": "Visualizações via pesquisa", "cur": 37, "prev": 32},
+        {"label_pt": "Rotas solicitadas", "cur": 6, "prev": 17},
+        {"label_pt": "Ligações", "cur": 0, "prev": 0},
+        {"label_pt": "Cliques no site", "cur": 0, "prev": 0},
+        {"label_pt": "Novas avaliações", "cur": 6, "prev": 3}
+      ]
+    }
+  ],
+  "errors": [
+    "Página do Facebook Trait Odontologia desconectada no Reportei (integração inativa)"
+  ],
+  "notes": [
+    "Google Ads Trait Odontologia: conta sem veiculação nas duas semanas (custo, cliques e impressões zerados; semana anterior sem dados).",
+    "Google Meu Negócio: 6 avaliações novas na semana com nota média 5,0, todas aguardando resposta."
+  ]
+}

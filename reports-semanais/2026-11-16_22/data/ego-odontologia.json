@@ -1,0 +1,64 @@
+{
+  "client": "EGO Odontologia",
+  "slug": "ego-odontologia",
+  "project_id": 1330234,
+  "period": {"cur": ["2026-11-16", "2026-11-22"], "prev": ["2026-11-09", "2026-11-15"]},
+  "meta_ads": [
+    {
+      "account_name": "Clínica EGO - 01",
+      "integration_id": 3788548,
+      "cur":  {"spend": 989.37, "reach": 18467, "impressions": 30817, "link_clicks": 1050, "conversations": 53, "leads": 2},
+      "prev": {"spend": 752.23, "reach": 12547, "impressions": 22983, "link_clicks": 1114, "conversations": 53, "leads": 0},
+      "daily": [
+        ["2026-11-09", 55.61, 5, 0, 71], ["2026-11-10", 109.34, 2, 0, 127], ["2026-11-11", 118.87, 9, 0, 180],
+        ["2026-11-12", 111.21, 11, 0, 184], ["2026-11-13", 113.01, 8, 0, 165], ["2026-11-14", 108.92, 10, 0, 173],
+        ["2026-11-15", 135.27, 8, 0, 214], ["2026-11-16", 117.92, 3, 0, 153], ["2026-11-17", 204.53, 9, 0, 157],
+        ["2026-11-18", 49.03, 2, 0, 38], ["2026-11-19", 0, 0, 0, 0], ["2026-11-20", 243.91, 13, 1, 213],
+        ["2026-11-21", 240.78, 18, 1, 272], ["2026-11-22", 133.2, 8, 0, 217]
+      ],
+      "campaigns": [
+        ["GO_OLDADS_TESTEA", 336.74, 16, 2, 919, 13570],
+        ["GO_25/11_WPP_PROMO", 188.86, 4, 0, 33, 5513],
+        ["GO_CAMPANHA_SORRISSO2027_ClicktoWpp", 166.39, 17, 0, 50, 3202],
+        ["GO_PROTOCOLO", 101.02, 1, 0, 14, 3936],
+        ["GO_IMPLANTES", 99.91, 9, 0, 17, 2562],
+        ["GO_DEPOIMENTO", 96.45, 6, 0, 17, 2034]
+      ]
+    }
+  ],
+  "google_ads": [
+    {
+      "account_name": "Odontologia - EGO",
+      "integration_id": 3833501,
+      "cur":  {"cost": 7.47, "clicks": 3, "impressions": 201, "conversions": 0},
+      "prev": {"cost": 15.19, "clicks": 4, "impressions": 190, "conversions": 0}
+    }
+  ],
+  "instagram": [
+    {
+      "account_name": "egoclinicaodontologica",
+      "integration_id": 3789787,
+      "cur":  {"reach": 9755, "views": 13656},
+      "prev": {"reach": 9782, "views": 14795},
+      "followers_current": 1122,
+      "followers_delta": 3,
+      "reels": [
+        {"title": "13 anos de expectativa… e finalmente o GTA 6 chegou!", "date": "2026-11-20", "reach": 52, "views": 144, "interactions": 11, "eng_rate": 0.2115, "likes": 7, "comments": 2, "shares": 2, "saved": 0, "url": "https://www.instagram.com/reel/Df9xIZxMJim/"},
+        {"title": "Você já garantiu seu horário para o Sorria para 2027?", "date": "2026-11-17", "reach": 295, "views": 395, "interactions": 9, "eng_rate": 0.0305, "likes": 7, "comments": 1, "shares": 0, "saved": 0, "url": "https://www.instagram.com/reel/Df2xyEoTIJg/"},
+        {"title": "O nosso convite especial é para você! (Sorria para 2027)", "date": "2026-11-16", "reach": 119, "views": 229, "interactions": 14, "eng_rate": 0.1176, "likes": 11, "comments": 0, "shares": 2, "saved": 1, "url": "https://www.instagram.com/reel/Dfz_Eq_zPHV/"}
+      ],
+      "posts": []
+    }
+  ],
+  "facebook_page": [
+    {
+      "account_name": "EGO Odontologia",
+      "integration_id": 3788544,
+      "cur":  {"page_reach": 19218, "media_views": 24884, "posts": 3},
+      "prev": {"page_reach": 19346, "media_views": 24216, "posts": 6}
+    }
+  ],
+  "other": [],
+  "errors": [],
+  "notes": ["19/11 sem veiculação na Meta Ads (sem gasto registrado no dia)."]
+}

@@ -1,0 +1,37 @@
+{
+  "client_short": "CEMED Mirassol",
+  "headline_1": "Mais cliques com *menos verba*.",
+  "headline_2": "Conversões recuaram 28%.",
+  "intro": "Resumo da semana de **16 a 22/11** do CEMED no **Google Ads**, comparando com a semana anterior (09 a 15/11). As campanhas rodam de segunda a sexta.",
+  "highlight": {
+    "number": "299",
+    "label": "CLIQUES",
+    "title": "*299 cliques* com *R$ 118 a menos* de investimento.",
+    "text": "O custo por clique caiu de R$ 3,11 para R$ 2,52 (19% menor). As conversões, porém, foram de 61 para 44, e a sexta-feira (20/11) foi o dia mais fraco, com 4."
+  },
+  "strip": [
+    {"key": "google.conversions", "desc": "conversões no Google Ads (semana anterior: 61)"},
+    {"key": "google.cpc", "desc": "custo por clique, 19% menor"},
+    {"key": "google.cpa", "desc": "custo por conversão (antes: R$ 14,31)"},
+    {"key": "google.cost", "desc": "investidos no Google Ads na semana"}
+  ],
+  "s1_intro": "O Google Ads trouxe **mais cliques gastando menos**, mas a taxa de conversão caiu: foram **44 conversões**, contra 61 na semana anterior. Os anúncios da Meta seguem sem veiculação desde 10/11.",
+  "kpis": [
+    {"key": "google.conversions", "suffix": "/61", "label": "Conversões: esta semana / anterior"},
+    {"key": "google.cpa", "label": "Custo por conversão"},
+    {"key": "google.clicks", "label": "Cliques nos anúncios"},
+    {"key": "google.cpc", "label": "Custo por clique"}
+  ],
+  "key_rows": ["google.conversions", "google.cpc", "google.clicks"],
+  "chart": {"source": "google", "metric": "conversions", "subtitle": "Conversões registradas pelo Google Ads de 09/11 a 22/11 (as campanhas rodam de segunda a sexta)"},
+  "footnote1": "Fonte: Reportei (Google Ads e Meta Ads). Custos calculados como investimento ÷ resultado. A conta de Meta Ads (CEMED - Mirassol) não teve investimento na semana e ficou fora da tabela.",
+  "s2_eyebrow": "LEITURA E PRÓXIMOS PASSOS",
+  "s2_title": "O que *fazer* agora",
+  "s2_intro": "",
+  "leitura": "O clique ficou **19% mais barato**, então o problema da semana não é tráfego: é o que acontece depois do clique. A taxa de conversão caiu de **21,7%** para **14,7%** dos cliques. Vale olhar termos de pesquisa, página de destino e o acompanhamento de conversões.",
+  "proximos": [
+    {"title": "Termos de pesquisa", "text": "Revisar os termos que geraram cliques na semana e negativar os que não têm intenção de agendamento."},
+    {"title": "Página e WhatsApp", "text": "Conferir se a página de destino e o botão de contato estão funcionando bem no celular."},
+    {"title": "Decidir a Meta Ads", "text": "A conta está parada desde 10/11. Definir se volta a rodar e com qual objetivo."}
+  ]
+}
