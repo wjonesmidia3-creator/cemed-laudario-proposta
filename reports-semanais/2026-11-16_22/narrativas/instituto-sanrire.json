@@ -1,0 +1,34 @@
+{
+  "client_short": "Instituto Sanrire",
+  "headline_1": "*93 resultados* em mídia paga.",
+  "headline_2": "55% mais, com a mesma verba.",
+  "intro": "Resumo da semana de **16 a 22/11** do Instituto Sanrire em **Meta Ads, Google Ads, Facebook e YouTube**, comparando com a semana anterior (09 a 15/11).",
+  "highlight": {
+    "number": "45",
+    "label": "CONVERSÕES",
+    "title": "O *Google Ads* praticamente *dobrou as conversões*: 45, contra 23.",
+    "text": "Com investimento 5% maior (R$ 1.769), o custo por conversão caiu de R$ 73,02 para R$ 39,32."
+  },
+  "strip": [
+    {"value": "93", "desc": "resultados pagos: 48 na Meta e 45 no Google (antes: 60)"},
+    {"value": "R$ 41,97", "desc": "custo médio por resultado (antes: R$ 63,79)"},
+    {"value": "R$ 3.903", "desc": "investidos em Meta e Google na semana"},
+    {"value": "6,4 mil", "desc": "visualizações no YouTube, mais que o dobro"}
+  ],
+  "s1_intro": "Com investimento praticamente igual (R$ 3,9 mil em Meta e Google), os resultados pagos subiram de 60 para **93**. O destaque foi o Google Ads, com **45 conversões**. Na Meta, o alcance caiu 28%, mas conversas e leads cresceram.",
+  "kpis": [
+    {"value": "93", "suffix": "/60", "label": "Resultados pagos (Meta + Google): esta semana / anterior", "delta": "▲ 55% vs. semana anterior", "tone": "good"},
+    {"key": "google.conversions", "suffix": "/23", "label": "Conversões no Google Ads"},
+    {"key": "meta.results", "suffix": "/37", "label": "Conversas + leads na Meta"},
+    {"key": "google.cpa", "label": "Custo por conversão no Google"}
+  ],
+  "key_rows": ["meta.conversations", "meta.leads", "meta.cpr", "google.conversions", "google.cpa"],
+  "footnote1": "Fonte: Reportei (Meta Ads, Google Ads, Página do Facebook e YouTube). Custos calculados como investimento ÷ resultado; na Meta, resultado = conversas + leads. Sem dados no período: segunda conta de anúncios Meta, ChatGPT Ads e página “Instituto Sanrire”. O Instagram está desconectado do Reportei.",
+  "s2_intro": "Duas campanhas na Meta. **Estética Oro-facial** concentrou 67% da verba e trouxe 28 conversas e 9 leads; **Facetas** trouxe 10 conversas e 1 lead.",
+  "leitura": "A semana foi de **mais resultado com a mesma verba**. No Google, o custo por conversão caiu 46%. Na Meta, alcance e impressões caíram, mas o custo por resultado melhorou 23% (de R$ 58,05 para R$ 44,45), puxado por **Estética Oro-facial** (R$ 38,81 por resultado). **Facetas** ficou em R$ 63,43.",
+  "proximos": [
+    {"title": "Escalar Oro-facial", "text": "Aumentar aos poucos a verba de Estética Oro-facial, que tem o menor custo por resultado na Meta."},
+    {"title": "Entender o Google", "text": "Conferir quais campanhas e ações (ligação, WhatsApp, formulário) geraram as 45 conversões e reforçar o que funcionou."},
+    {"title": "Reconectar o Instagram", "text": "O Instagram do Instituto está desconectado do Reportei. Reconectar para incluir o orgânico no próximo report."}
+  ]
+}

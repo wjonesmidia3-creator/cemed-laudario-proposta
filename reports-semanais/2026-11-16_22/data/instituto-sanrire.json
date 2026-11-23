@@ -1,0 +1,269 @@
+{
+  "client": "Instituto Sanrire",
+  "slug": "instituto-sanrire",
+  "project_id": 1292582,
+  "period": {
+    "cur": [
+      "2026-11-16",
+      "2026-11-22"
+    ],
+    "prev": [
+      "2026-11-09",
+      "2026-11-15"
+    ]
+  },
+  "meta_ads": [
+    {
+      "account_name": "CA 03 - SANRIRE",
+      "integration_id": 3845075,
+      "cur": {
+        "spend": 2133.76,
+        "reach": 21296,
+        "impressions": 37547,
+        "link_clicks": 286,
+        "conversations": 38,
+        "leads": 10
+      },
+      "prev": {
+        "spend": 2147.97,
+        "reach": 29458,
+        "impressions": 72351,
+        "link_clicks": 334,
+        "conversations": 32,
+        "leads": 5
+      },
+      "daily": [
+        [
+          "2026-11-09",
+          468.33,
+          4,
+          3,
+          58
+        ],
+        [
+          "2026-11-10",
+          300.92,
+          6,
+          0,
+          48
+        ],
+        [
+          "2026-11-11",
+          281.71,
+          7,
+          0,
+          33
+        ],
+        [
+          "2026-11-12",
+          350.18,
+          5,
+          2,
+          56
+        ],
+        [
+          "2026-11-13",
+          231.14,
+          3,
+          0,
+          46
+        ],
+        [
+          "2026-11-14",
+          228.94,
+          2,
+          0,
+          45
+        ],
+        [
+          "2026-11-15",
+          286.75,
+          5,
+          0,
+          48
+        ],
+        [
+          "2026-11-16",
+          430.36,
+          10,
+          4,
+          55
+        ],
+        [
+          "2026-11-17",
+          247.98,
+          5,
+          0,
+          39
+        ],
+        [
+          "2026-11-18",
+          284.43,
+          3,
+          0,
+          21
+        ],
+        [
+          "2026-11-19",
+          295.86,
+          6,
+          2,
+          39
+        ],
+        [
+          "2026-11-20",
+          251.26,
+          4,
+          1,
+          29
+        ],
+        [
+          "2026-11-21",
+          270.9,
+          3,
+          2,
+          48
+        ],
+        [
+          "2026-11-22",
+          352.97,
+          7,
+          1,
+          55
+        ]
+      ],
+      "campaigns": [
+        [
+          "[ESTÉTICA ORO-FACIAL] [ANDRÔMEDA] [ABERTA] [ENGAJAMENTO]",
+          1435.98,
+          28,
+          9,
+          153,
+          28562
+        ],
+        [
+          "[FACETAS] [ANDRÔMEDA] [ABERTA] [ENGAJAMENTO]",
+          697.78,
+          10,
+          1,
+          133,
+          8985
+        ]
+      ]
+    },
+    {
+      "account_name": "CONTA DE ANÚNCIO 02 - SANRIRE - 20/10/23",
+      "integration_id": 3845074,
+      "cur": {
+        "spend": 0,
+        "reach": 0,
+        "impressions": 0,
+        "link_clicks": 0,
+        "conversations": 0,
+        "leads": 0
+      },
+      "prev": {
+        "spend": 0,
+        "reach": 0,
+        "impressions": 0,
+        "link_clicks": 0,
+        "conversations": 0,
+        "leads": 0
+      },
+      "daily": [],
+      "campaigns": []
+    }
+  ],
+  "google_ads": [
+    {
+      "account_name": "Dra. Ingrid Aquino",
+      "integration_id": 3672498,
+      "cur": {
+        "cost": 1769.26,
+        "clicks": 4513,
+        "impressions": 184750,
+        "conversions": 45.0
+      },
+      "prev": {
+        "cost": 1679.42,
+        "clicks": 4777,
+        "impressions": 203232,
+        "conversions": 23.0
+      }
+    }
+  ],
+  "instagram": [],
+  "facebook_page": [
+    {
+      "account_name": "Sanrire",
+      "integration_id": 3845078,
+      "cur": {
+        "page_reach": 39973,
+        "media_views": 51291,
+        "posts": 0
+      },
+      "prev": {
+        "page_reach": 45532,
+        "media_views": 63878,
+        "posts": 0
+      }
+    },
+    {
+      "account_name": "Instituto Sanrire",
+      "integration_id": 3845077,
+      "cur": {
+        "page_reach": 0,
+        "media_views": 0,
+        "posts": 0
+      },
+      "prev": {
+        "page_reach": 0,
+        "media_views": 0,
+        "posts": 0
+      }
+    }
+  ],
+  "other": [
+    {
+      "platform": "youtube",
+      "account_name": "Instituto Sanrire",
+      "metrics": [
+        {
+          "label_pt": "Visualizações",
+          "cur": 6384,
+          "prev": 2849
+        },
+        {
+          "label_pt": "Tempo assistido (min)",
+          "cur": 1185,
+          "prev": 722
+        },
+        {
+          "label_pt": "Inscritos ganhos",
+          "cur": 2,
+          "prev": 0
+        },
+        {
+          "label_pt": "Inscritos perdidos",
+          "cur": 0,
+          "prev": 0
+        },
+        {
+          "label_pt": "Curtidas",
+          "cur": 1,
+          "prev": 0
+        }
+      ]
+    }
+  ],
+  "errors": [
+    "Instagram instituto.sanrire desconectado no Reportei (integração inativa)",
+    "ChatGPT Ads (Instituto Sanrire Odontologia e Health Center): sem dados no Reportei nas duas semanas (no_data)"
+  ],
+  "notes": [
+    "Meta Ads 'CONTA DE ANÚNCIO 02 - SANRIRE - 20/10/23' sem veiculação nas duas semanas (sem dados/gasto zero); daily e campanhas não consultados.",
+    "Página do Facebook 'Instituto Sanrire' retornou zero em alcance, visualizações e posts nas duas semanas; todo o volume orgânico/pago está na página 'Sanrire' (bate com o total do compare_periods).",
+    "Nenhum post publicado nas páginas do Facebook em nenhuma das duas semanas (page_posts_count = 0).",
+    "Google Ads: conversões arredondadas para 2 casas (44,998 e 22,9997)."
+  ]
+}

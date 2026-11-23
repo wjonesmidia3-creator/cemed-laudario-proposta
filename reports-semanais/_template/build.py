@@ -185,7 +185,13 @@ def build_metrics(data):
         if leads_t > 0 and (conv_t == 0 or leads_t >= 0.2 * conv_t):
             M["meta.leads"] = Metric("Leads (cadastros)", lead_c, lead_p, "num", "up")
             M["meta.cpl"] = Metric("Custo por lead", ratio(spend_c, lead_c), ratio(spend_p, lead_p), "brl", "down")
-            g += ["meta.leads", "meta.cpl"]
+            if conv_t > 0:
+                res_c, res_p = (conv_c or 0) + (lead_c or 0), (conv_p or 0) + (lead_p or 0)
+                M["meta.results"] = Metric("Resultados (conversas + leads)", res_c, res_p, "num", "up")
+                M["meta.cpr"] = Metric("Custo por resultado", ratio(spend_c, res_c), ratio(spend_p, res_p), "brl", "down")
+                g = [k for k in g if k != "meta.cpconv"] + ["meta.leads", "meta.cpr"]
+            else:
+                g += ["meta.leads", "meta.cpl"]
         M["meta.link_clicks"] = Metric("Cliques no link", clk_c, clk_p, "num", "up")
         M["meta.cpc"] = Metric("Custo por clique", ratio(spend_c, clk_c), ratio(spend_p, clk_p), "brl", "down")
         g += ["meta.link_clicks", "meta.cpc"]
@@ -234,14 +240,14 @@ def build_metrics(data):
             groups.append((name, g))
 
     # ---------------- Facebook (página)
-    for i, fb in enumerate(data.get("facebook_page", [])):
+    pages = [fb for fb in data.get("facebook_page", []) if fb.get("cur", {}).get("page_reach") is not None
+             and any((fb[w].get(k) or 0) for w in ("cur", "prev") for k in ("page_reach", "media_views", "posts"))]
+    for i, fb in enumerate(pages):
         p = f"fb{i or ''}"
-        if fb.get("cur", {}).get("page_reach") is None:
-            continue
         M[f"{p}.page_reach"] = Metric("Alcance da página", fb["cur"].get("page_reach"), fb["prev"].get("page_reach"), "num", "up")
         M[f"{p}.media_views"] = Metric("Visualizações", fb["cur"].get("media_views"), fb["prev"].get("media_views"), "num", "up")
         M[f"{p}.posts"] = Metric("Publicações", fb["cur"].get("posts"), fb["prev"].get("posts"), "num", "up")
-        name = "Facebook" + (f" · {fb['account_name']}" if len(data.get("facebook_page", [])) > 1 else "")
+        name = "Facebook" + (f" · {fb['account_name']}" if len(pages) > 1 else "")
         groups.append((name, [f"{p}.page_reach", f"{p}.media_views", f"{p}.posts"]))
 
     # ---------------- Outras plataformas
@@ -388,7 +394,7 @@ def build_chart(data, chart_spec):
 # --------------------------------------------------------------------------- conteúdo
 
 
-def build_content(data, n=6):
+def build_content(data, n=8):
     items = []
     for ig in data.get("instagram", []):
         for kind, lst in (("REELS", ig.get("reels") or []), ("POST", ig.get("posts") or [])):
@@ -403,6 +409,8 @@ def build_content(data, n=6):
         "interactions": sum(i.get("interactions") or 0 for i in items),
         "n_reels": sum(1 for i in items if i["kind"] == "REELS"),
     }
+    total["views_s"] = fmt_compact(total["views"])
+    total["reach_s"] = fmt_compact(total["reach"])
     best_reach = max(items, key=lambda i: i.get("reach") or 0)
     best_eng = max(items, key=lambda i: (i.get("interactions") or 0, i.get("eng_rate") or 0))
     for it in items:
@@ -416,6 +424,8 @@ def build_content(data, n=6):
         it["day"] = f"{x.day:02d}"
         it["mon"] = MESES_UP[x.month - 1]
         it["eng_s"] = fmt_pct(it.get("eng_rate")) if it.get("eng_rate") is not None else None
+        it["reach_s"] = fmt_compact(it.get("reach") or 0)
+        it["views_s"] = fmt_compact(it.get("views") or 0)
     items.sort(key=lambda i: i["date"], reverse=True)
     return {"cards": items[:n], "total": total, "hidden": max(0, len(items) - n)}
 
@@ -444,6 +454,8 @@ def build_campaigns(data, n=8):
         r["cpconv_s"] = fmt_brl(r["spend"] / r["conv"]) if r["conv"] else "—"
         r["leads_s"] = fmt_num(r["leads"])
         r["cpl_s"] = fmt_brl(r["spend"] / r["leads"]) if r["leads"] else "—"
+        res = r["conv"] + r["leads"]
+        r["cpr_s"] = fmt_brl(r["spend"] / res) if res else "—"
         r["clicks_s"] = fmt_num(r["clicks"])
         r["cpc_s"] = fmt_brl(r["spend"] / r["clicks"]) if r["clicks"] else "—"
     hidden = rows[n:]

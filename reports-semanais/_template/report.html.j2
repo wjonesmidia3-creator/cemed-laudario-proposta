@@ -156,7 +156,7 @@
   .item.total .tag { color: var(--orange); background: #FDEBDF; }
   .item h5 { margin-top: 7px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 12.5px; line-height: 1.3; color: var(--ink);
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .item .st { margin-top: auto; font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+  .item .st { margin-top: auto; font-size: 10.5px; color: var(--muted); white-space: nowrap; overflow: hidden; }
   .item .st b { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--ink); font-size: 11.5px; margin-left: 8px; }
   .item .st b:first-child { margin-left: 0; }
   .item .st b.o { color: var(--orange); }
@@ -279,16 +279,22 @@
         <colgroup><col class="name"></colgroup>
         <thead><tr>
           <th>Campanha (Meta Ads)</th><th>Investimento</th>
+          {% if b.c.show_conv and b.c.show_leads %}<th>Conversas</th><th>Leads</th><th>Custo/resultado</th>
+          {% else %}
           {% if b.c.show_conv %}<th>Conversas</th><th>Custo/conversa</th>{% endif %}
           {% if b.c.show_leads %}<th>Leads</th><th>Custo/lead</th>{% endif %}
+          {% endif %}
           <th>Cliques</th>{% if not b.c.show_conv and not b.c.show_leads %}<th>Custo/clique</th>{% endif %}
         </tr></thead>
         <tbody>
         {% for r in b.c.rows %}
           <tr{% if loop.first %} class="top"{% endif %}>
             <td><div class="cnw">{% if loop.first %}<i class="topb">TOP</i>{% endif %}<span class="cn">{{ r.display }}</span></div></td><td class="n">{{ r.spend_s }}</td>
+            {% if b.c.show_conv and b.c.show_leads %}<td class="n o">{{ r.conv_s }}</td><td class="n o">{{ r.leads_s }}</td><td class="n">{{ r.cpr_s }}</td>
+            {% else %}
             {% if b.c.show_conv %}<td class="n o">{{ r.conv_s }}</td><td class="n">{{ r.cpconv_s }}</td>{% endif %}
             {% if b.c.show_leads %}<td class="n o">{{ r.leads_s }}</td><td class="n">{{ r.cpl_s }}</td>{% endif %}
+            {% endif %}
             <td class="n">{{ r.clicks_s }}</td>{% if not b.c.show_conv and not b.c.show_leads %}<td class="n">{{ r.cpc_s }}</td>{% endif %}
           </tr>
         {% endfor %}
@@ -305,7 +311,7 @@
         <div class="bd">
           <span class="tag">{{ it.tag }}</span>
           <h5>{{ it.title }}</h5>
-          <div class="st"><b{% if it.tag == 'MAIS ALCANCE' %} class="o"{% endif %}>{{ '{:,}'.format(it.reach or 0).replace(',', '.') }}</b> alcance<b>{{ '{:,}'.format(it.views or 0).replace(',', '.') }}</b> views<b{% if it.tag == 'MAIS ENGAJAMENTO' %} class="o"{% endif %}>{{ it.interactions or 0 }}</b> interações{% if it.eng_s %}<b>{{ it.eng_s }}</b> eng.{% endif %}</div>
+          <div class="st"><b{% if it.tag == 'MAIS ALCANCE' %} class="o"{% endif %}>{{ it.reach_s }}</b> alcance<b>{{ it.views_s }}</b> views<b{% if it.tag == 'MAIS ENGAJAMENTO' %} class="o"{% endif %}>{{ it.interactions or 0 }}</b> interações{% if it.eng_s %}<b>{{ it.eng_s }}</b> eng.{% endif %}</div>
         </div>
       </div>
       {% endfor %}
@@ -313,8 +319,8 @@
         <div class="side"><div class="play"></div><b>{{ b.c.total.count }}</b><span>{{ 'REELS' if b.c.total.count == b.c.total.n_reels else 'POSTS' }}</span></div>
         <div class="bd">
           <span class="tag">TOTAL DA SEMANA</span>
-          <h5>{{ '{:,}'.format(b.c.total.views).replace(',', '.') }} visualizações orgânicas</h5>
-          <div class="st"><b>{{ b.c.total.interactions }}</b> interações<b>{{ '{:,}'.format(b.c.total.reach).replace(',', '.') }}</b> alcance{% if b.c.hidden %}<b>+{{ b.c.hidden }}</b> não exibidos{% endif %}</div>
+          <h5>{{ b.c.total.views_s }} visualizações orgânicas</h5>
+          <div class="st"><b>{{ b.c.total.interactions }}</b> interações<b>{{ b.c.total.reach_s }}</b> alcance{% if b.c.hidden %}<b>+{{ b.c.hidden }}</b> não exibidos{% endif %}</div>
         </div>
       </div>
     </div>

@@ -1,0 +1,173 @@
+{
+  "client": "Dreisson",
+  "slug": "dreisson",
+  "project_id": 1340198,
+  "period": {
+    "cur": [
+      "2026-11-16",
+      "2026-11-22"
+    ],
+    "prev": [
+      "2026-11-09",
+      "2026-11-15"
+    ]
+  },
+  "meta_ads": [
+    {
+      "account_name": "CA - DREISSON VIVO IMÓVEIS",
+      "integration_id": 3818000,
+      "cur": {
+        "spend": 580.32,
+        "reach": 10249,
+        "impressions": 21658,
+        "link_clicks": 648,
+        "conversations": 26,
+        "leads": 0
+      },
+      "prev": {
+        "spend": 217.93,
+        "reach": 4454,
+        "impressions": 8034,
+        "link_clicks": 200,
+        "conversations": 11,
+        "leads": 0
+      },
+      "daily": [
+        [
+          "2026-11-09",
+          89.65,
+          7,
+          0,
+          82
+        ],
+        [
+          "2026-11-10",
+          88.51,
+          3,
+          0,
+          72
+        ],
+        [
+          "2026-11-11",
+          39.44,
+          1,
+          0,
+          44
+        ],
+        [
+          "2026-11-12",
+          0.33,
+          0,
+          0,
+          2
+        ],
+        [
+          "2026-11-13",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-14",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-15",
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          "2026-11-16",
+          75.62,
+          2,
+          0,
+          91
+        ],
+        [
+          "2026-11-17",
+          92.29,
+          5,
+          0,
+          118
+        ],
+        [
+          "2026-11-18",
+          91.9,
+          2,
+          0,
+          80
+        ],
+        [
+          "2026-11-19",
+          75.39,
+          5,
+          0,
+          76
+        ],
+        [
+          "2026-11-20",
+          71.74,
+          2,
+          0,
+          78
+        ],
+        [
+          "2026-11-21",
+          81.29,
+          6,
+          0,
+          79
+        ],
+        [
+          "2026-11-22",
+          92.09,
+          4,
+          0,
+          126
+        ]
+      ],
+      "campaigns": [
+        [
+          "[OZ] [WHATS] | REELS",
+          249.73,
+          9,
+          0,
+          73,
+          6613
+        ],
+        [
+          "[OZ] [WHATS] CARROSSEL",
+          247.04,
+          17,
+          0,
+          185,
+          7819
+        ],
+        [
+          "[OZ] [SEGUIDORES]",
+          83.55,
+          0,
+          0,
+          390,
+          7226
+        ]
+      ]
+    }
+  ],
+  "google_ads": [],
+  "instagram": [],
+  "facebook_page": [],
+  "other": [],
+  "errors": [],
+  "notes": [
+    "Semana anterior com veiculação só de 09 a 12/11 (12/11 com R$ 0,33); 13–15/11 sem gasto na Meta Ads. Semana atual com veiculação todos os dias.",
+    "Nenhum lead de formulário (actions:lead = 0) nas duas semanas; os resultados vêm de conversas iniciadas no WhatsApp (26 vs 11).",
+    "Campanha [OZ] [SEGUIDORES] (R$ 83,55) é de seguidores: 0 conversas, mas 390 cliques no link."
+  ]
+}

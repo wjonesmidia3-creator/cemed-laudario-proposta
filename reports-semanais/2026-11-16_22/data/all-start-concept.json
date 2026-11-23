@@ -1,0 +1,234 @@
+{
+  "client": "All Start Concept",
+  "slug": "all-start-concept",
+  "project_id": 1355919,
+  "period": {
+    "cur": [
+      "2026-11-16",
+      "2026-11-22"
+    ],
+    "prev": [
+      "2026-11-09",
+      "2026-11-15"
+    ]
+  },
+  "meta_ads": [],
+  "google_ads": [
+    {
+      "account_name": "Google Ads Account - ID: 3912700158",
+      "integration_id": 3867731,
+      "cur": {
+        "cost": 0,
+        "clicks": 0,
+        "impressions": 0,
+        "conversions": 0
+      },
+      "prev": {
+        "cost": null,
+        "clicks": null,
+        "impressions": null,
+        "conversions": null
+      },
+      "daily_columns": [
+        "date",
+        "clicks",
+        "conversions"
+      ],
+      "daily": [
+        [
+          "2026-11-09",
+          0,
+          0
+        ],
+        [
+          "2026-11-10",
+          0,
+          0
+        ],
+        [
+          "2026-11-11",
+          0,
+          0
+        ],
+        [
+          "2026-11-12",
+          0,
+          0
+        ],
+        [
+          "2026-11-13",
+          0,
+          0
+        ],
+        [
+          "2026-11-14",
+          0,
+          0
+        ],
+        [
+          "2026-11-15",
+          0,
+          0
+        ],
+        [
+          "2026-11-16",
+          0,
+          0
+        ],
+        [
+          "2026-11-17",
+          0,
+          0
+        ],
+        [
+          "2026-11-18",
+          0,
+          0
+        ],
+        [
+          "2026-11-19",
+          0,
+          0
+        ],
+        [
+          "2026-11-20",
+          0,
+          0
+        ],
+        [
+          "2026-11-21",
+          0,
+          0
+        ],
+        [
+          "2026-11-22",
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "instagram": [
+    {
+      "account_name": "allstarconcept",
+      "integration_id": 3867761,
+      "cur": {
+        "reach": 4252,
+        "views": 38188
+      },
+      "prev": {
+        "reach": 6806,
+        "views": 15906
+      },
+      "followers_current": 944,
+      "followers_delta": null,
+      "reels": [
+        {
+          "title": "O toque final faz toda a diferença",
+          "date": "2026-11-22",
+          "reach": 1005,
+          "views": 61888,
+          "interactions": 211,
+          "eng_rate": 0.21,
+          "likes": 73,
+          "comments": 92,
+          "shares": 45,
+          "saved": 0,
+          "url": "https://www.instagram.com/reel/DgCwZ9KhYZs/"
+        },
+        {
+          "title": "Às vezes, tudo o que precisamos é de uma pausa para nos cuidar",
+          "date": "2026-11-21",
+          "reach": 517,
+          "views": 789,
+          "interactions": 117,
+          "eng_rate": 0.2263,
+          "likes": 56,
+          "comments": 23,
+          "shares": 30,
+          "saved": 4,
+          "url": "https://www.instagram.com/reel/DgALlVbh3QU/"
+        },
+        {
+          "title": "Toda transformação começa com um olhar atento e cuidadoso",
+          "date": "2026-11-18",
+          "reach": 377,
+          "views": 597,
+          "interactions": 44,
+          "eng_rate": 0.1167,
+          "likes": 33,
+          "comments": 6,
+          "shares": 4,
+          "saved": 0,
+          "url": "https://www.instagram.com/reel/Df4jxehBdyu/"
+        },
+        {
+          "title": "Uma transformação que realça a beleza em cada detalhe",
+          "date": "2026-11-16",
+          "reach": 217,
+          "views": 345,
+          "interactions": 12,
+          "eng_rate": 0.0553,
+          "likes": 10,
+          "comments": 0,
+          "shares": 1,
+          "saved": 1,
+          "url": "https://www.instagram.com/reel/DfzawwqBhyQ/"
+        }
+      ],
+      "posts": [
+        {
+          "title": "Conheça Laura, nossa colorista com 12 anos de experiência",
+          "date": "2026-11-19",
+          "reach": 295,
+          "views": 808,
+          "interactions": 59,
+          "eng_rate": 0.2,
+          "likes": 55,
+          "comments": 3,
+          "shares": 0,
+          "saved": 0,
+          "url": "https://www.instagram.com/p/Df7VhBflfnd/"
+        },
+        {
+          "title": "Unhas bonitas estão nos pequenos detalhes (francesinha)",
+          "date": "2026-11-17",
+          "reach": 182,
+          "views": 278,
+          "interactions": 5,
+          "eng_rate": 0.0275,
+          "likes": 4,
+          "comments": 0,
+          "shares": 1,
+          "saved": 0,
+          "url": "https://www.instagram.com/p/Df2jQL_BYi0/"
+        },
+        {
+          "title": "Cabelo mais alinhado, muito brilho e menos frizz (queratina)",
+          "date": "2026-11-20",
+          "reach": 54,
+          "views": 152,
+          "interactions": 8,
+          "eng_rate": 0.1481,
+          "likes": 7,
+          "comments": 0,
+          "shares": 0,
+          "saved": 0,
+          "url": "https://www.instagram.com/p/Df9mxXOHzct/"
+        }
+      ]
+    }
+  ],
+  "facebook_page": [],
+  "other": [],
+  "errors": [
+    "Google Ads: gráficos diários (cliques/conversões por dia) sem dados para 09–22/11 (no_data); dias preenchidos com 0."
+  ],
+  "notes": [
+    "Integrações conectadas ao Reportei em 19/11/2026.",
+    "Google Ads: semana atual zerada (sem custo, cliques, impressões ou conversões) e semana anterior sem valores retornados (null) — conta recém-conectada/sem veiculação.",
+    "Instagram: alcance e visualizações da semana anterior vieram da API (6.806 / 15.906); variação de seguidores indisponível (Instagram não retorna histórico de seguidores — null).",
+    "Instagram: o reel de 22/11 aparece com 61.888 visualizações para 1.005 de alcance, acima do total de visualizações da conta na semana (38.188); valor conforme a API (provável contagem de replays/acumulado).",
+    "Legendas dos posts em inglês/espanhol; títulos traduzidos para português."
+  ]
+}

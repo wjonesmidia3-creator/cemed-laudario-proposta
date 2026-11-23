@@ -1,0 +1,37 @@
+{
+  "client_short": "All Star Concept",
+  "headline_1": "Visualizações *2,4x maiores*.",
+  "headline_2": "Reels puxaram o engajamento.",
+  "intro": "Resumo da semana de **16 a 22/11** da All Star Concept no **Instagram**, comparando com a semana anterior (09 a 15/11). A conta foi conectada ao Reportei em 19/11.",
+  "highlight": {
+    "number": "211",
+    "label": "INTERAÇÕES",
+    "title": "O Reels *“O toque final faz toda a diferença”* gerou *211 interações*.",
+    "text": "Publicado no domingo (22/11), alcançou 1.005 contas, mais que qualquer outro conteúdo da semana. Junto com o Reels de sábado (117 interações), foram os dois conteúdos de maior engajamento."
+  },
+  "strip": [
+    {"value": "38,2 mil", "desc": "visualizações no Instagram na semana (antes: 15,9 mil)"},
+    {"value": "7 posts", "desc": "4 Reels e 3 posts publicados na semana"},
+    {"value": "456", "desc": "interações nos conteúdos da semana"},
+    {"value": "944", "desc": "seguidores no perfil"}
+  ],
+  "s1_intro": "As visualizações do Instagram **mais que dobraram** (de 15,9 mil para **38,2 mil**), enquanto as contas alcançadas caíram 38%: o conteúdo foi visto mais vezes por um público mais concentrado. O Google Ads da conta não teve veiculação na semana.",
+  "kpis": [
+    {"key": "ig.views", "label": "Visualizações no Instagram"},
+    {"key": "ig.reach", "label": "Contas alcançadas"},
+    {"value": "7", "label": "Publicações na semana (4 Reels e 3 posts)"},
+    {"value": "456", "label": "Interações nos conteúdos da semana"}
+  ],
+  "key_rows": ["ig.views"],
+  "footnote1": "Fonte: Reportei (Instagram Business e Google Ads). Integrações conectadas em 19/11; os números da semana anterior vêm do histórico do Instagram. O Google Ads não teve investimento nas duas semanas e ficou fora da tabela.",
+  "s2_eyebrow": "CONTEÚDO",
+  "s2_title": "O que *engajou* na semana",
+  "s2_intro": "Quatro Reels e três posts. Os Reels do fim de semana tiveram as maiores taxas de engajamento (21% e 23%), e a apresentação da **colorista Laura** foi o post de feed com mais alcance.",
+  "leitura": "Conteúdo de **resultado** (o toque final, transformações) e de **apresentação da equipe** (Laura) é o que mais engaja. Os posts sobre serviços específicos, como francesinha e queratina, tiveram menos alcance (182 e 54 contas).",
+  "proximos": [
+    {"title": "Mais Reels de resultado", "text": "Manter 3 a 4 Reels por semana mostrando a transformação e o toque final dos atendimentos."},
+    {"title": "Equipe em destaque", "text": "Repetir o formato de apresentação da Laura com outras profissionais do salão."},
+    {"title": "Definir o Google Ads", "text": "A conta está conectada, mas sem veiculação. Definir se e quando começa a rodar, com orçamento e serviços prioritários."}
+  ],
+  "footnote2": "Números dos conteúdos acumulados desde a publicação até 23/11. O Instagram registra 61.888 visualizações para o Reels de 22/11 com 1.005 contas alcançadas (a métrica de visualizações conta repetições)."
+}

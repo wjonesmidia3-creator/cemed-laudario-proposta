@@ -1,0 +1,34 @@
+{
+  "client_short": "Dreisson",
+  "headline_1": "*26 conversas* no WhatsApp.",
+  "headline_2": "Mais que o dobro da semana anterior.",
+  "intro": "Resumo da semana de **16 a 22/11** do Dreisson nos **anúncios Meta**, comparando com a semana anterior (09 a 15/11).",
+  "highlight": {
+    "number": "17",
+    "label": "CONVERSAS",
+    "title": "O *Carrossel* trouxe *17 das 26 conversas*, a R$ 14,53 cada.",
+    "text": "Com praticamente a mesma verba do Reels (R$ 247 contra R$ 250), o Carrossel gerou quase o dobro de conversas (17 contra 9)."
+  },
+  "strip": [
+    {"key": "meta.conversations", "desc": "conversas no WhatsApp (semana anterior: 11)"},
+    {"value": "R$ 14,53", "desc": "custo por conversa no Carrossel, a melhor campanha"},
+    {"value": "10,2 mil", "desc": "pessoas alcançadas, 2,3 vezes mais"},
+    {"value": "7 dias", "desc": "de anúncios no ar (na semana anterior, só 4)"}
+  ],
+  "s1_intro": "Com os anúncios rodando **todos os dias** (na semana anterior foram só 4 dias), o investimento subiu para R$ 580 e as conversas mais que dobraram: **26**, contra 11. O custo por conversa ficou em **R$ 22,32**, incluindo a campanha de seguidores, que não gera conversa.",
+  "kpis": [
+    {"key": "meta.conversations", "suffix": "/11", "label": "Conversas iniciadas: esta semana / anterior"},
+    {"key": "meta.cpconv", "label": "Custo por conversa na semana"},
+    {"key": "meta.reach", "label": "Pessoas alcançadas pelos anúncios"},
+    {"key": "meta.spend", "label": "Investimento em anúncios Meta"}
+  ],
+  "key_rows": ["meta.conversations", "meta.cpconv", "meta.reach"],
+  "footnote1": "Fonte: Reportei (Meta Ads). Custos calculados como investimento ÷ resultado. Na semana anterior não houve veiculação de 13 a 15/11.",
+  "s2_intro": "Três campanhas no ar: duas de WhatsApp (**Carrossel** e **Reels**) e uma de **seguidores**, que trouxe 390 cliques no link.",
+  "leitura": "Nesta conta, o formato **Carrossel** converte melhor que o **Reels**: mesma verba, quase o dobro de conversas e custo de R$ 14,53 contra R$ 27,75. Sem contar a campanha de seguidores, o custo por conversa da semana foi de **R$ 19,11**.",
+  "proximos": [
+    {"title": "Mais verba no Carrossel", "text": "Levar parte do orçamento do Reels para o Carrossel, que converte a R$ 14,53 por conversa."},
+    {"title": "Novos imóveis no Carrossel", "text": "Testar novos carrosséis com os imóveis de maior procura para ampliar o volume de conversas."},
+    {"title": "Qualificar as conversas", "text": "Acompanhar quantas das 26 conversas viraram visita agendada, para medir o retorno real dos anúncios."}
+  ]
+}
