@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajustes Fiorini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: uma coluna de leitura com o passo a passo; a etapa B abre duas mesas de trabalho lado a lado */
+:root{
+  --bg:#f4f6f6; --surface:#ffffff; --ink:#1b2427; --muted:#5a676c; --line:#d9e0e2;
+  --accent:#1d6a72; --accent-ink:#ffffff; --accent-soft:#e2eff0;
+  --ok:#1d7443; --ok-soft:#e3f3e9; --info:#2858a0; --info-soft:#e4ecf8;
+  --bad:#b0261d; --bad-soft:#fbe5e2; --code:#eaeef0;
+  --font-display:"Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121719; --surface:#1a2124; --ink:#e4ebed; --muted:#9aa8ad; --line:#2d383c;
+    --accent:#5fb6bf; --accent-ink:#0c1b1d; --accent-soft:#183236;
+    --ok:#6fcf97; --ok-soft:#16301f; --info:#8db4f0; --info-soft:#182740;
+    --bad:#f08a80; --bad-soft:#3a1c19; --code:#222b2e; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121719; --surface:#1a2124; --ink:#e4ebed; --muted:#9aa8ad; --line:#2d383c;
+  --accent:#5fb6bf; --accent-ink:#0c1b1d; --accent-soft:#183236;
+  --ok:#6fcf97; --ok-soft:#16301f; --info:#8db4f0; --info-soft:#182740;
+  --bad:#f08a80; --bad-soft:#3a1c19; --code:#222b2e; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--font-body);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:32px 64px}
+.page{max-width:1080px;margin:0 auto;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:2rem;letter-spacing:-.01em}
+h2{font-size:1.3rem}
+h3{font-size:1.05rem}
+p{margin:0}
+.lead{color:var(--muted);max-width:68ch}
+header{display:grid;gap:10px}
+.eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+code,.mono{font-family:var(--font-mono);font-size:.86em;background:var(--code);padding:.08em .35em;border-radius:4px;overflow-wrap:anywhere}
+.stage{display:grid;gap:14px}
+.stage-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.stage-letter{font-family:var(--font-display);font-weight:600;color:var(--accent);font-size:1.3rem}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:step var(--start,0)}
+ol.steps li{counter-increment:step;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+ol.steps li > label{display:flex;align-items:center;gap:8px;cursor:pointer;padding-top:1px}
+ol.steps li > label::after{content:counter(step);font-family:var(--font-display);font-weight:600;color:var(--muted);min-width:1.4em;font-variant-numeric:tabular-nums}
+ol.steps input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent);margin:0}
+ol.steps li.done{opacity:.62}
+ol.steps li .txt{min-width:0}
+ol.steps li .txt small{display:block;color:var(--muted);font-size:.88em;margin-top:2px}
+.desks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px}
+.desk{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:12px;min-width:0;align-content:start}
+.desk-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.desk-head .where{color:var(--muted);font-size:.85rem}
+.drop{display:grid;place-items:center;text-align:center;gap:4px;border:1.5px dashed var(--line);border-radius:8px;padding:18px 12px;cursor:pointer;color:var(--muted);transition:border-color .15s, background .15s}
+.drop:hover,.drop.over{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+.drop:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.drop strong{color:var(--ink);font-weight:600}
+.drop input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.fileinfo{font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.n{font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap}
+th.n{text-align:center}
+td .what{display:block;font-weight:500}
+td .from{display:block;color:var(--muted);font-family:var(--font-mono);font-size:.8rem;overflow-wrap:anywhere;margin-top:2px}
+.pill{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;background:var(--code);color:var(--muted)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.ja{background:var(--info-soft);color:var(--info)}
+.pill.erro{background:var(--bad-soft);color:var(--bad)}
+.verdict{border-radius:8px;padding:12px 14px;font-size:.92rem;display:grid;gap:6px}
+.verdict.ok{background:var(--ok-soft);color:var(--ink);border:1px solid color-mix(in srgb, var(--ok) 35%, transparent)}
+.verdict.ja{background:var(--info-soft);border:1px solid color-mix(in srgb, var(--info) 35%, transparent)}
+.verdict.erro{background:var(--bad-soft);border:1px solid color-mix(in srgb, var(--bad) 35%, transparent)}
+.verdict b{font-weight:600}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;font-weight:600;font-size:.9rem;border-radius:7px;padding:9px 14px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button:hover{filter:brightness(1.06)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hints{display:grid;gap:6px;font-size:.84rem}
+.hints .h-k{color:var(--muted)}
+.hints pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--font-mono);font-size:.8rem;background:var(--code);padding:8px;border-radius:6px}
+.note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;padding:12px 14px;display:grid;gap:6px;font-size:.92rem}
+.note.undo{border-left-color:var(--bad)}
+textarea.report{width:100%;min-height:140px;font-family:var(--font-mono);font-size:.78rem;background:var(--code);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+.toast{font-size:.82rem;color:var(--ok);font-weight:600}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+@media (max-width:520px){h1{font-size:1.6rem} body{padding-block:20px 48px}}
+</style>
+</head>
+<body>
+<main class="page">
+
+<header>
+  <span class="eyebrow">Fiorini Odonto &amp; Estética · site na Hostinger</span>
+  <h1>Ajustes Fiorini</h1>
+  <p class="lead">Esta página aplica as 5 trocas combinadas no arquivo que está publicado hoje, sem mexer em mais nada: pixels, códigos e imagens continuam iguais. Os arquivos ficam no seu computador; nada é enviado para lugar nenhum. Se algum trecho não estiver exatamente igual, ela não gera o arquivo e mostra o que achou, para você me mandar.</p>
+</header>
+
+<section class="stage" aria-labelledby="st-a">
+  <div class="stage-head"><span class="stage-letter">A</span><h2 id="st-a">Baixar os arquivos que estão no ar</h2></div>
+  <ol class="steps" style="--start:0">
+    <li><label><input type="checkbox" id="s1"></label><div class="txt">No hPanel: <b>Sites</b> → site da Fiorini → <b>Gerenciador de Arquivos</b> → abra a pasta <code>public_html</code>.<small>Se pedir login ou código 2FA, faça e volte para cá.</small></div></li>
+    <li><label><input type="checkbox" id="s2"></label><div class="txt">Clique com o botão direito em <code>index.html</code> → <b>Download</b>. Esse é o arquivo da página principal.</div></li>
+    <li><label><input type="checkbox" id="s3"></label><div class="txt">Abra a pasta <code>implantes</code> → botão direito em <code>index.html</code> → <b>Download</b>.<small>O Chrome vai salvar como <code>index (1).html</code>; tudo bem. Se não existir a pasta <code>implantes</code>, procure <code>implantes.html</code> direto no <code>public_html</code> e baixe esse.</small></div></li>
+  </ol>
+</section>
+
+<section class="stage" aria-labelledby="st-b">
+  <div class="stage-head"><span class="stage-letter">B</span><h2 id="st-b">Ajustar aqui</h2></div>
+  <ol class="steps" style="--start:3">
+    <li><label><input type="checkbox" id="s4"></label><div class="txt">Arraste cada arquivo para o quadro certo abaixo (ou clique no quadro e escolha). Todas as linhas precisam ficar <b>verdes</b>.</div></li>
+    <li><label><input type="checkbox" id="s5"></label><div class="txt">Clique em <b>Baixar arquivo ajustado</b> nos dois quadros. Vão para Downloads com os nomes <code>index-AJUSTADO-principal.html</code> e <code>index-AJUSTADO-implantes.html</code>.<small>Se algum quadro ficar vermelho, pare aqui: clique em <b>Copiar relatório</b> e cole para mim na conversa.</small></div></li>
+  </ol>
+
+  <div class="desks">
+    <div class="desk" id="desk-principal"></div>
+    <div class="desk" id="desk-implantes"></div>
+  </div>
+</section>
+
+<section class="stage" aria-labelledby="st-c">
+  <div class="stage-head"><span class="stage-letter">C</span><h2 id="st-c">Fazer o backup e subir na Hostinger</h2></div>
+  <p class="lead">O backup é o próprio arquivo original, renomeado na mesma pasta. Faça os passos 7 e 8 um logo depois do outro: entre eles a página fica alguns segundos fora do ar.</p>
+  <ol class="steps" style="--start:5">
+    <li><label><input type="checkbox" id="s6"></label><div class="txt">No <code>public_html</code>: botão <b>Upload</b> (seta para cima, no topo) → escolha <code>index-AJUSTADO-principal.html</code>. Espere ele aparecer na lista.</div></li>
+    <li><label><input type="checkbox" id="s7"></label><div class="txt"><b>Backup:</b> botão direito em <code>index.html</code> → <b>Rename</b> (Renomear) → <code>index.backup-2026-11.html</code></div></li>
+    <li><label><input type="checkbox" id="s8"></label><div class="txt">Botão direito em <code>index-AJUSTADO-principal.html</code> → <b>Rename</b> → <code>index.html</code></div></li>
+    <li><label><input type="checkbox" id="s9"></label><div class="txt">Entre na pasta <code>implantes</code> e repita os passos 6 a 8 com <code>index-AJUSTADO-implantes.html</code>: backup <code>index.backup-2026-11.html</code> e o ajustado renomeado para <code>index.html</code>.<small>Se a página for <code>implantes.html</code> na raiz: backup <code>implantes.backup-2026-11.html</code> e o ajustado renomeado para <code>implantes.html</code>.</small></div></li>
+  </ol>
+</section>
+
+<section class="stage" aria-labelledby="st-d">
+  <div class="stage-head"><span class="stage-letter">D</span><h2 id="st-d">Conferir no site publicado</h2></div>
+  <ol class="steps" style="--start:9">
+    <li><label><input type="checkbox" id="s10"></label><div class="txt">Abra o site com <code>?v=2611</code> no fim do endereço (ex.: <code>seusite.com.br/?v=2611</code>) e aperte <b>Ctrl+Shift+R</b>. O menu mostra <b>Alinhador</b>; embaixo de <b>Dra. Claudia Fiorini</b> aparece <b>CRO-SP 589011</b>; embaixo de <b>Dr. James Fiorini</b> aparece <b>CRO-SP 76945</b>.</div></li>
+    <li><label><input type="checkbox" id="s11"></label><div class="txt">Aperte <b>Ctrl+U</b> (código da página) → <b>Ctrl+F</b> → digite <code>100 mil</code>. Tem que dar <b>0 resultados</b>.<small>Conferir no código pega também o texto que não aparece na tela, como a descrição para o Google.</small></div></li>
+    <li><label><input type="checkbox" id="s12"></label><div class="txt">Faça o mesmo em <code>seusite.com.br/implantes/?v=2611</code>: <b>Ctrl+U</b> → <b>Ctrl+F</b> <code>100 mil</code> → 0 resultados. A frase “Implante · Protocolo · Reabilitação · Vargem Grande do Sul-SP” continua lá.</div></li>
+    <li><label><input type="checkbox" id="s13"></label><div class="txt">Se ainda aparecer a versão antiga: no hPanel, abra a área de <b>Cache</b> ou <b>CDN</b> do site, clique para limpar o cache e confira de novo.</div></li>
+  </ol>
+  <div class="note undo">
+    <h3>Se algo der errado no site</h3>
+    <p>Na pasta da página com problema: renomeie <code>index.html</code> para <code>index-com-erro.html</code> e depois <code>index.backup-2026-11.html</code> para <code>index.html</code>. A página volta a ser exatamente a de antes.</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+(() => {
+  const RULE = {
+    1: { what: 'Menu: “Invisalign” vira “Alinhador”', find: '<a href="#invisalign">Invisalign</a>', repl: '<a href="#invisalign">Alinhador</a>', expect: 1, hints: ['href="#invisalign"'] },
+    2: { what: 'Dra. Claudia: especialidades viram o CRO', find: '<span>Ortodontia · Harmonização · Invisalign Doctor</span>', repl: '<span>CRO-SP 589011</span>', expect: 1, hints: ['Invisalign Doctor', 'Ortodontia · Harmoniza'] },
+    3: { what: 'Dr. James: especialidades viram o CRO', find: '<span>Implante · Protocolo · Reabilitação</span>', repl: '<span>CRO-SP 76945</span>', expect: 1, hints: ['Implante · Protocolo'] },
+    4: { what: 'Apagar o número “+ 100 mil vidas transformadas”', find: '<div class="stat-div"></div><div class="stat-big"><b>+ 100 mil</b><span>vidas transformadas</span></div>', repl: '', gone: '+ 100 mil', expect: 1, hints: ['100 mil', 'vidas transformadas'] },
+    5: { what: 'Apagar “ · + de 100 mil vidas transformadas”', find: ' · + de 100 mil vidas transformadas', repl: '', gone: 'de 100 mil vidas transformadas', expect: 2, hints: ['100 mil', 'vidas transformadas'] }
+  };
+  const PAGES = {
+    principal: { title: 'Página principal', where: 'public_html/index.html', rules: [1,2,3,4,5], out: 'index-AJUSTADO-principal.html' },
+    implantes: { title: 'Página de Implantes', where: 'public_html/implantes/index.html', rules: [4,5], out: 'index-AJUSTADO-implantes.html' }
+  };
+  const STATUS = { ok: 'Encontrado', ja: 'Já estava feito', erro: 'Diferente', wait: 'Aguardando' };
+
+  const count = (hay, needle) => { let n = 0, i = 0; while ((i = hay.indexOf(needle, i)) !== -1) { n++; i += needle.length; } return n; };
+  const clean = s => s.replace(/[A-Za-z0-9+\/=]{60,}/g, '[…]').replace(/\s+/g, ' ');
+  const snippets = (text, needle, max = 5) => {
+    const out = []; let i = 0;
+    while (out.length < max && (i = text.indexOf(needle, i)) !== -1) {
+      out.push(clean(text.slice(Math.max(0, i - 80), Math.min(text.length, i + needle.length + 80))));
+      i += needle.length;
+    }
+    return out;
+  };
+  const mb = b => (b / 1048576).toLocaleString('pt-BR', { maximumFractionDigits: 2 }) + ' MB';
+  const el = (tag, attrs = {}, ...kids) => {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) { if (k === 'class') e.className = v; else if (k === 'text') e.textContent = v; else e.setAttribute(k, v); }
+    for (const k of kids) if (k != null) e.append(k);
+    return e;
+  };
+  const looksLike = text => {
+    const t = (text.match(/<title>([^<]*)<\/title>/i) || [, ''])[1];
+    return /implante/i.test(t) ? 'implantes' : 'principal';
+  };
+
+  function analyze(text, key) {
+    const page = PAGES[key];
+    const rows = page.rules.map(id => {
+      const r = RULE[id];
+      const found = count(text, r.find);
+      let status;
+      if (found === r.expect) status = 'ok';
+      else if (found === 0 && (r.repl ? count(text, r.repl) > 0 : count(text, r.gone) === 0)) status = 'ja';
+      else status = 'erro';
+      return { id, r, found, status };
+    });
+    const problems = [];
+    const kind = looksLike(text);
+    if (kind !== key) problems.push(`Este arquivo parece ser da ${PAGES[kind].title.toLowerCase()}, não da ${page.title.toLowerCase()}. Confira se colocou no quadro certo.`);
+    let out = text;
+    if (!problems.length && rows.every(x => x.status !== 'erro')) {
+      for (const x of rows) if (x.status === 'ok') out = out.split(x.r.find).join(x.r.repl);
+      const left = count(out, '100 mil');
+      if (left) problems.push(`Depois das trocas ainda sobra “100 mil” em ${left} lugar(es) do arquivo. Não gerei o arquivo; me mande o relatório.`);
+      for (const x of rows) if (x.r.repl && count(out, x.r.repl) < 1) problems.push(`Depois das trocas não achei ${x.r.repl}.`);
+    }
+    const hasError = problems.length > 0 || rows.some(x => x.status === 'erro');
+    const allDone = !hasError && rows.every(x => x.status === 'ja');
+    return { rows, problems, hasError, allDone, out, kind };
+  }
+
+  function report(key, file, res, text) {
+    const L = [`Ajustes Fiorini · relatório`, `${PAGES[key].title} · arquivo: ${file.name} (${mb(file.size)})`];
+    for (const x of res.rows) {
+      L.push(`Troca ${x.id} · ${x.r.what}: esperado ${x.r.expect}, encontrado ${x.found} · ${STATUS[x.status]}`);
+      if (x.status === 'erro') for (const h of x.r.hints) {
+        const sn = snippets(text, h);
+        L.push(`  procurei "${h}": ${sn.length ? sn.length + ' trecho(s)' : 'nada'}`);
+        sn.forEach(s => L.push(`    … ${s} …`));
+      }
+    }
+    res.problems.forEach(p => L.push('Atenção: ' + p));
+    if (res.problems.some(p => p.includes('ainda sobra'))) snippets(res.out, '100 mil', 8).forEach(s => L.push(`    … ${s} …`));
+    return L.join('\n');
+  }
+
+  function renderDesk(key, state = {}) {
+    const page = PAGES[key];
+    const desk = document.getElementById('desk-' + key);
+    desk.replaceChildren();
+    desk.append(el('div', { class: 'desk-head' }, el('h3', { text: page.title }), el('span', { class: 'where mono', text: page.where })));
+
+    const input = el('input', { type: 'file', accept: '.html,.htm,text/html', id: 'file-' + key });
+    const drop = el('label', { class: 'drop', for: 'file-' + key },
+      el('strong', { text: state.file ? 'Trocar arquivo' : 'Arraste o arquivo aqui' }),
+      el('span', { text: state.file ? state.file.name : 'ou clique para escolher' }), input);
+    ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+    drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) load(key, f); });
+    input.addEventListener('change', () => { if (input.files[0]) load(key, input.files[0]); });
+    desk.append(drop);
+
+    if (state.file) desk.append(el('p', { class: 'fileinfo', text: `${state.file.name} · ${mb(state.file.size)}` }));
+
+    if (state.fatal) {
+      desk.append(el('div', { class: 'verdict erro' }, el('b', { text: 'Não consegui ler o arquivo.' }), el('span', { text: state.fatal })));
+      return;
+    }
+
+    const tbody = el('tbody');
+    const rows = state.res ? state.res.rows : page.rules.map(id => ({ id, r: RULE[id], found: null, status: 'wait' }));
+    for (const x of rows) {
+      tbody.append(el('tr', {},
+        el('td', { class: 'n', text: String(x.id) }),
+        el('td', {}, el('span', { class: 'what', text: x.r.what }), el('span', { class: 'from', text: x.r.find })),
+        el('td', { class: 'n', text: String(x.r.expect) }),
+        el('td', { class: 'n', text: x.found == null ? '–' : String(x.found) }),
+        el('td', {}, el('span', { class: 'pill ' + x.status, text: STATUS[x.status] }))));
+    }
+    desk.append(el('div', { class: 'tbl-wrap' }, el('table', {},
+      el('thead', {}, el('tr', {}, el('th', { class: 'n', text: '#' }), el('th', { text: 'Troca' }), el('th', { class: 'n', text: 'Esperado' }), el('th', { class: 'n', text: 'Achado' }), el('th', { text: 'Status' }))),
+      tbody)));
+
+    if (!state.res) return;
+    const res = state.res;
+    const actions = el('div', { class: 'actions' });
+
+    if (res.hasError) {
+      const rowErr = res.rows.some(x => x.status === 'erro');
+      const v = el('div', { class: 'verdict erro' }, el('b', { text: 'Parei aqui. Não gerei o arquivo ajustado.' }),
+        rowErr ? el('span', { text: 'Algum trecho não está exatamente igual ao combinado. Clique em Copiar relatório e cole para mim na conversa.' }) : null);
+      res.problems.forEach(p => v.append(el('span', { text: p })));
+      desk.append(v);
+      const hints = el('div', { class: 'hints' });
+      for (const x of res.rows.filter(x => x.status === 'erro')) {
+        hints.append(el('span', { class: 'h-k', text: `Troca ${x.id}: esperado ${x.r.expect}, achado ${x.found}. O que existe parecido no arquivo:` }));
+        for (const h of x.r.hints) {
+          const sn = snippets(state.text, h, 3);
+          hints.append(el('pre', { text: sn.length ? sn.map(s => '… ' + s + ' …').join('\n') : `Nada com “${h}”.` }));
+        }
+      }
+      if (hints.childElementCount) desk.append(hints);
+    } else if (res.allDone) {
+      desk.append(el('div', { class: 'verdict ja' }, el('b', { text: 'Este arquivo já está com todos os ajustes.' }), el('span', { text: 'Não precisa subir nada desta página.' })));
+    } else {
+      const ja = res.rows.filter(x => x.status === 'ja').map(x => x.id);
+      const v = el('div', { class: 'verdict ok' }, el('b', { text: 'Tudo certo. Arquivo ajustado pronto.' }),
+        el('span', { text: `Tamanho: ${mb(state.file.size)} antes, ${mb(state.outBytes.length)} depois. Nenhum “100 mil” sobrou.` }));
+      if (ja.length) v.append(el('span', { text: `Troca(s) ${ja.join(', ')} já estavam feitas no arquivo do site; mantive como estava.` }));
+      desk.append(v);
+      const dl = el('button', { class: 'primary', type: 'button', id: 'dl-' + key, text: 'Baixar arquivo ajustado' });
+      dl.addEventListener('click', () => {
+        const blob = new Blob([state.outBytes], { type: 'text/html' });
+        const a = el('a', { href: URL.createObjectURL(blob), download: page.out });
+        document.body.append(a); a.click(); a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+        toast.textContent = `Salvo em Downloads como ${page.out}`;
+      });
+      actions.append(dl);
+    }
+    const copy = el('button', { type: 'button', id: 'rp-' + key, text: 'Copiar relatório' });
+    const toast = el('span', { class: 'toast', role: 'status' });
+    const area = el('textarea', { class: 'report', readonly: '', id: 'rt-' + key });
+    area.value = state.reportText; area.hidden = true;
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(state.reportText); toast.textContent = 'Relatório copiado. Cole na conversa.'; }
+      catch { area.hidden = false; area.focus(); area.select(); toast.textContent = 'Selecionei o texto: aperte Ctrl+C.'; }
+    });
+    actions.append(copy, toast);
+    desk.append(actions, area);
+  }
+
+  async function load(key, file) {
+    const buf = await file.arrayBuffer();
+    let text;
+    try { text = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(buf); }
+    catch { renderDesk(key, { file, fatal: 'O arquivo não está em UTF-8. Não mexi em nada; me avise na conversa.' }); return; }
+    if (!/<html|<body|<head/i.test(text.slice(0, 5000))) { renderDesk(key, { file, fatal: 'Isso não parece uma página HTML. Confira se baixou o index.html certo.' }); return; }
+    const res = analyze(text, key);
+    const outBytes = res.hasError || res.allDone ? null : new TextEncoder().encode(res.out);
+    renderDesk(key, { file, text, res, outBytes, reportText: report(key, file, res, text) });
+  }
+
+  renderDesk('principal');
+  renderDesk('implantes');
+  window.addEventListener('dragover', e => e.preventDefault());
+  window.addEventListener('drop', e => e.preventDefault());
+
+  const KEY = 'ajustes-fiorini-passos';
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch { saved = {}; }
+  document.querySelectorAll('ol.steps input[type=checkbox]').forEach(cb => {
+    const li = cb.closest('li');
+    cb.checked = !!saved[cb.id]; li.classList.toggle('done', cb.checked);
+    cb.addEventListener('change', () => {
+      li.classList.toggle('done', cb.checked); saved[cb.id] = cb.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch {}
+    });
+  });
+})();
+</script>
+</body>
+</html>
