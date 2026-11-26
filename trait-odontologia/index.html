@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trait · Proposta de Redesign</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Sora:wght@300;400;500;600;700&family=Zen+Antique+Soft&display=swap">
+<style>
+/* Layout: barra de apresentação fixa + "palco" onde cada modelo roda dentro de uma moldura (navegador ou celular).
+   Os modelos usam container queries, então a moldura de celular mostra o layout mobile real. */
+:root{
+  --vinho:#974749; --vinho-esc:#7c3638; --bordo:#541126;
+  --rose:#E8C7BE; --rose-2:#DBB5AB; --rose-claro:#F6E8E3;
+  --creme:#F9EFDD; --marfim:#FBF7F2; --nevoa:#F3EEEA;
+  --tinta:#2B1D1E; --tinta-2:#5E4C4D; --linha:#E7DAD3;
+  --palco:#E4DCD8; --shell:#241517;
+  --f-zen:"Zen Antique Soft", Georgia, "Times New Roman", serif;
+  --f-corm:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --f-sora:"Sora", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --shell-h:64px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{background:var(--palco); color:var(--tinta); font-family:var(--f-sora); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--vinho); outline-offset:3px}
+.ic{width:18px; height:18px; flex:none; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
+.ph{background:#FFF1BF; color:#5F4500; padding:1px 6px; border-radius:5px; font-weight:500; white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; scroll-behavior:auto!important}}
+
+/* ---------- Barra da apresentação ---------- */
+.shell{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:var(--shell); color:var(--creme)}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:60; background:var(--shell)}
+.shell-in{display:flex; align-items:center; gap:20px; min-height:var(--shell-h); padding-left:max(20px, env(safe-area-inset-left,0px)); padding-right:max(20px, env(safe-area-inset-right,0px))}
+.shell-brand{display:flex; align-items:center; gap:12px; font-size:12.5px; letter-spacing:.04em; color:#CDB8B1; white-space:nowrap}
+.shell-brand img{height:22px; width:auto}
+.shell-brand span{padding-left:12px; border-left:1px solid rgba(249,239,221,.22)}
+.tabs{display:flex; gap:4px; overflow-x:auto; scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{color:#EBDCD6; text-decoration:none; font-size:14px; padding:9px 15px; border-radius:999px; white-space:nowrap}
+.tabs a:hover{background:rgba(232,199,190,.14)}
+.tabs a[aria-current="page"]{background:var(--rose); color:var(--bordo); font-weight:600}
+.tabs a:focus-visible,.dev button:focus-visible{outline-color:var(--rose)}
+.dev{margin-left:auto; display:flex; gap:2px; background:rgba(255,255,255,.08); border-radius:999px; padding:3px}
+.dev button{appearance:none; border:0; background:transparent; color:#EBDCD6; font:500 13px/1 var(--f-sora); padding:9px 14px; border-radius:999px; cursor:pointer; display:inline-flex; align-items:center; gap:7px}
+.dev button[aria-pressed="true"]{background:var(--creme); color:var(--bordo)}
+.dev .ic{width:16px; height:16px}
+body:not(.on-model) .dev{visibility:hidden}
+@media (max-width:860px){
+  .shell-in{flex-wrap:wrap; gap:6px 12px; padding-block:10px}
+  .tabs{order:3; width:100%}
+}
+@media (max-width:700px){ .dev{display:none} .shell-brand span{display:none} }
+
+/* ---------- Intro de cada modelo + palco ---------- */
+.m-intro{background:var(--palco); padding-block:28px 6px; padding-left:max(20px, env(safe-area-inset-left,0px)); padding-right:max(20px, env(safe-area-inset-right,0px))}
+.m-intro-in{max-width:1320px; margin-inline:auto; display:grid; grid-template-columns:auto 1fr auto; gap:8px 28px; align-items:start}
+.m-tag{font:600 12px/1 var(--f-sora); letter-spacing:.14em; text-transform:uppercase; color:var(--vinho); padding-top:10px}
+.m-intro h2{margin:0; font-family:var(--f-zen); font-weight:400; font-size:30px; line-height:1.15; color:var(--bordo)}
+.m-intro p{margin:6px 0 0; max-width:60em; color:var(--tinta-2); font-size:15px}
+.m-fit{background:#fff; border-radius:14px; padding:12px 16px; font-size:13.5px; max-width:300px; color:var(--tinta-2)}
+.m-fit b{display:block; color:var(--tinta); font-size:12px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:2px}
+@media (max-width:860px){ .m-intro-in{grid-template-columns:1fr} .m-tag{padding-top:0} .m-fit{max-width:none} }
+.stage{padding-block:22px 72px; padding-left:max(20px, env(safe-area-inset-left,0px)); padding-right:max(20px, env(safe-area-inset-right,0px))}
+.frame{max-width:1320px; margin-inline:auto; border-radius:14px; overflow:clip; background:#fff; box-shadow:0 1px 0 rgba(36,21,23,.06), 0 30px 70px -34px rgba(36,21,23,.5)}
+.frame-bar{height:40px; background:#EFE8E4; display:flex; align-items:center; gap:7px; padding-inline:16px; border-bottom:1px solid #E2D7D1}
+.frame-bar i{width:11px; height:11px; border-radius:50%; background:#D8CAC4}
+.frame-url{flex:0 1 380px; margin-inline:auto; background:#fff; border-radius:8px; font-size:12px; color:var(--tinta-2); padding:5px 12px; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.device{container:site / inline-size; background:#fff}
+body.phone .frame{max-width:410px; border-radius:46px; border:10px solid #1E1416; box-shadow:0 40px 80px -30px rgba(36,21,23,.55)}
+body.phone .frame-bar{display:none}
+body.phone .device{height:min(820px, calc(100dvh - 210px)); min-height:520px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:none}
+body.phone .device::-webkit-scrollbar{display:none}
+@media (max-width:700px){
+  .stage{padding:0 0 0}
+  .frame{border-radius:0; box-shadow:none}
+  .frame-bar{display:none}
+}
+
+/* ---------- Base comum dos modelos ---------- */
+.site{font-family:var(--f-sora); color:var(--tinta); background:#fff; font-size:16px; line-height:1.6; position:relative}
+.site img{display:block; max-width:100%}
+:where(.site) :is(h1,h2,h3,h4){margin:0; text-wrap:balance}
+:where(.site) p{margin:0}
+.site section[id]{scroll-margin-top:calc(var(--shell-h) + 16px)}
+body.phone .site section[id]{scroll-margin-top:0}
+.hide-sm{display:inline}
+@container site (max-width:640px){ .hide-sm{display:none} }
+.menu-btn{display:none; appearance:none; border:0; background:transparent; width:44px; height:44px; border-radius:12px; align-items:center; justify-content:center; color:inherit; cursor:pointer}
+.menu-btn .ic{width:24px; height:24px}
+.stars{display:inline-flex; gap:2px; color:#D99A2B}
+.stars svg{width:15px; height:15px}
+.fab-wrap{position:sticky; bottom:0; height:0; display:flex; justify-content:flex-end; pointer-events:none; z-index:20}
+.fab{pointer-events:auto; transform:translateY(calc(-100% - 20px)); margin-right:20px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 22px 0 18px; border-radius:999px; background:var(--vinho); color:#fff; text-decoration:none; font:600 15px/1 var(--f-sora); box-shadow:0 14px 30px -12px rgba(84,17,38,.55)}
+.fab:hover{background:var(--vinho-esc)}
+.fab .ic{width:22px; height:22px}
+
+/* =====================================================
+   MODELO A — ESSENCIAL
+   ===================================================== */
+.a-wrap{max-width:1180px; margin-inline:auto; padding-inline:40px}
+@container site (max-width:640px){ .a-wrap{padding-inline:20px} }
+.a-btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:50px; padding:0 26px; border-radius:999px; font:600 15px/1 var(--f-sora); text-decoration:none; border:1.5px solid transparent; transition:background .2s, color .2s}
+.a-btn .ic{width:20px; height:20px}
+.a-btn.v{background:var(--vinho); color:#fff}
+.a-btn.v:hover{background:var(--vinho-esc)}
+.a-btn.g{border-color:var(--vinho); color:var(--vinho)}
+.a-btn.g:hover{background:var(--vinho); color:#fff}
+.a-btn.c{background:var(--creme); color:var(--bordo)}
+.a-btn.c:hover{background:#fff}
+
+.a-top{background:var(--bordo); color:var(--creme); font-size:13px}
+.a-top-in{display:flex; justify-content:space-between; gap:4px 24px; flex-wrap:wrap; padding-block:9px}
+.a-top span{display:inline-flex; align-items:center; gap:8px}
+.a-top .ic{width:15px; height:15px}
+.a-head{background:var(--creme); position:relative; z-index:6}
+.a-head-in{display:flex; align-items:center; gap:28px; padding-block:14px}
+.a-logo{height:58px; width:auto}
+.a-nav{display:flex; gap:26px; margin-left:auto}
+.a-nav a{color:var(--vinho); text-decoration:none; font-size:15px; font-weight:500}
+.a-nav a:hover{color:var(--bordo); text-decoration:underline; text-underline-offset:6px}
+.a-head .a-btn{min-height:46px; padding:0 22px}
+.a-head .menu-btn{color:var(--vinho)}
+@container site (max-width:960px){
+  .a-nav{display:none}
+  .a-head .menu-btn{display:inline-flex}
+  .a-head-in{gap:10px}
+  .a-head .a-btn{margin-left:auto}
+  .a-head.open .a-nav{display:flex; flex-direction:column; gap:0; position:absolute; top:100%; left:0; right:0; background:var(--creme); padding:4px 20px 16px; border-top:1px solid var(--linha); box-shadow:0 20px 30px -20px rgba(36,21,23,.35)}
+  .a-head.open .a-nav a{padding:13px 0; border-bottom:1px solid var(--linha)}
+}
+@container site (max-width:640px){
+  .a-logo{height:42px}
+  .a-head .a-btn{min-height:42px; padding:0 16px; font-size:14px}
+  .a-top-in{justify-content:center; text-align:center}
+  .a-top span:last-child{display:none}
+}
+
+.a-hero{background:var(--nevoa)}
+.a-hero-in{display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center; padding-block:76px}
+.a-hero h1{font-family:var(--f-zen); font-weight:400; color:var(--vinho); font-size:56px; line-height:1.06; letter-spacing:-.01em}
+.a-hero h1 small{display:block; color:var(--bordo); font-size:.56em; line-height:1.2; margin-top:16px}
+.a-lead{font-size:19px; margin-top:22px; max-width:29em; color:var(--tinta)}
+.a-ctas{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px}
+.a-facts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px 28px; margin-top:42px; padding-top:24px; border-top:1px solid #DCCFC8}
+.a-facts div{min-width:0}
+.a-facts b{display:block; font-family:var(--f-zen); font-size:30px; line-height:1.1; color:var(--vinho); font-weight:400}
+.a-facts span{font-size:13px; color:var(--tinta-2)}
+.a-hero-img{position:relative; border-radius:28px; overflow:hidden; aspect-ratio:900/615; background:#EDE7E4}
+.a-hero-img img{width:100%; height:100%; object-fit:cover}
+.a-tag{position:absolute; right:18px; bottom:18px; background:rgba(255,255,255,.9); border-radius:14px; padding:10px 16px; font-size:12.5px; color:var(--tinta-2); line-height:1.4}
+.a-tag b{display:block; font-size:14px; color:var(--tinta)}
+@container site (max-width:960px){ .a-hero-in{grid-template-columns:1fr; gap:36px; padding-block:48px 56px} .a-hero h1{font-size:44px} }
+@container site (max-width:640px){
+  .a-hero h1{font-size:34px}
+  .a-lead{font-size:16.5px}
+  .a-ctas .a-btn{flex:1 1 100%}
+  .a-facts{gap:12px 16px}
+  .a-facts span{font-size:12px; display:block; line-height:1.35}
+  .a-facts b{font-size:24px}
+  .a-hero-img{border-radius:20px; aspect-ratio:4/3}
+  .a-tag{left:12px; right:auto; bottom:12px}
+}
+
+.a-sec{padding-block:92px}
+.a-sec.alt{background:var(--marfim)}
+.a-title{max-width:660px; margin-bottom:44px}
+.a-title.center{text-align:center; margin-inline:auto}
+.a-eyebrow{font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--vinho); font-weight:600}
+.a-h2{font-family:var(--f-zen); color:var(--vinho); font-weight:400; font-size:42px; line-height:1.14; margin-top:10px}
+.a-sub{margin-top:14px; color:var(--tinta-2); font-size:17px}
+@container site (max-width:640px){ .a-sec{padding-block:60px} .a-h2{font-size:30px} .a-sub{font-size:15.5px} .a-title{margin-bottom:30px} }
+
+.a-esp{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+.a-card{background:#fff; border:1px solid var(--linha); border-radius:20px; overflow:hidden; display:flex; flex-direction:column}
+.a-card img{width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--nevoa)}
+.a-card div{padding:18px 20px 22px; min-width:0}
+.a-card h3{font-family:var(--f-zen); color:var(--bordo); font-weight:400; font-size:21px; line-height:1.2}
+.a-card p{font-size:14.5px; color:var(--tinta-2); margin-top:8px; line-height:1.55}
+.a-more{display:flex; justify-content:center; margin-top:40px}
+@container site (max-width:1000px){ .a-esp{grid-template-columns:repeat(2,1fr)} }
+@container site (max-width:640px){
+  .a-esp{grid-template-columns:1fr; gap:12px}
+  .a-card{flex-direction:row; border-radius:16px}
+  .a-card img{width:104px; aspect-ratio:auto; align-self:stretch; height:auto}
+  .a-card div{padding:14px 16px}
+  .a-card h3{font-size:18px}
+  .a-card p{font-size:13.5px; margin-top:4px}
+}
+
+.a-res{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+.a-res figure{margin:0; min-width:0}
+.a-res img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:16px; background:var(--nevoa)}
+.a-res figcaption{font-size:13px; margin-top:10px; color:var(--tinta-2); line-height:1.4}
+.a-res figcaption b{display:block; color:var(--bordo); font-weight:600; font-size:14.5px}
+@container site (max-width:900px){ .a-res{grid-template-columns:repeat(2,1fr); gap:14px} }
+
+.a-why{display:grid; grid-template-columns:repeat(3,1fr); gap:28px}
+.a-why div{background:#fff; border-radius:20px; padding:30px 28px; border:1px solid var(--linha)}
+.a-why .ico{width:56px; height:56px; border-radius:50%; background:var(--rose-claro); color:var(--vinho); display:grid; place-items:center; margin-bottom:18px}
+.a-why .ico .ic{width:26px; height:26px}
+.a-why h3{font-family:var(--f-zen); font-weight:400; font-size:23px; color:var(--bordo)}
+.a-why p{margin-top:8px; color:var(--tinta-2); font-size:15px}
+@container site (max-width:900px){ .a-why{grid-template-columns:1fr; gap:14px} .a-why div{padding:24px; display:grid; grid-template-columns:56px 1fr; gap:0 18px} .a-why .ico{grid-row:span 2; margin:0} }
+
+.a-dep{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.a-quote{background:#fff; border-radius:20px; padding:26px 26px 22px; border:1px solid var(--linha); display:flex; flex-direction:column; gap:14px; margin:0}
+.a-quote blockquote{margin:0; font-size:15.5px; line-height:1.6; flex:1}
+.a-quote figcaption{font-size:13px; color:var(--tinta-2); border-top:1px solid var(--linha); padding-top:12px}
+.a-quote figcaption b{display:block; color:var(--tinta); font-size:14.5px; font-weight:600}
+.a-g{display:flex; align-items:center; justify-content:center; gap:10px; margin-top:30px; font-size:14px; color:var(--tinta-2)}
+@container site (max-width:900px){
+  .a-dep{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:minmax(260px,78%); overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; scrollbar-width:thin}
+  .a-quote{scroll-snap-align:start}
+}
+
+.a-about{display:grid; grid-template-columns:1fr 1.05fr; gap:64px; align-items:center}
+.a-collage{position:relative; padding:0 56px 56px 0}
+.a-collage img:first-child{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:24px}
+.a-collage img:last-child{position:absolute; right:0; bottom:0; width:46%; aspect-ratio:1; object-fit:cover; border-radius:20px; border:8px solid #fff}
+.a-about-t p{margin-top:16px; color:var(--tinta-2)}
+.a-about-t p:first-of-type{font-size:18px; color:var(--tinta)}
+.a-sign{margin-top:26px; display:flex; align-items:center; gap:14px; font-size:14px; color:var(--tinta-2)}
+.a-sign b{display:block; font-family:var(--f-zen); font-weight:400; font-size:20px; color:var(--vinho)}
+@container site (max-width:900px){ .a-about{grid-template-columns:1fr; gap:36px} .a-collage{padding:0 40px 40px 0; max-width:520px} }
+
+.a-team{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:920px; margin-inline:auto}
+.a-member{display:grid; grid-template-columns:180px 1fr; gap:24px; align-items:center; background:#fff; border:1px solid var(--linha); border-radius:22px; padding:18px}
+.a-member img,.a-member .ph-photo{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:16px}
+.ph-photo{display:grid; place-items:center; align-content:center; gap:8px; background:var(--rose-claro); color:var(--vinho); border:1.5px dashed var(--rose-2); font-size:12.5px; text-align:center; padding:10px}
+.ph-photo .ic{width:34px; height:34px; stroke-width:1.3}
+.a-member h3{font-family:var(--f-zen); font-weight:400; color:var(--bordo); font-size:22px; line-height:1.2}
+.a-member .role{font-size:13px; color:var(--vinho); font-weight:600; margin-top:6px}
+.a-member p{font-size:14.5px; color:var(--tinta-2); margin-top:10px}
+@container site (max-width:900px){ .a-team{grid-template-columns:1fr} }
+@container site (max-width:640px){ .a-member{grid-template-columns:110px 1fr; gap:16px; padding:14px} .a-member h3{font-size:19px} .a-member p{font-size:13.5px} }
+
+.a-insta{display:grid; grid-template-columns:1fr 1.4fr; gap:48px; align-items:center}
+.a-insta-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
+.a-insta-grid img{aspect-ratio:1; width:100%; object-fit:cover; border-radius:12px}
+@container site (max-width:900px){ .a-insta{grid-template-columns:1fr; gap:28px} .a-insta-grid{grid-template-columns:repeat(2,1fr)} }
+
+.a-faq{display:grid; grid-template-columns:.8fr 1.2fr; gap:56px; align-items:start}
+.a-faq-big{font-family:var(--f-sora); font-weight:700; font-size:96px; line-height:.9; color:var(--rose-2); letter-spacing:-.04em}
+.a-faq-big small{display:block; font-size:26px; letter-spacing:0; line-height:1.15; color:var(--vinho); margin-top:10px}
+.a-acc details{border-bottom:1px solid var(--linha)}
+.a-acc summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; align-items:center; padding:20px 0; font-weight:600; color:var(--bordo); font-size:16.5px}
+.a-acc summary::-webkit-details-marker{display:none}
+.a-acc summary .ic{transition:transform .2s; color:var(--vinho)}
+.a-acc details[open] summary .ic{transform:rotate(45deg)}
+.a-acc details p{padding:0 40px 22px 0; color:var(--tinta-2); font-size:15px}
+@container site (max-width:900px){ .a-faq{grid-template-columns:1fr; gap:24px} .a-faq-big{font-size:64px} .a-faq-big small{font-size:20px} }
+
+.a-cta{background:var(--vinho); color:#fff; text-align:center}
+.a-cta .a-wrap{padding-block:80px}
+.a-cta h2{font-family:var(--f-zen); font-weight:400; font-size:40px; line-height:1.15; max-width:16em; margin-inline:auto}
+.a-cta p{margin:16px auto 30px; max-width:36em; color:#F6E3DE; font-size:17px}
+@container site (max-width:640px){ .a-cta .a-wrap{padding-block:56px} .a-cta h2{font-size:28px} .a-cta p{font-size:15.5px} }
+
+.a-foot{background:var(--bordo); color:#F2E2DB; font-size:14.5px}
+.a-foot-in{display:grid; grid-template-columns:1.2fr 1fr 1.2fr 1fr; gap:36px; padding-block:64px 40px}
+.a-foot img{height:52px; width:auto}
+.a-foot h4{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--rose); margin-bottom:12px; font-weight:600}
+.a-foot p{line-height:1.7}
+.a-foot a{color:#fff; text-underline-offset:4px}
+.a-foot .lnk{display:inline-flex; align-items:center; gap:8px; margin-top:10px; font-weight:600}
+.a-legal{border-top:1px solid rgba(242,226,219,.18); padding-block:20px 28px; font-size:12.5px; color:#D9C2BA; display:flex; justify-content:space-between; gap:10px 24px; flex-wrap:wrap}
+@container site (max-width:900px){ .a-foot-in{grid-template-columns:1fr 1fr} }
+@container site (max-width:640px){ .a-foot-in{grid-template-columns:1fr; gap:28px; padding-block:48px 28px} }
+@container site (max-width:640px){ .site-a .fab span{display:none} .site-a .fab{padding:0; width:58px; justify-content:center} }
+
+/* =====================================================
+   MODELO B — BOUTIQUE
+   ===================================================== */
+.site-b{background:var(--marfim); color:var(--tinta)}
+.b-wrap{max-width:1220px; margin-inline:auto; padding-inline:48px}
+@container site (max-width:640px){ .b-wrap{padding-inline:22px} }
+.b-label{font:500 11.5px/1.4 var(--f-sora); letter-spacing:.24em; text-transform:uppercase; color:var(--vinho)}
+.b-h2{font-family:var(--f-corm); font-weight:400; font-size:62px; line-height:1.02; letter-spacing:-.015em; color:var(--bordo); margin-top:14px}
+.b-h2 em{font-style:italic; color:var(--vinho)}
+.b-p{font-size:16px; font-weight:300; line-height:1.75; color:var(--tinta-2)}
+.b-btn{display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:50px; padding:0 26px; border:1px solid var(--bordo); color:var(--bordo); font:500 12px/1 var(--f-sora); letter-spacing:.18em; text-transform:uppercase; text-decoration:none; background:transparent; transition:background .25s, color .25s}
+.b-btn:hover{background:var(--bordo); color:var(--creme)}
+.b-btn.solid{background:var(--bordo); color:var(--creme)}
+.b-btn.solid:hover{background:var(--vinho); border-color:var(--vinho)}
+.b-btn.light{border-color:rgba(249,239,221,.7); color:var(--creme)}
+.b-btn.light:hover{background:var(--creme); color:var(--bordo)}
+.b-btn .ic{width:16px; height:16px}
+@container site (max-width:640px){ .b-h2{font-size:42px} }
+
+.b-head{position:relative; z-index:6}
+.b-head-in{display:flex; align-items:center; gap:36px; padding-block:22px; border-bottom:1px solid var(--linha)}
+.b-logo{height:48px; width:auto}
+.b-nav{display:flex; gap:30px; margin-left:auto}
+.b-nav a{font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tinta); text-decoration:none; padding-block:6px; border-bottom:1px solid transparent}
+.b-nav a:hover{border-color:var(--vinho); color:var(--vinho)}
+.b-head .b-btn{min-height:44px; padding:0 20px}
+.b-head .menu-btn{color:var(--bordo)}
+@container site (max-width:1000px){
+  .b-nav{display:none}
+  .b-head .menu-btn{display:inline-flex}
+  .b-head .b-btn{margin-left:auto}
+  .b-head-in{gap:12px}
+  .b-head.open .b-nav{display:flex; flex-direction:column; gap:0; position:absolute; top:100%; left:0; right:0; background:var(--marfim); padding:6px 22px 18px; box-shadow:0 20px 30px -20px rgba(36,21,23,.35)}
+  .b-head.open .b-nav a{padding:14px 0; border-bottom:1px solid var(--linha)}
+}
+@container site (max-width:640px){ .b-logo{height:38px} .b-head .b-btn{padding:0 14px; letter-spacing:.12em} }
+
+.b-hero-in{display:grid; grid-template-columns:1.2fr .8fr; gap:72px; align-items:center; padding-block:80px 96px}
+.b-h1{font-family:var(--f-corm); font-weight:400; font-size:108px; line-height:.92; letter-spacing:-.025em; color:var(--bordo); margin-top:22px}
+.b-h1 em{font-style:italic; color:var(--vinho); font-weight:400}
+.b-intro{font-size:18px; font-weight:300; line-height:1.75; max-width:27em; margin-top:34px; color:var(--tinta-2)}
+.b-hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-top:40px}
+.b-arch{position:relative; aspect-ratio:4/5; max-width:440px; width:100%; margin-left:auto}
+.b-arch .shape{position:absolute; inset:0; -webkit-clip-path:url(#arco); clip-path:url(#arco); background:var(--nevoa)}
+.b-arch .shape img{width:100%; height:100%; object-fit:cover}
+.b-arch .line{position:absolute; inset:-16px 16px 16px -16px; width:calc(100% + 0px); height:100%; pointer-events:none; overflow:visible}
+.b-arch .line path{fill:none; stroke:var(--rose-2); stroke-width:1}
+.b-arch figcaption{position:absolute; left:-44px; bottom:44px; background:var(--marfim); border:1px solid var(--linha); padding:14px 18px; font-size:12.5px; color:var(--tinta-2); line-height:1.5}
+.b-arch figcaption b{display:block; font-family:var(--f-corm); font-weight:500; font-size:21px; color:var(--bordo); line-height:1.1}
+@container site (max-width:1000px){ .b-hero-in{grid-template-columns:1fr; gap:56px; padding-block:56px 72px} .b-h1{font-size:84px} .b-arch{margin-inline:auto 0; max-width:380px} }
+@container site (max-width:640px){
+  .b-h1{font-size:58px}
+  .b-intro{font-size:16px; margin-top:24px}
+  .b-hero-cta .b-btn{flex:1 1 100%}
+  .b-arch{max-width:290px; margin-inline:auto}
+  .b-arch figcaption{left:-10px; bottom:24px; padding:10px 14px}
+  .b-arch figcaption b{font-size:18px}
+}
+
+.b-facts{border-block:1px solid var(--linha)}
+.b-facts-in{display:grid; grid-template-columns:repeat(3,1fr)}
+.b-facts-in > div{padding:34px 32px; border-left:1px solid var(--linha); display:flex; align-items:baseline; gap:16px}
+.b-facts-in > div:first-child{border-left:0; padding-left:0}
+.b-facts b{font-family:var(--f-corm); font-weight:400; font-size:58px; line-height:1; color:var(--vinho)}
+.b-facts span{font-size:13.5px; color:var(--tinta-2); line-height:1.45}
+@container site (max-width:900px){ .b-facts-in{grid-template-columns:1fr} .b-facts-in > div{border-left:0; border-top:1px solid var(--linha); padding:22px 0} .b-facts-in > div:first-child{border-top:0} .b-facts b{font-size:46px; min-width:86px} }
+
+.b-sec{padding-block:112px}
+@container site (max-width:640px){ .b-sec{padding-block:72px} }
+.b-sec-head{display:grid; grid-template-columns:1fr 1fr; gap:24px 64px; align-items:end; margin-bottom:56px}
+@container site (max-width:900px){ .b-sec-head{grid-template-columns:1fr; margin-bottom:36px} }
+
+.b-idx{border-top:1px solid var(--bordo)}
+.b-grp{display:grid; grid-template-columns:200px 1fr; gap:0 32px; border-bottom:1px solid var(--linha); padding-top:28px}
+.b-grp > .b-label{padding-top:6px}
+.b-row{display:grid; grid-template-columns:1fr 1.1fr 112px; gap:28px; align-items:center; padding-block:0 28px}
+.b-row + .b-row{border-top:1px solid var(--linha); padding-top:28px}
+.b-row h3{font-family:var(--f-corm); font-weight:400; font-size:36px; line-height:1.05; color:var(--bordo); transition:color .2s}
+.b-row p{font-size:15px; font-weight:300; color:var(--tinta-2); line-height:1.65}
+.b-row img{width:112px; aspect-ratio:4/3; object-fit:cover; filter:saturate(.85)}
+.b-row:hover h3{color:var(--vinho); font-style:italic}
+@container site (max-width:900px){ .b-grp{grid-template-columns:1fr} .b-grp > .b-label{padding:0 0 14px} }
+@container site (max-width:640px){ .b-row{grid-template-columns:1fr 76px; gap:6px 16px} .b-row h3{font-size:28px} .b-row p{grid-column:1; font-size:14px} .b-row img{grid-column:2; grid-row:1 / span 2; width:76px; align-self:start} }
+
+.b-dark{background:var(--bordo); color:var(--creme)}
+.b-man{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center}
+.b-man-photos{display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start}
+.b-man-photos img{width:100%; aspect-ratio:3/4; object-fit:cover}
+.b-man-photos img:last-child{margin-top:72px}
+.b-dark .b-label{color:var(--rose)}
+.b-quote{font-family:var(--f-corm); font-style:italic; font-weight:400; font-size:50px; line-height:1.08; margin:20px 0 0; color:var(--creme)}
+.b-dark .b-p{color:#E5CFC8; margin-top:26px}
+.b-man .who{margin-top:28px; font-size:13px; letter-spacing:.06em; color:#E5CFC8}
+.b-man .who b{display:block; font-family:var(--f-corm); font-weight:500; font-size:24px; letter-spacing:0; color:var(--creme)}
+.b-man .b-btn{margin-top:36px}
+@container site (max-width:900px){ .b-man{grid-template-columns:1fr; gap:48px} .b-quote{font-size:38px} }
+@container site (max-width:640px){ .b-man-photos img:last-child{margin-top:40px} .b-quote{font-size:32px} }
+
+.b-steps{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--bordo)}
+.b-step{padding:28px 28px 0 0}
+.b-step + .b-step{padding-left:28px; border-left:1px solid var(--linha)}
+.b-step .n{font-family:var(--f-corm); font-style:italic; font-size:30px; color:var(--rose-2); line-height:1}
+.b-step h3{font-family:var(--f-corm); font-weight:500; font-size:27px; color:var(--bordo); margin-top:22px; line-height:1.1}
+.b-step p{margin-top:12px; font-size:14.5px; font-weight:300; color:var(--tinta-2); line-height:1.7}
+@container site (max-width:900px){ .b-steps{grid-template-columns:1fr 1fr} .b-step:nth-child(3){border-left:0; padding-left:0} .b-step{padding-bottom:28px} }
+@container site (max-width:640px){ .b-steps{grid-template-columns:1fr} .b-step,.b-step + .b-step{padding:22px 0; border-left:0; border-bottom:1px solid var(--linha); display:grid; grid-template-columns:44px 1fr; gap:0 12px} .b-step .n{grid-row:span 2; padding-top:4px} .b-step h3{margin-top:0} }
+
+.b-res{display:grid; grid-template-columns:1.1fr .9fr; gap:72px; align-items:center}
+.b-res-main{margin:0}
+.b-res-main img{width:100%; aspect-ratio:1; object-fit:cover; background:var(--nevoa)}
+.b-res-main figcaption{display:flex; justify-content:space-between; gap:12px; padding-top:14px; font-size:13px; color:var(--tinta-2); border-bottom:1px solid var(--linha); padding-bottom:14px}
+.b-res-main figcaption b{font-family:var(--f-corm); font-weight:500; font-size:22px; color:var(--bordo); line-height:1.1}
+.b-thumbs{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:34px}
+.b-thumbs button{appearance:none; border:0; padding:0; background:none; cursor:pointer; position:relative; aspect-ratio:1; outline-offset:2px}
+.b-thumbs button img{width:100%; height:100%; object-fit:cover; opacity:.62; transition:opacity .2s}
+.b-thumbs button:hover img,.b-thumbs button[aria-pressed="true"] img{opacity:1}
+.b-thumbs button[aria-pressed="true"]::after{content:""; position:absolute; inset:0; border:2px solid var(--vinho)}
+@container site (max-width:900px){ .b-res{grid-template-columns:1fr; gap:40px} }
+
+.b-big{max-width:940px; margin-inline:auto; text-align:center}
+.b-big blockquote{margin:22px 0 0; font-family:var(--f-corm); font-weight:400; font-size:44px; line-height:1.18; color:var(--bordo)}
+.b-big figcaption{margin-top:24px; font-size:13px; color:var(--tinta-2); letter-spacing:.06em}
+.b-big figcaption b{color:var(--tinta); font-weight:500}
+.b-small{display:grid; grid-template-columns:repeat(3,1fr); margin-top:72px; border-top:1px solid var(--linha)}
+.b-small figure{margin:0; padding:28px 28px 0 0}
+.b-small figure + figure{padding-left:28px; border-left:1px solid var(--linha)}
+.b-small blockquote{margin:0; font-family:var(--f-corm); font-style:italic; font-size:22px; line-height:1.35; color:var(--tinta)}
+.b-small figcaption{margin-top:14px; font-size:12.5px; color:var(--tinta-2)}
+@container site (max-width:900px){ .b-big blockquote{font-size:32px} .b-small{grid-template-columns:1fr; margin-top:48px} .b-small figure,.b-small figure + figure{padding:22px 0; border-left:0; border-bottom:1px solid var(--linha)} }
+@container site (max-width:640px){ .b-big blockquote{font-size:27px} }
+
+.b-team{display:grid; grid-template-columns:repeat(2,1fr); gap:64px; max-width:900px; margin-inline:auto}
+.b-member{text-align:center}
+.b-member .shape{-webkit-clip-path:url(#arco); clip-path:url(#arco); aspect-ratio:4/5; background:var(--nevoa); max-width:320px; margin-inline:auto; overflow:hidden}
+.b-member .shape img{width:100%; height:100%; object-fit:cover}
+.b-member .shape.ph-photo{border:0; background:var(--rose-claro)}
+.b-member h3{font-family:var(--f-corm); font-weight:400; font-size:32px; color:var(--bordo); margin-top:24px; line-height:1.1}
+.b-member .role{font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--vinho); margin-top:10px}
+.b-member p{font-size:14.5px; font-weight:300; color:var(--tinta-2); margin:12px auto 0; max-width:26em}
+@container site (max-width:760px){ .b-team{grid-template-columns:1fr; gap:56px} }
+
+.b-faq{display:grid; grid-template-columns:repeat(2,1fr); gap:0 64px; border-top:1px solid var(--bordo)}
+.b-faq div{padding-block:30px; border-bottom:1px solid var(--linha)}
+.b-faq h3{font-family:var(--f-corm); font-weight:500; font-size:25px; line-height:1.2; color:var(--bordo)}
+.b-faq p{margin-top:12px; font-size:15px; font-weight:300; color:var(--tinta-2); line-height:1.7}
+@container site (max-width:900px){ .b-faq{grid-template-columns:1fr} }
+
+.b-contact{display:grid; grid-template-columns:1.1fr .9fr; gap:72px; align-items:end}
+.b-contact .b-h2{color:var(--creme); font-size:76px}
+.b-contact .b-h2 em{color:var(--rose)}
+.b-contact .b-p{color:#E5CFC8; margin-top:22px; max-width:30em}
+.b-contact .cta{display:flex; gap:14px; flex-wrap:wrap; margin-top:36px}
+.b-contact .solid{background:var(--creme); color:var(--bordo); border-color:var(--creme)}
+.b-contact .solid:hover{background:#fff; color:var(--bordo)}
+.b-info{display:grid; gap:0}
+.b-info div{display:grid; grid-template-columns:110px 1fr; gap:16px; padding-block:16px; border-top:1px solid rgba(249,239,221,.2); font-size:15px; font-weight:300}
+.b-info div:last-child{border-bottom:1px solid rgba(249,239,221,.2)}
+.b-info dt{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--rose); padding-top:4px}
+.b-info dd{margin:0; color:var(--creme)}
+.b-info a{color:var(--creme); text-underline-offset:4px}
+.b-fachada{margin-top:96px; aspect-ratio:21/8; overflow:hidden}
+.b-fachada img{width:100%; height:100%; object-fit:cover; object-position:center 58%}
+@container site (max-width:900px){ .b-contact{grid-template-columns:1fr; gap:44px} .b-contact .b-h2{font-size:56px} .b-fachada{margin-top:64px; aspect-ratio:16/9} }
+@container site (max-width:640px){ .b-contact .b-h2{font-size:44px} .b-contact .cta .b-btn{flex:1 1 100%} .b-info div{grid-template-columns:1fr; gap:4px} }
+
+.b-foot{padding-block:44px; text-align:center; font-size:12.5px; color:var(--tinta-2)}
+.b-foot img{height:40px; width:auto; margin:0 auto 18px}
+.b-foot nav{display:flex; justify-content:center; gap:10px 26px; flex-wrap:wrap; margin-bottom:18px}
+.b-foot nav a{font-size:11px; letter-spacing:.2em; text-transform:uppercase; text-decoration:none; color:var(--tinta)}
+
+/* =====================================================
+   MODELO C — AGENDA FÁCIL
+   ===================================================== */
+.site-c{background:#fff}
+.c-wrap{max-width:1180px; margin-inline:auto; padding-inline:36px}
+@container site (max-width:640px){ .c-wrap{padding-inline:18px} }
+.c-btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:54px; padding:0 24px; border-radius:16px; font:600 16px/1.2 var(--f-sora); text-decoration:none; background:var(--vinho); color:#fff; border:0; transition:background .2s}
+.c-btn:hover{background:var(--vinho-esc)}
+.c-btn .ic{width:22px; height:22px}
+.c-btn.o{background:#fff; color:var(--bordo); box-shadow:inset 0 0 0 1.5px var(--rose-2)}
+.c-btn.o:hover{background:var(--rose-claro)}
+.c-h2{font:700 38px/1.1 var(--f-sora); letter-spacing:-.025em; color:var(--bordo)}
+.c-sub{margin-top:12px; color:var(--tinta-2); font-size:16.5px; max-width:36em}
+.c-sec{padding-block:80px}
+.c-sec.soft{background:var(--nevoa)}
+.c-title{margin-bottom:36px}
+@container site (max-width:640px){ .c-h2{font-size:27px} .c-sub{font-size:15px} .c-sec{padding-block:52px} .c-title{margin-bottom:24px} }
+
+.c-head{border-bottom:1px solid var(--linha); position:relative; z-index:6; background:#fff}
+.c-head-in{display:flex; align-items:center; gap:16px; padding-block:12px}
+.c-logo{height:42px; width:auto}
+.c-nav{display:flex; gap:24px; margin-left:auto; font-size:14.5px}
+.c-nav a{text-decoration:none; color:var(--tinta)}
+.c-nav a:hover{color:var(--vinho)}
+.c-head .c-btn{min-height:46px; border-radius:12px; font-size:15px; padding:0 18px}
+@container site (max-width:900px){ .c-nav{display:none} .c-head .c-btn{margin-left:auto} }
+@container site (max-width:640px){ .c-logo{height:34px} .c-head .c-btn{min-height:42px; font-size:14px; padding:0 14px} }
+
+.c-hero{background:var(--rose-claro)}
+.c-hero-in{display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center; padding-block:60px 68px}
+.c-h1{font:700 52px/1.04 var(--f-sora); letter-spacing:-.035em; color:var(--bordo)}
+.c-h1 span{color:var(--vinho)}
+.c-hero p.lead{margin-top:16px; font-size:18px; color:var(--tinta-2); max-width:30em}
+.c-pick{margin-top:28px; background:#fff; border-radius:22px; padding:22px; box-shadow:0 20px 40px -28px rgba(84,17,38,.45)}
+.c-pick-q{font-weight:600; font-size:15px; color:var(--tinta)}
+.c-chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+.c-chip{appearance:none; min-height:42px; padding:0 15px; border-radius:999px; border:1.5px solid var(--linha); background:#fff; font:500 14px/1 var(--f-sora); color:var(--tinta); cursor:pointer; transition:background .15s, border-color .15s, color .15s}
+.c-chip:hover{border-color:var(--rose-2)}
+.c-chip[aria-pressed="true"]{background:var(--bordo); border-color:var(--bordo); color:#fff}
+.c-pick .c-btn{width:100%; margin-top:18px}
+.c-pick small{display:block; margin-top:10px; font-size:12.5px; color:var(--tinta-2); text-align:center}
+.c-photo{position:relative}
+.c-photo img{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:28px; background:#EEE4E0}
+.c-badge{position:absolute; display:flex; align-items:center; gap:10px; background:#fff; border-radius:14px; padding:10px 14px; font-size:13px; line-height:1.3; box-shadow:0 14px 30px -18px rgba(36,21,23,.5); max-width:220px}
+.c-badge b{display:block; font-size:14px; color:var(--bordo)}
+.c-badge .dot{width:36px; height:36px; border-radius:10px; background:var(--rose-claro); color:var(--vinho); display:grid; place-items:center; flex:none}
+.c-badge.one{left:-28px; top:42px}
+.c-badge.two{right:-20px; bottom:46px}
+@container site (max-width:960px){ .c-hero-in{grid-template-columns:1fr; gap:36px; padding-block:40px 52px} .c-photo{max-width:420px} .c-badge.one{left:12px} .c-badge.two{right:12px} }
+@container site (max-width:640px){
+  .c-h1{font-size:33px}
+  .c-hero p.lead{font-size:15.5px}
+  .c-pick{padding:16px; border-radius:18px; margin-top:22px}
+  .c-chip{min-height:40px; font-size:13.5px; padding:0 13px}
+  .c-photo{order:-1; max-width:none}
+  .c-photo img{aspect-ratio:16/13; border-radius:20px; object-position:center 20%}
+  .c-badge{padding:8px 12px; font-size:12px}
+  .c-badge.one{top:auto; bottom:12px; left:12px}
+  .c-badge.two{display:none}
+}
+
+.c-trust{border-bottom:1px solid var(--linha)}
+.c-trust-in{display:grid; grid-template-columns:repeat(3,1fr); gap:0}
+.c-trust-in > div{display:flex; gap:14px; align-items:center; padding:22px 24px; border-left:1px solid var(--linha); font-size:14px; color:var(--tinta-2); line-height:1.4}
+.c-trust-in > div:first-child{border-left:0; padding-left:0}
+.c-trust b{display:block; color:var(--tinta); font-size:14.5px}
+.c-trust .ic{width:26px; height:26px; color:var(--vinho)}
+@container site (max-width:900px){ .c-trust-in{grid-template-columns:1fr} .c-trust-in > div{border-left:0; border-top:1px solid var(--linha); padding:16px 0} .c-trust-in > div:first-child{border-top:0} }
+
+.c-tr{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.c-tcard{border-radius:20px; background:#fff; border:1px solid var(--linha); overflow:hidden; display:flex; flex-direction:column}
+.c-tcard img{width:100%; aspect-ratio:16/11; object-fit:cover; background:var(--nevoa)}
+.c-tcard div{padding:16px 18px 18px; display:flex; flex-direction:column; gap:6px; flex:1}
+.c-tcard h3{font-size:17px; font-weight:700; color:var(--bordo); letter-spacing:-.01em}
+.c-tcard p{font-size:14px; color:var(--tinta-2); line-height:1.5; flex:1}
+.c-tcard a{margin-top:8px; display:inline-flex; align-items:center; gap:6px; font-weight:600; font-size:14px; color:var(--vinho); text-decoration:none; min-height:36px}
+.c-tcard a:hover{text-decoration:underline; text-underline-offset:4px}
+.c-tcard a .ic{width:16px; height:16px}
+@container site (max-width:1000px){ .c-tr{grid-template-columns:repeat(2,1fr)} }
+@container site (max-width:640px){ .c-tr{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:76%; overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:-18px; padding:0 18px 8px; scroll-padding-inline:18px; scrollbar-width:none} .c-tcard{scroll-snap-align:start} }
+
+.c-how{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.c-how div{background:#fff; border-radius:20px; padding:24px; display:grid; grid-template-columns:48px 1fr; gap:4px 16px; align-items:start}
+.c-how .n{grid-row:span 2; width:48px; height:48px; border-radius:50%; background:var(--bordo); color:#fff; display:grid; place-items:center; font-weight:700; font-size:18px}
+.c-how h3{font-size:17px; font-weight:700; color:var(--bordo); padding-top:2px}
+.c-how p{font-size:14.5px; color:var(--tinta-2)}
+@container site (max-width:900px){ .c-how{grid-template-columns:1fr; gap:10px} }
+
+.c-filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px}
+@container site (max-width:640px){ .c-filters{flex-wrap:nowrap; overflow-x:auto; margin-inline:-18px; padding-inline:18px; scrollbar-width:none} .c-filters .c-chip{flex:none} }
+.c-gal{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+.c-gal figure{margin:0; position:relative}
+.c-gal img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:16px; background:var(--nevoa)}
+.c-gal figcaption{position:absolute; left:10px; bottom:10px; background:rgba(255,255,255,.92); color:var(--bordo); font-size:12px; font-weight:600; border-radius:999px; padding:5px 10px}
+@container site (max-width:900px){ .c-gal{grid-template-columns:repeat(3,1fr)} }
+@container site (max-width:640px){ .c-gal{grid-template-columns:repeat(2,1fr); gap:8px} .c-gal img{border-radius:12px} }
+
+.c-revs{display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 32px)/3); gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; scrollbar-width:thin}
+.c-rev{scroll-snap-align:start; background:#fff; border-radius:20px; padding:22px; border:1px solid var(--linha); margin:0; display:flex; flex-direction:column; gap:12px}
+.c-rev blockquote{margin:0; font-size:15px; flex:1}
+.c-rev figcaption{display:flex; align-items:center; gap:10px; font-size:13px; color:var(--tinta-2)}
+.c-rev figcaption b{display:block; color:var(--tinta); font-size:14px}
+.c-av{width:38px; height:38px; border-radius:50%; background:var(--rose); color:var(--bordo); display:grid; place-items:center; font-weight:700; font-size:15px; flex:none}
+.c-rating{display:flex; align-items:center; gap:14px; margin-top:16px; font-size:14px; color:var(--tinta-2)}
+@container site (max-width:900px){ .c-revs{grid-auto-columns:minmax(250px,80%)} }
+
+.c-faq{display:grid; gap:10px; max-width:860px}
+.c-faq details{background:#fff; border-radius:16px; border:1px solid var(--linha)}
+.c-faq summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:18px 20px; font-weight:600; font-size:15.5px; color:var(--tinta)}
+.c-faq summary::-webkit-details-marker{display:none}
+.c-faq summary .pl{width:30px; height:30px; border-radius:50%; background:var(--rose-claro); color:var(--vinho); display:grid; place-items:center; flex:none; transition:transform .2s}
+.c-faq details[open] summary .pl{transform:rotate(45deg)}
+.c-faq details p{padding:0 20px 20px; color:var(--tinta-2); font-size:14.5px}
+
+.c-loc{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch}
+.c-loc-card{background:var(--bordo); color:var(--creme); border-radius:24px; padding:36px; display:flex; flex-direction:column; gap:20px}
+.c-loc-card h2{font:700 32px/1.1 var(--f-sora); letter-spacing:-.02em}
+.c-loc-row{display:flex; gap:14px; align-items:flex-start; font-size:15px; line-height:1.5}
+.c-loc-row .ic{width:22px; height:22px; color:var(--rose); margin-top:1px}
+.c-loc-row b{display:block; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--rose); font-weight:600}
+.c-loc-card .btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:auto; padding-top:8px}
+.c-loc-card .c-btn{background:var(--creme); color:var(--bordo)}
+.c-loc-card .c-btn:hover{background:#fff}
+.c-loc-card .c-btn.o{background:transparent; color:var(--creme); box-shadow:inset 0 0 0 1.5px rgba(249,239,221,.5)}
+.c-loc-card .c-btn.o:hover{background:rgba(249,239,221,.1)}
+.c-loc > img{width:100%; height:100%; min-height:320px; object-fit:cover; border-radius:24px}
+@container site (max-width:900px){ .c-loc{grid-template-columns:1fr} .c-loc > img{min-height:0; aspect-ratio:4/3} }
+@container site (max-width:640px){ .c-loc-card{padding:24px; border-radius:20px} .c-loc-card h2{font-size:24px} .c-loc-card .btns .c-btn{flex:1 1 100%} }
+
+.c-foot{background:var(--nevoa); padding-block:36px; font-size:13px; color:var(--tinta-2)}
+.c-foot-in{display:flex; gap:16px 32px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+.c-foot img{height:34px; width:auto}
+.c-foot a{color:var(--vinho)}
+.c-bar{display:none}
+@container site (max-width:640px){
+  .site-c .fab-wrap{display:none}
+  .c-bar{display:flex; position:sticky; bottom:0; z-index:20; gap:10px; align-items:center; padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px)); background:rgba(255,255,255,.96); border-top:1px solid var(--linha); box-shadow:0 -10px 24px -18px rgba(36,21,23,.5)}
+  .c-bar .c-btn{flex:1; min-height:52px}
+  .c-bar .call{width:52px; min-height:52px; border-radius:14px; display:grid; place-items:center; color:var(--bordo); box-shadow:inset 0 0 0 1.5px var(--rose-2); text-decoration:none}
+}
+
+/* =====================================================
+   DIAGNÓSTICO
+   ===================================================== */
+.diag{background:var(--marfim)}
+.d-wrap{max-width:1100px; margin-inline:auto; padding-left:max(24px, env(safe-area-inset-left,0px)); padding-right:max(24px, env(safe-area-inset-right,0px))}
+.d-hero{padding-block:64px 48px}
+.d-eyebrow{font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--vinho); font-weight:600}
+.d-h1{font-family:var(--f-zen); color:var(--bordo); font-size:48px; line-height:1.1; font-weight:400; max-width:17em; margin:14px 0 0; text-wrap:balance}
+.d-lead{font-size:18px; max-width:44em; color:var(--tinta-2); margin:20px 0 0}
+.d-nav{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px}
+.d-nav a{display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 18px; border-radius:999px; background:#fff; border:1px solid var(--linha); text-decoration:none; font-size:14.5px; font-weight:500; color:var(--bordo)}
+.d-nav a:hover{border-color:var(--vinho)}
+.d-nav a.main{background:var(--vinho); color:#fff; border-color:var(--vinho)}
+.d-nav .ic{width:16px; height:16px}
+.d-sec{padding-block:52px; border-top:1px solid var(--linha); scroll-margin-top:96px}
+.d-h2{font-family:var(--f-zen); font-size:32px; line-height:1.15; color:var(--vinho); font-weight:400; margin:0; text-wrap:balance}
+.d-sec > .d-wrap > p.d-intro{color:var(--tinta-2); margin:10px 0 0; max-width:46em}
+@media (max-width:640px){ .d-h1{font-size:34px} .d-lead{font-size:16px} .d-h2{font-size:26px} .d-hero{padding-block:40px 36px} .d-sec{padding-block:40px} }
+
+.id{display:grid; grid-template-columns:1.1fr 1fr; gap:24px; margin-top:28px; align-items:start}
+.sw{display:grid; grid-template-columns:repeat(5,1fr); gap:10px}
+.sw div{border-radius:14px; overflow:hidden; background:#fff; border:1px solid var(--linha); font-size:12px; color:var(--tinta-2); line-height:1.35}
+.sw i{display:block; height:72px}
+.sw span{display:block; padding:9px 10px}
+.sw b{display:block; color:var(--tinta); font-size:12.5px}
+.tp{display:grid; gap:10px}
+.tp div{background:#fff; border:1px solid var(--linha); border-radius:14px; padding:14px 18px; display:grid; grid-template-columns:64px 1fr; gap:14px; align-items:center; font-size:13px; color:var(--tinta-2)}
+.tp .aa{font-size:40px; line-height:1; color:var(--bordo)}
+.tp b{display:block; color:var(--tinta); font-size:14.5px}
+@media (max-width:860px){ .id{grid-template-columns:1fr} .sw{grid-template-columns:repeat(3,1fr)} }
+
+.fl{margin-top:24px; border-top:1px solid var(--linha)}
+.fi{display:grid; grid-template-columns:120px 1.05fr 1fr; gap:10px 28px; padding-block:24px; border-bottom:1px solid var(--linha)}
+.fi h3{font-size:17.5px; line-height:1.35; margin:0 0 6px; color:var(--tinta); font-weight:600}
+.fi p{margin:0; font-size:14.5px; color:var(--tinta-2)}
+.fi .chip{align-self:start; justify-self:start}
+.fi .do{background:#fff; border-radius:14px; padding:14px 16px; border:1px solid var(--linha)}
+.fi .do b{display:block; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--vinho); margin-bottom:4px}
+.chip{display:inline-block; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:6px 10px; border-radius:999px; white-space:nowrap}
+.chip.u{background:#F7D9D5; color:#8A1F1F}
+.chip.i{background:#F6E6C6; color:#6B4207}
+.chip.m{background:#DFEBE2; color:#285237}
+@media (max-width:860px){ .fi{grid-template-columns:1fr} .fi .chip{justify-self:start} }
+
+.fix{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:26px}
+.fix div{display:flex; gap:12px; align-items:flex-start; background:#fff; border:1px solid var(--linha); border-radius:14px; padding:14px 16px; font-size:14.5px; color:var(--tinta-2)}
+.fix .ic{color:#2F7A49; width:20px; height:20px; margin-top:2px}
+.fix b{color:var(--tinta); font-weight:600}
+@media (max-width:760px){ .fix{grid-template-columns:1fr} }
+
+.serp{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:26px}
+.serp > div{background:#fff; border:1px solid var(--linha); border-radius:16px; padding:18px 20px; font-family:Arial, "Helvetica Neue", sans-serif; min-width:0}
+.serp .lbl{font-family:var(--f-sora); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; color:var(--tinta-2); margin-bottom:12px}
+.serp .lbl.new{color:#2F7A49}
+.serp .u{font-size:12.5px; color:#4D5156}
+.serp .t{font-size:19px; color:#1A0DAB; margin:4px 0 4px; line-height:1.3}
+.serp .ds{font-size:14px; color:#4D5156; line-height:1.55}
+@media (max-width:760px){ .serp{grid-template-columns:1fr} }
+
+.mods{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px}
+.mod{background:#fff; border:1px solid var(--linha); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:border-color .2s, transform .2s}
+.mod:hover{border-color:var(--vinho); transform:translateY(-2px)}
+.mod .spec{height:150px; display:flex; align-items:center; justify-content:space-between; padding:0 24px; gap:12px}
+.mod .spec .aa{font-size:76px; line-height:1}
+.mod .spec .dots{display:flex; gap:6px}
+.mod .spec .dots i{width:18px; height:18px; border-radius:50%; border:1px solid rgba(0,0,0,.08)}
+.mod .body{padding:20px 22px 22px; display:flex; flex-direction:column; gap:8px; flex:1}
+.mod .k{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--vinho); font-weight:600}
+.mod h3{margin:0; font-family:var(--f-zen); font-weight:400; font-size:24px; color:var(--bordo)}
+.mod p{margin:0; font-size:14.5px; color:var(--tinta-2); flex:1}
+.mod .go{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px; color:var(--vinho); margin-top:6px}
+.mod .go .ic{width:16px; height:16px}
+@media (max-width:900px){ .mods{grid-template-columns:1fr} }
+
+.cmp-wrap{overflow-x:auto; margin-top:26px; border:1px solid var(--linha); border-radius:16px; background:#fff}
+.cmp{border-collapse:collapse; width:100%; min-width:720px; font-size:14px}
+.cmp th,.cmp td{padding:14px 16px; text-align:left; vertical-align:top; border-bottom:1px solid var(--linha)}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+.cmp thead th{font-family:var(--f-zen); font-weight:400; font-size:18px; color:var(--bordo); background:var(--nevoa)}
+.cmp tbody th{font-weight:600; color:var(--tinta); width:170px}
+.cmp td{color:var(--tinta-2)}
+.lvl{display:inline-flex; align-items:center; gap:6px; font-weight:600; color:var(--tinta)}
+.lvl i{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--rose-2)}
+.lvl i.on{background:var(--vinho)}
+
+.next{list-style:none; margin:26px 0 0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; counter-reset:n}
+.next li{background:#fff; border:1px solid var(--linha); border-radius:16px; padding:18px; font-size:14.5px; color:var(--tinta-2); counter-increment:n}
+.next li::before{content:counter(n); display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:var(--bordo); color:#fff; font-weight:700; font-size:14px; margin-bottom:12px}
+.next b{display:block; color:var(--tinta); margin-bottom:4px}
+@media (max-width:900px){ .next{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .next{grid-template-columns:1fr} }
+.pend{margin-top:18px; background:#FFF8E1; border:1px solid #F1DFA3; border-radius:16px; padding:18px 20px; font-size:14.5px; color:#4F3A00}
+.pend b{display:block; margin-bottom:6px}
+.pend ul{margin:0; padding-left:18px}
+.pend li{margin-top:4px}
+.d-foot{padding-block:36px 56px; font-size:13px; color:var(--tinta-2); border-top:1px solid var(--linha)}
+</style>
+</head>
+<body>
+
+<!-- Ícones e máscara em arco (o "A" do logotipo) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="arco" clipPathUnits="objectBoundingBox"><path d="M0,1 L0,0.34 C0,0.15 0.28,0.04 0.5,0 C0.72,0.04 1,0.15 1,0.34 L1,1 Z"/></clipPath>
+  </defs>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5z"/><path d="M9.3 8.7c.3-.6.8-.6 1-.1l.6 1.4c.1.3 0 .6-.2.8l-.4.4c.5 1 1.3 1.8 2.3 2.3l.4-.4c.2-.2.5-.3.8-.2l1.4.6c.5.2.5.7-.1 1-.9.5-2 .5-3-.1a8.6 8.6 0 0 1-3-3c-.5-1-.6-2-.1-2.9z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.3 4-1.9 1.3a11 11 0 0 0 6.6 6.6l1.3-1.9 4 1.3v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.6c0 4.3-3 7.6-7 8.8-4-1.2-7-4.5-7-8.8V6.1z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16v4M16.5 18h4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L12 16.5l-5.4 2.9 1.2-5.9L3.4 9.4l6-.7z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16.5V20"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M11 17.5h2"/></symbol>
+  <symbol id="i-family" viewBox="0 0 24 24"><circle cx="8" cy="7" r="2.6"/><circle cx="16.5" cy="9" r="2"/><path d="M3.5 19c.5-3.6 2.2-5.6 4.5-5.6s4 2 4.5 5.6M13 19c.4-2.6 1.6-4 3.5-4s3.1 1.4 3.5 4"/></symbol>
+</svg>
+
+<header class="shell">
+  <div class="shell-in">
+    <div class="shell-brand"><img data-k="logo-claro" alt="Trait Odontologia e Estética"><span>Proposta de redesign</span></div>
+    <nav class="tabs" aria-label="Seções da proposta">
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#modelo-a">Modelo A · Essencial</a>
+      <a href="#modelo-b">Modelo B · Boutique</a>
+      <a href="#modelo-c">Modelo C · Agenda Fácil</a>
+    </nav>
+    <div class="dev" role="group" aria-label="Visualizar como">
+      <button type="button" data-dev="desk" aria-pressed="true"><svg class="ic"><use href="#i-desk"/></svg>Desktop</button>
+      <button type="button" data-dev="phone" aria-pressed="false"><svg class="ic"><use href="#i-mobile"/></svg>Celular</button>
+    </div>
+  </div>
+</header>
+
+<!-- ======================================================================
+     DIAGNÓSTICO
+     ====================================================================== -->
+<main id="v-diag" class="diag">
+  <section class="d-hero">
+    <div class="d-wrap">
+      <p class="d-eyebrow">Trait Odontologia e Estética · Novembro de 2026</p>
+      <h1 class="d-h1">O que ajustar no site atual e três caminhos para o novo layout</h1>
+      <p class="d-lead">Analisamos o site traitodontologia.com.br e montamos três modelos com a mesma identidade: vinho, rosé, creme e as fontes da marca. Os três já trazem as correções abaixo. Use as abas no topo para navegar e o botão <b>Celular</b> para ver cada modelo como o paciente vê no telefone.</p>
+      <div class="d-nav">
+        <a class="main" href="#modelo-a">Ver os modelos <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a href="#d-achados">Diagnóstico</a>
+        <a href="#d-comparar">Comparar modelos</a>
+        <a href="#d-proximos">Próximos passos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-sec">
+    <div class="d-wrap">
+      <h2 class="d-h2">Identidade mantida</h2>
+      <p class="d-intro">Cores tiradas do código do site atual. Nenhum modelo muda a marca; o que muda é a forma de apresentar.</p>
+      <div class="id">
+        <div class="sw">
+          <div><i style="background:#974749"></i><span><b>Vinho</b>#974749 · botões e títulos</span></div>
+          <div><i style="background:#541126"></i><span><b>Bordô</b>#541126 · detalhes e rodapé</span></div>
+          <div><i style="background:#E8C7BE"></i><span><b>Rosé</b>#E8C7BE · fundos e faixas</span></div>
+          <div><i style="background:#DBB5AB"></i><span><b>Rosé médio</b>#DBB5AB · apoio</span></div>
+          <div><i style="background:#F9EFDD"></i><span><b>Creme</b>#F9EFDD · cabeçalho</span></div>
+        </div>
+        <div class="tp">
+          <div><span class="aa" style="font-family:var(--f-zen)">Aa</span><span><b>Zen Antique Soft</b>Títulos (fonte atual do site)</span></div>
+          <div><span class="aa" style="font-family:var(--f-sora)">Aa</span><span><b>Sora</b>Textos e botões (fonte atual do site)</span></div>
+          <div><span class="aa" style="font-family:var(--f-corm); font-style:italic">Aa</span><span><b>Cormorant Garamond</b>Opcional, só no Modelo B, para um tom mais sofisticado</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-sec" id="d-achados">
+    <div class="d-wrap">
+      <h2 class="d-h2">Diagnóstico do site atual</h2>
+      <p class="d-intro">Ordenado por impacto no agendamento. Tudo foi conferido no código e nas imagens do site publicado.</p>
+      <div class="fl">
+        <article class="fi">
+          <span class="chip u">Urgente</span>
+          <div><h3>Três números de WhatsApp diferentes</h3><p>Os botões "Agendar avaliação" abrem conversa com (42) 99132-0826. No rodapé, o texto mostra (42) 98440-2233, mas o link abre conversa com (42) 99995-9110. O paciente pode cair num número que ninguém acompanha.</p></div>
+          <div class="do"><b>O que fazer</b><p>Definir um número oficial e usar o mesmo em todos os botões, no rodapé e no Instagram. Nos modelos usamos o (42) 99132-0826, o dos botões atuais, até a clínica confirmar.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip u">Urgente</span>
+          <div><h3>Especialidades e depoimentos estão dentro de imagens</h3><p>As 8 especialidades e as 13 avaliações do Google são artes e prints. O Google não lê esse texto, leitores de tela também não, e no celular a letra fica pequena.</p></div>
+          <div class="do"><b>O que fazer</b><p>Transformar tudo em texto. Nos modelos isso já está feito, com os textos transcritos das artes atuais.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip i">Importante</span>
+          <div><h3>Seções que aparecem em branco</h3><p>No print de página inteira, os depoimentos, a foto de "Conheça a Trait" e o bloco do Instagram aparecem vazios. Esses conteúdos dependem de carrossel e de imagens de fundo que carregam depois.</p></div>
+          <div class="do"><b>O que fazer</b><p>Usar imagens comuns, leves, e deixar o texto visível desde o primeiro instante.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip i">Importante</span>
+          <div><h3>Fotos pesadas e sem descrição</h3><p>O código usa fotos originais de câmera como fundo (2625 × 3500 px, até 2,7 MB cada). A página tem só 2 tags de imagem, as duas sem texto alternativo. O resto são fundos de CSS, que o Google Imagens não indexa.</p></div>
+          <div class="do"><b>O que fazer</b><p>Exportar cada foto no tamanho em que aparece e descrever todas. As 33 imagens desta proposta somam 1,1 MB juntas.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip i">Importante</span>
+          <div><h3>O site não aparece para "dentista em Guarapuava"</h3><p>O título da página é só "Trait Odontologia" e a descrição repete a frase do topo. As palavras que o paciente digita ("dentista", "Guarapuava", o nome do tratamento) não aparecem.</p></div>
+          <div class="do"><b>O que fazer</b><p>Título e descrição pensados para a busca local. Veja a prévia mais abaixo.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip i">Importante</span>
+          <div><h3>A Dra. Talita não aparece no site</h3><p>Ela é citada pelo nome em 4 das 13 avaliações exibidas e assina as fotos de antes e depois, mas o site não tem seção de equipe.</p></div>
+          <div class="do"><b>O que fazer</b><p>Criar a seção "Nossa equipe" com foto, nome completo e CRO de cada dentista.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip m">Ajuste</span>
+          <div><h3>Falta o número do CRO</h3><p>O site não mostra a inscrição no CRO. O Código de Ética Odontológica pede nome e número de inscrição em toda divulgação.</p></div>
+          <div class="do"><b>O que fazer</b><p>Incluir o CRO de cada dentista e o da clínica na seção de equipe e no rodapé.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip m">Ajuste</span>
+          <div><h3>Endereço sem rota e telefone sem toque</h3><p>Endereço e telefone aparecem só como texto no rodapé. No celular, o paciente precisa copiar e colar no mapa.</p></div>
+          <div class="do"><b>O que fazer</b><p>Botão "Como chegar" abrindo o Google Maps e telefone que liga com um toque.</p></div>
+        </article>
+        <article class="fi">
+          <span class="chip m">Ajuste</span>
+          <div><h3>Cinco fontes carregadas</h3><p>A página baixa Zen Antique Soft, Sora, Poppins, Roboto e Inter. A identidade usa duas.</p></div>
+          <div class="do"><b>O que fazer</b><p>Carregar só as fontes da marca. A página abre mais rápido, principalmente no 4G.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-sec">
+    <div class="d-wrap">
+      <h2 class="d-h2">O que os três modelos já corrigem</h2>
+      <div class="fix">
+        <div><svg class="ic"><use href="#i-check"/></svg><span><b>Um só WhatsApp</b> em todos os botões, com mensagem pronta.</span></div>
+        <div><svg class="ic"><use href="#i-check"/></svg><span><b>Especialidades e depoimentos em texto</b>, legíveis no celular e pelo Google.</span></div>
+        <div><svg class="ic"><use href="#i-check"/></svg><span><b>Seção de equipe</b> com a Dra. Josiane e a Dra. Talita.</span></div>
+        <div><svg class="ic"><use href="#i-check"/></svg><span><b>CRO no rodapé</b> e na apresentação de cada dentista.</span></div>
+        <div><svg class="ic"><use href="#i-check"/></svg><span><b>Botão "Como chegar"</b> e horário de atendimento sempre à vista.</span></div>
+        <div><svg class="ic"><use href="#i-check"/></svg><span><b>Fotos leves e descritas</b>, sem seções em branco.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-sec">
+    <div class="d-wrap">
+      <h2 class="d-h2">Como o site aparece no Google</h2>
+      <p class="d-intro">Prévia do resultado de busca, hoje e com o título e a descrição propostos.</p>
+      <div class="serp">
+        <div>
+          <p class="lbl">Hoje</p>
+          <div class="u">www.traitodontologia.com.br</div>
+          <div class="t">Trait Odontologia</div>
+          <div class="ds">Tudo começa com um sorriso. Transforme sua qualidade de vida com a Trait</div>
+        </div>
+        <div>
+          <p class="lbl new">Proposta</p>
+          <div class="u">www.traitodontologia.com.br</div>
+          <div class="t">Dentista em Guarapuava | Trait Odontologia e Estética</div>
+          <div class="ds">Clareamento, facetas, implantes, ortodontia e atendimento infantil no Centro de Guarapuava. Agende sua avaliação pelo WhatsApp.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-sec" id="d-comparar">
+    <div class="d-wrap">
+      <h2 class="d-h2">Os três modelos</h2>
+      <p class="d-intro">Mesmo conteúdo e mesma marca, três jeitos de apresentar. Dá para combinar seções de modelos diferentes.</p>
+      <div class="mods">
+        <a class="mod" href="#modelo-a">
+          <div class="spec" style="background:#F9EFDD"><span class="aa" style="font-family:var(--f-zen); color:#974749">Aa</span><span class="dots"><i style="background:#974749"></i><i style="background:#F3EEEA"></i><i style="background:#541126"></i></span></div>
+          <div class="body"><span class="k">Modelo A</span><h3>Essencial</h3><p>A evolução do site atual. Mesma ordem de seções, com os erros corrigidos e acabamento mais limpo.</p><span class="go">Ver modelo <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+        <a class="mod" href="#modelo-b">
+          <div class="spec" style="background:#FBF7F2"><span class="aa" style="font-family:var(--f-corm); font-style:italic; color:#541126">Aa</span><span class="dots"><i style="background:#541126"></i><i style="background:#FBF7F2"></i><i style="background:#DBB5AB"></i></span></div>
+          <div class="body"><span class="k">Modelo B</span><h3>Boutique</h3><p>Tom de clínica de estética premium: tipografia grande, fotos da clínica e o arco do logotipo como moldura.</p><span class="go">Ver modelo <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+        <a class="mod" href="#modelo-c">
+          <div class="spec" style="background:#F6E8E3"><span class="aa" style="font-family:var(--f-sora); font-weight:700; letter-spacing:-.04em; color:#541126">Aa</span><span class="dots"><i style="background:#974749"></i><i style="background:#fff"></i><i style="background:#E8C7BE"></i></span></div>
+          <div class="body"><span class="k">Modelo C</span><h3>Agenda Fácil</h3><p>Feito para o celular: o paciente escolhe o tratamento e o WhatsApp abre com a mensagem pronta.</p><span class="go">Ver modelo <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+      </div>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <thead><tr><th scope="col"></th><th scope="col">A · Essencial</th><th scope="col">B · Boutique</th><th scope="col">C · Agenda Fácil</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Visual</th><td>Próximo do atual: serifada, creme e vinho</td><td>Editorial, com muito respiro e fotos grandes</td><td>Direto, com botões grandes e cartões</td></tr>
+            <tr><th scope="row">Primeira tela</th><td>Dra. Josiane e a frase da marca</td><td>Retrato em arco e frase em destaque</td><td>"O que você procura?" e botão do WhatsApp</td></tr>
+            <tr><th scope="row">Antes e depois</th><td>Galeria em grade</td><td>Foto grande com miniaturas</td><td>Galeria com filtro por tratamento</td></tr>
+            <tr><th scope="row">Agendamento</th><td>Botão flutuante do WhatsApp</td><td>Chamadas discretas e bloco final de contato</td><td>Mensagem pronta por tratamento e barra fixa no celular</td></tr>
+            <tr><th scope="row">Melhor para</th><td>Renovar sem mudar a cara da marca</td><td>Valorizar estética e tratamentos de maior valor</td><td>Anúncios e Instagram, onde a meta é gerar conversas</td></tr>
+            <tr><th scope="row">Esforço de implantação</th><td><span class="lvl"><i class="on"></i><i></i><i></i> Baixo</span></td><td><span class="lvl"><i class="on"></i><i class="on"></i><i></i> Médio</span></td><td><span class="lvl"><i class="on"></i><i class="on"></i><i></i> Médio</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-sec" id="d-proximos">
+    <div class="d-wrap">
+      <h2 class="d-h2">Próximos passos</h2>
+      <ol class="next">
+        <li><b>Escolha do modelo</b>A clínica escolhe um modelo ou combina seções de mais de um.</li>
+        <li><b>Envio do que falta</b>Itens da lista amarela abaixo.</li>
+        <li><b>Ajuste fino</b>Textos, fotos e ordem das seções no modelo escolhido.</li>
+        <li><b>Publicação</b>Site no ar com título e descrição novos para o Google.</li>
+      </ol>
+      <div class="pend">
+        <b>Precisamos da clínica (marcado em amarelo nos modelos)</b>
+        <ul>
+          <li>Número oficial do WhatsApp.</li>
+          <li>Número do CRO da Dra. Josiane, da Dra. Talita e da clínica.</li>
+          <li>Sobrenome, foto profissional e um breve currículo da Dra. Talita.</li>
+          <li>Confirmação de que os pacientes das fotos de antes e depois autorizaram o uso da imagem.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer class="d-foot"><div class="d-wrap">Proposta de redesign para Trait Odontologia e Estética · Guarapuava, PR · Novembro de 2026. Fotos e textos extraídos do site atual.</div></footer>
+</main>
+
+<!-- ======================================================================
+     MODELO A — ESSENCIAL
+     ====================================================================== -->
+<main id="v-a" hidden>
+  <div class="m-intro"><div class="m-intro-in">
+    <span class="m-tag">Modelo A</span>
+    <div><h2>Essencial</h2><p>A evolução do site atual. Mesma ordem de seções que a clínica já aprovou, agora com textos reais, seção de equipe, CRO, um único WhatsApp e fotos leves.</p></div>
+    <div class="m-fit"><b>Indicado para</b>Renovar o site sem mudar a cara da marca.</div>
+  </div></div>
+  <div class="stage"><div class="frame">
+    <div class="frame-bar"><i></i><i></i><i></i><div class="frame-url">traitodontologia.com.br</div></div>
+    <div class="device">
+      <div class="site site-a">
+        <div class="a-top"><div class="a-wrap a-top-in">
+          <span><svg class="ic"><use href="#i-clock"/></svg>Seg. a sex. 9h–12h e 13h30–19h · Sáb. 9h–12h</span>
+          <span><svg class="ic"><use href="#i-pin"/></svg>R. Padre Chagas, 3619 – Centro, Guarapuava</span>
+        </div></div>
+        <header class="a-head"><div class="a-wrap a-head-in">
+          <img class="a-logo" data-k="logo" alt="Trait Odontologia e Estética">
+          <nav class="a-nav" aria-label="Menu">
+            <a href="#a-esp">Especialidades</a><a href="#a-res">Resultados</a><a href="#a-sobre">Sobre nós</a><a href="#a-equipe">Equipe</a><a href="#a-faq">Dúvidas</a>
+          </nav>
+          <a class="a-btn v wa" href="https://wa.me/5542991320826"><svg class="ic"><use href="#i-chat"/></svg><span>Agendar<span class="hide-sm"> avaliação</span></span></a>
+          <button class="menu-btn" type="button" data-menu aria-label="Abrir menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+        </div></header>
+
+        <section class="a-hero"><div class="a-wrap a-hero-in">
+          <div>
+            <h1>Tudo começa com um sorriso.<small>Transforme sua qualidade de vida com a Trait.</small></h1>
+            <p class="a-lead">Mais que estética, a Trait devolve a segurança e a alegria de sorrir sem medos.</p>
+            <div class="a-ctas">
+              <a class="a-btn v wa" href="https://wa.me/5542991320826"><svg class="ic"><use href="#i-chat"/></svg>Agendar avaliação</a>
+              <a class="a-btn g" href="#a-esp">Conhecer as especialidades</a>
+            </div>
+            <div class="a-facts">
+              <div><b>19+</b><span>anos de experiência da fundadora</span></div>
+              <div><b>8</b><span>especialidades na mesma clínica</span></div>
+              <div><b>Sáb.</b><span>atendimento também aos sábados</span></div>
+            </div>
+          </div>
+          <div class="a-hero-img">
+            <img data-k="dra-wide" alt="Dra. Josiane Gavlik Zandonai sorrindo no consultório da Trait">
+            <div class="a-tag"><b>Dra. Josiane Gavlik Zandonai</b>Cirurgiã-dentista · <span class="ph">CRO-PR 00000</span></div>
+          </div>
+        </div></section>
+
+        <section class="a-sec" id="a-esp"><div class="a-wrap">
+          <div class="a-title center">
+            <p class="a-eyebrow">Especialidades</p>
+            <h2 class="a-h2">Conheça nossas especialidades</h2>
+            <p class="a-sub">De implantes dentários a cirurgias gerais. Na Trait, o seu sonho de sorrir novamente é a nossa maior inspiração.</p>
+          </div>
+          <div class="a-esp">
+            <article class="a-card"><img data-k="sp-clareamento" alt="Mulher sorrindo com dentes claros"><div><h3>Clareamento dental</h3><p>Procedimento eficaz para remover manchas e realçar o brilho dos seus dentes.</p></div></article>
+            <article class="a-card"><img data-k="sp-facetas" alt="Comparação de cor de faceta junto ao sorriso"><div><h3>Facetas de porcelana</h3><p>Corrigem imperfeições, transformam o formato e a cor dos dentes e harmonizam o seu sorriso.</p></div></article>
+            <article class="a-card"><img data-k="sp-implantes" alt="Modelo de implante dentário entre dois dentes"><div><h3>Implantes dentários</h3><p>Substituição de dentes perdidos através de próteses fixas sobre implantes.</p></div></article>
+            <article class="a-card"><img data-k="sp-ortodontia" alt="Adolescente com aparelho ortodôntico"><div><h3>Ortodontia</h3><p>Alinhamento dos dentes e correção da mordida, para uma estética agradável e a saúde da sua articulação.</p></div></article>
+            <article class="a-card"><img data-k="sp-proteses" alt="Prótese dentária total nas mãos do dentista"><div><h3>Próteses</h3><p>Restauração da mastigação com próteses que se adaptam à sua boca.</p></div></article>
+            <article class="a-card"><img data-k="sp-clinico" alt="Paciente em consulta de rotina"><div><h3>Clínico geral</h3><p>Consultas de rotina, limpezas e tratamentos preventivos para manter a saúde bucal em dia.</p></div></article>
+            <article class="a-card"><img data-k="sp-pediatria" alt="Criança em atendimento odontológico"><div><h3>Odontopediatria</h3><p>Cuidado da saúde bucal dos pequenos, construindo uma relação positiva com o dentista desde a infância.</p></div></article>
+            <article class="a-card"><img data-k="sp-cirurgia" alt="Procedimento cirúrgico odontológico"><div><h3>Cirurgia</h3><p>Procedimentos bucomaxilofaciais e cirurgias gerais, com total segurança, atenção e o máximo de conforto.</p></div></article>
+          </div>
+          <div class="a-more"><a class="a-btn v wa" href="https://wa.me/5542991320826"><svg class="ic"><use href="#i-chat"/></svg>Tirar dúvidas sobre um tratamento</a></div>
+        </div></section>
+
+        <section class="a-sec alt" id="a-res"><div class="a-wrap">
+          <div class="a-title center">
+            <p class="a-eyebrow">Resultados</p>
+            <h2 class="a-h2">Devolva a beleza e a confiança ao seu sorriso</h2>
+            <p class="a-sub">Veja a transformação que a Trait pode fazer por você. Pacientes reais da clínica.</p>
+          </div>
+          <div class="a-res">
+            <figure><img data-k="r-clareamento" alt="Antes e depois de clareamento dental"><figcaption><b>Clareamento</b>Antes e depois</figcaption></figure>
+            <figure><img data-k="f-1" alt="Paciente antes e depois do tratamento"><figcaption><b>Transformação do sorriso</b>Antes e depois</figcaption></figure>
+            <figure><img data-k="r-protocolo" alt="Antes e depois de implante dentário do tipo protocolo"><figcaption><b>Implante protocolo</b>Antes e depois</figcaption></figure>
+            <figure><img data-k="f-3" alt="Paciente antes e depois do tratamento"><figcaption><b>Transformação do sorriso</b>Antes e depois</figcaption></figure>
+            <figure><img data-k="r-facetas" alt="Antes e depois de clareamento e facetas em porcelana"><figcaption><b>Clareamento e facetas</b>Antes e depois</figcaption></figure>
+            <figure><img data-k="f-2" alt="Paciente antes e depois do tratamento"><figcaption><b>Transformação do sorriso</b>Antes e depois</figcaption></figure>
+            <figure><img data-k="r-coroas" alt="Antes e depois de coroas em porcelana"><figcaption><b>Coroas em porcelana</b>Antes e depois</figcaption></figure>
+            <figure><img data-k="f-4" alt="Paciente antes e depois do tratamento"><figcaption><b>Transformação do sorriso</b>Antes e depois</figcaption></figure>
+          </div>
+        </div></section>
+
+        <section class="a-sec"><div class="a-wrap">
+          <div class="a-title center">
+            <p class="a-eyebrow">Por que a Trait</p>
+            <h2 class="a-h2">Por que escolher a Trait?</h2>
+            <p class="a-sub">Nosso maior objetivo é ajudar a transformar vidas, recuperando a liberdade de ter uma mastigação tranquila e o prazer de sorrir.</p>
+          </div>
+          <div class="a-why">
+            <div><span class="ico"><svg class="ic"><use href="#i-heart"/></svg></span><h3>Cuidado humanizado</h3><p>Atendimento dedicado, em que cada paciente é tratado com a atenção e o respeito que merece.</p></div>
+            <div><span class="ico"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Qualidade e segurança</h3><p>Profissionais qualificados e tratamentos seguros, de alta qualidade, para resultados duradouros.</p></div>
+            <div><span class="ico"><svg class="ic"><use href="#i-spark"/></svg></span><h3>Sonhos realizados</h3><p>Mais do que transformar sorrisos: bem-estar, autoestima e qualidade de vida desde o primeiro contato.</p></div>
+          </div>
+        </div></section>
+
+        <section class="a-sec alt" id="a-dep"><div class="a-wrap">
+          <div class="a-title center">
+            <p class="a-eyebrow">Depoimentos</p>
+            <h2 class="a-h2">Experiências que transformam sorrisos</h2>
+            <p class="a-sub">O que nossos pacientes dizem sobre a experiência na Trait.</p>
+          </div>
+          <div class="a-dep">
+            <figure class="a-quote"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Dra. Talita é super competente, experiente, atenciosa e delicada em todo processo de tratamento, cuidando de todos os detalhes! Gostei muito e super recomendo!"</blockquote><figcaption><b>Renato Liu</b>Avaliação no Google</figcaption></figure>
+            <figure class="a-quote"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"A doutora Talita é uma excelente profissional! Explica detalhadamente os procedimentos, demonstrando muito conhecimento e sempre preocupada com o bem-estar do paciente."</blockquote><figcaption><b>Luciano Novais</b>Avaliação no Google</figcaption></figure>
+            <figure class="a-quote"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Lugar lindo, limpo e aconchegante! Atendimento e profissionais excepcionais!"</blockquote><figcaption><b>Janaina Heinrich</b>Avaliação no Google</figcaption></figure>
+            <figure class="a-quote"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Ótima dentista! É minha dentista desde 2022. Comprometida, atenciosa e muito cuidadosa. Segue me acompanhando."</blockquote><figcaption><b>Vanderleia Velasques</b>Avaliação no Google</figcaption></figure>
+            <figure class="a-quote"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Atendimento excelente, as doutoras super atenciosas, espaço bonito, limpo e super organizado."</blockquote><figcaption><b>Matheus Gurski Szymczak</b>Avaliação no Google</figcaption></figure>
+            <figure class="a-quote"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Dra. Talita me atendeu super bem, fez todo o tratamento com muita excelência, muito dedicada e muito simpática."</blockquote><figcaption><b>A. Fanti</b>Avaliação no Google</figcaption></figure>
+          </div>
+          <p class="a-g"><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>Avaliações reais do perfil da Trait no Google</p>
+        </div></section>
+
+        <section class="a-sec" id="a-sobre"><div class="a-wrap a-about">
+          <div class="a-collage">
+            <img data-k="c-recepcao" alt="Recepção da Trait com o logotipo na parede">
+            <img data-k="c-jardim" alt="Jardim vertical na área de espera">
+          </div>
+          <div class="a-about-t">
+            <p class="a-eyebrow">Sobre nós</p>
+            <h2 class="a-h2">Conheça a Trait</h2>
+            <p>Nossa clínica nasceu do sonho da Dra. Josiane Gavlik Zandonai, cirurgiã-dentista com mais de 19 anos de experiência, que sempre acreditou que cuidar de um sorriso é, acima de tudo, cuidar de pessoas.</p>
+            <p>Aqui, cada paciente é único. O atendimento é pautado na escuta, no respeito e na construção de uma relação de confiança. Cada sorriso tem sua própria história e merece um plano de tratamento individualizado.</p>
+            <p>Unimos tecnologia, excelência técnica e atualização constante para oferecer tratamentos seguros e modernos, com ética, transparência e carinho em cada etapa.</p>
+            <div class="a-sign"><span><b>Dra. Josiane Gavlik Zandonai</b>Fundadora da Trait</span></div>
+          </div>
+        </div></section>
+
+        <section class="a-sec alt" id="a-equipe"><div class="a-wrap">
+          <div class="a-title center">
+            <p class="a-eyebrow">Equipe</p>
+            <h2 class="a-h2">Quem cuida do seu sorriso</h2>
+          </div>
+          <div class="a-team">
+            <article class="a-member">
+              <img data-k="dra" alt="Retrato da Dra. Josiane Gavlik Zandonai">
+              <div><h3>Dra. Josiane Gavlik Zandonai</h3><p class="role">Fundadora · <span class="ph">CRO-PR 00000</span></p><p>Mais de 19 anos de experiência. Fundou a Trait para oferecer uma odontologia mais humana, acolhedora e personalizada.</p></div>
+            </article>
+            <article class="a-member">
+              <div class="ph-photo"><svg class="ic"><use href="#i-user"/></svg>Foto da Dra. Talita</div>
+              <div><h3>Dra. Talita <span class="ph">Sobrenome</span></h3><p class="role">Cirurgiã-dentista · <span class="ph">CRO-PR 00000</span></p><p><span class="ph">Formação e áreas de atuação</span> Citada em 4 das avaliações do Google e responsável pelos casos de antes e depois.</p></div>
+            </article>
+          </div>
+        </div></section>
+
+        <section class="a-sec"><div class="a-wrap a-insta">
+          <div>
+            <p class="a-eyebrow">@traitodontologia</p>
+            <h2 class="a-h2">Conecte-se com a gente</h2>
+            <p class="a-sub">Acompanhe o dia a dia da clínica e inspire-se com histórias de transformação.</p>
+            <p style="margin-top:24px"><a class="a-btn g" href="https://www.instagram.com/traitodontologia/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>Seguir no Instagram</a></p>
+          </div>
+          <div class="a-insta-grid">
+            <img data-k="c-espera" alt="Sala de espera">
+            <img data-k="c-consultorio" alt="Consultório">
+            <img data-k="c-sala" alt="Sala de atendimento">
+            <img data-k="c-corredor" alt="Corredor da clínica">
+          </div>
+        </div></section>
+
+        <section class="a-sec alt" id="a-faq"><div class="a-wrap a-faq">
+          <div class="a-faq-big">FAQ<small>Perguntas frequentes</small></div>
+          <div class="a-acc">
+            <details open><summary>A Trait oferece tratamentos para toda a família, incluindo crianças?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Sim. Oferecemos desde odontopediatria, com cuidado especial para os pequenos, até tratamentos para adultos, como implantes dentários, ortodontia e estética.</p></details>
+            <details><summary>O que diferencia a Trait de outras clínicas?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Entendemos que o sorriso vai além da estética: cuidar dos dentes é cuidar da autoestima e da qualidade de vida. Nossa equipe constrói uma relação de confiança com cada paciente.</p></details>
+            <details><summary>Vocês fazem facetas de resina e de cerâmica? Qual a diferença?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Sim. A faceta de resina é feita no consultório, em menos tempo. A de cerâmica é feita em laboratório, com maior durabilidade e resistência a manchas. Na avaliação, indicamos a melhor para o seu caso.</p></details>
+            <details><summary>Tenho medo de dentista. Como é o atendimento?<svg class="ic"><use href="#i-plus"/></svg></summary><p>O medo é comum. Cada detalhe do atendimento é pensado para você se sentir confortável e seguro, com técnicas atuais e acompanhamento atencioso.</p></details>
+          </div>
+        </div></section>
+
+        <section class="a-cta"><div class="a-wrap">
+          <h2>Não espere mais para ter o sorriso que você sempre sonhou.</h2>
+          <p>A sua avaliação é o primeiro passo. Agende agora e descubra como a Trait pode te ajudar a sorrir sem medo.</p>
+          <a class="a-btn c wa" href="https://wa.me/5542991320826"><svg class="ic"><use href="#i-chat"/></svg>Agendar avaliação</a>
+        </div></section>
+
+        <footer class="a-foot">
+          <div class="a-wrap a-foot-in">
+            <div><img data-k="logo-claro" alt="Trait Odontologia e Estética"><p style="margin-top:14px">Odontologia e estética no Centro de Guarapuava.</p></div>
+            <div><h4>Contato</h4><p>WhatsApp (42) 99132-0826</p><a class="lnk" href="https://www.instagram.com/traitodontologia/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>@traitodontologia</a></div>
+            <div><h4>Endereço</h4><p>R. Padre Chagas, 3619 – Centro<br>Guarapuava – PR, 85010-020</p><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=R.+Padre+Chagas,+3619,+Centro,+Guarapuava,+PR" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Como chegar</a></div>
+            <div><h4>Horário</h4><p>Seg. a sex.: 9h–12h e 13h30–19h<br>Sábado: 9h–12h</p></div>
+          </div>
+          <div class="a-wrap a-legal"><span>Dra. Josiane Gavlik Zandonai · <span class="ph">CRO-PR 00000</span> · Clínica <span class="ph">CRO-PR EPAO 0000</span></span><span>© 2026 Trait Odontologia e Estética</span></div>
+        </footer>
+        <div class="fab-wrap"><a class="fab wa" href="https://wa.me/5542991320826" aria-label="Agendar pelo WhatsApp"><svg class="ic"><use href="#i-chat"/></svg><span>Agendar</span></a></div>
+      </div>
+    </div>
+  </div></div>
+</main>
+
+<!-- ======================================================================
+     MODELO B — BOUTIQUE
+     ====================================================================== -->
+<main id="v-b" hidden>
+  <div class="m-intro"><div class="m-intro-in">
+    <span class="m-tag">Modelo B</span>
+    <div><h2>Boutique</h2><p>Linguagem de clínica de estética premium: tipografia grande, muito respiro e fotos da clínica em destaque. As fotos usam como moldura o arco do "A" do logotipo.</p></div>
+    <div class="m-fit"><b>Indicado para</b>Posicionar a Trait em estética e tratamentos de maior valor.</div>
+  </div></div>
+  <div class="stage"><div class="frame">
+    <div class="frame-bar"><i></i><i></i><i></i><div class="frame-url">traitodontologia.com.br</div></div>
+    <div class="device">
+      <div class="site site-b">
+        <header class="b-head"><div class="b-wrap b-head-in">
+          <img class="b-logo" data-k="logo" alt="Trait Odontologia e Estética">
+          <nav class="b-nav" aria-label="Menu">
+            <a href="#b-trat">Tratamentos</a><a href="#b-clinica">A clínica</a><a href="#b-res">Resultados</a><a href="#b-equipe">Equipe</a><a href="#b-contato">Contato</a>
+          </nav>
+          <a class="b-btn wa" href="https://wa.me/5542991320826">Agendar</a>
+          <button class="menu-btn" type="button" data-menu aria-label="Abrir menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+        </div></header>
+
+        <section class="b-hero"><div class="b-wrap b-hero-in">
+          <div>
+            <p class="b-label">Odontologia e estética · Guarapuava</p>
+            <h1 class="b-h1">Tudo começa com um <em>sorriso.</em></h1>
+            <p class="b-intro">Uma odontologia mais humana, acolhedora e personalizada. Cada sorriso tem sua história e recebe um plano de tratamento pensado só para ele.</p>
+            <div class="b-hero-cta">
+              <a class="b-btn solid wa" href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a>
+              <a class="b-btn" href="#b-trat">Ver tratamentos</a>
+            </div>
+          </div>
+          <figure class="b-arch" style="margin:0">
+            <svg class="line" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0.5,125 L0.5,42.5 C0.5,18.75 28,5 50,0.5 C72,5 99.5,18.75 99.5,42.5 L99.5,125"/></svg>
+            <div class="shape"><img data-k="dra" alt="Dra. Josiane Gavlik Zandonai no consultório"></div>
+            <figcaption><b>Dra. Josiane Gavlik Zandonai</b>Fundadora · <span class="ph">CRO-PR 00000</span></figcaption>
+          </figure>
+        </div></section>
+
+        <div class="b-facts"><div class="b-wrap b-facts-in">
+          <div><b>19</b><span>anos de experiência<br>da fundadora</span></div>
+          <div><b>8</b><span>especialidades<br>na mesma clínica</span></div>
+          <div><b>Sáb.</b><span>atendimento também<br>aos sábados</span></div>
+        </div></div>
+
+        <section class="b-sec" id="b-trat"><div class="b-wrap">
+          <div class="b-sec-head">
+            <div><p class="b-label">Tratamentos</p><h2 class="b-h2">Do cuidado diário à <em>transformação</em> do sorriso</h2></div>
+            <p class="b-p">De implantes dentários a cirurgias gerais. Na Trait, o seu sonho de sorrir novamente é a nossa maior inspiração.</p>
+          </div>
+          <div class="b-idx">
+            <div class="b-grp"><p class="b-label">Estética</p><div>
+              <div class="b-row"><h3>Clareamento dental</h3><p>Remove manchas e realça o brilho natural dos dentes.</p><img data-k="sp-clareamento" alt=""></div>
+              <div class="b-row"><h3>Facetas de porcelana</h3><p>Corrigem imperfeições, formato e cor, harmonizando o sorriso.</p><img data-k="sp-facetas" alt=""></div>
+            </div></div>
+            <div class="b-grp"><p class="b-label">Reabilitação</p><div>
+              <div class="b-row"><h3>Implantes dentários</h3><p>Substituição de dentes perdidos por próteses fixas sobre implantes.</p><img data-k="sp-implantes" alt=""></div>
+              <div class="b-row"><h3>Próteses</h3><p>Devolvem a mastigação com próteses que se adaptam à sua boca.</p><img data-k="sp-proteses" alt=""></div>
+              <div class="b-row"><h3>Cirurgia</h3><p>Procedimentos bucomaxilofaciais e cirurgias gerais, com segurança e conforto.</p><img data-k="sp-cirurgia" alt=""></div>
+            </div></div>
+            <div class="b-grp"><p class="b-label">Cuidado contínuo</p><div>
+              <div class="b-row"><h3>Ortodontia</h3><p>Alinhamento dos dentes e correção da mordida.</p><img data-k="sp-ortodontia" alt=""></div>
+              <div class="b-row"><h3>Clínico geral</h3><p>Consultas de rotina, limpeza e prevenção.</p><img data-k="sp-clinico" alt=""></div>
+              <div class="b-row"><h3>Odontopediatria</h3><p>Uma relação positiva com o dentista desde a infância.</p><img data-k="sp-pediatria" alt=""></div>
+            </div></div>
+          </div>
+        </div></section>
+
+        <section class="b-sec b-dark" id="b-clinica"><div class="b-wrap b-man">
+          <div class="b-man-photos">
+            <img data-k="c-espera" alt="Área de espera da Trait">
+            <img data-k="c-consultorio" alt="Consultório da Trait">
+          </div>
+          <div>
+            <p class="b-label">A clínica</p>
+            <p class="b-quote">"Cuidar de um sorriso é, acima de tudo, cuidar de pessoas."</p>
+            <p class="b-p">Aqui, o atendimento é pautado na escuta, no respeito e na construção de uma relação de confiança. Unimos tecnologia, excelência técnica e atualização constante, com ética, transparência e carinho em cada etapa.</p>
+            <p class="who"><b>Dra. Josiane Gavlik Zandonai</b>Fundadora da Trait</p>
+            <a class="b-btn light wa" href="https://wa.me/5542991320826">Conhecer a clínica pessoalmente</a>
+          </div>
+        </div></section>
+
+        <section class="b-sec"><div class="b-wrap">
+          <div class="b-sec-head">
+            <div><p class="b-label">Sua jornada</p><h2 class="b-h2">Do primeiro contato ao <em>sorriso novo</em></h2></div>
+            <p class="b-p">Cada etapa é explicada com calma, para você decidir com segurança.</p>
+          </div>
+          <div class="b-steps">
+            <div class="b-step"><span class="n">01</span><h3>Avaliação e escuta</h3><p>O atendimento começa pela conversa: sua história, o que incomoda e o que você espera do seu sorriso.</p></div>
+            <div class="b-step"><span class="n">02</span><h3>Plano individualizado</h3><p>Um plano de tratamento feito para o seu caso, explicado com clareza antes de começar.</p></div>
+            <div class="b-step"><span class="n">03</span><h3>Tratamento</h3><p>Técnicas atuais e atenção ao conforto, inclusive para quem tem medo de dentista.</p></div>
+            <div class="b-step"><span class="n">04</span><h3>Acompanhamento</h3><p>Seguimos ao seu lado nas revisões, para o resultado durar.</p></div>
+          </div>
+        </div></section>
+
+        <section class="b-sec" id="b-res" style="background:var(--nevoa)"><div class="b-wrap b-res">
+          <figure class="b-res-main">
+            <img id="b-main" data-k="f-1" alt="Antes e depois de paciente da Trait">
+            <figcaption><b id="b-cap">Transformação do sorriso</b><span>Antes e depois · paciente da clínica</span></figcaption>
+          </figure>
+          <div>
+            <p class="b-label">Resultados</p>
+            <h2 class="b-h2">Sorrisos <em>reais</em>, transformados aqui</h2>
+            <p class="b-p" style="margin-top:20px">Devolva a beleza e a confiança ao seu sorriso. Toque nas fotos para ver outros casos.</p>
+            <div class="b-thumbs">
+              <button type="button" aria-pressed="true" data-cap="Transformação do sorriso"><img data-k="f-1" alt="Caso 1"></button>
+              <button type="button" aria-pressed="false" data-cap="Clareamento"><img data-k="r-clareamento" alt="Caso 2: clareamento"></button>
+              <button type="button" aria-pressed="false" data-cap="Transformação do sorriso"><img data-k="f-5" alt="Caso 3"></button>
+              <button type="button" aria-pressed="false" data-cap="Clareamento e facetas em porcelana"><img data-k="r-facetas" alt="Caso 4: clareamento e facetas"></button>
+              <button type="button" aria-pressed="false" data-cap="Implante protocolo"><img data-k="r-protocolo" alt="Caso 5: implante protocolo"></button>
+              <button type="button" aria-pressed="false" data-cap="Transformação do sorriso"><img data-k="f-4" alt="Caso 6"></button>
+              <button type="button" aria-pressed="false" data-cap="Coroas em porcelana"><img data-k="r-coroas" alt="Caso 7: coroas em porcelana"></button>
+              <button type="button" aria-pressed="false" data-cap="Prótese dentária"><img data-k="r-protese" alt="Caso 8: prótese dentária"></button>
+            </div>
+          </div>
+        </div></section>
+
+        <section class="b-sec"><div class="b-wrap">
+          <figure class="b-big" style="margin-inline:auto">
+            <p class="b-label">Depoimentos</p>
+            <blockquote>"Super competente, experiente, atenciosa e delicada em todo processo de tratamento, cuidando de todos os detalhes."</blockquote>
+            <figcaption><b>Renato Liu</b> · sobre a Dra. Talita, no Google</figcaption>
+          </figure>
+          <div class="b-small">
+            <figure><blockquote>"Explica detalhadamente os procedimentos, demonstrando muito conhecimento."</blockquote><figcaption>Luciano Novais · Google</figcaption></figure>
+            <figure><blockquote>"Lugar lindo, limpo e aconchegante! Atendimento e profissionais excepcionais."</blockquote><figcaption>Janaina Heinrich · Google</figcaption></figure>
+            <figure><blockquote>"Ótimo atendimento, ambiente super agradável e profissionais excelentes."</blockquote><figcaption>Flávia S. Zanotto · Google</figcaption></figure>
+          </div>
+        </div></section>
+
+        <section class="b-sec" id="b-equipe" style="padding-top:0"><div class="b-wrap">
+          <div class="b-sec-head" style="text-align:center; grid-template-columns:1fr"><div><p class="b-label">Equipe</p><h2 class="b-h2">Quem cuida do seu <em>sorriso</em></h2></div></div>
+          <div class="b-team">
+            <article class="b-member"><div class="shape"><img data-k="dra" alt="Dra. Josiane Gavlik Zandonai"></div><h3>Dra. Josiane Gavlik Zandonai</h3><p class="role">Fundadora · <span class="ph">CRO-PR 00000</span></p><p>Mais de 19 anos de experiência na odontologia.</p></article>
+            <article class="b-member"><div class="shape ph-photo"><svg class="ic"><use href="#i-user"/></svg>Foto da Dra. Talita</div><h3>Dra. Talita <span class="ph">Sobrenome</span></h3><p class="role">Cirurgiã-dentista · <span class="ph">CRO-PR 00000</span></p><p><span class="ph">Formação e áreas de atuação</span></p></article>
+          </div>
+        </div></section>
+
+        <section class="b-sec" style="padding-top:0"><div class="b-wrap">
+          <div class="b-sec-head"><div><p class="b-label">Dúvidas</p><h2 class="b-h2">Perguntas <em>frequentes</em></h2></div></div>
+          <div class="b-faq">
+            <div><h3>Vocês atendem a família toda, inclusive crianças?</h3><p>Sim. Da odontopediatria, com cuidado especial para os pequenos, a implantes, ortodontia e estética para adultos.</p></div>
+            <div><h3>Faceta de resina ou de cerâmica?</h3><p>A de resina é feita no consultório, em menos tempo. A de cerâmica é feita em laboratório, com maior durabilidade e resistência a manchas. Indicamos a melhor na avaliação.</p></div>
+            <div><h3>Tenho medo de dentista. Como é o atendimento?</h3><p>O medo é comum. Cada detalhe é pensado para você se sentir confortável e seguro, com técnicas atuais e acompanhamento atencioso.</p></div>
+            <div><h3>O que diferencia a Trait?</h3><p>Cuidar dos dentes é cuidar da autoestima e da qualidade de vida. Construímos uma relação de confiança com cada paciente.</p></div>
+          </div>
+        </div></section>
+
+        <section class="b-sec b-dark" id="b-contato"><div class="b-wrap">
+          <div class="b-contact">
+            <div>
+              <p class="b-label">Contato</p>
+              <h2 class="b-h2">Agende sua <em>avaliação</em></h2>
+              <p class="b-p">A avaliação é o primeiro passo para a sua transformação. Fale com a gente pelo WhatsApp.</p>
+              <div class="cta">
+                <a class="b-btn solid wa" href="https://wa.me/5542991320826">Agendar pelo WhatsApp <svg class="ic"><use href="#i-arrow"/></svg></a>
+                <a class="b-btn light" href="https://www.google.com/maps/search/?api=1&amp;query=R.+Padre+Chagas,+3619,+Centro,+Guarapuava,+PR" target="_blank" rel="noopener">Como chegar</a>
+              </div>
+            </div>
+            <dl class="b-info">
+              <div><dt>Endereço</dt><dd>R. Padre Chagas, 3619 – Centro<br>Guarapuava – PR, 85010-020</dd></div>
+              <div><dt>Horário</dt><dd>Seg. a sex.: 9h–12h e 13h30–19h<br>Sábado: 9h–12h</dd></div>
+              <div><dt>WhatsApp</dt><dd>(42) 99132-0826</dd></div>
+              <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/traitodontologia/" target="_blank" rel="noopener">@traitodontologia</a></dd></div>
+            </dl>
+          </div>
+          <div class="b-fachada"><img data-k="c-fachada" alt="Fachada da Trait na Rua Padre Chagas"></div>
+        </div></section>
+
+        <footer class="b-foot"><div class="b-wrap">
+          <img data-k="logo" alt="Trait Odontologia e Estética">
+          <nav aria-label="Rodapé"><a href="#b-trat">Tratamentos</a><a href="#b-clinica">A clínica</a><a href="#b-res">Resultados</a><a href="#b-contato">Contato</a></nav>
+          <p>Dra. Josiane Gavlik Zandonai · <span class="ph">CRO-PR 00000</span> · Clínica <span class="ph">CRO-PR EPAO 0000</span> · © 2026 Trait Odontologia e Estética</p>
+        </div></footer>
+      </div>
+    </div>
+  </div></div>
+</main>
+
+<!-- ======================================================================
+     MODELO C — AGENDA FÁCIL
+     ====================================================================== -->
+<main id="v-c" hidden>
+  <div class="m-intro"><div class="m-intro-in">
+    <span class="m-tag">Modelo C</span>
+    <div><h2>Agenda Fácil</h2><p>Pensado para o celular e para quem chega pelo Instagram ou por anúncio. O paciente escolhe o tratamento e o WhatsApp abre com a mensagem pronta. No celular, o botão de agendar fica sempre visível.</p></div>
+    <div class="m-fit"><b>Indicado para</b>Campanhas de anúncio e aumento de agendamentos.</div>
+  </div></div>
+  <div class="stage"><div class="frame">
+    <div class="frame-bar"><i></i><i></i><i></i><div class="frame-url">traitodontologia.com.br</div></div>
+    <div class="device">
+      <div class="site site-c">
+        <header class="c-head"><div class="c-wrap c-head-in">
+          <img class="c-logo" data-k="logo" alt="Trait Odontologia e Estética">
+          <nav class="c-nav" aria-label="Menu"><a href="#c-trat">Tratamentos</a><a href="#c-res">Antes e depois</a><a href="#c-dep">Avaliações</a><a href="#c-loc">Como chegar</a></nav>
+          <a class="c-btn wa" href="https://wa.me/5542991320826"><svg class="ic"><use href="#i-chat"/></svg>Agendar</a>
+        </div></header>
+
+        <section class="c-hero"><div class="c-wrap c-hero-in">
+          <div>
+            <h1 class="c-h1">Sorria sem medo. <span>Agende sua avaliação na Trait.</span></h1>
+            <p class="lead">Mais que estética, a Trait devolve a segurança e a alegria de sorrir. Atendimento para toda a família no Centro de Guarapuava.</p>
+            <div class="c-pick">
+              <p class="c-pick-q" id="c-q">O que você procura?</p>
+              <div class="c-chips" role="group" aria-labelledby="c-q">
+                <button class="c-chip" type="button" aria-pressed="false" data-t="clareamento dental" data-l="Agendar avaliação de clareamento">Clareamento</button>
+                <button class="c-chip" type="button" aria-pressed="false" data-t="facetas" data-l="Agendar avaliação de facetas">Facetas</button>
+                <button class="c-chip" type="button" aria-pressed="false" data-t="implantes dentários" data-l="Agendar avaliação de implantes">Implantes</button>
+                <button class="c-chip" type="button" aria-pressed="false" data-t="ortodontia (aparelho)" data-l="Agendar avaliação de aparelho">Aparelho</button>
+                <button class="c-chip" type="button" aria-pressed="false" data-t="próteses" data-l="Agendar avaliação de próteses">Próteses</button>
+                <button class="c-chip" type="button" aria-pressed="false" data-t="atendimento infantil" data-l="Agendar avaliação infantil">Para meu filho</button>
+                <button class="c-chip" type="button" aria-pressed="false" data-t="limpeza e check-up" data-l="Agendar limpeza e check-up">Limpeza e check-up</button>
+                <button class="c-chip" type="button" aria-pressed="false" data-t="">Ainda não sei</button>
+              </div>
+              <a id="c-cta" class="c-btn wa" href="https://wa.me/5542991320826"><svg class="ic"><use href="#i-chat"/></svg><span>Agendar avaliação no WhatsApp</span></a>
+              <small id="c-note">A conversa abre com a sua mensagem já escrita.</small>
+            </div>
+          </div>
+          <div class="c-photo">
+            <img data-k="dra" alt="Dra. Josiane Gavlik Zandonai no consultório">
+            <div class="c-badge one"><span class="dot"><svg class="ic"><use href="#i-shield"/></svg></span><span><b>19+ anos</b>de experiência da fundadora</span></div>
+            <div class="c-badge two"><span class="dot"><svg class="ic"><use href="#i-family"/></svg></span><span><b>Toda a família</b>das crianças aos implantes</span></div>
+          </div>
+        </div></section>
+
+        <div class="c-trust"><div class="c-wrap c-trust-in">
+          <div><svg class="ic"><use href="#i-clock"/></svg><span><b>Seg. a sex. 9h–19h</b>Sábado das 9h às 12h</span></div>
+          <div><svg class="ic"><use href="#i-pin"/></svg><span><b>Centro de Guarapuava</b>R. Padre Chagas, 3619</span></div>
+          <div><svg class="ic"><use href="#i-heart"/></svg><span><b>Atendimento acolhedor</b>Para quem tem medo de dentista</span></div>
+        </div></div>
+
+        <section class="c-sec" id="c-trat"><div class="c-wrap">
+          <div class="c-title"><h2 class="c-h2">Tratamentos</h2><p class="c-sub">Escolha um tratamento e agende a avaliação direto pelo WhatsApp.</p></div>
+          <div class="c-tr">
+            <article class="c-tcard"><img data-k="sp-clareamento" alt="Mulher sorrindo com dentes claros"><div><h3>Clareamento dental</h3><p>Remove manchas e realça o brilho dos dentes.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma avaliação para clareamento dental." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+            <article class="c-tcard"><img data-k="sp-facetas" alt="Faceta sendo comparada ao sorriso"><div><h3>Facetas de porcelana</h3><p>Corrigem formato, cor e pequenas imperfeições.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma avaliação para facetas." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+            <article class="c-tcard"><img data-k="sp-implantes" alt="Modelo de implante dentário"><div><h3>Implantes dentários</h3><p>Dentes fixos no lugar dos que foram perdidos.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma avaliação para implantes dentários." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+            <article class="c-tcard"><img data-k="sp-ortodontia" alt="Adolescente com aparelho"><div><h3>Ortodontia</h3><p>Aparelho para alinhar os dentes e corrigir a mordida.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma avaliação para ortodontia (aparelho)." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+            <article class="c-tcard"><img data-k="sp-proteses" alt="Prótese dentária total"><div><h3>Próteses</h3><p>Devolvem a mastigação com conforto e firmeza.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma avaliação para próteses." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+            <article class="c-tcard"><img data-k="sp-pediatria" alt="Criança em consulta"><div><h3>Odontopediatria</h3><p>Primeiras consultas leves e sem medo para os pequenos.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma avaliação para o meu filho." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+            <article class="c-tcard"><img data-k="sp-clinico" alt="Paciente em consulta de rotina"><div><h3>Clínico geral</h3><p>Limpeza, check-up e prevenção.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma limpeza e check-up." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+            <article class="c-tcard"><img data-k="sp-cirurgia" alt="Procedimento cirúrgico odontológico"><div><h3>Cirurgia</h3><p>Extrações e cirurgias com segurança e conforto.</p><a class="wa" data-msg="Olá! Vim pelo site e gostaria de agendar uma avaliação para cirurgia." href="https://wa.me/5542991320826">Agendar avaliação <svg class="ic"><use href="#i-arrow"/></svg></a></div></article>
+          </div>
+        </div></section>
+
+        <section class="c-sec soft"><div class="c-wrap">
+          <div class="c-title"><h2 class="c-h2">Como funciona a primeira consulta</h2></div>
+          <div class="c-how">
+            <div><span class="n">1</span><h3>Você chama no WhatsApp</h3><p>Toque em qualquer botão. A mensagem já vai escrita.</p></div>
+            <div><span class="n">2</span><h3>Escolhe o melhor horário</h3><p>A equipe confirma o dia da sua avaliação, inclusive aos sábados.</p></div>
+            <div><span class="n">3</span><h3>Recebe o seu plano</h3><p>Na consulta, você conhece as opções de tratamento para o seu caso.</p></div>
+          </div>
+        </div></section>
+
+        <section class="c-sec" id="c-res"><div class="c-wrap">
+          <div class="c-title"><h2 class="c-h2">Antes e depois</h2><p class="c-sub">Pacientes reais da Trait. Filtre pelo tratamento que você procura.</p></div>
+          <div class="c-filters" role="group" aria-label="Filtrar resultados">
+            <button class="c-chip" type="button" aria-pressed="true" data-f="todos">Todos</button>
+            <button class="c-chip" type="button" aria-pressed="false" data-f="clareamento">Clareamento</button>
+            <button class="c-chip" type="button" aria-pressed="false" data-f="resina">Resina</button>
+            <button class="c-chip" type="button" aria-pressed="false" data-f="porcelana">Facetas e coroas</button>
+            <button class="c-chip" type="button" aria-pressed="false" data-f="protese">Próteses e implantes</button>
+            <button class="c-chip" type="button" aria-pressed="false" data-f="rosto">Sorriso completo</button>
+          </div>
+          <div class="c-gal">
+            <figure data-cat="clareamento"><img data-k="r-clareamento" alt="Antes e depois de clareamento"><figcaption>Clareamento</figcaption></figure>
+            <figure data-cat="rosto"><img data-k="f-1" alt="Antes e depois de paciente"><figcaption>Sorriso completo</figcaption></figure>
+            <figure data-cat="protese"><img data-k="r-protocolo" alt="Antes e depois de implante protocolo"><figcaption>Implante protocolo</figcaption></figure>
+            <figure data-cat="porcelana clareamento"><img data-k="r-facetas" alt="Antes e depois de clareamento e facetas"><figcaption>Clareamento e facetas</figcaption></figure>
+            <figure data-cat="resina clareamento"><img data-k="r-resina" alt="Antes e depois de clareamento e restaurações em resina"><figcaption>Clareamento e resina</figcaption></figure>
+            <figure data-cat="rosto"><img data-k="f-6" alt="Antes e depois de paciente"><figcaption>Sorriso completo</figcaption></figure>
+            <figure data-cat="porcelana"><img data-k="r-coroas" alt="Antes e depois de coroas em porcelana"><figcaption>Coroas em porcelana</figcaption></figure>
+            <figure data-cat="protese"><img data-k="r-protese" alt="Antes e depois de prótese dentária"><figcaption>Prótese dentária</figcaption></figure>
+            <figure data-cat="resina"><img data-k="r-resina2" alt="Antes e depois de restaurações em resina"><figcaption>Restaurações em resina</figcaption></figure>
+            <figure data-cat="rosto"><img data-k="f-2" alt="Antes e depois de paciente"><figcaption>Sorriso completo</figcaption></figure>
+            <figure data-cat="clareamento"><img data-k="r-clareamento2" alt="Antes e depois de clareamento"><figcaption>Clareamento</figcaption></figure>
+            <figure data-cat="rosto"><img data-k="f-3" alt="Antes e depois de paciente"><figcaption>Sorriso completo</figcaption></figure>
+          </div>
+        </div></section>
+
+        <section class="c-sec soft" id="c-dep"><div class="c-wrap">
+          <div class="c-title"><h2 class="c-h2">Quem passou pela Trait recomenda</h2>
+            <div class="c-rating"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>Avaliações reais do Google</div>
+          </div>
+          <div class="c-revs">
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Ótima profissional! Explica o que faz aos pacientes e atua com cuidado e atenção. Recomendo a todos!"</blockquote><figcaption><span class="c-av">B</span><span><b>Bruno Kotd</b>Google</span></figcaption></figure>
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Dra. Talita, uma ótima profissional, atenciosa e se dedica muito ao paciente. Agradeço por tudo e pode ter certeza que voltarei!"</blockquote><figcaption><span class="c-av">A</span><span><b>Adriana Oliveira</b>Google</span></figcaption></figure>
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Lugar lindo, limpo e aconchegante! Atendimento e profissionais excepcionais!"</blockquote><figcaption><span class="c-av">J</span><span><b>Janaina Heinrich</b>Google</span></figcaption></figure>
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Ótima dentista! É minha dentista desde 2022. Comprometida, atenciosa e muito cuidadosa."</blockquote><figcaption><span class="c-av">V</span><span><b>Vanderleia Velasques</b>Google</span></figcaption></figure>
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Super bem atendida! Equipe maravilhosa!"</blockquote><figcaption><span class="c-av">V</span><span><b>Vera Zart</b>Google</span></figcaption></figure>
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Profissionais muito competentes! Excelente atendimento."</blockquote><figcaption><span class="c-av">E</span><span><b>Eliane Uniate</b>Google</span></figcaption></figure>
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Ótimo lugar, atendimento excelente, super recomendo!"</blockquote><figcaption><span class="c-av">D</span><span><b>Danielly Andre</b>Google</span></figcaption></figure>
+            <figure class="c-rev"><span class="stars" aria-label="5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><blockquote>"Profissionais gabaritados. Ótimo atendimento."</blockquote><figcaption><span class="c-av">J</span><span><b>João José Rodrigues</b>Google</span></figcaption></figure>
+          </div>
+        </div></section>
+
+        <section class="c-sec"><div class="c-wrap">
+          <div class="c-title"><h2 class="c-h2">Dúvidas comuns</h2></div>
+          <div class="c-faq">
+            <details><summary>Vocês atendem crianças?<span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>Sim. A Trait atende a família toda, da odontopediatria a implantes, ortodontia e estética para adultos.</p></details>
+            <details><summary>Tenho medo de dentista. Como é o atendimento?<span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>O medo é comum. Cada detalhe é pensado para você se sentir confortável e seguro, com técnicas atuais e acompanhamento atencioso.</p></details>
+            <details><summary>Faceta de resina ou de cerâmica: qual escolher?<span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>A de resina é feita no consultório, em menos tempo. A de cerâmica é feita em laboratório, com maior durabilidade e resistência a manchas. Na avaliação, indicamos a melhor para o seu caso.</p></details>
+            <details><summary>Atendem aos sábados?<span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>Sim, aos sábados das 9h às 12h. De segunda a sexta, das 9h às 12h e das 13h30 às 19h.</p></details>
+          </div>
+        </div></section>
+
+        <section class="c-sec soft" id="c-loc"><div class="c-wrap c-loc">
+          <div class="c-loc-card">
+            <h2>Venha conhecer a Trait</h2>
+            <div class="c-loc-row"><svg class="ic"><use href="#i-pin"/></svg><span><b>Endereço</b>R. Padre Chagas, 3619 – Centro, Guarapuava – PR, 85010-020</span></div>
+            <div class="c-loc-row"><svg class="ic"><use href="#i-clock"/></svg><span><b>Horário</b>Seg. a sex.: 9h–12h e 13h30–19h · Sáb.: 9h–12h</span></div>
+            <div class="c-loc-row"><svg class="ic"><use href="#i-phone"/></svg><span><b>WhatsApp</b>(42) 99132-0826</span></div>
+            <div class="btns">
+              <a class="c-btn" href="https://www.google.com/maps/search/?api=1&amp;query=R.+Padre+Chagas,+3619,+Centro,+Guarapuava,+PR" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Como chegar</a>
+              <a class="c-btn o" href="https://www.instagram.com/traitodontologia/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>Instagram</a>
+            </div>
+          </div>
+          <img data-k="c-fachada" alt="Fachada da Trait">
+        </div></section>
+
+        <footer class="c-foot"><div class="c-wrap c-foot-in">
+          <img data-k="logo" alt="Trait Odontologia e Estética">
+          <span>Dra. Josiane Gavlik Zandonai · <span class="ph">CRO-PR 00000</span> · Dra. Talita · <span class="ph">CRO-PR 00000</span></span>
+          <span>© 2026 Trait Odontologia e Estética</span>
+        </div></footer>
+        <div class="fab-wrap"><a class="fab wa" href="https://wa.me/5542991320826" aria-label="Agendar pelo WhatsApp"><svg class="ic"><use href="#i-chat"/></svg><span>Agendar avaliação</span></a></div>
+        <div class="c-bar">
+          <a class="c-btn wa" href="https://wa.me/5542991320826"><svg class="ic"><use href="#i-chat"/></svg>Agendar pelo WhatsApp</a>
+          <a class="call" href="tel:+5542991320826" aria-label="Ligar para a clínica"><svg class="ic"><use href="#i-phone"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</main>
+
+<!--IMG-->
+<script>
+(function(){
+  var IMG = window.__IMG || null;
+  function src(k){ return IMG ? IMG[k] : 'img/' + k + '.webp'; }
+  document.querySelectorAll('[data-k]').forEach(function(el){
+    var s = src(el.getAttribute('data-k'));
+    if (s) el.src = s;
+  });
+
+  // WhatsApp: um número, mensagem pronta
+  var WA = 'https://wa.me/5542991320826?text=';
+  var DEF = 'Olá! Vim pelo site e gostaria de agendar uma avaliação na Trait.';
+  function setWa(a){ a.href = WA + encodeURIComponent(a.getAttribute('data-msg') || DEF); a.target = '_blank'; a.rel = 'noopener'; }
+  document.querySelectorAll('a.wa').forEach(setWa);
+
+  // Navegação entre diagnóstico e modelos
+  var views = {'diagnostico':'v-diag','modelo-a':'v-a','modelo-b':'v-b','modelo-c':'v-c'};
+  var current = null;
+  function route(){
+    var h = (location.hash || '').slice(1);
+    if (!views[h]) {
+      var el = h && document.getElementById(h);
+      if (el && document.getElementById('v-diag').contains(el)) {
+        if (current !== 'diagnostico') show('diagnostico');
+        el.scrollIntoView();
+        return;
+      }
+      h = 'diagnostico';
+    }
+    show(h);
+    window.scrollTo(0, 0);
+  }
+  function show(h){
+    current = h;
+    Object.keys(views).forEach(function(k){ document.getElementById(views[k]).hidden = (k !== h); });
+    document.querySelectorAll('.tabs a').forEach(function(a){
+      if (a.getAttribute('href') === '#' + h) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    document.body.classList.toggle('on-model', h !== 'diagnostico');
+    document.querySelectorAll('.device').forEach(function(d){ d.scrollTop = 0; });
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  // Links internos dos modelos rolam dentro do modelo, sem trocar de aba
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('.site a[href^="#"]');
+    if (!a) return;
+    var t = document.getElementById(a.getAttribute('href').slice(1));
+    if (!t) return;
+    e.preventDefault();
+    t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+    var hd = a.closest('header.open');
+    if (hd) { hd.classList.remove('open'); var mb = hd.querySelector('[data-menu]'); if (mb) mb.setAttribute('aria-expanded','false'); }
+  });
+
+  // Menu dos modelos no celular
+  document.querySelectorAll('[data-menu]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var hd = b.closest('header');
+      var open = hd.classList.toggle('open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // Desktop / celular
+  var devs = document.querySelectorAll('[data-dev]');
+  devs.forEach(function(b){
+    b.addEventListener('click', function(){
+      var phone = b.getAttribute('data-dev') === 'phone';
+      document.body.classList.toggle('phone', phone);
+      devs.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      document.querySelectorAll('header.open').forEach(function(h){ h.classList.remove('open'); });
+    });
+  });
+
+  // Modelo B: visualizador de antes e depois
+  var main = document.getElementById('b-main'), cap = document.getElementById('b-cap');
+  var thumbs = document.querySelectorAll('.b-thumbs button');
+  thumbs.forEach(function(b){
+    b.addEventListener('click', function(){
+      var img = b.querySelector('img');
+      main.src = img.src; main.alt = 'Antes e depois: ' + b.getAttribute('data-cap');
+      cap.textContent = b.getAttribute('data-cap');
+      thumbs.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    });
+  });
+
+  // Modelo C: escolha do tratamento monta a mensagem
+  var cta = document.getElementById('c-cta'), note = document.getElementById('c-note');
+  var chips = document.querySelectorAll('.c-chips .c-chip');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      var t = c.getAttribute('data-t');
+      var msg = t ? 'Olá! Vim pelo site e gostaria de agendar uma avaliação para ' + t + '.' : 'Olá! Vim pelo site e gostaria de agendar uma avaliação. Ainda não sei qual tratamento preciso.';
+      cta.setAttribute('data-msg', msg); setWa(cta);
+      cta.querySelector('span').textContent = c.getAttribute('data-l') || 'Agendar avaliação no WhatsApp';
+      note.textContent = 'Mensagem: "' + msg + '"';
+    });
+  });
+
+  // Modelo C: filtro do antes e depois
+  var fs = document.querySelectorAll('.c-filters .c-chip');
+  var items = document.querySelectorAll('.c-gal figure');
+  fs.forEach(function(f){
+    f.addEventListener('click', function(){
+      var k = f.getAttribute('data-f');
+      fs.forEach(function(x){ x.setAttribute('aria-pressed', x === f ? 'true' : 'false'); });
+      items.forEach(function(it){ it.hidden = !(k === 'todos' || (' ' + it.getAttribute('data-cat') + ' ').indexOf(' ' + k + ' ') > -1); });
+    });
+  });
+})();
+</script>
+</body>
+</html>
