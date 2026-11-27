@@ -7,14 +7,15 @@ const path = require('path');
 const OUT_DIR = __dirname;
 const PLAYERS = ['Eneas C', 'Dene J', 'WJ', 'Anderson C', 'Ruxa', 'Caiu o P'];
 const DIAS = 27;       // dias de jogo: frente = marcação do dia, verso = fechamento do dia
-const XBOX_H = 214;    // altura (mm) do X grande na página de marcação
+const MARK_ROWS = 15;  // linhas na página de marcação (um X por jogador em cada linha)
+const ROW_H = 14.6;    // altura de cada linha (mm)
 const OBS_LINES = 6;   // linhas de observação no verso
 
 // ---------- Cores ----------
 const C = {
   ink: '#1f2522', muted: '#5f6d66', green: '#1e5a46', green2: '#2f7a5e',
   tint: '#e6efea', tint2: '#f3f7f5', line: '#a7bab1', soft: '#d3ded8',
-  gold: '#b07d24', cream: '#f7f2e6', pen: '#2b4a9a', xline: '#9fb4aa', xbig: '#8fb0a2',
+  gold: '#b07d24', cream: '#f7f2e6', pen: '#2b4a9a', xline: '#7f9f92',
 };
 const LVL_COLORS = ['#d9e8df', '#bcd7c8', '#9cc4ae', '#79ad92', '#569476', '#3b7a5d', '#276148', '#164634'];
 
@@ -223,45 +224,39 @@ function levelsPage2() {
 }
 
 // X impresso em cada quadradinho (fundo SVG vetorial)
-const X_BG = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M1 1L9 9M9 1L1 9' stroke='${C.xline}' stroke-width='0.6' stroke-linecap='round' fill='none'/></svg>`)}")`;
 const dot = (r = 1.15) => `<svg class="dot" viewBox="0 0 4 4" width="${r * 2}mm" height="${r * 2}mm"><circle cx="2" cy="2" r="1.75" fill="${C.pen}"/></svg>`;
 
-// Faixa de nomes (fixos) com a linha "outro:" embaixo de cada um
-function namesBand(names = PLAYERS, opts = {}) {
-  const th = names.map((p, i) => `<th class="name">${opts.struck === i ? `<span class="struck">${p}${opts.strikeSvg}</span>` : p}</th>`).join('');
-  const subs = names.map((_, i) => `<th class="sub"><div><span>outro:</span><i>${opts.sub && opts.sub[i] ? `<b class="hand">${opts.sub[i]}</b>` : ''}</i></div></th>`).join('');
-  return `<div class="gridwrap namesband${opts.cls ? ' ' + opts.cls : ''}"><table class="grid"><thead><tr class="names">${th}</tr><tr class="subs">${subs}</tr></thead></table></div>`;
+// Um X por jogador em cada linha (desenhado na proporção da célula)
+function xCell(w, h, xw, xh, dots = 0, wFull = false) {
+  const x0 = (w - xw) / 2, y0 = (h - xh) / 2, x1 = x0 + xw, y1 = y0 + xh;
+  const tips = [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
+  const d = tips.slice(0, dots).map(([x, y]) => `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="1.2" fill="${C.pen}"/>`).join('');
+  return `<svg viewBox="0 0 ${w} ${h}" width="${wFull ? '100%' : w + 'mm'}" height="${h}mm"><path d="M${x0.toFixed(2)} ${y0.toFixed(2)}L${x1.toFixed(2)} ${y1.toFixed(2)}M${x1.toFixed(2)} ${y0.toFixed(2)}L${x0.toFixed(2)} ${y1.toFixed(2)}" stroke="${C.xline}" stroke-width="0.5" stroke-linecap="round" fill="none"/>${d}</svg>`;
 }
 
-// Um único X grande ocupando a área de marcação
-function bigX(w, h, opt = {}) {
-  const r = opt.radius ?? 2.4, inset = opt.inset ?? 5, sw = opt.stroke ?? 0.9;
-  const dots = (opt.dots || []).map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${opt.dotR ?? 1.2}" fill="${C.pen}"/>`).join('');
-  return `<svg class="bigx" viewBox="0 0 ${w} ${h}" width="${w}mm" height="${h}mm">
-    <rect x="0.25" y="0.25" width="${w - 0.5}" height="${h - 0.5}" rx="${r}" fill="#fff" stroke="${C.green}" stroke-width="0.45"/>
-    <g stroke="${C.xbig}" stroke-width="${sw}" stroke-linecap="round" fill="none">
-      <path d="M${inset} ${inset} L${w - inset} ${h - inset}"/><path d="M${w - inset} ${inset} L${inset} ${h - inset}"/>
-    </g>${dots}</svg>`;
+// Grade de marcação: nomes fixos + "outro:" no cabeçalho, linhas com um X por jogador
+function markGrid(o) {
+  const names = o.names || PLAYERS;
+  const th = names.map((p, i) => `<th class="name">${o.struck === i ? `<span class="struck">${p}${o.strikeSvg}</span>` : p}</th>`).join('');
+  const subs = names.map((_, i) => `<th class="sub"><div><span>outro:</span><i>${o.sub && o.sub[i] ? `<b class="hand">${o.sub[i]}</b>` : ''}</i></div></th>`).join('');
+  let body = '';
+  for (let r = 0; r < o.rows; r++) {
+    body += `<tr><td class="rn">${r + 1}</td>${names.map((_, p) => `<td class="x">${xCell(o.colW, o.rowH, o.xw, o.xh, o.dots ? (o.dots[p][r] || 0) : 0, true)}</td>`).join('')}</tr>`;
+  }
+  return `<div class="gridwrap${o.cls ? ' ' + o.cls : ''}"><table class="grid mk">
+    <colgroup><col style="width:${o.rnW}mm">${names.map(() => '<col>').join('')}</colgroup>
+    <thead><tr class="names"><th class="corner" rowspan="2"><span>linha</span></th>${th}</tr><tr class="subs">${subs}</tr></thead>
+    <tbody>${body}</tbody></table></div>`;
 }
 
 function howToPage() {
   const strike = `<svg class="strike" viewBox="0 0 30 6" preserveAspectRatio="none"><path d="M1 3.6 Q 10 2.2 18 3.2 T 29 2.6" stroke="${C.pen}" stroke-width="0.9" fill="none" stroke-linecap="round"/></svg>`;
-  // Exemplo: faixa de nomes + X com algumas bolinhas ao longo dos braços
-  const W = 82, H = 46, i = 3.5;
-  const along = (x1, y1, x2, y2, ts) => ts.map((t) => [x1 + (x2 - x1) * t, y1 + (y2 - y1) * t]);
-  const exDots = [
-    ...along(i, i, W / 2, H / 2, [0.22, 0.42, 0.62]),
-    ...along(W - i, i, W / 2, H / 2, [0.3, 0.55]),
-    ...along(i, H - i, W / 2, H / 2, [0.35]),
-    ...along(W - i, H - i, W / 2, H / 2, [0.25, 0.48, 0.7]),
-  ];
-  const example = `<div class="ex">
-    ${namesBand(['Fulano', 'Beltrano', 'Sicrano'], { struck: 1, strikeSvg: strike, sub: [null, 'Visita', null] })}
-    <div class="ex-x">${bigX(W, H, { inset: i, stroke: 0.7, dots: exDots, dotR: 1.1 })}</div>
-  </div>`;
-
+  const example = `<div class="ex">${markGrid({
+    names: ['Fulano', 'Beltrano', 'Sicrano'], rows: 3, rnW: 7, colW: 25, rowH: 11, xw: 11, xh: 7.6,
+    dots: [[4, 2], [4, 4, 1], [3]], struck: 1, strikeSvg: strike, sub: [null, 'Visita', null],
+  })}</div>`;
   const steps = [
-    ['Um X por página', 'A frente de cada dia tem um único X grande. Quando alguém fizer um ponto, coloque uma bolinha no X, no lugar de quem fez o ponto.'],
+    ['Um X por jogador em cada linha', 'Cada jogador tem a sua coluna, separada por uma linha. Quando alguém fizer um ponto, coloque uma bolinha no X dessa pessoa. Quando o X encher, passe para o X da linha de baixo.'],
     ['Entrou outra pessoa?', 'Risque o nome de quem não jogou e escreva o novo jogador na linha “outro:”, logo abaixo. Os nomes da família continuam impressos em todas as páginas.'],
     ['Feche o dia no verso', 'No verso fica o fechamento do dia: conte as bolinhas de cada um, preencha o placar e monte o pódio e o ranking. O 1º lugar é o campeão(ã) do dia. Os dias de jogo são numerados em ordem (1, 2, 3…) e a data vai no campo Data. No fim do caderno vem o fechamento do mês.'],
   ];
@@ -274,7 +269,7 @@ function howToPage() {
     <div class="howto-top">
       <ol class="steps">${steps.map(([t, d], i) => `<li>${badge(i + 1, 7.5, C.tint, C.green)}<div><b>${t}</b><p>${d}</p></div></li>`).join('')}</ol>
       <div class="ex-col"><div class="ex-label">Exemplo</div>${example}
-        <p class="ex-cap">Beltrano não jogou e foi riscado; a Visita entrou no lugar dele.</p></div>
+        <p class="ex-cap">Fulano fez 6 pontos, a Visita fez 9 e Sicrano fez 3. Beltrano não jogou e foi riscado; a Visita entrou no lugar dele.</p></div>
     </div>
     <div class="rule"></div>
     <div class="kicker">Leitura de jogo</div>
@@ -311,15 +306,14 @@ function podium(champLabel, heights = [24, 33, 17]) {
 const rankRows = (from, to) => Array.from({ length: to - from + 1 }, (_, i) =>
   `<div class="rk-row"><span class="rk-pos">${from + i}º</span><span class="rk-name"></span><span class="rk-pts">pts</span></div>`).join('');
 
-// Frente do dia: página inteira de marcação com um único X
+// Frente do dia: página inteira de marcação, um X por jogador em cada linha
 function markPage(n) {
   return `<div class="page mark">
     ${sheetHead(n, 'Frente · marcação', 'Marcação do dia')}
     ${dateFields(true)}
-    ${namesBand()}
-    <div class="xarea">${bigX(178, XBOX_H)}</div>
+    ${markGrid({ rows: MARK_ROWS, rnW: 8, colW: 28.2, rowH: ROW_H, xw: 15, xh: 10.4 })}
     <div class="mark-foot">
-      <span class="legend"><span class="lg-x">${dot(1)}</span>Ponto feito: uma bolinha no X, no lugar de quem fez o ponto</span>
+      <span class="legend">${xCell(9, 7, 6, 4.2, 1)}Ponto feito: uma bolinha no X de quem fez o ponto</span>
       <span class="turn">No verso: fechamento do dia ${n} →</span>
     </div>
     ${footer('Dia ' + n + ' · marcação')}
@@ -486,7 +480,7 @@ svg{display:block}
 .st-l{font-family:Fraunces,serif;font-style:italic;font-weight:600;font-size:4.4px}
 
 /* ---- Como usar ---- */
-.howto-top{display:grid;grid-template-columns:1fr 82mm;gap:7mm;align-items:start}
+.howto-top{display:grid;grid-template-columns:1fr 83mm;gap:7mm;align-items:start}
 .steps{list-style:none;display:flex;flex-direction:column;gap:4mm}
 .steps li{display:flex;gap:3mm;align-items:flex-start}
 .steps li svg{flex:none}
@@ -527,14 +521,15 @@ td.pl.other i{flex:1;border-bottom:.25mm solid ${C.line};height:4mm;margin-right
 .grid td{height:10.2mm;border-top:.2mm solid ${C.soft};text-align:center;vertical-align:middle}
 .grid tbody tr:first-child td{border-top:0}
 .grid td.ps{border-left:.4mm solid ${C.green}}
-.grid td.rn{font-size:6pt;color:${C.line};font-weight:600;font-variant-numeric:tabular-nums;background:${C.tint2}}
+.grid td.rn{font-size:6pt;color:${C.muted};font-weight:600;font-variant-numeric:tabular-nums;background:${C.tint2}}
 .grid td .dot{margin:0 auto}
 .ex .grid .names th{font-size:10pt;height:8mm}
 .ex .grid .subs th{height:6.5mm}
-.ex-x{margin-top:2mm}
-.namesband .grid .names th:first-child,.namesband .grid .subs th:first-child{border-left:0}
-.namesband .grid .subs th{border-bottom:0}
-.xarea{margin-top:3mm}
+.grid.mk td{height:auto;border-top:.25mm solid ${C.line}}
+.grid.mk td.x{border-left:.4mm solid ${C.green}}
+.grid.mk td.x svg{display:block}
+.grid.mk td.rn{font-size:7.5pt;color:${C.muted};font-family:Fraunces,serif;font-weight:600}
+.legend svg{flex:none}
 
 /* ---- Folha: frente ---- */
 .mark,.placar{padding-top:11mm}
@@ -548,7 +543,6 @@ td.pl.other i{flex:1;border-bottom:.25mm solid ${C.line};height:4mm;margin-right
 .sheet-fields{display:flex;gap:6mm;margin-bottom:3mm;align-items:baseline}
 .mark-foot{display:flex;justify-content:space-between;align-items:center;margin-top:2.6mm;font-size:7.5pt;color:${C.muted}}
 .legend{display:flex;align-items:center;gap:1.8mm}
-.lg-x{display:inline-flex;width:5.5mm;height:5.5mm;align-items:center;justify-content:center;background:${X_BG} center/5.2mm 5.2mm no-repeat}
 .turn{font-weight:600;color:${C.green}}
 
 /* ---- Dia: verso (fechamento) ---- */
