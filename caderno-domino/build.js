@@ -105,7 +105,6 @@ function cover() {
     x += (v ? s : 2 * s) + gap;
   }
   const chainW = x + 1.5, chainH = 2 * s + 5;
-  const names = PLAYERS.map((p, i) => `<div class="cv-player">${badge(i + 1, 7.5, '#fff', C.green)}<span>${p}</span></div>`).join('');
   pageNo++;
   return `<div class="page cover">
     <div class="frame"><div class="frame-in">
@@ -114,8 +113,6 @@ function cover() {
       <div class="cv-sub">da Família</div>
       <p class="cv-tag">Partidas, vitórias e a evolução da leitura de jogo</p>
       <svg class="cv-chain" viewBox="0 0 ${chainW} ${chainH}" width="${chainW}mm" height="${chainH}mm">${parts}</svg>
-      <div class="cv-mesa-l">À mesa</div>
-      <div class="cv-players">${names}</div>
       <div class="cv-fields">
         <div>Caderno nº ${blank(16)}</div>
         <div>Início ${blank(9)}/${blank(9)}/${blank(14)}</div>
@@ -416,10 +413,6 @@ svg{display:block}
 .cv-sub{font-family:Fraunces,serif;font-style:italic;font-weight:400;font-size:38pt;line-height:1;color:${C.green};margin-top:1mm}
 .cv-tag{margin-top:6mm;font-size:10.5pt;color:${C.muted};letter-spacing:.02em}
 .cv-chain{margin:auto 0}
-.cv-mesa-l{font-family:Fraunces,serif;font-style:italic;font-size:13pt;color:${C.gold};margin-bottom:4mm}
-.cv-players{display:grid;grid-template-columns:repeat(3,48mm);gap:3.5mm 5mm}
-.cv-player{display:flex;align-items:center;gap:2.5mm;border:.3mm solid ${C.green};border-radius:2.2mm;padding:2mm 3mm;background:#fff}
-.cv-player span{font-family:Fraunces,serif;font-weight:600;font-size:13pt}
 .cv-fields{margin-top:20mm;display:flex;gap:9mm;font-size:9pt;color:${C.muted}}
 .cv-fields>div{display:flex;align-items:baseline}
 .cv-fields .blank{border-color:${C.line}}
