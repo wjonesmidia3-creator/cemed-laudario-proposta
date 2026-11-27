@@ -6,15 +6,16 @@ const path = require('path');
 
 const OUT_DIR = __dirname;
 const PLAYERS = ['Eneas C', 'Dene J', 'WJ', 'Anderson C', 'Ruxa', 'Caiu o P'];
-const MONTHS = 3;            // quantos meses cabem no caderno
-const SCORE_PAGES = 16;      // páginas de placar por mês (2 dias por página = 32 dias)
-const ROWS = 10;             // linhas de X por dia (3 quadradinhos por linha = 30 vitórias)
+const FOLHAS = 27;     // folhas de jogo: frente = marcação, verso = placar e ranking
+const PER = 3;         // X por linha, em cada coluna de jogador
+const MARK_ROWS = 22;  // linhas de X na página de marcação (22 x 3 = 66 pontos por jogador)
+const OBS_LINES = 10;   // linhas de observação no verso
 
 // ---------- Cores ----------
 const C = {
   ink: '#1f2522', muted: '#5f6d66', green: '#1e5a46', green2: '#2f7a5e',
   tint: '#e6efea', tint2: '#f3f7f5', line: '#a7bab1', soft: '#d3ded8',
-  gold: '#b07d24', cream: '#f7f2e6', pen: '#2b4a9a',
+  gold: '#b07d24', cream: '#f7f2e6', pen: '#2b4a9a', xline: '#9fb4aa',
 };
 const LVL_COLORS = ['#d9e8df', '#bcd7c8', '#9cc4ae', '#79ad92', '#569476', '#3b7a5d', '#276148', '#164634'];
 
@@ -222,141 +223,168 @@ function levelsPage2() {
   </div>`;
 }
 
+// X impresso em cada quadradinho (fundo SVG vetorial)
+const X_BG = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M1 1L9 9M9 1L1 9' stroke='${C.xline}' stroke-width='0.6' stroke-linecap='round' fill='none'/></svg>`)}")`;
+const dot = (r = 1.15) => `<svg class="dot" viewBox="0 0 4 4" width="${r * 2}mm" height="${r * 2}mm"><circle cx="2" cy="2" r="1.75" fill="${C.pen}"/></svg>`;
+
+function playerHeader(names = PLAYERS, opts = {}) {
+  const th = names.map((p, i) => `<th colspan="${PER}" class="name">${opts.struck === i ? `<span class="struck">${p}${opts.strikeSvg}</span>` : p}</th>`).join('');
+  const subs = names.map((_, i) => `<th colspan="${PER}" class="sub"><div><span>outro:</span><i>${opts.sub && opts.sub[i] ? `<b class="hand">${opts.sub[i]}</b>` : ''}</i></div></th>`).join('');
+  return `<thead><tr class="names"><th class="corner" rowspan="2"><span>pontos</span></th>${th}</tr><tr class="subs">${subs}</tr></thead>`;
+}
+
 function howToPage() {
-  // Exemplo preenchido
-  seed = 11;
+  // Exemplo preenchido: bolinhas por linha de cada jogador
   const exNames = ['Fulano', 'Beltrano', 'Sicrano'];
-  const exMarks = [[3, 2], [3, 3, 1], [2]]; // X por linha de cada jogador
+  const exDots = [[3, 2], [3, 3, 1], [2]];
   let rows = '';
   for (let r = 0; r < 3; r++) {
-    rows += `<tr><td class="rn">${(r + 1) * 3}</td>`;
+    rows += `<tr><td class="rn">${(r + 1) * PER}</td>`;
     for (let p = 0; p < 3; p++) {
-      const n = exMarks[p][r] || 0;
-      for (let k = 0; k < 3; k++) rows += `<td class="c${k === 0 ? ' ps' : ''}">${k < n ? handX(8.1, 7.5) : ''}</td>`;
+      const n = exDots[p][r] || 0;
+      for (let k = 0; k < PER; k++) rows += `<td class="x${k === 0 ? ' ps' : ''}">${k < n ? dot() : ''}</td>`;
     }
     rows += '</tr>';
   }
-  const totals = exMarks.map((m) => m.reduce((a, b) => a + b, 0));
   const strike = `<svg class="strike" viewBox="0 0 30 6" preserveAspectRatio="none"><path d="M1 3.6 Q 10 2.2 18 3.2 T 29 2.6" stroke="${C.pen}" stroke-width="0.9" fill="none" stroke-linecap="round"/></svg>`;
-  const example = `<div class="gridwrap ex"><table class="grid">
+  const example = `<div class="gridwrap ex"><table class="grid mk">
     <colgroup><col style="width:7mm">${'<col style="width:8.1mm">'.repeat(9)}</colgroup>
-    <thead><tr class="names"><th class="corner" rowspan="2"><span>marque X</span></th>
-      <th colspan="3" class="name">${exNames[0]}</th>
-      <th colspan="3" class="name"><span class="struck">${exNames[1]}${strike}</span></th>
-      <th colspan="3" class="name">${exNames[2]}</th></tr>
-    <tr class="subs"><th colspan="3" class="sub"><div><span>outro:</span><i></i></div></th>
-      <th colspan="3" class="sub"><div><span>outro:</span><i><b class="hand">Visita</b></i></div></th>
-      <th colspan="3" class="sub"><div><span>outro:</span><i></i></div></th></tr></thead>
+    ${playerHeader(exNames, { struck: 1, strikeSvg: strike, sub: [null, 'Visita', null] })}
     <tbody>${rows}</tbody>
-    <tfoot><tr class="total"><td class="rn tl">TOTAL</td>${totals.map((t) => `<td colspan="3" class="tot"><b class="hand lg">${t}</b></td>`).join('')}</tr></tfoot>
   </table></div>`;
 
   const steps = [
-    ['Cada vitória vale um X', 'Quem ganhou a partida marca um X num quadradinho embaixo do próprio nome. Se jogarem em dupla, cada parceiro marca o seu X.'],
-    ['Preencha linha por linha', 'Vá da esquerda para a direita. O número no começo de cada linha mostra quantos X você terá quando ela estiver completa (3, 6, 9…).'],
-    ['Entrou outra pessoa?', 'Risque o nome de quem não jogou e escreva o novo jogador na linha “outro:”, logo abaixo. Os nomes da família continuam impressos em todas as páginas.'],
-    ['Feche o dia e o mês', 'No fim do dia, conte os X, escreva o TOTAL e anote o campeão. No fim do mês, passe os totais para o Fechamento do Mês e monte o pódio.'],
+    ['Fez o ponto, ganhou bolinha', 'Os quadradinhos já vêm com um X impresso. Quando alguém fizer um ponto, coloque uma bolinha no próximo X da coluna dessa pessoa.'],
+    ['Siga a ordem', 'Use os X da esquerda para a direita, linha por linha. O número no começo da linha mostra quantas bolinhas a pessoa terá quando a linha estiver completa (3, 6, 9…).'],
+    ['Entrou outra pessoa?', 'Risque o nome de quem não jogou e escreva o novo jogador na linha “outro:”, logo abaixo. Os nomes da família continuam impressos em todas as folhas.'],
+    ['Vire a folha', 'Na frente fica a marcação. No verso, conte as bolinhas de cada um, preencha o placar e monte o ranking: o 1º lugar é o campeão da folha. No fim do caderno, passe tudo para o Quadro Geral.'],
   ];
   const lvlHead = [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `<th>${lvlBadge(n, 6.2)}</th>`).join('');
   const lvlRows = PLAYERS.map((p, i) => `<tr><td class="pl"><div class="plc">${badge(i + 1, 5, '#fff', C.green)}<span>${p}</span></div></td>${'<td></td>'.repeat(8)}<td></td></tr>`).join('')
     + [1, 2].map(() => `<tr><td class="pl other"><div class="plc"><span>outro:</span><i></i></div></td>${'<td></td>'.repeat(8)}<td></td></tr>`).join('');
   return `<div class="page howto">
     <div class="kicker">Antes de começar</div>
-    <h2 class="h2">Como marcar o placar</h2>
+    <h2 class="h2">Como marcar os pontos</h2>
     <div class="howto-top">
       <ol class="steps">${steps.map(([t, d], i) => `<li>${badge(i + 1, 7.5, C.tint, C.green)}<div><b>${t}</b><p>${d}</p></div></li>`).join('')}</ol>
       <div class="ex-col"><div class="ex-label">Exemplo</div>${example}
-        <p class="ex-cap">Beltrano não jogou e foi riscado; a Visita entrou no lugar dele.</p></div>
+        <p class="ex-cap">Fulano fez 5 pontos, a Visita fez 7 e Sicrano fez 2. Beltrano não jogou e foi riscado; a Visita entrou no lugar dele.</p></div>
     </div>
     <div class="rule"></div>
     <div class="kicker">Leitura de jogo</div>
     <h2 class="h2">Onde cada um está hoje</h2>
-    <p class="body">Consulte o ranking das páginas anteriores e marque com um X o nível de leitura de jogo de cada jogador. Reavaliem juntos no fechamento de cada mês.</p>
+    <p class="body">Consulte o ranking das páginas anteriores e marque com um X o nível de leitura de jogo de cada jogador. De tempos em tempos, reavaliem juntos e anotem a data.</p>
     <table class="lvltable"><thead><tr><th class="pl">Jogador</th>${lvlHead}<th class="dt">Data</th></tr></thead><tbody>${lvlRows}</tbody></table>
     ${footer()}
   </div>`;
 }
 
-function dayBlock() {
-  const names = PLAYERS.map((p) => `<th colspan="3" class="name">${p}</th>`).join('');
-  const subs = PLAYERS.map(() => `<th colspan="3" class="sub"><div><span>outro:</span><i></i></div></th>`).join('');
+function sheetHead(n, side, title) {
+  return `<div class="sheet-head">
+      <div class="sh-left">${tileSvg(n % 7, (n * 3) % 7, 3.6, true, { shadow: false, stroke: 0.18, cls: 'dh-tile' })}
+        <div><div class="kicker">${side}</div><h2 class="h2 sm">${title}</h2></div></div>
+      <div class="sh-no"><span>Folha</span><b>${n}</b></div>
+    </div>`;
+}
+
+// Frente da folha: página inteira de marcação
+function markPage(n) {
   let rows = '';
-  for (let r = 0; r < ROWS; r++) {
-    rows += `<tr><td class="rn">${(r + 1) * 3}</td>`;
-    for (let p = 0; p < PLAYERS.length; p++) for (let k = 0; k < 3; k++) rows += `<td class="c${k === 0 ? ' ps' : ''}"></td>`;
+  for (let r = 0; r < MARK_ROWS; r++) {
+    rows += `<tr><td class="rn">${(r + 1) * PER}</td>`;
+    for (let p = 0; p < PLAYERS.length; p++) for (let k = 0; k < PER; k++) rows += `<td class="x${k === 0 ? ' ps' : ''}"></td>`;
     rows += '</tr>';
   }
-  const days = ['SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB', 'DOM'].map((d) => `<span>${d}</span>`).join('');
-  return `<section class="day">
-    <div class="day-head">
-      ${tileSvg(4, 4, 3.4, true, { shadow: false, stroke: 0.18, cls: 'dh-tile' })}
-      <div class="fld">Data ${blank(8)}/${blank(8)}/${blank(13)}</div>
-      <div class="wk">${days}</div>
+  return `<div class="page mark">
+    ${sheetHead(n, 'Frente da folha', 'Marcação dos pontos')}
+    <div class="sheet-fields">
+      <div class="fld">De ${blank(8)}/${blank(8)}/${blank(13)}</div>
+      <div class="fld">até ${blank(8)}/${blank(8)}/${blank(13)}</div>
       <div class="fld grow">Local <span class="blank flex"></span></div>
     </div>
-    <div class="gridwrap"><table class="grid">
-      <colgroup><col style="width:8mm">${'<col>'.repeat(18)}</colgroup>
-      <thead><tr class="names"><th class="corner" rowspan="2"><span>marque X</span></th>${names}</tr><tr class="subs">${subs}</tr></thead>
+    <div class="gridwrap"><table class="grid mk">
+      <colgroup><col style="width:8mm">${'<col>'.repeat(PLAYERS.length * PER)}</colgroup>
+      ${playerHeader()}
       <tbody>${rows}</tbody>
-      <tfoot><tr class="total"><td class="rn tl">TOTAL</td>${PLAYERS.map(() => '<td colspan="3" class="tot"></td>').join('')}</tr></tfoot>
     </table></div>
-    <div class="day-foot">
-      <div class="fld champ"><span class="ic">${ICON.trophy}</span>Campeão(ã) do dia <span class="blank flex"></span></div>
-      <div class="fld grow">Obs. <span class="blank flex"></span></div>
+    <div class="mark-foot">
+      <span class="legend"><span class="lg-x">${dot(1)}</span>Ponto feito: uma bolinha no X de quem fez o ponto</span>
+      <span class="turn">No verso: placar e ranking da folha ${n} →</span>
     </div>
-  </section>`;
+    ${footer('Folha ' + n + ' · marcação')}
+  </div>`;
 }
 
-function scorePage() {
-  return `<div class="page score">${dayBlock()}<div class="day-sep"><i></i>${tileSvg(0, 0, 2.4, false, { shadow: false, stroke: 0.12, spinner: false })}<i></i></div>${dayBlock()}${footer()}</div>`;
-}
-
-function monthPage(m) {
-  const head = ['Sem. 1', 'Sem. 2', 'Sem. 3', 'Sem. 4', 'Sem. 5'].map((s) => `<th>${s}</th>`).join('');
-  const row = (label) => `<tr>${label}${'<td></td>'.repeat(5)}<td class="tt"></td><td class="pos"><span>º</span></td><td class="lv"></td></tr>`;
+// Verso da folha: placar da página + ranking do campeão
+function placarPage(n) {
+  const row = (label) => `<tr>${label}<td class="pf"></td><td></td><td class="tt"></td></tr>`;
   const rows = PLAYERS.map((p, i) => row(`<td class="pl"><div class="plc">${badge(i + 1, 5, '#fff', C.green)}<span>${p}</span></div></td>`)).join('')
     + [1, 2].map(() => row(`<td class="pl other"><div class="plc"><span>outro:</span><i></i></div></td>`)).join('');
-  const podium = [[2, 24], [1, 34], [3, 17]].map(([n, h]) => `
-    <div class="pod p${n}"><div class="pod-name"><span class="blank flex"></span><small>vitórias ${blank(10)}</small></div>
-      <div class="pod-step" style="height:${h}mm"><span>${n}º</span></div></div>`).join('');
-  const highlights = [
-    'Mais vitórias em um dia', 'Maior sequência de vitórias seguidas',
-    'Jogada mais bonita do mês', 'Quem mais evoluiu na leitura de jogo',
-  ].map((t) => `<div class="hl"><span>${t}</span><span class="blank flex"></span></div>`).join('');
-  return `<div class="page month">
-    <div class="kicker">Mês ${m} · fechamento</div>
-    <h2 class="h2">Fechamento do Mês</h2>
-    <div class="mfields"><div class="fld">Mês ${blank(40)}</div><div class="fld">Ano ${blank(18)}</div><div class="fld">Período ${blank(9)}/${blank(9)} a ${blank(9)}/${blank(9)}</div></div>
-    <p class="body">Some os totais de cada dia por semana. O total do mês define o pódio. Na última coluna, anote o nível de leitura de jogo (1 a 8) reavaliado no fim do mês.</p>
-    <table class="mtable"><thead><tr><th class="pl">Jogador</th>${head}<th class="tt">Total</th><th class="pos">Posição</th><th class="lv">Nível</th></tr></thead><tbody>${rows}</tbody></table>
-    <div class="month-bottom">
-      <div class="podium-box"><div class="sub-h">Pódio do mês</div><div class="podium">${podium}</div></div>
-      <div class="hl-box"><div class="sub-h">Destaques</div>${highlights}</div>
+  const others = [2, 3, 4, 5, 6, 7, 8].map((k) => `<div class="rk-row"><span class="rk-pos">${k}º</span><span class="rk-name"></span><span class="rk-pts">pts</span></div>`).join('');
+  return `<div class="page placar">
+    ${sheetHead(n, 'Verso da folha', 'Placar e ranking')}
+    <div class="placar-top">
+      <div class="pt-col">
+        <div class="sub-h">Placar da folha ${n}</div>
+        <table class="mtable ptable"><thead><tr><th class="pl">Jogador</th><th class="pf">Pontos<br>nesta folha</th><th>Vem da<br>folha anterior</th><th class="tt">Total<br>acumulado</th></tr></thead><tbody>${rows}</tbody></table>
+        <p class="hint">Pontos nesta folha = bolinhas na frente. Total acumulado = pontos nesta folha + o que vem da folha anterior.</p>
+      </div>
+      <div class="rank">
+        <div class="sub-h">Ranking da folha</div>
+        <div class="rk-champ">
+          <div class="rk-top"><span class="rk-1">1º</span><span class="rk-ic">${ICON.trophy}</span><span class="rk-lbl">Campeão(ã) da folha</span></div>
+          <div class="rk-cname"></div>
+          <div class="fld">pontos ${blank(16)}</div>
+        </div>
+        ${others}
+      </div>
     </div>
-    <div class="sub-h notes-h">Anotações</div>
-    <div class="lines">${'<i></i>'.repeat(7)}</div>
-    ${footer('Fechamento do mês ' + m)}
+    <div class="rule"></div>
+    <div class="dest">
+      <div class="hl"><span>Maior sequência de pontos</span><span class="blank flex"></span></div>
+      <div class="hl"><span>Ponto mais bonito da folha</span><span class="blank flex"></span></div>
+    </div>
+    <div class="sub-h">Observações</div>
+    <div class="lines">${'<i></i>'.repeat(OBS_LINES)}</div>
+    ${footer('Folha ' + n + ' · placar')}
+  </div>`;
+}
+
+// Quadro geral: uma linha por folha
+function overviewPage() {
+  const head = PLAYERS.map((p) => `<th class="op">${p}</th>`).join('');
+  let rows = '';
+  for (let f = 1; f <= FOLHAS; f++) rows += `<tr><td class="of">${f}</td>${'<td class="op"></td>'.repeat(PLAYERS.length)}<td class="oc"></td></tr>`;
+  return `<div class="page overview">
+    <div class="kicker">Fim do caderno</div>
+    <h2 class="h2">Quadro Geral</h2>
+    <p class="body">Copie os pontos de cada folha (coluna “Pontos nesta folha” do verso) e o nome do campeão. No fim, some as colunas.</p>
+    <table class="otable"><thead><tr><th class="of">Folha</th>${head}<th class="oc">Campeão(ã) da folha</th></tr></thead>
+      <tbody>${rows}</tbody>
+      <tfoot><tr class="sum"><td class="of">Total</td>${'<td class="op"></td>'.repeat(PLAYERS.length)}<td class="oc ghost"></td></tr>
+      <tr class="psn"><td class="of">Posição</td>${'<td class="op"><span>º</span></td>'.repeat(PLAYERS.length)}<td class="oc ghost"></td></tr></tfoot>
+    </table>
+    ${footer('Quadro geral')}
   </div>`;
 }
 
 function finalPage() {
-  const head = Array.from({ length: MONTHS }, (_, i) => `<th>Mês ${i + 1}</th>`).join('');
-  const row = (label) => `<tr>${label}${'<td></td>'.repeat(MONTHS)}<td class="tt"></td><td class="pos"><span>º</span></td><td class="lv"></td></tr>`;
+  const row = (label) => `<tr>${label}<td class="tt"></td><td></td><td class="pos"><span>º</span></td><td class="lv"></td></tr>`;
   const rows = PLAYERS.map((p, i) => row(`<td class="pl"><div class="plc">${badge(i + 1, 5, '#fff', C.green)}<span>${p}</span></div></td>`)).join('')
     + [1, 2].map(() => row(`<td class="pl other"><div class="plc"><span>outro:</span><i></i></div></td>`)).join('');
   const records = [
-    'Mais vitórias em um único dia', 'Maior sequência de vitórias seguidas', 'Mês mais disputado',
-    'Maior evolução de nível', 'Partida inesquecível',
+    'Mais pontos em uma única folha', 'Maior sequência de pontos', 'Folha mais disputada',
+    'Maior evolução de nível', 'Partida inesquecível', 'Mais folhas vencidas',
   ].map((t) => `<div class="hl"><span>${t}</span><span class="blank flex"></span></div>`).join('');
   const sigs = PLAYERS.map((p) => `<div class="sig"><i></i><span>${p}</span></div>`).join('');
   return `<div class="page final">
     <div class="kicker">Fim do caderno</div>
     <h2 class="h2">Ranking do Caderno</h2>
-    <table class="mtable"><thead><tr><th class="pl">Jogador</th>${head}<th class="tt">Total</th><th class="pos">Posição</th><th class="lv">Nível final</th></tr></thead><tbody>${rows}</tbody></table>
+    <table class="mtable"><thead><tr><th class="pl">Jogador</th><th class="tt">Total de pontos</th><th>Folhas vencidas</th><th class="pos">Posição</th><th class="lv">Nível final</th></tr></thead><tbody>${rows}</tbody></table>
     <div class="champion">
       ${tileSvg(6, 6, 9, true, { stroke: 0.4, cls: 'champ-tile' })}
       <div class="champ-body"><div class="kicker gold">Campeão(ã) do caderno</div><div class="champ-line"></div>
-        <div class="champ-meta"><div class="fld">Total de vitórias ${blank(22)}</div><div class="fld">Nível de leitura ${blank(14)}</div></div></div>
+        <div class="champ-meta"><div class="fld">Total de pontos ${blank(22)}</div><div class="fld">Nível de leitura ${blank(14)}</div></div></div>
       ${tileSvg(6, 6, 9, true, { stroke: 0.4, cls: 'champ-tile' })}
     </div>
     <div class="sub-h">Hall da Fama</div>
@@ -488,13 +516,7 @@ td.pl span{font-family:Fraunces,serif;font-weight:600;font-size:11pt}
 td.pl.other span{font-family:Inter,sans-serif;font-size:6.5pt;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:${C.muted}}
 td.pl.other i{flex:1;border-bottom:.25mm solid ${C.line};height:4mm;margin-right:3mm}
 
-/* ---- Placar ---- */
-.score{padding-top:11mm}
-.day{display:flex;flex-direction:column}
-.day-head{display:flex;align-items:center;gap:4mm;height:9mm;margin-bottom:2mm}
-.dh-tile{flex:none;margin-right:-1mm}
-.wk{display:flex;gap:1mm}
-.wk span{font-size:6pt;font-weight:700;letter-spacing:.04em;color:${C.green};border:.25mm solid ${C.line};border-radius:1.2mm;padding:.6mm 1.1mm}
+/* ---- Grade de marcação ---- */
 .gridwrap{border:.45mm solid ${C.green};border-radius:2.4mm;overflow:hidden}
 .grid{width:100%;border-collapse:collapse;table-layout:fixed}
 .grid th,.grid td{padding:0}
@@ -505,26 +527,54 @@ td.pl.other i{flex:1;border-bottom:.25mm solid ${C.line};height:4mm;margin-right
 .grid .sub i{flex:1;border-bottom:.22mm solid ${C.line};height:3.6mm;font-style:normal;text-align:center;position:relative}
 .grid .sub i .hand{position:absolute;left:0;right:0;bottom:-.4mm;font-size:12.5pt}
 .grid .corner{background:${C.tint2};border-left:0;border-bottom:.35mm solid ${C.green};vertical-align:middle}
-.grid .corner span{display:block;transform:rotate(-90deg);font-size:5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:${C.green};white-space:nowrap;width:8mm;font-family:Inter,sans-serif}
-.grid td{height:8mm;border-top:.2mm solid ${C.soft};border-left:.2mm dashed ${C.soft};text-align:center;vertical-align:middle}
+.grid .corner span{display:block;transform:rotate(-90deg);font-size:5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:${C.green};white-space:nowrap;width:8mm;font-family:Inter,sans-serif}
+.grid td{height:10.2mm;border-top:.2mm solid ${C.soft};text-align:center;vertical-align:middle}
 .grid tbody tr:first-child td{border-top:0}
+.grid td.x{background:${X_BG} center/6.4mm 6.4mm no-repeat}
 .grid td.ps{border-left:.4mm solid ${C.green}}
-.grid td.rn{border-left:0;font-size:6pt;color:${C.line};font-weight:600;font-variant-numeric:tabular-nums;background:${C.tint2}}
-.grid td .hx{margin:0 auto}
-.grid tfoot td{height:11mm;border-top:.45mm solid ${C.green};background:${C.cream}}
-.grid tfoot td.tot{border-left:.4mm solid ${C.green}}
-.grid td.tl{font-size:5.5pt;font-weight:800;letter-spacing:.06em;color:${C.green};background:${C.cream}}
-.day-foot{display:flex;gap:6mm;margin-top:2.4mm;height:6mm;align-items:center}
-.day-foot .champ{width:86mm}
-.day-foot .ic svg{width:4mm;height:4mm;fill:none;stroke:${C.gold};stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-right:1.4mm}
-.day-sep{display:flex;align-items:center;gap:3mm;height:11mm}
-.day-sep i{flex:1;border-top:.25mm dashed ${C.soft}}
+.grid td.rn{font-size:6pt;color:${C.line};font-weight:600;font-variant-numeric:tabular-nums;background:${C.tint2}}
+.grid td .dot{margin:0 auto}
 .ex .grid .names th{font-size:10pt}
+.ex .grid td{height:8.5mm}
+.ex .grid td.x{background-size:5.6mm 5.6mm}
 
-/* ---- Mês / Final ---- */
-.month-head{display:flex;align-items:flex-end;justify-content:space-between;gap:6mm}
-.mfields{display:flex;gap:9mm;margin:1mm 0 4.5mm}
-.mfields .fld{font-size:9pt}
+/* ---- Folha: frente ---- */
+.mark,.placar{padding-top:11mm}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:3mm}
+.sh-left{display:flex;align-items:center;gap:3mm}
+.sh-left .kicker{margin-bottom:.6mm}
+.h2.sm{font-size:17pt;margin:0}
+.sh-no{display:flex;align-items:center;gap:2.2mm;border:.4mm solid ${C.green};border-radius:2.4mm;padding:1.4mm 3.6mm 1.4mm 3.2mm}
+.sh-no span{font-size:7pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:${C.muted}}
+.sh-no b{font-family:Fraunces,serif;font-weight:900;font-size:20pt;line-height:1;color:${C.green};font-variant-numeric:tabular-nums}
+.sheet-fields{display:flex;gap:6mm;margin-bottom:3mm;align-items:baseline}
+.mark-foot{display:flex;justify-content:space-between;align-items:center;margin-top:2.6mm;font-size:7.5pt;color:${C.muted}}
+.legend{display:flex;align-items:center;gap:1.8mm}
+.lg-x{display:inline-flex;width:5.5mm;height:5.5mm;align-items:center;justify-content:center;background:${X_BG} center/5.2mm 5.2mm no-repeat}
+.turn{font-weight:600;color:${C.green}}
+
+/* ---- Folha: verso ---- */
+.placar-top{display:grid;grid-template-columns:1fr 63mm;gap:7mm;align-items:start}
+.mtable.ptable{margin:0 0 2.5mm}
+.mtable.ptable th{line-height:1.25;vertical-align:bottom}
+.mtable.ptable th.pl{width:44mm}
+.mtable.ptable td{height:14mm}
+.mtable.ptable td.pf,.mtable.ptable th.pf{background:${C.tint2}}
+.hint{font-size:7pt;color:${C.muted};line-height:1.4}
+.rank .sub-h{margin-bottom:2.5mm}
+.rk-champ{border:.4mm solid ${C.gold};border-radius:2.4mm;background:${C.cream};padding:3mm 3.5mm 3mm;margin-bottom:1.5mm}
+.rk-top{display:flex;align-items:center;gap:2mm}
+.rk-1{font-family:Fraunces,serif;font-weight:900;font-size:20pt;line-height:1;color:${C.gold}}
+.rk-ic svg{width:5.5mm;height:5.5mm;fill:none;stroke:${C.gold};stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rk-lbl{font-size:6.5pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:${C.gold}}
+.rk-cname{height:12mm;border-bottom:.35mm solid ${C.ink};margin-bottom:2mm}
+.rk-row{display:flex;align-items:flex-end;gap:2mm;height:13.4mm;padding-bottom:1mm;border-bottom:.25mm solid ${C.soft}}
+.rk-pos{font-family:Fraunces,serif;font-weight:700;font-size:12pt;color:${C.green};width:8mm;line-height:1}
+.rk-name{flex:1}
+.rk-pts{width:15mm;text-align:right;font-size:6pt;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:${C.muted};border-left:.25mm dotted ${C.line};height:6mm;display:flex;align-items:flex-end;justify-content:flex-end}
+.dest{display:grid;grid-template-columns:1fr 1fr;gap:0 8mm;margin-bottom:2mm}
+
+/* ---- Tabelas de resumo ---- */
 .mtable{width:100%;border-collapse:collapse;margin:1mm 0 6mm}
 .mtable th{font-size:6.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:${C.muted};padding:1.6mm 0;border-bottom:.4mm solid ${C.green};text-align:center}
 .mtable th.pl{text-align:left;width:50mm}
@@ -533,22 +583,24 @@ td.pl.other i{flex:1;border-bottom:.25mm solid ${C.line};height:4mm;margin-right
 .mtable td.tt,.mtable th.tt{background:${C.cream};border-left:.35mm solid ${C.gold}}
 .mtable th.tt{color:${C.gold}}
 .mtable td.pos{text-align:right;padding-right:3mm;color:${C.muted};font-size:9pt}
-.mtable td.pos,.mtable th.pos{width:19mm}
-.mtable td.lv,.mtable th.lv{width:19mm}
-.month-bottom{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-bottom:6mm}
-.podium{display:flex;align-items:flex-end;gap:2.5mm;height:52mm}
-.pod{flex:1;display:flex;flex-direction:column;justify-content:flex-end}
-.pod-name{display:flex;flex-direction:column;gap:1mm;margin-bottom:2mm}
-.pod-name .blank{width:100%;margin:0;height:5mm;border-color:${C.ink}}
-.pod-name small{font-size:6pt;color:${C.muted};display:flex;align-items:baseline}
-.pod-step{border:.35mm solid ${C.green};border-bottom-width:.7mm;border-radius:1.6mm 1.6mm 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:2mm;background:${C.tint2}}
-.pod.p1 .pod-step{background:${C.cream};border-color:${C.gold}}
-.pod-step span{font-family:Fraunces,serif;font-weight:900;font-size:17pt;color:${C.green}}
-.pod.p1 .pod-step span{color:${C.gold};font-size:21pt}
+.mtable td.pos,.mtable th.pos{width:22mm}
+.mtable td.lv,.mtable th.lv{width:24mm}
+.otable{width:100%;border-collapse:collapse;table-layout:fixed;margin-top:1mm}
+.otable th{font-size:6.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:${C.muted};padding:1.8mm 0;border-bottom:.4mm solid ${C.green};text-align:center;vertical-align:bottom}
+.otable th.op{font-family:Fraunces,serif;font-size:9pt;font-weight:600;letter-spacing:0;text-transform:none;color:${C.ink}}
+.otable th.of,.otable td.of{width:15mm}
+.otable th.oc,.otable td.oc{width:40mm}
+.otable td{height:7.1mm;border-bottom:.25mm solid ${C.soft};border-left:.25mm dotted ${C.line}}
+.otable td.of{border-left:0;text-align:center;font-family:Fraunces,serif;font-weight:600;font-size:9pt;color:${C.green};font-variant-numeric:tabular-nums}
+.otable tbody tr:nth-child(even) td{background:${C.tint2}}
+.otable tfoot td{height:9mm;border-top:.4mm solid ${C.green}}
+.otable tfoot td.of{font-family:Inter,sans-serif;font-size:6.5pt;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.otable tr.sum td.op{background:${C.cream}}
+.otable tr.psn td.op{text-align:right;padding-right:2mm;color:${C.muted}}
+.otable td.ghost{border:0;background:transparent}
 .hl{display:flex;flex-direction:column;gap:.6mm;margin-bottom:3.4mm}
 .hl span:first-child{font-size:7.5pt;font-weight:600;color:${C.muted}}
 .hl .blank{width:100%;margin:0;height:5mm;border-color:${C.line}}
-.notes-h{margin-top:1mm}
 .lines i{display:block;height:8mm;border-bottom:.25mm solid ${C.soft}}
 .champion{display:flex;align-items:center;gap:7mm;border:.35mm solid ${C.gold};border-radius:3mm;padding:5mm 7mm;background:${C.cream};margin-bottom:7mm}
 .champ-body{flex:1}
@@ -564,11 +616,8 @@ td.pl.other i{flex:1;border-bottom:.25mm solid ${C.line};height:4mm;margin-right
 function build() {
   pageNo = 0;
   const pages = [cover(), levelsPage1(), levelsPage2(), howToPage()];
-  for (let m = 1; m <= MONTHS; m++) {
-    for (let i = 0; i < SCORE_PAGES; i++) pages.push(scorePage());
-    pages.push(monthPage(m));
-  }
-  pages.push(finalPage());
+  for (let f = 1; f <= FOLHAS; f++) pages.push(markPage(f), placarPage(f));
+  pages.push(overviewPage(), finalPage());
   return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Dominó da Família — Caderno de Placar</title><style>${CSS}</style></head><body>${pages.join('\n')}</body></html>`;
 }
 
